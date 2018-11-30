@@ -11,6 +11,7 @@ export default {
   title: 'Paramount',
   typescript: true,
   plugins: [reactNative()],
+  hashRouter: true,
   dest: '/docs',
   modifyBundlerConfig: config => {
     return merge(config, extensionsResolvers);
