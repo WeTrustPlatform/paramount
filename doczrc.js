@@ -17,5 +17,9 @@ export default {
   },
   // temporary docs source
   dest: '/docs',
+  themeConfig: {
+    showPlaygroundEditor: true,
+  },
+  codeSandbox: false,
   base: './',
 };
