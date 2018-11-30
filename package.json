@@ -1,6 +1,6 @@
 {
   "name": "paramount-ui",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "React UI Components Library By WeTrust",
   "main": "commonjs/index.js",
   "module": "esm/index.js",

@@ -12,8 +12,10 @@ export default {
   typescript: true,
   plugins: [reactNative()],
   hashRouter: true,
-  dest: '/docs',
   modifyBundlerConfig: config => {
     return merge(config, extensionsResolvers);
   },
+  // temporary docs source
+  dest: '/docs',
+  base: './',
 };

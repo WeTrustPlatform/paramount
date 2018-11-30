@@ -166,7 +166,7 @@ const theme = {
 
 Much of the architecture of this library are heavily inspired by awesome work of existing design systems, and there are parts even copied directly into this project.
 
-- Awesome [Evergreen Design System](https://github.com/segmentio/evergreen) (Most inspired fromlít)
+- Awesome [Evergreen Design System](https://github.com/segmentio/evergreen) (Most inspired from)
 - [react-native-switch-toggle](https://github.com/react-native-seoul/react-native-switch-toggle)
 - More...
 
