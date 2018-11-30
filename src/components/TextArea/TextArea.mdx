@@ -1,0 +1,73 @@
+---
+name: TextArea
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import { TextArea, TextAreaField } from '.';
+import { Box } from '../Layout';
+import { Heading, Label } from '../Typography';
+
+## Usage
+
+### Default
+
+<Playground>
+  <Box marginBottom={24} width={360}>
+    <Label size="medium">Medium (default)</Label>
+    <TextArea placeholder="With placeholder" />
+  </Box>
+  <Box marginBottom={24} width={360}>
+    <Label size="medium">Disabled</Label>
+    <TextArea value="This is disabled" isDisabled />
+  </Box>
+  <Box marginBottom={24} width={360}>
+    <Label size="medium">Is Invalid</Label>
+    <TextArea isInvalid />
+  </Box>
+  <Box marginBottom={24}>
+    <Label size="small">Small</Label>
+    <TextArea size="small" />
+  </Box>
+  <Box marginBottom={24}>
+    <Label size="medium">Medium</Label>
+    <TextArea size="medium" />
+  </Box>
+  <Box marginBottom={24}>
+    <Label size="large">Large</Label>
+    <TextArea size="large" />
+  </Box>
+</Playground>
+
+### With FormField
+
+<Playground>
+  <Box marginBottom={24}>
+    <TextAreaField
+      label="Default text input field"
+      description="This is a description."
+      placeholder="Placeholder text"
+    />
+  </Box>
+  <Box marginBottom={24}>
+    <TextAreaField
+      label="A required text input field"
+      isRequired
+      description="This is a description."
+      placeholder="Placeholder text"
+    />
+  </Box>
+  <Box marginBottom={24}>
+    <TextAreaField
+      isInvalid
+      isRequired
+      label="A required text input field"
+      description="This is a description."
+      error="This field is required"
+    />
+  </Box>
+</Playground>
+
+## Props
+
+<PropsTable of={TextArea} />

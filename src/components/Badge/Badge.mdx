@@ -1,0 +1,55 @@
+---
+name: Badge
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import Badge from './Badge';
+import { ThemeConsumer } from '../../theme';
+import { Box } from '../Layout';
+
+## Usage
+
+### Default
+
+<Playground>
+  <ThemeConsumer>
+    {theme => (
+      <Box>
+        {Object.keys(theme.themeVariables.fills.solid).map(color => (
+          <Box key={color}>
+            <Badge color={color}>{color}</Badge>
+            <Badge color={color} isSolid>
+              {color}
+            </Badge>
+          </Box>
+        ))}
+      </Box>
+    )}
+  </ThemeConsumer>
+</Playground>
+
+### Pills
+
+<Playground>
+  <ThemeConsumer>
+    {theme => (
+      <Box>
+        {Object.keys(theme.themeVariables.fills.solid).map(color => (
+          <Box key={color}>
+            <Badge shape="pill" color={color}>
+              {color}
+            </Badge>
+            <Badge shape="pill" color={color} isSolid>
+              {color}
+            </Badge>
+          </Box>
+        ))}
+      </Box>
+    )}
+  </ThemeConsumer>
+</Playground>
+
+## Props
+
+<PropsTable of={Badge} />

@@ -1,0 +1,95 @@
+---
+name: Button
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import Button from './Button';
+
+## Usage
+
+### Primary appearance (default)
+
+<Playground>
+  <Button color="default">Default</Button>
+  <Button color="primary">Primary</Button>
+  <Button color="secondary">Secondary</Button>
+  <Button color="danger">Danger</Button>
+</Playground>
+
+### Outline appearance
+
+<Playground>
+  <Button appearance="outline" color="default">
+    Default
+  </Button>
+  <Button appearance="outline" color="primary">
+    Primary
+  </Button>
+  <Button appearance="outline" color="secondary">
+    Secondary
+  </Button>
+  <Button appearance="outline" color="danger">
+    Danger
+  </Button>
+</Playground>
+
+### Minimal appearance
+
+<Playground>
+  <Button appearance="minimal" color="default">
+    Default
+  </Button>
+  <Button appearance="minimal" color="primary">
+    Primary
+  </Button>
+  <Button appearance="minimal" color="secondary">
+    Secondary
+  </Button>
+  <Button appearance="minimal" color="danger">
+    Danger
+  </Button>
+</Playground>
+
+### Loading Primary button
+
+<Playground>
+  <Button isLoading appearance="primary" color="primary">
+    Default
+  </Button>
+  <Button isLoading appearance="outline" color="primary">
+    Primary
+  </Button>
+  <Button isLoading appearance="minimal" color="primary">
+    Secondary
+  </Button>
+</Playground>
+
+### Loading Secondary button
+
+<Playground>
+  <Button isLoading appearance="primary" color="secondary">
+    Default
+  </Button>
+  <Button isLoading appearance="outline" color="secondary">
+    Primary
+  </Button>
+  <Button isLoading appearance="minimal" color="secondary">
+    Secondary
+  </Button>
+</Playground>
+
+### Other props
+
+<Playground>
+  <Button isInline color="primary">
+    Inline
+  </Button>
+  <Button isDisabled color="primary">
+    Disabled
+  </Button>
+</Playground>
+
+## Props
+
+<PropsTable of={Button} />

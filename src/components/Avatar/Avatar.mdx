@@ -1,0 +1,38 @@
+---
+name: Avatar
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import Avatar from './Avatar';
+
+## Usage
+
+### Automatic default usage
+
+<Playground>
+  <Avatar name="Jeroen Ransijn" />
+</Playground>
+
+### Automatic solid usage
+
+<Playground>
+  <Avatar isSolid name="Jeroen Ransijn" />
+</Playground>
+
+### Using image source
+
+<Playground>
+  <Avatar source="https://picsum.photos/200/200" />
+</Playground>
+
+### Avatar sizes
+
+<Playground>
+  <Avatar name="Andy Grove" />
+  <Avatar name="Andy Grove" size={60} />
+</Playground>
+
+## Props
+
+<PropsTable of={Avatar} />

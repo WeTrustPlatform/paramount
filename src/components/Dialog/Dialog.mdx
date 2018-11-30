@@ -1,0 +1,35 @@
+---
+name: Dialog
+menu: Components
+---
+
+import { Toggle } from 'react-powerplug';
+import { Playground, PropsTable } from 'docz';
+
+import { Dialog } from '.';
+import { Button } from '../Button';
+import { Box } from '../Layout';
+import { Text } from '../Typography';
+
+## Usage
+
+### Go
+
+<Playground>
+  <Toggle initial={false}>
+    {({ on, toggle }) => (
+      <Box>
+        <Dialog isVisible={on} onClose={toggle}>
+          <Box height={1800}>
+            <Text>Put any content in the dialog</Text>
+          </Box>
+        </Dialog>
+        <Button onPress={toggle}>Open dialog</Button>
+      </Box>
+    )}
+  </Toggle>
+</Playground>
+
+## Props
+
+<PropsTable of={Dialog} />

@@ -1,0 +1,27 @@
+---
+name: Picker
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import { Picker, PickerItem } from '.';
+
+## Usage
+
+### Default
+
+<Playground>
+  <Picker
+    selectedValue="js"
+    onValueChange={(itemValue, itemIndex) =>
+      console.log('itemValue', itemValue)
+    }
+  >
+    <PickerItem label="Java" value="java" />
+    <PickerItem label="JavaScript" value="js" />
+  </Picker>
+</Playground>
+
+## Props
+
+<PropsTable of={Picker} />

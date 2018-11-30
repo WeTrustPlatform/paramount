@@ -1,0 +1,52 @@
+import * as React from 'react';
+
+import { ITheme, withTheme } from '../../theme';
+import { ControlSize } from '../../theme/component-variables/controlVariables';
+import { FillColor } from '../../theme/ThemeInterface';
+import { Box } from '../Layout';
+import { Shape } from '../Layout/Box';
+import { Strong } from '../Typography';
+
+export interface IBadgeProps {
+  children: React.ReactNode;
+  theme: ITheme;
+  color?: FillColor;
+  size?: ControlSize;
+  shape?: Shape;
+  isSolid?: boolean;
+}
+
+const BadgeWithoutTheme = (props: IBadgeProps) => {
+  const {
+    theme,
+    size = 'small',
+    isSolid = false,
+    color = 'neutral',
+    shape = 'rounded',
+    children,
+  } = props;
+
+  const { boxStyle, textStyle } = theme.getBadgeStyles(size, color, isSolid);
+
+  return (
+    <Box
+      backgroundColor={boxStyle.backgroundColor}
+      height={boxStyle.height}
+      paddingLeft={boxStyle.paddingLeft}
+      paddingRight={boxStyle.paddingRight}
+      shape={shape}
+      display="flex"
+      flexDirection="row"
+      justifyContent="center"
+      alignItems="center"
+      alignSelf="flex-start"
+    >
+      <Strong size={size} dangerouslySetInlineStyle={{ __style: textStyle }}>
+        {children}
+      </Strong>
+    </Box>
+  );
+};
+
+export const Badge = withTheme(BadgeWithoutTheme);
+export default Badge;

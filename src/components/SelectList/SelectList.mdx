@@ -1,0 +1,33 @@
+---
+name: SelectList
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import { SelectList, SelectListItem } from '.';
+
+## Usage
+
+### Default
+
+<Playground>
+  <SelectList
+    selectedValue="js"
+    onValueChange={(itemValue, itemIndex) =>
+      console.log('itemValue', itemValue)
+    }
+  >
+    <SelectListItem label="Java" value="java" />
+    <SelectListItem label="JavaScript" value="js" />
+  </SelectList>
+</Playground>
+
+## Props
+
+### Select List
+
+<PropsTable of={SelectList} />
+
+### Select List Item
+
+<PropsTable of={SelectListItem} />

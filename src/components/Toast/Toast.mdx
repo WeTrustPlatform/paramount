@@ -1,0 +1,68 @@
+---
+name: Toast
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import { ToastConsumer, ToastProvider } from '.';
+import { Button } from '../Button';
+import Toast from './Toast';
+
+## Usage
+
+### Go
+
+<Playground>
+  <ToastProvider>
+    <ToastConsumer>
+      {({ notify }) => (
+        <>
+          <Button
+            onPress={() =>
+              notify({ title: 'Title', description: 'Description' })
+            }
+          >
+            Open default toast
+          </Button>
+          <Button
+            onPress={() =>
+              notify({
+                description: 'Description',
+                intent: 'success',
+                title: 'Title',
+              })
+            }
+          >
+            Open success toast
+          </Button>
+          <Button
+            onPress={() =>
+              notify({
+                description: 'Description',
+                intent: 'danger',
+                title: 'Title',
+              })
+            }
+          >
+            Open danger toast
+          </Button>
+          <Button
+            onPress={() =>
+              notify({
+                description: 'Description',
+                intent: 'warning',
+                title: 'Title',
+              })
+            }
+          >
+            Open warning toast
+          </Button>
+        </>
+      )}
+    </ToastConsumer>
+  </ToastProvider>
+</Playground>
+
+## Props
+
+<PropsTable of={Toast} />

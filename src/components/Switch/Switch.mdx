@@ -1,0 +1,22 @@
+---
+name: Switch
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import { Toggle } from 'react-powerplug';
+import { Switch } from '.';
+
+## Usage
+
+### Default
+
+<Playground>
+  <Toggle initial={true}>
+    {({ on, toggle }) => <Switch isSwitchedOn={on} onChange={toggle} />}
+  </Toggle>
+</Playground>
+
+## Props
+
+<PropsTable of={Switch} />

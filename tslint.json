@@ -1,0 +1,38 @@
+{
+  "extends": ["tslint:recommended", "tslint-sonarts"],
+  "linterOptions": {
+    "exclude": ["generated", "dist", "node_modules/**", "**/*.d.ts"]
+  },
+  "rules": {
+    "curly": [true, "ignore-same-line"],
+    "no-console": {
+      "severity": "warning",
+      "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
+    },
+    "semicolon": {
+      "options": ["always", "strict-bound-class-methods"]
+    },
+    "quotemark": [true, "single", "jsx-double"],
+    "arrow-parens": {
+      "options": "ban-single-arg-parens"
+    },
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never",
+        "esSpecCompliant": true
+      }
+    ],
+    "max-line-length": [
+      true,
+      {
+        "limit": 80,
+        "ignore-pattern": "// |^import |^export {(.*?)} |test |/* "
+      }
+    ],
+    "max-union-size": false,
+    "no-big-function": 50,
+    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"]
+  }
+}
