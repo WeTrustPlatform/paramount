@@ -1,7 +1,7 @@
 language: node_js
-cache:
-  directories:
-    - ~/.npm
+cache: yarn
+node_js:
+  - '10'
 script:
   - yarn test
   - yarn build
