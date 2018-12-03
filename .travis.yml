@@ -12,7 +12,7 @@ script:
   - yarn test
   - yarn build
 before_deploy:
-  script: yarn build:docs
+  - yarn build:docs
 deploy:
   provider: pages
   skip-cleanup: true
