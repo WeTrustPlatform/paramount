@@ -5,15 +5,14 @@ node_js:
 script:
   - yarn test
   - yarn build
+  - yarn build:docs
 after_success:
   - yarn travis-deploy-once "npm run semantic-release"
-before_deploy:
-  - yarn build:docs
 deploy:
   provider: pages
-  skip-cleanup: true
-  github-token: $GH_TOKEN
-  keep-history: true
-  local-dir: ./.docs/dist
+  skip_cleanup: true
+  github_token: $GH_TOKEN
+  keep_history: true
+  local_dir: .docs/dist
   on:
     branch: master
