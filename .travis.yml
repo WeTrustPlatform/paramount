@@ -1,0 +1,10 @@
+language: node_js
+cache:
+  directories:
+    - ~/.npm
+node_js:
+  - '10'
+  - '9'
+  - '8'
+after_success:
+  - npm run travis-deploy-once "npm run semantic-release"

@@ -1,6 +1,6 @@
 {
   "name": "paramount-ui",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "React UI Components Library By WeTrust",
   "main": "commonjs/index.js",
   "module": "esm/index.js",
@@ -25,7 +25,9 @@
     "fix": "yarn fix:prettier && yarn fix:lint",
     "fix:lint": "tslint --project ./tsconfig.json \"./src/**/*.{ts,tsx}\"",
     "fix:prettier": "prettier \"./src/**/*.{ts,tsx}\" --write",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
   },
   "contributors": [
     "Vu Hoang Minh (http://github.com/minheq)"
@@ -58,7 +60,9 @@
     "tslint": "5.11.0",
     "tslint-sonarts": "1.8.0",
     "typescript": "3.1.5",
-    "webpack-merge": "4.1.4"
+    "webpack-merge": "4.1.4",
+    "travis-deploy-once": "^5.0.9",
+    "semantic-release": "^15.12.3"
   },
   "prettier": {
     "semi": true,
@@ -75,5 +79,9 @@
       "yarn fix",
       "git add"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WeTrustPlatform/paramount.git"
   }
 }
