@@ -15,8 +15,6 @@ export default {
   modifyBundlerConfig: config => {
     return merge(config, extensionsResolvers);
   },
-  // temporary docs source
-  dest: '/docs',
   themeConfig: {
     showPlaygroundEditor: true,
   },
