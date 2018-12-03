@@ -1,11 +1,6 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import {
-  ButtonAppearance,
-  ButtonColor,
-  ButtonSize,
-  IButtonVariables,
-} from '../component-variables/buttonVariables';
+import { ButtonAppearance, ButtonColor, ButtonSize, IButtonVariables } from '../component-variables/buttonVariables';
 
 export interface IButtonStyles {
   buttonStyle: ViewStyle;
@@ -42,7 +37,7 @@ export const getButtonStyles = (
     color: textColor,
     focusColor,
     loadingBackgroundColor,
-    ...buttonColors
+    ...buttonStyle
   } = appearances[appearance][color];
 
   const { fontSize, ...shapeStyles } = sizes[size];
@@ -58,7 +53,7 @@ export const getButtonStyles = (
         : {
             ...shapeStyles,
             ...baseStyles,
-            ...buttonColors,
+            ...buttonStyle,
             ...(isLoading ? { backgroundColor: loadingBackgroundColor } : {}),
           }),
       ...(isInline

@@ -61,8 +61,8 @@ const colors: IColors = {
     muted: '#EDF0F2',
 
     // Brand colors
-    primary: palette.teal.base,
-    secondary: palette.orange.base,
+    primary: palette.teal.darkest,
+    secondary: palette.orange.darkest,
 
     // Intent.
     danger: palette.red.darkest,
