@@ -1,6 +1,6 @@
 {
   "name": "paramount-ui",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "description": "React UI Components Library By WeTrust",
   "main": "commonjs/index.js",
   "module": "esm/index.js",
@@ -81,8 +81,12 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "yarn fix",
+    "*.{js,jsx,ts,tsx,md,mdx}": [
+      "yarn fix:prettier",
+      "git add"
+    ],
+    "*.{ts,tsx}": [
+      "yarn fix:lint",
       "git add"
     ]
   },
