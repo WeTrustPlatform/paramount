@@ -1,6 +1,11 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { ButtonAppearance, ButtonColor, ButtonSize, IButtonVariables } from '../component-variables/buttonVariables';
+import {
+  ButtonAppearance,
+  ButtonColor,
+  ButtonSize,
+  IButtonVariables,
+} from '../component-variables/buttonVariables';
 
 export interface IButtonStyles {
   buttonStyle: ViewStyle;
