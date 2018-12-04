@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/WeTrustPlatform/paramount/compare/v1.1.4...v1.1.5) (2018-12-04)
+
+
+### Bug Fixes
+
+* export all components and their props ([3901061](https://github.com/WeTrustPlatform/paramount/commit/3901061))
+
 ## [1.1.4](https://github.com/WeTrustPlatform/paramount/compare/v1.1.3...v1.1.4) (2018-12-04)
 
 
