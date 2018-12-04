@@ -7,12 +7,15 @@ import Modal from './Modal';
 // TODO: Import from react-native when react-native-web implementation is ready
 
 export interface IDialogProps {
-  isVisible?: boolean;
   children: React.ReactNode;
   theme: ITheme;
+  /** To show dialog or not */
+  isVisible?: boolean;
   /** Called when clicking on overlay or pressing Esc */
   onClose?: () => void;
+  /** In ConfirmDialog, you can pass null to render nothing. If it is undefined, it will use default value */
   header?: React.ReactNode;
+  /** In ConfirmDialog, you can pass null to render nothing. If it is undefined, it will use default value */
   footer?: React.ReactNode;
 }
 
@@ -29,7 +32,7 @@ const DialogWithoutTheme = (props: IDialogProps) => {
   } = theme.getDialogStyles();
 
   return (
-    <Modal visible={isVisible} transparent>
+    <Modal visible={isVisible} transparent onDismiss={onClose}>
       <View style={modalContainerStyle}>
         <View style={containerStyle}>
           {header}

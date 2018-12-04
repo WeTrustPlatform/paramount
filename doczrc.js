@@ -1,19 +1,32 @@
 import { reactNative } from 'docz-plugin-react-native';
-import merge from 'webpack-merge';
 
-const extensionsResolvers = {
-  resolve: {
-    extensions: ['.web.js', '.web.ts', '.web.tsx', '.js', '.ts', '.tsx'],
-  },
-};
+const overridingExtensions = [
+  '.web.js',
+  '.web.jsx',
+  '.web.ts',
+  '.web.tsx',
+  '.js',
+  '.jsx',
+  '.ts',
+  '.tsx',
+  '.mdx',
+  '.json',
+  '.mjs',
+];
 
 export default {
   title: 'Paramount',
   typescript: true,
   plugins: [reactNative()],
   hashRouter: true,
-  modifyBundlerConfig: config => {
-    return merge(config, extensionsResolvers);
+  modifyBundlerConfig: defaultConfig => {
+    return {
+      ...defaultConfig,
+      resolve: {
+        ...defaultConfig.resolve,
+        extensions: overridingExtensions,
+      },
+    };
   },
   themeConfig: {
     showPlaygroundEditor: true,

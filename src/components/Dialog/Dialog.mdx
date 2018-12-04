@@ -7,19 +7,25 @@ import { Toggle } from 'react-powerplug';
 import { Playground, PropsTable } from 'docz';
 
 import { Dialog } from '.';
+import { ConfirmDialog } from '.';
 import { Button } from '../Button';
 import { Box } from '../Layout';
 import { Text } from '../Typography';
 
-## Usage
+## Dialog
 
-### Go
+Dialog has no predefined styling and handlers. The content, header and footer is completely in your control. For a more out-of-box usage, you can use `ConfirmDialog` below
 
 <Playground>
   <Toggle initial={false}>
     {({ on, toggle }) => (
       <Box>
-        <Dialog isVisible={on} onClose={toggle}>
+        <Dialog
+          header={<Text>Header</Text>}
+          footer={<Text>Footer</Text>}
+          isVisible={on}
+          onClose={toggle}
+        >
           <Box height={1800}>
             <Text>Put any content in the dialog</Text>
           </Box>
@@ -30,6 +36,56 @@ import { Text } from '../Typography';
   </Toggle>
 </Playground>
 
-## Props
+## Dialog Props
 
 <PropsTable of={Dialog} />
+
+## ConfirmDialog
+
+Opposed to `Dialog` (above), `ConfirmDialog` has predefined styling and handlers; however, it still can pass props from `Dialog`
+
+<Playground>
+  <Toggle initial={false}>
+    {({ on, toggle }) => (
+      <Box>
+        <ConfirmDialog
+          title="Confirm dialog"
+          isVisible={on}
+          onClose={toggle}
+          cancelLabel="Cancel label"
+          confirmLabel="Confirm label"
+        >
+          <Text>Add custom content here</Text>
+        </ConfirmDialog>
+        <Button onPress={toggle}>Open dialog</Button>
+      </Box>
+    )}
+  </Toggle>
+</Playground>
+
+## ConfirmDialog without header
+
+Opposed to `Dialog` (above), `ConfirmDialog` has predefined styling and handlers; however, it still can pass props from `Dialog`
+
+<Playground>
+  <Toggle initial={false}>
+    {({ on, toggle }) => (
+      <Box>
+        <ConfirmDialog
+          header={null}
+          isVisible={on}
+          onClose={toggle}
+          cancelLabel="Cancel label"
+          confirmLabel="Confirm label"
+        >
+          <Text>Add custom content here</Text>
+        </ConfirmDialog>
+        <Button onPress={toggle}>Open dialog</Button>
+      </Box>
+    )}
+  </Toggle>
+</Playground>
+
+## ConfirmDialog Props
+
+<PropsTable of={ConfirmDialog} />

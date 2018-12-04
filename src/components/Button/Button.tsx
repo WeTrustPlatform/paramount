@@ -12,9 +12,6 @@ import { LoadingDots } from '../Loading';
 import { Text } from '../Typography';
 
 export interface IButtonProps {
-  /**
-   * Text of the button
-   */
   children?: string;
 
   /**

@@ -6,7 +6,7 @@ export interface IDialogVariables {
   body: ViewStyle;
   container: ViewStyle;
   modalContainer: ViewStyle;
-  overlay: ViewStyle;
+  overlay: ViewStyle & { cursor: string };
 }
 
 export const getDialogVariables = (
@@ -16,15 +16,11 @@ export const getDialogVariables = (
     body: {
       maxHeight: 400,
       overflow: 'scroll',
-      paddingBottom: 16,
-      paddingLeft: 16,
-      paddingRight: 16,
-      paddingTop: 16,
     },
     container: {
       backgroundColor: 'white',
       elevation: 1,
-      marginTop: 200,
+      marginTop: 300,
       maxWidth: 600,
       minWidth: 280,
       position: 'relative',
@@ -39,6 +35,7 @@ export const getDialogVariables = (
     overlay: {
       backgroundColor: 'rgba(0,0,0,0.3)',
       bottom: 0,
+      cursor: 'auto',
       height: '100%',
       left: 0,
       position: 'absolute',
