@@ -15,19 +15,20 @@
     "react-native-web"
   ],
   "scripts": {
-    "dev": "docz dev",
-    "test": "echo \"jest\"",
     "build": "yarn build:es2015 && yarn build:esm && yarn build:cjs",
     "build:docs": "docz build",
     "build:es2015": "tsc --module es2015 --target es2015 --outDir dist/es2015",
     "build:esm": "tsc --module es2015 --target es5 --outDir dist/esm",
     "build:cjs": "tsc --module commonjs --target es5 --outDir dist/cjs",
+    "clean": "rimraf dist",
+    "dev": "docz dev",
     "fix": "yarn fix:prettier && yarn fix:lint",
     "fix:lint": "tslint --project ./tsconfig.json \"./src/**/*.{ts,tsx}\"",
     "fix:prettier": "prettier \"./src/**/*.{ts,tsx}\" --write",
-    "clean": "rimraf dist",
-    "travis-deploy-once": "travis-deploy-once",
-    "semantic-release": "semantic-release"
+    "prepublishOnly": "yarn build",
+    "semantic-release": "semantic-release",
+    "test": "echo \"jest\"",
+    "travis-deploy-once": "travis-deploy-once"
   },
   "contributors": [
     "Vu Hoang Minh (http://github.com/minheq)"
