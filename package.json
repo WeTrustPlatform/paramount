@@ -26,7 +26,6 @@
     "fix": "yarn fix:prettier && yarn fix:lint",
     "fix:lint": "tslint --project ./tsconfig.json \"./src/**/*.{ts,tsx}\"",
     "fix:prettier": "prettier \"./src/**/*.{ts,tsx}\" --write",
-    "prepublishOnly": "yarn build",
     "semantic-release": "semantic-release",
     "test": "echo \"jest\"",
     "travis-deploy-once": "travis-deploy-once"
