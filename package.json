@@ -38,19 +38,19 @@
     "react-art": "16.6.3",
     "react-dom": "16.6.3",
     "react-icons": "3.2.2",
-    "react-native-web": "0.9.5"
+    "react-native-web": "0.9.8"
   },
   "devDependencies": {
-    "@babel/core": "7.1.6",
+    "@babel/core": "7.2.0",
     "@semantic-release/changelog": "3.0.1",
     "@semantic-release/commit-analyzer": "6.1.0",
     "@semantic-release/git": "7.0.5",
     "@semantic-release/github": "5.2.5",
     "@semantic-release/npm": "5.1.1",
     "@semantic-release/release-notes-generator": "7.1.4",
-    "@types/react": "16.7.3",
-    "@types/react-dom": "16.0.9",
-    "@types/react-native": "0.57.7",
+    "@types/react": "16.7.12",
+    "@types/react-dom": "16.0.11",
+    "@types/react-native": "0.57.17",
     "docz": "0.12.13",
     "docz-plugin-react-native": "0.11.2",
     "husky": "1.2.0",
@@ -64,10 +64,10 @@
     "semantic-release": "15.12.3",
     "travis-deploy-once": "5.0.9",
     "ts-jest": "23.10.5",
-    "ts-loader": "5.3.0",
+    "ts-loader": "5.3.1",
     "tslint": "5.11.0",
     "tslint-sonarts": "1.8.0",
-    "typescript": "3.1.5",
+    "typescript": "3.2.1",
     "webpack-merge": "4.1.4"
   },
   "prettier": {

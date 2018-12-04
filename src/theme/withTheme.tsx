@@ -28,7 +28,10 @@ const withTheme = <TWrappedComponentProps extends any>(
     public render() {
       return (
         <ThemeConsumer>
-          {theme => <WrappedComponent theme={theme} {...this.props} />}
+          {theme => {
+            // @ts-ignore TODO: https://github.com/Microsoft/TypeScript/issues/28748
+            return <WrappedComponent theme={theme} {...this.props} />;
+          }}
         </ThemeConsumer>
       );
     }

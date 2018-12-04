@@ -27,20 +27,24 @@ class Modal extends React.Component<ModalProps> {
 
     if (!visible) return null;
 
-    return ReactDOM.createPortal(
-      <div
-        style={{
-          backgroundColor: transparent ? 'transparent' : 'white',
-          bottom: 0,
-          left: 0,
-          position: 'fixed',
-          right: 0,
-          top: 0,
-        }}
-      >
-        {this.props.children}
-      </div>,
-      this.el,
+    return (
+      <div>
+        {ReactDOM.createPortal(
+          <div
+            style={{
+              backgroundColor: transparent ? 'transparent' : 'white',
+              bottom: 0,
+              left: 0,
+              position: 'fixed',
+              right: 0,
+              top: 0,
+            }}
+          >
+            {this.props.children}
+          </div>,
+          this.el,
+        )}
+      </div>
     );
   }
 }

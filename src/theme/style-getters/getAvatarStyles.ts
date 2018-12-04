@@ -5,9 +5,11 @@ import { Omit } from '../../types/utils';
 import { IAvatarVariables } from '../component-variables/avatarVariables';
 import { IFillColors, IFills } from '../ThemeInterface';
 
+export type AvatarColor = 'automatic' | keyof IFillColors;
+
 export interface IAvatarStylesParams {
   name?: string;
-  color: 'automatic' | keyof IFillColors;
+  color: AvatarColor;
   hashValue?: string;
   isSolid: boolean;
   size: number;
@@ -56,7 +58,7 @@ const getAvatarProps = (
     hashValue,
   }: {
     isSolid?: boolean;
-    color: 'automatic' | keyof IFillColors;
+    color: AvatarColor;
     hashValue: number;
   },
 ) => {
@@ -75,7 +77,7 @@ export const getAvatarStyles = (
   avatarVariables: IAvatarVariables,
 ): GetAvatarStyles => ({
   name,
-  color = 'automatic',
+  color,
   hashValue,
   isSolid,
   size = 24,
