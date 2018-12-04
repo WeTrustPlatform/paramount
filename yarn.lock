@@ -4208,7 +4208,7 @@ docz-core@^0.11.2:
     ws "^6.0.0"
     yargs "^12.0.1"
 
-docz-core@^0.12.13, docz-core@^0.12.14:
+docz-core@^0.12.14:
   version "0.12.14"
   resolved "https://registry.yarnpkg.com/docz-core/-/docz-core-0.12.14.tgz#4c73403251c7dadc89a6437ca3ca2d0eeb02d4ef"
   integrity sha512-sS5b8QZmD+9EWdJI3DC++/6ksVYONMXVfLtcdMy+MlcI9SpbfN0W6xa0xnmbB20GmN6FsYR9c3Z/afdsBSLjKw==
@@ -4289,7 +4289,7 @@ docz-plugin-react-native@0.11.2:
     react-art "^16.5.0"
     react-native-web "^0.8.9"
 
-docz-theme-default@^0.12.13, docz-theme-default@^0.12.14:
+docz-theme-default@^0.12.14:
   version "0.12.14"
   resolved "https://registry.yarnpkg.com/docz-theme-default/-/docz-theme-default-0.12.14.tgz#9a14e0ad64e470e6faa9c3f4508de1c43bcd086f"
   integrity sha512-C2lD/YH8GLHmu+AaBBdM1eIxNQQkrSS86dGhJVOj7wiNwQVe4kHYk/zc6zl4bMnwYCqLbXwyq4MVTPPcYZ0efw==
@@ -4347,33 +4347,7 @@ docz-utils@^0.12.14:
     unist-util-is "^2.1.2"
     unist-util-visit "^1.4.0"
 
-docz@0.12.13:
-  version "0.12.13"
-  resolved "https://registry.yarnpkg.com/docz/-/docz-0.12.13.tgz#6edd9bf2356fba267968bdd38539979986bf0422"
-  integrity sha512-oXANdeTtt1YGkfDHDFKNF3JDg31Fb6Y3O+/nYawKMhiQ9ma5PbbJgor9s9m/2bi+JcpEm3yeQX5zyxxTuA3LjQ==
-  dependencies:
-    "@mdx-js/tag" "^0.16.1"
-    "@sindresorhus/slugify" "^0.6.0"
-    array-sort "^1.0.0"
-    callbag-observe "^1.0.0"
-    callbag-subject "^1.0.2"
-    capitalize "^2.0.0"
-    deepmerge "^2.2.1"
-    docz-core "^0.12.13"
-    docz-theme-default "^0.12.13"
-    fast-deep-equal "^2.0.1"
-    lodash "^4.17.11"
-    prop-types "^15.6.2"
-    react "^16.6.3"
-    react-dom "^16.6.3"
-    react-imported-component "^5.2.3"
-    react-router "^4.3.1"
-    react-router-dom "^4.3.1"
-    react-router-hash-link "^1.2.1"
-    ulid "^2.3.0"
-    yargs "^12.0.5"
-
-docz@^0.12.14:
+docz@0.12.14, docz@^0.12.14:
   version "0.12.14"
   resolved "https://registry.yarnpkg.com/docz/-/docz-0.12.14.tgz#36c9a99c24125b4759a7ba82ae6460ca2346885e"
   integrity sha512-+jHBGv4hqwFo+PolP8DFDLuiVdKfDppqTTuOvVzEDXu9aAZacisEu86B9zoY1D37gspUgWitD1XxHJ1QK0/vfw==
