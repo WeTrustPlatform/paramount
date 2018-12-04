@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/WeTrustPlatform/paramount/compare/v1.1.3...v1.1.4) (2018-12-04)
+
+
+### Bug Fixes
+
+* **theme:** export all theme components ([d37cd45](https://github.com/WeTrustPlatform/paramount/commit/d37cd45))
+
 ## [1.1.3](https://github.com/WeTrustPlatform/paramount/compare/v1.1.2...v1.1.3) (2018-12-04)
 
 
