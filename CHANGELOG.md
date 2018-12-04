@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/WeTrustPlatform/paramount/compare/v1.1.1...v1.1.2) (2018-12-04)
+
+
+### Bug Fixes
+
+* **npm:** publish with dist 2 ([1422256](https://github.com/WeTrustPlatform/paramount/commit/1422256))
+
 ## [1.1.1](https://github.com/WeTrustPlatform/paramount/compare/v1.1.0...v1.1.1) (2018-12-04)
 
 
