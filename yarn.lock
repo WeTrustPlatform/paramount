@@ -3874,7 +3874,7 @@ debug@^4.0.0, debug@^4.0.1, debug@^4.1.0:
   dependencies:
     ms "^2.1.1"
 
-debuglog@*, debuglog@^1.0.1:
+debuglog@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debuglog/-/debuglog-1.0.1.tgz#aa24ffb9ac3df9a2351837cfb2d279360cd78492"
   integrity sha1-qiT/uaw9+aI1GDfPstJ5NgzXhJI=
@@ -4216,7 +4216,7 @@ docz-core@^0.11.2:
     ws "^6.0.0"
     yargs "^12.0.1"
 
-docz-core@^0.12.13, docz-core@^0.12.14:
+docz-core@^0.12.14:
   version "0.12.14"
   resolved "https://registry.yarnpkg.com/docz-core/-/docz-core-0.12.14.tgz#4c73403251c7dadc89a6437ca3ca2d0eeb02d4ef"
   integrity sha512-sS5b8QZmD+9EWdJI3DC++/6ksVYONMXVfLtcdMy+MlcI9SpbfN0W6xa0xnmbB20GmN6FsYR9c3Z/afdsBSLjKw==
@@ -4297,7 +4297,7 @@ docz-plugin-react-native@0.11.2:
     react-art "^16.5.0"
     react-native-web "^0.8.9"
 
-docz-theme-default@^0.12.13, docz-theme-default@^0.12.14:
+docz-theme-default@^0.12.14:
   version "0.12.14"
   resolved "https://registry.yarnpkg.com/docz-theme-default/-/docz-theme-default-0.12.14.tgz#9a14e0ad64e470e6faa9c3f4508de1c43bcd086f"
   integrity sha512-C2lD/YH8GLHmu+AaBBdM1eIxNQQkrSS86dGhJVOj7wiNwQVe4kHYk/zc6zl4bMnwYCqLbXwyq4MVTPPcYZ0efw==
@@ -4355,33 +4355,7 @@ docz-utils@^0.12.14:
     unist-util-is "^2.1.2"
     unist-util-visit "^1.4.0"
 
-docz@0.12.13:
-  version "0.12.13"
-  resolved "https://registry.yarnpkg.com/docz/-/docz-0.12.13.tgz#6edd9bf2356fba267968bdd38539979986bf0422"
-  integrity sha512-oXANdeTtt1YGkfDHDFKNF3JDg31Fb6Y3O+/nYawKMhiQ9ma5PbbJgor9s9m/2bi+JcpEm3yeQX5zyxxTuA3LjQ==
-  dependencies:
-    "@mdx-js/tag" "^0.16.1"
-    "@sindresorhus/slugify" "^0.6.0"
-    array-sort "^1.0.0"
-    callbag-observe "^1.0.0"
-    callbag-subject "^1.0.2"
-    capitalize "^2.0.0"
-    deepmerge "^2.2.1"
-    docz-core "^0.12.13"
-    docz-theme-default "^0.12.13"
-    fast-deep-equal "^2.0.1"
-    lodash "^4.17.11"
-    prop-types "^15.6.2"
-    react "^16.6.3"
-    react-dom "^16.6.3"
-    react-imported-component "^5.2.3"
-    react-router "^4.3.1"
-    react-router-dom "^4.3.1"
-    react-router-hash-link "^1.2.1"
-    ulid "^2.3.0"
-    yargs "^12.0.5"
-
-docz@^0.12.14:
+docz@0.12.14, docz@^0.12.14:
   version "0.12.14"
   resolved "https://registry.yarnpkg.com/docz/-/docz-0.12.14.tgz#36c9a99c24125b4759a7ba82ae6460ca2346885e"
   integrity sha512-+jHBGv4hqwFo+PolP8DFDLuiVdKfDppqTTuOvVzEDXu9aAZacisEu86B9zoY1D37gspUgWitD1XxHJ1QK0/vfw==
@@ -6158,7 +6132,7 @@ import-local@^1.0.0:
     pkg-dir "^2.0.0"
     resolve-cwd "^2.0.0"
 
-imurmurhash@*, imurmurhash@^0.1.4:
+imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
   integrity sha1-khi5srkoojixPcT7a21XbyMUU+o=
@@ -7741,11 +7715,6 @@ lockfile@^1.0.4:
   dependencies:
     signal-exit "^3.0.2"
 
-lodash._baseindexof@*:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/lodash._baseindexof/-/lodash._baseindexof-3.1.0.tgz#fe52b53a1c6761e42618d654e4a25789ed61822c"
-  integrity sha1-/lK1OhxnYeQmGNZU5KJXie1hgiw=
-
 lodash._baseuniq@~4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash._baseuniq/-/lodash._baseuniq-4.6.0.tgz#0ebb44e456814af7905c6212fa2c9b2d51b841e8"
@@ -7754,29 +7723,12 @@ lodash._baseuniq@~4.6.0:
     lodash._createset "~4.0.0"
     lodash._root "~3.0.0"
 
-lodash._bindcallback@*:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/lodash._bindcallback/-/lodash._bindcallback-3.0.1.tgz#e531c27644cf8b57a99e17ed95b35c748789392e"
-  integrity sha1-5THCdkTPi1epnhftlbNcdIeJOS4=
-
-lodash._cacheindexof@*:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/lodash._cacheindexof/-/lodash._cacheindexof-3.0.2.tgz#3dc69ac82498d2ee5e3ce56091bafd2adc7bde92"
-  integrity sha1-PcaayCSY0u5ePOVgkbr9Ktx73pI=
-
-lodash._createcache@*:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/lodash._createcache/-/lodash._createcache-3.1.2.tgz#56d6a064017625e79ebca6b8018e17440bdcf093"
-  integrity sha1-VtagZAF2JeeevKa4AY4XRAvc8JM=
-  dependencies:
-    lodash._getnative "^3.0.0"
-
 lodash._createset@~4.0.0:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/lodash._createset/-/lodash._createset-4.0.3.tgz#0f4659fbb09d75194fa9e2b88a6644d363c9fe26"
   integrity sha1-D0ZZ+7CddRlPqeK4imZE02PJ/iY=
 
-lodash._getnative@*, lodash._getnative@^3.0.0:
+lodash._getnative@^3.0.0:
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
   integrity sha1-VwvH3t5G1hzc3mh9ZdPuy6o6r/U=
@@ -7869,11 +7821,6 @@ lodash.pick@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.pick/-/lodash.pick-4.4.0.tgz#52f05610fff9ded422611441ed1fc123a03001b3"
   integrity sha1-UvBWEP/53tQiYRRB7R/BI6AwAbM=
-
-lodash.restparam@*:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/lodash.restparam/-/lodash.restparam-3.6.1.tgz#936a4e309ef330a7645ed4145986c85ae5b20805"
-  integrity sha1-k2pOMJ7zMKdkXtQUWYbIWuWyCAU=
 
 lodash.set@^4.3.2:
   version "4.3.2"
@@ -10670,7 +10617,7 @@ readable-stream@~1.1.10:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-readdir-scoped-modules@*, readdir-scoped-modules@^1.0.0:
+readdir-scoped-modules@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/readdir-scoped-modules/-/readdir-scoped-modules-1.0.2.tgz#9fafa37d286be5d92cbaebdee030dc9b5f406747"
   integrity sha1-n6+jfShr5dksuuve4DDcm19AZ0c=
