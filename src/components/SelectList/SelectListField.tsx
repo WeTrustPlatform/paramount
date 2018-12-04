@@ -1,18 +1,22 @@
 import * as React from 'react';
 
+import { withTheme } from '../../theme';
 import FormField, { IFormFieldProps } from '../FormField';
 import SelectList, { ISelectListProps } from './SelectList';
 
-export default class SelectField extends React.Component<
-  IFormFieldProps & ISelectListProps
-> {
-  public render() {
-    const { label, error, description, ...passThroughProps } = this.props;
+export interface ISelectListFieldProps
+  extends IFormFieldProps,
+    ISelectListProps {}
 
-    return (
-      <FormField label={label} error={error} description={description}>
-        <SelectList {...passThroughProps} />
-      </FormField>
-    );
-  }
-}
+const SelectListFieldWithoutTheme = (props: ISelectListFieldProps) => {
+  const { label, error, description, ...passThroughProps } = props;
+
+  return (
+    <FormField label={label} error={error} description={description}>
+      <SelectList {...passThroughProps} />
+    </FormField>
+  );
+};
+
+export const SelectListField = withTheme(SelectListFieldWithoutTheme);
+export default SelectListField;

@@ -11,7 +11,7 @@ import withTheme from '../../theme/withTheme';
 import { TextAlign } from './types';
 
 // @ts-ignore: need to override for web purposes
-export interface ITextProps extends TextProps {
+export interface IParagraphProps extends TextProps {
   children: React.ReactNode;
   color?: TextColor;
   size?: ParagraphSize;
@@ -24,7 +24,7 @@ export interface ITextProps extends TextProps {
   };
 }
 
-const ParagraphWithoutTheme = (props: ITextProps) => {
+const ParagraphWithoutTheme = (props: IParagraphProps) => {
   const {
     children,
     color = 'default',

@@ -4,9 +4,11 @@ import { withTheme } from '../../theme';
 import FormField, { IFormFieldProps } from '../FormField';
 import TextInput, { ITextInputProps } from './TextInput';
 
-const TextInputFieldWithoutTheme = (
-  props: IFormFieldProps & ITextInputProps,
-) => {
+export interface ITextInputFieldProps
+  extends IFormFieldProps,
+    ITextInputProps {}
+
+const TextInputFieldWithoutTheme = (props: ITextInputFieldProps) => {
   const { label, error, description, ...passThroughProps } = props;
 
   return (

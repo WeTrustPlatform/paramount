@@ -1,4 +1,9 @@
-export { default } from './SelectList';
-export { default as SelectList } from './SelectList';
-export { default as SelectListItem } from './SelectListItem';
-export { default as SelectListField } from './SelectListField';
+export { default as SelectList, ISelectListProps } from './SelectList';
+export {
+  default as SelectListItem,
+  ISelectListItemProps,
+} from './SelectListItem';
+export {
+  default as SelectListField,
+  ISelectListFieldProps,
+} from './SelectListField';

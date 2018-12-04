@@ -1,3 +1,4 @@
-export { default } from './LabeledCheckbox';
-export { default as Checkbox } from './LabeledCheckbox';
-export { default as LabeledCheckbox } from './LabeledCheckbox';
+export {
+  default as Checkbox,
+  ILabeledCheckboxProps as ICheckboxProps,
+} from './LabeledCheckbox';
