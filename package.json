@@ -52,7 +52,7 @@
     "@types/react": "16.7.13",
     "@types/react-dom": "16.0.11",
     "@types/react-native": "0.57.17",
-    "docz": "0.12.14",
+    "docz": "0.12.15",
     "docz-plugin-react-native": "0.11.2",
     "husky": "1.2.0",
     "jest": "23.6.0",
