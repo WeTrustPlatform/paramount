@@ -1,1 +1,1 @@
-export { default, IFormFieldProps } from './FormField';
+export { default as FormField, IFormFieldProps } from './FormField';
