@@ -1,3 +1,11 @@
+## [1.1.6](https://github.com/WeTrustPlatform/paramount/compare/v1.1.5...v1.1.6) (2018-12-05)
+
+
+### Bug Fixes
+
+* export all components ([9d682cd](https://github.com/WeTrustPlatform/paramount/commit/9d682cd))
+* fix incorrect imports of FormField ([6428bbd](https://github.com/WeTrustPlatform/paramount/commit/6428bbd))
+
 ## [1.1.5](https://github.com/WeTrustPlatform/paramount/compare/v1.1.4...v1.1.5) (2018-12-04)
 
 
