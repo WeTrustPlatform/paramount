@@ -2,7 +2,7 @@ import * as React from 'react';
 import { PickerProps } from 'react-native';
 
 import { withTheme } from '../../theme';
-import FormField, { IFormFieldProps } from '../FormField';
+import { FormField, IFormFieldProps } from '../FormField';
 import Picker from './Picker';
 
 export interface IPickerFieldProps extends IFormFieldProps, PickerProps {}
