@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { withTheme } from '../../theme';
-import FormField, { IFormFieldProps } from '../FormField';
+import { FormField, IFormFieldProps } from '../FormField';
 import SelectList, { ISelectListProps } from './SelectList';
 
 export interface ISelectListFieldProps
