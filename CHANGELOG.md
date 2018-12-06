@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/WeTrustPlatform/paramount/compare/v1.1.6...v1.1.7) (2018-12-06)
+
+
+### Bug Fixes
+
+* colors for overlay and list item wrapping ([6edf1b8](https://github.com/WeTrustPlatform/paramount/commit/6edf1b8))
+
 ## [1.1.6](https://github.com/WeTrustPlatform/paramount/compare/v1.1.5...v1.1.6) (2018-12-05)
 
 
