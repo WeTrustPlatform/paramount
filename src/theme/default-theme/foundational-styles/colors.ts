@@ -12,7 +12,7 @@ const colors: IColors = {
    * Available on Pane as `<Pane background="tint1" />`
    */
   background: {
-    overlay: palette.neutral.base,
+    overlay: 'rgba(0,0,0,0.3)',
     plain: 'white',
     disabled: palette.neutral.light,
     tint1: palette.neutral.lightest,

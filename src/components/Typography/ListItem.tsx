@@ -38,9 +38,9 @@ const ListItemWithoutTheme = (props: ITextProps & IListItemProps) => {
       alignItems="center"
       marginY={1}
     >
-      {mark}
-      <GridBox paddingLeft={paddingLeft}>
-        <Text size={size} {...textProps} />
+      <GridBox>{mark}</GridBox>
+      <GridBox width="100%" paddingLeft={paddingLeft}>
+        <Text isInline size={size} {...textProps} />
       </GridBox>
     </GridBox>
   );
