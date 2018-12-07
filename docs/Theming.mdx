@@ -1,0 +1,128 @@
+---
+name: Customize Theme
+order: 90
+---
+
+# Customize Theme
+
+Paramount uses three-tier theming system. It means you can customize the styles at three layers, with each level being more granular
+
+## 1. Use ThemeProvider
+
+First and foremost, in order to theme the library you need to use React Context's Provider
+
+```
+import { ThemeProvider, createTheme } from 'paramount-ui'
+
+const theme = createTheme()
+
+// in the outmost component insert the provider and pass Theme Object as value
+<ThemeProvider value={theme}>
+  ...
+</ThemeProvider>
+
+```
+
+## 2. Theme Object
+
+Theme object has 3 parts. [See ITheme interface](theme/ThemeInterface.ts). You can choose to customize whichever part you want
+
+```
+const theme = createTheme(themeVariables, componentVariables)
+
+// or
+
+const theme = {
+  themeVariables: customThemeVariables,
+  componentVariables: customComponentVariables,
+  ...styleGetters
+}
+```
+
+### Theme variables (Tier 1)
+
+Those are variables that define overall look of the design system. These high level variables should be enough to provide basic style changes such as color, font sizes, control paddings/heights etc. [See IThemeVariables interface](theme/ThemeInterface.ts)
+
+```
+const themeVariables = {
+  ...defaultThemeVariables,
+  colors: {
+    background: { ... },
+    border: { ... },
+    icon: { ... },
+    intent: { ... },
+    text: { ... },
+    brand: { ... },
+  }
+}
+```
+
+### Component variables (Tier 2)
+
+Those are variables applied to individual components. They inherit some variables from tier-1 theme variables but can be overriden specifically for each component. These variables usually provide styling for different component states, look etc.
+
+```
+
+const buttonVariables = {
+  appearances: {
+    minimal: {
+      default: {
+        backgroundColor: 'blue',
+        ...
+      },
+      danger: { ... },
+      primary: { ... },
+      secondary: { ... },
+    },
+    primary: {
+      default: { ... },
+      danger: { ... },
+      primary: { ... },
+      secondary: { ... },
+    },
+    outline: {
+      default: { ... },
+      danger: { ... },
+      primary: { ... },
+      secondary: { ... }
+    },
+  },
+  disabled: { ... },
+  sizes: {
+    small: { ... },
+    medium: { ... },
+    large: { ... },
+  },
+}
+
+const theme = {
+  ...createTheme(themeVariables, {
+    ...componentVariables,
+    button: buttonVariables, // <= Insert here
+  }),
+  ...styleGetters,
+}
+```
+
+### Component style getters (Tier 3)
+
+These are functions that return style for components. This allows for complete control over how a component looks depending on given props. They inherit variables from component variables.
+
+```
+const getButtonStyles = buttonVariables => (appearance, color, ...componentProps) => {
+  return {
+    buttonStyle: {
+      backgroundColor: buttonVariables[appearance],
+      boxShadow: '1 1 1 1 blue'
+    },
+    focusColor: { ... },
+    textStyle: { ... },
+  }
+}
+
+const theme = {
+  ...createTheme(themeVariables, componentVariables),
+  ...styleGetters,
+  getButtonStyles, // <= Insert here
+}
+```

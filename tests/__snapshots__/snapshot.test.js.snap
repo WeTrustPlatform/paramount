@@ -11092,53 +11092,6 @@ exports[`Divider_1 1`] = `
 
 exports[`Divider_2 1`] = `<div />`;
 
-exports[`Introduction_0 1`] = `
-<ul>
-  <li>
-    <strong>
-      Cross platform.
-    </strong>
-     Components work on both React Native And React Web platforms (using 
-    <a
-      href="https://github.com/necolas/react-native-web"
-    >
-      react-native-web
-    </a>
-    )
-  </li>
-  <li>
-    <strong>
-      Fully customizable.
-    </strong>
-     You can customize 100% of the component styles so that you can adapt to your branding needs of a product.
-  </li>
-  <li>
-    <strong>
-      Mobile friendly.
-    </strong>
-     All of the components are usable and look good on mobile devices.
-  </li>
-</ul>
-`;
-
-exports[`Introduction_1 1`] = `
-<ul>
-  <li>
-    Built on TypeScript (typings!)
-  </li>
-  <li>
-    Tree-shaking friendly (ESM)
-  </li>
-  <li>
-    <a
-      href="https://twitter.com/necolas/status/1058949412284592128"
-    >
-      Styles in JavaScript
-    </a>
-  </li>
-</ul>
-`;
-
 exports[`Picker_0 1`] = `
 <h3>
   Default
