@@ -1,3 +1,10 @@
+## [1.1.9](https://github.com/WeTrustPlatform/paramount/compare/v1.1.8...v1.1.9) (2018-12-07)
+
+
+### Bug Fixes
+
+* color of close button ([acb65f9](https://github.com/WeTrustPlatform/paramount/commit/acb65f9))
+
 ## [1.1.8](https://github.com/WeTrustPlatform/paramount/compare/v1.1.7...v1.1.8) (2018-12-06)
 
 
