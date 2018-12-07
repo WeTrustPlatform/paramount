@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FiX } from 'react-icons/fi';
 import { TouchableOpacity } from 'react-native';
 
-import { withTheme } from '../../theme';
+import { ITheme, withTheme } from '../../theme';
 import { ButtonColor } from '../../theme/component-variables/buttonVariables';
 import { Button } from '../Button';
 import { GridBox } from '../Layout';
@@ -18,9 +18,14 @@ export interface IConfirmDialogHeaderProps {
   /** Title displayed in the header */
   title?: string;
   onClose?: () => void;
+  theme: ITheme;
 }
 
-const ConfirmDialogHeader = ({ title, onClose }: IConfirmDialogHeaderProps) => (
+const ConfirmDialogHeader = ({
+  title,
+  theme,
+  onClose,
+}: IConfirmDialogHeaderProps) => (
   <GridBox
     padding={2}
     flexDirection="row"
@@ -29,7 +34,7 @@ const ConfirmDialogHeader = ({ title, onClose }: IConfirmDialogHeaderProps) => (
   >
     <Heading>{title}</Heading>
     <TouchableOpacity onPress={onClose}>
-      <FiX size={24} />
+      <FiX size={24} color={theme.themeVariables.colors.text.default} />
     </TouchableOpacity>
   </GridBox>
 );
@@ -75,6 +80,7 @@ const ConfirmDialogWithoutTheme = (props: IConfirmDialogProps) => {
     onClose,
     onConfirm,
     title,
+    theme,
     ...dialogProps
   } = props;
 
@@ -83,7 +89,13 @@ const ConfirmDialogWithoutTheme = (props: IConfirmDialogProps) => {
       header={
         header === null
           ? null
-          : header || <ConfirmDialogHeader onClose={onClose} title={title} />
+          : header || (
+              <ConfirmDialogHeader
+                theme={theme}
+                onClose={onClose}
+                title={title}
+              />
+            )
       }
       footer={
         footer === null
