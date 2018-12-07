@@ -26,7 +26,7 @@ export type GridScale =
 
 const DEFAULT_GRID_POINT_MULTIPLIER = 8;
 
-export interface IGridBoxProps {
+export interface IGridBoxProps extends IBoxProps {
   theme: ITheme;
 
   gridPointMultiplier?: number;
@@ -83,7 +83,7 @@ const hasGrid = {
   paddingY: true,
 };
 
-const GridBox = (props: IBoxProps & IGridBoxProps) => {
+const GridBox = (props: IGridBoxProps) => {
   const marshalledProps = { ...props };
 
   for (const prop in props) {
