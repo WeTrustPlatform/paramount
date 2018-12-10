@@ -1432,10 +1432,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-native@0.57.17":
-  version "0.57.17"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.17.tgz#5e092f7ae04fd9538d78bb051ab3f0299591627f"
-  integrity sha512-3Ab2UYwhhlRFrzab4yD1joPu4oPNghM/9o2CWWltlvV0Uj886R/kHVpRhR2MD34f74O7JkDqza/lAWeBu/4qGw==
+"@types/react-native@0.57.18":
+  version "0.57.18"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.18.tgz#f9c18fc59a3d038ed1f9414b84a8d9ba7078fc45"
+  integrity sha512-QWLCJIzNmJNAl4n3mjjdBFGyhnQKWbZD9sKNDlfI0XmZroBo5+Muf9sn+y5uRuhWkkYUwIiEyYPe3lRmq4ZBSg==
   dependencies:
     "@types/prop-types" "*"
     "@types/react" "*"
