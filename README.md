@@ -32,3 +32,6 @@ Much of the architecture and implementation of this library are heavily inspired
 # Contributing
 
 Follow [Contributing guide](CONTRIBUTING.md)
+
+# Credits
+[![Browserstack](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/browserstack3.png)](http://www.browserstack.com/) provides cross-browser testing tools. Used to test components against different browsers including IE10
