@@ -6,7 +6,7 @@ import TextArea, { ITextAreaProps } from './TextArea';
 
 export interface ITextAreaFieldProps extends IFormFieldProps, ITextAreaProps {}
 
-const TextAreaFieldWithoutTheme = (props: ITextAreaFieldProps) => {
+const TextAreaFieldBase = (props: ITextAreaFieldProps) => {
   const { label, error, description, ...passThroughProps } = props;
 
   return (
@@ -16,5 +16,5 @@ const TextAreaFieldWithoutTheme = (props: ITextAreaFieldProps) => {
   );
 };
 
-export const TextAreaField = withTheme(TextAreaFieldWithoutTheme);
+export const TextAreaField = withTheme(TextAreaFieldBase);
 export default TextAreaField;

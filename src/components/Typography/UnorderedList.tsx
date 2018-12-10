@@ -12,9 +12,9 @@ export interface IListProps {
   children: Array<React.ReactElement<IListItemProps>>;
 }
 
-const UnorderedListWithoutTheme = (props: IListProps) => {
+const UnorderedListBase = (props: IListProps) => {
   return <List listType="ul" {...props} />;
 };
 
-export const UnorderedList = withTheme(UnorderedListWithoutTheme);
+export const UnorderedList = withTheme(UnorderedListBase);
 export default UnorderedList;

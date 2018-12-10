@@ -1,5 +1,11 @@
 import * as React from 'react';
-import { TouchableHighlight, View } from 'react-native';
+import {
+  TextStyle,
+  TouchableHighlight,
+  TouchableHighlightProps,
+  View,
+  ViewStyle,
+} from 'react-native';
 
 import { ITheme, withTheme } from '../../theme';
 import {
@@ -11,7 +17,7 @@ import { GridBox } from '../Layout';
 import { LoadingDots } from '../Loading';
 import { Text } from '../Typography';
 
-export interface IButtonProps {
+export interface IButtonProps extends TouchableHighlightProps {
   children?: string;
 
   /**
@@ -75,18 +81,34 @@ export interface IButtonProps {
   iconAfter?: React.ReactNode;
 
   /**
+   * Sets an icon at loading state.
+   * @default undefined
+   */
+  iconLoading?: React.ReactNode;
+
+  /**
    * Theme provided by ThemeProvider.
    */
   theme: ITheme;
+
+  /**
+   * Inline styles for components
+   */
+  dangerouslySetInlineStyle?: {
+    buttonStyle: ViewStyle;
+    textStyle: TextStyle;
+  };
 }
 
-const ButtonWithoutTheme = (props: IButtonProps) => {
+const ButtonBase = (props: IButtonProps) => {
   const {
     appearance = 'primary',
     children,
     color = 'default',
+    dangerouslySetInlineStyle,
     iconAfter,
     iconBefore,
+    iconLoading,
     isActive = false,
     isDisabled = false,
     isInline = false,
@@ -97,7 +119,7 @@ const ButtonWithoutTheme = (props: IButtonProps) => {
     size = 'medium',
     theme,
 
-    ...otherProps
+    ...touchableHighlightProps
   } = props;
 
   const { buttonStyle, textStyle, focusColor } = theme.getButtonStyles(
@@ -111,12 +133,16 @@ const ButtonWithoutTheme = (props: IButtonProps) => {
 
   return (
     <TouchableHighlight
+      accessible
       accessibilityRole="button"
       underlayColor={focusColor}
       disabled={!!(isDisabled || isLoading)}
       onPress={onPress}
-      style={buttonStyle}
-      {...otherProps}
+      style={{
+        ...buttonStyle,
+        ...(dangerouslySetInlineStyle && dangerouslySetInlineStyle.buttonStyle),
+      }}
+      {...touchableHighlightProps}
     >
       <View
         style={{
@@ -132,9 +158,19 @@ const ButtonWithoutTheme = (props: IButtonProps) => {
           paddingRight={iconAfter ? 1 : 0}
         >
           {isLoading ? (
-            <LoadingDots color={textStyle.color} />
+            iconLoading || <LoadingDots color={textStyle.color} />
           ) : children ? (
-            <Text style={textStyle}>{children}</Text>
+            <Text
+              dangerouslySetInlineStyle={{
+                textStyle: {
+                  ...textStyle,
+                  ...(dangerouslySetInlineStyle &&
+                    dangerouslySetInlineStyle.textStyle),
+                },
+              }}
+            >
+              {children}
+            </Text>
           ) : null}
         </GridBox>
         {iconAfter}
@@ -143,5 +179,5 @@ const ButtonWithoutTheme = (props: IButtonProps) => {
   );
 };
 
-export const Button = withTheme(ButtonWithoutTheme);
+export const Button = withTheme(ButtonBase);
 export default Button;

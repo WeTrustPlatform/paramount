@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { View } from 'react-native';
 
 import { TextSize } from '../../theme/ThemeInterface';
 import { GridBox } from '../Layout';
@@ -31,9 +32,14 @@ export const List = (props: IListProps) => {
   });
 
   return (
-    <GridBox accessibilityRole="list" margin={0} marginLeft={1} padding={0}>
-      {finalChildren}
-    </GridBox>
+    <View
+      // @ts-ignore
+      accessibilityRole="list"
+    >
+      <GridBox margin={0} marginLeft={1} padding={0}>
+        {finalChildren}
+      </GridBox>
+    </View>
   );
 };
 

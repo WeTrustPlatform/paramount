@@ -70,7 +70,7 @@ const ConfirmDialogFooter = ({
   </GridBox>
 );
 
-const ConfirmDialogWithoutTheme = (props: IConfirmDialogProps) => {
+const ConfirmDialogBase = (props: IConfirmDialogProps) => {
   const {
     cancelLabel = 'Cancel',
     children,
@@ -117,5 +117,5 @@ const ConfirmDialogWithoutTheme = (props: IConfirmDialogProps) => {
   );
 };
 
-export const ConfirmDialog = withTheme(ConfirmDialogWithoutTheme);
+export const ConfirmDialog = withTheme(ConfirmDialogBase);
 export default ConfirmDialog;

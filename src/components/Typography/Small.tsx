@@ -3,7 +3,7 @@ import * as React from 'react';
 import withTheme from '../../theme/withTheme';
 import Text, { ITextProps } from './Text';
 
-const SmallWithoutTheme = (props: ITextProps) => {
+const SmallBase = (props: ITextProps) => {
   const { children, ...textProps } = props;
 
   return (
@@ -13,5 +13,5 @@ const SmallWithoutTheme = (props: ITextProps) => {
   );
 };
 
-export const Small = withTheme(SmallWithoutTheme);
+export const Small = withTheme(SmallBase);
 export default Small;

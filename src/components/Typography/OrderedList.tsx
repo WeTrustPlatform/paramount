@@ -10,9 +10,9 @@ export interface IListProps {
   children: Array<React.ReactElement<IListItemProps>>;
 }
 
-const OrderedListWithoutTheme = (props: IListProps) => {
+const OrderedListBase = (props: IListProps) => {
   return <List listType="ol" {...props} />;
 };
 
-export const OrderedList = withTheme(OrderedListWithoutTheme);
+export const OrderedList = withTheme(OrderedListBase);
 export default OrderedList;

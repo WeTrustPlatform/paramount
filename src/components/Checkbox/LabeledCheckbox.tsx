@@ -13,7 +13,7 @@ export interface ILabeledCheckboxProps extends ICheckboxProps {
   size?: TextSize;
 }
 
-const LabeledCheckboxWithoutTheme = (props: ILabeledCheckboxProps) => {
+const LabeledCheckboxBase = (props: ILabeledCheckboxProps) => {
   const { label, position = 'right', color, size, ...restProps } = props;
 
   if (!label) {
@@ -39,5 +39,5 @@ const LabeledCheckboxWithoutTheme = (props: ILabeledCheckboxProps) => {
   );
 };
 
-export const LabeledCheckbox = withTheme(LabeledCheckboxWithoutTheme);
+export const LabeledCheckbox = withTheme(LabeledCheckboxBase);
 export default LabeledCheckbox;

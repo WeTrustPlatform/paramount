@@ -11,6 +11,7 @@ More:
 - Built on TypeScript (typings!)
 - Tree-shaking friendly (ESM)
 - Server-side rendering friendly
+- Accessibility available (You can pass accessibility props on all touchable components)
 - [Styles in JavaScript](https://twitter.com/necolas/status/1058949412284592128)
 
 # Documentation

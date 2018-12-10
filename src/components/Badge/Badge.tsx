@@ -1,10 +1,11 @@
 import * as React from 'react';
+import { TextStyle } from 'react-native';
 
 import { ITheme, withTheme } from '../../theme';
 import { ControlSize } from '../../theme/component-variables/controlVariables';
 import { FillColor } from '../../theme/ThemeInterface';
 import { Box } from '../Layout';
-import { Shape } from '../Layout/Box';
+import { IBoxProps, Shape } from '../Layout/Box';
 import { Strong } from '../Typography';
 
 export interface IBadgeProps {
@@ -14,16 +15,21 @@ export interface IBadgeProps {
   size?: ControlSize;
   shape?: Shape;
   isSolid?: boolean;
+  dangerouslySetInlineStyle?: {
+    boxStyle: IBoxProps;
+    textStyle: TextStyle;
+  };
 }
 
-const BadgeWithoutTheme = (props: IBadgeProps) => {
+const BadgeBase = (props: IBadgeProps) => {
   const {
-    theme,
-    size = 'small',
-    isSolid = false,
-    color = 'neutral',
-    shape = 'rounded',
     children,
+    color = 'neutral',
+    dangerouslySetInlineStyle,
+    isSolid = false,
+    shape = 'rounded',
+    size = 'small',
+    theme,
   } = props;
 
   const { boxStyle, textStyle } = theme.getBadgeStyles(size, color, isSolid);
@@ -40,13 +46,23 @@ const BadgeWithoutTheme = (props: IBadgeProps) => {
       justifyContent="center"
       alignItems="center"
       alignSelf="flex-start"
+      {...dangerouslySetInlineStyle && dangerouslySetInlineStyle.boxStyle}
     >
-      <Strong size={size} dangerouslySetInlineStyle={{ __style: textStyle }}>
+      <Strong
+        size={size}
+        dangerouslySetInlineStyle={{
+          textStyle: {
+            ...textStyle,
+            ...(dangerouslySetInlineStyle &&
+              dangerouslySetInlineStyle.textStyle),
+          },
+        }}
+      >
         {children}
       </Strong>
     </Box>
   );
 };
 
-export const Badge = withTheme(BadgeWithoutTheme);
+export const Badge = withTheme(BadgeBase);
 export default Badge;

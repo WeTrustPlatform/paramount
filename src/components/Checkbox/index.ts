@@ -1,4 +1,5 @@
+export { default as Checkbox, ICheckboxProps } from './Checkbox';
 export {
-  default as Checkbox,
-  ILabeledCheckboxProps as ICheckboxProps,
+  default as LabeledCheckbox,
+  ILabeledCheckboxProps,
 } from './LabeledCheckbox';

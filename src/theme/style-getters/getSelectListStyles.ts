@@ -1,6 +1,5 @@
-import { ViewStyle } from 'react-native';
+import { TextStyle, ViewStyle } from 'react-native';
 
-import { ITextStyleProps } from '../../components/Typography/Text';
 import {
   ISelectListVariables,
   SelectListSize,
@@ -9,7 +8,7 @@ import {
 export interface ISelectListStyles {
   containerStyle: ViewStyle;
   focusBackgroundColor: string;
-  textStyle: ITextStyleProps;
+  textStyle: TextStyle;
 }
 
 export type GetSelectListStyles = (
@@ -27,6 +26,7 @@ export const getSelectListStyles = (
     selected,
     focusBackgroundColor,
     sizes,
+    textSizes,
   } = selectListVariables;
 
   const { fontSize, ...sizeStyles } = sizes[size];
@@ -39,8 +39,6 @@ export const getSelectListStyles = (
       ...(isDisabled ? disabled : {}),
     },
     focusBackgroundColor,
-    textStyle: {
-      size,
-    },
+    textStyle: textSizes[size],
   };
 };

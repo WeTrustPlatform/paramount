@@ -14,7 +14,7 @@ export interface IHeadingProps {
   dangerouslySetInlineStyle?: TextStyle;
 }
 
-const HeadingWithoutTheme = (props: IHeadingProps & TextProps) => {
+const HeadingBase = (props: IHeadingProps & TextProps) => {
   const {
     accessibilityLevel,
     theme,
@@ -36,5 +36,5 @@ const HeadingWithoutTheme = (props: IHeadingProps & TextProps) => {
   );
 };
 
-export const Heading = withTheme(HeadingWithoutTheme);
+export const Heading = withTheme(HeadingBase);
 export default Heading;

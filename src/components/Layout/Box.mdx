@@ -1,0 +1,49 @@
+---
+name: Layout
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+
+import Box from './Box';
+import GridBox from './GridBox';
+
+## Box
+
+Box is a primitive component for convenient layout of components. All style properties are passed as props and has some convenient props such as `paddingX`, `marginY`, `shape` for styling
+
+### Default
+
+<Playground>
+  <Box
+    paddingY={40}
+    paddingX={40}
+    height={200}
+    width={200}
+    backgroundColor="blue"
+  />
+</Playground>
+
+### Box Props
+
+<PropsTable of={Box} />
+
+## GridBox
+
+`GridBox` is the same as `Box`; The difference are in numeric props which are multiplied by 8 to provide consistent 8px grid spacing: `8px`, `16px`, `24px`...
+
+### Default
+
+<Playground>
+  <GridBox
+    paddingY={10}
+    paddingX={10}
+    height={33}
+    width={33}
+    backgroundColor="blue"
+  />
+</Playground>
+
+### GridBox Props
+
+<PropsTable of={Box} />

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Picker as RNPicker, PickerProps } from 'react-native';
+import { Picker as RNPicker, PickerProps, ViewStyle } from 'react-native';
 
 import { ITheme, withTheme } from '../../theme';
 import { PickerSize } from '../../theme/component-variables/pickerVariables';
@@ -7,21 +7,39 @@ import { PickerSize } from '../../theme/component-variables/pickerVariables';
 export interface IPickerProps extends PickerProps {
   theme: ITheme;
   size?: PickerSize;
+  /**
+   * Inline styles for components
+   */
+  dangerouslySetInlineStyle?: {
+    pickerStyle?: ViewStyle;
+    itemStyle?: ViewStyle;
+  };
 }
 
-const PickerWithoutTheme = (props: IPickerProps) => {
-  const { theme, size = 'medium', ...passThroughProps } = props;
+const PickerBase = (props: IPickerProps) => {
+  const {
+    theme,
+    size = 'medium',
+    dangerouslySetInlineStyle,
+    ...pickerProps
+  } = props;
 
   const { pickerStyle, itemStyle } = theme.getPickerStyles(size);
 
   return (
     <RNPicker
-      itemStyle={itemStyle}
-      style={[pickerStyle]}
-      {...passThroughProps}
+      itemStyle={{
+        ...itemStyle,
+        ...(dangerouslySetInlineStyle && dangerouslySetInlineStyle.itemStyle),
+      }}
+      style={{
+        ...pickerStyle,
+        ...(dangerouslySetInlineStyle && dangerouslySetInlineStyle.pickerStyle),
+      }}
+      {...pickerProps}
     />
   );
 };
 
-export const Picker = withTheme(PickerWithoutTheme);
+export const Picker = withTheme(PickerBase);
 export default Picker;

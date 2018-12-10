@@ -6,75 +6,6 @@ import { Elevation } from '../../theme/ThemeInterface';
 
 export const BASE_BORDER_RADII = 4;
 
-export type AccessibilityRole =
-  | 'alert'
-  | 'alertdialog'
-  | 'application'
-  | 'article'
-  | 'banner'
-  | 'button'
-  | 'cell'
-  | 'checkbox'
-  | 'columnheader'
-  | 'combobox'
-  | 'complementary'
-  | 'contentinfo'
-  | 'definition'
-  | 'dialog'
-  | 'directory'
-  | 'document'
-  | 'feed'
-  | 'figure'
-  | 'form'
-  | 'grid'
-  | 'gridcell'
-  | 'group'
-  | 'heading'
-  | 'img'
-  | 'link'
-  | 'list'
-  | 'listbox'
-  | 'listitem'
-  | 'log'
-  | 'main'
-  | 'marquee'
-  | 'math'
-  | 'men'
-  | 'menuba'
-  | 'menuitem'
-  | 'menuitemcheckbox '
-  | 'menuitemradio'
-  | 'navigation'
-  | 'none'
-  | 'note'
-  | 'option'
-  | 'presentation'
-  | 'progressbar'
-  | 'radio'
-  | 'radiogroup'
-  | 'region'
-  | 'row'
-  | 'rowgroup'
-  | 'rowheader'
-  | 'scrollbar'
-  | 'search'
-  | 'separator'
-  | 'slider'
-  | 'spinbutton'
-  | 'status'
-  | 'switch'
-  | 'tab'
-  | 'table'
-  | 'tablist'
-  | 'tabpanel'
-  | 'textbox'
-  | 'timer'
-  | 'tooltip'
-  | 'tre'
-  | 'tree'
-  | 'treegri'
-  | 'treeitem';
-
 export type Shape =
   | 'circle'
   | 'pill'
@@ -87,7 +18,6 @@ export type Shape =
 
 export interface IBoxProps extends ViewStyle {
   theme: ITheme;
-  accessibilityRole?: AccessibilityRole;
   children?: React.ReactNode;
 
   elevation?: Elevation;
@@ -151,7 +81,7 @@ const propToFn = {
 };
 
 const Box = ({ theme, ...props }: IBoxProps) => {
-  const { children, accessibilityRole, ...viewStyles } = props;
+  const { children, ...viewStyles } = props;
   const transformedStyles = [];
   const pureStyles = {};
 

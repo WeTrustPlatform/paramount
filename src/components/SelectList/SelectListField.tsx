@@ -8,7 +8,7 @@ export interface ISelectListFieldProps
   extends IFormFieldProps,
     ISelectListProps {}
 
-const SelectListFieldWithoutTheme = (props: ISelectListFieldProps) => {
+const SelectListFieldBase = (props: ISelectListFieldProps) => {
   const { label, error, description, ...passThroughProps } = props;
 
   return (
@@ -18,5 +18,5 @@ const SelectListFieldWithoutTheme = (props: ISelectListFieldProps) => {
   );
 };
 
-export const SelectListField = withTheme(SelectListFieldWithoutTheme);
+export const SelectListField = withTheme(SelectListFieldBase);
 export default SelectListField;

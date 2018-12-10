@@ -33,7 +33,7 @@ export interface IToastState {
   offset: Animated.Value;
 }
 
-class ToastWithoutTheme extends React.Component<IToastProps, IToastState> {
+class ToastBase extends React.Component<IToastProps, IToastState> {
   public closeTimer: number | null = null;
 
   constructor(props: IToastProps) {
@@ -78,15 +78,10 @@ class ToastWithoutTheme extends React.Component<IToastProps, IToastState> {
       >
         {component || (
           <Box {...toastStyle}>
-            <Text
-              dangerouslySetInlineStyle={{ __style: textStyle }}
-              size="large"
-            >
+            <Text dangerouslySetInlineStyle={{ textStyle }} size="large">
               {title}
             </Text>
-            <Text dangerouslySetInlineStyle={{ __style: textStyle }}>
-              {description}
-            </Text>
+            <Text dangerouslySetInlineStyle={{ textStyle }}>{description}</Text>
           </Box>
         )}
       </Animated.View>
@@ -94,5 +89,5 @@ class ToastWithoutTheme extends React.Component<IToastProps, IToastState> {
   }
 }
 
-export const Toast = withTheme(ToastWithoutTheme);
+export const Toast = withTheme(ToastBase);
 export default Toast;

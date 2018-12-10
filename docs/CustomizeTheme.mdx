@@ -106,7 +106,7 @@ const theme = {
 
 ### Component style getters (Tier 3)
 
-These are functions that return style for components. This allows for complete control over how a component looks depending on given props. They inherit variables from component variables.
+These are functions that return style for components. This allows for complete control over how a component looks depending on given props. They inherit component variables.
 
 ```
 const getButtonStyles = buttonVariables => (appearance, color, ...componentProps) => {
@@ -125,4 +125,20 @@ const theme = {
   ...styleGetters,
   getButtonStyles, // <= Insert here
 }
+```
+
+## Use dangerouslySetInlineStyle
+
+All components also expose a prop `dangerouslySetInlineStyle` which you can use to style individual children of a component. Using these is equivalent to tier-2 component variables; however style getters cannot access these styles. It is recommended that you only use theme, so that your components are consistent
+
+```
+  <Text
+    dangerouslySetInlineStyle={{
+      textStyle: {
+        ...textStyle,
+      },
+    }}
+  >
+    {children}
+  </Text>
 ```

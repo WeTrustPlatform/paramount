@@ -120,7 +120,7 @@ The site is created based on `*.mdx` files ([see MDX](https://github.com/mdx-js/
 There are few files required to each component. Let's say for `TextInput`
 
 1. `TextInput.tsx` - The actual React Component
-2. `textInputVariables.ts` - Component style variables. They should expose component state variables and contain most of the styles here.
+2. `textInputVariables.ts` - Component style variables. They should expose component state variables and contain corresponding styles. (e.g. `disabled: ...`, `active: ...`)
 3. `getTextInputStyles.ts` - Style getter of the component, which outputs style object of each React Node based on component's style props (e.g. `size`, `color`)
 
 For a new component, you would also have to add component entry to the following files:
@@ -146,5 +146,5 @@ Because components are primarily tested against snapshots:
 2. If you are confident in snapshot changes, update snapshots
 
    ```bash
-     yarn test --u
+     yarn test -u
    ```

@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { ITheme, withTheme } from '../../theme';
-import { GridBox } from '../Layout';
 import { ISelectListItemProps } from './SelectListItem';
 
 export interface ISelectListProps {
@@ -12,7 +11,7 @@ export interface ISelectListProps {
   onValueChange: (itemValue: string | string[], itemIndex: number) => void;
 }
 
-const SelectListWithoutTheme = (props: ISelectListProps): any => {
+const SelectListBase = (props: ISelectListProps): any => {
   const { selectedValue, onValueChange, isMulti, children } = props;
 
   const handleOnPress = (
@@ -34,7 +33,7 @@ const SelectListWithoutTheme = (props: ISelectListProps): any => {
     }
   };
 
-  const finalChildren = React.Children.map(children, (child, index) => {
+  return React.Children.map(children, (child, index) => {
     if (!React.isValidElement(child)) {
       return child;
     }
@@ -50,12 +49,10 @@ const SelectListWithoutTheme = (props: ISelectListProps): any => {
     return React.cloneElement(selectListItem, {
       index,
       isSelected,
-      onPress: handleOnPress,
+      onSelect: handleOnPress,
     });
   });
-
-  return <GridBox>{finalChildren}</GridBox>;
 };
 
-export const SelectList = withTheme(SelectListWithoutTheme);
+export const SelectList = withTheme(SelectListBase);
 export default SelectList;

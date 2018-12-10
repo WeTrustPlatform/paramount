@@ -1,6 +1,11 @@
 import * as React from 'react';
 import { FiCheck } from 'react-icons/fi';
-import { GestureResponderEvent, TouchableHighlight, View } from 'react-native';
+import {
+  GestureResponderEvent,
+  TouchableHighlight,
+  TouchableHighlightProps,
+  View,
+} from 'react-native';
 
 import { ITheme, withTheme } from '../../theme';
 
@@ -9,20 +14,17 @@ export interface ICheckboxProps {
   isChecked?: boolean;
   isDisabled?: boolean;
   checkedIcon?: React.ReactNode;
-  testID?: string;
   onChange?: (e: GestureResponderEvent) => void | undefined;
 }
 
-const CheckboxWithoutTheme = (props: ICheckboxProps) => {
-  const { theme } = props;
+const CheckboxBase = (props: ICheckboxProps & TouchableHighlightProps) => {
   const {
     isChecked = false,
     isDisabled = false,
-    checkedIcon = (
-      <FiCheck size={20} color={theme.themeVariables.colors.text.plain} />
-    ),
-    testID,
+    checkedIcon,
     onChange = () => null,
+    theme,
+    ...touchableHighlightProps
   } = props;
 
   const {
@@ -32,11 +34,12 @@ const CheckboxWithoutTheme = (props: ICheckboxProps) => {
 
   return (
     <TouchableHighlight
+      accessible
       style={checkboxStyle}
       underlayColor={checkboxFocusBackgroundColor}
       onPress={onChange}
-      testID={testID}
       disabled={isDisabled}
+      {...touchableHighlightProps}
     >
       <View
         style={{
@@ -45,11 +48,18 @@ const CheckboxWithoutTheme = (props: ICheckboxProps) => {
           justifyContent: 'center',
         }}
       >
-        {isChecked && checkedIcon}
+        {isChecked
+          ? checkedIcon || (
+              <FiCheck
+                size={20}
+                color={theme.themeVariables.colors.text.plain}
+              />
+            )
+          : null}
       </View>
     </TouchableHighlight>
   );
 };
 
-export const Checkbox = withTheme(CheckboxWithoutTheme);
+export const Checkbox = withTheme(CheckboxBase);
 export default Checkbox;

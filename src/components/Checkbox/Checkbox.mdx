@@ -5,18 +5,30 @@ menu: Components
 
 import { Playground, PropsTable } from 'docz';
 import Checkbox from './Checkbox';
+import LabeledCheckbox from './LabeledCheckbox';
 
 ## Usage
+
+### Checkboxes
+
+<Playground>
+  <Checkbox />
+  <Checkbox isChecked />
+  <Checkbox isDisabled />
+  <Checkbox isChecked isDisabled />
+</Playground>
 
 ### Labeled Checkboxes
 
 <Playground>
-  <Checkbox label="Default" />
-  <Checkbox label="Checked" isChecked />
-  <Checkbox label="Disabled" isDisabled />
-  <Checkbox label="Checked and disabled" isChecked isDisabled />
+  <LabeledCheckbox label="Default" />
+  <LabeledCheckbox label="Checked" isChecked />
+  <LabeledCheckbox label="Disabled" isDisabled />
+  <LabeledCheckbox label="Checked and disabled" isChecked isDisabled />
 </Playground>
 
 ## Props
+
+Extends `TouchableHighlightProps`. Read from `activeOpacity` and above for component specific props
 
 <PropsTable of={Checkbox} />

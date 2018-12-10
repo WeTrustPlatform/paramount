@@ -3,18 +3,16 @@ import * as React from 'react';
 import withTheme from '../../theme/withTheme';
 import Text, { ITextProps } from './Text';
 
-const StrongWithoutTheme = (props: ITextProps) => {
+const StrongBase = (props: ITextProps) => {
   const { children, dangerouslySetInlineStyle, ...textProps } = props;
 
   return (
     <Text
       accessibilityLabel="strong" // Web
       dangerouslySetInlineStyle={{
-        __style: {
-          ...(dangerouslySetInlineStyle
-            ? dangerouslySetInlineStyle.__style
-            : {}),
+        textStyle: {
           fontWeight: '600',
+          ...(dangerouslySetInlineStyle && dangerouslySetInlineStyle.textStyle),
         },
       }}
       {...textProps}
@@ -24,5 +22,5 @@ const StrongWithoutTheme = (props: ITextProps) => {
   );
 };
 
-export const Strong = withTheme(StrongWithoutTheme);
+export const Strong = withTheme(StrongBase);
 export default Strong;

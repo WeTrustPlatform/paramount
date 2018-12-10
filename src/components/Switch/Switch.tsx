@@ -1,11 +1,16 @@
-/* Copy pasted from https://github.com/react-native-seoul/react-native-switch-toggle */
 import * as React from 'react';
 import { FiCheck, FiX } from 'react-icons/fi';
-import { Animated, StyleSheet, TouchableOpacity } from 'react-native';
+import {
+  Animated,
+  TouchableOpacity,
+  TouchableOpacityProps,
+  ViewStyle,
+} from 'react-native';
 
 import { ITheme, withTheme } from '../../theme';
 
-export interface ISwitchProps {
+/* Copy pasted from https://github.com/react-native-seoul/react-native-switch-toggle */
+export interface ISwitchProps extends TouchableOpacityProps {
   isSwitchedOn?: boolean;
   isDisabled?: boolean;
   onChange?: () => void;
@@ -13,6 +18,13 @@ export interface ISwitchProps {
   offIcon?: React.ReactNode;
   duration?: number;
   theme: ITheme;
+  /**
+   * Inline styles for components
+   */
+  dangerouslySetInlineStyle?: {
+    containerStyle: ViewStyle;
+    circleStyle: ViewStyle;
+  };
 }
 
 export interface ISwitchState {
@@ -21,7 +33,7 @@ export interface ISwitchState {
   circlePosXStart: number;
 }
 
-class SwitchWithoutTheme extends React.Component<ISwitchProps, ISwitchState> {
+class SwitchBase extends React.Component<ISwitchProps, ISwitchState> {
   public static defaultProps = {
     backgroundColorOff: 'rgb(215,215,215)',
     backgroundColorOn: 'rgb(227,227,227)',
@@ -89,14 +101,13 @@ class SwitchWithoutTheme extends React.Component<ISwitchProps, ISwitchState> {
   };
 
   public render() {
-    const { theme, isSwitchedOn } = this.props;
     const {
-      onIcon = (
-        <FiCheck size={20} color={theme.themeVariables.colors.text.primary} />
-      ),
-      offIcon = (
-        <FiX size={20} color={theme.themeVariables.colors.text.default} />
-      ),
+      onIcon,
+      offIcon,
+      theme,
+      isSwitchedOn,
+      dangerouslySetInlineStyle,
+      ...touchableOpacityProps
     } = this.props;
     const { animXValue, circlePosXStart, circlePosXEnd } = this.state;
 
@@ -110,11 +121,18 @@ class SwitchWithoutTheme extends React.Component<ISwitchProps, ISwitchState> {
     } = theme.getSwitchStyles();
 
     return (
-      <TouchableOpacity onPress={this.handleOnPress} activeOpacity={1}>
+      <TouchableOpacity
+        accessible
+        accessibilityLabel="switch"
+        onPress={this.handleOnPress}
+        activeOpacity={1}
+        {...touchableOpacityProps}
+      >
         <Animated.View
           style={[
-            styles.container,
             containerStyle,
+            dangerouslySetInlineStyle &&
+              dangerouslySetInlineStyle.containerStyle,
             {
               backgroundColor: animXValue.interpolate({
                 inputRange: [0, 1],
@@ -126,6 +144,8 @@ class SwitchWithoutTheme extends React.Component<ISwitchProps, ISwitchState> {
           <Animated.View
             style={[
               circleStyle,
+              dangerouslySetInlineStyle &&
+                dangerouslySetInlineStyle.circleStyle,
               {
                 backgroundColor: animXValue.interpolate({
                   inputRange: [0, 1],
@@ -144,7 +164,19 @@ class SwitchWithoutTheme extends React.Component<ISwitchProps, ISwitchState> {
               },
             ]}
           >
-            {isSwitchedOn ? onIcon : offIcon}
+            {isSwitchedOn
+              ? onIcon || (
+                  <FiCheck
+                    size={20}
+                    color={theme.themeVariables.colors.text.primary}
+                  />
+                )
+              : offIcon || (
+                  <FiX
+                    size={20}
+                    color={theme.themeVariables.colors.text.default}
+                  />
+                )}
           </Animated.View>
         </Animated.View>
       </TouchableOpacity>
@@ -152,12 +184,5 @@ class SwitchWithoutTheme extends React.Component<ISwitchProps, ISwitchState> {
   }
 }
 
-const styles: any = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
-});
-
-export const Switch = withTheme(SwitchWithoutTheme);
+export const Switch = withTheme(SwitchBase);
 export default Switch;

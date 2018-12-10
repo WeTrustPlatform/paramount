@@ -1,6 +1,7 @@
-import { ViewStyle } from 'react-native';
+import { TextStyle, ViewStyle } from 'react-native';
 
 import { IThemeVariables } from '../ThemeInterface';
+import { getTextVariables } from './textVariables';
 
 export type ISelectListAppearanceStyles = ViewStyle & {
   backgroundColor: string;
@@ -25,6 +26,12 @@ export interface ISelectListSizes {
   large: ISizeStyles;
 }
 
+export interface ITextSizes {
+  small: TextStyle;
+  medium: TextStyle;
+  large: TextStyle;
+}
+
 export type SelectListSize = keyof ISelectListSizes;
 
 export interface ISelectListVariables {
@@ -33,11 +40,13 @@ export interface ISelectListVariables {
   selected: ISelectedState;
   focusBackgroundColor: string;
   sizes: ISelectListSizes;
+  textSizes: ITextSizes;
 }
 
 export const getSelectListVariables = (
   themeVariables: IThemeVariables,
 ): ISelectListVariables => {
+  const textSizes = getTextVariables(themeVariables);
   return {
     base: {
       backgroundColor: themeVariables.colors.background.plain,
@@ -72,5 +81,6 @@ export const getSelectListVariables = (
         paddingRight: themeVariables.controlPaddings.large,
       },
     },
+    textSizes: textSizes.size,
   };
 };

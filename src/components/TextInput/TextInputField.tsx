@@ -8,7 +8,7 @@ export interface ITextInputFieldProps
   extends IFormFieldProps,
     ITextInputProps {}
 
-const TextInputFieldWithoutTheme = (props: ITextInputFieldProps) => {
+const TextInputFieldBase = (props: ITextInputFieldProps) => {
   const { label, error, description, ...passThroughProps } = props;
 
   return (
@@ -18,5 +18,5 @@ const TextInputFieldWithoutTheme = (props: ITextInputFieldProps) => {
   );
 };
 
-export const TextInputField = withTheme(TextInputFieldWithoutTheme);
+export const TextInputField = withTheme(TextInputFieldBase);
 export default TextInputField;

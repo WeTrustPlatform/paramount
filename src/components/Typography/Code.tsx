@@ -10,7 +10,7 @@ export interface ICodeProps {
   theme: ITheme;
 }
 
-const CodeWithoutTheme = (props: ICodeProps & ITextProps) => {
+const CodeBase = (props: ICodeProps & ITextProps) => {
   const { appearance, theme, ...textProps } = props;
 
   const code = <Text fontFamily="mono" {...textProps} />;
@@ -43,5 +43,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export const Code = withTheme(CodeWithoutTheme);
+export const Code = withTheme(CodeBase);
 export default Code;

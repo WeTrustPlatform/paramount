@@ -34,8 +34,10 @@ export const getSwitchVariables = (
     },
 
     container: {
+      alignItems: 'center',
       backgroundColor: themeVariables.colors.background.tint1,
       borderRadius: 18,
+      flexDirection: 'row',
       height: 36,
       padding: 3,
       width: 56,

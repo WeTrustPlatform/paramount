@@ -8,8 +8,13 @@ export interface ITextAreaProps extends ITextInputProps {
   theme: ITheme;
 }
 
-const TextAreaWithoutTheme = (props: ITextAreaProps) => {
-  const { numberOfLines = 3, size = 'medium', theme, ...restProps } = props;
+const TextAreaBase = (props: ITextAreaProps) => {
+  const {
+    numberOfLines = 3,
+    size = 'medium',
+    theme,
+    ...textInputProps
+  } = props;
   const controlHeight = theme.themeVariables.controlHeights[size];
 
   return (
@@ -18,16 +23,16 @@ const TextAreaWithoutTheme = (props: ITextAreaProps) => {
       size={size}
       numberOfLines={numberOfLines}
       dangerouslySetInlineStyle={{
-        __style: {
+        inputStyle: {
           height: numberOfLines * controlHeight,
           paddingBottom: 8,
           paddingTop: 8,
         },
       }}
-      {...restProps}
+      {...textInputProps}
     />
   );
 };
 
-export const TextArea = withTheme(TextAreaWithoutTheme);
+export const TextArea = withTheme(TextAreaBase);
 export default TextArea;

@@ -24,7 +24,7 @@ export interface IParagraphProps extends TextProps {
   };
 }
 
-const ParagraphWithoutTheme = (props: IParagraphProps) => {
+const ParagraphBase = (props: IParagraphProps) => {
   const {
     children,
     color = 'default',
@@ -54,5 +54,5 @@ const ParagraphWithoutTheme = (props: IParagraphProps) => {
   );
 };
 
-export const Paragraph = withTheme(ParagraphWithoutTheme);
+export const Paragraph = withTheme(ParagraphBase);
 export default Paragraph;

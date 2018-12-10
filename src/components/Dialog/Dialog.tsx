@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TouchableWithoutFeedback, View } from 'react-native';
+import { TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
 
 import { ITheme, withTheme } from '../../theme';
 import Modal from './Modal';
@@ -17,10 +17,27 @@ export interface IDialogProps {
   header?: React.ReactNode;
   /** In ConfirmDialog, you can pass null to render nothing. If it is undefined, it will use default value */
   footer?: React.ReactNode;
+  /**
+   * Inline styles for components
+   */
+  dangerouslySetInlineStyle?: {
+    modalContainerStyle: ViewStyle;
+    overlayStyle: ViewStyle;
+    containerStyle: ViewStyle;
+    bodyStyle: ViewStyle;
+  };
 }
 
-const DialogWithoutTheme = (props: IDialogProps) => {
-  const { children, footer, header, isVisible, onClose, theme } = props;
+const DialogBase = (props: IDialogProps) => {
+  const {
+    children,
+    footer,
+    header,
+    isVisible,
+    onClose,
+    theme,
+    dangerouslySetInlineStyle,
+  } = props;
 
   if (!isVisible) return null;
 
@@ -33,19 +50,45 @@ const DialogWithoutTheme = (props: IDialogProps) => {
 
   return (
     <Modal visible={isVisible} transparent onDismiss={onClose}>
-      <View style={modalContainerStyle}>
-        <View style={containerStyle}>
+      <View
+        style={{
+          ...modalContainerStyle,
+          ...(dangerouslySetInlineStyle &&
+            dangerouslySetInlineStyle.modalContainerStyle),
+        }}
+      >
+        <View
+          style={{
+            ...containerStyle,
+            ...(dangerouslySetInlineStyle &&
+              dangerouslySetInlineStyle.containerStyle),
+          }}
+        >
           {header}
-          <View style={bodyStyle}>{children}</View>
+          <View
+            style={{
+              ...bodyStyle,
+              ...(dangerouslySetInlineStyle &&
+                dangerouslySetInlineStyle.bodyStyle),
+            }}
+          >
+            {children}
+          </View>
           {footer}
         </View>
         <TouchableWithoutFeedback onPress={onClose}>
-          <View style={overlayStyle} />
+          <View
+            style={{
+              ...overlayStyle,
+              ...(dangerouslySetInlineStyle &&
+                dangerouslySetInlineStyle.overlayStyle),
+            }}
+          />
         </TouchableWithoutFeedback>
       </View>
     </Modal>
   );
 };
 
-export const Dialog = withTheme(DialogWithoutTheme);
+export const Dialog = withTheme(DialogBase);
 export default Dialog;

@@ -17,11 +17,11 @@ export interface ITextInputProps extends TextInputProps {
   isRequired?: boolean;
   isInvalid?: boolean;
   dangerouslySetInlineStyle?: {
-    __style: ViewStyle;
+    inputStyle?: ViewStyle;
   };
 }
 
-class TextInputWithoutTheme extends React.Component<ITextInputProps> {
+class TextInputBase extends React.Component<ITextInputProps> {
   private root: any;
 
   public handleOnFocus = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
@@ -44,7 +44,7 @@ class TextInputWithoutTheme extends React.Component<ITextInputProps> {
         style: [
           inputStyle,
           focusedStyle,
-          dangerouslySetInlineStyle && dangerouslySetInlineStyle.__style,
+          dangerouslySetInlineStyle && dangerouslySetInlineStyle.inputStyle,
         ],
       });
     }
@@ -73,7 +73,7 @@ class TextInputWithoutTheme extends React.Component<ITextInputProps> {
     this.root.setNativeProps({
       style: [
         inputStyle,
-        dangerouslySetInlineStyle && dangerouslySetInlineStyle.__style,
+        dangerouslySetInlineStyle && dangerouslySetInlineStyle.inputStyle,
       ],
     });
 
@@ -106,7 +106,7 @@ class TextInputWithoutTheme extends React.Component<ITextInputProps> {
         }}
         style={[
           inputStyle,
-          dangerouslySetInlineStyle && dangerouslySetInlineStyle.__style,
+          dangerouslySetInlineStyle && dangerouslySetInlineStyle.inputStyle,
         ]}
         onFocus={e => this.handleOnFocus(e)}
         onBlur={e => this.handleOnBlur(e)}
@@ -118,5 +118,5 @@ class TextInputWithoutTheme extends React.Component<ITextInputProps> {
   }
 }
 
-export const TextInput = withTheme(TextInputWithoutTheme);
+export const TextInput = withTheme(TextInputBase);
 export default TextInput;

@@ -3,11 +3,12 @@ import * as React from 'react';
 import withTheme from '../../theme/withTheme';
 import Text, { ITextProps } from './Text';
 
-const LabelWithoutTheme = (props: ITextProps) => {
+const LabelBase = (props: ITextProps) => {
   const { children, ...textProps } = props;
 
   return (
     <Text
+      // @ts-ignore
       accessibilityRole="label" // Web
       {...textProps}
     >
@@ -16,5 +17,5 @@ const LabelWithoutTheme = (props: ITextProps) => {
   );
 };
 
-export const Label = withTheme(LabelWithoutTheme);
+export const Label = withTheme(LabelBase);
 export default Label;

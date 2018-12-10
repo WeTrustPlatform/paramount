@@ -24,23 +24,13 @@ export interface ITextProps extends TextProps, ITextStyleProps {
   theme: ITheme;
   href?: string;
 
-  // Web-only
-  accessibilityRole?:
-    | 'label'
-    | 'link'
-    | 'heading'
-    | 'li'
-    | 'code'
-    | 'blockquote';
-
   dangerouslySetInlineStyle?: {
-    __style: TextStyle;
+    textStyle: TextStyle;
   };
 }
 
-const TextWithoutTheme = (props: ITextProps) => {
+const TextBase = (props: ITextProps) => {
   const {
-    accessibilityRole,
     children,
     color = 'default',
     fontFamily = 'text',
@@ -56,12 +46,10 @@ const TextWithoutTheme = (props: ITextProps) => {
 
   return (
     <RNText
-      // @ts-ignore
-      accessibilityRole={accessibilityRole}
       style={[
         { textAlign },
         textStyle,
-        dangerouslySetInlineStyle && dangerouslySetInlineStyle.__style,
+        dangerouslySetInlineStyle && dangerouslySetInlineStyle.textStyle,
       ]}
       {...textProps}
     >
@@ -70,5 +58,5 @@ const TextWithoutTheme = (props: ITextProps) => {
   );
 };
 
-export const Text = withTheme(TextWithoutTheme);
+export const Text = withTheme(TextBase);
 export default Text;

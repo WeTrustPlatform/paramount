@@ -1,12 +1,12 @@
-// https://github.com/segmentio/evergreen/blob/master/source/avatar/README.md
 import * as React from 'react';
-import { Image } from 'react-native';
+import { Image, ImageStyle, TextStyle } from 'react-native';
 
 import { ITheme, withTheme } from '../../theme';
 import { IFillColors } from '../../theme/ThemeInterface';
-import { Box } from '../Layout';
+import { Box, IBoxProps } from '../Layout';
 import { Text } from '../Typography';
 
+// https://github.com/segmentio/evergreen/blob/master/source/avatar/README.md
 export type GetInitialsType = (name?: string, fallback?: string) => string;
 
 export const globalGetInitials: GetInitialsType = (name, fallback = '?') => {
@@ -75,9 +75,18 @@ export interface IAvatarProps {
    * Theme provided by ThemeProvider.
    */
   theme: ITheme;
+
+  /**
+   * Inline styles for components
+   */
+  dangerouslySetInlineStyle?: {
+    boxStyle?: IBoxProps;
+    textStyle?: TextStyle;
+    imageStyle?: ImageStyle;
+  };
 }
 
-export const AvatarWithoutTheme = (props: IAvatarProps) => {
+export const AvatarBase = (props: IAvatarProps) => {
   const {
     theme,
 
@@ -90,7 +99,7 @@ export const AvatarWithoutTheme = (props: IAvatarProps) => {
     color = 'automatic',
     forceShowInitials = false,
     sizeLimitOneCharacter = 20,
-    ...otherProps
+    dangerouslySetInlineStyle,
   } = props;
 
   const { imageHasFailedLoading } = { imageHasFailedLoading: false };
@@ -111,11 +120,18 @@ export const AvatarWithoutTheme = (props: IAvatarProps) => {
   });
 
   return (
-    <Box {...boxStyle} {...otherProps}>
+    <Box
+      {...boxStyle}
+      {...dangerouslySetInlineStyle && dangerouslySetInlineStyle.boxStyle}
+    >
       {(imageUnavailable || forceShowInitials) && (
         <Text
           dangerouslySetInlineStyle={{
-            __style: textStyle,
+            textStyle: {
+              ...textStyle,
+              ...(dangerouslySetInlineStyle &&
+                dangerouslySetInlineStyle.textStyle),
+            },
           }}
         >
           {initials}
@@ -126,12 +142,16 @@ export const AvatarWithoutTheme = (props: IAvatarProps) => {
           source={{
             uri: source,
           }}
-          style={imageStyle}
+          style={{
+            ...imageStyle,
+            ...(dangerouslySetInlineStyle &&
+              dangerouslySetInlineStyle.imageStyle),
+          }}
         />
       )}
     </Box>
   );
 };
 
-export const Avatar = withTheme(AvatarWithoutTheme);
+export const Avatar = withTheme(AvatarBase);
 export default Avatar;

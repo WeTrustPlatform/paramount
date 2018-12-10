@@ -7,7 +7,7 @@ import Picker from './Picker';
 
 export interface IPickerFieldProps extends IFormFieldProps, PickerProps {}
 
-const PickerFieldWithoutTheme = (props: IPickerFieldProps) => {
+const PickerFieldBase = (props: IPickerFieldProps) => {
   const { label, error, description, ...passThroughProps } = props;
 
   return (
@@ -17,5 +17,5 @@ const PickerFieldWithoutTheme = (props: IPickerFieldProps) => {
   );
 };
 
-export const PickerField = withTheme(PickerFieldWithoutTheme);
+export const PickerField = withTheme(PickerFieldBase);
 export default PickerField;

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { View } from 'react-native';
 
 import { withTheme } from '../../theme';
 import { TextColor, TextSize } from '../../theme/ThemeInterface';
@@ -20,7 +21,7 @@ export interface IListItemProps {
   size?: TextSize;
 }
 
-const ListItemWithoutTheme = (props: ITextProps & IListItemProps) => {
+const ListItemBase = (props: ITextProps & IListItemProps) => {
   const { size = 'medium', index, icon, iconColor, ...textProps } = props;
 
   const paddingLeft = paddingLeftMap[size] as 1 | 2 | 3;
@@ -32,19 +33,19 @@ const ListItemWithoutTheme = (props: ITextProps & IListItemProps) => {
   ) : null;
 
   return (
-    <GridBox
+    <View
+      // @ts-ignore
       accessibilityRole="listitem"
-      flexDirection="row"
-      alignItems="center"
-      marginY={1}
     >
-      <GridBox>{mark}</GridBox>
-      <GridBox width="100%" paddingLeft={paddingLeft}>
-        <Text isInline size={size} {...textProps} />
+      <GridBox flexDirection="row" alignItems="center" marginY={1}>
+        <GridBox>{mark}</GridBox>
+        <GridBox width="100%" paddingLeft={paddingLeft}>
+          <Text isInline size={size} {...textProps} />
+        </GridBox>
       </GridBox>
-    </GridBox>
+    </View>
   );
 };
 
-export const ListItem = withTheme(ListItemWithoutTheme);
+export const ListItem = withTheme(ListItemBase);
 export default ListItem;

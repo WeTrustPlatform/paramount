@@ -10,6 +10,8 @@ import { Box } from '../Layout';
 
 ## Usage
 
+**Note** Accessibility/Interactivity is a responsibility of a wrapping component
+
 ### Default
 
 <Playground>
@@ -17,7 +19,7 @@ import { Box } from '../Layout';
     {theme => (
       <Box>
         {Object.keys(theme.themeVariables.fills.solid).map(color => (
-          <Box key={color}>
+          <Box flexDirection="row" key={color}>
             <Badge color={color}>{color}</Badge>
             <Badge color={color} isSolid>
               {color}
@@ -36,7 +38,7 @@ import { Box } from '../Layout';
     {theme => (
       <Box>
         {Object.keys(theme.themeVariables.fills.solid).map(color => (
-          <Box key={color}>
+          <Box flexDirection="row" key={color}>
             <Badge shape="pill" color={color}>
               {color}
             </Badge>
