@@ -1,5 +1,3 @@
-import { reactNative } from 'docz-plugin-react-native';
-
 const overridingExtensions = [
   '.web.js',
   '.web.jsx',
@@ -17,7 +15,7 @@ const overridingExtensions = [
 export default {
   title: 'Paramount',
   typescript: true,
-  plugins: [reactNative()],
+  native: true,
   hashRouter: true,
   modifyBundlerConfig: defaultConfig => {
     return {
