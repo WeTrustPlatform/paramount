@@ -65,6 +65,7 @@ export const getButtonStyles = (
         ? {
             alignSelf: 'flex-start',
             flexDirection: 'row',
+            flexWrap: 'wrap',
           }
         : {}),
     },

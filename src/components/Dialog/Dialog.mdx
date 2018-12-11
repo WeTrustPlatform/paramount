@@ -12,6 +12,54 @@ import { Button } from '../Button';
 import { Box } from '../Layout';
 import { Text } from '../Typography';
 
+## ConfirmDialog
+
+Opposed to `Dialog` (below), `ConfirmDialog` has predefined styling and handlers; however, it still can pass props from `Dialog`
+
+<Playground>
+  <Toggle initial={false}>
+    {({ on, toggle }) => (
+      <Box>
+        <ConfirmDialog
+          title="Confirm dialog"
+          isVisible={on}
+          onClose={toggle}
+          cancelLabel="Cancel label"
+          confirmLabel="Confirm label"
+        >
+          <Text>Add custom content here</Text>
+        </ConfirmDialog>
+        <Button onPress={toggle}>Open dialog</Button>
+      </Box>
+    )}
+  </Toggle>
+</Playground>
+
+## ConfirmDialog without header
+
+<Playground>
+  <Toggle initial={false}>
+    {({ on, toggle }) => (
+      <Box>
+        <ConfirmDialog
+          header={null}
+          isVisible={on}
+          onClose={toggle}
+          cancelLabel="Cancel label"
+          confirmLabel="Confirm label"
+        >
+          <Text>Add custom content here</Text>
+        </ConfirmDialog>
+        <Button onPress={toggle}>Open dialog</Button>
+      </Box>
+    )}
+  </Toggle>
+</Playground>
+
+## ConfirmDialog Props
+
+<PropsTable of={ConfirmDialog} />
+
 ## Dialog
 
 Dialog has no predefined styling and handlers. The content, header and footer is completely in your control. For a more out-of-box usage, you can use `ConfirmDialog` below
@@ -39,53 +87,3 @@ Dialog has no predefined styling and handlers. The content, header and footer is
 ## Dialog Props
 
 <PropsTable of={Dialog} />
-
-## ConfirmDialog
-
-Opposed to `Dialog` (above), `ConfirmDialog` has predefined styling and handlers; however, it still can pass props from `Dialog`
-
-<Playground>
-  <Toggle initial={false}>
-    {({ on, toggle }) => (
-      <Box>
-        <ConfirmDialog
-          title="Confirm dialog"
-          isVisible={on}
-          onClose={toggle}
-          cancelLabel="Cancel label"
-          confirmLabel="Confirm label"
-        >
-          <Text>Add custom content here</Text>
-        </ConfirmDialog>
-        <Button onPress={toggle}>Open dialog</Button>
-      </Box>
-    )}
-  </Toggle>
-</Playground>
-
-## ConfirmDialog without header
-
-Opposed to `Dialog` (above), `ConfirmDialog` has predefined styling and handlers; however, it still can pass props from `Dialog`
-
-<Playground>
-  <Toggle initial={false}>
-    {({ on, toggle }) => (
-      <Box>
-        <ConfirmDialog
-          header={null}
-          isVisible={on}
-          onClose={toggle}
-          cancelLabel="Cancel label"
-          confirmLabel="Confirm label"
-        >
-          <Text>Add custom content here</Text>
-        </ConfirmDialog>
-        <Button onPress={toggle}>Open dialog</Button>
-      </Box>
-    )}
-  </Toggle>
-</Playground>
-
-## ConfirmDialog Props
-
-<PropsTable of={ConfirmDialog} />

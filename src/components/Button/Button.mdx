@@ -5,6 +5,7 @@ menu: Components
 
 import { Playground, PropsTable } from 'docz';
 import Button from './Button';
+import { Box } from '../Layout';
 
 ## Usage
 
@@ -82,13 +83,17 @@ import Button from './Button';
 ### Other props
 
 <Playground>
-  <Button isInline color="primary">
-    Inline
-  </Button>
-  <Button isDisabled color="primary">
-    Disabled
-  </Button>
+  <Box>
+    <Button isInline color="primary">
+      Inline
+    </Button>
+    <Button isDisabled color="primary">
+      Disabled
+    </Button>
+  </Box>
 </Playground>
+
+If `isInline` does not inline the button, try wrapping it with `Box`
 
 ## Props
 
