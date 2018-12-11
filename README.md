@@ -33,5 +33,10 @@ Much of the architecture and implementation of this library are heavily inspired
 
 Follow [Contributing guide](CONTRIBUTING.md)
 
-# Credits
-[![Browserstack](http://wallpapers-for-ipad.com/fullpage/imgs3/logos/browserstack3.png)](http://www.browserstack.com/) provides cross-browser testing tools. Used to test components against different browsers including IE10
+## Sponsors
+
+Special thanks to sponsors that help build paramount.
+
+[![Browserstack](https://i1.wp.com/www.diogonunes.com/blog/wp-content/uploads/2016/07/browserstack-logo.png?w=512&ssl=1)](http://www.browserstack.com/)
+
+Browserstack provides cross-browser testing tools. Used to test paramount components against different browsers including IE10
