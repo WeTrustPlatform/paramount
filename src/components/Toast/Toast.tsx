@@ -1,10 +1,9 @@
 // Animation taken from https://medium.com/@norbajunior/react-native-facebook-and-instagram-like-top-bar-notifications-with-animated-api-43c48d0443dd
 import * as React from 'react';
-import { Animated, Easing } from 'react-native';
+import { Animated, Easing, View } from 'react-native';
 
 import { IntentType } from '../../constants/Intent';
 import { ITheme, withTheme } from '../../theme';
-import { Box } from '../Layout';
 import { Text } from '../Typography';
 
 export type ToastId = string;
@@ -77,12 +76,12 @@ class ToastBase extends React.Component<IToastProps, IToastState> {
         }}
       >
         {component || (
-          <Box {...toastStyle}>
+          <View style={toastStyle}>
             <Text dangerouslySetInlineStyle={{ textStyle }} size="large">
               {title}
             </Text>
             <Text dangerouslySetInlineStyle={{ textStyle }}>{description}</Text>
-          </Box>
+          </View>
         )}
       </Animated.View>
     );

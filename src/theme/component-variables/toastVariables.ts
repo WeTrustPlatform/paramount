@@ -1,11 +1,9 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { IBoxProps } from '../../components/Layout/Box';
-import { Omit } from '../../types/utils';
 import { IThemeVariables } from '../ThemeInterface';
 
 export interface IToastVariables {
-  base: Omit<IBoxProps, 'theme'>;
+  base: ViewStyle;
   /** The area on screen where the toast appears */
   container: ViewStyle;
 
@@ -24,9 +22,15 @@ export const getToastVariables = (
 ): IToastVariables => {
   return {
     base: {
-      elevation: 1,
-      padding: 16,
-      shape: 'rounded',
+      borderRadius: themeVariables.controlBorderRadius.medium,
+      paddingBottom: 16,
+      paddingLeft: 16,
+      paddingRight: 16,
+      paddingTop: 16,
+      shadowColor: themeVariables.colors.text.dark,
+      shadowOffset: { width: 1, height: 1 },
+      shadowOpacity: 0.15,
+      shadowRadius: 8,
     },
 
     backgroundDanger: {
@@ -66,7 +70,7 @@ export const getToastVariables = (
       maxWidth: 560,
       position: 'absolute',
       right: 0,
-      top: 0,
+      top: 10,
       zIndex: 100,
     },
   };
