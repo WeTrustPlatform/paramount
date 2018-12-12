@@ -8,6 +8,7 @@ import { getDividerVariables } from './dividerVariables';
 import { getHeadingVariables } from './headingVariables';
 import { getParagraphVariables } from './paragraphVariables';
 import { getPickerVariables } from './pickerVariables';
+import { getProgressVariables } from './progressVariables';
 import { getSelectListVariables } from './selectListVariables';
 import { getSwitchVariables } from './switchVariables';
 import { getTextInputVariables } from './textInputVariables';
@@ -27,6 +28,7 @@ export const getComponentVariables = (
     heading: getHeadingVariables(themeVariables),
     paragraph: getParagraphVariables(themeVariables),
     picker: getPickerVariables(themeVariables),
+    progress: getProgressVariables(themeVariables),
     selectList: getSelectListVariables(themeVariables),
     switch: getSwitchVariables(themeVariables),
     text: getTextVariables(themeVariables),

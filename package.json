@@ -39,7 +39,8 @@
     "react-art": "16.6.3",
     "react-dom": "16.6.3",
     "react-icons": "3.2.2",
-    "react-native-web": "0.9.9"
+    "react-native-web": "0.9.9",
+    "react-spring": "^6.1.10"
   },
   "devDependencies": {
     "@babel/core": "7.2.0",

@@ -1,0 +1,32 @@
+---
+name: Progress
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import Progress from './Progress';
+import { Box } from '../Layout';
+import { Button } from '../Button';
+import { Counter } from 'react-powerplug';
+
+## Usage
+
+### Default
+
+<Playground>
+  <Counter initial={0}>
+    {({ count, incBy, decBy }) => (
+      <Box>
+        <Progress percent={count} />
+        <Box flexDirection="row">
+          <Button onPress={() => incBy(10)}>Inc 10%</Button>
+          <Button onPress={() => decBy(10)}>Dec 10%</Button>
+        </Box>
+      </Box>
+    )}
+  </Counter>
+</Playground>
+
+## Props
+
+<PropsTable of={Progress} />
