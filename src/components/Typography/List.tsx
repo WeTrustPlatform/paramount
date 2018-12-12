@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View } from 'react-native';
 
 import { TextSize } from '../../theme/ThemeInterface';
-import { GridBox } from '../Layout';
+import { Spacing } from '../Layout';
 import { IListItemProps } from './ListItem';
 
 export interface IListProps {
@@ -36,9 +36,9 @@ export const List = (props: IListProps) => {
       // @ts-ignore
       accessibilityRole="list"
     >
-      <GridBox margin={0} marginLeft={1} padding={0}>
+      <Spacing margin={0} marginLeft={1} padding={0}>
         {finalChildren}
-      </GridBox>
+      </Spacing>
     </View>
   );
 };

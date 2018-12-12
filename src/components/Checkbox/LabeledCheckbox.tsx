@@ -3,7 +3,7 @@ import * as React from 'react';
 import { withTheme } from '../../theme';
 import { TextColor, TextSize } from '../../theme/ThemeInterface';
 import Checkbox, { ICheckboxProps } from '../Checkbox/Checkbox';
-import { Box, GridBox } from '../Layout';
+import { Box, Spacing } from '../Layout';
 import { Text } from '../Typography';
 
 export interface ILabeledCheckboxProps extends ICheckboxProps {
@@ -27,9 +27,9 @@ const LabeledCheckboxBase = (props: ILabeledCheckboxProps) => {
           {label}
         </Text>
       )}
-      <GridBox paddingX={1}>
+      <Spacing paddingX={1}>
         <Checkbox {...restProps} />
-      </GridBox>
+      </Spacing>
       {position === 'right' && (
         <Text size={size} color={color}>
           {label}

@@ -3,7 +3,7 @@ import { View } from 'react-native';
 
 import { withTheme } from '../../theme';
 import { TextColor, TextSize } from '../../theme/ThemeInterface';
-import { GridBox } from '../Layout';
+import { Spacing } from '../Layout';
 import Text, { ITextProps } from './Text';
 
 const paddingLeftMap = {
@@ -37,12 +37,12 @@ const ListItemBase = (props: ITextProps & IListItemProps) => {
       // @ts-ignore
       accessibilityRole="listitem"
     >
-      <GridBox flexDirection="row" alignItems="center" marginY={1}>
-        <GridBox>{mark}</GridBox>
-        <GridBox width="100%" paddingLeft={paddingLeft}>
+      <Spacing flexDirection="row" alignItems="center" marginY={1}>
+        <Spacing>{mark}</Spacing>
+        <Spacing width="100%" paddingLeft={paddingLeft}>
           <Text isInline size={size} {...textProps} />
-        </GridBox>
-      </GridBox>
+        </Spacing>
+      </Spacing>
     </View>
   );
 };

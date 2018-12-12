@@ -6,7 +6,7 @@ menu: Components
 import { Playground, PropsTable } from 'docz';
 
 import Box from './Box';
-import GridBox from './GridBox';
+import Spacing from './Spacing';
 
 ## Box
 
@@ -28,14 +28,14 @@ Box is a primitive component for convenient layout of components. All style prop
 
 <PropsTable of={Box} />
 
-## GridBox
+## Spacing
 
-`GridBox` is the same as `Box`; The difference are in numeric props which are multiplied by 8 to provide consistent 8px grid spacing: `8px`, `16px`, `24px`...
+`Spacing` is the same as `Box`; The difference are in numeric props which are multiplied by 8 to provide consistent 8px grid spacing: `8px`, `16px`, `24px`...
 
 ### Default
 
 <Playground>
-  <GridBox
+  <Spacing
     paddingY={10}
     paddingX={10}
     height={33}
@@ -44,6 +44,6 @@ Box is a primitive component for convenient layout of components. All style prop
   />
 </Playground>
 
-### GridBox Props
+### Spacing Props
 
 <PropsTable of={Box} />

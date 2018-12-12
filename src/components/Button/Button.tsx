@@ -13,7 +13,7 @@ import {
   ButtonColor,
   ButtonSize,
 } from '../../theme/component-variables/buttonVariables';
-import { GridBox } from '../Layout';
+import { Spacing } from '../Layout';
 import { LoadingDots } from '../Loading';
 import { Text } from '../Typography';
 
@@ -153,7 +153,7 @@ const ButtonBase = (props: IButtonProps) => {
         }}
       >
         {iconBefore}
-        <GridBox
+        <Spacing
           paddingLeft={iconBefore ? 1 : 0}
           paddingRight={iconAfter ? 1 : 0}
         >
@@ -172,7 +172,7 @@ const ButtonBase = (props: IButtonProps) => {
               {children}
             </Text>
           ) : null}
-        </GridBox>
+        </Spacing>
         {iconAfter}
       </View>
     </TouchableHighlight>

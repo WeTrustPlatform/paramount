@@ -5,7 +5,7 @@ import { TouchableOpacity } from 'react-native';
 import { ITheme, withTheme } from '../../theme';
 import { ButtonColor } from '../../theme/component-variables/buttonVariables';
 import { Button } from '../Button';
-import { GridBox } from '../Layout';
+import { Spacing } from '../Layout';
 import { Heading } from '../Typography';
 import Dialog, { IDialogProps } from './Dialog';
 
@@ -26,7 +26,7 @@ const ConfirmDialogHeader = ({
   theme,
   onClose,
 }: IConfirmDialogHeaderProps) => (
-  <GridBox
+  <Spacing
     padding={2}
     flexDirection="row"
     justifyContent="space-between"
@@ -36,7 +36,7 @@ const ConfirmDialogHeader = ({
     <TouchableOpacity onPress={onClose}>
       <FiX size={24} color={theme.themeVariables.colors.text.default} />
     </TouchableOpacity>
-  </GridBox>
+  </Spacing>
 );
 
 export interface IConfirmDialogFooterProps {
@@ -58,16 +58,16 @@ const ConfirmDialogFooter = ({
   cancelLabel,
   confirmLabel,
 }: IConfirmDialogFooterProps) => (
-  <GridBox padding={2} flexDirection="row" justifyContent="flex-end">
+  <Spacing padding={2} flexDirection="row" justifyContent="flex-end">
     <Button appearance="minimal" onPress={onClose}>
       {cancelLabel}
     </Button>
-    <GridBox paddingLeft={2}>
+    <Spacing paddingLeft={2}>
       <Button color={color} onPress={onConfirm}>
         {confirmLabel}
       </Button>
-    </GridBox>
-  </GridBox>
+    </Spacing>
+  </Spacing>
 );
 
 const ConfirmDialogBase = (props: IConfirmDialogProps) => {
@@ -112,7 +112,7 @@ const ConfirmDialogBase = (props: IConfirmDialogProps) => {
       onClose={onClose}
       {...dialogProps}
     >
-      <GridBox padding={2}>{children}</GridBox>
+      <Spacing padding={2}>{children}</Spacing>
     </Dialog>
   );
 };
