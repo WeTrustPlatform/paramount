@@ -1,3 +1,4 @@
+import { IAlertVariables } from './component-variables/alertVariables';
 import { IAvatarVariables } from './component-variables/avatarVariables';
 import { IBadgeVariables } from './component-variables/badgeVariables';
 import { IButtonVariables } from './component-variables/buttonVariables';
@@ -13,6 +14,7 @@ import { ISwitchVariables } from './component-variables/switchVariables';
 import { ITextInputVariables } from './component-variables/textInputVariables';
 import { ITextVariables } from './component-variables/textVariables';
 import { IToastVariables } from './component-variables/toastVariables';
+import { GetAlertStyles } from './style-getters/getAlertStyles';
 import { GetAvatarStyles } from './style-getters/getAvatarStyles';
 import { GetBadgeStyles } from './style-getters/getBadgeStyles';
 import { GetButtonStyles } from './style-getters/getButtonStyles';
@@ -196,6 +198,7 @@ export interface IThemeVariables {
 }
 
 export interface IComponentVariables {
+  alert: IAlertVariables;
   avatar: IAvatarVariables;
   badge: IBadgeVariables;
   button: IButtonVariables;
@@ -214,6 +217,7 @@ export interface IComponentVariables {
 }
 
 export interface IStyleGetters {
+  getAlertStyles: GetAlertStyles;
   getAvatarStyles: GetAvatarStyles;
   getBadgeStyles: GetBadgeStyles;
   getButtonStyles: GetButtonStyles;

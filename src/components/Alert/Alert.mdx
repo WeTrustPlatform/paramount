@@ -1,0 +1,37 @@
+---
+name: Alert
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import Alert from './Alert';
+import { Spacing } from '../Layout';
+
+## Usage
+
+### Alerts
+
+<Playground>
+  <Spacing paddingY={2}>
+    <Alert title="Info" message="Message" />
+  </Spacing>
+  <Spacing paddingY={2}>
+    <Alert intent="success" title="Success" message="Message" />
+  </Spacing>
+  <Spacing paddingY={2}>
+    <Alert intent="warning" title="Warning" message="Message" />
+  </Spacing>
+  <Spacing paddingY={2}>
+    <Alert intent="danger" title="Danger" message="Message" />
+  </Spacing>
+</Playground>
+
+### Closable Alerts
+
+<Playground>
+  <Alert isCloseable title="Closeable" message="Message" />
+</Playground>
+
+## Props
+
+<PropsTable of={Alert} />

@@ -1,4 +1,5 @@
 import { IComponentVariables, IThemeVariables } from '../ThemeInterface';
+import { getAlertVariables } from './alertVariables';
 import { getAvatarVariables } from './avatarVariables';
 import { getBadgeVariables } from './badgeVariables';
 import { getButtonVariables } from './buttonVariables';
@@ -19,6 +20,7 @@ export const getComponentVariables = (
   themeVariables: IThemeVariables,
 ): IComponentVariables => {
   return {
+    alert: getAlertVariables(themeVariables),
     avatar: getAvatarVariables(themeVariables),
     badge: getBadgeVariables(themeVariables),
     button: getButtonVariables(themeVariables),

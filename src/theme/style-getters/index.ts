@@ -1,4 +1,5 @@
 import { IComponentVariables, IStyleGetters } from '../ThemeInterface';
+import { getAlertStyles } from './getAlertStyles';
 import { getAvatarStyles } from './getAvatarStyles';
 import { getBadgeStyles } from './getBadgeStyles';
 import { getButtonStyles } from './getButtonStyles';
@@ -19,6 +20,7 @@ export const getStyleGetters = (
   componentVariables: IComponentVariables,
 ): IStyleGetters => {
   return {
+    getAlertStyles: getAlertStyles(componentVariables.alert),
     getAvatarStyles: getAvatarStyles(componentVariables.avatar),
     getBadgeStyles: getBadgeStyles(componentVariables.badge),
     getButtonStyles: getButtonStyles(componentVariables.button),

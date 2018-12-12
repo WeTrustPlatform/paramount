@@ -11,9 +11,9 @@ export type ToastId = string;
 export interface IToastSettings {
   id?: ToastId;
   title?: string;
-  description?: string;
+  message?: string;
   duration?: number;
-  /* custom component, will take precedence over title and description */
+  /* custom component, will take precedence over title and message */
   component?: React.ReactNode;
   /* will override */
   intent?: IntentType;
@@ -59,13 +59,7 @@ class ToastBase extends React.Component<IToastProps, IToastState> {
   }
 
   public render() {
-    const {
-      theme,
-      component,
-      title,
-      description,
-      intent = 'info',
-    } = this.props;
+    const { theme, component, title, message, intent = 'info' } = this.props;
 
     const { toastStyle, textStyle } = theme.getToastStyles(intent);
 
@@ -80,7 +74,7 @@ class ToastBase extends React.Component<IToastProps, IToastState> {
             <Text dangerouslySetInlineStyle={{ textStyle }} size="large">
               {title}
             </Text>
-            <Text dangerouslySetInlineStyle={{ textStyle }}>{description}</Text>
+            <Text dangerouslySetInlineStyle={{ textStyle }}>{message}</Text>
           </View>
         )}
       </Animated.View>
