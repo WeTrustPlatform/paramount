@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/WeTrustPlatform/paramount/compare/v1.1.9...v1.2.0) (2018-12-12)
+
+
+### Features
+
+* **progress:** add progress component ([9781e84](https://github.com/WeTrustPlatform/paramount/commit/9781e84))
+
 ## [1.1.9](https://github.com/WeTrustPlatform/paramount/compare/v1.1.8...v1.1.9) (2018-12-07)
 
 
