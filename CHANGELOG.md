@@ -1,3 +1,16 @@
+# [1.3.0](https://github.com/WeTrustPlatform/paramount/compare/v1.2.0...v1.3.0) (2018-12-13)
+
+
+### Bug Fixes
+
+* **alert:** update snapshots ([92e1669](https://github.com/WeTrustPlatform/paramount/commit/92e1669))
+* fix message to description ([2e53e49](https://github.com/WeTrustPlatform/paramount/commit/2e53e49))
+
+
+### Features
+
+* **alert:** add alert component ([a8abf06](https://github.com/WeTrustPlatform/paramount/commit/a8abf06))
+
 # [1.2.0](https://github.com/WeTrustPlatform/paramount/compare/v1.1.9...v1.2.0) (2018-12-12)
 
 
