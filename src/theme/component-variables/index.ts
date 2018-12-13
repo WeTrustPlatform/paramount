@@ -4,6 +4,7 @@ import { getAvatarVariables } from './avatarVariables';
 import { getBadgeVariables } from './badgeVariables';
 import { getButtonVariables } from './buttonVariables';
 import { getCheckboxVariables } from './checkboxVariables';
+import { getCounterVariables } from './counterVariables';
 import { getDialogVariables } from './dialogVariables';
 import { getDividerVariables } from './dividerVariables';
 import { getHeadingVariables } from './headingVariables';
@@ -25,6 +26,7 @@ export const getComponentVariables = (
     badge: getBadgeVariables(themeVariables),
     button: getButtonVariables(themeVariables),
     checkbox: getCheckboxVariables(themeVariables),
+    counter: getCounterVariables(themeVariables),
     dialog: getDialogVariables(themeVariables),
     divider: getDividerVariables(themeVariables),
     heading: getHeadingVariables(themeVariables),

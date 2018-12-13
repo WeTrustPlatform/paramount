@@ -1,0 +1,35 @@
+---
+name: Counter
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import Counter from './Counter';
+import { Spacing } from '../Layout';
+import { Counter as CounterContainer } from 'react-powerplug';
+
+## Usage
+
+### Counter
+
+<Playground>
+  <CounterContainer initial={1}>
+    {({ count, inc, dec }) => (
+      <Counter count={count} onIncrement={inc} onDecrement={dec} />
+    )}
+  </CounterContainer>
+</Playground>
+
+### Counter with disabled decrement
+
+<Playground>
+  <CounterContainer initial={0}>
+    {({ count, inc }) => (
+      <Counter count={count} onIncrement={inc} isDecrementDisabled />
+    )}
+  </CounterContainer>
+</Playground>
+
+## Props
+
+<PropsTable of={Counter} />

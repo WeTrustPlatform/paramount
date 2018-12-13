@@ -4,6 +4,7 @@ import { getAvatarStyles } from './getAvatarStyles';
 import { getBadgeStyles } from './getBadgeStyles';
 import { getButtonStyles } from './getButtonStyles';
 import { getCheckboxStyles } from './getCheckboxStyles';
+import { getCounterStyles } from './getCounterStyles';
 import { getDialogStyles } from './getDialogStyles';
 import { getDividerStyles } from './getDividerStyles';
 import { getHeadingStyle } from './getHeadingStyle';
@@ -25,6 +26,7 @@ export const getStyleGetters = (
     getBadgeStyles: getBadgeStyles(componentVariables.badge),
     getButtonStyles: getButtonStyles(componentVariables.button),
     getCheckboxStyles: getCheckboxStyles(componentVariables.checkbox),
+    getCounterStyles: getCounterStyles(componentVariables.counter),
     getDialogStyles: getDialogStyles(componentVariables.dialog),
     getDividerStyles: getDividerStyles(componentVariables.divider),
     getHeadingStyles: getHeadingStyle(componentVariables.heading),

@@ -7,39 +7,30 @@ export interface IFormFieldProps {
   error?: string;
   label?: string;
   description?: string;
+  children: React.ReactElement<any>;
 }
 
-class FormField extends React.Component<
-  IFormFieldProps & { children: React.ReactElement<any> }
-> {
-  public render() {
-    const {
-      label,
-      error,
-      children,
-      description,
-      ...passThroughProps
-    } = this.props;
+const FormField = (props: IFormFieldProps) => {
+  const { label, error, children, description, ...passThroughProps } = props;
 
-    return (
-      <Box>
-        {label && (
-          <Box marginBottom={1}>
-            <Label>{label}</Label>
-          </Box>
-        )}
+  return (
+    <Box>
+      {label && (
         <Box marginBottom={1}>
-          {React.cloneElement(children, passThroughProps)}
+          <Label>{label}</Label>
         </Box>
-        {error && (
-          <Box marginBottom={1}>
-            <Text color="danger">{error}</Text>
-          </Box>
-        )}
-        {description && <Text>{description}</Text>}
+      )}
+      <Box marginBottom={1}>
+        {React.cloneElement(children, passThroughProps)}
       </Box>
-    );
-  }
-}
+      {error && (
+        <Box marginBottom={1}>
+          <Text color="danger">{error}</Text>
+        </Box>
+      )}
+      {description && <Text>{description}</Text>}
+    </Box>
+  );
+};
 
 export default FormField;
