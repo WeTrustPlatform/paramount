@@ -17,8 +17,8 @@ import { Strong, Text } from '../Typography';
 export interface IAlertProps {
   theme: ITheme;
   title?: string;
-  message?: string;
-  /* custom component, will take precedence over title and message */
+  description?: string;
+  /* custom component, will take precedence over title and description */
   component?: React.ReactNode;
   onClose?: () => void;
   isCloseable?: boolean;
@@ -61,7 +61,7 @@ const resolveIcon = (intent: IntentType, theme: ITheme) => {
 const AlertBase = (props: IAlertProps) => {
   const {
     title,
-    message,
+    description,
     component,
     onClose,
     isCloseable = false,
@@ -95,7 +95,7 @@ const AlertBase = (props: IAlertProps) => {
           }}
         >
           <Strong>{title}</Strong>
-          <Text>{message}</Text>
+          <Text>{description}</Text>
         </View>
       )}
       {isCloseable && (

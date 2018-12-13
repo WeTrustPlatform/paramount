@@ -9,11 +9,11 @@ export const controlPaddings: IControlSizes = {
 };
 
 export const controlHeights: IControlSizes = {
-  small: 36,
+  small: 40,
 
-  medium: 40,
+  medium: 48,
 
-  large: 48,
+  large: 56,
 };
 
 export const controlBorderRadius: IControlSizes = {
