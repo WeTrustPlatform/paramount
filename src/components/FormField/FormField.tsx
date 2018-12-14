@@ -3,11 +3,11 @@ import * as React from 'react';
 import { Box } from '../Layout';
 import { Label, Text } from '../Typography';
 
-export interface IFormFieldProps {
+export interface IFormFieldProps<TChildren = any> {
   error?: string;
   label?: string;
   description?: string;
-  children: React.ReactElement<any>;
+  children: TChildren;
 }
 
 const FormField = (props: IFormFieldProps) => {

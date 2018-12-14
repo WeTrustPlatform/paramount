@@ -10,6 +10,7 @@ import { getDividerStyles } from './getDividerStyles';
 import { getHeadingStyle } from './getHeadingStyle';
 import { getParagraphStyles } from './getParagraphStyles';
 import { getPickerStyles } from './getPickerStyles';
+import { getPopoverStyles } from './getPopoverStyles';
 import { getProgressStyles } from './getProgressStyles';
 import { getSelectListStyles } from './getSelectListStyles';
 import { getSwitchStyles } from './getSwitchStyles';
@@ -32,6 +33,7 @@ export const getStyleGetters = (
     getHeadingStyles: getHeadingStyle(componentVariables.heading),
     getParagraphStyles: getParagraphStyles(componentVariables.paragraph),
     getPickerStyles: getPickerStyles(componentVariables.picker),
+    getPopoverStyles: getPopoverStyles(componentVariables.popover),
     getProgressStyles: getProgressStyles(componentVariables.progress),
     getSelectListStyles: getSelectListStyles(componentVariables.selectList),
     getSwitchStyles: getSwitchStyles(componentVariables.switch),
