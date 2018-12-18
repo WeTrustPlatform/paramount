@@ -48,7 +48,6 @@ export interface IButtonVariables {
     color: string;
   };
   sizes: IButtonSizes;
-  boxShadow: string;
 }
 
 export const getButtonVariables = (
@@ -168,7 +167,6 @@ export const getButtonVariables = (
         },
       },
     },
-    boxShadow: 'none',
     disabled: {
       backgroundColor: themeVariables.colors.background.disabled,
 

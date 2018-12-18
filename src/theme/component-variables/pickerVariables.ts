@@ -5,7 +5,6 @@ import { IThemeVariables } from '../ThemeInterface';
 export type IPickerAppearanceStyles = ViewStyle & {
   backgroundColor: string;
   borderColor: string;
-  boxShadow: string;
   color: string;
 };
 
@@ -47,7 +46,6 @@ export const getPickerVariables = (
       backgroundColor: themeVariables.colors.background.plain,
       borderColor: themeVariables.colors.border.default,
       borderWidth: 1,
-      boxShadow: 'none',
       color: themeVariables.colors.text.default,
     },
     disabled: {
