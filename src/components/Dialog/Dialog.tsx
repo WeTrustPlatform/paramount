@@ -39,8 +39,6 @@ const DialogBase = (props: IDialogProps) => {
     dangerouslySetInlineStyle,
   } = props;
 
-  if (!isVisible) return null;
-
   const {
     modalContainerStyle,
     overlayStyle,

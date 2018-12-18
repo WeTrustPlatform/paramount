@@ -9,6 +9,7 @@ import { IDividerVariables } from './component-variables/dividerVariables';
 import { IHeadingVariables } from './component-variables/headingVariables';
 import { IParagraphVariables } from './component-variables/paragraphVariables';
 import { IPickerVariables } from './component-variables/pickerVariables';
+import { IPopoverVariables } from './component-variables/popoverVariables';
 import { IProgressVariables } from './component-variables/progressVariables';
 import { ISelectListVariables } from './component-variables/selectListVariables';
 import { ISwitchVariables } from './component-variables/switchVariables';
@@ -26,6 +27,7 @@ import { GetDividerStyles } from './style-getters/getDividerStyles';
 import { GetHeadingStyle } from './style-getters/getHeadingStyle';
 import { GetParagraphStyles } from './style-getters/getParagraphStyles';
 import { GetPickerStyles } from './style-getters/getPickerStyles';
+import { GetPopoverStyles } from './style-getters/getPopoverStyles';
 import { GetProgressStyles } from './style-getters/getProgressStyles';
 import { GetSelectListStyles } from './style-getters/getSelectListStyles';
 import { GetSwitchStyles } from './style-getters/getSwitchStyles';
@@ -217,6 +219,7 @@ export interface IComponentVariables {
   text: ITextVariables;
   textInput: ITextInputVariables;
   toast: IToastVariables;
+  popover: IPopoverVariables;
 }
 
 export interface IStyleGetters {
@@ -237,6 +240,7 @@ export interface IStyleGetters {
   getTextInputStyles: GetTextInputStyles;
   getTextStyles: GetTextStyles;
   getToastStyles: GetToastStyles;
+  getPopoverStyles: GetPopoverStyles;
 }
 
 /**

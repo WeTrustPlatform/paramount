@@ -1,0 +1,194 @@
+---
+name: Popover
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import Popover from './Popover';
+import { Button } from '../Button';
+import { Box, Spacing } from '../Layout';
+import { Text } from '../Typography';
+import { Toggle } from 'react-powerplug';
+
+## Usage
+
+### Popovers
+
+<Spacing paddingBottom={18} zIndex={1}>
+  <Box flexDirection="row" justifyContent="space-between">
+    <Toggle>
+      {({ on, toggle }) => (
+        <Popover
+          isVisible={on}
+          onClose={toggle}
+          position="top-right"
+          content={
+            <Box backgroundColor="white" width={200} height={200}>
+              <Text>
+                Long text that should be well visible and non-obstructing
+              </Text>
+            </Box>
+          }
+        >
+          <Button onPress={toggle} isInline>
+            Top right
+          </Button>
+        </Popover>
+      )}
+    </Toggle>
+    <Toggle>
+      {({ on, toggle }) => (
+        <Popover
+          isVisible={on}
+          onClose={toggle}
+          position="top"
+          content={
+            <Box backgroundColor="white" width={200} height={200}>
+              <Text>
+                Long text that should be well visible and non-obstructing
+              </Text>
+            </Box>
+          }
+        >
+          <Button onPress={toggle} isInline>
+            Top
+          </Button>
+        </Popover>
+      )}
+    </Toggle>
+    <Toggle>
+      {({ on, toggle }) => (
+        <Popover
+          isVisible={on}
+          onClose={toggle}
+          position="top-left"
+          content={
+            <Box backgroundColor="white" width={200} height={200}>
+              <Text>
+                Long text that should be well visible and non-obstructing
+              </Text>
+            </Box>
+          }
+        >
+          <Button onPress={toggle} isInline>
+            Top left
+          </Button>
+        </Popover>
+      )}
+    </Toggle>
+  </Box>
+</Spacing>
+
+<Spacing paddingY={18} zIndex={2}>
+  <Box flexDirection="row" justifyContent="space-between">
+    <Toggle>
+      {({ on, toggle }) => (
+        <Popover
+          isVisible={on}
+          onClose={toggle}
+          position="left"
+          content={
+            <Box backgroundColor="white" width={200} height={200}>
+              <Text>
+                Long text that should be well visible and non-obstructing
+              </Text>
+            </Box>
+          }
+        >
+          <Button onPress={toggle} isInline>
+            Left
+          </Button>
+        </Popover>
+      )}
+    </Toggle>
+    <Toggle>
+      {({ on, toggle }) => (
+        <Popover
+          isVisible={on}
+          onClose={toggle}
+          position="right"
+          content={
+            <Box backgroundColor="white" width={200} height={200}>
+              <Text>
+                Long text that should be well visible and non-obstructing
+              </Text>
+            </Box>
+          }
+        >
+          <Button onPress={toggle} isInline>
+            Right
+          </Button>
+        </Popover>
+      )}
+    </Toggle>
+  </Box>
+</Spacing>
+
+<Spacing paddingTop={18} zIndex={3}>
+  <Box flexDirection="row" justifyContent="space-between">
+    <Toggle>
+      {({ on, toggle }) => (
+        <Popover
+          isVisible={on}
+          onClose={toggle}
+          position="bottom-right"
+          content={
+            <Box backgroundColor="white" width={200} height={200}>
+              <Text>
+                Long text that should be well visible and non-obstructing
+              </Text>
+            </Box>
+          }
+        >
+          <Button onPress={toggle} isInline>
+            Bottom right
+          </Button>
+        </Popover>
+      )}
+    </Toggle>
+    <Toggle>
+      {({ on, toggle }) => (
+        <Popover
+          isVisible={on}
+          onClose={toggle}
+          position="bottom"
+          content={
+            <Box backgroundColor="white" width={200} height={200}>
+              <Text>
+                Long text that should be well visible and non-obstructing
+              </Text>
+            </Box>
+          }
+        >
+          <Button onPress={toggle} isInline>
+            Bottom
+          </Button>
+        </Popover>
+      )}
+    </Toggle>
+    <Toggle>
+      {({ on, toggle }) => (
+        <Popover
+          isVisible={on}
+          onClose={toggle}
+          position="bottom-left"
+          content={
+            <Box backgroundColor="white" width={200} height={200}>
+              <Text>
+                Long text that should be well visible and non-obstructing
+              </Text>
+            </Box>
+          }
+        >
+          <Button onPress={toggle} isInline>
+            Bottom left
+          </Button>
+        </Popover>
+      )}
+    </Toggle>
+  </Box>
+</Spacing>
+
+## Props
+
+<PropsTable of={Popover} />
