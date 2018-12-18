@@ -9,7 +9,7 @@ export default (Platform.OS === 'web'
     }
   : // Use default font families by React Native by default
     {
-      heading: undefined,
-      mono: undefined,
-      text: undefined,
+      heading: '',
+      mono: '',
+      text: '',
     });
