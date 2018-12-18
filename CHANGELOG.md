@@ -1,3 +1,11 @@
+# [1.4.0](https://github.com/WeTrustPlatform/paramount/compare/v1.3.0...v1.4.0) (2018-12-18)
+
+
+### Features
+
+* **counter:** add counter component ([6c8c289](https://github.com/WeTrustPlatform/paramount/commit/6c8c289))
+* **popover:** add popover component ([#35](https://github.com/WeTrustPlatform/paramount/issues/35)) ([183c091](https://github.com/WeTrustPlatform/paramount/commit/183c091))
+
 # [1.3.0](https://github.com/WeTrustPlatform/paramount/compare/v1.2.0...v1.3.0) (2018-12-13)
 
 
