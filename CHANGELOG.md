@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/WeTrustPlatform/paramount/compare/v1.4.0...v1.4.1) (2018-12-18)
+
+
+### Bug Fixes
+
+* correct cjs export ([62be791](https://github.com/WeTrustPlatform/paramount/commit/62be791))
+
 # [1.4.0](https://github.com/WeTrustPlatform/paramount/compare/v1.3.0...v1.4.0) (2018-12-18)
 
 
