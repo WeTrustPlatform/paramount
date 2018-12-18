@@ -1,13 +1,15 @@
 // Temporary usage until it is integrated
 // https://github.com/necolas/react-native-web/issues/1020
+// @ts-ignore: FIX: Fix typing of this module
 import FocusTrap from 'focus-trap-react';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { ModalProps } from 'react-native';
+
+import { ModalProps } from './Modal';
 
 const ESC_KEY = 27;
 
-class Modal extends React.Component<ModalProps> {
+class Modal extends React.PureComponent<ModalProps> {
   public el: HTMLDivElement;
   public modalRoot: HTMLBodyElement;
   public content: React.RefObject<HTMLDivElement> = React.createRef();
@@ -19,6 +21,13 @@ class Modal extends React.Component<ModalProps> {
   }
 
   public componentDidMount() {
+    // TODO: find a better solution
+    // Currently, when the body height is shorter than the content that is scrollable
+    // it will jump scroll to top when the modal is opened.
+    // This hack keeps the body height the same length as the content
+    document.body.style.position = 'relative';
+    document.body.style.height = 'initial';
+    document.body.style.minHeight = 'initial';
     this.modalRoot.appendChild(this.el);
   }
 
@@ -36,8 +45,12 @@ class Modal extends React.Component<ModalProps> {
   };
 
   public render() {
-    const { transparent, visible } = this.props;
+    const { transparent, visible, isScrollable = false } = this.props;
 
+    // Prevent body scroll
+    if (visible && !isScrollable) document.body.style.overflow = 'hidden';
+    // Reset to normal
+    if (!visible) document.body.style.overflow = '';
     if (!visible) return null;
 
     return ReactDOM.createPortal(
@@ -49,7 +62,7 @@ class Modal extends React.Component<ModalProps> {
             backgroundColor: transparent ? 'transparent' : 'white',
             bottom: 0,
             left: 0,
-            position: 'fixed',
+            position: isScrollable ? 'absolute' : 'fixed',
             right: 0,
             top: 0,
             zIndex: 1000,
