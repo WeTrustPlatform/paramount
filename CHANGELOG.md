@@ -1,3 +1,12 @@
+## [1.4.2](https://github.com/WeTrustPlatform/paramount/compare/v1.4.1...v1.4.2) (2018-12-18)
+
+
+### Bug Fixes
+
+* **native:** remove invalid box shadow and use default font family in react native ([ac7149e](https://github.com/WeTrustPlatform/paramount/commit/ac7149e))
+* **test:** update snapshots ([a8146b6](https://github.com/WeTrustPlatform/paramount/commit/a8146b6))
+* **type:** return empty string ([185c6d5](https://github.com/WeTrustPlatform/paramount/commit/185c6d5))
+
 ## [1.4.1](https://github.com/WeTrustPlatform/paramount/compare/v1.4.0...v1.4.1) (2018-12-18)
 
 
