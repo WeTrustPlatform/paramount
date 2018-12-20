@@ -35,6 +35,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "@expo/vector-icons": "^8.0.0",
     "focus-trap-react": "^5.0.0",
     "react": "16.6.3",
     "react-art": "16.6.3",
@@ -55,6 +56,7 @@
     "@semantic-release/github": "5.2.5",
     "@semantic-release/npm": "5.1.1",
     "@semantic-release/release-notes-generator": "7.1.4",
+    "@types/expo__vector-icons": "^6.2.3",
     "@types/jest": "23.3.10",
     "@types/react": "16.7.13",
     "@types/react-dom": "16.0.11",

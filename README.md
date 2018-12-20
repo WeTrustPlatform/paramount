@@ -1,3 +1,7 @@
+# Ongoing development
+
+Basic components are available and usable. However, until 2.0, updates in 1.\* may have breaking changes, and have some cross-platform incompabilities
+
 # Paramount
 
 Cross platform React Native and React Web UI components library

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { FiX } from 'react-icons/fi';
 import { TouchableOpacity } from 'react-native';
 
+import { Icon } from '../../icons';
 import { ITheme, withTheme } from '../../theme';
 import { ButtonColor } from '../../theme/component-variables/buttonVariables';
 import { Button } from '../Button';
@@ -34,7 +34,11 @@ const ConfirmDialogHeader = ({
   >
     <Heading>{title}</Heading>
     <TouchableOpacity onPress={onClose}>
-      <FiX size={24} color={theme.themeVariables.colors.text.default} />
+      <Icon
+        name="x"
+        size={24}
+        color={theme.themeVariables.colors.text.default}
+      />
     </TouchableOpacity>
   </Spacing>
 );
