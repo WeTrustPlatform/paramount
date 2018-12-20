@@ -28,7 +28,14 @@ class Modal extends React.PureComponent<ModalProps> {
     document.body.style.position = 'relative';
     document.body.style.height = 'initial';
     document.body.style.minHeight = 'initial';
+
     this.modalRoot.appendChild(this.el);
+  }
+
+  public componentDidUpdate() {
+    const { visible, isScrollable = false } = this.props;
+    if (visible && !isScrollable) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = '';
   }
 
   public componentWillUnmount() {
@@ -47,10 +54,6 @@ class Modal extends React.PureComponent<ModalProps> {
   public render() {
     const { transparent, visible, isScrollable = false } = this.props;
 
-    // Prevent body scroll
-    if (visible && !isScrollable) document.body.style.overflow = 'hidden';
-    // Reset to normal
-    if (!visible) document.body.style.overflow = '';
     if (!visible) return null;
 
     return ReactDOM.createPortal(
