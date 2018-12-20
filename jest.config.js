@@ -1,3 +1,5 @@
+const { defaults } = require('jest-config');
+
 module.exports = {
   preset: './tests/presets.js',
   transform: {
@@ -7,5 +9,12 @@ module.exports = {
   moduleNameMapper: {
     '^docz$': '<rootDir>/tests/doczMock.js',
   },
+  moduleFileExtensions: [
+    ...defaults.moduleFileExtensions,
+    'web.ts',
+    'ts',
+    'web.tsx',
+    'tsx',
+  ],
   setupFiles: ['jest-canvas-mock'],
 };
