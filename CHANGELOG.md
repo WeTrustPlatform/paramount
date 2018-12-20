@@ -1,3 +1,12 @@
+## [1.4.3](https://github.com/WeTrustPlatform/paramount/compare/v1.4.2...v1.4.3) (2018-12-20)
+
+
+### Bug Fixes
+
+* **dialog:** resolve to expo icons ([61c9bd3](https://github.com/WeTrustPlatform/paramount/commit/61c9bd3))
+* **modal:** fix modal SSR ([35309e0](https://github.com/WeTrustPlatform/paramount/commit/35309e0))
+* **test:** resolve snapshots to web version ([b1ad78e](https://github.com/WeTrustPlatform/paramount/commit/b1ad78e))
+
 ## [1.4.2](https://github.com/WeTrustPlatform/paramount/compare/v1.4.1...v1.4.2) (2018-12-18)
 
 
