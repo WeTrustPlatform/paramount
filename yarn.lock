@@ -1243,7 +1243,7 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@types/expo__vector-icons@^6.2.3":
+"@types/expo__vector-icons@6.2.3":
   version "6.2.3"
   resolved "https://registry.yarnpkg.com/@types/expo__vector-icons/-/expo__vector-icons-6.2.3.tgz#68f2018a40dcfccb9bae79461080cc4d129b451f"
   integrity sha512-YQd+BzwHiaRk8ILV0vHQ1bwhlUDqvWLf+cQFmZOwjLaMTcZTzEjxZstEzvMn8LiV4t6ZbDmZjraaN28b8mAq6g==
