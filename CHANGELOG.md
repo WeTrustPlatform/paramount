@@ -1,3 +1,10 @@
+## [1.4.8](https://github.com/WeTrustPlatform/paramount/compare/v1.4.7...v1.4.8) (2018-12-21)
+
+
+### Bug Fixes
+
+* fix Modal SSR ([65d7ec2](https://github.com/WeTrustPlatform/paramount/commit/65d7ec2))
+
 ## [1.4.7](https://github.com/WeTrustPlatform/paramount/compare/v1.4.6...v1.4.7) (2018-12-21)
 
 
