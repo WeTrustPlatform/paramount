@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/WeTrustPlatform/paramount/compare/v1.4.3...v1.4.4) (2018-12-21)
+
+
+### Bug Fixes
+
+* fix accessibility and modal ([5ddfb6b](https://github.com/WeTrustPlatform/paramount/commit/5ddfb6b))
+
 ## [1.4.3](https://github.com/WeTrustPlatform/paramount/compare/v1.4.2...v1.4.3) (2018-12-20)
 
 
