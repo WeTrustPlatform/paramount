@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { FiMinus, FiPlus } from 'react-icons/fi';
 import { TouchableOpacity, View } from 'react-native';
 
+import { Icon } from '../../icons';
 import { ITheme, withTheme } from '../../theme';
 import { ICounterStyles } from '../../theme/style-getters/getCounterStyles';
 import { Spacing } from '../Layout';
@@ -60,7 +60,8 @@ const CounterBase = (props: ICounterProps) => {
           disabled={isDecrementDisabled}
           onPress={!isDecrementDisabled ? onDecrement : undefined}
         >
-          <FiMinus
+          <Icon
+            name="minus"
             size={16}
             color={
               isDecrementDisabled
@@ -93,7 +94,8 @@ const CounterBase = (props: ICounterProps) => {
           disabled={isIncrementDisabled}
           onPress={!isIncrementDisabled ? onIncrement : undefined}
         >
-          <FiPlus
+          <Icon
+            name="plus"
             size={16}
             color={
               isIncrementDisabled

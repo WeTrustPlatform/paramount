@@ -1,14 +1,8 @@
 import * as React from 'react';
-import {
-  FiAlertCircle,
-  FiAlertTriangle,
-  FiCheckCircle,
-  FiInfo,
-  FiX,
-} from 'react-icons/fi';
 import { TouchableOpacity, View } from 'react-native';
 
 import { IntentType } from '../../constants/Intent';
+import { Icon } from '../../icons';
 import { ITheme, withTheme } from '../../theme';
 import { IAlertStyles } from '../../theme/style-getters/getAlertStyles';
 import { Spacing } from '../Layout';
@@ -34,27 +28,36 @@ const resolveIcon = (intent: IntentType, theme: ITheme) => {
   switch (intent) {
     case 'success':
       return (
-        <FiCheckCircle
+        <Icon
+          name="check-circle"
           size={24}
           color={theme.themeVariables.colors.text.success}
         />
       );
     case 'warning':
       return (
-        <FiAlertTriangle
+        <Icon
+          name="alert-triangle"
           size={24}
           color={theme.themeVariables.colors.text.warning}
         />
       );
     case 'danger':
       return (
-        <FiAlertCircle
+        <Icon
+          name="alert-circle"
           size={24}
           color={theme.themeVariables.colors.text.danger}
         />
       );
     default:
-      return <FiInfo size={24} color={theme.themeVariables.colors.text.info} />;
+      return (
+        <Icon
+          name="info"
+          size={24}
+          color={theme.themeVariables.colors.text.info}
+        />
+      );
   }
 };
 
@@ -101,7 +104,11 @@ const AlertBase = (props: IAlertProps) => {
       {isCloseable && (
         <TouchableOpacity onPress={onClose}>
           <Spacing paddingLeft={2}>
-            <FiX size={24} color={theme.themeVariables.colors.text.default} />
+            <Icon
+              name="x"
+              size={24}
+              color={theme.themeVariables.colors.text.default}
+            />
           </Spacing>
         </TouchableOpacity>
       )}

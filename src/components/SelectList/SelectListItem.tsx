@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { FiCheck } from 'react-icons/fi';
 import {
   TextStyle,
   TouchableHighlight,
@@ -8,6 +7,7 @@ import {
   ViewStyle,
 } from 'react-native';
 
+import { Icon } from '../../icons';
 import { ITheme, withTheme } from '../../theme';
 import { SelectListSize } from '../../theme/component-variables/selectListVariables';
 import { Box } from '../Layout';
@@ -89,7 +89,8 @@ const SelectListItemBase = (props: ISelectListItemProps) => {
         {isSelected && (
           <Box position="absolute" right={0} marginRight={4}>
             {checkedIcon || (
-              <FiCheck
+              <Icon
+                name="check"
                 size={22}
                 color={theme.themeVariables.colors.text.success}
               />

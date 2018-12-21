@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { FiArrowLeft } from 'react-icons/fi';
 
+import { Icon } from '../../icons';
 import { withTheme } from '../../theme';
 import Button, { IButtonProps } from './Button';
 
@@ -11,7 +11,8 @@ const BackButton = (props: IButtonProps) => {
       appearance="minimal"
       isInline
       iconBefore={
-        <FiArrowLeft
+        <Icon
+          name="arrow-left"
           size={24}
           color={theme.themeVariables.colors.text.default}
         />

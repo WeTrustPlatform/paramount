@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { FiCheck, FiX } from 'react-icons/fi';
 import {
   Animated,
   TouchableOpacity,
@@ -7,6 +6,7 @@ import {
   ViewStyle,
 } from 'react-native';
 
+import { Icon } from '../../icons';
 import { ITheme, withTheme } from '../../theme';
 
 /* Copy pasted from https://github.com/react-native-seoul/react-native-switch-toggle */
@@ -166,13 +166,15 @@ class SwitchBase extends React.Component<ISwitchProps, ISwitchState> {
           >
             {isSwitchedOn
               ? onIcon || (
-                  <FiCheck
+                  <Icon
+                    name="check"
                     size={20}
                     color={theme.themeVariables.colors.text.primary}
                   />
                 )
               : offIcon || (
-                  <FiX
+                  <Icon
+                    name="x"
                     size={20}
                     color={theme.themeVariables.colors.text.default}
                   />

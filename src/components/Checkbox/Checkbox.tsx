@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { FiCheck } from 'react-icons/fi';
 import {
   GestureResponderEvent,
   TouchableHighlight,
@@ -7,6 +6,7 @@ import {
   View,
 } from 'react-native';
 
+import { Icon } from '../../icons';
 import { ITheme, withTheme } from '../../theme';
 
 export interface ICheckboxProps {
@@ -50,7 +50,8 @@ const CheckboxBase = (props: ICheckboxProps & TouchableHighlightProps) => {
       >
         {isChecked
           ? checkedIcon || (
-              <FiCheck
+              <Icon
+                name="check"
                 size={20}
                 color={theme.themeVariables.colors.text.plain}
               />
