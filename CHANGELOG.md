@@ -1,3 +1,12 @@
+## [1.4.5](https://github.com/WeTrustPlatform/paramount/compare/v1.4.4...v1.4.5) (2018-12-21)
+
+
+### Bug Fixes
+
+* accessibility roles on RN ([434bf0f](https://github.com/WeTrustPlatform/paramount/commit/434bf0f))
+* **deps:** update dependency react-spring to v7 ([#30](https://github.com/WeTrustPlatform/paramount/issues/30)) ([16ae69a](https://github.com/WeTrustPlatform/paramount/commit/16ae69a))
+* **deps:** update react monorepo to v16.7.0 ([#41](https://github.com/WeTrustPlatform/paramount/issues/41)) ([1e071e9](https://github.com/WeTrustPlatform/paramount/commit/1e071e9))
+
 ## [1.4.4](https://github.com/WeTrustPlatform/paramount/compare/v1.4.3...v1.4.4) (2018-12-21)
 
 
