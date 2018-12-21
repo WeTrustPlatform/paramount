@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
 
 import { TextSize } from '../../theme/ThemeInterface';
 import { Spacing } from '../Layout';
@@ -34,7 +34,7 @@ export const List = (props: IListProps) => {
   return (
     <View
       // @ts-ignore
-      accessibilityRole="list"
+      accessibilityRole={Platform.OS === 'web' ? 'list' : 'none'}
     >
       <Spacing margin={0} marginLeft={1} padding={0}>
         {finalChildren}

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Platform } from 'react-native';
 
 import withTheme from '../../theme/withTheme';
 import Text, { ITextProps } from './Text';
@@ -9,7 +10,7 @@ const LabelBase = (props: ITextProps) => {
   return (
     <Text
       // @ts-ignore
-      accessibilityRole="label" // Web
+      accessibilityRole={Platform.OS === 'web' ? 'label' : 'none'}
       {...textProps}
     >
       {children}

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, ViewStyle } from 'react-native';
+import { Platform, View, ViewStyle } from 'react-native';
 import { Spring } from 'react-spring';
 
 import { ITheme, withTheme } from '../../theme';
@@ -40,7 +40,7 @@ const ProgressBase = (props: IProgressProps) => {
           >
             <View
               // @ts-ignore
-              accessibilityRole="progress"
+              accessibilityRole={Platform.OS === 'web' ? 'progress' : 'none'}
               style={{
                 width: `${value}%`,
                 ...progressStyle,

@@ -28,7 +28,7 @@ const HeadingBase = (props: IHeadingProps & TextProps) => {
   return (
     <Text
       // @ts-ignore
-      accessibilityRole={Platform.OS === 'web' ? 'heading' : 'header'}
+      accessibilityRole={Platform.OS === 'web' ? 'heading' : 'none'}
       aria-level={accessibilityLevel} // Web
       style={[{ textAlign }, headingStyle]}
       {...textProps}
