@@ -10,6 +10,7 @@ export * from './FormField';
 export * from './Layout';
 export * from './Loading';
 export * from './Picker';
+export * from './Progress';
 export * from './Popover';
 export * from './SelectList';
 export * from './Switch';

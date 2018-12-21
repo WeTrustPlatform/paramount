@@ -5,7 +5,7 @@ import { Spring } from 'react-spring';
 import { ITheme, withTheme } from '../../theme';
 import { ProgressSize } from '../../theme/component-variables/progressVariables';
 
-export interface IProgressProps {
+export interface ProgressProps {
   theme: ITheme;
   percent?: number;
   size?: ProgressSize;
@@ -18,7 +18,7 @@ export interface IProgressProps {
   };
 }
 
-const ProgressBase = (props: IProgressProps) => {
+const ProgressBase = (props: ProgressProps) => {
   const {
     percent = 0,
     size = 'medium',
