@@ -10,14 +10,14 @@ import { ModalProps } from './Modal';
 const ESC_KEY = 27;
 
 class Modal extends React.PureComponent<ModalProps> {
-  public el: HTMLDivElement;
-  public modalRoot: HTMLBodyElement;
+  public el: HTMLDivElement | null;
+  public modalRoot: HTMLBodyElement | null;
   public content: React.RefObject<HTMLDivElement> = React.createRef();
 
   constructor(props: ModalProps) {
     super(props);
-    this.el = document.createElement('div');
-    this.modalRoot = document.getElementsByTagName('body')[0];
+    this.el = null;
+    this.modalRoot = null;
   }
 
   public componentDidMount() {
@@ -29,7 +29,10 @@ class Modal extends React.PureComponent<ModalProps> {
     document.body.style.height = 'initial';
     document.body.style.minHeight = 'initial';
 
+    this.el = document.createElement('div');
+    this.modalRoot = document.getElementsByTagName('body')[0];
     this.modalRoot.appendChild(this.el);
+    this.forceUpdate();
   }
 
   public componentDidUpdate() {
@@ -39,7 +42,9 @@ class Modal extends React.PureComponent<ModalProps> {
   }
 
   public componentWillUnmount() {
-    this.modalRoot.removeChild(this.el);
+    if (this.modalRoot && this.el) {
+      this.modalRoot.removeChild(this.el);
+    }
   }
 
   public handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
@@ -54,7 +59,7 @@ class Modal extends React.PureComponent<ModalProps> {
   public render() {
     const { transparent, visible, isScrollable = false } = this.props;
 
-    if (!visible) return null;
+    if (!visible || !this.el) return null;
 
     return ReactDOM.createPortal(
       <FocusTrap>
