@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, TextProps, TextStyle } from 'react-native';
+import { Platform, Text, TextProps, TextStyle } from 'react-native';
 
 import { HeadingSize, ITheme } from '../../theme/ThemeInterface';
 import withTheme from '../../theme/withTheme';
@@ -28,7 +28,7 @@ const HeadingBase = (props: IHeadingProps & TextProps) => {
   return (
     <Text
       // @ts-ignore
-      accessibilityRole="heading"
+      accessibilityRole={Platform.OS === 'web' ? 'heading' : 'header'}
       aria-level={accessibilityLevel} // Web
       style={[{ textAlign }, headingStyle]}
       {...textProps}

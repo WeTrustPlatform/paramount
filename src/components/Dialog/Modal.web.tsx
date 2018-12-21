@@ -43,11 +43,11 @@ class Modal extends React.PureComponent<ModalProps> {
   }
 
   public handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    const { onDismiss } = this.props;
+    const { onRequestClose } = this.props;
 
-    if (event.keyCode === ESC_KEY && onDismiss) {
+    if (event.keyCode === ESC_KEY && onRequestClose) {
       event.stopPropagation();
-      onDismiss();
+      onRequestClose();
     }
   };
 

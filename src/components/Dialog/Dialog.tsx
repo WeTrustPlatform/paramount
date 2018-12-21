@@ -47,7 +47,7 @@ const DialogBase = (props: IDialogProps) => {
   } = theme.getDialogStyles();
 
   return (
-    <Modal visible={isVisible} transparent onDismiss={onClose}>
+    <Modal visible={isVisible} transparent onRequestClose={onClose}>
       <View
         style={{
           ...modalContainerStyle,

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
 
 import { withTheme } from '../../theme';
 import { TextColor, TextSize } from '../../theme/ThemeInterface';
@@ -33,10 +33,8 @@ const ListItemBase = (props: ITextProps & IListItemProps) => {
   ) : null;
 
   return (
-    <View
-      // @ts-ignore
-      accessibilityRole="listitem"
-    >
+    // @ts-ignore
+    <View accessibilityRole={Platform.OS === 'web' ? 'listitem' : undefined}>
       <Spacing flexDirection="row" alignItems="center" marginY={1}>
         <Spacing>{mark}</Spacing>
         <Spacing width="100%" paddingLeft={paddingLeft}>
