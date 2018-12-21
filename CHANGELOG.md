@@ -1,3 +1,10 @@
+## [1.4.6](https://github.com/WeTrustPlatform/paramount/compare/v1.4.5...v1.4.6) (2018-12-21)
+
+
+### Bug Fixes
+
+* export unexported components ([14befcb](https://github.com/WeTrustPlatform/paramount/commit/14befcb))
+
 ## [1.4.5](https://github.com/WeTrustPlatform/paramount/compare/v1.4.4...v1.4.5) (2018-12-21)
 
 
