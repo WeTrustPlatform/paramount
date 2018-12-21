@@ -6,7 +6,7 @@ import { ITheme, withTheme } from '../../theme';
 import { ICounterStyles } from '../../theme/style-getters/getCounterStyles';
 import { Spacing } from '../Layout';
 
-export interface ICounterProps {
+export interface CounterProps {
   theme: ITheme;
   count: number;
   /* custom component in place of count */
@@ -21,7 +21,7 @@ export interface ICounterProps {
   dangerouslySetInlineStyle?: Partial<ICounterStyles>;
 }
 
-const CounterBase = (props: ICounterProps) => {
+const CounterBase = (props: CounterProps) => {
   const {
     count,
     component,

@@ -239,7 +239,12 @@ class PopoverBase extends React.Component<IPopoverProps, PopoverState> {
         >
           {children}
         </LayoutMeasure>
-        <Modal visible={isVisible} transparent onDismiss={onClose} isScrollable>
+        <Modal
+          visible={isVisible}
+          transparent
+          onRequestClose={onClose}
+          isScrollable
+        >
           <View
             style={{
               ...modalContainerStyle,

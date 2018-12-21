@@ -8,7 +8,7 @@ import { IAlertStyles } from '../../theme/style-getters/getAlertStyles';
 import { Spacing } from '../Layout';
 import { Strong, Text } from '../Typography';
 
-export interface IAlertProps {
+export interface AlertProps {
   theme: ITheme;
   title?: string;
   description?: string;
@@ -61,7 +61,7 @@ const resolveIcon = (intent: IntentType, theme: ITheme) => {
   }
 };
 
-const AlertBase = (props: IAlertProps) => {
+const AlertBase = (props: AlertProps) => {
   const {
     title,
     description,
