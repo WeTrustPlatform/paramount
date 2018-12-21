@@ -1,3 +1,10 @@
+## [1.4.7](https://github.com/WeTrustPlatform/paramount/compare/v1.4.6...v1.4.7) (2018-12-21)
+
+
+### Bug Fixes
+
+* export Progress component ([4bdf432](https://github.com/WeTrustPlatform/paramount/commit/4bdf432))
+
 ## [1.4.6](https://github.com/WeTrustPlatform/paramount/compare/v1.4.5...v1.4.6) (2018-12-21)
 
 
