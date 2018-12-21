@@ -37,9 +37,9 @@
   "dependencies": {
     "@expo/vector-icons": "^8.0.0",
     "focus-trap-react": "^5.0.0",
-    "react": "16.6.3",
-    "react-art": "16.6.3",
-    "react-dom": "16.6.3",
+    "react": "16.7.0",
+    "react-art": "16.7.0",
+    "react-dom": "16.7.0",
     "react-icons": "3.2.2",
     "react-native-web": "0.9.9",
     "react-spring": "^6.1.10"
@@ -74,7 +74,7 @@
     "prettier": "1.15.3",
     "react-docgen-typescript-loader": "3.0.0",
     "react-powerplug": "1.0.0",
-    "react-test-renderer": "16.6.3",
+    "react-test-renderer": "16.7.0",
     "rimraf": "2.6.2",
     "semantic-release": "15.12.4",
     "travis-deploy-once": "5.0.9",
