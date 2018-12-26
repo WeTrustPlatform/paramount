@@ -2,7 +2,6 @@ import * as React from 'react';
 import { View, ViewStyle } from 'react-native';
 
 import { ITheme, withTheme } from '../../theme';
-import { Elevation } from '../../theme/ThemeInterface';
 
 export const BASE_BORDER_RADII = 4;
 
@@ -20,7 +19,7 @@ export interface IBoxProps extends ViewStyle {
   theme: ITheme;
   children?: React.ReactNode;
 
-  elevation?: Elevation;
+  elevation?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
   marginX?: number | string;
   marginY?: number | string;
