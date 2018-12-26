@@ -63,9 +63,9 @@ export interface ParagraphSizes {
 export type ParagraphSize = keyof ParagraphSizes;
 
 export interface FontFamilies {
-  heading: string;
-  mono: string;
-  text: string;
+  heading?: string;
+  mono?: string;
+  text?: string;
 }
 export type FontFamily = keyof FontFamilies;
 

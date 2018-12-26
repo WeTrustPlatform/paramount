@@ -6,15 +6,18 @@ menu: Components
 import { Playground, PropsTable } from 'docz';
 import { Toggle } from 'react-powerplug';
 import Switch from './Switch';
+import { Box } from '../Layout';
 
 ## Usage
 
 ### Default
 
 <Playground>
-  <Toggle initial={true}>
-    {({ on, toggle }) => <Switch isSwitchedOn={on} onChange={toggle} />}
-  </Toggle>
+  <Box>
+    <Toggle initial={true}>
+      {({ on, toggle }) => <Switch isSwitchedOn={on} onChange={toggle} />}
+    </Toggle>
+  </Box>
 </Playground>
 
 ## Props

@@ -22,6 +22,7 @@ export const getToastVariables = (
 ): ToastVariables => {
   return {
     base: {
+      backgroundColor: themeVariables.colors.background.plain,
       borderRadius: themeVariables.controlBorderRadius.medium,
       paddingBottom: 16,
       paddingLeft: 16,

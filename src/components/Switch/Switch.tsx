@@ -126,6 +126,11 @@ class SwitchBase extends React.Component<SwitchProps, SwitchState> {
         accessibilityLabel="switch"
         onPress={this.handleOnPress}
         activeOpacity={1}
+        style={{
+          alignSelf: 'flex-start',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+        }}
         {...touchableOpacityProps}
       >
         <Animated.View

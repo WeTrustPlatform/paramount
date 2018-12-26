@@ -29,8 +29,8 @@ export const getCheckboxVariables = (
       borderColor: themeVariables.colors.border.default,
       borderRadius: themeVariables.controlBorderRadius.small,
       borderWidth: 1,
-      height: 24,
-      width: 24,
+      height: 32,
+      width: 32,
     },
     checked: {
       backgroundColor: themeVariables.colors.background.primary.default,

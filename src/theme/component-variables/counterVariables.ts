@@ -26,9 +26,9 @@ export const getCounterVariables = (
       borderRadius: 999,
       borderWidth: 1,
       display: 'flex',
-      height: 32,
+      height: 40,
       justifyContent: 'center',
-      width: 32,
+      width: 40,
     },
     disabled: {
       borderColor: themeVariables.colors.border.muted,

@@ -25,22 +25,22 @@ export const getSwitchVariables = (
     circle: {
       alignItems: 'center',
       backgroundColor: themeVariables.colors.background.plain,
-      borderRadius: 15,
+      borderRadius: 24,
       display: 'flex',
-      height: 30,
+      height: 38,
       justifyContent: 'center',
       padding: 0,
-      width: 30,
+      width: 38,
     },
 
     container: {
       alignItems: 'center',
       backgroundColor: themeVariables.colors.background.tint1,
-      borderRadius: 18,
+      borderRadius: 24,
       flexDirection: 'row',
-      height: 36,
+      height: 44,
       padding: 3,
-      width: 56,
+      width: 72,
     },
   };
 };

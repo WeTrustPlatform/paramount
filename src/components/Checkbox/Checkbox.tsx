@@ -45,6 +45,7 @@ const CheckboxBase = (props: CheckboxProps & TouchableHighlightProps) => {
         style={{
           alignItems: 'center',
           display: 'flex',
+          height: '100%',
           justifyContent: 'center',
         }}
       >

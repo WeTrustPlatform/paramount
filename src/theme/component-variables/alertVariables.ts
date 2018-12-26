@@ -23,6 +23,7 @@ export const getAlertVariables = (
       flex: 1,
     },
     container: {
+      backgroundColor: themeVariables.colors.background.plain,
       borderLeftWidth: 5,
       borderRadius: themeVariables.controlBorderRadius.medium,
       display: 'flex',
