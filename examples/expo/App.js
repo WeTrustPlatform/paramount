@@ -1,62 +1,139 @@
-import { Ionicons } from '@expo/vector-icons';
 import {
+  Alert,
   Avatar,
+  Box,
   Button,
   ConfirmDialog,
+  Counter,
+  LabeledCheckbox,
+  Picker,
+  PickerItem,
+  Progress,
+  Spacing,
+  Switch,
   Text,
+  TextInputField,
   ToastConsumer,
   ToastProvider,
 } from 'paramount-ui';
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import { Counter as CounterContainer, Toggle } from 'react-powerplug';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <ToastProvider>
-          <ToastConsumer>
-            {({ notify }) => (
-              <Button
-                onPress={() =>
-                  notify({
-                    description: 'Description',
-                    intent: 'success',
-                    title: 'Title',
-                  })
-                }
-              >
-                Open default toast
+        <ScrollView
+          style={{
+            width: '100%',
+          }}
+          contentContainerStyle={{
+            width: '100%',
+          }}
+        >
+          <Spacing padding={3}>
+            <ToastProvider>
+              <ToastConsumer>
+                {({ notify }) => (
+                  <Button
+                    onPress={() =>
+                      notify({
+                        description: 'Description',
+                        intent: 'success',
+                        title: 'Title',
+                      })
+                    }
+                  >
+                    Open default toast
+                  </Button>
+                )}
+              </ToastConsumer>
+            </ToastProvider>
+            <Avatar name="Adam Sandler" />
+            <Toggle initial={false}>
+              {({ on, toggle }) => (
+                <Box>
+                  <ConfirmDialog
+                    title="Confirm dialog"
+                    isVisible={on}
+                    onClose={toggle}
+                    cancelLabel="Cancel label"
+                    confirmLabel="Confirm label"
+                  >
+                    <Text>Add custom content here</Text>
+                  </ConfirmDialog>
+                  <Button onPress={toggle}>Open dialog</Button>
+                </Box>
+              )}
+            </Toggle>
+            {/* <Toggle>
+          {({ on, toggle }) => (
+            <Popover
+              isVisible={on}
+              onClose={toggle}
+              position="top-right"
+              content={
+                <Box backgroundColor="white" width={200} height={200}>
+                  <Text>
+                    Long text that should be well visible and non-obstructing
+                  </Text>
+                </Box>
+              }
+            >
+              <Button onPress={toggle} isInline>
+                Top right
               </Button>
-            )}
-          </ToastConsumer>
-        </ToastProvider>
-        <Avatar name="Adam Sandler" />
-        <Text>Open up App.js to start working on your app!</Text>
-        <Ionicons name="md-checkmark-circle" size={32} color="green" />
-        <ConfirmDialog
-          title="Confirm dialog"
-          isVisible
-          onClose={() => {}}
-          cancelLabel="Cancel label"
-          confirmLabel="Confirm label"
-        >
-          <Text>Add custom content here</Text>
-        </ConfirmDialog>
-        {/* <Popover
-          isVisible
-          position="top-right"
-          content={
-            <Box backgroundColor="white" width={200} height={200}>
-              <Text>
-                Long text that should be well visible and non-obstructing
-              </Text>
-            </Box>
-          }
-        >
-      <Button>Is this roboto</Button>
-      </Popover> */}
-        <Button>Is this roboto</Button>
+            </Popover>
+          )}
+        </Toggle> */}
+            <Spacing paddingY={2}>
+              <Alert title="Info" description="Message" />
+            </Spacing>
+            <Spacing paddingY={2}>
+              <Alert intent="success" title="Success" description="Message" />
+            </Spacing>
+            <Spacing paddingY={2}>
+              <Alert intent="warning" title="Warning" description="Message" />
+            </Spacing>
+            <Spacing paddingY={2}>
+              <Alert intent="danger" title="Danger" description="Message" />
+            </Spacing>
+            <TextInputField
+              label="A required text input field"
+              isRequired
+              description="This is a description."
+              placeholder="Placeholder text"
+            />
+            <Picker
+              selectedValue="js"
+              onValueChange={(itemValue, itemIndex) =>
+                console.log('itemValue', itemValue)
+              }
+            >
+              <PickerItem label="Java" value="java" />
+              <PickerItem label="JavaScript" value="js" />
+            </Picker>
+            <Toggle initial={true}>
+              {({ on, toggle }) => (
+                <Switch isSwitchedOn={on} onChange={toggle} />
+              )}
+            </Toggle>
+            <LabeledCheckbox label="Checked" isChecked />
+            <CounterContainer initial={1}>
+              {({ count, incBy, decBy }) => (
+                <Box>
+                  <Progress percent={count} />
+                  <Counter
+                    count={<Text>{count}</Text>}
+                    onIncrement={() => incBy(10)}
+                    onDecrement={() => decBy(10)}
+                  />
+                </Box>
+              )}
+            </CounterContainer>
+          </Spacing>
+        </ScrollView>
       </View>
     );
   }
@@ -68,5 +145,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    width: '100%',
   },
 });
