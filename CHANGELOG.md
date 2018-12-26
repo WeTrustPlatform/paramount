@@ -1,3 +1,10 @@
+## [1.4.11](https://github.com/WeTrustPlatform/paramount/compare/v1.4.10...v1.4.11) (2018-12-26)
+
+
+### Bug Fixes
+
+* deploy previous chanrges ([ff55908](https://github.com/WeTrustPlatform/paramount/commit/ff55908))
+
 ## [1.4.10](https://github.com/WeTrustPlatform/paramount/compare/v1.4.9...v1.4.10) (2018-12-26)
 
 
