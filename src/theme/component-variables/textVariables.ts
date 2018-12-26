@@ -1,14 +1,14 @@
 import { TextStyle } from 'react-native';
 
-import { IFontFamilies, ITextColors, IThemeVariables } from '../ThemeInterface';
+import { FontFamilies, TextColors, ThemeVariables } from '../ThemeInterface';
 
-export interface ITextSizes {
+export interface TextSizes {
   small: TextStyle;
   medium: TextStyle;
   large: TextStyle;
 }
 
-export interface IColorVariations {
+export interface ColorVariations {
   lightest: string;
   light: string;
   base: string;
@@ -16,17 +16,17 @@ export interface IColorVariations {
   darkest: string;
 }
 
-export type TextSize = keyof ITextSizes;
+export type TextSize = keyof TextSizes;
 
-export interface ITextVariables {
-  color: ITextColors;
-  size: ITextSizes;
-  fontFamily: IFontFamilies;
+export interface TextVariables {
+  color: TextColors;
+  size: TextSizes;
+  fontFamily: FontFamilies;
 }
 
 export const getTextVariables = (
-  themeVariables: IThemeVariables,
-): ITextVariables => {
+  themeVariables: ThemeVariables,
+): TextVariables => {
   return {
     size: {
       /**

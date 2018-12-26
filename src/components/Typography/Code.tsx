@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { ITheme } from '../../theme/ThemeInterface';
+import { Theme } from '../../theme/ThemeInterface';
 import withTheme from '../../theme/withTheme';
-import Text, { ITextProps } from './Text';
+import Text, { TextProps } from './Text';
 
-export interface ICodeProps {
+export interface CodeProps {
   appearance?: 'default' | 'minimal';
-  theme: ITheme;
+  theme: Theme;
 }
 
-const CodeBase = (props: ICodeProps & ITextProps) => {
+const CodeBase = (props: CodeProps & TextProps) => {
   const { appearance, theme, ...textProps } = props;
 
   const code = <Text fontFamily="mono" {...textProps} />;

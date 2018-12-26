@@ -8,13 +8,13 @@ import {
 } from 'react-native';
 
 import { Icon } from '../../icons';
-import { ITheme, withTheme } from '../../theme';
+import { Theme, withTheme } from '../../theme';
 import { SelectListSize } from '../../theme/component-variables/selectListVariables';
 import { Box } from '../Layout';
 import { Text } from '../Typography';
 
-export interface ISelectListItemProps extends TouchableHighlightProps {
-  theme: ITheme;
+export interface SelectListItemProps extends TouchableHighlightProps {
+  theme: Theme;
   size?: SelectListSize;
   isDisabled?: boolean;
   onSelect?: (value: string, index: number, isSelected: boolean) => void;
@@ -34,7 +34,7 @@ export interface ISelectListItemProps extends TouchableHighlightProps {
   };
 }
 
-const SelectListItemBase = (props: ISelectListItemProps) => {
+const SelectListItemBase = (props: SelectListItemProps) => {
   const {
     checkedIcon,
     dangerouslySetInlineStyle,

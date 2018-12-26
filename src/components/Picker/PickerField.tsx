@@ -2,12 +2,12 @@ import * as React from 'react';
 import { PickerProps } from 'react-native';
 
 import { withTheme } from '../../theme';
-import { FormField, IFormFieldProps } from '../FormField';
+import { FormField, FormFieldProps } from '../FormField';
 import Picker from './Picker';
 
-export interface IPickerFieldProps extends IFormFieldProps, PickerProps {}
+export interface PickerFieldProps extends FormFieldProps, PickerProps {}
 
-const PickerFieldBase = (props: IPickerFieldProps) => {
+const PickerFieldBase = (props: PickerFieldProps) => {
   const { label, error, description, ...passThroughProps } = props;
 
   return (

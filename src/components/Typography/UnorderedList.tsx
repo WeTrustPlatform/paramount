@@ -3,16 +3,16 @@ import * as React from 'react';
 import { TextColor, TextSize } from '../../theme/ThemeInterface';
 import withTheme from '../../theme/withTheme';
 import List from './List';
-import { IListItemProps } from './ListItem';
+import { ListItemProps } from './ListItem';
 
-export interface IListProps {
+export interface ListProps {
   size?: TextSize;
   icon?: React.ReactNode;
   iconColor?: TextColor;
-  children: Array<React.ReactElement<IListItemProps>>;
+  children: Array<React.ReactElement<ListItemProps>>;
 }
 
-const UnorderedListBase = (props: IListProps) => {
+const UnorderedListBase = (props: ListProps) => {
   return <List listType="ul" {...props} />;
 };
 

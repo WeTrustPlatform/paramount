@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { View, ViewStyle } from 'react-native';
 
-import { ITheme, withTheme } from '../../theme';
+import { Theme, withTheme } from '../../theme';
 
-export const BASE_BORDER_RADII = 4;
+export const BASE_BORDER_RADI = 4;
 
 export type Shape =
   | 'circle'
@@ -15,8 +15,8 @@ export type Shape =
   | 'roundedTop'
   | 'square';
 
-export interface IBoxProps extends ViewStyle {
-  theme: ITheme;
+export interface BoxProps extends ViewStyle {
+  theme: Theme;
   children?: React.ReactNode;
 
   elevation?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
@@ -37,19 +37,19 @@ const shapeMap = {
     borderRadius: '999px',
   },
   rounded: {
-    borderRadius: `${BASE_BORDER_RADII}px`,
+    borderRadius: `${BASE_BORDER_RADI}px`,
   },
   roundedBottom: {
-    borderRadius: `0 0 ${BASE_BORDER_RADII}px ${BASE_BORDER_RADII}px`,
+    borderRadius: `0 0 ${BASE_BORDER_RADI}px ${BASE_BORDER_RADI}px`,
   },
   roundedLeft: {
-    borderRadius: `${BASE_BORDER_RADII}px 0 0 ${BASE_BORDER_RADII}px`,
+    borderRadius: `${BASE_BORDER_RADI}px 0 0 ${BASE_BORDER_RADI}px`,
   },
   roundedRight: {
-    borderRadius: `0 ${BASE_BORDER_RADII}px ${BASE_BORDER_RADII}px 0`,
+    borderRadius: `0 ${BASE_BORDER_RADI}px ${BASE_BORDER_RADI}px 0`,
   },
   roundedTop: {
-    borderRadius: `${BASE_BORDER_RADII}px ${BASE_BORDER_RADII}px 0 0`,
+    borderRadius: `${BASE_BORDER_RADI}px ${BASE_BORDER_RADI}px 0 0`,
   },
   square: {
     borderRadius: '0',
@@ -57,7 +57,7 @@ const shapeMap = {
 };
 
 const propToFn = {
-  elevation: (elevation: 0 | 1 | 2 | 3 | 4, theme: ITheme) => {
+  elevation: (elevation: 0 | 1 | 2 | 3 | 4, theme: Theme) => {
     return theme.themeVariables.elevations[elevation];
   },
   marginX: (marginX: number) => ({
@@ -79,7 +79,7 @@ const propToFn = {
   shape: (shape: Shape) => shapeMap[shape],
 };
 
-const Box = ({ theme, ...props }: IBoxProps) => {
+const Box = ({ theme, ...props }: BoxProps) => {
   const { children, ...viewStyles } = props;
   const transformedStyles = [];
   const pureStyles = {};

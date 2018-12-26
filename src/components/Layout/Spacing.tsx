@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { ITheme, withTheme } from '../../theme';
-import Box, { IBoxProps } from './Box';
+import { Theme, withTheme } from '../../theme';
+import Box, { BoxProps } from './Box';
 
 export type GridScale =
   | 0
@@ -24,10 +24,10 @@ export type GridScale =
   | 17
   | 18;
 
-const DEFAULT_GRID_POINT_MULTIPLIER = 8;
+const DEFAULT_GRD_POINT_MULTPLIER = 8;
 
-export interface ISpacingProps extends IBoxProps {
-  theme: ITheme;
+export interface SpacingProps extends BoxProps {
+  theme: Theme;
 
   gridPointMultiplier?: number;
   height?: GridScale;
@@ -83,7 +83,7 @@ const hasGrid = {
   paddingY: true,
 };
 
-const Spacing = (props: ISpacingProps) => {
+const Spacing = (props: SpacingProps) => {
   const marshalledProps = { ...props };
 
   for (const prop in props) {
@@ -93,7 +93,7 @@ const Spacing = (props: ISpacingProps) => {
       marshalledProps[prop] =
         // @ts-ignore
         props[prop] *
-        (props.gridPointMultiplier || DEFAULT_GRID_POINT_MULTIPLIER);
+        (props.gridPointMultiplier || DEFAULT_GRD_POINT_MULTPLIER);
     }
   }
 

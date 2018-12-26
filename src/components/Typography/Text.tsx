@@ -1,16 +1,20 @@
 import * as React from 'react';
-import { Text as RNText, TextProps, TextStyle } from 'react-native';
+import {
+  Text as RNText,
+  TextProps as RNTextProps,
+  TextStyle,
+} from 'react-native';
 
 import {
   FontFamily,
-  ITheme,
   TextColor,
   TextSize,
+  Theme,
 } from '../../theme/ThemeInterface';
 import withTheme from '../../theme/withTheme';
 import { TextAlign } from './types';
 
-export interface ITextStyleProps {
+export interface TextStyleProps {
   isInline?: boolean;
   size?: TextSize;
   color?: TextColor;
@@ -19,9 +23,9 @@ export interface ITextStyleProps {
 }
 
 // @ts-ignore: need to override for web purposes
-export interface ITextProps extends TextProps, ITextStyleProps {
+export interface TextProps extends RNTextProps, TextStyleProps {
   children: React.ReactNode;
-  theme: ITheme;
+  theme: Theme;
   href?: string;
 
   dangerouslySetInlineStyle?: {
@@ -29,7 +33,7 @@ export interface ITextProps extends TextProps, ITextStyleProps {
   };
 }
 
-const TextBase = (props: ITextProps) => {
+const TextBase = (props: TextProps) => {
   const {
     children,
     color = 'default',

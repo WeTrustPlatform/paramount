@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { View, ViewStyle } from 'react-native';
 
-import { ITheme, withTheme } from '../../theme';
+import { Theme, withTheme } from '../../theme';
 
-export interface IDividerProps {
-  theme: ITheme;
+export interface DividerProps {
+  theme: Theme;
   size?: number;
   color?: string;
   radius?: number;
@@ -16,7 +16,7 @@ export interface IDividerProps {
   };
 }
 
-const DividerBase = (props: IDividerProps) => {
+const DividerBase = (props: DividerProps) => {
   const { theme, size, color, radius, dangerouslySetInlineStyle } = props;
   const { dividerStyle } = theme.getDividerStyles(size, color, radius);
 

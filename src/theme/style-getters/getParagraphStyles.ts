@@ -1,6 +1,6 @@
 import { TextStyle } from 'react-native';
 
-import { IParagraphVariables } from '../component-variables/paragraphVariables';
+import { ParagraphVariables } from '../component-variables/paragraphVariables';
 import { ParagraphSize } from '../ThemeInterface';
 
 export type GetParagraphStyles = (
@@ -10,7 +10,7 @@ export type GetParagraphStyles = (
 };
 
 export const getParagraphStyles = (
-  paragraphVariables: IParagraphVariables,
+  paragraphVariables: ParagraphVariables,
 ): GetParagraphStyles => size => {
   return {
     paragraphStyle: {

@@ -1,4 +1,4 @@
-import { IComponentVariables, IStyleGetters } from '../ThemeInterface';
+import { ComponentVariables, StyleGetters } from '../ThemeInterface';
 import { getAlertStyles } from './getAlertStyles';
 import { getAvatarStyles } from './getAvatarStyles';
 import { getBadgeStyles } from './getBadgeStyles';
@@ -19,8 +19,8 @@ import { getTextStyle } from './getTextStyles';
 import { getToastStyles } from './getToastStyles';
 
 export const getStyleGetters = (
-  componentVariables: IComponentVariables,
-): IStyleGetters => {
+  componentVariables: ComponentVariables,
+): StyleGetters => {
   return {
     getAlertStyles: getAlertStyles(componentVariables.alert),
     getAvatarStyles: getAvatarStyles(componentVariables.avatar),

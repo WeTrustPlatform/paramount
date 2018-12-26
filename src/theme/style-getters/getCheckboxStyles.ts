@@ -1,6 +1,6 @@
 import { ViewStyle } from 'react-native';
 
-import { ICheckboxVariables } from '../component-variables/checkboxVariables';
+import { CheckboxVariables } from '../component-variables/checkboxVariables';
 
 export type GetCheckboxStyles = (
   isChecked: boolean,
@@ -11,7 +11,7 @@ export type GetCheckboxStyles = (
 };
 
 export const getCheckboxStyles = (
-  checkboxVariables: ICheckboxVariables,
+  checkboxVariables: CheckboxVariables,
 ): GetCheckboxStyles => (isChecked, isDisabled) => {
   return {
     checkboxFocusBackgroundColor: isChecked

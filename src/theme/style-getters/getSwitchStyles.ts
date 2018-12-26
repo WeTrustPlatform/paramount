@@ -1,15 +1,15 @@
 import { ViewStyle } from 'react-native';
 
-import { ISwitchVariables } from '../component-variables/switchVariables';
+import { SwitchVariables } from '../component-variables/switchVariables';
 
-export interface IRequiredStyles {
+export interface RequiredStyles {
   width: number;
   padding: number;
 }
 
 export type GetSwitchStyles = () => {
-  containerStyle: ViewStyle & IRequiredStyles;
-  circleStyle: ViewStyle & IRequiredStyles;
+  containerStyle: ViewStyle & RequiredStyles;
+  circleStyle: ViewStyle & RequiredStyles;
   backgroundColorOff: string;
   backgroundColorOn: string;
   circleColorOff: string;
@@ -17,7 +17,7 @@ export type GetSwitchStyles = () => {
 };
 
 export const getSwitchStyles = (
-  switchVariables: ISwitchVariables,
+  switchVariables: SwitchVariables,
 ): GetSwitchStyles => () => {
   return {
     backgroundColorOff: switchVariables.backgroundColorOff,

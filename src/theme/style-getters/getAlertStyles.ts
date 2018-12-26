@@ -1,19 +1,19 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { IntentType } from '../../constants/Intent';
-import { IAlertVariables } from '../component-variables/alertVariables';
+import { Intent } from '../../constants/Intent';
+import { AlertVariables } from '../component-variables/alertVariables';
 
-export interface IAlertStyles {
+export interface AlertStyles {
   containerStyle: ViewStyle;
   bodyStyle: ViewStyle;
   titleStyle: TextStyle;
   textStyle: TextStyle;
 }
 
-export type GetAlertStyles = (intent: IntentType) => IAlertStyles;
+export type GetAlertStyles = (intent: Intent) => AlertStyles;
 
 export const getAlertStyles = (
-  alertVariables: IAlertVariables,
+  alertVariables: AlertVariables,
 ): GetAlertStyles => intent => {
   const { container, body, title, message, ...intents } = alertVariables;
 

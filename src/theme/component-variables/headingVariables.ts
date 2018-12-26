@@ -1,8 +1,8 @@
 import { TextStyle } from 'react-native';
 
-import { IThemeVariables } from '../ThemeInterface';
+import { ThemeVariables } from '../ThemeInterface';
 
-export interface IHeadingSizes {
+export interface HeadingSizes {
   xxxlarge: TextStyle; // h1
   xxlarge: TextStyle; // h2
   xlarge: TextStyle; // h3
@@ -11,15 +11,15 @@ export interface IHeadingSizes {
   small: TextStyle; // h6
 }
 
-export type HeadingSize = keyof IHeadingSizes;
+export type HeadingSize = keyof HeadingSizes;
 
-export interface IHeadingVariables {
-  size: IHeadingSizes;
+export interface HeadingVariables {
+  size: HeadingSizes;
 }
 
 export const getHeadingVariables = (
-  themeVariables: IThemeVariables,
-): IHeadingVariables => {
+  themeVariables: ThemeVariables,
+): HeadingVariables => {
   return {
     size: {
       xxxlarge: {

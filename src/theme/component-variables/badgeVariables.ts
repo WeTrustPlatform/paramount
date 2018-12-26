@@ -1,13 +1,13 @@
-import { IFills, IThemeVariables } from '../ThemeInterface';
-import { getControlVariables, IControlVariables } from './controlVariables';
+import { Fills, ThemeVariables } from '../ThemeInterface';
+import { ControlVariables, getControlVariables } from './controlVariables';
 
-export interface IBadgeVariables extends IControlVariables {
-  fills: IFills;
+export interface BadgeVariables extends ControlVariables {
+  fills: Fills;
 }
 
 export const getBadgeVariables = (
-  themeVariables: IThemeVariables,
-): IBadgeVariables => {
+  themeVariables: ThemeVariables,
+): BadgeVariables => {
   const controlVariables = getControlVariables(themeVariables);
 
   return {

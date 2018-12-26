@@ -1,11 +1,15 @@
 import * as React from 'react';
-import { Picker as RNPicker, PickerProps, ViewStyle } from 'react-native';
+import {
+  Picker as RNPicker,
+  PickerProps as RNPickerProps,
+  ViewStyle,
+} from 'react-native';
 
-import { ITheme, withTheme } from '../../theme';
+import { Theme, withTheme } from '../../theme';
 import { PickerSize } from '../../theme/component-variables/pickerVariables';
 
-export interface IPickerProps extends PickerProps {
-  theme: ITheme;
+export interface PickerProps extends RNPickerProps {
+  theme: Theme;
   size?: PickerSize;
   /**
    * Inline styles for components
@@ -16,7 +20,7 @@ export interface IPickerProps extends PickerProps {
   };
 }
 
-const PickerBase = (props: IPickerProps) => {
+const PickerBase = (props: PickerProps) => {
   const {
     theme,
     size = 'medium',

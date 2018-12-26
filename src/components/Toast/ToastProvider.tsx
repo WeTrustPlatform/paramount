@@ -1,28 +1,28 @@
 import * as React from 'react';
 import { View } from 'react-native';
 
-import { ITheme, withTheme } from '../../theme';
-import Toast, { IToast, IToastSettings, ToastId } from './Toast';
+import { Theme, withTheme } from '../../theme';
+import Toast, { ToastId, ToastInstance, ToastSettings } from './Toast';
 import { ToastProvider as ToastContectProvider } from './ToastContext';
 
-export interface IToastProviderProps {
+export interface ToastProviderProps {
   children?: React.ReactNode;
-  theme: ITheme;
+  theme: Theme;
 }
 
-export interface IToastProviderState {
-  toasts: IToast[];
+export interface ToastProviderState {
+  toasts: ToastInstance[];
 }
 
-const hasCustomId = (toastSettings: IToastSettings) => !!toastSettings.id;
+const hasCustomId = (toastSettings: ToastSettings) => !!toastSettings.id;
 
 export class ToastProvider extends React.Component<
-  IToastProviderProps,
-  IToastProviderState
+  ToastProviderProps,
+  ToastProviderState
 > {
   public static idCounter: number = 0;
 
-  constructor(props: IToastProviderProps) {
+  constructor(props: ToastProviderProps) {
     super(props);
 
     this.state = {
@@ -38,13 +38,13 @@ export class ToastProvider extends React.Component<
     });
   };
 
-  public notify = (toastSettings: IToastSettings) => {
+  public notify = (toastSettings: ToastSettings) => {
     const toastInstance = this.createToastInstance(toastSettings);
 
-    // If there's a custom toast ID passed, close existing toasts with the same custom ID
+    // If there's a custom toast D passed, close existing toasts with the same custom D
     if (hasCustomId(toastSettings)) {
       for (const toast of this.state.toasts) {
-        // Since unique ID is still appended to a custom ID, skip the unique ID and check only prefix
+        // Since unique D is still appended to a custom D, skip the unique D and check only prefix
         if (String(toast.id).startsWith(String(toastSettings.id))) {
           this.removeToast(toast.id);
         }
@@ -58,7 +58,9 @@ export class ToastProvider extends React.Component<
     });
   };
 
-  public createToastInstance = (toastSettings: IToastSettings): IToast => {
+  public createToastInstance = (
+    toastSettings: ToastSettings,
+  ): ToastInstance => {
     const uniqueId = ++ToastProvider.idCounter;
     const id = hasCustomId(toastSettings)
       ? `${toastSettings.id}-${uniqueId}`
@@ -87,13 +89,13 @@ export class ToastProvider extends React.Component<
     return (
       <ToastContectProvider
         value={{
-          danger: (toastSettings: IToastSettings) =>
+          danger: (toastSettings: ToastSettings) =>
             this.notify({ ...toastSettings, intent: 'danger' }),
-          notify: (toastSettings: IToastSettings) =>
+          notify: (toastSettings: ToastSettings) =>
             this.notify({ ...toastSettings }),
-          success: (toastSettings: IToastSettings) =>
+          success: (toastSettings: ToastSettings) =>
             this.notify({ ...toastSettings, intent: 'success' }),
-          warning: (toastSettings: IToastSettings) =>
+          warning: (toastSettings: ToastSettings) =>
             this.notify({ ...toastSettings, intent: 'warning' }),
         }}
       >

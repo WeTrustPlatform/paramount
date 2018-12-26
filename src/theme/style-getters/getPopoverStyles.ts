@@ -1,18 +1,18 @@
 import { ViewStyle } from 'react-native';
 
-import { IPopoverVariables } from '../component-variables/popoverVariables';
+import { PopoverVariables } from '../component-variables/popoverVariables';
 
-export interface IPopoverStyles {
+export interface PopoverStyles {
   containerStyle: ViewStyle;
   popoverStyle: ViewStyle;
   overlayStyle: ViewStyle;
   modalContainerStyle: ViewStyle;
 }
 
-export type GetPopoverStyles = () => IPopoverStyles;
+export type GetPopoverStyles = () => PopoverStyles;
 
 export const getPopoverStyles = (
-  popoverVariables: IPopoverVariables,
+  popoverVariables: PopoverVariables,
 ): GetPopoverStyles => () => {
   return {
     containerStyle: popoverVariables.container,

@@ -1,19 +1,19 @@
 import { ViewStyle } from 'react-native';
 
-import { IThemeVariables } from '../ThemeInterface';
+import { ThemeVariables } from '../ThemeInterface';
 
-export type IPickerAppearanceStyles = ViewStyle & {
+export type PickerAppearanceStyles = ViewStyle & {
   backgroundColor: string;
   borderColor: string;
   color: string;
 };
 
-export type IBaseState = IPickerAppearanceStyles;
-export type IDisabledState = Partial<IPickerAppearanceStyles>;
-export type IInvalidState = Partial<IPickerAppearanceStyles>;
-export type IFocusState = Partial<IPickerAppearanceStyles>;
+export type BaseState = PickerAppearanceStyles;
+export type DisabledState = Partial<PickerAppearanceStyles>;
+export type InvalidState = Partial<PickerAppearanceStyles>;
+export type FocusState = Partial<PickerAppearanceStyles>;
 
-export type ISizeStyles = ViewStyle & {
+export type SizeStyles = ViewStyle & {
   borderRadius: number;
   fontSize: number;
   height: number;
@@ -21,26 +21,26 @@ export type ISizeStyles = ViewStyle & {
   paddingRight: number;
 };
 
-export interface IPickerSizes {
-  small: ISizeStyles;
-  medium: ISizeStyles;
-  large: ISizeStyles;
+export interface PickerSizes {
+  small: SizeStyles;
+  medium: SizeStyles;
+  large: SizeStyles;
 }
 
-export type PickerSize = keyof IPickerSizes;
+export type PickerSize = keyof PickerSizes;
 
-export interface IPickerVariables {
-  base: IBaseState;
-  disabled: IDisabledState;
-  focus: IFocusState;
-  invalid: IInvalidState;
+export interface PickerVariables {
+  base: BaseState;
+  disabled: DisabledState;
+  focus: FocusState;
+  invalid: InvalidState;
   placeholderTextColor: string;
-  sizes: IPickerSizes;
+  sizes: PickerSizes;
 }
 
 export const getPickerVariables = (
-  themeVariables: IThemeVariables,
-): IPickerVariables => {
+  themeVariables: ThemeVariables,
+): PickerVariables => {
   return {
     base: {
       backgroundColor: themeVariables.colors.background.plain,

@@ -6,8 +6,8 @@ import {
   View,
 } from 'react-native';
 
-import { ITheme, withTheme } from '../../theme';
-import { IPopoverStyles } from '../../theme/style-getters/getPopoverStyles';
+import { Theme, withTheme } from '../../theme';
+import { PopoverStyles } from '../../theme/style-getters/getPopoverStyles';
 import Modal from '../Dialog/Modal';
 import { LayoutMeasure, LayoutMeasurements } from '../Helpers';
 
@@ -21,8 +21,8 @@ export type Position =
   | 'bottom'
   | 'bottom-left';
 
-export interface IPopoverProps {
-  theme: ITheme;
+export interface PopoverProps {
+  theme: Theme;
   onTap?: () => void;
   onClose?: () => void;
   children: React.ReactNode;
@@ -33,7 +33,7 @@ export interface IPopoverProps {
   /**
    * Inline styles for components
    */
-  dangerouslySetInlineStyle?: Partial<IPopoverStyles>;
+  dangerouslySetInlineStyle?: Partial<PopoverStyles>;
 }
 
 const resolveCorrectPosition = (position: Position) => ({
@@ -179,8 +179,8 @@ export interface PopoverState {
   targetMeasurements: LayoutMeasurements;
 }
 
-class PopoverBase extends React.Component<IPopoverProps, PopoverState> {
-  constructor(props: IPopoverProps) {
+class PopoverBase extends React.Component<PopoverProps, PopoverState> {
+  constructor(props: PopoverProps) {
     super(props);
     this.state = {
       popoverMeasurements: {

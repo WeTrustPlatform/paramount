@@ -4,10 +4,10 @@ import {
   ButtonAppearance,
   ButtonColor,
   ButtonSize,
-  IButtonVariables,
+  ButtonVariables,
 } from '../component-variables/buttonVariables';
 
-export interface IButtonStyles {
+export interface ButtonStyles {
   buttonStyle: ViewStyle;
   textStyle: TextStyle;
   focusColor: string;
@@ -27,7 +27,7 @@ export type GetButtonStyles = (
 };
 
 export const getButtonStyles = (
-  buttonVariables: IButtonVariables,
+  buttonVariables: ButtonVariables,
 ): GetButtonStyles => (
   appearance: ButtonAppearance,
   color: ButtonColor,
@@ -35,7 +35,7 @@ export const getButtonStyles = (
   isDisabled = false,
   isLoading = false,
   isInline = false,
-): IButtonStyles => {
+): ButtonStyles => {
   const { appearances, sizes, disabled, ...baseStyles } = buttonVariables;
 
   const {

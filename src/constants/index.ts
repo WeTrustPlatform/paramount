@@ -1,2 +1,2 @@
 export { default as StackingOrder } from './StackingOrder';
-export { Intent, IIntents } from './Intent';
+export { Intent, Intents } from './Intent';

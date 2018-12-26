@@ -1,5 +1,5 @@
-export { default as TextInput, ITextInputProps } from './TextInput';
+export { default as TextInput, TextInputProps } from './TextInput';
 export {
   default as TextInputField,
-  ITextInputFieldProps,
+  TextInputFieldProps,
 } from './TextInputField';

@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 import withTheme from '../../theme/withTheme';
-import Text, { ITextProps } from './Text';
+import Text, { TextProps } from './Text';
 
-const LinkBase = (props: ITextProps) => {
+const LinkBase = (props: TextProps) => {
   return <Text color="primary" {...props} />;
 };
 

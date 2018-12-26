@@ -1,11 +1,11 @@
 import { TextStyle } from 'react-native';
 
 import {
-  ITextInputVariables,
   TextInputSize,
+  TextInputVariables,
 } from '../component-variables/textInputVariables';
 
-export interface ITextInputStyles {
+export interface TextInputStyles {
   inputStyle: TextStyle;
   focusedStyle: TextStyle;
   placeholderTextColor: string;
@@ -15,11 +15,11 @@ export type GetTextInputStyles = (
   size: TextInputSize,
   isDisabled: boolean,
   isInvalid: boolean,
-) => ITextInputStyles;
+) => TextInputStyles;
 
 export const getTextInputStyles = (
-  textInputVariables: ITextInputVariables,
-): GetTextInputStyles => (size, isDisabled, isInvalid): ITextInputStyles => {
+  textInputVariables: TextInputVariables,
+): GetTextInputStyles => (size, isDisabled, isInvalid): TextInputStyles => {
   const {
     base,
     disabled,

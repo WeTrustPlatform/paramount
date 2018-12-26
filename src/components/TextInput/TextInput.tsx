@@ -3,15 +3,15 @@ import {
   NativeSyntheticEvent,
   TextInput as RNTextInput,
   TextInputFocusEventData,
-  TextInputProps,
+  TextInputProps as RNTextInputProps,
   ViewStyle,
 } from 'react-native';
 
-import { ITheme, withTheme } from '../../theme';
+import { Theme, withTheme } from '../../theme';
 import { TextInputSize } from '../../theme/component-variables/textInputVariables';
 
-export interface ITextInputProps extends TextInputProps {
-  theme: ITheme;
+export interface TextInputProps extends RNTextInputProps {
+  theme: Theme;
   size?: TextInputSize;
   isDisabled?: boolean;
   isRequired?: boolean;
@@ -21,7 +21,7 @@ export interface ITextInputProps extends TextInputProps {
   };
 }
 
-class TextInputBase extends React.Component<ITextInputProps> {
+class TextInputBase extends React.Component<TextInputProps> {
   private root: any;
 
   public handleOnFocus = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {

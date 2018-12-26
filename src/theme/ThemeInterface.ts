@@ -1,23 +1,23 @@
 import { ViewStyle } from 'react-native';
 
-import { IAlertVariables } from './component-variables/alertVariables';
-import { IAvatarVariables } from './component-variables/avatarVariables';
-import { IBadgeVariables } from './component-variables/badgeVariables';
-import { IButtonVariables } from './component-variables/buttonVariables';
-import { ICheckboxVariables } from './component-variables/checkboxVariables';
-import { ICounterVariables } from './component-variables/counterVariables';
-import { IDialogVariables } from './component-variables/dialogVariables';
-import { IDividerVariables } from './component-variables/dividerVariables';
-import { IHeadingVariables } from './component-variables/headingVariables';
-import { IParagraphVariables } from './component-variables/paragraphVariables';
-import { IPickerVariables } from './component-variables/pickerVariables';
-import { IPopoverVariables } from './component-variables/popoverVariables';
-import { IProgressVariables } from './component-variables/progressVariables';
-import { ISelectListVariables } from './component-variables/selectListVariables';
-import { ISwitchVariables } from './component-variables/switchVariables';
-import { ITextInputVariables } from './component-variables/textInputVariables';
-import { ITextVariables } from './component-variables/textVariables';
-import { IToastVariables } from './component-variables/toastVariables';
+import { AlertVariables } from './component-variables/alertVariables';
+import { AvatarVariables } from './component-variables/avatarVariables';
+import { BadgeVariables } from './component-variables/badgeVariables';
+import { ButtonVariables } from './component-variables/buttonVariables';
+import { CheckboxVariables } from './component-variables/checkboxVariables';
+import { CounterVariables } from './component-variables/counterVariables';
+import { DialogVariables } from './component-variables/dialogVariables';
+import { DividerVariables } from './component-variables/dividerVariables';
+import { HeadingVariables } from './component-variables/headingVariables';
+import { ParagraphVariables } from './component-variables/paragraphVariables';
+import { PickerVariables } from './component-variables/pickerVariables';
+import { PopoverVariables } from './component-variables/popoverVariables';
+import { ProgressVariables } from './component-variables/progressVariables';
+import { SelectListVariables } from './component-variables/selectListVariables';
+import { SwitchVariables } from './component-variables/switchVariables';
+import { TextInputVariables } from './component-variables/textInputVariables';
+import { TextVariables } from './component-variables/textVariables';
+import { ToastVariables } from './component-variables/toastVariables';
 import { GetAlertStyles } from './style-getters/getAlertStyles';
 import { GetAvatarStyles } from './style-getters/getAvatarStyles';
 import { GetBadgeStyles } from './style-getters/getBadgeStyles';
@@ -37,15 +37,15 @@ import { GetTextInputStyles } from './style-getters/getTextInputStyles';
 import { GetTextStyles } from './style-getters/getTextStyles';
 import { GetToastStyles } from './style-getters/getToastStyles';
 
-export interface ITextSizes {
+export interface TextSizes {
   small: number;
   medium: number;
   large: number;
 }
 
-export type TextSize = keyof ITextSizes;
+export type TextSize = keyof TextSizes;
 
-export interface IHeadingSizes {
+export interface HeadingSizes {
   xxxlarge: number; // h1
   xxlarge: number; // h2
   xlarge: number; // h3
@@ -53,35 +53,35 @@ export interface IHeadingSizes {
   medium: number; // h5
   small: number; // h6
 }
-export type HeadingSize = keyof IHeadingSizes;
+export type HeadingSize = keyof HeadingSizes;
 
-export interface IParagraphSizes {
+export interface ParagraphSizes {
   small: number;
   medium: number;
   large: number;
 }
-export type ParagraphSize = keyof IParagraphSizes;
+export type ParagraphSize = keyof ParagraphSizes;
 
-export interface IFontFamilies {
+export interface FontFamilies {
   heading: string;
   mono: string;
   text: string;
 }
-export type FontFamily = keyof IFontFamilies;
+export type FontFamily = keyof FontFamilies;
 
-export interface IIntentColors {
+export interface IntentColors {
   danger: string;
   info: string;
   success: string;
   warning: string;
 }
 
-export interface IBrandColors {
+export interface BrandColors {
   primary: string;
   secondary?: string;
 }
 
-export interface IBackgroundColorVariations {
+export interface BackgroundColorVariations {
   default: string;
   /* Focus/Active on colored background */
   focus: string;
@@ -89,7 +89,7 @@ export interface IBackgroundColorVariations {
   focusLight: string;
 }
 
-export interface ITextColors {
+export interface TextColors {
   dark: string;
   default: string;
   muted: string;
@@ -106,18 +106,18 @@ export interface ITextColors {
 }
 
 export type TextColor =
-  | keyof ITextColors
-  | keyof IIntentColors
-  | keyof IBrandColors;
+  | keyof TextColors
+  | keyof IntentColors
+  | keyof BrandColors;
 
-export interface IIconColor {
+export interface IconColor {
   default: string;
   disabled: string;
   muted: string;
   selected: string;
 }
 
-export interface IBorderColor {
+export interface BorderColor {
   default: string;
   muted: string;
 
@@ -130,101 +130,101 @@ export interface IBorderColor {
   warning: string;
 }
 
-export interface IBackgroundColor {
+export interface BackgroundColor {
   overlay: string;
   plain: string;
   disabled: string;
   tint1: string;
   tint2: string;
 
-  primary: IBackgroundColorVariations;
-  secondary: IBackgroundColorVariations;
+  primary: BackgroundColorVariations;
+  secondary: BackgroundColorVariations;
 
-  danger: IBackgroundColorVariations;
-  info: IBackgroundColorVariations;
-  success: IBackgroundColorVariations;
-  warning: IBackgroundColorVariations;
+  danger: BackgroundColorVariations;
+  info: BackgroundColorVariations;
+  success: BackgroundColorVariations;
+  warning: BackgroundColorVariations;
 }
 
-export interface IColors {
-  background: IBackgroundColor;
-  border: IBorderColor;
-  text: ITextColors;
+export interface Colors {
+  background: BackgroundColor;
+  border: BorderColor;
+  text: TextColors;
 }
 
 export type Elevations = ViewStyle[];
 export type Elevation = ViewStyle;
 
-export interface IControlSizes {
+export interface ControlSizes {
   small: number;
   medium: number;
   large: number;
 }
 
-export interface IFillColor {
+export interface FillColorProps {
   backgroundColor: string;
   color: string;
 }
 
-export interface IFillColors {
-  neutral: IFillColor;
-  blue: IFillColor;
-  red: IFillColor;
-  orange: IFillColor;
-  yellow: IFillColor;
-  green: IFillColor;
-  teal: IFillColor;
-  purple: IFillColor;
+export interface FillColors {
+  neutral: FillColorProps;
+  blue: FillColorProps;
+  red: FillColorProps;
+  orange: FillColorProps;
+  yellow: FillColorProps;
+  green: FillColorProps;
+  teal: FillColorProps;
+  purple: FillColorProps;
 }
 
-export type FillColor = keyof IFillColors;
+export type FillColor = keyof FillColors;
 
-export interface IFills {
-  subtle: IFillColors;
-  solid: IFillColors;
+export interface Fills {
+  subtle: FillColors;
+  solid: FillColors;
 }
-export interface IThemeVariables {
-  colors: IColors;
-  fills: IFills;
+export interface ThemeVariables {
+  colors: Colors;
+  fills: Fills;
 
   // Typography
-  fontFamilies: IFontFamilies;
+  fontFamilies: FontFamilies;
 
-  headingSizes: IHeadingSizes;
-  paragraphSizes: IParagraphSizes;
-  textSizes: ITextSizes;
+  headingSizes: HeadingSizes;
+  paragraphSizes: ParagraphSizes;
+  textSizes: TextSizes;
 
   // Elevations
   elevations: Elevations;
 
   // Controls - Buttons, Controls etc.
-  controlPaddings: IControlSizes;
-  controlHeights: IControlSizes;
-  controlBorderRadius: IControlSizes;
+  controlPaddings: ControlSizes;
+  controlHeights: ControlSizes;
+  controlBorderRadius: ControlSizes;
 }
 
-export interface IComponentVariables {
-  alert: IAlertVariables;
-  avatar: IAvatarVariables;
-  badge: IBadgeVariables;
-  button: IButtonVariables;
-  checkbox: ICheckboxVariables;
-  counter: ICounterVariables;
-  dialog: IDialogVariables;
-  divider: IDividerVariables;
-  heading: IHeadingVariables;
-  paragraph: IParagraphVariables;
-  picker: IPickerVariables;
-  progress: IProgressVariables;
-  selectList: ISelectListVariables;
-  switch: ISwitchVariables;
-  text: ITextVariables;
-  textInput: ITextInputVariables;
-  toast: IToastVariables;
-  popover: IPopoverVariables;
+export interface ComponentVariables {
+  alert: AlertVariables;
+  avatar: AvatarVariables;
+  badge: BadgeVariables;
+  button: ButtonVariables;
+  checkbox: CheckboxVariables;
+  counter: CounterVariables;
+  dialog: DialogVariables;
+  divider: DividerVariables;
+  heading: HeadingVariables;
+  paragraph: ParagraphVariables;
+  picker: PickerVariables;
+  progress: ProgressVariables;
+  selectList: SelectListVariables;
+  switch: SwitchVariables;
+  text: TextVariables;
+  textInput: TextInputVariables;
+  toast: ToastVariables;
+  popover: PopoverVariables;
 }
 
-export interface IStyleGetters {
+export interface StyleGetters {
   getAlertStyles: GetAlertStyles;
   getAvatarStyles: GetAvatarStyles;
   getBadgeStyles: GetBadgeStyles;
@@ -251,7 +251,7 @@ export interface IStyleGetters {
  * Tier 2: Component variables - Those are variables applied to individual components. They inherit some variables from tier-1 theme variables but can be overriden specifically for each component. These variables usually provide styling for different component states, look etc.
  * Tier 3: Style getters - These are functions that return style for components. This allows for complete control over how a component looks. They inherit variables from component variables. Think of those as actual classes
  */
-export interface ITheme extends IStyleGetters {
-  themeVariables: IThemeVariables;
-  componentVariables: IComponentVariables;
+export interface Theme extends StyleGetters {
+  themeVariables: ThemeVariables;
+  componentVariables: ComponentVariables;
 }

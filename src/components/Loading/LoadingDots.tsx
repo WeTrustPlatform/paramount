@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Animated, View } from 'react-native';
 
-export interface ILoadingDotsProps {
+export interface LoadingDotsProps {
   numberOfDots: number;
   duration: number;
   minOpacity: number;
@@ -12,7 +12,7 @@ export interface ILoadingDotsProps {
 /**
  * Ported from https://github.com/adorableio/react-native-animated-ellipsis
  */
-class LoadingDots extends React.Component<ILoadingDotsProps> {
+class LoadingDots extends React.Component<LoadingDotsProps> {
   public static defaultProps = {
     color: '#aaa',
     duration: 300,
@@ -27,7 +27,7 @@ class LoadingDots extends React.Component<ILoadingDotsProps> {
     targetOpacity: number;
   };
 
-  constructor(props: ILoadingDotsProps) {
+  constructor(props: LoadingDotsProps) {
     super(props);
 
     this.animationState = {

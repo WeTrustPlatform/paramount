@@ -1,20 +1,20 @@
 import { ViewStyle } from 'react-native';
 
 import {
-  IPickerVariables,
   PickerSize,
+  PickerVariables,
 } from '../component-variables/pickerVariables';
 
-export interface IPickerStyles {
+export interface PickerStyles {
   pickerStyle: ViewStyle;
   itemStyle: any;
 }
 
-export type GetPickerStyles = (size: PickerSize) => IPickerStyles;
+export type GetPickerStyles = (size: PickerSize) => PickerStyles;
 
 export const getPickerStyles = (
-  buttonVariables: IPickerVariables,
-): GetPickerStyles => (size: PickerSize): IPickerStyles => {
+  buttonVariables: PickerVariables,
+): GetPickerStyles => (size: PickerSize): PickerStyles => {
   const { base, sizes } = buttonVariables;
 
   const { fontSize, ...sizeStyles } = sizes[size];

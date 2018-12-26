@@ -1,8 +1,8 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { IThemeVariables } from '../ThemeInterface';
+import { ThemeVariables } from '../ThemeInterface';
 
-export interface IToastVariables {
+export interface ToastVariables {
   base: ViewStyle;
   /** The area on screen where the toast appears */
   container: ViewStyle;
@@ -18,8 +18,8 @@ export interface IToastVariables {
 }
 
 export const getToastVariables = (
-  themeVariables: IThemeVariables,
-): IToastVariables => {
+  themeVariables: ThemeVariables,
+): ToastVariables => {
   return {
     base: {
       borderRadius: themeVariables.controlBorderRadius.medium,

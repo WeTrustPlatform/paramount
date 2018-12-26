@@ -1,11 +1,11 @@
 import { TextStyle } from 'react-native';
 
-import { ITextVariables } from '../component-variables/textVariables';
+import { TextVariables } from '../component-variables/textVariables';
 import {
+  FontFamilies,
   FontFamily,
-  IFontFamilies,
-  ITextColors,
   TextColor,
+  TextColors,
   TextSize,
 } from '../ThemeInterface';
 
@@ -18,14 +18,14 @@ export type GetTextStyles = (
   textStyle: TextStyle;
 };
 
-export const getFontFamily = (fontFamilies: IFontFamilies) => (
+export const getFontFamily = (fontFamilies: FontFamilies) => (
   fontFamily: FontFamily,
 ) => fontFamilies[fontFamily];
-export const getTextColor = (textColors: ITextColors) => (
+export const getTextColor = (textColors: TextColors) => (
   textColor: TextColor,
 ) => textColors[textColor];
 
-export const getTextStyle = (textVariables: ITextVariables): GetTextStyles => (
+export const getTextStyle = (textVariables: TextVariables): GetTextStyles => (
   size,
   color,
   fontFamily,

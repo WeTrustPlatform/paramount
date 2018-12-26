@@ -1,10 +1,10 @@
 import * as React from 'react';
 
 import { ThemeConsumer } from './ThemeContext';
-import { ITheme } from './ThemeInterface';
+import { Theme } from './ThemeInterface';
 
-export interface IThemeProps {
-  theme: ITheme;
+export interface ThemeProps {
+  theme: Theme;
 }
 
 const withTheme = <TWrappedComponentProps extends any>(
@@ -15,14 +15,14 @@ const withTheme = <TWrappedComponentProps extends any>(
 
   type WrappedComponentPropsExceptProvided = Exclude<
     keyof TWrappedComponentProps,
-    keyof IThemeProps
+    keyof ThemeProps
   >;
   type ForwardedProps = Pick<
     TWrappedComponentProps,
     WrappedComponentPropsExceptProvided
   >;
 
-  return class extends React.PureComponent<ForwardedProps, IThemeProps> {
+  return class extends React.PureComponent<ForwardedProps, ThemeProps> {
     public static displayName = displayName;
 
     public render() {

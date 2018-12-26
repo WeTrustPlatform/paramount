@@ -1,15 +1,15 @@
 import * as React from 'react';
 
 import { withTheme } from '../../theme';
-import { FormField, IFormFieldProps } from '../FormField';
-import SelectList, { ISelectListProps } from './SelectList';
-import { ISelectListItemProps } from './SelectListItem';
+import { FormField, FormFieldProps } from '../FormField';
+import SelectList, { SelectListProps } from './SelectList';
+import { SelectListItemProps } from './SelectListItem';
 
-export interface ISelectListFieldProps
-  extends IFormFieldProps<Array<React.ReactElement<ISelectListItemProps>>>,
-    ISelectListProps {}
+export interface SelectListFieldProps
+  extends FormFieldProps<Array<React.ReactElement<SelectListItemProps>>>,
+    SelectListProps {}
 
-const SelectListFieldBase = (props: ISelectListFieldProps) => {
+const SelectListFieldBase = (props: SelectListFieldProps) => {
   const { label, error, description, ...passThroughProps } = props;
 
   return (

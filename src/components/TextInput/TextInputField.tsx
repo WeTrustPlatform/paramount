@@ -1,14 +1,12 @@
 import * as React from 'react';
 
 import { withTheme } from '../../theme';
-import { FormField, IFormFieldProps } from '../FormField';
-import TextInput, { ITextInputProps } from './TextInput';
+import { FormField, FormFieldProps } from '../FormField';
+import TextInput, { TextInputProps } from './TextInput';
 
-export interface ITextInputFieldProps
-  extends IFormFieldProps,
-    ITextInputProps {}
+export interface TextInputFieldProps extends FormFieldProps, TextInputProps {}
 
-const TextInputFieldBase = (props: ITextInputFieldProps) => {
+const TextInputFieldBase = (props: TextInputFieldProps) => {
   const { label, error, description, ...passThroughProps } = props;
 
   return (

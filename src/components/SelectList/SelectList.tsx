@@ -1,17 +1,17 @@
 import * as React from 'react';
 
-import { ITheme, withTheme } from '../../theme';
-import { ISelectListItemProps } from './SelectListItem';
+import { Theme, withTheme } from '../../theme';
+import { SelectListItemProps } from './SelectListItem';
 
-export interface ISelectListProps {
-  children: Array<React.ReactElement<ISelectListItemProps>>;
+export interface SelectListProps {
+  children: Array<React.ReactElement<SelectListItemProps>>;
   selectedValue: string | string[];
   isMulti?: boolean;
-  theme: ITheme;
+  theme: Theme;
   onValueChange: (itemValue: string | string[], itemIndex: number) => void;
 }
 
-const SelectListBase = (props: ISelectListProps): any => {
+const SelectListBase = (props: SelectListProps): any => {
   const { selectedValue, onValueChange, isMulti, children } = props;
 
   const handleOnPress = (
@@ -39,7 +39,7 @@ const SelectListBase = (props: ISelectListProps): any => {
     }
 
     // @ts-ignore
-    const selectListItem = child as React.ReactElement<ISelectListItemProps>;
+    const selectListItem = child as React.ReactElement<SelectListItemProps>;
 
     const isSelected =
       isMulti && Array.isArray(selectedValue)

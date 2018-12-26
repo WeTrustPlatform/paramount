@@ -1,1 +1,1 @@
-export { default as Avatar, IAvatarProps } from './Avatar';
+export { default as Avatar, AvatarProps } from './Avatar';

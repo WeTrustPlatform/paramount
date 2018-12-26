@@ -1,28 +1,28 @@
 import { ViewStyle } from 'react-native';
 
-import { IThemeVariables } from '../ThemeInterface';
+import { ThemeVariables } from '../ThemeInterface';
 
-export type ICheckboxAppearanceStyles = ViewStyle & {
+export type CheckboxAppearanceStyles = ViewStyle & {
   backgroundColor: string;
   borderColor: string;
 };
 
-export type IBaseState = ICheckboxAppearanceStyles;
-export type IDisabledState = Partial<ICheckboxAppearanceStyles>;
-export type IFocusState = Partial<ICheckboxAppearanceStyles>;
-export type ICheckedState = Partial<ICheckboxAppearanceStyles>;
+export type BaseState = CheckboxAppearanceStyles;
+export type DisabledState = Partial<CheckboxAppearanceStyles>;
+export type FocusState = Partial<CheckboxAppearanceStyles>;
+export type CheckedState = Partial<CheckboxAppearanceStyles>;
 
-export interface ICheckboxVariables {
-  base: IBaseState;
-  disabled: IDisabledState;
-  checked: ICheckedState;
-  checkedFocus: ICheckedState;
-  uncheckedFocus: ICheckedState;
+export interface CheckboxVariables {
+  base: BaseState;
+  disabled: DisabledState;
+  checked: CheckedState;
+  checkedFocus: CheckedState;
+  uncheckedFocus: CheckedState;
 }
 
 export const getCheckboxVariables = (
-  themeVariables: IThemeVariables,
-): ICheckboxVariables => {
+  themeVariables: ThemeVariables,
+): CheckboxVariables => {
   return {
     base: {
       backgroundColor: themeVariables.colors.background.plain,

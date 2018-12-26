@@ -1,8 +1,8 @@
 import { ViewStyle } from 'react-native';
 
-import { IThemeVariables } from '../ThemeInterface';
+import { ThemeVariables } from '../ThemeInterface';
 
-export interface ICounterVariables {
+export interface CounterVariables {
   container: ViewStyle;
   count: ViewStyle;
   counter: ViewStyle;
@@ -10,8 +10,8 @@ export interface ICounterVariables {
 }
 
 export const getCounterVariables = (
-  themeVariables: IThemeVariables,
-): ICounterVariables => {
+  themeVariables: ThemeVariables,
+): CounterVariables => {
   return {
     container: {
       display: 'flex',

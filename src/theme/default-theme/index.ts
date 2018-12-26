@@ -1,4 +1,4 @@
-import { IThemeVariables } from '../ThemeInterface';
+import { ThemeVariables } from '../ThemeInterface';
 import {
   controlBorderRadius,
   controlHeights,
@@ -12,7 +12,7 @@ import {
   textSizes,
 } from './typography';
 
-export const defaultThemeVariables: IThemeVariables = {
+export const defaultThemeVariables: ThemeVariables = {
   colors,
   fills,
 

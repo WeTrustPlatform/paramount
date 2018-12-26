@@ -1,27 +1,27 @@
 import * as React from 'react';
 import { TextStyle } from 'react-native';
 
-import { ITheme, withTheme } from '../../theme';
+import { Theme, withTheme } from '../../theme';
 import { ControlSize } from '../../theme/component-variables/controlVariables';
 import { FillColor } from '../../theme/ThemeInterface';
 import { Box } from '../Layout';
-import { IBoxProps, Shape } from '../Layout/Box';
+import { BoxProps, Shape } from '../Layout/Box';
 import { Strong } from '../Typography';
 
-export interface IBadgeProps {
+export interface BadgeProps {
   children: React.ReactNode;
-  theme: ITheme;
+  theme: Theme;
   color?: FillColor;
   size?: ControlSize;
   shape?: Shape;
   isSolid?: boolean;
   dangerouslySetInlineStyle?: {
-    boxStyle: IBoxProps;
+    boxStyle: BoxProps;
     textStyle: TextStyle;
   };
 }
 
-const BadgeBase = (props: IBadgeProps) => {
+const BadgeBase = (props: BadgeProps) => {
   const {
     children,
     color = 'neutral',

@@ -1,8 +1,8 @@
 import { ViewStyle } from 'react-native';
 
-import { IThemeVariables } from '../ThemeInterface';
+import { ThemeVariables } from '../ThemeInterface';
 
-export interface IDialogVariables {
+export interface DialogVariables {
   body: ViewStyle;
   container: ViewStyle;
   modalContainer: ViewStyle;
@@ -10,8 +10,8 @@ export interface IDialogVariables {
 }
 
 export const getDialogVariables = (
-  themeVariables: IThemeVariables,
-): IDialogVariables => {
+  themeVariables: ThemeVariables,
+): DialogVariables => {
   return {
     body: {
       maxHeight: 400,

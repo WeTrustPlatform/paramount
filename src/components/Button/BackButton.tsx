@@ -2,9 +2,9 @@ import * as React from 'react';
 
 import { Icon } from '../../icons';
 import { withTheme } from '../../theme';
-import Button, { IButtonProps } from './Button';
+import Button, { ButtonProps } from './Button';
 
-const BackButton = (props: IButtonProps) => {
+const BackButton = (props: ButtonProps) => {
   const { theme } = props;
   return (
     <Button

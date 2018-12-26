@@ -1,12 +1,12 @@
-import { IFills, IThemeVariables } from '../ThemeInterface';
+import { Fills, ThemeVariables } from '../ThemeInterface';
 
-export interface IAvatarVariables {
-  fills: IFills;
+export interface AvatarVariables {
+  fills: Fills;
 }
 
 export const getAvatarVariables = (
-  themeVariables: IThemeVariables,
-): IAvatarVariables => {
+  themeVariables: ThemeVariables,
+): AvatarVariables => {
   return {
     fills: themeVariables.fills,
   };

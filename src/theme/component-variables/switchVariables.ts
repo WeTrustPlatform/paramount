@@ -1,21 +1,21 @@
 import { ViewStyle } from 'react-native';
 
-import { IRequiredStyles } from '../style-getters/getSwitchStyles';
-import { IThemeVariables } from '../ThemeInterface';
+import { RequiredStyles } from '../style-getters/getSwitchStyles';
+import { ThemeVariables } from '../ThemeInterface';
 
-export interface ISwitchVariables {
+export interface SwitchVariables {
   backgroundColorOff: string;
   backgroundColorOn: string;
   circleColorOff: string;
   circleColorOn: string;
 
-  container: ViewStyle & IRequiredStyles;
-  circle: ViewStyle & IRequiredStyles;
+  container: ViewStyle & RequiredStyles;
+  circle: ViewStyle & RequiredStyles;
 }
 
 export const getSwitchVariables = (
-  themeVariables: IThemeVariables,
-): ISwitchVariables => {
+  themeVariables: ThemeVariables,
+): SwitchVariables => {
   return {
     backgroundColorOff: themeVariables.colors.background.tint2,
     backgroundColorOn: themeVariables.colors.background.primary.default,

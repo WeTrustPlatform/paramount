@@ -3,19 +3,19 @@ import { Text, TextProps, TextStyle } from 'react-native';
 
 import {
   FontFamily,
-  ITheme,
   ParagraphSize,
   TextColor,
+  Theme,
 } from '../../theme/ThemeInterface';
 import withTheme from '../../theme/withTheme';
 import { TextAlign } from './types';
 
 // @ts-ignore: need to override for web purposes
-export interface IParagraphProps extends TextProps {
+export interface ParagraphProps extends TextProps {
   children: React.ReactNode;
   color?: TextColor;
   size?: ParagraphSize;
-  theme: ITheme;
+  theme: Theme;
   textAlign?: TextAlign;
   fontFamily?: FontFamily;
 
@@ -24,7 +24,7 @@ export interface IParagraphProps extends TextProps {
   };
 }
 
-const ParagraphBase = (props: IParagraphProps) => {
+const ParagraphBase = (props: ParagraphProps) => {
   const {
     children,
     color = 'default',

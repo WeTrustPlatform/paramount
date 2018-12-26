@@ -2,11 +2,11 @@ import * as React from 'react';
 import { Platform, View, ViewStyle } from 'react-native';
 import { Spring } from 'react-spring';
 
-import { ITheme, withTheme } from '../../theme';
+import { Theme, withTheme } from '../../theme';
 import { ProgressSize } from '../../theme/component-variables/progressVariables';
 
 export interface ProgressProps {
-  theme: ITheme;
+  theme: Theme;
   percent?: number;
   size?: ProgressSize;
   /**

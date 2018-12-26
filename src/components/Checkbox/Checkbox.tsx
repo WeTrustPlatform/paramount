@@ -7,17 +7,17 @@ import {
 } from 'react-native';
 
 import { Icon } from '../../icons';
-import { ITheme, withTheme } from '../../theme';
+import { Theme, withTheme } from '../../theme';
 
-export interface ICheckboxProps {
-  theme: ITheme;
+export interface CheckboxProps {
+  theme: Theme;
   isChecked?: boolean;
   isDisabled?: boolean;
   checkedIcon?: React.ReactNode;
   onChange?: (e: GestureResponderEvent) => void | undefined;
 }
 
-const CheckboxBase = (props: ICheckboxProps & TouchableHighlightProps) => {
+const CheckboxBase = (props: CheckboxProps & TouchableHighlightProps) => {
   const {
     isChecked = false,
     isDisabled = false,

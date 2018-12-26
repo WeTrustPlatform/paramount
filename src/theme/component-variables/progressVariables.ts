@@ -1,24 +1,24 @@
 import { ViewStyle } from 'react-native';
 
-import { IThemeVariables } from '../ThemeInterface';
+import { ThemeVariables } from '../ThemeInterface';
 
-export interface IProgressVariables {
+export interface ProgressVariables {
   container: ViewStyle;
   progress: ViewStyle;
-  size: IProgressSizes;
+  size: ProgressSizes;
 }
 
-export interface IProgressSizes {
+export interface ProgressSizes {
   small: ViewStyle;
   medium: ViewStyle;
   large: ViewStyle;
 }
 
-export type ProgressSize = keyof IProgressSizes;
+export type ProgressSize = keyof ProgressSizes;
 
 export const getProgressVariables = (
-  themeVariables: IThemeVariables,
-): IProgressVariables => {
+  themeVariables: ThemeVariables,
+): ProgressVariables => {
   return {
     container: {
       backgroundColor: themeVariables.colors.background.tint2,

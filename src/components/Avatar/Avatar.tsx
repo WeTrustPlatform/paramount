@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Image, ImageStyle, TextStyle } from 'react-native';
 
-import { ITheme, withTheme } from '../../theme';
-import { IFillColors } from '../../theme/ThemeInterface';
-import { Box, IBoxProps } from '../Layout';
+import { Theme, withTheme } from '../../theme';
+import { FillColors } from '../../theme/ThemeInterface';
+import { Box, BoxProps } from '../Layout';
 import { Text } from '../Typography';
 
 // https://github.com/segmentio/evergreen/blob/master/source/avatar/README.md
@@ -20,7 +20,7 @@ export const globalGetInitials: GetInitialsType = (name, fallback = '?') => {
     .join('');
 };
 
-export interface IAvatarProps {
+export interface AvatarProps {
   /**
    * The source attribute of the image.
    * When it's not available, render initials instead.
@@ -53,7 +53,7 @@ export interface IAvatarProps {
    * The color used for the avatar.
    * When the value is `automatic`, use the hash function to determine the color.
    */
-  color?: 'automatic' | keyof IFillColors;
+  color?: 'automatic' | keyof FillColors;
 
   /**
    * Function to get the initials based on the name.
@@ -74,19 +74,19 @@ export interface IAvatarProps {
   /**
    * Theme provided by ThemeProvider.
    */
-  theme: ITheme;
+  theme: Theme;
 
   /**
    * Inline styles for components
    */
   dangerouslySetInlineStyle?: {
-    boxStyle?: IBoxProps;
+    boxStyle?: BoxProps;
     textStyle?: TextStyle;
     imageStyle?: ImageStyle;
   };
 }
 
-export const AvatarBase = (props: IAvatarProps) => {
+export const AvatarBase = (props: AvatarProps) => {
   const {
     theme,
 

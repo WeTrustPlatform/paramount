@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 
-import { IntentType } from '../../constants/Intent';
+import { Intent } from '../../constants/Intent';
 import { Icon } from '../../icons';
-import { ITheme, withTheme } from '../../theme';
-import { IAlertStyles } from '../../theme/style-getters/getAlertStyles';
+import { Theme, withTheme } from '../../theme';
+import { AlertStyles } from '../../theme/style-getters/getAlertStyles';
 import { Spacing } from '../Layout';
 import { Strong, Text } from '../Typography';
 
 export interface AlertProps {
-  theme: ITheme;
+  theme: Theme;
   title?: string;
   description?: string;
   /* custom component, will take precedence over title and description */
@@ -17,14 +17,14 @@ export interface AlertProps {
   onClose?: () => void;
   isCloseable?: boolean;
   icon?: React.ReactNode | null;
-  intent?: IntentType;
+  intent?: Intent;
   /**
    * Inline styles for components
    */
-  dangerouslySetInlineStyle?: Partial<IAlertStyles>;
+  dangerouslySetInlineStyle?: Partial<AlertStyles>;
 }
 
-const resolveIcon = (intent: IntentType, theme: ITheme) => {
+const resolveIcon = (intent: Intent, theme: Theme) => {
   switch (intent) {
     case 'success':
       return (

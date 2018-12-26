@@ -1,6 +1,6 @@
-import { IControlSizes } from '../../ThemeInterface';
+import { ControlSizes } from '../../ThemeInterface';
 
-export const controlPaddings: IControlSizes = {
+export const controlPaddings: ControlSizes = {
   small: 8,
 
   medium: 16,
@@ -8,7 +8,7 @@ export const controlPaddings: IControlSizes = {
   large: 24,
 };
 
-export const controlHeights: IControlSizes = {
+export const controlHeights: ControlSizes = {
   small: 40,
 
   medium: 48,
@@ -16,7 +16,7 @@ export const controlHeights: IControlSizes = {
   large: 56,
 };
 
-export const controlBorderRadius: IControlSizes = {
+export const controlBorderRadius: ControlSizes = {
   small: 4,
 
   medium: 4,

@@ -3,16 +3,16 @@ import { Platform, View } from 'react-native';
 
 import { TextSize } from '../../theme/ThemeInterface';
 import { Spacing } from '../Layout';
-import { IListItemProps } from './ListItem';
+import { ListItemProps } from './ListItem';
 
-export interface IListProps {
+export interface ListProps {
   icon?: React.ReactNode;
   listType?: 'ol' | 'ul';
   size?: TextSize;
-  children: Array<React.ReactElement<IListItemProps>>;
+  children: Array<React.ReactElement<ListItemProps>>;
 }
 
-export const List = (props: IListProps) => {
+export const List = (props: ListProps) => {
   const { listType, children, icon, size = 'medium' } = props;
 
   const finalChildren = React.Children.map(children, (child, index) => {
@@ -21,7 +21,7 @@ export const List = (props: IListProps) => {
     }
 
     // @ts-ignore
-    const listItem = child as React.ReactElement<IListItemProps>;
+    const listItem = child as React.ReactElement<ListItemProps>;
 
     return React.cloneElement(listItem, {
       // Prefer more granularly defined icon if present

@@ -1,13 +1,13 @@
 import { ImageStyle, TextStyle } from 'react-native';
 
-import { IBoxProps } from '../../components/Layout/Box';
+import { BoxProps } from '../../components/Layout/Box';
 import { Omit } from '../../types/utils';
-import { IAvatarVariables } from '../component-variables/avatarVariables';
-import { IFillColors, IFills } from '../ThemeInterface';
+import { AvatarVariables } from '../component-variables/avatarVariables';
+import { FillColors, Fills } from '../ThemeInterface';
 
-export type AvatarColor = 'automatic' | keyof IFillColors;
+export type AvatarColor = 'automatic' | keyof FillColors;
 
-export interface IAvatarStylesParams {
+export interface AvatarStylesParams {
   name?: string;
   color: AvatarColor;
   hashValue?: string;
@@ -17,9 +17,9 @@ export interface IAvatarStylesParams {
 }
 
 export type GetAvatarStyles = (
-  params: IAvatarStylesParams,
+  params: AvatarStylesParams,
 ) => {
-  boxStyle: Omit<IBoxProps, 'theme'>;
+  boxStyle: Omit<BoxProps, 'theme'>;
   textStyle: TextStyle;
   imageStyle: ImageStyle;
 };
@@ -51,7 +51,7 @@ const getAvatarInitialsFontSize = (
 };
 
 const getAvatarProps = (
-  fills: IFills,
+  fills: Fills,
   {
     isSolid,
     color,
@@ -66,7 +66,7 @@ const getAvatarProps = (
 
   if (color === 'automatic') {
     const keys = Object.keys(appearances);
-    const key = keys[hashValue % keys.length] as keyof IFillColors;
+    const key = keys[hashValue % keys.length] as keyof FillColors;
     return appearances[key];
   }
 
@@ -74,7 +74,7 @@ const getAvatarProps = (
 };
 
 export const getAvatarStyles = (
-  avatarVariables: IAvatarVariables,
+  avatarVariables: AvatarVariables,
 ): GetAvatarStyles => ({
   name,
   color,

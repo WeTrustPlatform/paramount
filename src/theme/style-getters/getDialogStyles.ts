@@ -1,6 +1,6 @@
 import { ViewStyle } from 'react-native';
 
-import { IDialogVariables } from '../component-variables/dialogVariables';
+import { DialogVariables } from '../component-variables/dialogVariables';
 
 export interface DialogStyles {
   bodyStyle: ViewStyle;
@@ -11,7 +11,7 @@ export interface DialogStyles {
 export type GetDialogStyles = () => DialogStyles;
 
 export const getDialogStyles = (
-  dialogVariables: IDialogVariables,
+  dialogVariables: DialogVariables,
 ): GetDialogStyles => () => {
   return {
     bodyStyle: dialogVariables.body,

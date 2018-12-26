@@ -1,22 +1,22 @@
 import { TextStyle } from 'react-native';
 
-import { IThemeVariables } from '../ThemeInterface';
+import { ThemeVariables } from '../ThemeInterface';
 import { getTextVariables } from './textVariables';
 
-export interface IParagraphSizes {
+export interface ParagraphSizes {
   small: TextStyle;
   medium: TextStyle;
   large: TextStyle;
 }
-export type ParagraphSize = keyof IParagraphSizes;
+export type ParagraphSize = keyof ParagraphSizes;
 
-export interface IParagraphVariables {
-  size: IParagraphSizes;
+export interface ParagraphVariables {
+  size: ParagraphSizes;
 }
 
 export const getParagraphVariables = (
-  themeVariables: IThemeVariables,
-): IParagraphVariables => {
+  themeVariables: ThemeVariables,
+): ParagraphVariables => {
   const textVariables = getTextVariables(themeVariables);
 
   return {

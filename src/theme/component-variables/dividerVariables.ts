@@ -1,14 +1,14 @@
-import { IThemeVariables } from '../ThemeInterface';
+import { ThemeVariables } from '../ThemeInterface';
 
-export interface IDividerVariables {
+export interface DividerVariables {
   color: string;
   size: number;
   radius: number;
 }
 
 export const getDividerVariables = (
-  themeVariables: IThemeVariables,
-): IDividerVariables => {
+  themeVariables: ThemeVariables,
+): DividerVariables => {
   return {
     color: themeVariables.colors.border.default,
     radius: 6,

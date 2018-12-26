@@ -1,12 +1,12 @@
 import { getComponentVariables } from './component-variables';
 import { defaultThemeVariables } from './default-theme';
 import { getStyleGetters } from './style-getters';
-import { IComponentVariables, ITheme, IThemeVariables } from './ThemeInterface';
+import { ComponentVariables, Theme, ThemeVariables } from './ThemeInterface';
 
 export const createTheme = (
-  themeVariables: Partial<IThemeVariables> = defaultThemeVariables,
-  componentVariables: Partial<IComponentVariables> = {},
-): ITheme => {
+  themeVariables: Partial<ThemeVariables> = defaultThemeVariables,
+  componentVariables: Partial<ComponentVariables> = {},
+): Theme => {
   const finalThemeVariables = {
     ...defaultThemeVariables,
     ...themeVariables,

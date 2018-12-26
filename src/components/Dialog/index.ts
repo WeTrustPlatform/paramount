@@ -1,2 +1,2 @@
-export { default as Dialog, IDialogProps } from './Dialog';
-export { default as ConfirmDialog, IConfirmDialogProps } from './ConfirmDialog';
+export { default as Dialog, DialogProps } from './Dialog';
+export { default as ConfirmDialog, ConfirmDialogProps } from './ConfirmDialog';

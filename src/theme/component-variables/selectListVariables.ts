@@ -1,51 +1,51 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { IThemeVariables } from '../ThemeInterface';
+import { ThemeVariables } from '../ThemeInterface';
 import { getTextVariables } from './textVariables';
 
-export type ISelectListAppearanceStyles = ViewStyle & {
+export type SelectListAppearanceStyles = ViewStyle & {
   backgroundColor: string;
   borderColor: string;
 };
 
-export type IBaseState = ISelectListAppearanceStyles;
-export type IDisabledState = Partial<ISelectListAppearanceStyles>;
-export type IFocusState = Partial<ISelectListAppearanceStyles>;
-export type ISelectedState = Partial<ISelectListAppearanceStyles>;
+export type BaseState = SelectListAppearanceStyles;
+export type DisabledState = Partial<SelectListAppearanceStyles>;
+export type FocusState = Partial<SelectListAppearanceStyles>;
+export type SelectedState = Partial<SelectListAppearanceStyles>;
 
-export type ISizeStyles = ViewStyle & {
+export type SizeStyles = ViewStyle & {
   fontSize: number;
   height: number;
   paddingLeft: number;
   paddingRight: number;
 };
 
-export interface ISelectListSizes {
-  small: ISizeStyles;
-  medium: ISizeStyles;
-  large: ISizeStyles;
+export interface SelectListSizes {
+  small: SizeStyles;
+  medium: SizeStyles;
+  large: SizeStyles;
 }
 
-export interface ITextSizes {
+export interface TextSizes {
   small: TextStyle;
   medium: TextStyle;
   large: TextStyle;
 }
 
-export type SelectListSize = keyof ISelectListSizes;
+export type SelectListSize = keyof SelectListSizes;
 
-export interface ISelectListVariables {
-  base: IBaseState;
-  disabled: IDisabledState;
-  selected: ISelectedState;
+export interface SelectListVariables {
+  base: BaseState;
+  disabled: DisabledState;
+  selected: SelectedState;
   focusBackgroundColor: string;
-  sizes: ISelectListSizes;
-  textSizes: ITextSizes;
+  sizes: SelectListSizes;
+  textSizes: TextSizes;
 }
 
 export const getSelectListVariables = (
-  themeVariables: IThemeVariables,
-): ISelectListVariables => {
+  themeVariables: ThemeVariables,
+): SelectListVariables => {
   const textSizes = getTextVariables(themeVariables);
   return {
     base: {

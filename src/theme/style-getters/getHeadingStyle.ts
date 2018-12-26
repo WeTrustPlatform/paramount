@@ -1,6 +1,6 @@
 import { TextStyle } from 'react-native';
 
-import { IHeadingVariables } from '../component-variables/headingVariables';
+import { HeadingVariables } from '../component-variables/headingVariables';
 import { HeadingSize } from '../ThemeInterface';
 
 export type GetHeadingStyle = (
@@ -10,7 +10,7 @@ export type GetHeadingStyle = (
 };
 
 export const getHeadingStyle = (
-  headingVariables: IHeadingVariables,
+  headingVariables: HeadingVariables,
 ): GetHeadingStyle => size => {
   return {
     headingStyle: headingVariables.size[size],

@@ -1,19 +1,19 @@
 import { ViewStyle } from 'react-native';
 
-import { IThemeVariables } from '../ThemeInterface';
+import { ThemeVariables } from '../ThemeInterface';
 
-export type ITextInputAppearanceStyles = ViewStyle & {
+export type TextInputAppearanceStyles = ViewStyle & {
   backgroundColor: string;
   borderColor: string;
   color: string;
 };
 
-export type IBaseState = ITextInputAppearanceStyles;
-export type IDisabledState = Partial<ITextInputAppearanceStyles>;
-export type IInvalidState = Partial<ITextInputAppearanceStyles>;
-export type IFocusState = Partial<ITextInputAppearanceStyles>;
+export type BaseState = TextInputAppearanceStyles;
+export type DisabledState = Partial<TextInputAppearanceStyles>;
+export type InvalidState = Partial<TextInputAppearanceStyles>;
+export type FocusState = Partial<TextInputAppearanceStyles>;
 
-export type ISizeStyles = ViewStyle & {
+export type SizeStyles = ViewStyle & {
   borderRadius: number;
   fontSize: number;
   height: number;
@@ -21,26 +21,26 @@ export type ISizeStyles = ViewStyle & {
   paddingRight: number;
 };
 
-export interface ITextInputSizes {
-  small: ISizeStyles;
-  medium: ISizeStyles;
-  large: ISizeStyles;
+export interface TextInputSizes {
+  small: SizeStyles;
+  medium: SizeStyles;
+  large: SizeStyles;
 }
 
-export type TextInputSize = keyof ITextInputSizes;
+export type TextInputSize = keyof TextInputSizes;
 
-export interface ITextInputVariables {
-  base: IBaseState;
-  disabled: IDisabledState;
-  focus: IFocusState;
-  invalid: IInvalidState;
+export interface TextInputVariables {
+  base: BaseState;
+  disabled: DisabledState;
+  focus: FocusState;
+  invalid: InvalidState;
   placeholderTextColor: string;
-  sizes: ITextInputSizes;
+  sizes: TextInputSizes;
 }
 
 export const getTextInputVariables = (
-  themeVariables: IThemeVariables,
-): ITextInputVariables => {
+  themeVariables: ThemeVariables,
+): TextInputVariables => {
   return {
     base: {
       backgroundColor: themeVariables.colors.background.plain,

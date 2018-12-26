@@ -1,31 +1,31 @@
 import { ViewStyle } from 'react-native';
 
-import { IThemeVariables } from '../ThemeInterface';
+import { ThemeVariables } from '../ThemeInterface';
 
-export type IButtonColor = ViewStyle & {
+export type ButtonColorProps = ViewStyle & {
   color: string;
   focusColor: string;
   loadingBackgroundColor?: string;
 };
 
-export interface IButtonColors {
-  default: IButtonColor;
-  danger: IButtonColor;
-  primary: IButtonColor;
-  secondary: IButtonColor;
+export interface ButtonColors {
+  default: ButtonColorProps;
+  danger: ButtonColorProps;
+  primary: ButtonColorProps;
+  secondary: ButtonColorProps;
 }
 
-export type ButtonColor = keyof IButtonColors;
+export type ButtonColor = keyof ButtonColors;
 
-export interface IButtonAppearance {
-  minimal: IButtonColors;
-  primary: IButtonColors;
-  outline: IButtonColors;
+export interface ButtonAppearances {
+  minimal: ButtonColors;
+  primary: ButtonColors;
+  outline: ButtonColors;
 }
 
-export type ButtonAppearance = keyof IButtonAppearance;
+export type ButtonAppearance = keyof ButtonAppearances;
 
-export type ISizeStyles = ViewStyle & {
+export type SizeStyles = ViewStyle & {
   borderRadius: number;
   fontSize: number;
   height: number;
@@ -33,26 +33,26 @@ export type ISizeStyles = ViewStyle & {
   paddingRight: number;
 };
 
-export interface IButtonSizes {
-  small: ISizeStyles;
-  medium: ISizeStyles;
-  large: ISizeStyles;
+export interface ButtonSizes {
+  small: SizeStyles;
+  medium: SizeStyles;
+  large: SizeStyles;
 }
 
-export type ButtonSize = keyof IButtonSizes;
+export type ButtonSize = keyof ButtonSizes;
 
-export interface IButtonVariables {
-  appearances: IButtonAppearance;
+export interface ButtonVariables {
+  appearances: ButtonAppearances;
   disabled: {
     backgroundColor: string;
     color: string;
   };
-  sizes: IButtonSizes;
+  sizes: ButtonSizes;
 }
 
 export const getButtonVariables = (
-  themeVariables: IThemeVariables,
-): IButtonVariables => {
+  themeVariables: ThemeVariables,
+): ButtonVariables => {
   return {
     appearances: {
       minimal: {

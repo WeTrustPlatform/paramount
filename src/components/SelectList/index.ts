@@ -1,9 +1,9 @@
-export { default as SelectList, ISelectListProps } from './SelectList';
+export { default as SelectList, SelectListProps } from './SelectList';
 export {
   default as SelectListItem,
-  ISelectListItemProps,
+  SelectListItemProps,
 } from './SelectListItem';
 export {
   default as SelectListField,
-  ISelectListFieldProps,
+  SelectListFieldProps,
 } from './SelectListField';

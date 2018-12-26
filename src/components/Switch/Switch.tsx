@@ -7,17 +7,17 @@ import {
 } from 'react-native';
 
 import { Icon } from '../../icons';
-import { ITheme, withTheme } from '../../theme';
+import { Theme, withTheme } from '../../theme';
 
 /* Copy pasted from https://github.com/react-native-seoul/react-native-switch-toggle */
-export interface ISwitchProps extends TouchableOpacityProps {
+export interface SwitchProps extends TouchableOpacityProps {
   isSwitchedOn?: boolean;
   isDisabled?: boolean;
   onChange?: () => void;
   onIcon?: React.ReactNode;
   offIcon?: React.ReactNode;
   duration?: number;
-  theme: ITheme;
+  theme: Theme;
   /**
    * Inline styles for components
    */
@@ -27,13 +27,13 @@ export interface ISwitchProps extends TouchableOpacityProps {
   };
 }
 
-export interface ISwitchState {
+export interface SwitchState {
   animXValue: Animated.Value;
   circlePosXEnd: number;
   circlePosXStart: number;
 }
 
-class SwitchBase extends React.Component<ISwitchProps, ISwitchState> {
+class SwitchBase extends React.Component<SwitchProps, SwitchState> {
   public static defaultProps = {
     backgroundColorOff: 'rgb(215,215,215)',
     backgroundColorOn: 'rgb(227,227,227)',
@@ -58,7 +58,7 @@ class SwitchBase extends React.Component<ISwitchProps, ISwitchState> {
     onChange: () => null,
   };
 
-  constructor(props: ISwitchProps) {
+  constructor(props: SwitchProps) {
     super(props);
     const { theme } = props;
     const { circleStyle, containerStyle } = theme.getSwitchStyles();
@@ -75,7 +75,7 @@ class SwitchBase extends React.Component<ISwitchProps, ISwitchState> {
 
   // TODO: When converting to hooks, we can use the follow API:
   // https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-getderivedstatefromprops
-  public componentWillReceiveProps(newProps: ISwitchProps) {
+  public componentWillReceiveProps(newProps: SwitchProps) {
     if (newProps.isSwitchedOn !== this.props.isSwitchedOn) {
       this.runAnimation();
     }

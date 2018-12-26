@@ -7,7 +7,7 @@ import {
   ViewStyle,
 } from 'react-native';
 
-import { ITheme, withTheme } from '../../theme';
+import { Theme, withTheme } from '../../theme';
 import {
   ButtonAppearance,
   ButtonColor,
@@ -17,7 +17,7 @@ import { Spacing } from '../Layout';
 import { LoadingDots } from '../Loading';
 import { Text } from '../Typography';
 
-export interface IButtonProps extends TouchableHighlightProps {
+export interface ButtonProps extends TouchableHighlightProps {
   children?: string;
 
   /**
@@ -89,7 +89,7 @@ export interface IButtonProps extends TouchableHighlightProps {
   /**
    * Theme provided by ThemeProvider.
    */
-  theme: ITheme;
+  theme: Theme;
 
   /**
    * Inline styles for components
@@ -100,7 +100,7 @@ export interface IButtonProps extends TouchableHighlightProps {
   };
 }
 
-const ButtonBase = (props: IButtonProps) => {
+const ButtonBase = (props: ButtonProps) => {
   const {
     appearance = 'primary',
     children,

@@ -1,8 +1,8 @@
 import { ViewStyle } from 'react-native';
 
-import { IThemeVariables } from '../ThemeInterface';
+import { ThemeVariables } from '../ThemeInterface';
 
-export interface IPopoverVariables {
+export interface PopoverVariables {
   container: ViewStyle;
   popover: ViewStyle;
   modalContainer: ViewStyle;
@@ -10,8 +10,8 @@ export interface IPopoverVariables {
 }
 
 export const getPopoverVariables = (
-  themeVariables: IThemeVariables,
-): IPopoverVariables => {
+  themeVariables: ThemeVariables,
+): PopoverVariables => {
   return {
     container: {
       alignSelf: 'flex-start',

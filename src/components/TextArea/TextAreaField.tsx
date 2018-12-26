@@ -1,12 +1,12 @@
 import * as React from 'react';
 
 import { withTheme } from '../../theme';
-import { FormField, IFormFieldProps } from '../FormField';
-import TextArea, { ITextAreaProps } from './TextArea';
+import { FormField, FormFieldProps } from '../FormField';
+import TextArea, { TextAreaProps } from './TextArea';
 
-export interface ITextAreaFieldProps extends IFormFieldProps, ITextAreaProps {}
+export interface TextAreaFieldProps extends FormFieldProps, TextAreaProps {}
 
-const TextAreaFieldBase = (props: ITextAreaFieldProps) => {
+const TextAreaFieldBase = (props: TextAreaFieldProps) => {
   const { label, error, description, ...passThroughProps } = props;
 
   return (

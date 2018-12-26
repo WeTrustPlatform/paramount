@@ -1,10 +1,10 @@
-import { IFills } from '../../ThemeInterface';
+import { Fills } from '../../ThemeInterface';
 import palette from './palette';
 
 /**
  * Fills are used in Avatars and Badges.
  */
-const fills: IFills = {
+const fills: Fills = {
   solid: {
     neutral: {
       backgroundColor: palette.neutral.base,

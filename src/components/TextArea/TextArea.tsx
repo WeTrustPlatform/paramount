@@ -1,14 +1,14 @@
 import * as React from 'react';
 
-import { ITheme, withTheme } from '../../theme';
-import TextInput, { ITextInputProps } from '../TextInput/TextInput';
+import { Theme, withTheme } from '../../theme';
+import TextInput, { TextInputProps } from '../TextInput/TextInput';
 
-export interface ITextAreaProps extends ITextInputProps {
+export interface TextAreaProps extends TextInputProps {
   numberOfLines?: number;
-  theme: ITheme;
+  theme: Theme;
 }
 
-const TextAreaBase = (props: ITextAreaProps) => {
+const TextAreaBase = (props: TextAreaProps) => {
   const {
     numberOfLines = 3,
     size = 'medium',

@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { TouchableWithoutFeedback, View } from 'react-native';
 
-import { ITheme, withTheme } from '../../theme';
+import { Theme, withTheme } from '../../theme';
 import { DialogStyles } from '../../theme/style-getters/getDialogStyles';
 import Modal from './Modal';
 
 // TODO: Import from react-native when react-native-web implementation is ready
 
-export interface IDialogProps {
+export interface DialogProps {
   children: React.ReactNode;
-  theme: ITheme;
+  theme: Theme;
   /** To show dialog or not */
   isVisible?: boolean;
   /** Called when clicking on overlay or pressing Esc */
@@ -24,7 +24,7 @@ export interface IDialogProps {
   dangerouslySetInlineStyle?: Partial<DialogStyles>;
 }
 
-const DialogBase = (props: IDialogProps) => {
+const DialogBase = (props: DialogProps) => {
   const {
     children,
     footer,

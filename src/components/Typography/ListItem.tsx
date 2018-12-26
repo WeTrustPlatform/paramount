@@ -4,7 +4,7 @@ import { Platform, View } from 'react-native';
 import { withTheme } from '../../theme';
 import { TextColor, TextSize } from '../../theme/ThemeInterface';
 import { Spacing } from '../Layout';
-import Text, { ITextProps } from './Text';
+import Text, { TextProps } from './Text';
 
 const paddingLeftMap = {
   large: 3,
@@ -13,7 +13,7 @@ const paddingLeftMap = {
   xsmall: 1,
 };
 
-export interface IListItemProps {
+export interface ListItemProps {
   icon?: React.ReactNode;
   children: React.ReactNode;
   index?: number | null;
@@ -21,7 +21,7 @@ export interface IListItemProps {
   size?: TextSize;
 }
 
-const ListItemBase = (props: ITextProps & IListItemProps) => {
+const ListItemBase = (props: TextProps & ListItemProps) => {
   const { size = 'medium', index, icon, iconColor, ...textProps } = props;
 
   const paddingLeft = paddingLeftMap[size] as 1 | 2 | 3;

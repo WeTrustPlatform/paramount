@@ -2,30 +2,30 @@ import * as React from 'react';
 import { TouchableOpacity } from 'react-native';
 
 import { Icon } from '../../icons';
-import { ITheme, withTheme } from '../../theme';
+import { Theme, withTheme } from '../../theme';
 import { ButtonColor } from '../../theme/component-variables/buttonVariables';
 import { Button } from '../Button';
 import { Spacing } from '../Layout';
 import { Heading } from '../Typography';
-import Dialog, { IDialogProps } from './Dialog';
+import Dialog, { DialogProps } from './Dialog';
 
-export interface IConfirmDialogProps
-  extends IDialogProps,
-    IConfirmDialogHeaderProps,
-    IConfirmDialogFooterProps {}
+export interface ConfirmDialogProps
+  extends DialogProps,
+    ConfirmDialogHeaderProps,
+    ConfirmDialogFooterProps {}
 
-export interface IConfirmDialogHeaderProps {
+export interface ConfirmDialogHeaderProps {
   /** Title displayed in the header */
   title?: string;
   onClose?: () => void;
-  theme: ITheme;
+  theme: Theme;
 }
 
 const ConfirmDialogHeader = ({
   title,
   theme,
   onClose,
-}: IConfirmDialogHeaderProps) => (
+}: ConfirmDialogHeaderProps) => (
   <Spacing
     padding={2}
     flexDirection="row"
@@ -43,7 +43,7 @@ const ConfirmDialogHeader = ({
   </Spacing>
 );
 
-export interface IConfirmDialogFooterProps {
+export interface ConfirmDialogFooterProps {
   color?: ButtonColor;
   /** Label for cancel button */
   cancelLabel?: string;
@@ -61,7 +61,7 @@ const ConfirmDialogFooter = ({
   onConfirm,
   cancelLabel,
   confirmLabel,
-}: IConfirmDialogFooterProps) => (
+}: ConfirmDialogFooterProps) => (
   <Spacing padding={2} flexDirection="row" justifyContent="flex-end">
     <Button appearance="minimal" onPress={onClose}>
       {cancelLabel}
@@ -74,7 +74,7 @@ const ConfirmDialogFooter = ({
   </Spacing>
 );
 
-const ConfirmDialogBase = (props: IConfirmDialogProps) => {
+const ConfirmDialogBase = (props: ConfirmDialogProps) => {
   const {
     cancelLabel = 'Cancel',
     children,

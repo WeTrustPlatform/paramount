@@ -1,8 +1,8 @@
 import { ViewStyle } from 'react-native';
 
 import {
-  IProgressVariables,
   ProgressSize,
+  ProgressVariables,
 } from '../component-variables/progressVariables';
 
 export type GetProgressStyles = (
@@ -13,7 +13,7 @@ export type GetProgressStyles = (
 };
 
 export const getProgressStyles = (
-  progressVariables: IProgressVariables,
+  progressVariables: ProgressVariables,
 ): GetProgressStyles => size => {
   const sizeStyle = progressVariables.size[size];
 

@@ -1,6 +1,6 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { IBadgeVariables } from '../component-variables/badgeVariables';
+import { BadgeVariables } from '../component-variables/badgeVariables';
 import { ControlSize } from '../component-variables/controlVariables';
 import { FillColor } from '../ThemeInterface';
 
@@ -14,7 +14,7 @@ export type GetBadgeStyles = (
 };
 
 export const getBadgeStyles = (
-  badgeVariables: IBadgeVariables,
+  badgeVariables: BadgeVariables,
 ): GetBadgeStyles => (size, color, isSolid) => {
   const fills = isSolid
     ? badgeVariables.fills.solid

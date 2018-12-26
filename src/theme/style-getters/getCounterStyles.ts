@@ -1,18 +1,18 @@
 import { ViewStyle } from 'react-native';
 
-import { ICounterVariables } from '../component-variables/counterVariables';
+import { CounterVariables } from '../component-variables/counterVariables';
 
-export interface ICounterStyles {
+export interface CounterStyles {
   containerStyle: ViewStyle;
   countStyle: ViewStyle;
   counterStyle: ViewStyle;
   disabledStyle: ViewStyle;
 }
 
-export type GetCounterStyles = () => ICounterStyles;
+export type GetCounterStyles = () => CounterStyles;
 
 export const getCounterStyles = (
-  counterVariables: ICounterVariables,
+  counterVariables: CounterVariables,
 ): GetCounterStyles => () => {
   const { container, counter, count, disabled } = counterVariables;
 

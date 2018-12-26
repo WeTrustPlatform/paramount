@@ -1,13 +1,13 @@
-export interface IIntents {
+export interface Intents {
   danger: 'danger';
   info: 'info';
   success: 'success';
   warning: 'warning';
 }
 
-export type IntentType = keyof IIntents;
+export type Intent = keyof Intents;
 
-export const Intent: IIntents = {
+export const INTENT: Intents = {
   danger: 'danger',
   info: 'info',
   success: 'success',

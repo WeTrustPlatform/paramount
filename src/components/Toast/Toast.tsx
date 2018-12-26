@@ -1,14 +1,14 @@
-// Animation taken from https://medium.com/@norbajunior/react-native-facebook-and-instagram-like-top-bar-notifications-with-animated-api-43c48d0443dd
 import * as React from 'react';
 import { Animated, Easing, View } from 'react-native';
 
-import { IntentType } from '../../constants/Intent';
-import { ITheme, withTheme } from '../../theme';
+import { Intent } from '../../constants/Intent';
+import { Theme, withTheme } from '../../theme';
 import { Text } from '../Typography';
 
+// Animation taken from https://medium.com/@norbajunior/react-native-facebook-and-instagram-like-top-bar-notifications-with-animated-api-43c48d0443dd
 export type ToastId = string;
 
-export interface IToastSettings {
+export interface ToastSettings {
   id?: ToastId;
   title?: string;
   description?: string;
@@ -16,26 +16,26 @@ export interface IToastSettings {
   /* custom component, will take precedence over title and description */
   component?: React.ReactNode;
   /* will override */
-  intent?: IntentType;
+  intent?: Intent;
 }
 
-export interface IToast extends IToastSettings {
+export interface ToastInstance extends ToastSettings {
   id: ToastId;
   onRemove: () => void;
 }
 
-export interface IToastProps extends IToast {
-  theme: ITheme;
+export interface ToastProps extends ToastInstance {
+  theme: Theme;
 }
 
-export interface IToastState {
+export interface ToastState {
   offset: Animated.Value;
 }
 
-class ToastBase extends React.Component<IToastProps, IToastState> {
+class ToastBase extends React.Component<ToastProps, ToastState> {
   public closeTimer: number | null = null;
 
-  constructor(props: IToastProps) {
+  constructor(props: ToastProps) {
     super(props);
 
     this.state = { offset: new Animated.Value(-100) };

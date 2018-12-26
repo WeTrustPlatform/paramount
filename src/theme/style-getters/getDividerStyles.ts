@@ -1,6 +1,6 @@
 import { TextStyle } from 'react-native';
 
-import { IDividerVariables } from '../component-variables/dividerVariables';
+import { DividerVariables } from '../component-variables/dividerVariables';
 
 export type GetDividerStyles = (
   size?: number,
@@ -11,7 +11,7 @@ export type GetDividerStyles = (
 };
 
 export const getDividerStyles = (
-  dividerVariables: IDividerVariables,
+  dividerVariables: DividerVariables,
 ): GetDividerStyles => (size, color, radius) => {
   return {
     dividerStyle: {

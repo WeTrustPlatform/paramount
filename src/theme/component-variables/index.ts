@@ -1,4 +1,4 @@
-import { IComponentVariables, IThemeVariables } from '../ThemeInterface';
+import { ComponentVariables, ThemeVariables } from '../ThemeInterface';
 import { getAlertVariables } from './alertVariables';
 import { getAvatarVariables } from './avatarVariables';
 import { getBadgeVariables } from './badgeVariables';
@@ -19,8 +19,8 @@ import { getTextVariables } from './textVariables';
 import { getToastVariables } from './toastVariables';
 
 export const getComponentVariables = (
-  themeVariables: IThemeVariables,
-): IComponentVariables => {
+  themeVariables: ThemeVariables,
+): ComponentVariables => {
   return {
     alert: getAlertVariables(themeVariables),
     avatar: getAvatarVariables(themeVariables),

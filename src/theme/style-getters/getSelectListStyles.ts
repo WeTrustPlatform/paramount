@@ -1,11 +1,11 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
 import {
-  ISelectListVariables,
   SelectListSize,
+  SelectListVariables,
 } from '../component-variables/selectListVariables';
 
-export interface ISelectListStyles {
+export interface SelectListStyles {
   containerStyle: ViewStyle;
   focusBackgroundColor: string;
   textStyle: TextStyle;
@@ -15,11 +15,11 @@ export type GetSelectListStyles = (
   size: SelectListSize,
   isDisabled: boolean,
   isSelected: boolean,
-) => ISelectListStyles;
+) => SelectListStyles;
 
 export const getSelectListStyles = (
-  selectListVariables: ISelectListVariables,
-): GetSelectListStyles => (size, isDisabled, isSelected): ISelectListStyles => {
+  selectListVariables: SelectListVariables,
+): GetSelectListStyles => (size, isDisabled, isSelected): SelectListStyles => {
   const {
     base,
     disabled,

@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 import withTheme from '../../theme/withTheme';
-import Text, { ITextProps } from './Text';
+import Text, { TextProps } from './Text';
 
-const PreBase = (props: ITextProps) => {
+const PreBase = (props: TextProps) => {
   const { children, ...textProps } = props;
 
   return <Text {...textProps}>{children}</Text>;

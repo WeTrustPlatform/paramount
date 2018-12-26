@@ -1,4 +1,4 @@
-import { IColors } from '../../ThemeInterface';
+import { Colors } from '../../ThemeInterface';
 import palette from './palette';
 
 // tslint:disable object-literal-sort-keys
@@ -7,7 +7,7 @@ import palette from './palette';
  * This object are functional colors being used the default theme.
  * A required property is required by the default theme NOT by Evergreen itself.
  */
-const colors: IColors = {
+const colors: Colors = {
   /**
    * Available on Pane as `<Pane background="tint1" />`
    */

@@ -1,23 +1,23 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { IThemeVariables } from '../ThemeInterface';
+import { ThemeVariables } from '../ThemeInterface';
 
-export interface IAlertSeparatedVariables {
+export interface AlertSeparatedVariables {
   container: ViewStyle;
   body: ViewStyle;
   title: TextStyle;
   message: TextStyle;
 }
-export interface IAlertVariables extends IAlertSeparatedVariables {
-  danger: IAlertSeparatedVariables;
-  info: IAlertSeparatedVariables;
-  success: IAlertSeparatedVariables;
-  warning: IAlertSeparatedVariables;
+export interface AlertVariables extends AlertSeparatedVariables {
+  danger: AlertSeparatedVariables;
+  info: AlertSeparatedVariables;
+  success: AlertSeparatedVariables;
+  warning: AlertSeparatedVariables;
 }
 
 export const getAlertVariables = (
-  themeVariables: IThemeVariables,
-): IAlertVariables => {
+  themeVariables: ThemeVariables,
+): AlertVariables => {
   return {
     body: {
       flex: 1,

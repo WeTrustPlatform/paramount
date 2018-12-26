@@ -2,12 +2,12 @@ import * as React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 
 import { Icon } from '../../icons';
-import { ITheme, withTheme } from '../../theme';
-import { ICounterStyles } from '../../theme/style-getters/getCounterStyles';
+import { Theme, withTheme } from '../../theme';
+import { CounterStyles } from '../../theme/style-getters/getCounterStyles';
 import { Spacing } from '../Layout';
 
 export interface CounterProps {
-  theme: ITheme;
+  theme: Theme;
   count: number;
   /* custom component in place of count */
   component?: React.ReactNode;
@@ -18,7 +18,7 @@ export interface CounterProps {
   /**
    * Inline styles for components
    */
-  dangerouslySetInlineStyle?: Partial<ICounterStyles>;
+  dangerouslySetInlineStyle?: Partial<CounterStyles>;
 }
 
 const CounterBase = (props: CounterProps) => {

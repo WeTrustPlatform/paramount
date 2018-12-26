@@ -1,6 +1,6 @@
 // tslint:disable object-literal-sort-keys
 
-export interface IColorPalette {
+export interface ColorPalette {
   base: string;
   dark: string;
   darkest: string;
@@ -8,15 +8,15 @@ export interface IColorPalette {
   lightest: string;
 }
 
-export interface IPalette {
-  neutral: IColorPalette;
-  blue: IColorPalette;
-  red: IColorPalette;
-  orange: IColorPalette;
-  yellow: IColorPalette;
-  green: IColorPalette;
-  teal: IColorPalette;
-  purple: IColorPalette;
+export interface Palette {
+  neutral: ColorPalette;
+  blue: ColorPalette;
+  red: ColorPalette;
+  orange: ColorPalette;
+  yellow: ColorPalette;
+  green: ColorPalette;
+  teal: ColorPalette;
+  purple: ColorPalette;
 }
 
 export default {

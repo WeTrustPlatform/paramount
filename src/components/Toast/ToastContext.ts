@@ -1,15 +1,15 @@
 import * as React from 'react';
 
-import { IToastSettings } from './Toast';
+import { ToastSettings } from './Toast';
 
-export interface IToastContext {
-  danger: (toastSettings: IToastSettings) => void;
-  notify: (toastSettings: IToastSettings) => void;
-  success: (toastSettings: IToastSettings) => void;
-  warning: (toastSettings: IToastSettings) => void;
+export interface ToastContext {
+  danger: (toastSettings: ToastSettings) => void;
+  notify: (toastSettings: ToastSettings) => void;
+  success: (toastSettings: ToastSettings) => void;
+  warning: (toastSettings: ToastSettings) => void;
 }
 
-const defaultToastContext: IToastContext = {
+const defaultToastContext: ToastContext = {
   danger: () => null,
   notify: () => null,
   success: () => null,

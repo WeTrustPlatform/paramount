@@ -1,10 +1,10 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { IntentType } from '../../constants/Intent';
-import { IToastVariables } from '../component-variables/toastVariables';
+import { Intent } from '../../constants/Intent';
+import { ToastVariables } from '../component-variables/toastVariables';
 
 export type GetToastStyles = (
-  intent: IntentType,
+  intent: Intent,
 ) => {
   containerStyle: ViewStyle;
   toastStyle: ViewStyle;
@@ -12,7 +12,7 @@ export type GetToastStyles = (
 };
 
 export const getToastStyles = (
-  toastVariables: IToastVariables,
+  toastVariables: ToastVariables,
 ): GetToastStyles => intent => {
   let toastStyle: ViewStyle;
   let textStyle: TextStyle;

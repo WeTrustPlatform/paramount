@@ -1,26 +1,26 @@
-import { IThemeVariables } from '../ThemeInterface';
+import { ThemeVariables } from '../ThemeInterface';
 
-export interface ISizeStyles {
+export interface SizeStyles {
   height: number;
   paddingLeft: number;
   paddingRight: number;
 }
 
-export interface IControlSizes {
-  small: ISizeStyles;
-  medium: ISizeStyles;
-  large: ISizeStyles;
+export interface ControlSizes {
+  small: SizeStyles;
+  medium: SizeStyles;
+  large: SizeStyles;
 }
 
-export type ControlSize = keyof IControlSizes;
+export type ControlSize = keyof ControlSizes;
 
-export interface IControlVariables {
-  sizes: IControlSizes;
+export interface ControlVariables {
+  sizes: ControlSizes;
 }
 
 export const getControlVariables = (
-  themeVariables: IThemeVariables,
-): IControlVariables => {
+  themeVariables: ThemeVariables,
+): ControlVariables => {
   return {
     sizes: {
       small: {

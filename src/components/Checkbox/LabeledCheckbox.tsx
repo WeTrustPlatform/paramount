@@ -2,18 +2,18 @@ import * as React from 'react';
 
 import { withTheme } from '../../theme';
 import { TextColor, TextSize } from '../../theme/ThemeInterface';
-import Checkbox, { ICheckboxProps } from '../Checkbox/Checkbox';
+import Checkbox, { CheckboxProps } from '../Checkbox/Checkbox';
 import { Box, Spacing } from '../Layout';
 import { Text } from '../Typography';
 
-export interface ILabeledCheckboxProps extends ICheckboxProps {
+export interface LabeledCheckboxProps extends CheckboxProps {
   label?: string;
   position?: 'left' | 'right';
   color?: TextColor;
   size?: TextSize;
 }
 
-const LabeledCheckboxBase = (props: ILabeledCheckboxProps) => {
+const LabeledCheckboxBase = (props: LabeledCheckboxProps) => {
   const { label, position = 'right', color, size, ...restProps } = props;
 
   if (!label) {

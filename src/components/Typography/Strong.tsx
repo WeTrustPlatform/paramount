@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 import withTheme from '../../theme/withTheme';
-import Text, { ITextProps } from './Text';
+import Text, { TextProps } from './Text';
 
-const StrongBase = (props: ITextProps) => {
+const StrongBase = (props: TextProps) => {
   const { children, dangerouslySetInlineStyle, ...textProps } = props;
 
   return (
