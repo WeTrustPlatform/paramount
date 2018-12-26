@@ -1,3 +1,10 @@
+## [1.4.10](https://github.com/WeTrustPlatform/paramount/compare/v1.4.9...v1.4.10) (2018-12-26)
+
+
+### Bug Fixes
+
+* box elevations ([3021d73](https://github.com/WeTrustPlatform/paramount/commit/3021d73))
+
 ## [1.4.9](https://github.com/WeTrustPlatform/paramount/compare/v1.4.8...v1.4.9) (2018-12-22)
 
 
