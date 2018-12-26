@@ -1,3 +1,5 @@
+import { ViewStyle } from 'react-native';
+
 import { IAlertVariables } from './component-variables/alertVariables';
 import { IAvatarVariables } from './component-variables/avatarVariables';
 import { IBadgeVariables } from './component-variables/badgeVariables';
@@ -150,8 +152,8 @@ export interface IColors {
   text: ITextColors;
 }
 
-export type Elevations = string[];
-export type Elevation = number;
+export type Elevations = ViewStyle[];
+export type Elevation = ViewStyle;
 
 export interface IControlSizes {
   small: number;

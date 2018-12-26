@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { TouchableWithoutFeedback, View, ViewStyle } from 'react-native';
+import { TouchableWithoutFeedback, View } from 'react-native';
 
 import { ITheme, withTheme } from '../../theme';
+import { DialogStyles } from '../../theme/style-getters/getDialogStyles';
 import Modal from './Modal';
 
 // TODO: Import from react-native when react-native-web implementation is ready
@@ -20,12 +21,7 @@ export interface IDialogProps {
   /**
    * Inline styles for components
    */
-  dangerouslySetInlineStyle?: {
-    modalContainerStyle: ViewStyle;
-    overlayStyle: ViewStyle;
-    containerStyle: ViewStyle;
-    bodyStyle: ViewStyle;
-  };
+  dangerouslySetInlineStyle?: Partial<DialogStyles>;
 }
 
 const DialogBase = (props: IDialogProps) => {

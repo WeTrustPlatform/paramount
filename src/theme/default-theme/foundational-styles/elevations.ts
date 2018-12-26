@@ -1,14 +1,49 @@
-const borderShadowColor = 'rgba(67, 90, 111, 0.3)'; // Used to be colors.neutral['80A'] in v3 and down.
-const blurryShadowColor = 'rgba(67, 90, 111, 0.47)'; // Used to be colors.neutral['50A'] in v3 and down.
+import { Elevations } from '../../ThemeInterface';
+import palette from './palette';
 
-/**
- * Elevation styles are applied as box shadows.
- * Available levels: 0, 1, 2, 3, 4.
- */
-export default [
-  `0 0 1px ${borderShadowColor}`,
-  `0 -1px 0 rgba(245,245,245,0.5), 0 8px 20px rgba(33,33,33,0.15)`,
-  `0 0 1px ${borderShadowColor}, 0 5px 8px -4px ${blurryShadowColor}`,
-  `0 0 1px ${borderShadowColor}, 0 8px 10px -4px ${blurryShadowColor}`,
-  `0 0 1px ${borderShadowColor}, 0 16px 24px -8px ${blurryShadowColor}`,
+const elevations: Elevations = [
+  {
+    elevation: 0,
+    shadowColor: palette.neutral.dark,
+    shadowOffset: { width: 0, height: 0 },
+    shadowOpacity: 0,
+    shadowRadius: 0,
+  },
+  {
+    elevation: 1,
+    shadowColor: palette.neutral.dark,
+    shadowOffset: { width: 1, height: 1 },
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+  },
+  {
+    elevation: 2,
+    shadowColor: palette.neutral.dark,
+    shadowOffset: { width: 2, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 10,
+  },
+  {
+    elevation: 3,
+    shadowColor: palette.neutral.dark,
+    shadowOffset: { width: 3, height: 3 },
+    shadowOpacity: 0.25,
+    shadowRadius: 12,
+  },
+  {
+    elevation: 4,
+    shadowColor: palette.neutral.dark,
+    shadowOffset: { width: 4, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+  },
+  {
+    elevation: 5,
+    shadowColor: palette.neutral.dark,
+    shadowOffset: { width: 5, height: 5 },
+    shadowOpacity: 0.35,
+    shadowRadius: 8,
+  },
 ];
+
+export default elevations;

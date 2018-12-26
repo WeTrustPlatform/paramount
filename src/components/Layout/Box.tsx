@@ -58,20 +58,8 @@ const shapeMap = {
 };
 
 const propToFn = {
-  elevation: (elevation: Elevation, theme: ITheme) => {
-    // TODO: Add different shadows for different elevations
-    switch (elevation) {
-      case 0:
-      case 1:
-      case 2:
-      default:
-        return {
-          shadowColor: theme.themeVariables.colors.text.dark,
-          shadowOffset: { width: 1, height: 1 },
-          shadowOpacity: 0.15,
-          shadowRadius: 8,
-        };
-    }
+  elevation: (elevation: 0 | 1 | 2 | 3 | 4, theme: ITheme) => {
+    return theme.themeVariables.elevations[elevation];
   },
   marginX: (marginX: number) => ({
     marginLeft: marginX,

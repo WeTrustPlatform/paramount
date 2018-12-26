@@ -40,11 +40,8 @@ export const getPopoverVariables = (
       backgroundColor: themeVariables.colors.background.plain,
       padding: 16,
       position: 'absolute',
-      shadowColor: themeVariables.colors.text.dark,
-      shadowOffset: { width: 1, height: 1 },
-      shadowOpacity: 0.15,
-      shadowRadius: 8,
       zIndex: 1,
+      ...themeVariables.elevations[2],
     },
   };
 };

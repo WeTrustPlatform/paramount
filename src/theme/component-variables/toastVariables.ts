@@ -27,10 +27,7 @@ export const getToastVariables = (
       paddingLeft: 16,
       paddingRight: 16,
       paddingTop: 16,
-      shadowColor: themeVariables.colors.text.dark,
-      shadowOffset: { width: 1, height: 1 },
-      shadowOpacity: 0.15,
-      shadowRadius: 8,
+      ...themeVariables.elevations[2],
     },
 
     backgroundDanger: {
