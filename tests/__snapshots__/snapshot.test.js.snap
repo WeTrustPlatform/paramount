@@ -62,6 +62,7 @@ exports[`Alert_1 1`] = `
           "WebkitFlexDirection": "row",
           "WebkitFlexShrink": 0,
           "alignItems": "stretch",
+          "backgroundColor": "rgba(255,255,255,1.00)",
           "borderBottomLeftRadius": "4px",
           "borderBottomRightRadius": "4px",
           "borderBottomStyle": "solid",
@@ -356,6 +357,7 @@ exports[`Alert_1 1`] = `
           "WebkitFlexDirection": "row",
           "WebkitFlexShrink": 0,
           "alignItems": "stretch",
+          "backgroundColor": "rgba(255,255,255,1.00)",
           "borderBottomLeftRadius": "4px",
           "borderBottomRightRadius": "4px",
           "borderBottomStyle": "solid",
@@ -639,6 +641,7 @@ exports[`Alert_1 1`] = `
           "WebkitFlexDirection": "row",
           "WebkitFlexShrink": 0,
           "alignItems": "stretch",
+          "backgroundColor": "rgba(255,255,255,1.00)",
           "borderBottomLeftRadius": "4px",
           "borderBottomRightRadius": "4px",
           "borderBottomStyle": "solid",
@@ -931,6 +934,7 @@ exports[`Alert_1 1`] = `
           "WebkitFlexDirection": "row",
           "WebkitFlexShrink": 0,
           "alignItems": "stretch",
+          "backgroundColor": "rgba(255,255,255,1.00)",
           "borderBottomLeftRadius": "4px",
           "borderBottomRightRadius": "4px",
           "borderBottomStyle": "solid",
@@ -1193,6 +1197,7 @@ exports[`Alert_3 1`] = `
         "WebkitFlexDirection": "row",
         "WebkitFlexShrink": 0,
         "alignItems": "stretch",
+        "backgroundColor": "rgba(255,255,255,1.00)",
         "borderBottomLeftRadius": "4px",
         "borderBottomRightRadius": "4px",
         "borderBottomStyle": "solid",
@@ -11461,7 +11466,7 @@ exports[`Checkbox_1 1`] = `
         "flexBasis": "auto",
         "flexDirection": "column",
         "flexShrink": 0,
-        "height": "24px",
+        "height": "32px",
         "marginBottom": "0px",
         "marginLeft": "0px",
         "marginRight": "0px",
@@ -11481,7 +11486,7 @@ exports[`Checkbox_1 1`] = `
         "position": "relative",
         "touchAction": "manipulation",
         "userSelect": "none",
-        "width": "24px",
+        "width": "32px",
         "zIndex": 0,
       }
     }
@@ -11513,6 +11518,7 @@ exports[`Checkbox_1 1`] = `
           "flexBasis": "auto",
           "flexDirection": "column",
           "flexShrink": 0,
+          "height": "100%",
           "justifyContent": "center",
           "marginBottom": "0px",
           "marginLeft": "0px",
@@ -11581,7 +11587,7 @@ exports[`Checkbox_1 1`] = `
         "flexBasis": "auto",
         "flexDirection": "column",
         "flexShrink": 0,
-        "height": "24px",
+        "height": "32px",
         "marginBottom": "0px",
         "marginLeft": "0px",
         "marginRight": "0px",
@@ -11601,7 +11607,7 @@ exports[`Checkbox_1 1`] = `
         "position": "relative",
         "touchAction": "manipulation",
         "userSelect": "none",
-        "width": "24px",
+        "width": "32px",
         "zIndex": 0,
       }
     }
@@ -11633,6 +11639,7 @@ exports[`Checkbox_1 1`] = `
           "flexBasis": "auto",
           "flexDirection": "column",
           "flexShrink": 0,
+          "height": "100%",
           "justifyContent": "center",
           "marginBottom": "0px",
           "marginLeft": "0px",
@@ -11722,7 +11729,7 @@ exports[`Checkbox_1 1`] = `
         "flexBasis": "auto",
         "flexDirection": "column",
         "flexShrink": 0,
-        "height": "24px",
+        "height": "32px",
         "marginBottom": "0px",
         "marginLeft": "0px",
         "marginRight": "0px",
@@ -11740,7 +11747,7 @@ exports[`Checkbox_1 1`] = `
         "paddingTop": "0px",
         "position": "relative",
         "userSelect": "none",
-        "width": "24px",
+        "width": "32px",
         "zIndex": 0,
       }
     }
@@ -11771,6 +11778,7 @@ exports[`Checkbox_1 1`] = `
           "flexBasis": "auto",
           "flexDirection": "column",
           "flexShrink": 0,
+          "height": "100%",
           "justifyContent": "center",
           "marginBottom": "0px",
           "marginLeft": "0px",
@@ -11838,7 +11846,7 @@ exports[`Checkbox_1 1`] = `
         "flexBasis": "auto",
         "flexDirection": "column",
         "flexShrink": 0,
-        "height": "24px",
+        "height": "32px",
         "marginBottom": "0px",
         "marginLeft": "0px",
         "marginRight": "0px",
@@ -11856,7 +11864,7 @@ exports[`Checkbox_1 1`] = `
         "paddingTop": "0px",
         "position": "relative",
         "userSelect": "none",
-        "width": "24px",
+        "width": "32px",
         "zIndex": 0,
       }
     }
@@ -11887,6 +11895,7 @@ exports[`Checkbox_1 1`] = `
           "flexBasis": "auto",
           "flexDirection": "column",
           "flexShrink": 0,
+          "height": "100%",
           "justifyContent": "center",
           "marginBottom": "0px",
           "marginLeft": "0px",
@@ -12074,7 +12083,7 @@ exports[`Checkbox_3 1`] = `
             "flexBasis": "auto",
             "flexDirection": "column",
             "flexShrink": 0,
-            "height": "24px",
+            "height": "32px",
             "marginBottom": "0px",
             "marginLeft": "0px",
             "marginRight": "0px",
@@ -12094,7 +12103,7 @@ exports[`Checkbox_3 1`] = `
             "position": "relative",
             "touchAction": "manipulation",
             "userSelect": "none",
-            "width": "24px",
+            "width": "32px",
             "zIndex": 0,
           }
         }
@@ -12126,6 +12135,7 @@ exports[`Checkbox_3 1`] = `
               "flexBasis": "auto",
               "flexDirection": "column",
               "flexShrink": 0,
+              "height": "100%",
               "justifyContent": "center",
               "marginBottom": "0px",
               "marginLeft": "0px",
@@ -12316,7 +12326,7 @@ exports[`Checkbox_3 1`] = `
             "flexBasis": "auto",
             "flexDirection": "column",
             "flexShrink": 0,
-            "height": "24px",
+            "height": "32px",
             "marginBottom": "0px",
             "marginLeft": "0px",
             "marginRight": "0px",
@@ -12336,7 +12346,7 @@ exports[`Checkbox_3 1`] = `
             "position": "relative",
             "touchAction": "manipulation",
             "userSelect": "none",
-            "width": "24px",
+            "width": "32px",
             "zIndex": 0,
           }
         }
@@ -12368,6 +12378,7 @@ exports[`Checkbox_3 1`] = `
               "flexBasis": "auto",
               "flexDirection": "column",
               "flexShrink": 0,
+              "height": "100%",
               "justifyContent": "center",
               "marginBottom": "0px",
               "marginLeft": "0px",
@@ -12579,7 +12590,7 @@ exports[`Checkbox_3 1`] = `
             "flexBasis": "auto",
             "flexDirection": "column",
             "flexShrink": 0,
-            "height": "24px",
+            "height": "32px",
             "marginBottom": "0px",
             "marginLeft": "0px",
             "marginRight": "0px",
@@ -12597,7 +12608,7 @@ exports[`Checkbox_3 1`] = `
             "paddingTop": "0px",
             "position": "relative",
             "userSelect": "none",
-            "width": "24px",
+            "width": "32px",
             "zIndex": 0,
           }
         }
@@ -12628,6 +12639,7 @@ exports[`Checkbox_3 1`] = `
               "flexBasis": "auto",
               "flexDirection": "column",
               "flexShrink": 0,
+              "height": "100%",
               "justifyContent": "center",
               "marginBottom": "0px",
               "marginLeft": "0px",
@@ -12817,7 +12829,7 @@ exports[`Checkbox_3 1`] = `
             "flexBasis": "auto",
             "flexDirection": "column",
             "flexShrink": 0,
-            "height": "24px",
+            "height": "32px",
             "marginBottom": "0px",
             "marginLeft": "0px",
             "marginRight": "0px",
@@ -12835,7 +12847,7 @@ exports[`Checkbox_3 1`] = `
             "paddingTop": "0px",
             "position": "relative",
             "userSelect": "none",
-            "width": "24px",
+            "width": "32px",
             "zIndex": 0,
           }
         }
@@ -12866,6 +12878,7 @@ exports[`Checkbox_3 1`] = `
               "flexBasis": "auto",
               "flexDirection": "column",
               "flexShrink": 0,
+              "height": "100%",
               "justifyContent": "center",
               "marginBottom": "0px",
               "marginLeft": "0px",
@@ -13094,7 +13107,7 @@ exports[`Counter_1 1`] = `
             "flexBasis": "auto",
             "flexDirection": "column",
             "flexShrink": 0,
-            "height": "32px",
+            "height": "40px",
             "justifyContent": "center",
             "marginBottom": "0px",
             "marginLeft": "0px",
@@ -13118,7 +13131,7 @@ exports[`Counter_1 1`] = `
             "transitionDuration": "0.15s",
             "transitionProperty": "opacity",
             "userSelect": "none",
-            "width": "32px",
+            "width": "40px",
             "zIndex": 0,
           }
         }
@@ -13291,7 +13304,7 @@ exports[`Counter_1 1`] = `
             "flexBasis": "auto",
             "flexDirection": "column",
             "flexShrink": 0,
-            "height": "32px",
+            "height": "40px",
             "justifyContent": "center",
             "marginBottom": "0px",
             "marginLeft": "0px",
@@ -13315,7 +13328,7 @@ exports[`Counter_1 1`] = `
             "transitionDuration": "0.15s",
             "transitionProperty": "opacity",
             "userSelect": "none",
-            "width": "32px",
+            "width": "40px",
             "zIndex": 0,
           }
         }
@@ -13500,7 +13513,7 @@ exports[`Counter_3 1`] = `
             "flexBasis": "auto",
             "flexDirection": "column",
             "flexShrink": 0,
-            "height": "32px",
+            "height": "40px",
             "justifyContent": "center",
             "marginBottom": "0px",
             "marginLeft": "0px",
@@ -13522,7 +13535,7 @@ exports[`Counter_3 1`] = `
             "transitionDuration": "0.15s",
             "transitionProperty": "opacity",
             "userSelect": "none",
-            "width": "32px",
+            "width": "40px",
             "zIndex": 0,
           }
         }
@@ -13694,7 +13707,7 @@ exports[`Counter_3 1`] = `
             "flexBasis": "auto",
             "flexDirection": "column",
             "flexShrink": 0,
-            "height": "32px",
+            "height": "40px",
             "justifyContent": "center",
             "marginBottom": "0px",
             "marginLeft": "0px",
@@ -13718,7 +13731,7 @@ exports[`Counter_3 1`] = `
             "transitionDuration": "0.15s",
             "transitionProperty": "opacity",
             "userSelect": "none",
-            "width": "32px",
+            "width": "40px",
             "zIndex": 0,
           }
         }
@@ -18245,20 +18258,8 @@ exports[`Switch_0 1`] = `
 exports[`Switch_1 1`] = `
 <div>
   <div
-    aria-label="switch"
-    data-focusable={true}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
     style={
       Object {
-        "MozTransitionProperty": "opacity",
-        "MozUserSelect": "none",
         "WebkitAlignItems": "stretch",
         "WebkitBoxAlign": "stretch",
         "WebkitBoxDirection": "normal",
@@ -18266,9 +18267,6 @@ exports[`Switch_1 1`] = `
         "WebkitFlexBasis": "auto",
         "WebkitFlexDirection": "column",
         "WebkitFlexShrink": 0,
-        "WebkitTransitionDuration": "0.15s",
-        "WebkitTransitionProperty": "opacity",
-        "WebkitUserSelect": "none",
         "alignItems": "stretch",
         "borderBottomStyle": "solid",
         "borderBottomWidth": "0px",
@@ -18279,7 +18277,6 @@ exports[`Switch_1 1`] = `
         "borderTopStyle": "solid",
         "borderTopWidth": "0px",
         "boxSizing": "border-box",
-        "cursor": "pointer",
         "display": "flex",
         "flexBasis": "auto",
         "flexDirection": "column",
@@ -18294,71 +18291,87 @@ exports[`Switch_1 1`] = `
         "msFlexDirection": "column",
         "msFlexNegative": 0,
         "msFlexPreferredSize": "auto",
-        "msTouchAction": "manipulation",
-        "msUserSelect": "none",
         "paddingBottom": "0px",
         "paddingLeft": "0px",
         "paddingRight": "0px",
         "paddingTop": "0px",
         "position": "relative",
-        "touchAction": "manipulation",
-        "transitionDuration": "0.15s",
-        "transitionProperty": "opacity",
-        "userSelect": "none",
         "zIndex": 0,
       }
     }
-    tabIndex="0"
   >
     <div
+      aria-label="switch"
+      data-focusable={true}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "WebkitAlignItems": "center",
-          "WebkitBoxAlign": "center",
+          "MozTransitionProperty": "opacity",
+          "MozUserSelect": "none",
+          "WebkitAlignItems": "stretch",
+          "WebkitAlignSelf": "flex-start",
+          "WebkitBoxAlign": "stretch",
           "WebkitBoxDirection": "normal",
+          "WebkitBoxLines": "multiple",
           "WebkitBoxOrient": "horizontal",
           "WebkitFlexBasis": "auto",
           "WebkitFlexDirection": "row",
           "WebkitFlexShrink": 0,
-          "alignItems": "center",
-          "backgroundColor": "rgba(103,198,187,1.00)",
-          "borderBottomLeftRadius": "18px",
-          "borderBottomRightRadius": "18px",
+          "WebkitFlexWrap": "wrap",
+          "WebkitTransitionDuration": "0.15s",
+          "WebkitTransitionProperty": "opacity",
+          "WebkitUserSelect": "none",
+          "alignItems": "stretch",
+          "alignSelf": "flex-start",
           "borderBottomStyle": "solid",
           "borderBottomWidth": "0px",
           "borderLeftStyle": "solid",
           "borderLeftWidth": "0px",
           "borderRightStyle": "solid",
           "borderRightWidth": "0px",
-          "borderTopLeftRadius": "18px",
-          "borderTopRightRadius": "18px",
           "borderTopStyle": "solid",
           "borderTopWidth": "0px",
           "boxSizing": "border-box",
+          "cursor": "pointer",
           "display": "flex",
           "flexBasis": "auto",
           "flexDirection": "row",
           "flexShrink": 0,
-          "height": "36px",
+          "flexWrap": "wrap",
           "marginBottom": "0px",
           "marginLeft": "0px",
           "marginRight": "0px",
           "marginTop": "0px",
           "minHeight": "0px",
           "minWidth": "0px",
-          "msFlexAlign": "center",
+          "msFlexAlign": "stretch",
           "msFlexDirection": "row",
+          "msFlexItemAlign": "start",
           "msFlexNegative": 0,
           "msFlexPreferredSize": "auto",
-          "paddingBottom": "3px",
-          "paddingLeft": "3px",
-          "paddingRight": "3px",
-          "paddingTop": "3px",
+          "msFlexWrap": "wrap",
+          "msTouchAction": "manipulation",
+          "msUserSelect": "none",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
           "position": "relative",
-          "width": "56px",
+          "touchAction": "manipulation",
+          "transitionDuration": "0.15s",
+          "transitionProperty": "opacity",
+          "userSelect": "none",
           "zIndex": 0,
         }
       }
+      tabIndex="0"
     >
       <div
         style={
@@ -18366,34 +18379,30 @@ exports[`Switch_1 1`] = `
             "WebkitAlignItems": "center",
             "WebkitBoxAlign": "center",
             "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "vertical",
-            "WebkitBoxPack": "center",
+            "WebkitBoxOrient": "horizontal",
             "WebkitFlexBasis": "auto",
-            "WebkitFlexDirection": "column",
+            "WebkitFlexDirection": "row",
             "WebkitFlexShrink": 0,
-            "WebkitJustifyContent": "center",
-            "WebkitTransform": "translateX(20px)",
             "alignItems": "center",
-            "backgroundColor": "rgba(255,255,255,1.00)",
-            "borderBottomLeftRadius": "15px",
-            "borderBottomRightRadius": "15px",
+            "backgroundColor": "rgba(103,198,187,1.00)",
+            "borderBottomLeftRadius": "24px",
+            "borderBottomRightRadius": "24px",
             "borderBottomStyle": "solid",
             "borderBottomWidth": "0px",
             "borderLeftStyle": "solid",
             "borderLeftWidth": "0px",
             "borderRightStyle": "solid",
             "borderRightWidth": "0px",
-            "borderTopLeftRadius": "15px",
-            "borderTopRightRadius": "15px",
+            "borderTopLeftRadius": "24px",
+            "borderTopRightRadius": "24px",
             "borderTopStyle": "solid",
             "borderTopWidth": "0px",
             "boxSizing": "border-box",
             "display": "flex",
             "flexBasis": "auto",
-            "flexDirection": "column",
+            "flexDirection": "row",
             "flexShrink": 0,
-            "height": "30px",
-            "justifyContent": "center",
+            "height": "44px",
             "marginBottom": "0px",
             "marginLeft": "0px",
             "marginRight": "0px",
@@ -18401,42 +18410,97 @@ exports[`Switch_1 1`] = `
             "minHeight": "0px",
             "minWidth": "0px",
             "msFlexAlign": "center",
-            "msFlexDirection": "column",
+            "msFlexDirection": "row",
             "msFlexNegative": 0,
-            "msFlexPack": "center",
             "msFlexPreferredSize": "auto",
-            "paddingBottom": "0px",
-            "paddingLeft": "0px",
-            "paddingRight": "0px",
-            "paddingTop": "0px",
+            "paddingBottom": "3px",
+            "paddingLeft": "3px",
+            "paddingRight": "3px",
+            "paddingTop": "3px",
             "position": "relative",
-            "transform": "translateX(20px)",
-            "width": "30px",
+            "width": "72px",
             "zIndex": 0,
           }
         }
       >
-        <svg
-          color="#1b877a"
-          fill="none"
-          height={20}
-          size={20}
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
+        <div
           style={
             Object {
-              "color": "#1b877a",
+              "WebkitAlignItems": "center",
+              "WebkitBoxAlign": "center",
+              "WebkitBoxDirection": "normal",
+              "WebkitBoxOrient": "vertical",
+              "WebkitBoxPack": "center",
+              "WebkitFlexBasis": "auto",
+              "WebkitFlexDirection": "column",
+              "WebkitFlexShrink": 0,
+              "WebkitJustifyContent": "center",
+              "WebkitTransform": "translateX(28px)",
+              "alignItems": "center",
+              "backgroundColor": "rgba(255,255,255,1.00)",
+              "borderBottomLeftRadius": "24px",
+              "borderBottomRightRadius": "24px",
+              "borderBottomStyle": "solid",
+              "borderBottomWidth": "0px",
+              "borderLeftStyle": "solid",
+              "borderLeftWidth": "0px",
+              "borderRightStyle": "solid",
+              "borderRightWidth": "0px",
+              "borderTopLeftRadius": "24px",
+              "borderTopRightRadius": "24px",
+              "borderTopStyle": "solid",
+              "borderTopWidth": "0px",
+              "boxSizing": "border-box",
+              "display": "flex",
+              "flexBasis": "auto",
+              "flexDirection": "column",
+              "flexShrink": 0,
+              "height": "38px",
+              "justifyContent": "center",
+              "marginBottom": "0px",
+              "marginLeft": "0px",
+              "marginRight": "0px",
+              "marginTop": "0px",
+              "minHeight": "0px",
+              "minWidth": "0px",
+              "msFlexAlign": "center",
+              "msFlexDirection": "column",
+              "msFlexNegative": 0,
+              "msFlexPack": "center",
+              "msFlexPreferredSize": "auto",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "paddingRight": "0px",
+              "paddingTop": "0px",
+              "position": "relative",
+              "transform": "translateX(28px)",
+              "width": "38px",
+              "zIndex": 0,
             }
           }
-          viewBox="0 0 24 24"
-          width={20}
         >
-          <polyline
-            points="20 6 9 17 4 12"
-          />
-        </svg>
+          <svg
+            color="#1b877a"
+            fill="none"
+            height={20}
+            size={20}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            style={
+              Object {
+                "color": "#1b877a",
+              }
+            }
+            viewBox="0 0 24 24"
+            width={20}
+          >
+            <polyline
+              points="20 6 9 17 4 12"
+            />
+          </svg>
+        </div>
       </div>
     </div>
   </div>
