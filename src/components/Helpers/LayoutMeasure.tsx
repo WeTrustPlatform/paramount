@@ -1,8 +1,11 @@
 import * as React from 'react';
 import { findNodeHandle, UIManager, View, ViewProps } from 'react-native';
 
+export type RenderPropType = (props: LayoutMeasurements) => React.ReactNode;
+
 export interface LayoutMeasureProps extends ViewProps {
   onMeasure?: (props: LayoutMeasurements) => void;
+  children: React.ReactNode | RenderPropType;
 }
 
 export interface LayoutMeasurements {
@@ -23,10 +26,21 @@ class LayoutMeasure extends React.Component<
   constructor(props: LayoutMeasureProps) {
     super(props);
     this.container = React.createRef();
+
+    this.state = {
+      height: 0,
+      pageX: 0,
+      pageY: 0,
+      width: 0,
+      x: 0,
+      y: 0,
+    };
   }
 
   public render() {
-    const { onMeasure = () => null, ...viewProps } = this.props;
+    const { onMeasure = () => null, children, ...viewProps } = this.props;
+
+    const isRenderProp = typeof children === 'function';
 
     return (
       <View
@@ -38,14 +52,23 @@ class LayoutMeasure extends React.Component<
 
           UIManager.measure(
             findNodeHandle(this.container.current)!,
-            (x, y, width, height, pageX, pageY) =>
-              onMeasure({
+            (x, y, width, height, pageX, pageY) => {
+              const layoutMeasurements = {
                 ...layout,
                 pageX,
                 pageY,
-              }),
+              };
+
+              onMeasure(layoutMeasurements);
+
+              if (isRenderProp) {
+                this.setState(() => layoutMeasurements);
+              }
+            },
           );
         }}
+        // @ts-ignore
+        children={isRenderProp ? children(this.state) : children}
         {...viewProps}
       />
     );

@@ -27,6 +27,12 @@ export interface PopoverProps {
   onClose?: () => void;
   children: React.ReactNode;
   content: React.ReactNode;
+  /**
+   * Popover uses window height to calculate its position, and whether it should flip to top if it at the bottom (So that it does not pop up outside the window height).
+   * However, sometimes window.height is shorter than the parent container, unnecessarily flipping it to `top`. To fix this behavior,
+   * you can pass in height of the parent so that it will use that instead of window's height
+   */
+  parentHeight?: number;
   offset?: number;
   isVisible?: boolean;
   position?: Position;
@@ -208,6 +214,7 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
       dangerouslySetInlineStyle,
       children,
       content,
+      parentHeight,
       isVisible,
       onClose,
       position = 'bottom',
@@ -221,9 +228,11 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
       overlayStyle,
     } = theme.getPopoverStyles();
 
-    const positionCoordinates = getPositionCoordinates(position)(
-      Dimensions.get('window'),
-    )(targetMeasurements)(popoverMeasurements)(offset);
+    const windowDimensions = Dimensions.get('window');
+    const positionCoordinates = getPositionCoordinates(position)({
+      ...windowDimensions,
+      height: parentHeight || windowDimensions.height,
+    })(targetMeasurements)(popoverMeasurements)(offset);
 
     return (
       <>

@@ -21,14 +21,6 @@ class Modal extends React.PureComponent<ModalProps> {
   }
 
   public componentDidMount() {
-    // TODO: find a better solution
-    // Currently, when the body height is shorter than the content that is scrollable
-    // it will jump scroll to top when the modal is opened.
-    // This hack keeps the body height the same length as the content
-    document.body.style.position = 'relative';
-    document.body.style.height = 'initial';
-    document.body.style.minHeight = 'initial';
-
     this.el = document.createElement('div');
     this.modalRoot = document.getElementsByTagName('body')[0];
     this.modalRoot.appendChild(this.el);
@@ -37,6 +29,7 @@ class Modal extends React.PureComponent<ModalProps> {
 
   public componentDidUpdate() {
     const { visible, isScrollable = false } = this.props;
+
     if (visible && !isScrollable) document.body.style.overflow = 'hidden';
     else document.body.style.overflow = '';
   }
