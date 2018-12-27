@@ -24,7 +24,11 @@ Composes `Alert`
         <>
           <Button
             onPress={() =>
-              notify({ title: 'Title', description: 'Description' })
+              notify({
+                title: 'Title',
+                description: 'Description',
+                isCloseable: true,
+              })
             }
           >
             Open default toast

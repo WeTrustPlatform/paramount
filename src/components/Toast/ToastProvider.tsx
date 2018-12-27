@@ -53,9 +53,12 @@ export class ToastProvider extends React.Component<
 
     this.setState(previousState => {
       return {
-        toasts: [...previousState.toasts, toastInstance],
+        // Immediately remove the current toast
+        toasts: [...previousState.toasts.slice(1), toastInstance],
       };
     });
+
+    return toastInstance;
   };
 
   public createToastInstance = (
@@ -89,6 +92,7 @@ export class ToastProvider extends React.Component<
             this.notify({ ...toastSettings, intent: 'danger' }),
           notify: (toastSettings: ToastSettings) =>
             this.notify({ ...toastSettings }),
+          removeToast: (id: ToastId) => this.removeToast(id),
           success: (toastSettings: ToastSettings) =>
             this.notify({ ...toastSettings, intent: 'success' }),
           warning: (toastSettings: ToastSettings) =>

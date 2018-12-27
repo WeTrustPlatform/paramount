@@ -1,19 +1,24 @@
 import * as React from 'react';
 
-import { ToastSettings } from './Toast';
+import { ToastInstance, ToastSettings } from './Toast';
 
 export interface ToastContext {
-  danger: (toastSettings: ToastSettings) => void;
-  notify: (toastSettings: ToastSettings) => void;
-  success: (toastSettings: ToastSettings) => void;
-  warning: (toastSettings: ToastSettings) => void;
+  danger: (toastSettings: ToastSettings) => ToastInstance;
+  notify: (toastSettings: ToastSettings) => ToastInstance;
+  success: (toastSettings: ToastSettings) => ToastInstance;
+  warning: (toastSettings: ToastSettings) => ToastInstance;
 }
 
+const defaultToastInstance: ToastInstance = {
+  id: '1',
+  onRemove: () => null,
+};
+
 const defaultToastContext: ToastContext = {
-  danger: () => null,
-  notify: () => null,
-  success: () => null,
-  warning: () => null,
+  danger: () => defaultToastInstance,
+  notify: () => defaultToastInstance,
+  success: () => defaultToastInstance,
+  warning: () => defaultToastInstance,
 };
 
 const {

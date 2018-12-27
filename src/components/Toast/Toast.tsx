@@ -1,22 +1,20 @@
 import * as React from 'react';
 import { Animated } from 'react-native';
 
-import { Intent } from '../../constants/Intent';
 import { Theme, withTheme } from '../../theme';
-import { Alert } from '../Alert';
+import { Omit } from '../../types/utils';
+import { Alert, AlertProps } from '../Alert';
 
 // Animation taken from https://medium.com/@norbajunior/react-native-facebook-and-instagram-like-top-bar-notifications-with-animated-api-43c48d0443dd
 export type ToastId = string;
 
-export interface ToastSettings {
+export interface ToastSettings extends Omit<AlertProps, 'onClose'> {
   id?: ToastId;
-  title?: string;
-  description?: string;
   offset?: number;
-  /* custom component, will take precedence over title and description */
+  /* duration for how long the toast should stay active */
+  duration?: number;
+  /* custom component, will override every other setting */
   component?: React.ReactNode;
-  /* will override */
-  intent?: Intent;
 }
 
 export interface ToastInstance extends ToastSettings {
@@ -46,17 +44,18 @@ class ToastBase extends React.Component<ToastProps, ToastState> {
   }
 
   public componentDidMount() {
-    const { onRemove, offset = 100 } = this.props;
+    const { onRemove, duration = 3000, offset = 75 } = this.props;
     const { value } = this.state;
 
     Animated.sequence([
       Animated.spring(value, {
-        bounciness: 12,
+        bounciness: 8,
         speed: 25,
         toValue: offset,
       }),
+      Animated.delay(duration),
       Animated.spring(value, {
-        bounciness: 12,
+        bounciness: 8,
         speed: 25,
         toValue: -DEFAULT_VALUE,
       }),
@@ -64,7 +63,14 @@ class ToastBase extends React.Component<ToastProps, ToastState> {
   }
 
   public render() {
-    const { component, title, description, intent = 'info' } = this.props;
+    const {
+      component,
+      offset,
+      duration,
+      id,
+      onRemove,
+      ...toastSettings
+    } = this.props;
 
     return (
       <Animated.View
@@ -72,9 +78,7 @@ class ToastBase extends React.Component<ToastProps, ToastState> {
           transform: [{ translateY: this.state.value }],
         }}
       >
-        {component || (
-          <Alert title={title} description={description} intent={intent} />
-        )}
+        {component || <Alert {...toastSettings} onClose={onRemove} />}
       </Animated.View>
     );
   }
