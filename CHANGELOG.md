@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/WeTrustPlatform/paramount/compare/v1.5.0...v1.6.0) (2018-12-27)
+
+
+### Bug Fixes
+
+* update tests ([d8b345d](https://github.com/WeTrustPlatform/paramount/commit/d8b345d))
+
+
+### Features
+
+* use Alert instead ([c0ec10d](https://github.com/WeTrustPlatform/paramount/commit/c0ec10d))
+
 # [1.5.0](https://github.com/WeTrustPlatform/paramount/compare/v1.4.12...v1.5.0) (2018-12-27)
 
 
