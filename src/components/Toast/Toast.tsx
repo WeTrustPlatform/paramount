@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Animated, View } from 'react-native';
+import { Animated } from 'react-native';
 
 import { Intent } from '../../constants/Intent';
 import { Theme, withTheme } from '../../theme';
-import { Text } from '../Typography';
+import { Alert } from '../Alert';
 
 // Animation taken from https://medium.com/@norbajunior/react-native-facebook-and-instagram-like-top-bar-notifications-with-animated-api-43c48d0443dd
 export type ToastId = string;
@@ -13,7 +13,6 @@ export interface ToastSettings {
   title?: string;
   description?: string;
   offset?: number;
-  duration?: number;
   /* custom component, will take precedence over title and description */
   component?: React.ReactNode;
   /* will override */
@@ -65,15 +64,7 @@ class ToastBase extends React.Component<ToastProps, ToastState> {
   }
 
   public render() {
-    const {
-      theme,
-      component,
-      title,
-      description,
-      intent = 'info',
-    } = this.props;
-
-    const { toastStyle, textStyle } = theme.getToastStyles(intent);
+    const { component, title, description, intent = 'info' } = this.props;
 
     return (
       <Animated.View
@@ -82,12 +73,7 @@ class ToastBase extends React.Component<ToastProps, ToastState> {
         }}
       >
         {component || (
-          <View style={toastStyle}>
-            <Text dangerouslySetInlineStyle={{ textStyle }} size="large">
-              {title}
-            </Text>
-            <Text dangerouslySetInlineStyle={{ textStyle }}>{description}</Text>
-          </View>
+          <Alert title={title} description={description} intent={intent} />
         )}
       </Animated.View>
     );
