@@ -6,11 +6,14 @@ menu: Components
 import { Playground, PropsTable } from 'docz';
 import { ToastConsumer, ToastProvider } from '.';
 import { Button } from '../Button';
+import { Box } from '../Layout';
 import Toast from './Toast';
 
 ## Usage
 
-### Go
+ToastProvider should inserted at the top-level component so that it displays from within the window container. However, it is possible to display Toast within another component like in the below example.
+
+You could additionally wrap the container component with `overflow="hidden"` so that it disappears correctly
 
 <Playground>
   <ToastProvider>

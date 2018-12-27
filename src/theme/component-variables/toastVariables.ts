@@ -60,14 +60,14 @@ export const getToastVariables = (
     },
 
     container: {
-      left: 0,
+      left: 32,
       marginBottom: 0,
       marginLeft: 'auto',
       marginRight: 'auto',
       marginTop: 0,
       maxWidth: 560,
       position: 'absolute',
-      right: 0,
+      right: 32,
       top: 10,
       zIndex: 100,
     },

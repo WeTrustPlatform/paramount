@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Animated, Easing, View } from 'react-native';
+import { Animated, View } from 'react-native';
 
 import { Intent } from '../../constants/Intent';
 import { Theme, withTheme } from '../../theme';
@@ -12,6 +12,7 @@ export interface ToastSettings {
   id?: ToastId;
   title?: string;
   description?: string;
+  offset?: number;
   duration?: number;
   /* custom component, will take precedence over title and description */
   component?: React.ReactNode;
@@ -29,8 +30,10 @@ export interface ToastProps extends ToastInstance {
 }
 
 export interface ToastState {
-  offset: Animated.Value;
+  value: Animated.Value;
 }
+
+const DEFAULT_VALUE = 500;
 
 class ToastBase extends React.Component<ToastProps, ToastState> {
   public closeTimer: number | null = null;
@@ -38,22 +41,25 @@ class ToastBase extends React.Component<ToastProps, ToastState> {
   constructor(props: ToastProps) {
     super(props);
 
-    this.state = { offset: new Animated.Value(-100) };
+    this.state = {
+      value: new Animated.Value(-DEFAULT_VALUE),
+    };
   }
 
   public componentDidMount() {
-    const { onRemove, duration } = this.props;
-    const { offset } = this.state;
+    const { onRemove, offset = 100 } = this.props;
+    const { value } = this.state;
 
     Animated.sequence([
-      Animated.spring(offset, {
-        tension: -5,
-        toValue: 0,
+      Animated.spring(value, {
+        bounciness: 12,
+        speed: 25,
+        toValue: offset,
       }),
-      Animated.timing(offset, {
-        duration,
-        easing: Easing.ease,
-        toValue: -100,
+      Animated.spring(value, {
+        bounciness: 12,
+        speed: 25,
+        toValue: -DEFAULT_VALUE,
       }),
     ]).start(() => onRemove());
   }
@@ -72,7 +78,7 @@ class ToastBase extends React.Component<ToastProps, ToastState> {
     return (
       <Animated.View
         style={{
-          transform: [{ translateY: this.state.offset }],
+          transform: [{ translateY: this.state.value }],
         }}
       >
         {component || (

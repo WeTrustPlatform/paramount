@@ -67,13 +67,9 @@ export class ToastProvider extends React.Component<
       : `${uniqueId}`;
 
     return {
-      component: toastSettings.component,
-      description: toastSettings.description,
-      duration: toastSettings.duration || 1000,
       id,
-      intent: toastSettings.intent,
       onRemove: () => this.removeToast(id),
-      title: toastSettings.title,
+      ...toastSettings,
     };
   };
 
