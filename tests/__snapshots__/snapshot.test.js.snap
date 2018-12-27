@@ -22028,12 +22028,6 @@ exports[`TextInput_3 1`] = `
 exports[`TextInput_4 1`] = `<div />`;
 
 exports[`Toast_0 1`] = `
-<h3>
-  Go
-</h3>
-`;
-
-exports[`Toast_1 1`] = `
 <div>
   <div
     data-focusable={true}
@@ -22923,7 +22917,7 @@ exports[`Toast_1 1`] = `
         "flexBasis": "auto",
         "flexDirection": "column",
         "flexShrink": 0,
-        "left": "0px",
+        "left": "32px",
         "marginBottom": "0px",
         "marginLeft": "auto",
         "marginRight": "auto",
@@ -22940,7 +22934,7 @@ exports[`Toast_1 1`] = `
         "paddingRight": "0px",
         "paddingTop": "0px",
         "position": "absolute",
-        "right": "0px",
+        "right": "32px",
         "top": "10px",
         "zIndex": 100,
       }
@@ -22949,7 +22943,7 @@ exports[`Toast_1 1`] = `
 </div>
 `;
 
-exports[`Toast_2 1`] = `<div />`;
+exports[`Toast_1 1`] = `<div />`;
 
 exports[`Typography_0 1`] = `
 <div>
