@@ -1,3 +1,15 @@
+# [1.7.0](https://github.com/WeTrustPlatform/paramount/compare/v1.6.0...v1.7.0) (2018-12-27)
+
+
+### Bug Fixes
+
+* **toast:** fix types ([ac4371f](https://github.com/WeTrustPlatform/paramount/commit/ac4371f))
+
+
+### Features
+
+* improve toast API ([4eb2c50](https://github.com/WeTrustPlatform/paramount/commit/4eb2c50))
+
 # [1.6.0](https://github.com/WeTrustPlatform/paramount/compare/v1.5.0...v1.6.0) (2018-12-27)
 
 
