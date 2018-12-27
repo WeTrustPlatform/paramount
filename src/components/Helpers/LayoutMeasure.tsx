@@ -32,11 +32,15 @@ class LayoutMeasure extends React.Component<
       <View
         ref={this.container}
         onLayout={e => {
+          // Use the value from here, isntead of inside UIManager.measure callback
+          // Async behavior will nullify nativeEvent
+          const layout = e.nativeEvent.layout;
+
           UIManager.measure(
             findNodeHandle(this.container.current)!,
             (x, y, width, height, pageX, pageY) =>
               onMeasure({
-                ...e.nativeEvent.layout,
+                ...layout,
                 pageX,
                 pageY,
               }),
