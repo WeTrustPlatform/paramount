@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/WeTrustPlatform/paramount/compare/v1.4.12...v1.5.0) (2018-12-27)
+
+
+### Bug Fixes
+
+* layoutmeasure value retrieval ([8ec2255](https://github.com/WeTrustPlatform/paramount/commit/8ec2255))
+
+
+### Features
+
+* **popover:** allow passing parentHeight to fix flipping ([39deadd](https://github.com/WeTrustPlatform/paramount/commit/39deadd))
+
 ## [1.4.12](https://github.com/WeTrustPlatform/paramount/compare/v1.4.11...v1.4.12) (2018-12-26)
 
 
