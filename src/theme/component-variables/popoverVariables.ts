@@ -3,7 +3,6 @@ import { ViewStyle } from 'react-native';
 import { ThemeVariables } from '../ThemeInterface';
 
 export interface PopoverVariables {
-  container: ViewStyle;
   popover: ViewStyle;
   modalContainer: ViewStyle;
   overlay: ViewStyle & { cursor?: string };
@@ -13,11 +12,6 @@ export const getPopoverVariables = (
   themeVariables: ThemeVariables,
 ): PopoverVariables => {
   return {
-    container: {
-      alignSelf: 'flex-start',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-    },
     modalContainer: {
       alignItems: 'center',
       display: 'flex',

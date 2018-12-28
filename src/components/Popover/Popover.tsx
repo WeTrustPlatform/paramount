@@ -6,20 +6,12 @@ import {
   View,
 } from 'react-native';
 
+import { POSITION, Position } from '../../constants';
 import { Theme, withTheme } from '../../theme';
 import { PopoverStyles } from '../../theme/style-getters/getPopoverStyles';
 import Modal from '../Dialog/Modal';
 import { LayoutMeasure, LayoutMeasurements } from '../Helpers';
-
-export type Position =
-  | 'top-left'
-  | 'top'
-  | 'top-right'
-  | 'left'
-  | 'right'
-  | 'bottom-right'
-  | 'bottom'
-  | 'bottom-left';
+import { getPopoverArrow } from './getPopoverArrow';
 
 export interface PopoverProps {
   theme: Theme;
@@ -55,26 +47,38 @@ const resolveCorrectPosition = (position: Position) => ({
 }) => {
   let newPosition = position;
 
-  if (position.includes('bottom') && shouldFlipBottomToTop) {
-    newPosition = newPosition.replace('bottom', 'top') as 'top';
+  if (position.includes(POSITION.BOTTOM) && shouldFlipBottomToTop) {
+    newPosition = newPosition.replace(
+      POSITION.BOTTOM,
+      POSITION.TOP,
+    ) as Position;
   }
 
-  if (position.includes('top') && shouldFlipTopToBottom) {
-    newPosition = newPosition.replace('top', 'bottom') as 'bottom';
+  if (position.includes(POSITION.TOP) && shouldFlipTopToBottom) {
+    newPosition = newPosition.replace(
+      POSITION.TOP,
+      POSITION.BOTTOM,
+    ) as Position;
   }
 
-  if (position.includes('left') && shouldFlipLeftToRight) {
-    newPosition = newPosition.replace('left', 'right') as 'right';
+  if (position.includes(POSITION.LEFT) && shouldFlipLeftToRight) {
+    newPosition = newPosition.replace(
+      POSITION.LEFT,
+      POSITION.RIGHT,
+    ) as Position;
   }
 
-  if (position.includes('right') && shouldFlipRightToLeft) {
-    newPosition = newPosition.replace('right', 'left') as 'left';
+  if (position.includes(POSITION.RIGHT) && shouldFlipRightToLeft) {
+    newPosition = newPosition.replace(
+      POSITION.RIGHT,
+      POSITION.LEFT,
+    ) as Position;
   }
 
   return newPosition;
 };
 
-const getPositionCoordinates = (position: Position) => (
+const getPopoverPosition = (position: Position) => (
   screenLayout: ScaledSize,
 ) => (targetMeasurements: LayoutMeasurements) => (
   popoverMeasurements: LayoutMeasurements,
@@ -87,12 +91,12 @@ const getPositionCoordinates = (position: Position) => (
         targetMeasurements.height -
         offset,
     shouldFlipLeftToRight:
-      position === 'left'
+      position === POSITION.LEFT
         ? popoverMeasurements.width + offset > targetMeasurements.pageX - offset
         : popoverMeasurements.width + offset >
           screenLayout.width - targetMeasurements.pageX,
     shouldFlipRightToLeft:
-      position === 'right'
+      position === POSITION.RIGHT
         ? targetMeasurements.pageX +
             targetMeasurements.width +
             popoverMeasurements.width +
@@ -105,13 +109,17 @@ const getPositionCoordinates = (position: Position) => (
   });
 
   switch (newPosition) {
-    case 'top-left':
+    case POSITION.TOP_LEFT:
       return {
+        position: POSITION.TOP_LEFT,
+
         left: targetMeasurements.pageX,
         top: targetMeasurements.pageY - popoverMeasurements.height - offset,
       };
-    case 'top':
+    case POSITION.TOP:
       return {
+        position: POSITION.TOP,
+
         left: targetMeasurements.pageX,
         top: targetMeasurements.pageY - popoverMeasurements.height - offset,
         transform: [
@@ -121,16 +129,20 @@ const getPositionCoordinates = (position: Position) => (
           },
         ],
       };
-    case 'top-right':
+    case POSITION.TOP_RIGHT:
       return {
+        position: POSITION.TOP_RIGHT,
+
         left:
           targetMeasurements.pageX -
           popoverMeasurements.width +
           targetMeasurements.width,
         top: targetMeasurements.pageY - popoverMeasurements.height - offset,
       };
-    case 'left':
+    case POSITION.LEFT:
       return {
+        position: POSITION.LEFT,
+
         left: targetMeasurements.pageX - popoverMeasurements.width - offset,
         top: targetMeasurements.pageY,
         transform: [
@@ -140,8 +152,10 @@ const getPositionCoordinates = (position: Position) => (
           },
         ],
       };
-    case 'right':
+    case POSITION.RIGHT:
       return {
+        position: POSITION.RIGHT,
+
         left: targetMeasurements.pageX + targetMeasurements.width + offset,
         top: targetMeasurements.pageY,
         transform: [
@@ -151,16 +165,20 @@ const getPositionCoordinates = (position: Position) => (
           },
         ],
       };
-    case 'bottom-right':
+    case POSITION.BOTTOM_RIGHT:
       return {
+        position: POSITION.BOTTOM_RIGHT,
+
         left:
           targetMeasurements.pageX -
           popoverMeasurements.width +
           targetMeasurements.width,
         top: targetMeasurements.pageY + targetMeasurements.height + offset,
       };
-    case 'bottom':
+    case POSITION.BOTTOM:
       return {
+        position: POSITION.BOTTOM,
+
         left: targetMeasurements.pageX,
         top: targetMeasurements.pageY + targetMeasurements.height + offset,
         transform: [
@@ -170,13 +188,17 @@ const getPositionCoordinates = (position: Position) => (
           },
         ],
       };
-    case 'bottom-left':
+    case POSITION.BOTTOM_LEFT:
       return {
+        position: POSITION.BOTTOM_LEFT,
+
         left: targetMeasurements.pageX,
         top: targetMeasurements.pageY + targetMeasurements.height + offset,
       };
     default:
-      return {};
+      return {
+        position: POSITION.BOTTOM_RIGHT,
+      };
   }
 };
 
@@ -217,31 +239,32 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
       parentHeight,
       isVisible,
       onClose,
-      position = 'bottom',
+      position = POSITION.BOTTOM,
       offset = 14,
     } = this.props;
     const { popoverMeasurements, targetMeasurements } = this.state;
     const {
-      containerStyle,
       popoverStyle,
       modalContainerStyle,
       overlayStyle,
     } = theme.getPopoverStyles();
 
     const windowDimensions = Dimensions.get('window');
-    const positionCoordinates = getPositionCoordinates(position)({
+    const {
+      position: correctedPosition,
+      ...popoverPositionStyle
+    } = getPopoverPosition(position)({
       ...windowDimensions,
       height: parentHeight || windowDimensions.height,
     })(targetMeasurements)(popoverMeasurements)(offset);
 
+    const renderArrow = getPopoverArrow(correctedPosition)(targetMeasurements)(
+      theme,
+    );
+
     return (
       <>
         <LayoutMeasure
-          style={{
-            ...containerStyle,
-            ...(dangerouslySetInlineStyle &&
-              dangerouslySetInlineStyle.containerStyle),
-          }}
           onMeasure={measurements =>
             this.setState({ targetMeasurements: measurements })
           }
@@ -266,7 +289,7 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
                 ...popoverStyle,
                 ...(dangerouslySetInlineStyle &&
                   dangerouslySetInlineStyle.popoverStyle),
-                ...positionCoordinates,
+                ...popoverPositionStyle,
                 // Hide flash mis-positioned content
                 opacity:
                   popoverMeasurements.width === 0 ||
@@ -279,6 +302,7 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
               }
             >
               {content}
+              {renderArrow}
             </LayoutMeasure>
             <TouchableWithoutFeedback
               onPress={() => {
