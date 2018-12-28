@@ -1,3 +1,15 @@
+# [1.8.0](https://github.com/WeTrustPlatform/paramount/compare/v1.7.0...v1.8.0) (2018-12-28)
+
+
+### Bug Fixes
+
+* fix popover snapshot tests ([1182a40](https://github.com/WeTrustPlatform/paramount/commit/1182a40))
+
+
+### Features
+
+* add arrows to popover ([e226c20](https://github.com/WeTrustPlatform/paramount/commit/e226c20))
+
 # [1.7.0](https://github.com/WeTrustPlatform/paramount/compare/v1.6.0...v1.7.0) (2018-12-27)
 
 
