@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/WeTrustPlatform/paramount/compare/v1.8.0...v1.9.0) (2018-12-31)
+
+
+### Features
+
+* expose helpers ([08e1647](https://github.com/WeTrustPlatform/paramount/commit/08e1647))
+
 # [1.8.0](https://github.com/WeTrustPlatform/paramount/compare/v1.7.0...v1.8.0) (2018-12-28)
 
 
