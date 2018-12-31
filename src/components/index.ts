@@ -6,6 +6,7 @@ export * from './Checkbox';
 export * from './Counter';
 export * from './Dialog';
 export * from './Divider';
+export * from './Helpers';
 export * from './FormField';
 export * from './Layout';
 export * from './Loading';
