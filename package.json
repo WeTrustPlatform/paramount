@@ -57,7 +57,7 @@
     "@semantic-release/npm": "5.1.3",
     "@semantic-release/release-notes-generator": "7.1.4",
     "@types/expo__vector-icons": "6.2.3",
-    "@types/jest": "23.3.10",
+    "@types/jest": "23.3.11",
     "@types/react": "16.7.13",
     "@types/react-dom": "16.0.11",
     "@types/react-native": "0.57.23",
