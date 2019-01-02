@@ -17,6 +17,8 @@ export interface PopoverProps {
   theme: Theme;
   onTap?: () => void;
   onClose?: () => void;
+  /** HACK: For dynamic size content of popovers we have to render all the items first so it precalculates popover position and layout, so that when user opens popover there is no flash of adjusting popover but immediately shows it */
+  enableHack?: boolean;
   children: React.ReactNode;
   content: React.ReactNode;
   /**
@@ -34,6 +36,8 @@ export interface PopoverProps {
 }
 
 const DEFAULT_OFFSET = 14;
+/** Time to allow all the calculation to be done */
+const HACK_LAYOUT_RENDER_MS = 300;
 
 const resolveCorrectPosition = (position: Position) => ({
   shouldFlipBottomToTop,
@@ -220,6 +224,7 @@ const getPopoverPosition = (position: Position) => (
         position: POSITION.BOTTOM_LEFT,
 
         left: targetMeasurements.pageX,
+        marginRight: 24,
         top: targetMeasurements.pageY + targetMeasurements.height + offset,
       };
     default:
@@ -232,10 +237,12 @@ const getPopoverPosition = (position: Position) => (
 export interface PopoverState {
   /** This is the original measurements of the popover. It is static, and will not change. It is used to calculate whether popover should "flip" and also whether originally the popover overflows the window or not */
   initialPopoverMeasurements: LayoutMeasurements;
-  /** This is the adjusted measurements of the popover. It adjusts several times when its position is being calculated to account for things like window overflow, margins and other layout calculations */
+  /** This is the adjusted measurements of the popover when the content is of dynamic size. It adjusts several times when its position is being calculated to account for things like window overflow, margins and other layout calculations */
   popoverMeasurements: LayoutMeasurements;
   /** Measurements of the wrapped component */
   targetMeasurements: LayoutMeasurements;
+  /** HACK: For dynamic size content of popovers we have to render all the items first so it precalculates popover position and layout, so that when user opens popover there is no flash of adjusting popover but immediately shows it */
+  hackLayout: boolean;
 }
 
 class PopoverBase extends React.Component<PopoverProps, PopoverState> {
@@ -251,10 +258,20 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
     };
 
     this.state = {
+      hackLayout: false,
       initialPopoverMeasurements: initialMeasurements,
       popoverMeasurements: initialMeasurements,
       targetMeasurements: initialMeasurements,
     };
+  }
+
+  public componentDidMount() {
+    const { enableHack = true } = this.props;
+    if (enableHack) {
+      setTimeout(() => {
+        this.setState({ hackLayout: true });
+      }, HACK_LAYOUT_RENDER_MS);
+    }
   }
 
   public render() {
@@ -272,6 +289,7 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
       popoverMeasurements,
       targetMeasurements,
       initialPopoverMeasurements,
+      hackLayout,
     } = this.state;
     const {
       popoverStyle,
@@ -325,7 +343,7 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
           </LayoutMeasure>
         )}
         <Modal
-          visible={isVisible}
+          visible={!hackLayout || isVisible}
           transparent
           onRequestClose={onClose}
           isScrollable
@@ -346,7 +364,8 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
                 // Hide flash mis-positioned content
                 opacity:
                   popoverMeasurements.width === 0 ||
-                  popoverMeasurements.height === 0
+                  popoverMeasurements.height === 0 ||
+                  !hackLayout
                     ? 0
                     : 1,
               }}
