@@ -1,3 +1,15 @@
+# [1.10.0](https://github.com/WeTrustPlatform/paramount/compare/v1.9.1...v1.10.0) (2019-01-02)
+
+
+### Bug Fixes
+
+* update snapshots for popover ([668c434](https://github.com/WeTrustPlatform/paramount/commit/668c434))
+
+
+### Features
+
+* popover support for dynamic sizes and small screens ([378b630](https://github.com/WeTrustPlatform/paramount/commit/378b630))
+
 ## [1.9.1](https://github.com/WeTrustPlatform/paramount/compare/v1.9.0...v1.9.1) (2019-01-02)
 
 
