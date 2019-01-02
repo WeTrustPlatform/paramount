@@ -25,7 +25,6 @@ export interface PopoverProps {
    * you can pass in height of the parent so that it will use that instead of window's height
    */
   parentHeight?: number;
-  offset?: number;
   isVisible?: boolean;
   position?: Position;
   /**
@@ -33,6 +32,8 @@ export interface PopoverProps {
    */
   dangerouslySetInlineStyle?: Partial<PopoverStyles>;
 }
+
+const DEFAULT_OFFSET = 14;
 
 const resolveCorrectPosition = (position: Position) => ({
   shouldFlipBottomToTop,
@@ -82,30 +83,33 @@ const getPopoverPosition = (position: Position) => (
   screenLayout: ScaledSize,
 ) => (targetMeasurements: LayoutMeasurements) => (
   popoverMeasurements: LayoutMeasurements,
-) => (offset: number) => {
+) => (initialPopoverMeasurements: LayoutMeasurements) => (offset: number) => (
+  isOverflowing: boolean,
+) => {
   const newPosition = resolveCorrectPosition(position)({
     shouldFlipBottomToTop:
-      popoverMeasurements.height + offset >
+      initialPopoverMeasurements.height + offset >
       screenLayout.height -
         targetMeasurements.pageY +
         targetMeasurements.height -
         offset,
     shouldFlipLeftToRight:
       position === POSITION.LEFT
-        ? popoverMeasurements.width + offset > targetMeasurements.pageX - offset
-        : popoverMeasurements.width + offset >
+        ? initialPopoverMeasurements.width + offset >
+          targetMeasurements.pageX - offset
+        : initialPopoverMeasurements.width + offset >
           screenLayout.width - targetMeasurements.pageX,
     shouldFlipRightToLeft:
       position === POSITION.RIGHT
         ? targetMeasurements.pageX +
             targetMeasurements.width +
-            popoverMeasurements.width +
+            initialPopoverMeasurements.width +
             offset >
           screenLayout.width - offset
         : targetMeasurements.pageX + targetMeasurements.width <
-          popoverMeasurements.width,
+          initialPopoverMeasurements.width,
     shouldFlipTopToBottom:
-      popoverMeasurements.height + offset > targetMeasurements.pageY,
+      initialPopoverMeasurements.height + offset > targetMeasurements.pageY,
   });
 
   switch (newPosition) {
@@ -114,6 +118,7 @@ const getPopoverPosition = (position: Position) => (
         position: POSITION.TOP_LEFT,
 
         left: targetMeasurements.pageX,
+        marginRight: 24,
         top: targetMeasurements.pageY - popoverMeasurements.height - offset,
       };
     case POSITION.TOP:
@@ -133,17 +138,38 @@ const getPopoverPosition = (position: Position) => (
       return {
         position: POSITION.TOP_RIGHT,
 
-        left:
-          targetMeasurements.pageX -
-          popoverMeasurements.width +
-          targetMeasurements.width,
+        ...(isOverflowing
+          ? {
+              left: 0,
+              marginLeft: 24,
+              marginRight:
+                screenLayout.width -
+                targetMeasurements.pageX -
+                targetMeasurements.width,
+            }
+          : {
+              left:
+                targetMeasurements.pageX -
+                popoverMeasurements.width +
+                targetMeasurements.width,
+            }),
         top: targetMeasurements.pageY - popoverMeasurements.height - offset,
       };
     case POSITION.LEFT:
       return {
         position: POSITION.LEFT,
 
-        left: targetMeasurements.pageX - popoverMeasurements.width - offset,
+        ...(isOverflowing
+          ? {
+              left: 0,
+              marginLeft: 24,
+              marginRight:
+                screenLayout.width - targetMeasurements.pageX + offset,
+            }
+          : {
+              left:
+                targetMeasurements.pageX - popoverMeasurements.width - offset,
+            }),
         top: targetMeasurements.pageY,
         transform: [
           {
@@ -157,6 +183,7 @@ const getPopoverPosition = (position: Position) => (
         position: POSITION.RIGHT,
 
         left: targetMeasurements.pageX + targetMeasurements.width + offset,
+        marginRight: 24,
         top: targetMeasurements.pageY,
         transform: [
           {
@@ -203,30 +230,30 @@ const getPopoverPosition = (position: Position) => (
 };
 
 export interface PopoverState {
+  /** This is the original measurements of the popover. It is static, and will not change. It is used to calculate whether popover should "flip" and also whether originally the popover overflows the window or not */
+  initialPopoverMeasurements: LayoutMeasurements;
+  /** This is the adjusted measurements of the popover. It adjusts several times when its position is being calculated to account for things like window overflow, margins and other layout calculations */
   popoverMeasurements: LayoutMeasurements;
+  /** Measurements of the wrapped component */
   targetMeasurements: LayoutMeasurements;
 }
 
 class PopoverBase extends React.Component<PopoverProps, PopoverState> {
   constructor(props: PopoverProps) {
     super(props);
+    const initialMeasurements = {
+      height: 0,
+      pageX: 0,
+      pageY: 0,
+      width: 0,
+      x: 0,
+      y: 0,
+    };
+
     this.state = {
-      popoverMeasurements: {
-        height: 0,
-        pageX: 0,
-        pageY: 0,
-        width: 0,
-        x: 0,
-        y: 0,
-      },
-      targetMeasurements: {
-        height: 0,
-        pageX: 0,
-        pageY: 0,
-        width: 0,
-        x: 0,
-        y: 0,
-      },
+      initialPopoverMeasurements: initialMeasurements,
+      popoverMeasurements: initialMeasurements,
+      targetMeasurements: initialMeasurements,
     };
   }
 
@@ -240,9 +267,12 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
       isVisible,
       onClose,
       position = POSITION.BOTTOM,
-      offset = 14,
     } = this.props;
-    const { popoverMeasurements, targetMeasurements } = this.state;
+    const {
+      popoverMeasurements,
+      targetMeasurements,
+      initialPopoverMeasurements,
+    } = this.state;
     const {
       popoverStyle,
       modalContainerStyle,
@@ -250,17 +280,25 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
     } = theme.getPopoverStyles();
 
     const windowDimensions = Dimensions.get('window');
+    const isOverflowing =
+      initialPopoverMeasurements.width > windowDimensions.width - 48;
     const {
       position: correctedPosition,
       ...popoverPositionStyle
     } = getPopoverPosition(position)({
       ...windowDimensions,
       height: parentHeight || windowDimensions.height,
-    })(targetMeasurements)(popoverMeasurements)(offset);
+    })(targetMeasurements)(popoverMeasurements)(initialPopoverMeasurements)(
+      DEFAULT_OFFSET,
+    )(isOverflowing);
 
     const renderArrow = getPopoverArrow(correctedPosition)(targetMeasurements)(
       theme,
     );
+
+    const initialPopoverMeasurementsMeasured =
+      initialPopoverMeasurements.width !== 0 &&
+      initialPopoverMeasurements.height !== 0;
 
     return (
       <>
@@ -271,6 +309,21 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
         >
           {children}
         </LayoutMeasure>
+        {/* Mounts an invisible node to measure initial Popover measurements, after which is removed */}
+        {!initialPopoverMeasurementsMeasured && (
+          <LayoutMeasure
+            onMeasure={measurements =>
+              this.setState({ initialPopoverMeasurements: measurements })
+            }
+            style={{
+              opacity: 0,
+              position: 'absolute',
+              zIndex: -1,
+            }}
+          >
+            {content}
+          </LayoutMeasure>
+        )}
         <Modal
           visible={isVisible}
           transparent
@@ -297,9 +350,9 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
                     ? 0
                     : 1,
               }}
-              onMeasure={measurements =>
-                this.setState({ popoverMeasurements: measurements })
-              }
+              onMeasure={measurements => {
+                this.setState({ popoverMeasurements: measurements });
+              }}
             >
               {content}
               {renderArrow}
