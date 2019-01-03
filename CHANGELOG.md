@@ -1,3 +1,15 @@
+# [1.11.0](https://github.com/WeTrustPlatform/paramount/compare/v1.10.1...v1.11.0) (2019-01-03)
+
+
+### Bug Fixes
+
+* update snapshot tests ([bb4f2a8](https://github.com/WeTrustPlatform/paramount/commit/bb4f2a8))
+
+
+### Features
+
+* update docs. release refMeasure and target node from popover ([4b97feb](https://github.com/WeTrustPlatform/paramount/commit/4b97feb))
+
 ## [1.10.1](https://github.com/WeTrustPlatform/paramount/compare/v1.10.0...v1.10.1) (2019-01-03)
 
 
