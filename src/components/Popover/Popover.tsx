@@ -29,7 +29,7 @@ export interface PopoverProps {
   parentHeight?: number;
   isVisible?: boolean;
   position?: Position;
-  targetMeasurements?: Position;
+  targetMeasurements?: Measurements;
   /**
    * Inline styles for components
    */
@@ -241,7 +241,7 @@ export interface PopoverState {
   /** This is the adjusted measurements of the popover when the content is of dynamic size. It adjusts several times when its position is being calculated to account for things like window overflow, margins and other layout calculations */
   popoverMeasurements: Measurements;
   /** Measurements of the wrapped component */
-  targetMeasurements: Measurements;
+  localTargetMeasurements: Measurements;
   /** HACK: For dynamic size content of popovers we have to render all the items first so it precalculates popover position and layout, so that when user opens popover there is no flash of adjusting popover but immediately shows it */
   isAdjustingContent: boolean;
 }
@@ -267,8 +267,8 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
     this.state = {
       initialPopoverMeasurements: initialMeasurements,
       isAdjustingContent: isDynamicContent,
+      localTargetMeasurements: initialMeasurements,
       popoverMeasurements: initialMeasurements,
-      targetMeasurements: initialMeasurements,
     };
   }
 
@@ -292,10 +292,11 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
       isVisible,
       onClose,
       position = defaultProps.position,
+      targetMeasurements,
     } = this.props;
     const {
       popoverMeasurements,
-      targetMeasurements,
+      localTargetMeasurements,
       initialPopoverMeasurements,
       isAdjustingContent,
     } = this.state;
@@ -311,30 +312,35 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
     const initialPopoverMeasurementsMeasured =
       initialPopoverMeasurements.width !== 0 &&
       initialPopoverMeasurements.height !== 0;
-
+    const finalTargetMeasurements =
+      targetMeasurements || localTargetMeasurements;
     const {
       position: correctedPosition,
       ...popoverPositionStyle
     } = getPopoverPosition(position)({
       ...windowDimensions,
       height: parentHeight || windowDimensions.height,
-    })(targetMeasurements)(popoverMeasurements)(initialPopoverMeasurements)(
-      DEFAULT_OFFSET,
-    )(isOverflowing);
+    })(finalTargetMeasurements)(popoverMeasurements)(
+      initialPopoverMeasurements,
+    )(DEFAULT_OFFSET)(isOverflowing);
 
-    const renderArrow = getPopoverArrow(correctedPosition)(targetMeasurements)(
-      theme,
-    );
+    const renderArrow = getPopoverArrow(correctedPosition)(
+      finalTargetMeasurements,
+    )(theme);
 
     return (
       <>
-        <ViewMeasure
-          onMeasure={measurements =>
-            this.setState({ targetMeasurements: measurements })
-          }
-        >
-          {children}
-        </ViewMeasure>
+        {targetMeasurements ? (
+          children
+        ) : (
+          <ViewMeasure
+            onMeasure={measurements =>
+              this.setState({ localTargetMeasurements: measurements })
+            }
+          >
+            {children}
+          </ViewMeasure>
+        )}
         {/* Mounts an invisible node to measure initial Popover measurements, after which is removed */}
         {!initialPopoverMeasurementsMeasured && (
           <ViewMeasure
