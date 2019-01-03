@@ -9,6 +9,9 @@ export interface ViewMeasureProps extends ViewProps {
   children: React.ReactNode | RenderPropType;
 }
 
+/**
+ * Wraps content in a `View` with which the measurements are calculated
+ */
 class ViewMeasure extends React.Component<ViewMeasureProps, Measurements> {
   private container: React.RefObject<View>;
 
