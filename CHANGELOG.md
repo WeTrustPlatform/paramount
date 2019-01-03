@@ -1,3 +1,11 @@
+## [1.10.1](https://github.com/WeTrustPlatform/paramount/compare/v1.10.0...v1.10.1) (2019-01-03)
+
+
+### Bug Fixes
+
+* change prop naming for popover dynamic content calculation ([505ff43](https://github.com/WeTrustPlatform/paramount/commit/505ff43))
+* prevent popover flash ([7702da1](https://github.com/WeTrustPlatform/paramount/commit/7702da1))
+
 # [1.10.0](https://github.com/WeTrustPlatform/paramount/compare/v1.9.1...v1.10.0) (2019-01-02)
 
 
