@@ -384,6 +384,8 @@ Add `isDynamicContent` to props to give time for Popover to calculate its layout
 
 ### Popover from a target node
 
+A simpler usage of Popover would be like above, where you wrap `Popover` over a component where you want it. For more advanced usage, you can pass `targetMeasurements` prop of a target node you want to wrap with `Popover`
+
 <Spacing paddingY={10}>
   <Toggle>
     {({ on, toggle }) => (
