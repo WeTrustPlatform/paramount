@@ -7,6 +7,7 @@ import { Playground, PropsTable } from 'docz';
 import Popover from './Popover';
 import { Button } from '../Button';
 import { Box, Spacing } from '../Layout';
+import { RefMeasure } from '../Helpers';
 import { Text } from '../Typography';
 import { Toggle } from 'react-powerplug';
 
@@ -379,6 +380,45 @@ Add `isDynamicContent` to props to give time for Popover to calculate its layout
       )}
     </Toggle>
   </Box>
+</Spacing>
+
+### Popover from a target node
+
+<Spacing paddingY={10}>
+  <Toggle>
+    {({ on, toggle }) => (
+      <RefMeasure>
+        {({ forwardRef, onLayout, measurements }) => {
+          return (
+            <>
+              <Popover
+                targetMeasurements={measurements}
+                isVisible={on}
+                onClose={toggle}
+                position="top-right"
+                content={
+                  <Box backgroundColor="white">
+                    <Text>
+                      Long text that should be well visible and non-obstructing
+                      Long text that should be well visible and non-obstructing
+                    </Text>
+                  </Box>
+                }
+              />
+              <Button
+                onLayout={onLayout}
+                ref={forwardRef}
+                onPress={toggle}
+                isInline
+              >
+                Some Button
+              </Button>
+            </>
+          );
+        }}
+      </RefMeasure>
+    )}
+  </Toggle>
 </Spacing>
 
 ## Props
