@@ -1,5 +1,5 @@
 export {
-  default as LayoutMeasure,
-  LayoutMeasureProps,
-  LayoutMeasurements,
-} from './LayoutMeasure';
+  default as ViewMeasure,
+  ViewMeasureProps,
+  ViewMeasurements,
+} from './ViewMeasure';

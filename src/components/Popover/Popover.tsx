@@ -10,7 +10,7 @@ import { POSITION, Position } from '../../constants';
 import { Theme, withTheme } from '../../theme';
 import { PopoverStyles } from '../../theme/style-getters/getPopoverStyles';
 import Modal from '../Dialog/Modal';
-import { LayoutMeasure, LayoutMeasurements } from '../Helpers';
+import { ViewMeasure, ViewMeasurements } from '../Helpers';
 import { getPopoverArrow } from './getPopoverArrow';
 
 export interface PopoverProps {
@@ -85,9 +85,9 @@ const resolveCorrectPosition = (position: Position) => ({
 
 const getPopoverPosition = (position: Position) => (
   screenLayout: ScaledSize,
-) => (targetMeasurements: LayoutMeasurements) => (
-  popoverMeasurements: LayoutMeasurements,
-) => (initialPopoverMeasurements: LayoutMeasurements) => (offset: number) => (
+) => (targetMeasurements: ViewMeasurements) => (
+  popoverMeasurements: ViewMeasurements,
+) => (initialPopoverMeasurements: ViewMeasurements) => (offset: number) => (
   isOverflowing: boolean,
 ) => {
   const newPosition = resolveCorrectPosition(position)({
@@ -236,17 +236,18 @@ const getPopoverPosition = (position: Position) => (
 
 export interface PopoverState {
   /** This is the original measurements of the popover. It is static, and will not change. It is used to calculate whether popover should "flip" and also whether originally the popover overflows the window or not */
-  initialPopoverMeasurements: LayoutMeasurements;
+  initialPopoverMeasurements: ViewMeasurements;
   /** This is the adjusted measurements of the popover when the content is of dynamic size. It adjusts several times when its position is being calculated to account for things like window overflow, margins and other layout calculations */
-  popoverMeasurements: LayoutMeasurements;
+  popoverMeasurements: ViewMeasurements;
   /** Measurements of the wrapped component */
-  targetMeasurements: LayoutMeasurements;
+  targetMeasurements: ViewMeasurements;
   /** HACK: For dynamic size content of popovers we have to render all the items first so it precalculates popover position and layout, so that when user opens popover there is no flash of adjusting popover but immediately shows it */
   isAdjustingContent: boolean;
 }
 
 const defaultProps = {
   isDynamicContent: false,
+  position: POSITION.BOTTOM,
 };
 
 class PopoverBase extends React.Component<PopoverProps, PopoverState> {
@@ -289,7 +290,7 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
       parentHeight,
       isVisible,
       onClose,
-      position = POSITION.BOTTOM,
+      position = defaultProps.position,
     } = this.props;
     const {
       popoverMeasurements,
@@ -326,16 +327,16 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
 
     return (
       <>
-        <LayoutMeasure
+        <ViewMeasure
           onMeasure={measurements =>
             this.setState({ targetMeasurements: measurements })
           }
         >
           {children}
-        </LayoutMeasure>
+        </ViewMeasure>
         {/* Mounts an invisible node to measure initial Popover measurements, after which is removed */}
         {!initialPopoverMeasurementsMeasured && (
-          <LayoutMeasure
+          <ViewMeasure
             onMeasure={measurements =>
               this.setState({ initialPopoverMeasurements: measurements })
             }
@@ -346,7 +347,7 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
             }}
           >
             {content}
-          </LayoutMeasure>
+          </ViewMeasure>
         )}
         <Modal
           visible={isAdjustingContent || isVisible}
@@ -361,7 +362,7 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
                 dangerouslySetInlineStyle.modalContainerStyle),
             }}
           >
-            <LayoutMeasure
+            <ViewMeasure
               style={{
                 ...popoverStyle,
                 ...(dangerouslySetInlineStyle &&
@@ -369,9 +370,9 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
                 ...popoverPositionStyle,
                 // Hide flash mis-positioned content
                 opacity:
-                  !initialPopoverMeasurementsMeasured || isAdjustingContent
-                    ? 0
-                    : 1,
+                  initialPopoverMeasurementsMeasured && !isAdjustingContent
+                    ? 1
+                    : 0,
               }}
               onMeasure={measurements => {
                 this.setState({ popoverMeasurements: measurements });
@@ -379,7 +380,7 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
             >
               {content}
               {renderArrow}
-            </LayoutMeasure>
+            </ViewMeasure>
             <TouchableWithoutFeedback
               onPress={() => {
                 if (onClose) onClose();

@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { findNodeHandle, UIManager, View, ViewProps } from 'react-native';
 
-export type RenderPropType = (props: LayoutMeasurements) => React.ReactNode;
+export type RenderPropType = (props: ViewMeasurements) => React.ReactNode;
 
-export interface LayoutMeasureProps extends ViewProps {
-  onMeasure?: (props: LayoutMeasurements) => void;
+export interface ViewMeasureProps extends ViewProps {
+  onMeasure?: (props: ViewMeasurements) => void;
   children: React.ReactNode | RenderPropType;
 }
 
-export interface LayoutMeasurements {
+export interface ViewMeasurements {
   height: number;
   pageX: number;
   pageY: number;
@@ -17,13 +17,10 @@ export interface LayoutMeasurements {
   y: number;
 }
 
-class LayoutMeasure extends React.Component<
-  LayoutMeasureProps,
-  LayoutMeasurements
-> {
+class ViewMeasure extends React.Component<ViewMeasureProps, ViewMeasurements> {
   private container: React.RefObject<View>;
 
-  constructor(props: LayoutMeasureProps) {
+  constructor(props: ViewMeasureProps) {
     super(props);
     this.container = React.createRef();
 
@@ -53,16 +50,15 @@ class LayoutMeasure extends React.Component<
           UIManager.measure(
             findNodeHandle(this.container.current)!,
             (x, y, width, height, pageX, pageY) => {
-              const layoutMeasurements = {
+              const viewMeasurements = {
                 ...layout,
                 pageX,
                 pageY,
               };
-
-              onMeasure(layoutMeasurements);
+              onMeasure(viewMeasurements);
 
               if (isRenderProp) {
-                this.setState(() => layoutMeasurements);
+                this.setState(() => viewMeasurements);
               }
             },
           );
@@ -75,4 +71,4 @@ class LayoutMeasure extends React.Component<
   }
 }
 
-export default LayoutMeasure;
+export default ViewMeasure;
