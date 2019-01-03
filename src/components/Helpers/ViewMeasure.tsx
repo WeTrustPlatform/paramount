@@ -1,23 +1,15 @@
 import * as React from 'react';
 import { findNodeHandle, UIManager, View, ViewProps } from 'react-native';
+import { Measurements } from './Measurements';
 
-export type RenderPropType = (props: ViewMeasurements) => React.ReactNode;
+export type RenderPropType = (props: Measurements) => React.ReactNode;
 
 export interface ViewMeasureProps extends ViewProps {
-  onMeasure?: (props: ViewMeasurements) => void;
+  onMeasure?: (props: Measurements) => void;
   children: React.ReactNode | RenderPropType;
 }
 
-export interface ViewMeasurements {
-  height: number;
-  pageX: number;
-  pageY: number;
-  width: number;
-  x: number;
-  y: number;
-}
-
-class ViewMeasure extends React.Component<ViewMeasureProps, ViewMeasurements> {
+class ViewMeasure extends React.Component<ViewMeasureProps, Measurements> {
   private container: React.RefObject<View>;
 
   constructor(props: ViewMeasureProps) {

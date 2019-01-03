@@ -1,0 +1,63 @@
+import * as React from 'react';
+import { findNodeHandle, LayoutChangeEvent, UIManager } from 'react-native';
+import { Measurements } from './Measurements';
+
+export interface RefMeasureChildrenProps {
+  measurements: Measurements;
+  forwardRef: React.RefObject<any>;
+  onLayout: (e: LayoutChangeEvent) => void;
+}
+export type RenderPropType = (
+  props: RefMeasureChildrenProps,
+) => React.ReactNode;
+
+export interface RefMeasureProps {
+  children: RenderPropType;
+}
+
+class RefMeasure extends React.Component<RefMeasureProps, Measurements> {
+  public container: React.RefObject<any>;
+
+  constructor(props: RefMeasureProps) {
+    super(props);
+    this.container = React.createRef();
+
+    this.state = {
+      height: 0,
+      pageX: 0,
+      pageY: 0,
+      width: 0,
+      x: 0,
+      y: 0,
+    };
+  }
+
+  public render() {
+    const { children } = this.props;
+    const measurements = this.state;
+
+    return children({
+      forwardRef: this.container,
+      measurements,
+      onLayout: e => {
+        // Use the value from here, isntead of inside UIManager.measure callback
+        // Async behavior will nullify nativeEvent
+        const layout = e.nativeEvent.layout;
+
+        UIManager.measure(
+          findNodeHandle(this.container.current)!,
+          (x, y, width, height, pageX, pageY) => {
+            const nodeMeasurements = {
+              ...layout,
+              pageX,
+              pageY,
+            };
+            this.setState(() => nodeMeasurements);
+          },
+        );
+      },
+    });
+  }
+}
+
+export default RefMeasure;

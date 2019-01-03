@@ -10,7 +10,7 @@ import { POSITION, Position } from '../../constants';
 import { Theme, withTheme } from '../../theme';
 import { PopoverStyles } from '../../theme/style-getters/getPopoverStyles';
 import Modal from '../Dialog/Modal';
-import { ViewMeasure, ViewMeasurements } from '../Helpers';
+import { Measurements, ViewMeasure } from '../Helpers';
 import { getPopoverArrow } from './getPopoverArrow';
 
 export interface PopoverProps {
@@ -29,6 +29,7 @@ export interface PopoverProps {
   parentHeight?: number;
   isVisible?: boolean;
   position?: Position;
+  targetMeasurements?: Position;
   /**
    * Inline styles for components
    */
@@ -85,9 +86,9 @@ const resolveCorrectPosition = (position: Position) => ({
 
 const getPopoverPosition = (position: Position) => (
   screenLayout: ScaledSize,
-) => (targetMeasurements: ViewMeasurements) => (
-  popoverMeasurements: ViewMeasurements,
-) => (initialPopoverMeasurements: ViewMeasurements) => (offset: number) => (
+) => (targetMeasurements: Measurements) => (
+  popoverMeasurements: Measurements,
+) => (initialPopoverMeasurements: Measurements) => (offset: number) => (
   isOverflowing: boolean,
 ) => {
   const newPosition = resolveCorrectPosition(position)({
@@ -236,11 +237,11 @@ const getPopoverPosition = (position: Position) => (
 
 export interface PopoverState {
   /** This is the original measurements of the popover. It is static, and will not change. It is used to calculate whether popover should "flip" and also whether originally the popover overflows the window or not */
-  initialPopoverMeasurements: ViewMeasurements;
+  initialPopoverMeasurements: Measurements;
   /** This is the adjusted measurements of the popover when the content is of dynamic size. It adjusts several times when its position is being calculated to account for things like window overflow, margins and other layout calculations */
-  popoverMeasurements: ViewMeasurements;
+  popoverMeasurements: Measurements;
   /** Measurements of the wrapped component */
-  targetMeasurements: ViewMeasurements;
+  targetMeasurements: Measurements;
   /** HACK: For dynamic size content of popovers we have to render all the items first so it precalculates popover position and layout, so that when user opens popover there is no flash of adjusting popover but immediately shows it */
   isAdjustingContent: boolean;
 }

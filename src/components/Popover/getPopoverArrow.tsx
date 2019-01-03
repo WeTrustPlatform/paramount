@@ -3,7 +3,7 @@ import { View, ViewStyle } from 'react-native';
 
 import { Position } from '../../constants';
 import { Theme } from '../../theme';
-import { ViewMeasurements } from '../Helpers';
+import { Measurements } from '../Helpers';
 
 const arrowWidth = 11;
 const commonStyle = {
@@ -19,7 +19,7 @@ export const TopLeftArrow = ({
   targetMeasurements,
 }: {
   theme: Theme;
-  targetMeasurements: ViewMeasurements;
+  targetMeasurements: Measurements;
 }) => (
   <>
     <View
@@ -50,7 +50,7 @@ export const TopArrow = ({
   targetMeasurements,
 }: {
   theme: Theme;
-  targetMeasurements: ViewMeasurements;
+  targetMeasurements: Measurements;
 }) => (
   <>
     <View
@@ -81,7 +81,7 @@ export const TopRightArrow = ({
   targetMeasurements,
 }: {
   theme: Theme;
-  targetMeasurements: ViewMeasurements;
+  targetMeasurements: Measurements;
 }) => (
   <>
     <View
@@ -112,7 +112,7 @@ export const LeftArrow = ({
   targetMeasurements,
 }: {
   theme: Theme;
-  targetMeasurements: ViewMeasurements;
+  targetMeasurements: Measurements;
 }) => (
   <>
     <View
@@ -143,7 +143,7 @@ export const RightArrow = ({
   targetMeasurements,
 }: {
   theme: Theme;
-  targetMeasurements: ViewMeasurements;
+  targetMeasurements: Measurements;
 }) => (
   <>
     <View
@@ -174,7 +174,7 @@ export const BottomRightArrow = ({
   targetMeasurements,
 }: {
   theme: Theme;
-  targetMeasurements: ViewMeasurements;
+  targetMeasurements: Measurements;
 }) => (
   <>
     <View
@@ -205,7 +205,7 @@ export const BottomArrow = ({
   targetMeasurements,
 }: {
   theme: Theme;
-  targetMeasurements: ViewMeasurements;
+  targetMeasurements: Measurements;
 }) => (
   <>
     <View
@@ -236,7 +236,7 @@ export const BottomLeftArrow = ({
   targetMeasurements,
 }: {
   theme: Theme;
-  targetMeasurements: ViewMeasurements;
+  targetMeasurements: Measurements;
 }) => (
   <>
     <View
@@ -263,7 +263,7 @@ export const BottomLeftArrow = ({
 );
 
 export const getPopoverArrow = (position: Position) => (
-  targetMeasurements: ViewMeasurements,
+  targetMeasurements: Measurements,
 ) => (theme: Theme) => {
   switch (position) {
     case 'top-left':
