@@ -17,8 +17,8 @@ export interface PopoverProps {
   theme: Theme;
   onTap?: () => void;
   onClose?: () => void;
-  /** HACK: For dynamic size content of popovers we have to render all the items first so it precalculates popover position and layout, so that when user opens popover there is no flash of adjusting popover but immediately shows it */
-  enableHack?: boolean;
+  /** For dynamic size content of popovers we have to render all the items first so it precalculates popover position and layout, so that when user opens popover there is no flash of adjusting popover but immediately shows it. This is not `true` by default because it may causes small delay for the Popover to be properly available. @default false */
+  isDynamicContent?: boolean;
   children: React.ReactNode;
   content: React.ReactNode;
   /**
@@ -37,7 +37,7 @@ export interface PopoverProps {
 
 const DEFAULT_OFFSET = 14;
 /** Time to allow all the calculation to be done */
-const HACK_LAYOUT_RENDER_MS = 300;
+const RENDER_CALCULATION_DURATION = 300;
 
 const resolveCorrectPosition = (position: Position) => ({
   shouldFlipBottomToTop,
@@ -242,12 +242,17 @@ export interface PopoverState {
   /** Measurements of the wrapped component */
   targetMeasurements: LayoutMeasurements;
   /** HACK: For dynamic size content of popovers we have to render all the items first so it precalculates popover position and layout, so that when user opens popover there is no flash of adjusting popover but immediately shows it */
-  hackLayout: boolean;
+  isAdjustingContent: boolean;
 }
+
+const defaultProps = {
+  isDynamicContent: false,
+};
 
 class PopoverBase extends React.Component<PopoverProps, PopoverState> {
   constructor(props: PopoverProps) {
     super(props);
+    const { isDynamicContent = defaultProps.isDynamicContent } = props;
     const initialMeasurements = {
       height: 0,
       pageX: 0,
@@ -258,19 +263,20 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
     };
 
     this.state = {
-      hackLayout: false,
       initialPopoverMeasurements: initialMeasurements,
+      isAdjustingContent: isDynamicContent,
       popoverMeasurements: initialMeasurements,
       targetMeasurements: initialMeasurements,
     };
   }
 
   public componentDidMount() {
-    const { enableHack = true } = this.props;
-    if (enableHack) {
+    const { isDynamicContent = defaultProps.isDynamicContent } = this.props;
+
+    if (isDynamicContent) {
       setTimeout(() => {
-        this.setState({ hackLayout: true });
-      }, HACK_LAYOUT_RENDER_MS);
+        this.setState({ isAdjustingContent: false });
+      }, RENDER_CALCULATION_DURATION);
     }
   }
 
@@ -289,7 +295,7 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
       popoverMeasurements,
       targetMeasurements,
       initialPopoverMeasurements,
-      hackLayout,
+      isAdjustingContent,
     } = this.state;
     const {
       popoverStyle,
@@ -300,6 +306,10 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
     const windowDimensions = Dimensions.get('window');
     const isOverflowing =
       initialPopoverMeasurements.width > windowDimensions.width - 48;
+    const initialPopoverMeasurementsMeasured =
+      initialPopoverMeasurements.width !== 0 &&
+      initialPopoverMeasurements.height !== 0;
+
     const {
       position: correctedPosition,
       ...popoverPositionStyle
@@ -313,10 +323,6 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
     const renderArrow = getPopoverArrow(correctedPosition)(targetMeasurements)(
       theme,
     );
-
-    const initialPopoverMeasurementsMeasured =
-      initialPopoverMeasurements.width !== 0 &&
-      initialPopoverMeasurements.height !== 0;
 
     return (
       <>
@@ -343,7 +349,7 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
           </LayoutMeasure>
         )}
         <Modal
-          visible={!hackLayout || isVisible}
+          visible={isAdjustingContent || isVisible}
           transparent
           onRequestClose={onClose}
           isScrollable
@@ -363,9 +369,7 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
                 ...popoverPositionStyle,
                 // Hide flash mis-positioned content
                 opacity:
-                  popoverMeasurements.width === 0 ||
-                  popoverMeasurements.height === 0 ||
-                  !hackLayout
+                  !initialPopoverMeasurementsMeasured || isAdjustingContent
                     ? 0
                     : 1,
               }}

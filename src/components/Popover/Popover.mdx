@@ -190,12 +190,15 @@ import { Toggle } from 'react-powerplug';
 
 ### Popovers with dynamic width and height content
 
+Add `isDynamicContent` to props to give time for Popover to calculate its layout of dynamic content prior to displaying it
+
 <Spacing paddingBottom={8} zIndex={1}>
   <Box flexDirection="row" justifyContent="space-between">
     <Toggle>
       {({ on, toggle }) => (
         <Popover
           isVisible={on}
+          isDynamicContent
           onClose={toggle}
           position="top-right"
           content={
@@ -217,6 +220,7 @@ import { Toggle } from 'react-powerplug';
       {({ on, toggle }) => (
         <Popover
           isVisible={on}
+          isDynamicContent
           onClose={toggle}
           position="top"
           content={
@@ -238,6 +242,7 @@ import { Toggle } from 'react-powerplug';
       {({ on, toggle }) => (
         <Popover
           isVisible={on}
+          isDynamicContent
           onClose={toggle}
           position="top-left"
           content={
@@ -264,6 +269,7 @@ import { Toggle } from 'react-powerplug';
       {({ on, toggle }) => (
         <Popover
           isVisible={on}
+          isDynamicContent
           onClose={toggle}
           position="left"
           content={
@@ -285,6 +291,7 @@ import { Toggle } from 'react-powerplug';
       {({ on, toggle }) => (
         <Popover
           isVisible={on}
+          isDynamicContent
           onClose={toggle}
           position="right"
           content={
@@ -311,6 +318,7 @@ import { Toggle } from 'react-powerplug';
       {({ on, toggle }) => (
         <Popover
           isVisible={on}
+          isDynamicContent
           onClose={toggle}
           position="bottom-right"
           content={
@@ -332,6 +340,7 @@ import { Toggle } from 'react-powerplug';
       {({ on, toggle }) => (
         <Popover
           isVisible={on}
+          isDynamicContent
           onClose={toggle}
           position="bottom"
           parentHeight={2480}
@@ -351,6 +360,7 @@ import { Toggle } from 'react-powerplug';
       {({ on, toggle }) => (
         <Popover
           isVisible={on}
+          isDynamicContent
           onClose={toggle}
           position="bottom-left"
           content={
