@@ -1,5 +1,10 @@
 import * as React from 'react';
-import { findNodeHandle, LayoutChangeEvent, UIManager } from 'react-native';
+import {
+  findNodeHandle,
+  LayoutChangeEvent,
+  LayoutRectangle,
+  UIManager,
+} from 'react-native';
 
 export interface Measurements {
   height: number;
@@ -14,12 +19,14 @@ export interface RefMeasureChildrenProps {
   measurements: Measurements;
   forwardRef: React.RefObject<any>;
   onLayout: (e: LayoutChangeEvent) => void;
+  measure: (layout?: LayoutRectangle) => void;
 }
 export type RefMeasureRenderPropType = (
   props: RefMeasureChildrenProps,
 ) => React.ReactNode;
 
 export interface RefMeasureProps {
+  onMeasure?: (props: Measurements) => void;
   children: RefMeasureRenderPropType;
 }
 
@@ -43,30 +50,43 @@ class RefMeasure extends React.Component<RefMeasureProps, Measurements> {
     };
   }
 
+  public handleLayout = (e: LayoutChangeEvent) => {
+    // Use the value from here, isntead of inside UIManager.measure callback
+    // Async behavior will nullify nativeEvent
+    const layout = e.nativeEvent.layout;
+    this.handleMeasure(layout);
+  };
+
+  public handleMeasure = (layout?: LayoutRectangle) => {
+    const { onMeasure } = this.props;
+
+    UIManager.measure(
+      findNodeHandle(this.container.current)!,
+      (x, y, width, height, pageX, pageY) => {
+        const nodeMeasurements = {
+          ...this.state,
+          ...layout,
+          pageX,
+          pageY,
+        };
+
+        if (onMeasure) {
+          onMeasure(nodeMeasurements);
+        }
+        this.setState(() => nodeMeasurements);
+      },
+    );
+  };
+
   public render() {
     const { children } = this.props;
     const measurements = this.state;
 
     return children({
       forwardRef: this.container,
+      measure: this.handleMeasure,
       measurements,
-      onLayout: e => {
-        // Use the value from here, isntead of inside UIManager.measure callback
-        // Async behavior will nullify nativeEvent
-        const layout = e.nativeEvent.layout;
-
-        UIManager.measure(
-          findNodeHandle(this.container.current)!,
-          (x, y, width, height, pageX, pageY) => {
-            const nodeMeasurements = {
-              ...layout,
-              pageX,
-              pageY,
-            };
-            this.setState(() => nodeMeasurements);
-          },
-        );
-      },
+      onLayout: this.handleLayout,
     });
   }
 }

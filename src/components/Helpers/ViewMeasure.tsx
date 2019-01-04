@@ -15,22 +15,19 @@ export interface ViewMeasureProps extends ViewProps {
  */
 
 const ViewMeasure = (props: ViewMeasureProps) => {
-  const { onMeasure, children } = props;
+  const { onMeasure, children, ...viewProps } = props;
   const isRenderProp = typeof children === 'function';
 
   return (
-    <RefMeasure>
+    <RefMeasure onMeasure={onMeasure}>
       {({ forwardRef, onLayout, measurements }) => {
-        if (onMeasure) {
-          onMeasure(measurements);
-        }
-
         return (
           <View
             ref={forwardRef}
             onLayout={onLayout}
             // @ts-ignore
             children={isRenderProp ? children(measurements) : children}
+            {...viewProps}
           />
         );
       }}
