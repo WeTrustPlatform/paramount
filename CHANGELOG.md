@@ -1,3 +1,11 @@
+## [1.11.3](https://github.com/WeTrustPlatform/paramount/compare/v1.11.2...v1.11.3) (2019-01-04)
+
+
+### Bug Fixes
+
+* remove flash and docs ([7543975](https://github.com/WeTrustPlatform/paramount/commit/7543975))
+* update tests ([7fbb6b6](https://github.com/WeTrustPlatform/paramount/commit/7fbb6b6))
+
 ## [1.11.2](https://github.com/WeTrustPlatform/paramount/compare/v1.11.1...v1.11.2) (2019-01-04)
 
 
