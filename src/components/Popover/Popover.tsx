@@ -36,6 +36,7 @@ export interface PopoverProps {
   dangerouslySetInlineStyle?: Partial<PopoverStyles>;
 }
 
+const DEFAULT_MARGIN = 24;
 const DEFAULT_OFFSET = 14;
 /** Time to allow all the calculation to be done */
 const RENDER_CALCULATION_DURATION = 300;
@@ -100,7 +101,7 @@ const getPopoverPosition = (position: Position) => (
         offset,
     shouldFlipLeftToRight:
       position === POSITION.LEFT
-        ? initialPopoverMeasurements.width + offset + 24 >
+        ? initialPopoverMeasurements.width + offset + DEFAULT_MARGIN >
           targetMeasurements.pageX - offset
         : initialPopoverMeasurements.width + offset >
           screenLayout.width - targetMeasurements.pageX,
@@ -111,7 +112,8 @@ const getPopoverPosition = (position: Position) => (
             initialPopoverMeasurements.width +
             offset >
           screenLayout.width - offset
-        : targetMeasurements.pageX < initialPopoverMeasurements.width + 24,
+        : targetMeasurements.pageX <
+          initialPopoverMeasurements.width + DEFAULT_MARGIN,
     shouldFlipTopToBottom:
       initialPopoverMeasurements.height + offset > targetMeasurements.pageY,
   });
@@ -122,7 +124,7 @@ const getPopoverPosition = (position: Position) => (
         position: POSITION.TOP_LEFT,
 
         left: targetMeasurements.pageX,
-        marginRight: 24,
+        marginRight: DEFAULT_MARGIN,
         top: targetMeasurements.pageY - popoverMeasurements.height - offset,
       };
     case POSITION.TOP:
@@ -145,7 +147,7 @@ const getPopoverPosition = (position: Position) => (
         ...(isOverflowing
           ? {
               left: 0,
-              marginLeft: 24,
+              marginLeft: DEFAULT_MARGIN,
               marginRight:
                 screenLayout.width -
                 targetMeasurements.pageX -
@@ -166,7 +168,7 @@ const getPopoverPosition = (position: Position) => (
         ...(isOverflowing
           ? {
               left: 0,
-              marginLeft: 24,
+              marginLeft: DEFAULT_MARGIN,
               marginRight:
                 screenLayout.width - targetMeasurements.pageX + offset,
             }
@@ -187,7 +189,7 @@ const getPopoverPosition = (position: Position) => (
         position: POSITION.RIGHT,
 
         left: targetMeasurements.pageX + targetMeasurements.width + offset,
-        marginRight: 24,
+        marginRight: DEFAULT_MARGIN,
         top: targetMeasurements.pageY,
         transform: [
           {
@@ -224,7 +226,7 @@ const getPopoverPosition = (position: Position) => (
         position: POSITION.BOTTOM_LEFT,
 
         left: targetMeasurements.pageX,
-        marginRight: 24,
+        marginRight: DEFAULT_MARGIN,
         top: targetMeasurements.pageY + targetMeasurements.height + offset,
       };
     default:
