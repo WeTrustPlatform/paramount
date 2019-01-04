@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/WeTrustPlatform/paramount/compare/v1.11.0...v1.11.1) (2019-01-04)
+
+
+### Bug Fixes
+
+* add more api for refMeasure and fix it ([d265801](https://github.com/WeTrustPlatform/paramount/commit/d265801))
+
 # [1.11.0](https://github.com/WeTrustPlatform/paramount/compare/v1.10.1...v1.11.0) (2019-01-03)
 
 
