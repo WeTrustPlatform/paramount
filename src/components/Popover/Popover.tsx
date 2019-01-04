@@ -39,7 +39,7 @@ export interface PopoverProps {
 const DEFAULT_MARGIN = 24;
 const DEFAULT_OFFSET = 14;
 /** Time to allow all the calculation to be done */
-const RENDER_CALCULATION_DURATION = 300;
+const RENDER_CALCULATION_DURATION = 600;
 
 const resolveCorrectPosition = (position: Position) => ({
   shouldFlipBottomToTop,
@@ -332,6 +332,9 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
     const initialPopoverMeasurementsMeasured =
       initialPopoverMeasurements.width !== 0 &&
       initialPopoverMeasurements.height !== 0;
+    const popoverMeasurementsMeasured =
+      popoverMeasurements.width !== 0 && popoverMeasurements.height !== 0;
+
     const finalTargetMeasurements =
       targetMeasurements || localTargetMeasurements;
     const {
@@ -397,9 +400,7 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
                 ...popoverPositionStyle,
                 // Hide flash mis-positioned content
                 opacity:
-                  initialPopoverMeasurementsMeasured && !isAdjustingContent
-                    ? 1
-                    : 0,
+                  popoverMeasurementsMeasured && !isAdjustingContent ? 1 : 0,
               }}
               onMeasure={measurements => {
                 this.setState({ popoverMeasurements: measurements });

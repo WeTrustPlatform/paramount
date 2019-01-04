@@ -12,6 +12,12 @@ import { RefMeasure } from '../Helpers';
 import { Text } from '../Typography';
 import { Toggle } from 'react-powerplug';
 
+export default ({ children }) => {
+  document.body.style.height = 'initial';
+  document.body.style.position = 'relative';
+  return <div>{children}</div>;
+};
+
 ## Usage
 
 ### Popovers with fixed width and height content
@@ -389,7 +395,11 @@ Add `isDynamicContent` to props to give time for Popover to calculate its layout
 
 ### Popover with PopoverController
 
-For more advanced usage, you can use `PopoverController`
+For more advanced usage, you can use `PopoverController`.
+
+- Adds convenient methods for opening/closing Popover
+- You must use this for compatibility in React-Native. (It gets correct targetMeasurements on open)
+- You do want to separate `Popover` and the anchor
 
 <Playground>
   <Spacing paddingY={10}>
