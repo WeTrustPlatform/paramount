@@ -100,7 +100,7 @@ const getPopoverPosition = (position: Position) => (
         offset,
     shouldFlipLeftToRight:
       position === POSITION.LEFT
-        ? initialPopoverMeasurements.width + offset >
+        ? initialPopoverMeasurements.width + offset + 24 >
           targetMeasurements.pageX - offset
         : initialPopoverMeasurements.width + offset >
           screenLayout.width - targetMeasurements.pageX,
@@ -111,8 +111,7 @@ const getPopoverPosition = (position: Position) => (
             initialPopoverMeasurements.width +
             offset >
           screenLayout.width - offset
-        : targetMeasurements.pageX + targetMeasurements.width <
-          initialPopoverMeasurements.width,
+        : targetMeasurements.pageX < initialPopoverMeasurements.width + 24,
     shouldFlipTopToBottom:
       initialPopoverMeasurements.height + offset > targetMeasurements.pageY,
   });
@@ -235,6 +234,22 @@ const getPopoverPosition = (position: Position) => (
   }
 };
 
+export const getIsOverflowing = ({
+  initialPopoverMeasurements,
+  windowDimensions,
+  position,
+}: {
+  initialPopoverMeasurements: Measurements;
+  windowDimensions: ScaledSize;
+  position: Position;
+}) => {
+  if (initialPopoverMeasurements.width > windowDimensions.width - 48) {
+    return true;
+  }
+
+  return false;
+};
+
 export interface PopoverState {
   /** This is the original measurements of the popover. It is static, and will not change. It is used to calculate whether popover should "flip" and also whether originally the popover overflows the window or not */
   initialPopoverMeasurements: Measurements;
@@ -307,8 +322,11 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
     } = theme.getPopoverStyles();
 
     const windowDimensions = Dimensions.get('window');
-    const isOverflowing =
-      initialPopoverMeasurements.width > windowDimensions.width - 48;
+    const isOverflowing = getIsOverflowing({
+      initialPopoverMeasurements,
+      position,
+      windowDimensions,
+    });
     const initialPopoverMeasurementsMeasured =
       initialPopoverMeasurements.width !== 0 &&
       initialPopoverMeasurements.height !== 0;
@@ -334,9 +352,9 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
           children
         ) : (
           <ViewMeasure
-            onMeasure={measurements =>
-              this.setState({ localTargetMeasurements: measurements })
-            }
+            onMeasure={measurements => {
+              this.setState({ localTargetMeasurements: measurements });
+            }}
           >
             {children}
           </ViewMeasure>
