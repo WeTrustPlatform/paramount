@@ -1,18 +1,26 @@
 import * as React from 'react';
 import { findNodeHandle, LayoutChangeEvent, UIManager } from 'react-native';
-import { Measurements } from './Measurements';
+
+export interface Measurements {
+  height: number;
+  pageX: number;
+  pageY: number;
+  width: number;
+  x: number;
+  y: number;
+}
 
 export interface RefMeasureChildrenProps {
   measurements: Measurements;
   forwardRef: React.RefObject<any>;
   onLayout: (e: LayoutChangeEvent) => void;
 }
-export type RenderPropType = (
+export type RefMeasureRenderPropType = (
   props: RefMeasureChildrenProps,
 ) => React.ReactNode;
 
 export interface RefMeasureProps {
-  children: RenderPropType;
+  children: RefMeasureRenderPropType;
 }
 
 /**
