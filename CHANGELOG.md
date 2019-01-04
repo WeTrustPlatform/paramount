@@ -1,3 +1,11 @@
+## [1.11.2](https://github.com/WeTrustPlatform/paramount/compare/v1.11.1...v1.11.2) (2019-01-04)
+
+
+### Bug Fixes
+
+* popover flip ([cf2654c](https://github.com/WeTrustPlatform/paramount/commit/cf2654c))
+* update snapshots ([8ae7dfe](https://github.com/WeTrustPlatform/paramount/commit/8ae7dfe))
+
 ## [1.11.1](https://github.com/WeTrustPlatform/paramount/compare/v1.11.0...v1.11.1) (2019-01-04)
 
 
