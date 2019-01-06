@@ -35,7 +35,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@expo/vector-icons": "^8.0.0",
+    "@expo/vector-icons": "^9.0.0",
     "exenv": "^1.2.2",
     "focus-trap-react": "^5.0.0",
     "react": "16.7.0",
