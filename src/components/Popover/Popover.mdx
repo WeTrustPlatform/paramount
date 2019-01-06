@@ -88,7 +88,7 @@ export default ({ children }) => {
     </Box>
   </Spacing>
 
-<Spacing paddingY={8} zIndex={2}>
+<Spacing paddingVertical={8} zIndex={2}>
   <Box flexDirection="row" justifyContent="space-between">
     <Toggle>
       {({ on, toggle }) => (
@@ -274,7 +274,7 @@ Add `isDynamicContent` to props to give time for Popover to calculate its layout
     </Box>
   </Spacing>
 
-<Spacing paddingY={8} zIndex={2}>
+<Spacing paddingVertical={8} zIndex={2}>
   <Box flexDirection="row" justifyContent="space-between">
     <Toggle>
       {({ on, toggle }) => (
@@ -402,7 +402,7 @@ For more advanced usage, you can use `PopoverController`.
 - You do want to separate `Popover` and the anchor
 
 <Playground>
-  <Spacing paddingY={10}>
+  <Spacing paddingVertical={10}>
     <PopoverController>
       {({
         openPopover,

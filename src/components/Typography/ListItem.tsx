@@ -35,7 +35,7 @@ const ListItemBase = (props: TextProps & ListItemProps) => {
   return (
     // @ts-ignore
     <View accessibilityRole={Platform.OS === 'web' ? 'listitem' : 'none'}>
-      <Spacing flexDirection="row" alignItems="center" marginY={1}>
+      <Spacing flexDirection="row" alignItems="center" marginVertical={1}>
         <Spacing>{mark}</Spacing>
         <Spacing width="100%" paddingLeft={paddingLeft}>
           <Text isInline size={size} {...textProps} />

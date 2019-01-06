@@ -27,7 +27,7 @@ const LabeledCheckboxBase = (props: LabeledCheckboxProps) => {
           {label}
         </Text>
       )}
-      <Spacing paddingX={1}>
+      <Spacing paddingHorizontal={1}>
         <Checkbox {...restProps} />
       </Spacing>
       {position === 'right' && (

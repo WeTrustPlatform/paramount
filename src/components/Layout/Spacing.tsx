@@ -40,8 +40,7 @@ export interface SpacingProps extends BoxProps {
   marginRight?: GridScale;
   marginStart?: GridScale;
   marginTop?: GridScale;
-  marginX?: GridScale;
-  marginY?: GridScale;
+  marginVertical?: GridScale;
 
   padding?: GridScale;
   paddingBottom?: GridScale;
@@ -52,8 +51,6 @@ export interface SpacingProps extends BoxProps {
   paddingStart?: GridScale;
   paddingTop?: GridScale;
   paddingVertical?: GridScale;
-  paddingX?: GridScale;
-  paddingY?: GridScale;
 }
 
 const hasGrid = {
@@ -67,8 +64,7 @@ const hasGrid = {
   marginRight: true,
   marginStart: true,
   marginTop: true,
-  marginX: true,
-  marginY: true,
+  marginVertical: true,
 
   padding: true,
   paddingBottom: true,
@@ -79,8 +75,6 @@ const hasGrid = {
   paddingStart: true,
   paddingTop: true,
   paddingVertical: true,
-  paddingX: true,
-  paddingY: true,
 };
 
 const Spacing = (props: SpacingProps) => {

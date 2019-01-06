@@ -21,11 +21,6 @@ export interface BoxProps extends ViewStyle {
 
   elevation?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
-  marginX?: number | string;
-  marginY?: number | string;
-  paddingX?: number | string;
-  paddingY?: number | string;
-
   shape?: Shape;
 }
 
@@ -60,22 +55,6 @@ const propToFn = {
   elevation: (elevation: 0 | 1 | 2 | 3 | 4, theme: Theme) => {
     return theme.themeVariables.elevations[elevation];
   },
-  marginX: (marginX: number) => ({
-    marginLeft: marginX,
-    marginRight: marginX,
-  }),
-  marginY: (marginY: number) => ({
-    marginBottom: marginY,
-    marginTop: marginY,
-  }),
-  paddingX: (paddingX: number) => ({
-    paddingLeft: paddingX,
-    paddingRight: paddingX,
-  }),
-  paddingY: (paddingY: number) => ({
-    paddingBottom: paddingY,
-    paddingTop: paddingY,
-  }),
   shape: (shape: Shape) => shapeMap[shape],
 };
 
