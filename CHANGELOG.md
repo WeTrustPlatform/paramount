@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/WeTrustPlatform/paramount/compare/v1.12.0...v1.12.1) (2019-01-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency [@expo](https://github.com/expo)/vector-icons to v9 ([#58](https://github.com/WeTrustPlatform/paramount/issues/58)) ([2050e4f](https://github.com/WeTrustPlatform/paramount/commit/2050e4f))
+
 # [1.12.0](https://github.com/WeTrustPlatform/paramount/compare/v1.11.3...v1.12.0) (2019-01-06)
 
 
