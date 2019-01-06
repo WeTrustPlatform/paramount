@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/WeTrustPlatform/paramount/compare/v1.11.3...v1.12.0) (2019-01-06)
+
+
+### Features
+
+* add Hoverable component ([f4c37e7](https://github.com/WeTrustPlatform/paramount/commit/f4c37e7))
+
 ## [1.11.3](https://github.com/WeTrustPlatform/paramount/compare/v1.11.2...v1.11.3) (2019-01-04)
 
 
