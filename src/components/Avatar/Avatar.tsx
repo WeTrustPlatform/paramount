@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Image, ImageStyle, TextStyle } from 'react-native';
+import { Image, View } from 'react-native';
 
 import { Theme, withTheme } from '../../theme';
+import { AvatarStyles } from '../../theme/style-getters/getAvatarStyles';
 import { FillColors } from '../../theme/ThemeInterface';
-import { Box, BoxProps } from '../Layout';
 import { Text } from '../Typography';
 
 // https://github.com/segmentio/evergreen/blob/master/source/avatar/README.md
@@ -79,11 +79,7 @@ export interface AvatarProps {
   /**
    * Inline styles for components
    */
-  dangerouslySetInlineStyle?: {
-    boxStyle?: BoxProps;
-    textStyle?: TextStyle;
-    imageStyle?: ImageStyle;
-  };
+  dangerouslySetInlineStyle?: Partial<AvatarStyles>;
 }
 
 export const AvatarBase = (props: AvatarProps) => {
@@ -120,9 +116,11 @@ export const AvatarBase = (props: AvatarProps) => {
   });
 
   return (
-    <Box
-      {...boxStyle}
-      {...dangerouslySetInlineStyle && dangerouslySetInlineStyle.boxStyle}
+    <View
+      style={{
+        ...boxStyle,
+        ...(dangerouslySetInlineStyle && dangerouslySetInlineStyle.boxStyle),
+      }}
     >
       {(imageUnavailable || forceShowInitials) && (
         <Text
@@ -149,7 +147,7 @@ export const AvatarBase = (props: AvatarProps) => {
           }}
         />
       )}
-    </Box>
+    </View>
   );
 };
 

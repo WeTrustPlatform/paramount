@@ -1,7 +1,5 @@
-import { ImageStyle, TextStyle } from 'react-native';
+import { ImageStyle, TextStyle, ViewStyle } from 'react-native';
 
-import { BoxProps } from '../../components/Layout/Box';
-import { Omit } from '../../types/utils';
 import { AvatarVariables } from '../component-variables/avatarVariables';
 import { FillColors, Fills } from '../ThemeInterface';
 
@@ -16,13 +14,13 @@ export interface AvatarStylesParams {
   sizeLimitOneCharacter: number;
 }
 
-export type GetAvatarStyles = (
-  params: AvatarStylesParams,
-) => {
-  boxStyle: Omit<BoxProps, 'theme'>;
+export interface AvatarStyles {
+  boxStyle: ViewStyle;
   textStyle: TextStyle;
   imageStyle: ImageStyle;
-};
+}
+
+export type GetAvatarStyles = (params: AvatarStylesParams) => AvatarStyles;
 
 export const hashCode = (s?: string) => {
   const str = String(s);
@@ -103,28 +101,21 @@ export const getAvatarStyles = (
 
   return {
     boxStyle: {
+      ...avatarVariables.box,
       backgroundColor: colorProps.backgroundColor,
-      borderRadius: 9999,
       height: size,
-      overflow: 'hidden',
-      position: 'relative',
       width: size,
     },
 
     textStyle: {
-      alignItems: 'center',
+      ...avatarVariables.text,
       color: colorProps.color,
-      display: 'flex',
       fontSize: initialsFontSize,
       height: size,
-      justifyContent: 'center',
       lineHeight: initialsFontSize,
       width: size,
     },
 
-    imageStyle: {
-      height: '100%',
-      width: 'auto',
-    },
+    imageStyle: avatarVariables.image,
   };
 };
