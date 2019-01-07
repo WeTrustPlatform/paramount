@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "expo-test",
-    "slug": "expo-test",
+    "name": "expo",
+    "slug": "expo",
     "privacy": "public",
-    "sdkVersion": "31.0.0",
+    "sdkVersion": "32.0.0",
     "platforms": [
       "ios",
       "android"

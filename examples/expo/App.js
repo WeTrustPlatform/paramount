@@ -8,6 +8,8 @@ import {
   LabeledCheckbox,
   Picker,
   PickerItem,
+  Popover,
+  PopoverController,
   Progress,
   Spacing,
   Switch,
@@ -67,36 +69,54 @@ export default class App extends React.Component {
                 </Box>
               )}
             </Toggle>
-            {/* <Toggle>
-          {({ on, toggle }) => (
-            <Popover
-              isVisible={on}
-              onClose={toggle}
-              position="top-right"
-              content={
-                <Box backgroundColor="white" width={200} height={200}>
-                  <Text>
-                    Long text that should be well visible and non-obstructing
-                  </Text>
-                </Box>
-              }
-            >
-              <Button onPress={toggle} isInline>
-                Top right
-              </Button>
-            </Popover>
-          )}
-        </Toggle> */}
-            <Spacing paddingY={2}>
+            <PopoverController>
+              {({
+                openPopover,
+                closePopover,
+                isPopoverVisible,
+                setTarget,
+                onTargetLayout,
+                targetMeasurements,
+              }) => {
+                return (
+                  <>
+                    <Popover
+                      targetMeasurements={targetMeasurements}
+                      isVisible={isPopoverVisible}
+                      onClose={closePopover}
+                      position="top-right"
+                      content={
+                        <Box backgroundColor="white">
+                          <Text>
+                            Long text that should be well visible and
+                            non-obstructing Long text that should be well
+                            visible and non-obstructing
+                          </Text>
+                        </Box>
+                      }
+                    />
+                    <Button
+                      onLayout={onTargetLayout}
+                      ref={setTarget}
+                      onPress={openPopover}
+                      isInline
+                    >
+                      Popover Button
+                    </Button>
+                  </>
+                );
+              }}
+            </PopoverController>
+            <Spacing paddingVertical={2}>
               <Alert title="Info" description="Message" />
             </Spacing>
-            <Spacing paddingY={2}>
+            <Spacing paddingVertical={2}>
               <Alert intent="success" title="Success" description="Message" />
             </Spacing>
-            <Spacing paddingY={2}>
+            <Spacing paddingVertical={2}>
               <Alert intent="warning" title="Warning" description="Message" />
             </Spacing>
-            <Spacing paddingY={2}>
+            <Spacing paddingVertical={2}>
               <Alert intent="danger" title="Danger" description="Message" />
             </Spacing>
             <TextInputField
