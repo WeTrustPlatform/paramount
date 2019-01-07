@@ -4439,10 +4439,10 @@ p-try@^1.0.0:
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-1.0.0.tgz#cbc79cdbaf8fd4228e13f621f2b1a237c1b207b3"
   integrity sha1-y8ec26+P1CKOE/Yh8rGiN8GyB7M=
 
-paramount-ui@^1.12.2:
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/paramount-ui/-/paramount-ui-1.12.2.tgz#ce4a3477e82ed2754dd3a32c1477fc78549e91a4"
-  integrity sha512-fs3FT5ldcVpQ6LP3mqZh1FWRmPcqb4KfLjqJuiIurG8EzzXKF5528Q1gttfuTJ4TRcfdQoHlGw2s467dS+KNVg==
+paramount-ui@^1.12.3:
+  version "1.12.3"
+  resolved "https://registry.yarnpkg.com/paramount-ui/-/paramount-ui-1.12.3.tgz#45dbe40fb7d1ba8ae11fbe904894550603ff840a"
+  integrity sha512-XbKltK+pvhAwUPrWHisVClaOZJM3N6FTiJfN84muxxaJe9/79gum/cXjBf9Fau4FnSORjhI/xU7Aa50wOq8hNQ==
   dependencies:
     "@expo/vector-icons" "^9.0.0"
     exenv "^1.2.2"

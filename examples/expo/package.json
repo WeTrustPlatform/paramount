@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "expo": "^32.0.0",
-    "paramount-ui": "^1.12.2",
+    "paramount-ui": "^1.12.3",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-powerplug": "^1.0.0"
