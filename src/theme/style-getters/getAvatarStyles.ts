@@ -111,9 +111,7 @@ export const getAvatarStyles = (
       ...avatarVariables.text,
       color: colorProps.color,
       fontSize: initialsFontSize,
-      height: size,
       lineHeight: initialsFontSize,
-      width: size,
     },
 
     imageStyle: avatarVariables.image,

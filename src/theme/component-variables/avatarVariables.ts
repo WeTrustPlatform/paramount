@@ -27,11 +27,7 @@ export const getAvatarVariables = (
       width: '100%',
     },
 
-    text: {
-      alignItems: 'center',
-      display: 'flex',
-      justifyContent: 'center',
-    },
+    text: {},
 
     fills: themeVariables.fills,
   };
