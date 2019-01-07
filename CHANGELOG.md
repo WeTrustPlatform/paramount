@@ -1,3 +1,11 @@
+## [1.12.3](https://github.com/WeTrustPlatform/paramount/compare/v1.12.2...v1.12.3) (2019-01-07)
+
+
+### Bug Fixes
+
+* avatar centered alignment ([41c8fc0](https://github.com/WeTrustPlatform/paramount/commit/41c8fc0))
+* update avatar tests ([3911a34](https://github.com/WeTrustPlatform/paramount/commit/3911a34))
+
 ## [1.12.2](https://github.com/WeTrustPlatform/paramount/compare/v1.12.1...v1.12.2) (2019-01-07)
 
 
