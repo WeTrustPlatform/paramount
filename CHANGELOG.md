@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/WeTrustPlatform/paramount/compare/v1.12.3...v1.13.0) (2019-01-07)
+
+
+### Features
+
+* add Responsive component ([efb5ee1](https://github.com/WeTrustPlatform/paramount/commit/efb5ee1))
+
 ## [1.12.3](https://github.com/WeTrustPlatform/paramount/compare/v1.12.2...v1.12.3) (2019-01-07)
 
 
