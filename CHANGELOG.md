@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/WeTrustPlatform/paramount/compare/v1.12.1...v1.12.2) (2019-01-07)
+
+
+### Bug Fixes
+
+* avatar native render and some refactoring ([d1a83c4](https://github.com/WeTrustPlatform/paramount/commit/d1a83c4))
+
 ## [1.12.1](https://github.com/WeTrustPlatform/paramount/compare/v1.12.0...v1.12.1) (2019-01-06)
 
 
