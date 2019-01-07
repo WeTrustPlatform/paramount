@@ -10,8 +10,8 @@ export interface HoverableChildrenProps {
 
 export interface HoverableProps {
   children: React.ReactNode | RenderPropType;
-  onHoverIn: () => void;
-  onHoverOut: () => void;
+  onHoverIn?: () => void;
+  onHoverOut?: () => void;
 }
 
 export default class Hoverable extends React.Component<HoverableProps> {

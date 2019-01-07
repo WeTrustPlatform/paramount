@@ -1,4 +1,5 @@
 export { default as ViewMeasure, ViewMeasureProps } from './ViewMeasure';
+export * from './Responsive';
 export {
   default as Hoverable,
   HoverableProps,
