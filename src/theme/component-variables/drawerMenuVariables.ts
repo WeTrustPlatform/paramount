@@ -2,16 +2,16 @@ import { ViewStyle } from 'react-native';
 
 import { ThemeVariables } from '../ThemeInterface';
 
-export interface OverlayMenuVariables {
+export interface DrawerMenuVariables {
   body: ViewStyle;
   container: ViewStyle;
   modalContainer: ViewStyle;
   overlay: ViewStyle & { cursor?: string };
 }
 
-export const getOverlayMenuVariables = (
+export const getDrawerMenuVariables = (
   themeVariables: ThemeVariables,
-): OverlayMenuVariables => {
+): DrawerMenuVariables => {
   return {
     body: {
       maxHeight: 400,

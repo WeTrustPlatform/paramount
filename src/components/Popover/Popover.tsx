@@ -28,6 +28,7 @@ export interface PopoverProps {
    */
   parentHeight?: number;
   isVisible?: boolean;
+  showArrow?: boolean;
   position?: Position;
   targetMeasurements?: Measurements;
   /**
@@ -309,6 +310,7 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
       isVisible,
       onClose,
       position = defaultProps.position,
+      showArrow = true,
       targetMeasurements,
     } = this.props;
     const {
@@ -347,9 +349,9 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
       initialPopoverMeasurements,
     )(DEFAULT_OFFSET)(isOverflowing);
 
-    const renderArrow = getPopoverArrow(correctedPosition)(
-      finalTargetMeasurements,
-    )(theme);
+    const renderArrow = showArrow
+      ? getPopoverArrow(correctedPosition)(finalTargetMeasurements)(theme)
+      : null;
 
     return (
       <>

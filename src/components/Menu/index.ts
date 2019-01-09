@@ -1,1 +1,1 @@
-export { default as OverlayMenu, OverlayMenuProps } from './OverlayMenu';
+export { default as DrawerMenu, DrawerMenuProps } from './DrawerMenu';

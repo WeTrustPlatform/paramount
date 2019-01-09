@@ -1,0 +1,53 @@
+---
+name: DrawerMenu
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import { Toggle } from 'react-powerplug';
+
+import DrawerMenu from './DrawerMenu';
+import { Button } from '../Button';
+import { Box, Spacing } from '../Layout';
+import { Text } from '../Typography';
+
+## Usage
+
+### DrawerMenus with fixed width and height content
+
+<Playground>
+  <Toggle>
+    {({ on, toggle }) => (
+      <>
+        <Button onPress={toggle} isInline>
+          Open overlay menu
+        </Button>
+        <DrawerMenu
+          options={[
+            {
+              onPress: toggle,
+              children: 'Menu Option 1',
+              color: 'danger',
+            },
+            {
+              onPress: toggle,
+              children: 'Menu Option 2',
+              color: 'primary',
+            },
+            {
+              onPress: toggle,
+              children: 'Menu Option 3',
+              color: 'secondary',
+            },
+            {
+              onPress: toggle,
+              children: 'Menu Option 4',
+            },
+          ]}
+          isVisible={on}
+          onClose={toggle}
+        />
+      </>
+    )}
+  </Toggle>
+</Playground>

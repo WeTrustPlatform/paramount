@@ -32,7 +32,6 @@ export const getPopoverVariables = (
     },
     popover: {
       backgroundColor: themeVariables.colors.background.plain,
-      padding: 16,
       position: 'absolute',
       zIndex: 1,
       ...themeVariables.elevations[2],

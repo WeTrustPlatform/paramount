@@ -1,0 +1,52 @@
+---
+name: DropdownMenu
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import { Toggle } from 'react-powerplug';
+
+import DropdownMenu from './DropdownMenu';
+import { Button } from '../Button';
+import { Box, Spacing } from '../Layout';
+import { Text } from '../Typography';
+
+## Usage
+
+### Dropdown Menu
+
+<Playground>
+  <Toggle>
+    {({ on, toggle }) => (
+      <>
+        <DropdownMenu
+          options={[
+            {
+              onPress: toggle,
+              children: 'Menu Option 1',
+              color: 'danger',
+            },
+            {
+              onPress: toggle,
+              children: 'Menu Option 2',
+              color: 'primary',
+            },
+            {
+              onPress: toggle,
+              children: 'Menu Option 3',
+              color: 'secondary',
+            },
+            {
+              onPress: toggle,
+              children: 'Menu Option 4',
+            },
+          ]}
+          isVisible={on}
+          onClose={toggle}
+        >
+          <Button onPress={toggle}>Open dropdown menu</Button>
+        </DropdownMenu>
+      </>
+    )}
+  </Toggle>
+</Playground>

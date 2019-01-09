@@ -7,9 +7,9 @@ import { getCheckboxStyles } from './getCheckboxStyles';
 import { getCounterStyles } from './getCounterStyles';
 import { getDialogStyles } from './getDialogStyles';
 import { getDividerStyles } from './getDividerStyles';
+import { getDrawerMenuStyles } from './getDrawerMenuStyles';
 import { getDrawerStyles } from './getDrawerStyles';
 import { getHeadingStyle } from './getHeadingStyle';
-import { getOverlayMenuStyles } from './getOverlayMenuStyles';
 import { getParagraphStyles } from './getParagraphStyles';
 import { getPickerStyles } from './getPickerStyles';
 import { getPopoverStyles } from './getPopoverStyles';
@@ -32,9 +32,9 @@ export const getStyleGetters = (
     getCounterStyles: getCounterStyles(componentVariables.counter),
     getDialogStyles: getDialogStyles(componentVariables.dialog),
     getDividerStyles: getDividerStyles(componentVariables.divider),
+    getDrawerMenuStyles: getDrawerMenuStyles(componentVariables.drawerMenu),
     getDrawerStyles: getDrawerStyles(componentVariables.drawer),
     getHeadingStyles: getHeadingStyle(componentVariables.heading),
-    getOverlayMenuStyles: getOverlayMenuStyles(componentVariables.overlayMenu),
     getParagraphStyles: getParagraphStyles(componentVariables.paragraph),
     getPickerStyles: getPickerStyles(componentVariables.picker),
     getPopoverStyles: getPopoverStyles(componentVariables.popover),
