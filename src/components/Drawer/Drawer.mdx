@@ -1,0 +1,64 @@
+---
+name: Drawer
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import { Toggle } from 'react-powerplug';
+
+import Drawer from './Drawer';
+import { Button } from '../Button';
+import { Box, Spacing } from '../Layout';
+import { Text } from '../Typography';
+
+## Usage
+
+### Drawers with fixed width and height content
+
+<Playground>
+  <Toggle>
+    {({ on, toggle }) => (
+      <>
+        <Button onPress={toggle}>Open bottom drawer</Button>
+        <Drawer space="30%" isVisible={on} onClose={toggle}>
+          <Box width="100%" height="100%" backgroundColor="white" />
+        </Drawer>
+      </>
+    )}
+
+  </Toggle>
+
+<Toggle>
+  {({ on, toggle }) => (
+    <>
+      <Button onPress={toggle}>Open top drawer</Button>
+      <Drawer space="30%" position="top" isVisible={on} onClose={toggle}>
+        <Box width="100%" height="100%" backgroundColor="white" />
+      </Drawer>
+    </>
+  )}
+</Toggle>
+
+<Toggle>
+  {({ on, toggle }) => (
+    <>
+      <Button onPress={toggle}>Open left drawer</Button>
+      <Drawer space="30%" position="left" isVisible={on} onClose={toggle}>
+        <Box width="100%" height="100%" backgroundColor="white" />
+      </Drawer>
+    </>
+  )}
+</Toggle>
+
+<Toggle>
+  {({ on, toggle }) => (
+    <>
+      <Button onPress={toggle}>Open right drawer</Button>
+      <Drawer space="30%" position="right" isVisible={on} onClose={toggle}>
+        <Box width="100%" height="100%" backgroundColor="white" />
+      </Drawer>
+    </>
+  )}
+</Toggle>
+
+</Playground>

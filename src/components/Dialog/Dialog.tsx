@@ -3,7 +3,7 @@ import { TouchableWithoutFeedback, View } from 'react-native';
 
 import { Theme, withTheme } from '../../theme';
 import { DialogStyles } from '../../theme/style-getters/getDialogStyles';
-import Modal from './Modal';
+import { Modal } from '../Modal';
 
 // TODO: Import from react-native when react-native-web implementation is ready
 

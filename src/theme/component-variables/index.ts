@@ -7,7 +7,9 @@ import { getCheckboxVariables } from './checkboxVariables';
 import { getCounterVariables } from './counterVariables';
 import { getDialogVariables } from './dialogVariables';
 import { getDividerVariables } from './dividerVariables';
+import { getDrawerVariables } from './drawerVariables';
 import { getHeadingVariables } from './headingVariables';
+import { getOverlayMenuVariables } from './overlayMenuVariables';
 import { getParagraphVariables } from './paragraphVariables';
 import { getPickerVariables } from './pickerVariables';
 import { getPopoverVariables } from './popoverVariables';
@@ -30,7 +32,9 @@ export const getComponentVariables = (
     counter: getCounterVariables(themeVariables),
     dialog: getDialogVariables(themeVariables),
     divider: getDividerVariables(themeVariables),
+    drawer: getDrawerVariables(themeVariables),
     heading: getHeadingVariables(themeVariables),
+    overlayMenu: getOverlayMenuVariables(themeVariables),
     paragraph: getParagraphVariables(themeVariables),
     picker: getPickerVariables(themeVariables),
     popover: getPopoverVariables(themeVariables),

@@ -9,8 +9,8 @@ import {
 import { POSITION, Position } from '../../constants';
 import { Theme, withTheme } from '../../theme';
 import { PopoverStyles } from '../../theme/style-getters/getPopoverStyles';
-import Modal from '../Dialog/Modal';
 import { Measurements, ViewMeasure } from '../Helpers';
+import { Modal } from '../Modal';
 import { getPopoverArrow } from './getPopoverArrow';
 
 export interface PopoverProps {

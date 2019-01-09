@@ -49,7 +49,8 @@ class Modal extends React.PureComponent<ModalProps> {
     }
   };
 
-  public render() {
+  // @ts-ignore: TOFIX
+  public render(): any {
     const { transparent, visible, isScrollable = false } = this.props;
 
     if (!visible || !this.el) return null;
