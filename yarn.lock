@@ -1463,10 +1463,10 @@
     "@types/react-native" "*"
     "@types/react-native-vector-icons" "*"
 
-"@types/jest@23.3.11":
-  version "23.3.11"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.11.tgz#d3a936ae753d9e484965f5cbd19027c2b8af2551"
-  integrity sha512-eroF85PoG87XjCwzxey7yBsQNkIY/TV5myKKSG/022A0FW25afdu/uub6JDMS5eT68zBBt82S+w/MFOTjeLM3Q==
+"@types/jest@23.3.12":
+  version "23.3.12"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-23.3.12.tgz#7e0ced251fa94c3bc2d1023d4b84b2992fa06376"
+  integrity sha512-/kQvbVzdEpOq4tEWT79yAHSM4nH4xMlhJv2GrLVQt4Qmo8yYsPdioBM1QpN/2GX1wkfMnyXvdoftvLUr0LBj7Q==
 
 "@types/node@*":
   version "10.12.18"
@@ -1501,10 +1501,10 @@
     "@types/prop-types" "*"
     "@types/react" "*"
 
-"@types/react-native@0.57.25":
-  version "0.57.25"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.25.tgz#20041561e5c5d6b4a0ed563be37ec3b12d31a8ae"
-  integrity sha512-rCqzVLo45p9nh28a/6nQ/9Td3k2IvOgPc6xVAF9MIdGJAD1ijqpIn6eyhy0NZjvIEdjdO83eBx0+doOmN8Jk0g==
+"@types/react-native@0.57.26":
+  version "0.57.26"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.57.26.tgz#d0a737d8a2b201d0aac84284c6a001793debc166"
+  integrity sha512-MX+JCT2xwpkanLNjYb5V/TKJE0pj5HHEpgseiCNsxm9txjUdg5X59LZM3CHY1hn53qSssAEQYZYfXHjzRmkFQQ==
   dependencies:
     "@types/prop-types" "*"
     "@types/react" "*"
@@ -10286,10 +10286,10 @@ react-hot-loader@^4.6.3:
     shallowequal "^1.0.2"
     source-map "^0.7.3"
 
-react-icons@3.2.2:
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.2.2.tgz#7b1dc795004a119a35175e62ecef91e5c9c90962"
-  integrity sha512-0DiXTcECUNoMvze2zcFwYYrHAFgQ2rBM0+HIHfaECKRfE1NZYwfuUSbwyg9s1uVPuy7o/KqQKSwBGMWQFvdrhQ==
+react-icons@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.3.0.tgz#09409cad23c39149e419af5c928eee6f9f456b93"
+  integrity sha512-OY8yBAyww1VEro12Zbt6dZqz77zN7LXukC4oA4i4fWjxTjCbbqsPy6BrfAh7BYPtIRaTXhpoYlhdoDaT/kxdog==
 
 react-imported-component@^5.2.4:
   version "5.2.4"
