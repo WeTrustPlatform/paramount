@@ -1,3 +1,10 @@
+## [1.13.1](https://github.com/WeTrustPlatform/paramount/compare/v1.13.0...v1.13.1) (2019-01-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-icons to v3.3.0 ([#63](https://github.com/WeTrustPlatform/paramount/issues/63)) ([d204ff5](https://github.com/WeTrustPlatform/paramount/commit/d204ff5))
+
 # [1.13.0](https://github.com/WeTrustPlatform/paramount/compare/v1.12.3...v1.13.0) (2019-01-07)
 
 
