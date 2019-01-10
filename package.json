@@ -41,7 +41,7 @@
     "react": "16.7.0",
     "react-art": "16.7.0",
     "react-dom": "16.7.0",
-    "react-icons": "3.2.2",
+    "react-icons": "3.3.0",
     "react-native-web": "0.9.13",
     "react-spring": "^7.0.0"
   },
