@@ -1,3 +1,18 @@
+# [1.14.0](https://github.com/WeTrustPlatform/paramount/compare/v1.13.1...v1.14.0) (2019-01-10)
+
+
+### Bug Fixes
+
+* add react-powerplug to dependencies ([972a8e5](https://github.com/WeTrustPlatform/paramount/commit/972a8e5))
+* add, fix and update snapshots ([0141e06](https://github.com/WeTrustPlatform/paramount/commit/0141e06))
+
+
+### Features
+
+* add buttongroup and use it from menus ([592ecd4](https://github.com/WeTrustPlatform/paramount/commit/592ecd4))
+* add drawer menu and dropdown menu ([5fc0d25](https://github.com/WeTrustPlatform/paramount/commit/5fc0d25))
+* new drawer component ([c3553a9](https://github.com/WeTrustPlatform/paramount/commit/c3553a9))
+
 ## [1.13.1](https://github.com/WeTrustPlatform/paramount/compare/v1.13.0...v1.13.1) (2019-01-10)
 
 
