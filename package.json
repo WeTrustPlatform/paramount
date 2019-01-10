@@ -43,6 +43,7 @@
     "react-dom": "16.7.0",
     "react-icons": "3.3.0",
     "react-native-web": "0.9.13",
+    "react-powerplug": "1.0.0",
     "react-spring": "^7.0.0"
   },
   "devDependencies": {
@@ -76,7 +77,6 @@
     "metro-react-native-babel-preset": "0.51.1",
     "prettier": "1.15.3",
     "react-docgen-typescript-loader": "3.0.0",
-    "react-powerplug": "1.0.0",
     "react-test-renderer": "16.7.0",
     "rimraf": "2.6.3",
     "semantic-release": "15.13.2",
