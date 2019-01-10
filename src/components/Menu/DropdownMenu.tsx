@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { Theme, withTheme } from '../../theme';
 import { DrawerMenuStyles } from '../../theme/style-getters/getDrawerMenuStyles';
-import { Button, ButtonProps } from '../Button';
+import { Button, ButtonGroup, ButtonProps } from '../Button';
 import { Measurements, ViewMeasure } from '../Helpers';
 import { Box } from '../Layout';
 import { Popover } from '../Popover';
@@ -39,19 +39,35 @@ class DropdownMenuBase extends React.Component<DropdownMenuProps> {
   };
 
   public render = () => {
-    const { options = [], isVisible, onClose, children } = this.props;
+    const { options = [], isVisible, onClose, children, theme } = this.props;
     const { targetMeasurements } = this.state;
 
     return (
       <Popover
         position="bottom"
         content={
-          <Box width={targetMeasurements.width}>
-            {options.map(option => (
-              <Button key={option.children} {...option} />
-            ))}
+          <Box
+            elevation={1}
+            borderRadius={theme.themeVariables.controlBorderRadius.medium}
+            borderWidth={1}
+            borderColor={theme.themeVariables.colors.border.default}
+            width={targetMeasurements.width}
+          >
+            <ButtonGroup>
+              {options.map(option => (
+                <Button key={option.children} {...option} />
+              ))}
+            </ButtonGroup>
           </Box>
         }
+        dangerouslySetInlineStyle={{
+          modalContainerStyle: {
+            borderRadius: theme.themeVariables.controlBorderRadius.medium,
+          },
+          popoverStyle: {
+            borderRadius: theme.themeVariables.controlBorderRadius.medium,
+          },
+        }}
         showArrow={false}
         isVisible={isVisible}
         onClose={onClose}

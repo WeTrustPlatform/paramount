@@ -88,7 +88,7 @@ export const getButtonVariables = (
         default: {
           backgroundColor: themeVariables.colors.background.tint1,
           borderColor: themeVariables.colors.border.default,
-          borderWidth: 1,
+          borderWidth: 2,
           color: themeVariables.colors.text.default,
 
           focusColor: themeVariables.colors.background.tint2,
@@ -98,7 +98,7 @@ export const getButtonVariables = (
         danger: {
           backgroundColor: themeVariables.colors.background.danger.default,
           borderColor: themeVariables.colors.border.danger,
-          borderWidth: 1,
+          borderWidth: 2,
           color: 'white',
 
           focusColor: themeVariables.colors.background.danger.focus,
@@ -109,7 +109,7 @@ export const getButtonVariables = (
         primary: {
           backgroundColor: themeVariables.colors.background.primary.default,
           borderColor: themeVariables.colors.border.primary,
-          borderWidth: 1,
+          borderWidth: 2,
           color: 'white',
 
           focusColor: themeVariables.colors.background.primary.focus,
@@ -120,7 +120,7 @@ export const getButtonVariables = (
         secondary: {
           backgroundColor: themeVariables.colors.background.secondary.default,
           borderColor: themeVariables.colors.border.secondary,
-          borderWidth: 1,
+          borderWidth: 2,
           color: 'white',
 
           focusColor: themeVariables.colors.background.secondary.focus,

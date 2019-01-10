@@ -1,10 +1,8 @@
 import * as React from 'react';
 import {
-  TextStyle,
   TouchableHighlight,
   TouchableHighlightProps,
   View,
-  ViewStyle,
 } from 'react-native';
 
 import { Theme, withTheme } from '../../theme';
@@ -13,6 +11,7 @@ import {
   ButtonColor,
   ButtonSize,
 } from '../../theme/component-variables/buttonVariables';
+import { ButtonStyles } from '../../theme/style-getters/getButtonStyles';
 import { Spacing } from '../Layout';
 import { LoadingDots } from '../Loading';
 import { Text } from '../Typography';
@@ -94,10 +93,7 @@ export interface ButtonProps extends TouchableHighlightProps {
   /**
    * Inline styles for components
    */
-  dangerouslySetInlineStyle?: {
-    buttonStyle: ViewStyle;
-    textStyle: TextStyle;
-  };
+  dangerouslySetInlineStyle?: Partial<ButtonStyles>;
 }
 
 const ButtonBase = (props: ButtonProps) => {

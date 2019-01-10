@@ -20,11 +20,7 @@ export type GetButtonStyles = (
   isDisabled: boolean,
   isLoading: boolean,
   isInline: boolean,
-) => {
-  buttonStyle: ViewStyle;
-  focusColor: string;
-  textStyle: TextStyle;
-};
+) => ButtonStyles;
 
 export const getButtonStyles = (
   buttonVariables: ButtonVariables,

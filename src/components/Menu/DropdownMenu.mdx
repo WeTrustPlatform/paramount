@@ -8,7 +8,7 @@ import { Toggle } from 'react-powerplug';
 
 import DropdownMenu from './DropdownMenu';
 import { Button } from '../Button';
-import { Box, Spacing } from '../Layout';
+import { Box } from '../Layout';
 import { Text } from '../Typography';
 
 ## Usage
@@ -16,37 +16,46 @@ import { Text } from '../Typography';
 ### Dropdown Menu
 
 <Playground>
-  <Toggle>
-    {({ on, toggle }) => (
-      <>
-        <DropdownMenu
-          options={[
-            {
-              onPress: toggle,
-              children: 'Menu Option 1',
-              color: 'danger',
-            },
-            {
-              onPress: toggle,
-              children: 'Menu Option 2',
-              color: 'primary',
-            },
-            {
-              onPress: toggle,
-              children: 'Menu Option 3',
-              color: 'secondary',
-            },
-            {
-              onPress: toggle,
-              children: 'Menu Option 4',
-            },
-          ]}
-          isVisible={on}
-          onClose={toggle}
-        >
-          <Button onPress={toggle}>Open dropdown menu</Button>
-        </DropdownMenu>
-      </>
-    )}
-  </Toggle>
+  <Box>
+    <Toggle>
+      {({ on, toggle }) => (
+        <>
+          <DropdownMenu
+            options={[
+              {
+                onPress: toggle,
+                children: 'Menu Option 1',
+                color: 'danger',
+                appearance: 'minimal',
+              },
+              {
+                onPress: toggle,
+                children: 'Menu Option 2',
+                color: 'primary',
+                appearance: 'minimal',
+              },
+              {
+                onPress: toggle,
+                children: 'Menu Option 3',
+                color: 'secondary',
+                appearance: 'minimal',
+              },
+              {
+                onPress: toggle,
+                children: 'Menu Option 4',
+                appearance: 'minimal',
+              },
+            ]}
+            isVisible={on}
+            onClose={toggle}
+          >
+            <Button isInline onPress={toggle}>
+              Open dropdown menu
+            </Button>
+          </DropdownMenu>
+        </>
+      )}
+    </Toggle>
+  </Box>
+
 </Playground>
