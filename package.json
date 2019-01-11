@@ -35,16 +35,17 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@expo/vector-icons": "^9.0.0",
-    "exenv": "^1.2.2",
+    "@expo/vector-icons": "9.0.0",
+    "exenv": "1.2.2",
     "focus-trap": "4.0.2",
+    "history": "4.7.2",
     "react": "16.7.0",
     "react-art": "16.7.0",
     "react-dom": "16.7.0",
     "react-icons": "3.3.0",
     "react-native-web": "0.9.13",
     "react-powerplug": "1.0.0",
-    "react-spring": "^7.0.0"
+    "react-spring": "7.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
@@ -60,6 +61,7 @@
     "@semantic-release/release-notes-generator": "7.1.4",
     "@types/exenv": "1.2.0",
     "@types/expo__vector-icons": "6.2.3",
+    "@types/history": "4.7.2",
     "@types/jest": "23.3.12",
     "@types/react": "16.7.13",
     "@types/react-dom": "16.0.11",

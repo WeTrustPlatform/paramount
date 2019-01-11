@@ -2,12 +2,12 @@ import createFocusTrap, { FocusTrap } from 'focus-trap';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { ModalProps } from './Modal';
+import { ModalBaseProps } from './ModalBase';
 
 // Temporary usage until it is integrated
 // https://github.com/necolas/react-native-web/issues/1020
 
-class Modal extends React.PureComponent<ModalProps> {
+class ModalBase extends React.PureComponent<ModalBaseProps> {
   public el: HTMLDivElement | null;
   public modalRoot: HTMLBodyElement | null;
   public focusTrap: FocusTrap | null;
@@ -15,7 +15,7 @@ class Modal extends React.PureComponent<ModalProps> {
     HTMLDivElement
   >();
 
-  constructor(props: ModalProps) {
+  constructor(props: ModalBaseProps) {
     super(props);
     this.el = null;
     this.modalRoot = null;
@@ -36,8 +36,10 @@ class Modal extends React.PureComponent<ModalProps> {
       onRequestClose,
     } = this.props;
 
-    if (visible && !isBackgroundScrollable) {
-      document.body.style.overflow = 'hidden';
+    if (visible) {
+      if (!isBackgroundScrollable) {
+        document.body.style.overflow = 'hidden';
+      }
 
       if (this.content.current) {
         this.focusTrap = createFocusTrap(this.content.current, {
@@ -49,7 +51,9 @@ class Modal extends React.PureComponent<ModalProps> {
         this.focusTrap.activate();
       }
     } else {
-      document.body.style.overflow = '';
+      if (!isBackgroundScrollable) {
+        document.body.style.overflow = '';
+      }
     }
   }
 
@@ -85,4 +89,4 @@ class Modal extends React.PureComponent<ModalProps> {
   }
 }
 
-export default Modal;
+export default ModalBase;

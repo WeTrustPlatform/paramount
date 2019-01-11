@@ -7,7 +7,6 @@ import { Toggle } from 'react-powerplug';
 import { Playground, PropsTable } from 'docz';
 
 import { Modal } from '.';
-import { ConfirmDialog } from '.';
 import { Button } from '../Button';
 import { Box } from '../Layout';
 import { Text } from '../Typography';
@@ -16,16 +15,37 @@ import { Text } from '../Typography';
 
 <Playground>
   <Toggle initial={false}>
-    {({ on, toggle }) => (
+    {({ on, toggle, set }) => (
       <Box>
-        <Modal visible={on} onRequestClose={toggle}>
+        <Modal visible={on} onRequestClose={() => set(false)}>
           <Box height={1800}>
             <Text>Put any content in the modal</Text>
-            <Button onPress={toggle}>Close button one</Button>
-            <Button onPress={toggle}>Close button two</Button>
+            <Button onPress={() => set(false)}>Close button one</Button>
+            <Button onPress={() => set(false)}>Close button two</Button>
           </Box>
         </Modal>
-        <Button onPress={toggle}>Open modal</Button>
+        <Button onPress={() => set(true)}>Open modal</Button>
+      </Box>
+    )}
+  </Toggle>
+</Playground>
+
+## Modal using browser history
+
+Same as `Modal` below, with the difference that this uses `useHistory` prop that uses `hash` or `query-string` to determine visibility of the modal. The goal is to mimic Android's back button behavior on web which closes modals. On RN, this will have no effect and will use a regular `Modal`
+
+<Playground>
+  <Toggle initial={false}>
+    {({ on, toggle, set }) => (
+      <Box>
+        <Modal useHistory visible={on} onRequestClose={() => set(false)}>
+          <Box height={1800}>
+            <Text>Put any content in the modal</Text>
+            <Button onPress={() => set(false)}>Close button one</Button>
+            <Button onPress={() => set(false)}>Close button two</Button>
+          </Box>
+        </Modal>
+        <Button onPress={() => set(true)}>Open history modal</Button>
       </Box>
     )}
   </Toggle>
