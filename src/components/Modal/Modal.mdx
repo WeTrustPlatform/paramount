@@ -1,0 +1,36 @@
+---
+name: Modal
+menu: Components
+---
+
+import { Toggle } from 'react-powerplug';
+import { Playground, PropsTable } from 'docz';
+
+import { Modal } from '.';
+import { ConfirmDialog } from '.';
+import { Button } from '../Button';
+import { Box } from '../Layout';
+import { Text } from '../Typography';
+
+## Modal
+
+<Playground>
+  <Toggle initial={false}>
+    {({ on, toggle }) => (
+      <Box>
+        <Modal visible={on} onRequestClose={toggle}>
+          <Box height={1800}>
+            <Text>Put any content in the modal</Text>
+            <Button onPress={toggle}>Close button one</Button>
+            <Button onPress={toggle}>Close button two</Button>
+          </Box>
+        </Modal>
+        <Button onPress={toggle}>Open modal</Button>
+      </Box>
+    )}
+  </Toggle>
+</Playground>
+
+## Modal Props
+
+<PropsTable of={Modal} />

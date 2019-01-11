@@ -3,7 +3,7 @@ import { Modal as RNModal, ModalProps as RNModalProps } from 'react-native';
 
 export interface ModalProps extends RNModalProps {
   /** For Web Desktop, whether should scroll when user initiates non-touch scroll (mouse, keyboard) */
-  isScrollable?: boolean;
+  isBackgroundScrollable?: boolean;
 }
 
 const Modal = (props: ModalProps) => <RNModal {...props} />;

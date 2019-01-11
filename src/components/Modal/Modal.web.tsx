@@ -1,23 +1,25 @@
-// Temporary usage until it is integrated
-// https://github.com/necolas/react-native-web/issues/1020
-// @ts-ignore: FIX: Fix typing of this module
-import FocusTrap from 'focus-trap-react';
+import createFocusTrap, { FocusTrap } from 'focus-trap';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
 import { ModalProps } from './Modal';
 
-const ESC_KEY = 27;
+// Temporary usage until it is integrated
+// https://github.com/necolas/react-native-web/issues/1020
 
 class Modal extends React.PureComponent<ModalProps> {
   public el: HTMLDivElement | null;
   public modalRoot: HTMLBodyElement | null;
-  public content: React.RefObject<HTMLDivElement> = React.createRef();
+  public focusTrap: FocusTrap | null;
+  public content: React.RefObject<HTMLDivElement> = React.createRef<
+    HTMLDivElement
+  >();
 
   constructor(props: ModalProps) {
     super(props);
     this.el = null;
     this.modalRoot = null;
+    this.focusTrap = null;
   }
 
   public componentDidMount() {
@@ -28,10 +30,27 @@ class Modal extends React.PureComponent<ModalProps> {
   }
 
   public componentDidUpdate() {
-    const { visible, isScrollable = false } = this.props;
+    const {
+      visible,
+      isBackgroundScrollable = false,
+      onRequestClose,
+    } = this.props;
 
-    if (visible && !isScrollable) document.body.style.overflow = 'hidden';
-    else document.body.style.overflow = '';
+    if (visible && !isBackgroundScrollable) {
+      document.body.style.overflow = 'hidden';
+
+      if (this.content.current) {
+        this.focusTrap = createFocusTrap(this.content.current, {
+          fallbackFocus: this.content.current,
+          initialFocus: this.content.current,
+          onDeactivate: onRequestClose,
+        });
+
+        this.focusTrap.activate();
+      }
+    } else {
+      document.body.style.overflow = '';
+    }
   }
 
   public componentWillUnmount() {
@@ -40,39 +59,27 @@ class Modal extends React.PureComponent<ModalProps> {
     }
   }
 
-  public handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    const { onRequestClose } = this.props;
-
-    if (event.keyCode === ESC_KEY && onRequestClose) {
-      event.stopPropagation();
-      onRequestClose();
-    }
-  };
-
-  // @ts-ignore: TOFIX
-  public render(): any {
-    const { transparent, visible, isScrollable = false } = this.props;
+  public render() {
+    const { transparent, visible, isBackgroundScrollable = false } = this.props;
 
     if (!visible || !this.el) return null;
 
     return ReactDOM.createPortal(
-      <FocusTrap>
-        <div
-          ref={this.content}
-          onKeyDown={this.handleKeyDown}
-          style={{
-            backgroundColor: transparent ? 'transparent' : 'white',
-            bottom: 0,
-            left: 0,
-            position: isScrollable ? 'absolute' : 'fixed',
-            right: 0,
-            top: 0,
-            zIndex: 1000,
-          }}
-        >
-          {this.props.children}
-        </div>
-      </FocusTrap>,
+      <div
+        tabIndex={-1}
+        ref={this.content}
+        style={{
+          backgroundColor: transparent ? 'transparent' : 'white',
+          bottom: 0,
+          left: 0,
+          position: isBackgroundScrollable ? 'absolute' : 'fixed',
+          right: 0,
+          top: 0,
+          zIndex: 1000,
+        }}
+      >
+        {this.props.children}
+      </div>,
       this.el,
     );
   }

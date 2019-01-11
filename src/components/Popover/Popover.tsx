@@ -385,7 +385,7 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
           visible={isAdjustingContent || isVisible}
           transparent
           onRequestClose={onClose}
-          isScrollable
+          isBackgroundScrollable
         >
           <View
             style={{

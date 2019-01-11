@@ -37,7 +37,7 @@
   "dependencies": {
     "@expo/vector-icons": "^9.0.0",
     "exenv": "^1.2.2",
-    "focus-trap-react": "^5.0.0",
+    "focus-trap": "4.0.2",
     "react": "16.7.0",
     "react-art": "16.7.0",
     "react-dom": "16.7.0",

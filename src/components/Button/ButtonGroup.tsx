@@ -67,12 +67,10 @@ const ButtonGroup: React.SFC<ButtonGroupProps> = props => {
 
                 ...(index === 0 && {
                   borderBottomLeftRadius: buttonBorderRadius,
-                  borderLeftWidth: 2,
                   borderTopLeftRadius: buttonBorderRadius,
                 }),
                 ...(childrenLength - 1 === index && {
                   borderBottomRightRadius: buttonBorderRadius,
-                  borderRightWidth: 2,
                   borderTopRightRadius: buttonBorderRadius,
                 }),
               },
