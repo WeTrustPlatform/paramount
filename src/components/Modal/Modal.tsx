@@ -1,5 +1,1 @@
-import * as React from 'react';
-
-import HistoryModal, { HistoryModalProps } from './HistoryModal';
-
-export { HistoryModal, HistoryModalProps };
+export { default as HistoryModal, HistoryModalProps } from './HistoryModal';
