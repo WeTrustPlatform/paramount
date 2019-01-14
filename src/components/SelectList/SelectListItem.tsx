@@ -1,42 +1,38 @@
 import * as React from 'react';
 import {
-  TextStyle,
   TouchableHighlight,
   TouchableHighlightProps,
   View,
-  ViewStyle,
 } from 'react-native';
 
-import { Icon } from '../../icons';
 import { Theme, withTheme } from '../../theme';
 import { SelectListSize } from '../../theme/component-variables/selectListVariables';
-import { Box } from '../Layout';
+import { SelectListStyles } from '../../theme/style-getters/getSelectListStyles';
+import { Checkbox } from '../Checkbox';
 import { Text } from '../Typography';
 
-export interface SelectListItemProps extends TouchableHighlightProps {
+export interface SelectListItemBaseProps {
+  index?: number;
+  isSelected?: boolean;
+  onSelect?: (value: string, index: number, isSelected: boolean) => void;
+}
+
+export interface SelectListItemProps
+  extends SelectListItemBaseProps,
+    TouchableHighlightProps {
   theme: Theme;
   size?: SelectListSize;
   isDisabled?: boolean;
-  onSelect?: (value: string, index: number, isSelected: boolean) => void;
-  testID?: string;
   label: string;
-  isSelected?: boolean;
-  index?: number;
   value: string;
-  checkedIcon?: React.ReactNode;
   /**
    * Inline styles for components
    */
-  dangerouslySetInlineStyle?: {
-    containerStyle?: ViewStyle;
-    wrapperStyle?: ViewStyle;
-    textStyle?: TextStyle;
-  };
+  dangerouslySetInlineStyle?: Partial<SelectListStyles>;
 }
 
 const SelectListItemBase = (props: SelectListItemProps) => {
   const {
-    checkedIcon,
     dangerouslySetInlineStyle,
     index = 0,
     isDisabled = false,
@@ -44,7 +40,6 @@ const SelectListItemBase = (props: SelectListItemProps) => {
     label,
     onSelect = () => null,
     size = 'medium',
-    testID,
     theme,
     value,
     ...touchableHighlightProps
@@ -54,6 +49,7 @@ const SelectListItemBase = (props: SelectListItemProps) => {
     containerStyle,
     textStyle,
     focusBackgroundColor,
+    wrapperStyle,
   } = theme.getSelectListStyles(size, isDisabled, isSelected);
 
   return (
@@ -66,11 +62,11 @@ const SelectListItemBase = (props: SelectListItemProps) => {
         ...(dangerouslySetInlineStyle &&
           dangerouslySetInlineStyle.containerStyle),
       }}
-      testID={testID}
       {...touchableHighlightProps}
     >
       <View
         style={{
+          ...wrapperStyle,
           ...(dangerouslySetInlineStyle &&
             dangerouslySetInlineStyle.wrapperStyle),
         }}
@@ -86,17 +82,7 @@ const SelectListItemBase = (props: SelectListItemProps) => {
         >
           {label}
         </Text>
-        {isSelected && (
-          <Box position="absolute" right={0} marginRight={4}>
-            {checkedIcon || (
-              <Icon
-                name="check"
-                size={22}
-                color={theme.themeVariables.colors.text.success}
-              />
-            )}
-          </Box>
-        )}
+        <Checkbox isInteractive={false} shape="circle" isChecked={isSelected} />
       </View>
     </TouchableHighlight>
   );

@@ -9,11 +9,17 @@ import {
 import { Icon } from '../../icons';
 import { Theme, withTheme } from '../../theme';
 
+export type CheckboxShape = 'circle' | 'square';
+
 export interface CheckboxProps {
   theme: Theme;
   isChecked?: boolean;
   isDisabled?: boolean;
+  /** Sometimes we just want the display of the checkbox  */
+  isInteractive?: boolean;
   checkedIcon?: React.ReactNode;
+  /** @default square */
+  shape?: CheckboxShape;
   onChange?: (e: GestureResponderEvent) => void | undefined;
 }
 
@@ -21,8 +27,10 @@ const CheckboxBase = (props: CheckboxProps & TouchableHighlightProps) => {
   const {
     isChecked = false,
     isDisabled = false,
+    isInteractive = true,
     checkedIcon,
     onChange = () => null,
+    shape = 'square',
     theme,
     ...touchableHighlightProps
   } = props;
@@ -30,15 +38,21 @@ const CheckboxBase = (props: CheckboxProps & TouchableHighlightProps) => {
   const {
     checkboxStyle,
     checkboxFocusBackgroundColor,
-  } = theme.getCheckboxStyles(isChecked, isDisabled);
+  } = theme.getCheckboxStyles(isChecked, isDisabled, shape);
 
   return (
     <TouchableHighlight
       accessible
       style={checkboxStyle}
       underlayColor={checkboxFocusBackgroundColor}
-      onPress={onChange}
-      disabled={isDisabled}
+      {...(isInteractive
+        ? {
+            disabled: isDisabled,
+            onPress: onChange,
+          }
+        : {
+            disabled: true,
+          })}
       {...touchableHighlightProps}
     >
       <View

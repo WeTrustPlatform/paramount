@@ -22,7 +22,7 @@ const SelectListBase = (props: SelectListProps): any => {
     if (isMulti && Array.isArray(selectedValue)) {
       if (isSelected) {
         onValueChange(
-          selectedValue.filter(val => val === itemValue),
+          selectedValue.filter(val => val !== itemValue),
           itemIndex,
         );
       } else {

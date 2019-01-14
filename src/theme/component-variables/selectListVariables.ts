@@ -35,6 +35,7 @@ export interface TextSizes {
 export type SelectListSize = keyof SelectListSizes;
 
 export interface SelectListVariables {
+  wrapper: ViewStyle;
   base: BaseState;
   disabled: DisabledState;
   selected: SelectedState;
@@ -82,5 +83,10 @@ export const getSelectListVariables = (
       },
     },
     textSizes: textSizes.size,
+    wrapper: {
+      alignItems: 'center',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    },
   };
 };

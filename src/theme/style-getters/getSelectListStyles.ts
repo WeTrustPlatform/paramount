@@ -6,6 +6,7 @@ import {
 } from '../component-variables/selectListVariables';
 
 export interface SelectListStyles {
+  wrapperStyle: ViewStyle;
   containerStyle: ViewStyle;
   focusBackgroundColor: string;
   textStyle: TextStyle;
@@ -40,5 +41,6 @@ export const getSelectListStyles = (
     },
     focusBackgroundColor,
     textStyle: textSizes[size],
+    wrapperStyle: selectListVariables.wrapper,
   };
 };

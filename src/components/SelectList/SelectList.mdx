@@ -6,21 +6,53 @@ menu: Components
 import { Playground, PropsTable } from 'docz';
 import SelectList from './SelectList';
 import SelectListItem from './SelectListItem';
+import { State } from 'react-powerplug';
 
 ## Usage
 
-### Default
+### Multi select
 
 <Playground>
-  <SelectList
-    selectedValue="js"
-    onValueChange={(itemValue, itemIndex) =>
-      console.log('itemValue', itemValue)
-    }
-  >
-    <SelectListItem label="Java" value="java" />
-    <SelectListItem label="JavaScript" value="js" />
-  </SelectList>
+  <State initial={{ selectedValue: ['js', 'go'] }}>
+    {({ state, setState }) => (
+      <SelectList
+        isMulti
+        selectedValue={state.selectedValue}
+        onValueChange={(newValue, itemIndex) => {
+          setState({ selectedValue: newValue });
+        }}
+      >
+        <SelectListItem label="Java" value="java" />
+        <SelectListItem label="JavaScript" value="js" />
+        <SelectListItem label="Elixir" value="elixir" />
+        <SelectListItem label="Haskell" value="haskell" />
+        <SelectListItem label="Rust" value="rust" />
+        <SelectListItem label="Go" value="go" />
+      </SelectList>
+    )}
+  </State>
+</Playground>
+
+### Single select
+
+<Playground>
+  <State initial={{ selectedValue: 'go' }}>
+    {({ state, setState }) => (
+      <SelectList
+        selectedValue={state.selectedValue}
+        onValueChange={(newValue, itemIndex) => {
+          setState({ selectedValue: newValue });
+        }}
+      >
+        <SelectListItem label="Java" value="java" />
+        <SelectListItem label="JavaScript" value="js" />
+        <SelectListItem label="Elixir" value="elixir" />
+        <SelectListItem label="Haskell" value="haskell" />
+        <SelectListItem label="Rust" value="rust" />
+        <SelectListItem label="Go" value="go" />
+      </SelectList>
+    )}
+  </State>
 </Playground>
 
 ## Props
