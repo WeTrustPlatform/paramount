@@ -1,10 +1,10 @@
 import * as React from 'react';
 
 import { Theme, withTheme } from '../../theme';
-import { SelectListItemProps } from './SelectListItem';
+import { SelectListItemBaseProps } from './SelectListItem';
 
 export interface SelectListProps {
-  children: Array<React.ReactElement<SelectListItemProps>>;
+  children: Array<React.ReactElement<SelectListItemBaseProps>>;
   selectedValue: string | string[];
   isMulti?: boolean;
   theme: Theme;
@@ -39,7 +39,7 @@ const SelectListBase = (props: SelectListProps): any => {
     }
 
     // @ts-ignore
-    const selectListItem = child as React.ReactElement<SelectListItemProps>;
+    const selectListItem = child as React.ReactElement<SelectListItemBaseProps>;
 
     const isSelected =
       isMulti && Array.isArray(selectedValue)

@@ -15,6 +15,7 @@ export interface SelectListItemBaseProps {
   index?: number;
   isSelected?: boolean;
   onSelect?: (value: string, index: number, isSelected: boolean) => void;
+  value: string;
 }
 
 export interface SelectListItemProps
@@ -24,7 +25,6 @@ export interface SelectListItemProps
   size?: SelectListSize;
   isDisabled?: boolean;
   label: string;
-  value: string;
   /**
    * Inline styles for components
    */
