@@ -3,22 +3,12 @@ import * as React from 'react';
 import { HistoryModalProps } from './HistoryModal';
 import ModalBase from './ModalBase';
 
-export interface HistoryModalState {
-  isVisible: boolean;
-}
-
-class HistoryModal extends React.PureComponent<
-  HistoryModalProps,
-  HistoryModalState
-> {
+class HistoryModal extends React.PureComponent<HistoryModalProps> {
   public static defaultProps = {
     hash: '#modal-open',
   };
-  public initialHref: string | null = null;
 
-  public state = {
-    isVisible: false,
-  };
+  public initialHref: string | null = null;
 
   public componentDidMount = () => {
     this.initialHref = window.location.href;
@@ -32,13 +22,8 @@ class HistoryModal extends React.PureComponent<
   public componentDidUpdate = (prevProps: HistoryModalProps) => {
     const { visible } = this.props;
 
-    if (
-      visible &&
-      visible !== prevProps.visible &&
-      history &&
-      !this.isHistoryActive()
-    ) {
-      this.activateHistory();
+    if (visible && visible !== prevProps.visible && !this.isHistoryActive()) {
+      this.pushHistory();
     }
   };
 
@@ -52,10 +37,11 @@ class HistoryModal extends React.PureComponent<
     if (onRequestClose) {
       onRequestClose();
     }
-
-    this.setState(() => ({ isVisible: false }));
   };
 
+  /**
+   * Relay the callback and also clean up the hash state
+   */
   public handleRequestClose = () => {
     const { onRequestClose } = this.props;
 
@@ -64,14 +50,12 @@ class HistoryModal extends React.PureComponent<
     }
 
     history.replaceState(null, '', this.initialHref);
-    this.setState(() => ({ isVisible: false }));
   };
 
-  public activateHistory = () => {
+  public pushHistory = () => {
     const { hash } = this.props;
 
-    this.setState(() => ({ isVisible: true }));
-    if (hash && hash !== null) {
+    if (hash) {
       history.pushState(null, '', this.initialHref + hash);
     }
   };
@@ -79,19 +63,14 @@ class HistoryModal extends React.PureComponent<
   public isHistoryActive = () => {
     const { hash } = this.props;
 
-    return hash === window.location.hash.substring(1);
+    return hash === window.location.hash;
   };
 
   public render() {
     const { hash, ...modalProps } = this.props;
-    const { isVisible } = this.state;
 
     return (
-      <ModalBase
-        {...modalProps}
-        onRequestClose={this.handleRequestClose}
-        visible={isVisible}
-      />
+      <ModalBase {...modalProps} onRequestClose={this.handleRequestClose} />
     );
   }
 }
