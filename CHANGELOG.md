@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/WeTrustPlatform/paramount/compare/v1.15.0...v1.15.1) (2019-01-14)
+
+
+### Bug Fixes
+
+* refactor button to use title instead of children prop ([5e659b9](https://github.com/WeTrustPlatform/paramount/commit/5e659b9))
+
 # [1.15.0](https://github.com/WeTrustPlatform/paramount/compare/v1.14.0...v1.15.0) (2019-01-14)
 
 
