@@ -1065,7 +1065,7 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.2.tgz#63985d3d8b02530e0869962f4da09142ee8e200e"
   integrity sha512-n/VQ4mbfr81aqkx/XmVicOLjviMuy02eenSdJY33SVA7S2J42EU0P1H0mOogfYedb3wXA0d/LVtBrgTSm04WEA==
 
-"@expo/vector-icons@^9.0.0":
+"@expo/vector-icons@9.0.0":
   version "9.0.0"
   resolved "https://registry.yarnpkg.com/@expo/vector-icons/-/vector-icons-9.0.0.tgz#7f18e21d3edc8b99b76d7d1b8e26b212393e08b3"
   integrity sha512-k5ndrW3oueW5jRDLt3o8iXKmiU+CvvCZPewOvxY7eRMivi8hIr6TkW6tMCGE1vS5fwmXffIkIpKGZkSbX7TxwA==
@@ -1462,11 +1462,6 @@
     "@types/react" "*"
     "@types/react-native" "*"
     "@types/react-native-vector-icons" "*"
-
-"@types/history@^4.7.2":
-  version "4.7.2"
-  resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.2.tgz#0e670ea254d559241b6eeb3894f8754991e73220"
-  integrity sha512-ui3WwXmjTaY73fOQ3/m3nnajU/Orhi6cEu5rzX+BrAAJxa3eITXZ5ch9suPqtM03OWhAHhPSyBGCN4UKoxO20Q==
 
 "@types/jest@23.3.12":
   version "23.3.12"
@@ -4895,7 +4890,7 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-exenv@^1.2.2:
+exenv@1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
   integrity sha1-KueOhdmJQVhnCwPUe+wfA72Ru50=
@@ -10410,10 +10405,10 @@ react-sizes@^1.0.4:
     lodash.throttle "^4.1.1"
     prop-types "^15.6.0"
 
-react-spring@^7.0.0:
-  version "7.2.2"
-  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-7.2.2.tgz#dbfb54591574754ed551935ddfc8189da4a73022"
-  integrity sha512-0VlSF148jLfOVHuHr1+G5RZY2YB7lwbyeeBtcGMkh4jb7V1/3JMmwwA1vdd2eTgQQsntl/Et6UMgZ80cFbVk6w==
+react-spring@7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-7.0.0.tgz#a19151672176a63938be53b488f57e4bd6c8c900"
+  integrity sha512-HvWtCDalaHhQYn6VqYV8GHWI8ZuWCC9AzOpMq1f7GQcsbnbHzPwaoYETT5IFMSxne8n1PN4BE19W98ifkZU4RA==
   dependencies:
     "@babel/runtime" "^7.0.0"
 

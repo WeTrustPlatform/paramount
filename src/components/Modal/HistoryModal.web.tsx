@@ -1,9 +1,3 @@
-import {
-  createBrowserHistory,
-  History,
-  Location,
-  UnregisterCallback,
-} from 'history';
 import * as React from 'react';
 
 import { HistoryModalProps } from './HistoryModal';
@@ -18,56 +12,49 @@ class HistoryModal extends React.PureComponent<
   HistoryModalState
 > {
   public static defaultProps = {
-    hash: 'mo',
-    useHistory: false,
+    hash: '#modal-open',
   };
+  public initialHref: string | null = null;
 
-  public unlisten: UnregisterCallback | null = null;
-  public history: History | null = null;
   public state = {
     isVisible: false,
   };
 
   public componentDidMount = () => {
-    const { onRequestClose, useHistory } = this.props;
-
-    if (!useHistory) return;
-
-    this.history = createBrowserHistory();
+    this.initialHref = window.location.href;
 
     /**
-     * For back button, if use clicks back button it should be interpreted as a close request
+     * For back button, if use clicks back button it should be interpreted as a close request.
      */
-    this.unlisten = this.history.listen(location => {
-      if (!this.isHistoryActive(location)) {
-        this.setState(() => ({ isVisible: false }));
-        if (onRequestClose) {
-          onRequestClose();
-        }
-      }
-    });
+    window.addEventListener('hashchange', this.handleHashChange, false);
   };
 
   public componentDidUpdate = (prevProps: HistoryModalProps) => {
-    const { visible, useHistory } = this.props;
-
-    if (!useHistory) return;
+    const { visible } = this.props;
 
     if (
       visible &&
       visible !== prevProps.visible &&
-      this.history &&
-      !this.isHistoryActive(this.history.location)
+      history &&
+      !this.isHistoryActive()
     ) {
       this.activateHistory();
     }
   };
 
   public componentWillUnmount() {
-    if (this.unlisten) {
-      this.unlisten();
-    }
+    window.removeEventListener('hashchange', this.handleHashChange, false);
   }
+
+  public handleHashChange = () => {
+    const { onRequestClose } = this.props;
+
+    if (onRequestClose) {
+      onRequestClose();
+    }
+
+    this.setState(() => ({ isVisible: false }));
+  };
 
   public handleRequestClose = () => {
     const { onRequestClose } = this.props;
@@ -76,54 +63,41 @@ class HistoryModal extends React.PureComponent<
       onRequestClose();
     }
 
-    if (this.history) {
-      this.history.replace({ hash: '' });
-    }
+    history.replaceState(null, '', this.initialHref);
+    this.setState(() => ({ isVisible: false }));
   };
 
   public activateHistory = () => {
-    const { hash, qs } = this.props;
-    if (!this.history) return;
-
-    if (qs && qs !== null) {
-      this.history.push({ search: qs });
-    } else if (hash && hash !== null) {
-      this.history.push({ hash });
-    }
+    const { hash } = this.props;
 
     this.setState(() => ({ isVisible: true }));
+    if (hash && hash !== null) {
+      history.pushState(null, '', this.initialHref + hash);
+    }
   };
 
-  public isHistoryActive = (location: Location) => {
-    const { hash, qs } = this.props;
+  public isHistoryActive = () => {
+    const { hash } = this.props;
 
-    if (qs && qs !== null) {
-      return location.search.includes(qs);
-    }
-
-    return hash === location.hash.substring(1);
+    return hash === window.location.hash.substring(1);
   };
 
   public render() {
-    const {
-      hash,
-      qs,
-      useHistory,
-      visible,
-      onRequestClose,
-      ...modalProps
-    } = this.props;
+    const { hash, ...modalProps } = this.props;
     const { isVisible } = this.state;
 
     return (
       <ModalBase
         {...modalProps}
-        // If Modal uses history, use local state and handlers, otherwise forward modal props
-        onRequestClose={useHistory ? this.handleRequestClose : onRequestClose}
-        visible={useHistory ? isVisible : visible}
+        onRequestClose={this.handleRequestClose}
+        visible={isVisible}
       />
     );
   }
 }
 
-export default HistoryModal;
+export default ({ useHistory, ...props }: HistoryModalProps) => {
+  if (useHistory) return <HistoryModal {...props} />;
+
+  return <ModalBase {...props} />;
+};

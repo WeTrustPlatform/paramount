@@ -8,7 +8,6 @@ export interface HistoryModalProps extends ModalBaseProps {
   /** (Web) Only works when `useHistory` is true. Hash string to append to location */
   hash?: string | null;
   /** (Web) Only works when `useHistory` is true. Same as hash, but using query string. Query string will take precedence over hash @default null */
-  qs?: string | null;
 }
 
 export default ModalBase;
