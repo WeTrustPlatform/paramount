@@ -1,3 +1,17 @@
+# [1.15.0](https://github.com/WeTrustPlatform/paramount/compare/v1.14.0...v1.15.0) (2019-01-14)
+
+
+### Bug Fixes
+
+* fix tests and mocks ([b3d9f4a](https://github.com/WeTrustPlatform/paramount/commit/b3d9f4a))
+* modal without history dependency ([195d4e7](https://github.com/WeTrustPlatform/paramount/commit/195d4e7))
+* simplify modal ([29e8364](https://github.com/WeTrustPlatform/paramount/commit/29e8364))
+
+
+### Features
+
+* add Modal with history handle ([b5e34c0](https://github.com/WeTrustPlatform/paramount/commit/b5e34c0))
+
 # [1.14.0](https://github.com/WeTrustPlatform/paramount/compare/v1.13.1...v1.14.0) (2019-01-10)
 
 
