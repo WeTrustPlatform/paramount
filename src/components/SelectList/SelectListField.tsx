@@ -3,10 +3,10 @@ import * as React from 'react';
 import { withTheme } from '../../theme';
 import { FormField, FormFieldProps } from '../FormField';
 import SelectList, { SelectListProps } from './SelectList';
-import { SelectListItemProps } from './SelectListItem';
+import { SelectListItemBaseProps } from './SelectListItem';
 
 export interface SelectListFieldProps
-  extends FormFieldProps<Array<React.ReactElement<SelectListItemProps>>>,
+  extends FormFieldProps<Array<React.ReactElement<SelectListItemBaseProps>>>,
     SelectListProps {}
 
 const SelectListFieldBase = (props: SelectListFieldProps) => {
