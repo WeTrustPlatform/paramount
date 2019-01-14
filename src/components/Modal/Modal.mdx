@@ -20,11 +20,11 @@ import { Text } from '../Typography';
         <Modal visible={on} onRequestClose={() => set(false)}>
           <Box height={1800}>
             <Text>Put any content in the modal</Text>
-            <Button onPress={() => set(false)}>Close button one</Button>
-            <Button onPress={() => set(false)}>Close button two</Button>
+            <Button onPress={() => set(false)} title="Close button one" />
+            <Button onPress={() => set(false)} title="Close button two" />
           </Box>
         </Modal>
-        <Button onPress={() => set(true)}>Open modal</Button>
+        <Button onPress={() => set(true)} title="Open modal" />
       </Box>
     )}
   </Toggle>
@@ -41,11 +41,11 @@ Same as `Modal` below, with the difference that this uses `useHistory` prop that
         <Modal useHistory visible={on} onRequestClose={() => set(false)}>
           <Box height={1800}>
             <Text>Put any content in the modal</Text>
-            <Button onPress={() => set(false)}>Close button one</Button>
-            <Button onPress={() => set(false)}>Close button two</Button>
+            <Button onPress={() => set(false)} title="Close button one" />
+            <Button onPress={() => set(false)} title="Close button two" />
           </Box>
         </Modal>
-        <Button onPress={() => set(true)}>Open history modal</Button>
+        <Button onPress={() => set(true)} title="Open history modal" />
       </Box>
     )}
   </Toggle>

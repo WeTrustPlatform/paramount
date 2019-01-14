@@ -39,9 +39,7 @@ export default ({ children }) => {
               </Box>
             }
           >
-            <Button onPress={toggle} isInline>
-              Top right
-            </Button>
+            <Button onPress={toggle} isInline title="Top right" />
           </Popover>
         )}
       </Toggle>
@@ -59,9 +57,7 @@ export default ({ children }) => {
               </Box>
             }
           >
-            <Button onPress={toggle} isInline>
-              Top
-            </Button>
+            <Button onPress={toggle} isInline title="Top" />
           </Popover>
         )}
       </Toggle>
@@ -79,9 +75,7 @@ export default ({ children }) => {
               </Box>
             }
           >
-            <Button onPress={toggle} isInline>
-              Top left
-            </Button>
+            <Button onPress={toggle} isInline title="Top left" />
           </Popover>
         )}
       </Toggle>
@@ -104,9 +98,7 @@ export default ({ children }) => {
             </Box>
           }
         >
-          <Button onPress={toggle} isInline>
-            Left
-          </Button>
+          <Button onPress={toggle} isInline title="Left" />
         </Popover>
       )}
     </Toggle>
@@ -124,9 +116,7 @@ export default ({ children }) => {
             </Box>
           }
         >
-          <Button onPress={toggle} isInline>
-            Right
-          </Button>
+          <Button onPress={toggle} isInline title="Right" />
         </Popover>
       )}
     </Toggle>
@@ -149,9 +139,7 @@ export default ({ children }) => {
               </Box>
             }
           >
-            <Button onPress={toggle} isInline>
-              Bottom right
-            </Button>
+            <Button onPress={toggle} isInline title="Bottom right" />
           </Popover>
         )}
       </Toggle>
@@ -168,9 +156,7 @@ export default ({ children }) => {
               </Box>
             }
           >
-            <Button onPress={toggle} isInline>
-              Bottom
-            </Button>
+            <Button onPress={toggle} isInline title="Bottom" />
           </Popover>
         )}
       </Toggle>
@@ -188,9 +174,7 @@ export default ({ children }) => {
               </Box>
             }
           >
-            <Button onPress={toggle} isInline>
-              Bottom left
-            </Button>
+            <Button onPress={toggle} isInline title="Bottom left" />
           </Popover>
         )}
       </Toggle>
@@ -221,9 +205,7 @@ Add `isDynamicContent` to props to give time for Popover to calculate its layout
               </Box>
             }
           >
-            <Button onPress={toggle} isInline>
-              Top right
-            </Button>
+            <Button onPress={toggle} isInline title="Top right" />
           </Popover>
         )}
       </Toggle>
@@ -243,9 +225,7 @@ Add `isDynamicContent` to props to give time for Popover to calculate its layout
               </Box>
             }
           >
-            <Button onPress={toggle} isInline>
-              Top
-            </Button>
+            <Button onPress={toggle} isInline title="Top" />
           </Popover>
         )}
       </Toggle>
@@ -265,9 +245,7 @@ Add `isDynamicContent` to props to give time for Popover to calculate its layout
               </Box>
             }
           >
-            <Button onPress={toggle} isInline>
-              Top left
-            </Button>
+            <Button onPress={toggle} isInline title="Top left" />
           </Popover>
         )}
       </Toggle>
@@ -292,9 +270,7 @@ Add `isDynamicContent` to props to give time for Popover to calculate its layout
             </Box>
           }
         >
-          <Button onPress={toggle} isInline>
-            Left
-          </Button>
+          <Button onPress={toggle} isInline title="Left" />
         </Popover>
       )}
     </Toggle>
@@ -314,9 +290,7 @@ Add `isDynamicContent` to props to give time for Popover to calculate its layout
             </Box>
           }
         >
-          <Button onPress={toggle} isInline>
-            Right
-          </Button>
+          <Button onPress={toggle} isInline title="Right" />
         </Popover>
       )}
     </Toggle>
@@ -341,9 +315,7 @@ Add `isDynamicContent` to props to give time for Popover to calculate its layout
               </Box>
             }
           >
-            <Button onPress={toggle} isInline>
-              Bottom right
-            </Button>
+            <Button onPress={toggle} isInline title="Bottom right" />
           </Popover>
         )}
       </Toggle>
@@ -361,9 +333,7 @@ Add `isDynamicContent` to props to give time for Popover to calculate its layout
               </Box>
             }
           >
-            <Button onPress={toggle} isInline>
-              Bottom
-            </Button>
+            <Button onPress={toggle} isInline title="Bottom" />
           </Popover>
         )}
       </Toggle>
@@ -383,9 +353,7 @@ Add `isDynamicContent` to props to give time for Popover to calculate its layout
               </Box>
             }
           >
-            <Button onPress={toggle} isInline>
-              Bottom left
-            </Button>
+            <Button onPress={toggle} isInline title="Bottom left" />
           </Popover>
         )}
       </Toggle>
@@ -433,9 +401,8 @@ For more advanced usage, you can use `PopoverController`.
               ref={setTarget}
               onPress={openPopover}
               isInline
-            >
-              Some Button
-            </Button>
+              title="Some Button"
+            />
           </>
         );
       }}

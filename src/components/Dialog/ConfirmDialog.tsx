@@ -63,13 +63,9 @@ const ConfirmDialogFooter = ({
   confirmLabel,
 }: ConfirmDialogFooterProps) => (
   <Spacing padding={2} flexDirection="row" justifyContent="flex-end">
-    <Button appearance="minimal" onPress={onClose}>
-      {cancelLabel}
-    </Button>
+    <Button appearance="minimal" onPress={onClose} title={cancelLabel} />
     <Spacing paddingLeft={2}>
-      <Button color={color} onPress={onConfirm}>
-        {confirmLabel}
-      </Button>
+      <Button color={color} onPress={onConfirm} title={confirmLabel} />
     </Spacing>
   </Spacing>
 );

@@ -68,12 +68,8 @@ The site is created based on `*.mdx` files ([see MDX](https://github.com/mdx-js/
 
    ```
    <Playground>
-     <Button appearance="minimal" color="default">
-       Default
-     </Button>
-     <Button isDisabled color="primary">
-       Disabled
-     </Button>
+     <Button appearance="minimal" color="default" title="Default" />
+     <Button isDisabled color="primary" title="Disabled" />
    </Playground>
    ```
 

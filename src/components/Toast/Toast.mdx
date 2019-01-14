@@ -30,9 +30,8 @@ Composes `Alert`
                 isCloseable: true,
               })
             }
-          >
-            Open default toast
-          </Button>
+            title="Open default toast"
+          />
           <Button
             onPress={() =>
               notify({
@@ -41,9 +40,8 @@ Composes `Alert`
                 title: 'Title',
               })
             }
-          >
-            Open success toast
-          </Button>
+            title="Open success toast"
+          />
           <Button
             onPress={() =>
               notify({
@@ -52,9 +50,8 @@ Composes `Alert`
                 title: 'Title',
               })
             }
-          >
-            Open danger toast
-          </Button>
+            title="Open danger toast"
+          />
           <Button
             onPress={() =>
               notify({
@@ -63,9 +60,8 @@ Composes `Alert`
                 title: 'Title',
               })
             }
-          >
-            Open warning toast
-          </Button>
+            title="Open warning toast"
+          />
         </>
       )}
     </ToastConsumer>

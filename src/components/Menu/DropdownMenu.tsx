@@ -55,7 +55,7 @@ class DropdownMenuBase extends React.Component<DropdownMenuProps> {
           >
             <ButtonGroup>
               {options.map(option => (
-                <Button key={option.children} {...option} />
+                <Button key={option.title} {...option} />
               ))}
             </ButtonGroup>
           </Box>

@@ -19,7 +19,7 @@ import { Text } from '../Typography';
   <Toggle>
     {({ on, toggle }) => (
       <>
-        <Button onPress={toggle}>Open bottom drawer</Button>
+        <Button onPress={toggle} title="Open bottom drawer" />
         <Drawer space="30%" isVisible={on} onClose={toggle}>
           <Box width="100%" height="100%" backgroundColor="white" />
         </Drawer>
@@ -31,7 +31,7 @@ import { Text } from '../Typography';
 <Toggle>
   {({ on, toggle }) => (
     <>
-      <Button onPress={toggle}>Open top drawer</Button>
+      <Button onPress={toggle} title="Open top drawer" />
       <Drawer space="30%" position="top" isVisible={on} onClose={toggle}>
         <Box width="100%" height="100%" backgroundColor="white" />
       </Drawer>
@@ -42,7 +42,7 @@ import { Text } from '../Typography';
 <Toggle>
   {({ on, toggle }) => (
     <>
-      <Button onPress={toggle}>Open left drawer</Button>
+      <Button onPress={toggle} title="Open left drawer" />
       <Drawer space="30%" position="left" isVisible={on} onClose={toggle}>
         <Box width="100%" height="100%" backgroundColor="white" />
       </Drawer>
@@ -53,7 +53,7 @@ import { Text } from '../Typography';
 <Toggle>
   {({ on, toggle }) => (
     <>
-      <Button onPress={toggle}>Open right drawer</Button>
+      <Button onPress={toggle} title="Open right drawer" />
       <Drawer space="30%" position="right" isVisible={on} onClose={toggle}>
         <Box width="100%" height="100%" backgroundColor="white" />
       </Drawer>

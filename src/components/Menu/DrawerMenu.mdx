@@ -19,32 +19,30 @@ import { Text } from '../Typography';
   <Toggle>
     {({ on, toggle }) => (
       <>
-        <Button onPress={toggle} isInline>
-          Open overlay menu
-        </Button>
+        <Button onPress={toggle} isInline title="Open overlay menu" />
         <DrawerMenu
           options={[
             {
               onPress: toggle,
-              children: 'Menu Option 1',
+              title: 'Menu Option 1',
               color: 'danger',
               appearance: 'minimal',
             },
             {
               onPress: toggle,
-              children: 'Menu Option 2',
+              title: 'Menu Option 2',
               color: 'primary',
               appearance: 'minimal',
             },
             {
               onPress: toggle,
-              children: 'Menu Option 3',
+              title: 'Menu Option 3',
               color: 'secondary',
               appearance: 'minimal',
             },
             {
               onPress: toggle,
-              children: 'Menu Option 4',
+              title: 'Menu Option 4',
               appearance: 'minimal',
             },
           ]}

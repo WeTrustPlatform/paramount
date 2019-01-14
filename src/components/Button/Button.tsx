@@ -17,7 +17,7 @@ import { LoadingDots } from '../Loading';
 import { Text } from '../Typography';
 
 export interface ButtonProps extends TouchableHighlightProps {
-  children?: string;
+  title?: string;
 
   /**
    * The intent of the button.
@@ -38,7 +38,7 @@ export interface ButtonProps extends TouchableHighlightProps {
   size?: ButtonSize;
 
   /**
-   * When true, show a loading spinner before the children. This also disables the button.
+   * When true, show a loading spinner before the title. This also disables the button.
    * @default false
    */
   isLoading?: boolean;
@@ -99,7 +99,7 @@ export interface ButtonProps extends TouchableHighlightProps {
 const ButtonBase = (props: ButtonProps) => {
   const {
     appearance = 'primary',
-    children,
+    title,
     color = 'default',
     dangerouslySetInlineStyle,
     iconAfter,
@@ -155,7 +155,7 @@ const ButtonBase = (props: ButtonProps) => {
         >
           {isLoading ? (
             iconLoading || <LoadingDots color={textStyle.color} />
-          ) : children ? (
+          ) : title ? (
             <Text
               dangerouslySetInlineStyle={{
                 textStyle: {
@@ -165,7 +165,7 @@ const ButtonBase = (props: ButtonProps) => {
                 },
               }}
             >
-              {children}
+              {title}
             </Text>
           ) : null}
         </Spacing>

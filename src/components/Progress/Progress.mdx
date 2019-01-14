@@ -19,8 +19,8 @@ import { Counter } from 'react-powerplug';
       <Box>
         <Progress percent={count} />
         <Box flexDirection="row">
-          <Button onPress={() => incBy(10)}>Inc 10%</Button>
-          <Button onPress={() => decBy(10)}>Dec 10%</Button>
+          <Button onPress={() => incBy(10)} title="Inc 10%" />
+          <Button onPress={() => decBy(10)} title="Dec 10%" />
         </Box>
       </Box>
     )}

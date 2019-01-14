@@ -34,12 +34,12 @@ const DrawerMenuBase = (props: DrawerMenuProps) => {
         >
           <ButtonGroup>
             {options.map(option => (
-              <Button key={option.children} {...option} />
+              <Button key={option.title} {...option} />
             ))}
           </ButtonGroup>
         </Box>
         <Spacing paddingTop={3}>
-          <Button onPress={onClose}>Close</Button>
+          <Button onPress={onClose} title="Close" />
         </Spacing>
       </Spacing>
     </Drawer>
