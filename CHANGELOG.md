@@ -1,3 +1,13 @@
+## [1.15.2](https://github.com/WeTrustPlatform/paramount/compare/v1.15.1...v1.15.2) (2019-01-14)
+
+
+### Bug Fixes
+
+* change select list props ([5b45d93](https://github.com/WeTrustPlatform/paramount/commit/5b45d93))
+* expose selectlistitem base prop ([a95e3f5](https://github.com/WeTrustPlatform/paramount/commit/a95e3f5))
+* fix select list item multi and single select ([b67f07a](https://github.com/WeTrustPlatform/paramount/commit/b67f07a))
+* fix types for select list ([32062df](https://github.com/WeTrustPlatform/paramount/commit/32062df))
+
 ## [1.15.1](https://github.com/WeTrustPlatform/paramount/compare/v1.15.0...v1.15.1) (2019-01-14)
 
 
