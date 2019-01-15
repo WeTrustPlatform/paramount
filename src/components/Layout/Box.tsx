@@ -16,6 +16,7 @@ export type Shape =
   | 'square';
 
 export interface BoxProps extends ViewStyle {
+  style?: ViewStyle;
   theme: Theme;
   children?: React.ReactNode;
 
@@ -53,13 +54,13 @@ const shapeMap = {
 
 const propToFn = {
   elevation: (elevation: 0 | 1 | 2 | 3 | 4, theme: Theme) => {
-    return theme.themeVariables.elevations[elevation];
+    return theme.elevations[elevation];
   },
   shape: (shape: Shape) => shapeMap[shape],
 };
 
 const Box = ({ theme, ...props }: BoxProps) => {
-  const { children, ...viewStyles } = props;
+  const { children, style: propStyle, ...viewStyles } = props;
   const transformedStyles = [];
   const pureStyles = {};
 
@@ -80,7 +81,9 @@ const Box = ({ theme, ...props }: BoxProps) => {
     }
   }
 
-  return <View style={[pureStyles, transformedStyles]}>{children}</View>;
+  return (
+    <View style={[pureStyles, transformedStyles, propStyle]}>{children}</View>
+  );
 };
 
 export default withTheme(Box);

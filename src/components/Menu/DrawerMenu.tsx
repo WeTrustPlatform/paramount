@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { Theme, withTheme } from '../../theme';
-import { DrawerMenuStyles } from '../../theme/style-getters/getDrawerMenuStyles';
 import { Button, ButtonGroup, ButtonProps } from '../Button';
 import { Drawer } from '../Drawer';
 import { Box, Spacing } from '../Layout';
@@ -14,10 +13,6 @@ export interface DrawerMenuProps {
   onClose?: () => void;
   /** List of menu options, which also take `ButtonProps` */
   options?: ButtonProps[];
-  /**
-   * Inline styles for components
-   */
-  dangerouslySetInlineStyle?: Partial<DrawerMenuStyles>;
 }
 
 const DrawerMenuBase = (props: DrawerMenuProps) => {
@@ -28,9 +23,9 @@ const DrawerMenuBase = (props: DrawerMenuProps) => {
       <Spacing padding={3}>
         <Box
           elevation={1}
-          borderRadius={theme.themeVariables.controlBorderRadius.medium}
+          borderRadius={theme.controlBorderRadius.medium}
           borderWidth={1}
-          borderColor={theme.themeVariables.colors.border.default}
+          borderColor={theme.colors.border.default}
         >
           <ButtonGroup>
             {options.map(option => (

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, TextProps, TextStyle } from 'react-native';
+import { Text, TextProps } from 'react-native';
 
 import {
   FontFamily,
@@ -8,6 +8,7 @@ import {
   Theme,
 } from '../../theme/ThemeInterface';
 import withTheme from '../../theme/withTheme';
+import { GetParagraphStyles, getParagraphStyles } from './Paragraph.styles';
 import { TextAlign } from './types';
 
 // @ts-ignore: need to override for web purposes
@@ -19,9 +20,7 @@ export interface ParagraphProps extends TextProps {
   textAlign?: TextAlign;
   fontFamily?: FontFamily;
 
-  dangerouslySetInlineStyle?: {
-    __style: TextStyle;
-  };
+  getStyles?: GetParagraphStyles;
 }
 
 const ParagraphBase = (props: ParagraphProps) => {
@@ -32,21 +31,17 @@ const ParagraphBase = (props: ParagraphProps) => {
     size = 'medium',
     textAlign,
     theme,
-    dangerouslySetInlineStyle,
+    getStyles = getParagraphStyles,
     ...textProps
   } = props;
 
-  const { paragraphStyle } = theme.getParagraphStyles(size);
+  const { paragraphStyle } = getParagraphStyles({ size }, theme);
 
   return (
     <Text
       // @ts-ignore
       accessibilityLabel="p"
-      style={[
-        { textAlign },
-        paragraphStyle,
-        dangerouslySetInlineStyle && dangerouslySetInlineStyle.__style,
-      ]}
+      style={[{ textAlign }, paragraphStyle]}
       {...textProps}
     >
       {children}

@@ -6,10 +6,14 @@ import {
 } from 'react-native';
 
 import { Theme, withTheme } from '../../theme';
-import { SelectListSize } from '../../theme/component-variables/selectListVariables';
-import { SelectListStyles } from '../../theme/style-getters/getSelectListStyles';
 import { Checkbox } from '../Checkbox';
 import { Text } from '../Typography';
+import { getTextStyles } from '../Typography/Text.styles';
+import {
+  GetSelectListStyles,
+  getSelectListStyles,
+  SelectListSize,
+} from './SelectList.styles';
 
 export interface SelectListItemBaseProps {
   index?: number;
@@ -25,15 +29,12 @@ export interface SelectListItemProps
   size?: SelectListSize;
   isDisabled?: boolean;
   label: string;
-  /**
-   * Inline styles for components
-   */
-  dangerouslySetInlineStyle?: Partial<SelectListStyles>;
+  getStyles?: GetSelectListStyles;
 }
 
 const SelectListItemBase = (props: SelectListItemProps) => {
   const {
-    dangerouslySetInlineStyle,
+    getStyles = getSelectListStyles,
     index = 0,
     isDisabled = false,
     isSelected = false,
@@ -50,34 +51,26 @@ const SelectListItemBase = (props: SelectListItemProps) => {
     textStyle,
     focusBackgroundColor,
     wrapperStyle,
-  } = theme.getSelectListStyles(size, isDisabled, isSelected);
+  } = getStyles({ size, isDisabled, isSelected }, theme);
 
   return (
     <TouchableHighlight
       disabled={isDisabled}
       onPress={() => onSelect(value, index, isSelected)}
       underlayColor={focusBackgroundColor}
-      style={{
-        ...containerStyle,
-        ...(dangerouslySetInlineStyle &&
-          dangerouslySetInlineStyle.containerStyle),
-      }}
+      style={containerStyle}
       {...touchableHighlightProps}
     >
-      <View
-        style={{
-          ...wrapperStyle,
-          ...(dangerouslySetInlineStyle &&
-            dangerouslySetInlineStyle.wrapperStyle),
-        }}
-      >
+      <View style={wrapperStyle}>
         <Text
-          dangerouslySetInlineStyle={{
-            textStyle: {
-              ...textStyle,
-              ...(dangerouslySetInlineStyle &&
-                dangerouslySetInlineStyle.textStyle),
-            },
+          getStyles={(...params) => {
+            const { textStyle: defaultTextStyle } = getTextStyles(...params);
+            return {
+              textStyle: {
+                ...defaultTextStyle,
+                ...textStyle,
+              },
+            };
           }}
         >
           {label}

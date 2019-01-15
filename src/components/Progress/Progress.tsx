@@ -1,51 +1,41 @@
 import * as React from 'react';
-import { Platform, View, ViewStyle } from 'react-native';
+import { Platform, View } from 'react-native';
 import { Spring } from 'react-spring';
 
 import { Theme, withTheme } from '../../theme';
-import { ProgressSize } from '../../theme/component-variables/progressVariables';
+import {
+  GetProgressStyles,
+  getProgressStyles,
+  ProgressSize,
+} from './Progress.styles';
 
 export interface ProgressProps {
   theme: Theme;
   percent?: number;
   size?: ProgressSize;
-  /**
-   * Inline styles for components
-   */
-  dangerouslySetInlineStyle?: {
-    containerStyle: ViewStyle;
-    progressStyle: ViewStyle;
-  };
+  getStyles?: GetProgressStyles;
 }
 
 const ProgressBase = (props: ProgressProps) => {
   const {
     percent = 0,
     size = 'medium',
-    dangerouslySetInlineStyle,
+    getStyles = getProgressStyles,
     theme,
   } = props;
-  const { containerStyle, progressStyle } = theme.getProgressStyles(size);
+  const { containerStyle, progressStyle } = getStyles({ size }, theme);
 
   return (
     <Spring to={{ value: percent }}>
       {({ value }) => {
         return (
-          <View
-            style={{
-              ...containerStyle,
-              ...(dangerouslySetInlineStyle &&
-                dangerouslySetInlineStyle.containerStyle),
-            }}
-          >
+          <View style={containerStyle}>
             <View
               // @ts-ignore
               accessibilityRole={Platform.OS === 'web' ? 'progress' : 'none'}
               style={{
                 width: `${value}%`,
                 ...progressStyle,
-                ...(dangerouslySetInlineStyle &&
-                  dangerouslySetInlineStyle.progressStyle),
               }}
             />
           </View>

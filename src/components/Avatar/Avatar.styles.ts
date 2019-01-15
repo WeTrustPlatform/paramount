@@ -1,26 +1,35 @@
 import { ImageStyle, TextStyle, ViewStyle } from 'react-native';
 
-import { AvatarVariables } from '../component-variables/avatarVariables';
-import { FillColors, Fills } from '../ThemeInterface';
+import { FillColors, Fills, Theme } from '../../theme/ThemeInterface';
 
-export type AvatarColor = 'automatic' | keyof FillColors;
-
-export interface AvatarStylesParams {
-  name?: string;
-  color: AvatarColor;
-  hashValue?: string;
-  isSolid: boolean;
-  size: number;
-  sizeLimitOneCharacter: number;
+export interface AvatarVariables {
+  fills: Fills;
+  box: ViewStyle;
+  text: TextStyle;
+  image: ImageStyle;
 }
 
-export interface AvatarStyles {
-  boxStyle: ViewStyle;
-  textStyle: TextStyle;
-  imageStyle: ImageStyle;
-}
+export const getAvatarVariables = (theme: Theme): AvatarVariables => {
+  return {
+    box: {
+      alignItems: 'center',
+      borderRadius: 9999,
+      display: 'flex',
+      justifyContent: 'center',
+      overflow: 'hidden',
+      position: 'relative',
+    },
 
-export type GetAvatarStyles = (params: AvatarStylesParams) => AvatarStyles;
+    image: {
+      height: '100%',
+      width: '100%',
+    },
+
+    text: {},
+
+    fills: theme.fills,
+  };
+};
 
 export const hashCode = (s?: string) => {
   const str = String(s);
@@ -37,6 +46,23 @@ export const hashCode = (s?: string) => {
   }
   return Math.abs(hash);
 };
+
+export type AvatarColor = 'automatic' | keyof FillColors;
+
+export interface AvatarStylesProps {
+  name?: string;
+  color: AvatarColor;
+  hashValue?: string;
+  isSolid: boolean;
+  size: number;
+  sizeLimitOneCharacter: number;
+}
+
+export interface AvatarStyles {
+  boxStyle: ViewStyle;
+  textStyle: TextStyle;
+  imageStyle: ImageStyle;
+}
 
 const getAvatarInitialsFontSize = (
   size: number,
@@ -71,16 +97,16 @@ const getAvatarProps = (
   return appearances[color];
 };
 
-export const getAvatarStyles = (
-  avatarVariables: AvatarVariables,
-): GetAvatarStyles => ({
-  name,
-  color,
-  hashValue,
-  isSolid,
-  size = 24,
-  sizeLimitOneCharacter = 20,
-}) => {
+export type GetAvatarStyles = (
+  avatarStylesProps: AvatarStylesProps,
+  theme: Theme,
+) => AvatarStyles;
+
+export const getAvatarStyles: GetAvatarStyles = (
+  { name, color, hashValue, isSolid, size = 24, sizeLimitOneCharacter = 20 },
+  theme,
+) => {
+  const avatarVariables = getAvatarVariables(theme);
   let colorProps;
   const fills = avatarVariables.fills;
   if (color === 'automatic') {

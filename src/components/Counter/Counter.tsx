@@ -3,8 +3,8 @@ import { TouchableOpacity, View } from 'react-native';
 
 import { Icon } from '../../icons';
 import { Theme, withTheme } from '../../theme';
-import { CounterStyles } from '../../theme/style-getters/getCounterStyles';
 import { Spacing } from '../Layout';
+import { GetCounterStyles, getCounterStyles } from './Counter.styles';
 
 export interface CounterProps {
   theme: Theme;
@@ -18,7 +18,7 @@ export interface CounterProps {
   /**
    * Inline styles for components
    */
-  dangerouslySetInlineStyle?: Partial<CounterStyles>;
+  getStyles?: GetCounterStyles;
 }
 
 const CounterBase = (props: CounterProps) => {
@@ -29,32 +29,21 @@ const CounterBase = (props: CounterProps) => {
     onDecrement,
     isIncrementDisabled,
     isDecrementDisabled,
-    dangerouslySetInlineStyle,
+    getStyles = getCounterStyles,
     theme,
   } = props;
 
-  const {
-    containerStyle,
-    counterStyle,
-    countStyle,
-    disabledStyle,
-  } = theme.getCounterStyles();
+  const { containerStyle, counterStyle, countStyle, disabledStyle } = getStyles(
+    theme,
+  );
 
   return (
-    <View
-      style={{
-        ...containerStyle,
-        ...(dangerouslySetInlineStyle &&
-          dangerouslySetInlineStyle.containerStyle),
-      }}
-    >
+    <View style={containerStyle}>
       <Spacing paddingRight={2}>
         <TouchableOpacity
           activeOpacity={0.7}
           style={{
             ...counterStyle,
-            ...(dangerouslySetInlineStyle &&
-              dangerouslySetInlineStyle.counterStyle),
             ...(isDecrementDisabled && disabledStyle),
           }}
           disabled={isDecrementDisabled}
@@ -65,30 +54,18 @@ const CounterBase = (props: CounterProps) => {
             size={16}
             color={
               isDecrementDisabled
-                ? theme.themeVariables.colors.text.muted
-                : theme.themeVariables.colors.text.primary
+                ? theme.colors.text.muted
+                : theme.colors.text.primary
             }
           />
         </TouchableOpacity>
       </Spacing>
-      {component || (
-        <View
-          style={{
-            ...countStyle,
-            ...(dangerouslySetInlineStyle &&
-              dangerouslySetInlineStyle.countStyle),
-          }}
-        >
-          {count}
-        </View>
-      )}
+      {component || <View style={countStyle}>{count}</View>}
       <Spacing paddingLeft={2}>
         <TouchableOpacity
           activeOpacity={0.7}
           style={{
             ...counterStyle,
-            ...(dangerouslySetInlineStyle &&
-              dangerouslySetInlineStyle.counterStyle),
             ...(isIncrementDisabled && disabledStyle),
           }}
           disabled={isIncrementDisabled}
@@ -99,8 +76,8 @@ const CounterBase = (props: CounterProps) => {
             size={16}
             color={
               isIncrementDisabled
-                ? theme.themeVariables.colors.text.muted
-                : theme.themeVariables.colors.text.primary
+                ? theme.colors.text.muted
+                : theme.colors.text.primary
             }
           />
         </TouchableOpacity>

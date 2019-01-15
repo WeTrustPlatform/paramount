@@ -1,12 +1,8 @@
 import * as React from 'react';
-import {
-  Picker as RNPicker,
-  PickerProps as RNPickerProps,
-  ViewStyle,
-} from 'react-native';
+import { Picker as RNPicker, PickerProps as RNPickerProps } from 'react-native';
 
 import { Theme, withTheme } from '../../theme';
-import { PickerSize } from '../../theme/component-variables/pickerVariables';
+import { GetPickerStyles, getPickerStyles, PickerSize } from './Picker.styles';
 
 export interface PickerProps extends RNPickerProps {
   theme: Theme;
@@ -14,34 +10,21 @@ export interface PickerProps extends RNPickerProps {
   /**
    * Inline styles for components
    */
-  dangerouslySetInlineStyle?: {
-    pickerStyle?: ViewStyle;
-    itemStyle?: ViewStyle;
-  };
+  getStyles?: GetPickerStyles;
 }
 
 const PickerBase = (props: PickerProps) => {
   const {
     theme,
     size = 'medium',
-    dangerouslySetInlineStyle,
+    getStyles = getPickerStyles,
     ...pickerProps
   } = props;
 
-  const { pickerStyle, itemStyle } = theme.getPickerStyles(size);
+  const { pickerStyle, itemStyle } = getPickerStyles({ size }, theme);
 
   return (
-    <RNPicker
-      itemStyle={{
-        ...itemStyle,
-        ...(dangerouslySetInlineStyle && dangerouslySetInlineStyle.itemStyle),
-      }}
-      style={{
-        ...pickerStyle,
-        ...(dangerouslySetInlineStyle && dangerouslySetInlineStyle.pickerStyle),
-      }}
-      {...pickerProps}
-    />
+    <RNPicker itemStyle={itemStyle} style={pickerStyle} {...pickerProps} />
   );
 };
 

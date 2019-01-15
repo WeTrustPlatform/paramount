@@ -2,18 +2,21 @@ import * as React from 'react';
 
 import withTheme from '../../theme/withTheme';
 import Text, { TextProps } from './Text';
+import { getTextStyles } from './Text.styles';
 
 const StrongBase = (props: TextProps) => {
-  const { children, dangerouslySetInlineStyle, ...textProps } = props;
+  const { children, getStyles = getTextStyles, theme, ...textProps } = props;
 
   return (
     <Text
       accessibilityLabel="strong" // Web
-      dangerouslySetInlineStyle={{
-        textStyle: {
-          fontWeight: '600',
-          ...(dangerouslySetInlineStyle && dangerouslySetInlineStyle.textStyle),
-        },
+      getStyles={(...params) => {
+        return {
+          textStyle: {
+            ...(getStyles && getStyles(...params).textStyle),
+            fontWeight: '600',
+          },
+        };
       }}
       {...textProps}
     >

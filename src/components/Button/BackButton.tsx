@@ -11,11 +11,7 @@ const BackButton = (props: ButtonProps) => {
       appearance="minimal"
       isInline
       iconBefore={
-        <Icon
-          name="arrow-left"
-          size={24}
-          color={theme.themeVariables.colors.text.default}
-        />
+        <Icon name="arrow-left" size={24} color={theme.colors.text.default} />
       }
       size="small"
       {...props}

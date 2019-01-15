@@ -1,11 +1,11 @@
 import * as React from 'react';
 
 import { Theme, withTheme } from '../../theme';
-import { DrawerMenuStyles } from '../../theme/style-getters/getDrawerMenuStyles';
 import { Button, ButtonGroup, ButtonProps } from '../Button';
 import { Measurements, ViewMeasure } from '../Helpers';
 import { Box } from '../Layout';
 import { Popover } from '../Popover';
+import { getPopoverStyles } from '../Popover/Popover.styles';
 
 export interface DropdownMenuProps {
   children: React.ReactNode;
@@ -16,10 +16,6 @@ export interface DropdownMenuProps {
   onClose?: () => void;
   /** List of menu options, which also take `ButtonProps` */
   options?: ButtonProps[];
-  /**
-   * Inline styles for components
-   */
-  dangerouslySetInlineStyle?: Partial<DrawerMenuStyles>;
 }
 
 export interface DropdownMenuState {
@@ -48,9 +44,9 @@ class DropdownMenuBase extends React.Component<DropdownMenuProps> {
         content={
           <Box
             elevation={1}
-            borderRadius={theme.themeVariables.controlBorderRadius.medium}
+            borderRadius={theme.controlBorderRadius.medium}
             borderWidth={1}
-            borderColor={theme.themeVariables.colors.border.default}
+            borderColor={theme.colors.border.default}
             width={targetMeasurements.width}
           >
             <ButtonGroup>
@@ -60,13 +56,19 @@ class DropdownMenuBase extends React.Component<DropdownMenuProps> {
             </ButtonGroup>
           </Box>
         }
-        dangerouslySetInlineStyle={{
-          modalContainerStyle: {
-            borderRadius: theme.themeVariables.controlBorderRadius.medium,
-          },
-          popoverStyle: {
-            borderRadius: theme.themeVariables.controlBorderRadius.medium,
-          },
+        getStyles={(...params) => {
+          const defaultStyles = getPopoverStyles(...params);
+          return {
+            ...defaultStyles,
+            modalContainerStyle: {
+              ...defaultStyles.modalContainerStyle,
+              borderRadius: theme.controlBorderRadius.medium,
+            },
+            popoverStyle: {
+              ...defaultStyles.popoverStyle,
+              borderRadius: theme.controlBorderRadius.medium,
+            },
+          };
         }}
         showArrow={false}
         isVisible={isVisible}

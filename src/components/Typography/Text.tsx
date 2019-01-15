@@ -1,9 +1,5 @@
 import * as React from 'react';
-import {
-  Text as RNText,
-  TextProps as RNTextProps,
-  TextStyle,
-} from 'react-native';
+import { Text as RNText, TextProps as RNTextProps } from 'react-native';
 
 import {
   FontFamily,
@@ -12,6 +8,7 @@ import {
   Theme,
 } from '../../theme/ThemeInterface';
 import withTheme from '../../theme/withTheme';
+import { GetTextStyles, getTextStyles } from './Text.styles';
 import { TextAlign } from './types';
 
 export interface TextStyleProps {
@@ -28,9 +25,7 @@ export interface TextProps extends RNTextProps, TextStyleProps {
   theme: Theme;
   href?: string;
 
-  dangerouslySetInlineStyle?: {
-    textStyle: TextStyle;
-  };
+  getStyles?: GetTextStyles;
 }
 
 const TextBase = (props: TextProps) => {
@@ -40,23 +35,16 @@ const TextBase = (props: TextProps) => {
     fontFamily = 'text',
     size = 'medium',
     textAlign,
-    isInline,
+    isInline = false,
     theme,
-    dangerouslySetInlineStyle,
+    getStyles = getTextStyles,
     ...textProps
   } = props;
 
-  const { textStyle } = theme.getTextStyles(size, color, fontFamily, isInline);
+  const { textStyle } = getStyles({ size, color, fontFamily, isInline }, theme);
 
   return (
-    <RNText
-      style={[
-        { textAlign },
-        textStyle,
-        dangerouslySetInlineStyle && dangerouslySetInlineStyle.textStyle,
-      ]}
-      {...textProps}
-    >
+    <RNText style={[{ textAlign }, textStyle]} {...textProps}>
       {children}
     </RNText>
   );

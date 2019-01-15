@@ -2,8 +2,8 @@ import * as React from 'react';
 import { TouchableWithoutFeedback, View } from 'react-native';
 
 import { Theme, withTheme } from '../../theme';
-import { DialogStyles } from '../../theme/style-getters/getDialogStyles';
 import { Modal } from '../Modal';
+import { GetDialogStyles, getDialogStyles } from './Dialog.styles';
 
 // TODO: Import from react-native when react-native-web implementation is ready
 
@@ -21,7 +21,7 @@ export interface DialogProps {
   /**
    * Inline styles for components
    */
-  dangerouslySetInlineStyle?: Partial<DialogStyles>;
+  getStyles?: GetDialogStyles;
 }
 
 const DialogBase = (props: DialogProps) => {
@@ -32,7 +32,7 @@ const DialogBase = (props: DialogProps) => {
     isVisible,
     onClose,
     theme,
-    dangerouslySetInlineStyle,
+    getStyles = getDialogStyles,
   } = props;
 
   const {
@@ -40,44 +40,18 @@ const DialogBase = (props: DialogProps) => {
     overlayStyle,
     containerStyle,
     bodyStyle,
-  } = theme.getDialogStyles();
+  } = getStyles(theme);
 
   return (
     <Modal visible={isVisible} transparent onRequestClose={onClose}>
-      <View
-        style={{
-          ...modalContainerStyle,
-          ...(dangerouslySetInlineStyle &&
-            dangerouslySetInlineStyle.modalContainerStyle),
-        }}
-      >
-        <View
-          style={{
-            ...containerStyle,
-            ...(dangerouslySetInlineStyle &&
-              dangerouslySetInlineStyle.containerStyle),
-          }}
-        >
+      <View style={modalContainerStyle}>
+        <View style={containerStyle}>
           {header}
-          <View
-            style={{
-              ...bodyStyle,
-              ...(dangerouslySetInlineStyle &&
-                dangerouslySetInlineStyle.bodyStyle),
-            }}
-          >
-            {children}
-          </View>
+          <View style={bodyStyle}>{children}</View>
           {footer}
         </View>
         <TouchableWithoutFeedback onPress={onClose}>
-          <View
-            style={{
-              ...overlayStyle,
-              ...(dangerouslySetInlineStyle &&
-                dangerouslySetInlineStyle.overlayStyle),
-            }}
-          />
+          <View style={overlayStyle} />
         </TouchableWithoutFeedback>
       </View>
     </Modal>

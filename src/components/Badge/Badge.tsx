@@ -1,61 +1,61 @@
 import * as React from 'react';
-import { TextStyle } from 'react-native';
 
 import { Theme, withTheme } from '../../theme';
-import { ControlSize } from '../../theme/component-variables/controlVariables';
 import { FillColor } from '../../theme/ThemeInterface';
-import { Box } from '../Layout';
-import { BoxProps, Shape } from '../Layout/Box';
+import Box, { Shape } from '../Layout/Box';
 import { Strong } from '../Typography';
+import { getTextStyles } from '../Typography/Text.styles';
+import { BadgeSize, GetBadgeStyles, getBadgeStyles } from './Badge.styles';
 
 export interface BadgeProps {
   children: React.ReactNode;
   theme: Theme;
   color?: FillColor;
-  size?: ControlSize;
+  size?: BadgeSize;
   shape?: Shape;
   isSolid?: boolean;
-  dangerouslySetInlineStyle?: {
-    boxStyle: BoxProps;
-    textStyle: TextStyle;
-  };
+  getStyles?: GetBadgeStyles;
 }
 
 const BadgeBase = (props: BadgeProps) => {
   const {
     children,
     color = 'neutral',
-    dangerouslySetInlineStyle,
+    getStyles = getBadgeStyles,
     isSolid = false,
     shape = 'rounded',
     size = 'small',
     theme,
   } = props;
 
-  const { boxStyle, textStyle } = theme.getBadgeStyles(size, color, isSolid);
+  const { boxStyle, textStyle } = getStyles({ size, color, isSolid }, theme);
 
   return (
     <Box
-      backgroundColor={boxStyle.backgroundColor}
-      height={boxStyle.height}
-      paddingLeft={boxStyle.paddingLeft}
-      paddingRight={boxStyle.paddingRight}
       shape={shape}
-      display="flex"
-      flexDirection="row"
-      justifyContent="center"
-      alignItems="center"
-      alignSelf="flex-start"
-      {...dangerouslySetInlineStyle && dangerouslySetInlineStyle.boxStyle}
+      style={{
+        alignItems: 'center',
+        alignSelf: 'flex-start',
+        backgroundColor: boxStyle.backgroundColor,
+        display: 'flex',
+        flexDirection: 'row',
+        height: boxStyle.height,
+        justifyContent: 'center',
+        paddingLeft: boxStyle.paddingLeft,
+        paddingRight: boxStyle.paddingRight,
+        ...boxStyle,
+      }}
     >
       <Strong
         size={size}
-        dangerouslySetInlineStyle={{
-          textStyle: {
-            ...textStyle,
-            ...(dangerouslySetInlineStyle &&
-              dangerouslySetInlineStyle.textStyle),
-          },
+        getStyles={(...params) => {
+          const { textStyle: defaultTextStyle } = getTextStyles(...params);
+          return {
+            textStyle: {
+              ...defaultTextStyle,
+              ...textStyle,
+            },
+          };
         }}
       >
         {children}

@@ -8,6 +8,7 @@ import {
 
 import { Icon } from '../../icons';
 import { Theme, withTheme } from '../../theme';
+import { GetCheckboxStyles, getCheckboxStyles } from './Checkbox.styles';
 
 export type CheckboxShape = 'circle' | 'square';
 
@@ -21,6 +22,7 @@ export interface CheckboxProps {
   /** @default square */
   shape?: CheckboxShape;
   onChange?: (e: GestureResponderEvent) => void | undefined;
+  getStyles?: GetCheckboxStyles;
 }
 
 const CheckboxBase = (props: CheckboxProps & TouchableHighlightProps) => {
@@ -32,13 +34,14 @@ const CheckboxBase = (props: CheckboxProps & TouchableHighlightProps) => {
     onChange = () => null,
     shape = 'square',
     theme,
+    getStyles = getCheckboxStyles,
     ...touchableHighlightProps
   } = props;
 
-  const {
-    checkboxStyle,
-    checkboxFocusBackgroundColor,
-  } = theme.getCheckboxStyles(isChecked, isDisabled, shape);
+  const { checkboxStyle, checkboxFocusBackgroundColor } = getStyles(
+    { isChecked, isDisabled, shape },
+    theme,
+  );
 
   return (
     <TouchableHighlight
@@ -65,11 +68,7 @@ const CheckboxBase = (props: CheckboxProps & TouchableHighlightProps) => {
       >
         {isChecked
           ? checkedIcon || (
-              <Icon
-                name="check"
-                size={20}
-                color={theme.themeVariables.colors.text.plain}
-              />
+              <Icon name="check" size={20} color={theme.colors.text.plain} />
             )
           : null}
       </View>

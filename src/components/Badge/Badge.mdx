@@ -18,7 +18,7 @@ import { Box } from '../Layout';
   <ThemeConsumer>
     {theme => (
       <Box>
-        {Object.keys(theme.themeVariables.fills.solid).map(color => (
+        {Object.keys(theme.fills.solid).map(color => (
           <Box flexDirection="row" key={color}>
             <Badge color={color}>{color}</Badge>
             <Badge color={color} isSolid>
@@ -37,7 +37,7 @@ import { Box } from '../Layout';
   <ThemeConsumer>
     {theme => (
       <Box>
-        {Object.keys(theme.themeVariables.fills.solid).map(color => (
+        {Object.keys(theme.fills.solid).map(color => (
           <Box flexDirection="row" key={color}>
             <Badge shape="pill" color={color}>
               {color}

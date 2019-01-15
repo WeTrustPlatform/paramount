@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-import { createTheme } from './createTheme';
+import { defaultTheme } from './default-theme';
 
 const {
   Provider: ThemeProvider,
   Consumer: ThemeConsumer,
-} = React.createContext(createTheme());
+} = React.createContext(defaultTheme);
 
 export { ThemeProvider, ThemeConsumer };

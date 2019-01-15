@@ -8,10 +8,10 @@ import {
 
 import { POSITION, Position } from '../../constants';
 import { Theme, withTheme } from '../../theme';
-import { PopoverStyles } from '../../theme/style-getters/getPopoverStyles';
 import { Measurements, ViewMeasure } from '../Helpers';
 import { Modal } from '../Modal';
 import { getPopoverArrow } from './getPopoverArrow';
+import { GetPopoverStyles, getPopoverStyles } from './Popover.styles';
 
 export interface PopoverProps {
   theme: Theme;
@@ -31,10 +31,7 @@ export interface PopoverProps {
   showArrow?: boolean;
   position?: Position;
   targetMeasurements?: Measurements;
-  /**
-   * Inline styles for components
-   */
-  dangerouslySetInlineStyle?: Partial<PopoverStyles>;
+  getStyles?: GetPopoverStyles;
 }
 
 const DEFAULT_MARGIN = 24;
@@ -303,7 +300,7 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
   public render() {
     const {
       theme,
-      dangerouslySetInlineStyle,
+      getStyles = getPopoverStyles,
       children,
       content,
       parentHeight,
@@ -319,11 +316,9 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
       initialPopoverMeasurements,
       isAdjustingContent,
     } = this.state;
-    const {
-      popoverStyle,
-      modalContainerStyle,
-      overlayStyle,
-    } = theme.getPopoverStyles();
+    const { popoverStyle, modalContainerStyle, overlayStyle } = getStyles(
+      theme,
+    );
 
     const windowDimensions = Dimensions.get('window');
     const isOverflowing = getIsOverflowing({
@@ -387,18 +382,10 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
           onRequestClose={onClose}
           isBackgroundScrollable
         >
-          <View
-            style={{
-              ...modalContainerStyle,
-              ...(dangerouslySetInlineStyle &&
-                dangerouslySetInlineStyle.modalContainerStyle),
-            }}
-          >
+          <View style={modalContainerStyle}>
             <ViewMeasure
               style={{
                 ...popoverStyle,
-                ...(dangerouslySetInlineStyle &&
-                  dangerouslySetInlineStyle.popoverStyle),
                 ...popoverPositionStyle,
                 // Hide flash mis-positioned content
                 opacity:
@@ -416,13 +403,7 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
                 if (onClose) onClose();
               }}
             >
-              <View
-                style={{
-                  ...overlayStyle,
-                  ...(dangerouslySetInlineStyle &&
-                    dangerouslySetInlineStyle.overlayStyle),
-                }}
-              />
+              <View style={overlayStyle} />
             </TouchableWithoutFeedback>
           </View>
         </Modal>

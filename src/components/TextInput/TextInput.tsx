@@ -4,11 +4,14 @@ import {
   TextInput as RNTextInput,
   TextInputFocusEventData,
   TextInputProps as RNTextInputProps,
-  ViewStyle,
 } from 'react-native';
 
 import { Theme, withTheme } from '../../theme';
-import { TextInputSize } from '../../theme/component-variables/textInputVariables';
+import {
+  GetTextInputStyles,
+  getTextInputStyles,
+  TextInputSize,
+} from './TextInput.styles';
 
 export interface TextInputProps extends RNTextInputProps {
   theme: Theme;
@@ -16,9 +19,7 @@ export interface TextInputProps extends RNTextInputProps {
   isDisabled?: boolean;
   isRequired?: boolean;
   isInvalid?: boolean;
-  dangerouslySetInlineStyle?: {
-    inputStyle?: ViewStyle;
-  };
+  getStyles?: GetTextInputStyles;
 }
 
 class TextInputBase extends React.Component<TextInputProps> {
@@ -31,21 +32,20 @@ class TextInputBase extends React.Component<TextInputProps> {
       onFocus,
       theme,
       size = 'medium',
-      dangerouslySetInlineStyle,
+      getStyles = getTextInputStyles,
     } = this.props;
-    const { inputStyle, focusedStyle } = theme.getTextInputStyles(
-      size,
-      isDisabled,
-      isInvalid,
+    const { inputStyle, focusedStyle } = getStyles(
+      {
+        isDisabled,
+        isInvalid,
+        size,
+      },
+      theme,
     );
 
     if (!isDisabled) {
       this.root.setNativeProps({
-        style: [
-          inputStyle,
-          focusedStyle,
-          dangerouslySetInlineStyle && dangerouslySetInlineStyle.inputStyle,
-        ],
+        style: [inputStyle, focusedStyle],
       });
     }
 
@@ -61,20 +61,20 @@ class TextInputBase extends React.Component<TextInputProps> {
       isInvalid = false,
       theme,
       size = 'medium',
-      dangerouslySetInlineStyle,
+      getStyles = getTextInputStyles,
     } = this.props;
 
-    const { inputStyle } = theme.getTextInputStyles(
-      size,
-      isDisabled,
-      isInvalid,
+    const { inputStyle } = getStyles(
+      {
+        isDisabled,
+        isInvalid,
+        size,
+      },
+      theme,
     );
 
     this.root.setNativeProps({
-      style: [
-        inputStyle,
-        dangerouslySetInlineStyle && dangerouslySetInlineStyle.inputStyle,
-      ],
+      style: [inputStyle],
     });
 
     if (onBlur) {
@@ -89,14 +89,17 @@ class TextInputBase extends React.Component<TextInputProps> {
       isRequired,
       size = 'medium',
       theme,
-      dangerouslySetInlineStyle,
+      getStyles = getTextInputStyles,
       ...textInputProps
     } = this.props;
 
-    const { inputStyle, placeholderTextColor } = theme.getTextInputStyles(
-      size,
-      isDisabled,
-      isInvalid,
+    const { inputStyle, placeholderTextColor } = getStyles(
+      {
+        isDisabled,
+        isInvalid,
+        size,
+      },
+      theme,
     );
 
     return (
@@ -104,10 +107,7 @@ class TextInputBase extends React.Component<TextInputProps> {
         ref={(component: any) => {
           this.root = component;
         }}
-        style={[
-          inputStyle,
-          dangerouslySetInlineStyle && dangerouslySetInlineStyle.inputStyle,
-        ]}
+        style={inputStyle}
         onFocus={e => this.handleOnFocus(e)}
         onBlur={e => this.handleOnBlur(e)}
         editable={!isDisabled}

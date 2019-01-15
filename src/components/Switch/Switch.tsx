@@ -3,11 +3,11 @@ import {
   Animated,
   TouchableOpacity,
   TouchableOpacityProps,
-  ViewStyle,
 } from 'react-native';
 
 import { Icon } from '../../icons';
 import { Theme, withTheme } from '../../theme';
+import { GetSwitchStyles, getSwitchStyles } from './Switch.styles';
 
 /* Copy pasted from https://github.com/react-native-seoul/react-native-switch-toggle */
 export interface SwitchProps extends TouchableOpacityProps {
@@ -21,10 +21,7 @@ export interface SwitchProps extends TouchableOpacityProps {
   /**
    * Inline styles for components
    */
-  dangerouslySetInlineStyle?: {
-    containerStyle: ViewStyle;
-    circleStyle: ViewStyle;
-  };
+  getStyles?: GetSwitchStyles;
 }
 
 export interface SwitchState {
@@ -60,8 +57,8 @@ class SwitchBase extends React.Component<SwitchProps, SwitchState> {
 
   constructor(props: SwitchProps) {
     super(props);
-    const { theme } = props;
-    const { circleStyle, containerStyle } = theme.getSwitchStyles();
+    const { theme, getStyles = getSwitchStyles } = props;
+    const { circleStyle, containerStyle } = getStyles(theme);
 
     const endPosition =
       containerStyle.width - (circleStyle.width + containerStyle.padding * 2);
@@ -106,7 +103,7 @@ class SwitchBase extends React.Component<SwitchProps, SwitchState> {
       offIcon,
       theme,
       isSwitchedOn,
-      dangerouslySetInlineStyle,
+      getStyles = getSwitchStyles,
       ...touchableOpacityProps
     } = this.props;
     const { animXValue, circlePosXStart, circlePosXEnd } = this.state;
@@ -118,7 +115,7 @@ class SwitchBase extends React.Component<SwitchProps, SwitchState> {
       backgroundColorOn,
       circleColorOff,
       circleColorOn,
-    } = theme.getSwitchStyles();
+    } = getStyles(theme);
 
     return (
       <TouchableOpacity
@@ -136,8 +133,6 @@ class SwitchBase extends React.Component<SwitchProps, SwitchState> {
         <Animated.View
           style={[
             containerStyle,
-            dangerouslySetInlineStyle &&
-              dangerouslySetInlineStyle.containerStyle,
             {
               backgroundColor: animXValue.interpolate({
                 inputRange: [0, 1],
@@ -149,8 +144,6 @@ class SwitchBase extends React.Component<SwitchProps, SwitchState> {
           <Animated.View
             style={[
               circleStyle,
-              dangerouslySetInlineStyle &&
-                dangerouslySetInlineStyle.circleStyle,
               {
                 backgroundColor: animXValue.interpolate({
                   inputRange: [0, 1],
@@ -174,15 +167,11 @@ class SwitchBase extends React.Component<SwitchProps, SwitchState> {
                   <Icon
                     name="check"
                     size={20}
-                    color={theme.themeVariables.colors.text.primary}
+                    color={theme.colors.text.primary}
                   />
                 )
               : offIcon || (
-                  <Icon
-                    name="x"
-                    size={20}
-                    color={theme.themeVariables.colors.text.default}
-                  />
+                  <Icon name="x" size={20} color={theme.colors.text.default} />
                 )}
           </Animated.View>
         </Animated.View>

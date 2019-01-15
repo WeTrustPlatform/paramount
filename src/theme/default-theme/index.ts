@@ -1,4 +1,4 @@
-import { ThemeVariables } from '../ThemeInterface';
+import { Theme } from '../ThemeInterface';
 import {
   controlBorderRadius,
   controlHeights,
@@ -7,16 +7,18 @@ import {
 import { colors, elevations, fills } from './foundational-styles';
 import {
   fontFamilies,
+  fontWeights,
   headingSizes,
   paragraphSizes,
   textSizes,
 } from './typography';
 
-export const defaultThemeVariables: ThemeVariables = {
+export const defaultTheme: Theme = {
   colors,
   fills,
 
   fontFamilies,
+  fontWeights,
 
   headingSizes,
   paragraphSizes,

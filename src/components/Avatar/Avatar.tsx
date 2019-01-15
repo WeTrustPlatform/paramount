@@ -2,9 +2,10 @@ import * as React from 'react';
 import { Image, View } from 'react-native';
 
 import { Theme, withTheme } from '../../theme';
-import { AvatarStyles } from '../../theme/style-getters/getAvatarStyles';
 import { FillColors } from '../../theme/ThemeInterface';
 import { Text } from '../Typography';
+import { getTextStyles } from '../Typography/Text.styles';
+import { GetAvatarStyles, getAvatarStyles } from './Avatar.styles';
 
 // https://github.com/segmentio/evergreen/blob/master/source/avatar/README.md
 export type GetInitialsType = (name?: string, fallback?: string) => string;
@@ -76,10 +77,7 @@ export interface AvatarProps {
    */
   theme: Theme;
 
-  /**
-   * Inline styles for components
-   */
-  dangerouslySetInlineStyle?: Partial<AvatarStyles>;
+  getStyles?: GetAvatarStyles;
 }
 
 export const AvatarBase = (props: AvatarProps) => {
@@ -95,7 +93,7 @@ export const AvatarBase = (props: AvatarProps) => {
     color = 'automatic',
     forceShowInitials = false,
     sizeLimitOneCharacter = 20,
-    dangerouslySetInlineStyle,
+    getStyles = getAvatarStyles,
   } = props;
 
   const { imageHasFailedLoading } = { imageHasFailedLoading: false };
@@ -106,30 +104,30 @@ export const AvatarBase = (props: AvatarProps) => {
     initials = initials.substring(0, 1);
   }
 
-  const { boxStyle, textStyle, imageStyle } = theme.getAvatarStyles({
-    color,
-    hashValue,
-    isSolid,
-    name,
-    size,
-    sizeLimitOneCharacter,
-  });
+  const { boxStyle, textStyle, imageStyle } = getStyles(
+    {
+      color,
+      hashValue,
+      isSolid,
+      name,
+      size,
+      sizeLimitOneCharacter,
+    },
+    theme,
+  );
 
   return (
-    <View
-      style={{
-        ...boxStyle,
-        ...(dangerouslySetInlineStyle && dangerouslySetInlineStyle.boxStyle),
-      }}
-    >
+    <View style={boxStyle}>
       {(imageUnavailable || forceShowInitials) && (
         <Text
-          dangerouslySetInlineStyle={{
-            textStyle: {
-              ...textStyle,
-              ...(dangerouslySetInlineStyle &&
-                dangerouslySetInlineStyle.textStyle),
-            },
+          getStyles={(...params) => {
+            const { textStyle: defaultTextStyle } = getTextStyles(...params);
+            return {
+              textStyle: {
+                ...defaultTextStyle,
+                ...textStyle,
+              },
+            };
           }}
         >
           {initials}
@@ -140,11 +138,7 @@ export const AvatarBase = (props: AvatarProps) => {
           source={{
             uri: source,
           }}
-          style={{
-            ...imageStyle,
-            ...(dangerouslySetInlineStyle &&
-              dangerouslySetInlineStyle.imageStyle),
-          }}
+          style={imageStyle}
         />
       )}
     </View>

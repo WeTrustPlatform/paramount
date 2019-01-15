@@ -4,9 +4,9 @@ import { TouchableOpacity, View } from 'react-native';
 import { Intent } from '../../constants/Intent';
 import { Icon } from '../../icons';
 import { Theme, withTheme } from '../../theme';
-import { AlertStyles } from '../../theme/style-getters/getAlertStyles';
 import { Spacing } from '../Layout';
 import { Strong, Text } from '../Typography';
+import { GetAlertStyles, getAlertStyles } from './Alert.styles';
 
 export interface AlertProps {
   theme: Theme;
@@ -18,46 +18,30 @@ export interface AlertProps {
   isCloseable?: boolean;
   icon?: React.ReactNode | null;
   intent?: Intent;
-  /**
-   * Inline styles for components
-   */
-  dangerouslySetInlineStyle?: Partial<AlertStyles>;
+
+  getStyles?: GetAlertStyles;
 }
 
 const resolveIcon = (intent: Intent, theme: Theme) => {
   switch (intent) {
     case 'success':
       return (
-        <Icon
-          name="check-circle"
-          size={24}
-          color={theme.themeVariables.colors.text.success}
-        />
+        <Icon name="check-circle" size={24} color={theme.colors.text.success} />
       );
     case 'warning':
       return (
         <Icon
           name="alert-triangle"
           size={24}
-          color={theme.themeVariables.colors.text.warning}
+          color={theme.colors.text.warning}
         />
       );
     case 'danger':
       return (
-        <Icon
-          name="alert-circle"
-          size={24}
-          color={theme.themeVariables.colors.text.danger}
-        />
+        <Icon name="alert-circle" size={24} color={theme.colors.text.danger} />
       );
     default:
-      return (
-        <Icon
-          name="info"
-          size={24}
-          color={theme.themeVariables.colors.text.info}
-        />
-      );
+      return <Icon name="info" size={24} color={theme.colors.text.info} />;
   }
 };
 
@@ -70,33 +54,21 @@ const AlertBase = (props: AlertProps) => {
     isCloseable = false,
     icon,
     intent = 'info',
-    dangerouslySetInlineStyle,
+    getStyles = getAlertStyles,
     theme,
   } = props;
 
-  const { containerStyle, bodyStyle } = theme.getAlertStyles(intent);
+  const { containerStyle, bodyStyle } = getStyles({ intent }, theme);
 
   return (
-    <View
-      style={{
-        ...containerStyle,
-        ...(dangerouslySetInlineStyle &&
-          dangerouslySetInlineStyle.containerStyle),
-      }}
-    >
+    <View style={containerStyle}>
       {icon || (
         <Spacing paddingRight={2} justifyContent="center">
           {resolveIcon(intent, theme)}
         </Spacing>
       )}
       {component || (
-        <View
-          style={{
-            ...bodyStyle,
-            ...(dangerouslySetInlineStyle &&
-              dangerouslySetInlineStyle.bodyStyle),
-          }}
-        >
+        <View style={bodyStyle}>
           <Strong>{title}</Strong>
           <Text>{description}</Text>
         </View>
@@ -104,11 +76,7 @@ const AlertBase = (props: AlertProps) => {
       {isCloseable && (
         <TouchableOpacity onPress={onClose}>
           <Spacing paddingLeft={2}>
-            <Icon
-              name="x"
-              size={24}
-              color={theme.themeVariables.colors.text.default}
-            />
+            <Icon name="x" size={24} color={theme.colors.text.default} />
           </Spacing>
         </TouchableOpacity>
       )}

@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { Theme, withTheme } from '../../theme';
 import TextInput, { TextInputProps } from '../TextInput/TextInput';
+import { getTextInputStyles } from '../TextInput/TextInput.styles';
 
 export interface TextAreaProps extends TextInputProps {
   numberOfLines?: number;
@@ -15,19 +16,24 @@ const TextAreaBase = (props: TextAreaProps) => {
     theme,
     ...textInputProps
   } = props;
-  const controlHeight = theme.themeVariables.controlHeights[size];
+  const controlHeight = theme.controlHeights[size];
 
   return (
     <TextInput
       multiline
       size={size}
       numberOfLines={numberOfLines}
-      dangerouslySetInlineStyle={{
-        inputStyle: {
-          height: numberOfLines * controlHeight,
-          paddingBottom: 8,
-          paddingTop: 8,
-        },
+      getStyles={(...params) => {
+        const defaultTextInputStyles = getTextInputStyles(...params);
+        return {
+          ...defaultTextInputStyles,
+          inputStyle: {
+            ...defaultTextInputStyles.inputStyle,
+            height: numberOfLines * controlHeight,
+            paddingBottom: 8,
+            paddingTop: 8,
+          },
+        };
       }}
       {...textInputProps}
     />

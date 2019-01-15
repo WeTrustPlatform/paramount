@@ -6,15 +6,17 @@ import {
 } from 'react-native';
 
 import { Theme, withTheme } from '../../theme';
+import { Spacing } from '../Layout';
+import { LoadingDots } from '../Loading';
+import { Text } from '../Typography';
+import { getTextStyles } from '../Typography/Text.styles';
 import {
   ButtonAppearance,
   ButtonColor,
   ButtonSize,
-} from '../../theme/component-variables/buttonVariables';
-import { ButtonStyles } from '../../theme/style-getters/getButtonStyles';
-import { Spacing } from '../Layout';
-import { LoadingDots } from '../Loading';
-import { Text } from '../Typography';
+  GetButtonStyles,
+  getButtonStyles,
+} from './Button.styles';
 
 export interface ButtonProps extends TouchableHighlightProps {
   title?: string;
@@ -93,7 +95,7 @@ export interface ButtonProps extends TouchableHighlightProps {
   /**
    * Inline styles for components
    */
-  dangerouslySetInlineStyle?: Partial<ButtonStyles>;
+  getStyles?: GetButtonStyles;
 }
 
 const ButtonBase = (props: ButtonProps) => {
@@ -101,7 +103,7 @@ const ButtonBase = (props: ButtonProps) => {
     appearance = 'primary',
     title,
     color = 'default',
-    dangerouslySetInlineStyle,
+    getStyles = getButtonStyles,
     iconAfter,
     iconBefore,
     iconLoading,
@@ -118,13 +120,16 @@ const ButtonBase = (props: ButtonProps) => {
     ...touchableHighlightProps
   } = props;
 
-  const { buttonStyle, textStyle, focusColor } = theme.getButtonStyles(
-    appearance,
-    color,
-    size,
-    isDisabled,
-    isLoading,
-    isInline,
+  const { buttonStyle, textStyle, focusColor } = getStyles(
+    {
+      appearance,
+      color,
+      isDisabled,
+      isInline,
+      isLoading,
+      size,
+    },
+    theme,
   );
 
   return (
@@ -134,10 +139,7 @@ const ButtonBase = (props: ButtonProps) => {
       underlayColor={focusColor}
       disabled={!!(isDisabled || isLoading)}
       onPress={onPress}
-      style={{
-        ...buttonStyle,
-        ...(dangerouslySetInlineStyle && dangerouslySetInlineStyle.buttonStyle),
-      }}
+      style={buttonStyle}
       {...touchableHighlightProps}
     >
       <View
@@ -157,12 +159,16 @@ const ButtonBase = (props: ButtonProps) => {
             iconLoading || <LoadingDots color={textStyle.color} />
           ) : title ? (
             <Text
-              dangerouslySetInlineStyle={{
-                textStyle: {
-                  ...textStyle,
-                  ...(dangerouslySetInlineStyle &&
-                    dangerouslySetInlineStyle.textStyle),
-                },
+              getStyles={(...params) => {
+                const { textStyle: defaultTextStyle } = getTextStyles(
+                  ...params,
+                );
+                return {
+                  textStyle: {
+                    ...defaultTextStyle,
+                    ...textStyle,
+                  },
+                };
               }}
             >
               {title}

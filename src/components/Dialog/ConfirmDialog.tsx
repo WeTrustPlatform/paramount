@@ -3,8 +3,8 @@ import { TouchableOpacity } from 'react-native';
 
 import { Icon } from '../../icons';
 import { Theme, withTheme } from '../../theme';
-import { ButtonColor } from '../../theme/component-variables/buttonVariables';
 import { Button } from '../Button';
+import { ButtonColor } from '../Button/Button.styles';
 import { Spacing } from '../Layout';
 import { Heading } from '../Typography';
 import Dialog, { DialogProps } from './Dialog';
@@ -34,11 +34,7 @@ const ConfirmDialogHeader = ({
   >
     <Heading>{title}</Heading>
     <TouchableOpacity onPress={onClose}>
-      <Icon
-        name="x"
-        size={24}
-        color={theme.themeVariables.colors.text.default}
-      />
+      <Icon name="x" size={24} color={theme.colors.text.default} />
     </TouchableOpacity>
   </Spacing>
 );

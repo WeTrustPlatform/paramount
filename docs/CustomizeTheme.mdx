@@ -5,7 +5,7 @@ order: 90
 
 # Customize Theme
 
-Paramount uses three-tier theming system. It means you can customize the styles at three layers, with each level being more granular
+You can customize the theme using the theme object, additionally components expose API to override styles
 
 ## 1. Use ThemeProvider
 
@@ -25,119 +25,4 @@ const theme = createTheme()
 
 ## 2. Theme Object
 
-Theme object has 3 parts. [See Theme interface](theme/ThemeInterface.ts). You can choose to customize whichever part you want
-
-```
-const theme = createTheme(themeVariables, componentVariables)
-
-// or
-
-const theme = {
-  themeVariables: customThemeVariables,
-  componentVariables: customComponentVariables,
-  ...styleGetters
-}
-```
-
-### Theme variables (Tier 1)
-
-Those are variables that define overall look of the design system. These high level variables should be enough to provide basic style changes such as color, font sizes, control paddings/heights etc. [See ThemeVariables interface](theme/ThemeInterface.ts)
-
-```
-const themeVariables = {
-  ...defaultThemeVariables,
-  colors: {
-    background: { ... },
-    border: { ... },
-    icon: { ... },
-    intent: { ... },
-    text: { ... },
-    brand: { ... },
-  }
-}
-```
-
-### Component variables (Tier 2)
-
-Those are variables applied to individual components. They inherit some variables from tier-1 theme variables but can be overriden specifically for each component. These variables usually provide styling for different component states, look etc.
-
-```
-
-const buttonVariables = {
-  appearances: {
-    minimal: {
-      default: {
-        backgroundColor: 'blue',
-        ...
-      },
-      danger: { ... },
-      primary: { ... },
-      secondary: { ... },
-    },
-    primary: {
-      default: { ... },
-      danger: { ... },
-      primary: { ... },
-      secondary: { ... },
-    },
-    outline: {
-      default: { ... },
-      danger: { ... },
-      primary: { ... },
-      secondary: { ... }
-    },
-  },
-  disabled: { ... },
-  sizes: {
-    small: { ... },
-    medium: { ... },
-    large: { ... },
-  },
-}
-
-const theme = {
-  ...createTheme(themeVariables, {
-    ...componentVariables,
-    button: buttonVariables, // <= Insert here
-  }),
-  ...styleGetters,
-}
-```
-
-### Component style getters (Tier 3)
-
-These are functions that return style for components. This allows for complete control over how a component looks depending on given props. They inherit component variables.
-
-```
-const getButtonStyles = buttonVariables => (appearance, color, ...componentProps) => {
-  return {
-    buttonStyle: {
-      backgroundColor: buttonVariables[appearance],
-    },
-    focusColor: { ... },
-    textStyle: { ... },
-  }
-}
-
-const theme = {
-  ...createTheme(themeVariables, componentVariables),
-  ...styleGetters,
-  getButtonStyles, // <= Insert here
-}
-```
-
-## Use dangerouslySetInlineStyle
-
-All components also expose a prop `dangerouslySetInlineStyle` which you can use to style individual children of a component. Using these is equivalent to tier-2 component variables; however style getters cannot access these styles. It is recommended that you only use theme, so that your components are consistent
-
-```
-  <Text
-    dangerouslySetInlineStyle={{
-      textStyle: {
-        ...textStyle,
-      },
-    }}
-  >
-    {children}
-  </Text>
-```
+Theme object [See Theme interface](theme/ThemeInterface.ts). You can choose to customize whichever part you want

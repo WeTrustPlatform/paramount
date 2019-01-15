@@ -25,7 +25,7 @@ export const TopLeftArrow = ({
     <View
       style={{
         ...commonStyle,
-        borderTopColor: theme.themeVariables.colors.border.muted,
+        borderTopColor: theme.colors.border.muted,
         bottom: 0,
         left: targetMeasurements.width / 2,
         marginBottom: -arrowWidth * 2,
@@ -56,7 +56,7 @@ export const TopArrow = ({
     <View
       style={{
         ...commonStyle,
-        borderTopColor: theme.themeVariables.colors.border.muted,
+        borderTopColor: theme.colors.border.muted,
         bottom: 0,
         left: '50%',
         marginBottom: -arrowWidth * 2,
@@ -87,7 +87,7 @@ export const TopRightArrow = ({
     <View
       style={{
         ...commonStyle,
-        borderTopColor: theme.themeVariables.colors.border.muted,
+        borderTopColor: theme.colors.border.muted,
         bottom: 0,
         marginBottom: -arrowWidth * 2,
         right: targetMeasurements.width / 2,
@@ -118,7 +118,7 @@ export const LeftArrow = ({
     <View
       style={{
         ...commonStyle,
-        borderLeftColor: theme.themeVariables.colors.border.muted,
+        borderLeftColor: theme.colors.border.muted,
         marginRight: -arrowWidth * 2,
         right: 0,
         top: '50%',
@@ -149,7 +149,7 @@ export const RightArrow = ({
     <View
       style={{
         ...commonStyle,
-        borderRightColor: theme.themeVariables.colors.border.muted,
+        borderRightColor: theme.colors.border.muted,
         left: 0,
         marginLeft: -arrowWidth * 2,
         top: '50%',
@@ -180,7 +180,7 @@ export const BottomRightArrow = ({
     <View
       style={{
         ...commonStyle,
-        borderBottomColor: theme.themeVariables.colors.border.muted,
+        borderBottomColor: theme.colors.border.muted,
         marginTop: -arrowWidth * 2,
         right: targetMeasurements.width / 2,
         top: 0,
@@ -211,7 +211,7 @@ export const BottomArrow = ({
     <View
       style={{
         ...commonStyle,
-        borderBottomColor: theme.themeVariables.colors.border.muted,
+        borderBottomColor: theme.colors.border.muted,
         marginTop: -arrowWidth * 2,
         right: '50%',
         top: 0,
@@ -242,7 +242,7 @@ export const BottomLeftArrow = ({
     <View
       style={{
         ...commonStyle,
-        borderBottomColor: theme.themeVariables.colors.border.muted,
+        borderBottomColor: theme.colors.border.muted,
         left: targetMeasurements.width / 2,
         marginTop: -arrowWidth * 2,
         top: 0,

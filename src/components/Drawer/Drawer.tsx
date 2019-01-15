@@ -2,8 +2,8 @@ import * as React from 'react';
 import { Animated, TouchableWithoutFeedback, View } from 'react-native';
 
 import { Theme, withTheme } from '../../theme';
-import { DrawerStyles } from '../../theme/style-getters/getDrawerStyles';
 import { Modal } from '../Modal';
+import { GetDrawerStyles, getDrawerStyles } from './Drawer.styles';
 
 type Position = 'bottom' | 'top' | 'right' | 'left';
 
@@ -20,10 +20,7 @@ export interface DrawerProps {
   space?: number | string;
   /** Which side to draw from @default bottom */
   position?: Position;
-  /**
-   * Inline styles for components
-   */
-  dangerouslySetInlineStyle?: Partial<DrawerStyles>;
+  getStyles?: GetDrawerStyles;
 }
 
 const DrawerBase = (props: DrawerProps) => {
@@ -35,14 +32,12 @@ const DrawerBase = (props: DrawerProps) => {
     offset = 0,
     space,
     theme,
-    dangerouslySetInlineStyle,
+    getStyles = getDrawerStyles,
   } = props;
 
-  const {
-    modalContainerStyle,
-    overlayStyle,
-    containerStyle,
-  } = theme.getDrawerStyles();
+  const { modalContainerStyle, overlayStyle, containerStyle } = getStyles(
+    theme,
+  );
 
   if (!isVisible) return null;
 
@@ -56,18 +51,10 @@ const DrawerBase = (props: DrawerProps) => {
 
   return (
     <Modal visible={isVisible} transparent onRequestClose={onClose}>
-      <View
-        style={{
-          ...modalContainerStyle,
-          ...(dangerouslySetInlineStyle &&
-            dangerouslySetInlineStyle.modalContainerStyle),
-        }}
-      >
+      <View style={modalContainerStyle}>
         <Animated.View
           style={{
             ...containerStyle,
-            ...(dangerouslySetInlineStyle &&
-              dangerouslySetInlineStyle.containerStyle),
             [position]: value,
             ...((position === 'left' || position === 'right') &&
               space && {
@@ -84,13 +71,7 @@ const DrawerBase = (props: DrawerProps) => {
           {children}
         </Animated.View>
         <TouchableWithoutFeedback onPress={onClose}>
-          <View
-            style={{
-              ...overlayStyle,
-              ...(dangerouslySetInlineStyle &&
-                dangerouslySetInlineStyle.overlayStyle),
-            }}
-          />
+          <View style={overlayStyle} />
         </TouchableWithoutFeedback>
       </View>
     </Modal>

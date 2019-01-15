@@ -1,6 +1,6 @@
 import { ViewStyle } from 'react-native';
 
-import { ThemeVariables } from '../ThemeInterface';
+import { Theme } from '../../theme/ThemeInterface';
 
 export interface DialogVariables {
   body: ViewStyle;
@@ -9,9 +9,7 @@ export interface DialogVariables {
   overlay: ViewStyle & { cursor?: string };
 }
 
-export const getDialogVariables = (
-  themeVariables: ThemeVariables,
-): DialogVariables => {
+export const getDialogVariables = (theme: Theme): DialogVariables => {
   return {
     body: {
       maxHeight: 400,
@@ -33,7 +31,7 @@ export const getDialogVariables = (
       width: '100%',
     },
     overlay: {
-      backgroundColor: themeVariables.colors.background.overlay,
+      backgroundColor: theme.colors.background.overlay,
       bottom: 0,
       cursor: 'auto',
       height: '100%',
@@ -43,5 +41,24 @@ export const getDialogVariables = (
       top: 0,
       width: '100%',
     },
+  };
+};
+
+export interface DialogStyles {
+  bodyStyle: ViewStyle;
+  containerStyle: ViewStyle;
+  overlayStyle: ViewStyle;
+  modalContainerStyle: ViewStyle;
+}
+export type GetDialogStyles = (theme: Theme) => DialogStyles;
+
+export const getDialogStyles: GetDialogStyles = theme => {
+  const dialogVariables = getDialogVariables(theme);
+
+  return {
+    bodyStyle: dialogVariables.body,
+    containerStyle: dialogVariables.container,
+    modalContainerStyle: dialogVariables.modalContainer,
+    overlayStyle: dialogVariables.overlay,
   };
 };

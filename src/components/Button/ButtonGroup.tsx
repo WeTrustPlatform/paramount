@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Theme, withTheme } from '../../theme';
 import { Box } from '../Layout';
 import { ButtonProps } from './Button';
+import { ButtonStylesProps, getButtonStyles } from './Button.styles';
 
 export type ButtonGroupDirection = 'vertical' | 'horizontal';
 
@@ -33,48 +34,52 @@ const ButtonGroup: React.SFC<ButtonGroupProps> = props => {
     // @ts-ignore
     const button = child as React.ReactElement<ButtonProps>;
     const buttonSize = button.props.size || 'medium';
-    const buttonBorderRadius =
-      theme.themeVariables.controlBorderRadius[buttonSize];
+    const buttonBorderRadius = theme.controlBorderRadius[buttonSize];
 
     return React.cloneElement(button, {
-      dangerouslySetInlineStyle:
-        direction === 'vertical'
-          ? {
-              buttonStyle: {
-                borderBottomWidth: 1,
-                borderColor: theme.themeVariables.colors.border.default,
-                borderRadius: 0,
-                borderWidth: 0,
-                elevation: 0,
+      getStyles: (styleProps: ButtonStylesProps) => {
+        const defaultButtonStyles = getButtonStyles(styleProps, theme);
 
-                ...(index === 0 && {
-                  borderTopLeftRadius: buttonBorderRadius,
-                  borderTopRightRadius: buttonBorderRadius,
-                }),
-                ...(childrenLength - 1 === index && {
-                  borderBottomLeftRadius: buttonBorderRadius,
-                  borderBottomRightRadius: buttonBorderRadius,
-                  borderBottomWidth: 0,
-                }),
-              },
-            }
-          : {
-              buttonStyle: {
-                borderColor: theme.themeVariables.colors.border.default,
-                borderLeftWidth: 0,
-                borderRadius: 0,
-                elevation: 0,
+        return {
+          ...defaultButtonStyles,
+          buttonStyle: {
+            ...defaultButtonStyles.buttonStyle,
+            ...(direction === 'vertical'
+              ? {
+                  borderBottomWidth: 1,
+                  borderColor: theme.colors.border.default,
+                  borderRadius: 0,
+                  borderWidth: 0,
+                  elevation: 0,
 
-                ...(index === 0 && {
-                  borderBottomLeftRadius: buttonBorderRadius,
-                  borderTopLeftRadius: buttonBorderRadius,
+                  ...(index === 0 && {
+                    borderTopLeftRadius: buttonBorderRadius,
+                    borderTopRightRadius: buttonBorderRadius,
+                  }),
+                  ...(childrenLength - 1 === index && {
+                    borderBottomLeftRadius: buttonBorderRadius,
+                    borderBottomRightRadius: buttonBorderRadius,
+                    borderBottomWidth: 0,
+                  }),
+                }
+              : {
+                  borderColor: theme.colors.border.default,
+                  borderLeftWidth: 0,
+                  borderRadius: 0,
+                  elevation: 0,
+
+                  ...(index === 0 && {
+                    borderBottomLeftRadius: buttonBorderRadius,
+                    borderTopLeftRadius: buttonBorderRadius,
+                  }),
+                  ...(childrenLength - 1 === index && {
+                    borderBottomRightRadius: buttonBorderRadius,
+                    borderTopRightRadius: buttonBorderRadius,
+                  }),
                 }),
-                ...(childrenLength - 1 === index && {
-                  borderBottomRightRadius: buttonBorderRadius,
-                  borderTopRightRadius: buttonBorderRadius,
-                }),
-              },
-            },
+          },
+        };
+      },
     });
   });
 
