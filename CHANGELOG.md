@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/WeTrustPlatform/paramount/compare/v1.15.2...v1.16.0) (2019-01-15)
+
+
+### Features
+
+* refactor for simplified style customization api ([dba066d](https://github.com/WeTrustPlatform/paramount/commit/dba066d))
+
 ## [1.15.2](https://github.com/WeTrustPlatform/paramount/compare/v1.15.1...v1.15.2) (2019-01-14)
 
 
