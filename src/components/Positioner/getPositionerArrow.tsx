@@ -262,7 +262,7 @@ export const BottomLeftArrow = ({
   </>
 );
 
-export const getPopoverArrow = ({
+export const getPositionerArrow = ({
   position,
   targetMeasurements,
   theme,
@@ -375,7 +375,7 @@ export const FullWidthBottomArrow = ({
   </>
 );
 
-export const getFullWidthPopoverArrow = ({
+export const getFullWidthPositionerArrow = ({
   position,
   targetMeasurements,
   theme,

@@ -4,20 +4,20 @@ import { Toggle } from 'react-powerplug';
 
 import { Measurements, RefMeasure } from '../Helpers';
 
-export interface PopoverControllerRenderProps {
-  openPopover: () => void;
-  closePopover: () => void;
-  isPopoverVisible: boolean;
+export interface PositionerControllerRenderProps {
+  openPositioner: () => void;
+  closePositioner: () => void;
+  isPositionerVisible: boolean;
   setTarget: React.RefObject<any>;
   onTargetLayout: (e: LayoutChangeEvent) => void;
   targetMeasurements: Measurements;
 }
 
-export interface PopoverControllerProps {
-  children: (props: PopoverControllerRenderProps) => React.ReactNode;
+export interface PositionerControllerProps {
+  children: (props: PositionerControllerRenderProps) => React.ReactNode;
 }
 
-export const PopoverController = (props: PopoverControllerProps) => {
+export const PositionerController = (props: PositionerControllerProps) => {
   const { children } = props;
 
   return (
@@ -26,10 +26,10 @@ export const PopoverController = (props: PopoverControllerProps) => {
         <RefMeasure>
           {({ forwardRef, measurements, onLayout, measure }) => {
             return children({
-              closePopover: () => set(false),
-              isPopoverVisible: on,
+              closePositioner: () => set(false),
+              isPositionerVisible: on,
               onTargetLayout: onLayout,
-              openPopover: () => {
+              openPositioner: () => {
                 measure();
                 set(true);
               },
@@ -43,4 +43,4 @@ export const PopoverController = (props: PopoverControllerProps) => {
   );
 };
 
-export default PopoverController;
+export default PositionerController;

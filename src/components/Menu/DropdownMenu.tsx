@@ -4,8 +4,8 @@ import { Theme, withTheme } from '../../theme';
 import { Button, ButtonGroup, ButtonProps } from '../Button';
 import { Measurements, ViewMeasure } from '../Helpers';
 import { Box } from '../Layout';
-import { Popover } from '../Popover';
-import { getPopoverStyles } from '../Popover/Popover.styles';
+import { Positioner } from '../Positioner';
+import { getPositionerStyles } from '../Positioner/Positioner.styles';
 
 export interface DropdownMenuProps {
   children: React.ReactNode;
@@ -39,9 +39,9 @@ class DropdownMenuBase extends React.Component<DropdownMenuProps> {
     const { targetMeasurements } = this.state;
 
     return (
-      <Popover
+      <Positioner
         position="bottom"
-        content={
+        content={() => (
           <Box
             elevation={1}
             borderRadius={theme.controlBorderRadius.medium}
@@ -55,22 +55,21 @@ class DropdownMenuBase extends React.Component<DropdownMenuProps> {
               ))}
             </ButtonGroup>
           </Box>
-        }
+        )}
         getStyles={(...params) => {
-          const defaultStyles = getPopoverStyles(...params);
+          const defaultStyles = getPositionerStyles(...params);
           return {
             ...defaultStyles,
             modalContainerStyle: {
               ...defaultStyles.modalContainerStyle,
               borderRadius: theme.controlBorderRadius.medium,
             },
-            popoverStyle: {
-              ...defaultStyles.popoverStyle,
+            positionerStyle: {
+              ...defaultStyles.positionerStyle,
               borderRadius: theme.controlBorderRadius.medium,
             },
           };
         }}
-        showArrow={false}
         isVisible={isVisible}
         onClose={onClose}
       >
@@ -81,7 +80,7 @@ class DropdownMenuBase extends React.Component<DropdownMenuProps> {
         >
           {children}
         </ViewMeasure>
-      </Popover>
+      </Positioner>
     );
   };
 }
