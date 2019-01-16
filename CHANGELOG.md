@@ -1,3 +1,10 @@
+## [1.17.1](https://github.com/WeTrustPlatform/paramount/compare/v1.17.0...v1.17.1) (2019-01-16)
+
+
+### Bug Fixes
+
+* export modal ([113a8ec](https://github.com/WeTrustPlatform/paramount/commit/113a8ec))
+
 # [1.17.0](https://github.com/WeTrustPlatform/paramount/compare/v1.16.0...v1.17.0) (2019-01-16)
 
 
