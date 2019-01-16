@@ -10,6 +10,7 @@ export * from './Helpers';
 export * from './FormField';
 export * from './Layout';
 export * from './Loading';
+export * from './Modal';
 export * from './Picker';
 export * from './Progress';
 export * from './Popover';
