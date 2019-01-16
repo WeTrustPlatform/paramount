@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Animated } from 'react-native';
+import { Omit } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
-import { Omit } from '../../types/utils';
 import { Alert, AlertProps } from '../Alert';
 
 // Animation taken from https://medium.com/@norbajunior/react-native-facebook-and-instagram-like-top-bar-notifications-with-animated-api-43c48d0443dd
