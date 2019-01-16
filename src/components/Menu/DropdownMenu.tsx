@@ -5,7 +5,6 @@ import { Button, ButtonGroup, ButtonProps } from '../Button';
 import { Measurements, ViewMeasure } from '../Helpers';
 import { Box } from '../Layout';
 import { Positioner } from '../Positioner';
-import { getPositionerStyles } from '../Positioner/Positioner.styles';
 
 export interface DropdownMenuProps {
   children: React.ReactNode;
@@ -56,20 +55,6 @@ class DropdownMenuBase extends React.Component<DropdownMenuProps> {
             </ButtonGroup>
           </Box>
         )}
-        getStyles={(...params) => {
-          const defaultStyles = getPositionerStyles(...params);
-          return {
-            ...defaultStyles,
-            modalContainerStyle: {
-              ...defaultStyles.modalContainerStyle,
-              borderRadius: theme.controlBorderRadius.medium,
-            },
-            positionerStyle: {
-              ...defaultStyles.positionerStyle,
-              borderRadius: theme.controlBorderRadius.medium,
-            },
-          };
-        }}
         isVisible={isVisible}
         onClose={onClose}
       >
