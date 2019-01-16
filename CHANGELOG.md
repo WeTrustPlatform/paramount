@@ -1,3 +1,16 @@
+# [1.17.0](https://github.com/WeTrustPlatform/paramount/compare/v1.16.0...v1.17.0) (2019-01-16)
+
+
+### Bug Fixes
+
+* popover handling dynamic content ([c94db4c](https://github.com/WeTrustPlatform/paramount/commit/c94db4c))
+* popover snapshot tests ([8078882](https://github.com/WeTrustPlatform/paramount/commit/8078882))
+
+
+### Features
+
+* add Popover full width prop ([9f8ba53](https://github.com/WeTrustPlatform/paramount/commit/9f8ba53))
+
 # [1.16.0](https://github.com/WeTrustPlatform/paramount/compare/v1.15.2...v1.16.0) (2019-01-15)
 
 
