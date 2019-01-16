@@ -410,6 +410,59 @@ For more advanced usage, you can use `PopoverController`.
   </Spacing>
 </Playground>
 
+### Popover with full width
+
+On Mobile sometimes we want the content to stretch full width of the window. There is the prop `isFullWidth` for that
+
+<Playground>
+  <Spacing flexDirection="row">
+    <Spacing flex={1}>
+      <Toggle>
+        {({ on, toggle }) => (
+          <Popover
+            isVisible={on}
+            isFullWidth
+            onClose={toggle}
+            position="top-left"
+            content={
+              <Box backgroundColor="white">
+                <Text>
+                  Long text that should be well visible and non-obstructing Long
+                  text that should be well visible and non-obstructing
+                </Text>
+              </Box>
+            }
+          >
+            <Button onPress={toggle} title="Bottom" />
+          </Popover>
+        )}
+      </Toggle>
+    </Spacing>
+    <Spacing flex={1}>
+      <Toggle>
+        {({ on, toggle }) => (
+          <Popover
+            isVisible={on}
+            isFullWidth
+            onClose={toggle}
+            position="bottom-right"
+            content={
+              <Box backgroundColor="white">
+                <Text>
+                  Long text that should be well visible and non-obstructing Long
+                  text that should be well visible and non-obstructing
+                </Text>
+              </Box>
+            }
+          >
+            <Button onPress={toggle} title="Bottom" />
+          </Popover>
+        )}
+      </Toggle>
+    </Spacing>
+  </Spacing>
+</Playground>
+
 ## Props
 
 <PropsTable of={Popover} />

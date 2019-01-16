@@ -312,3 +312,94 @@ export const getPopoverArrow = ({
       return <View />;
   }
 };
+
+export const FullWidthTopArrow = ({
+  theme,
+  targetMeasurements,
+}: {
+  theme: Theme;
+  targetMeasurements: Measurements;
+}) => (
+  <>
+    <View
+      style={{
+        ...commonStyle,
+        borderTopColor: theme.colors.border.muted,
+        bottom: 0,
+        left: targetMeasurements.pageX + targetMeasurements.width / 2,
+        marginBottom: -arrowWidth * 2,
+        transform: [{ translateX: -arrowWidth }],
+      }}
+    />
+    <View
+      style={{
+        ...commonStyle,
+        borderTopColor: 'white',
+        bottom: 0,
+        left: targetMeasurements.pageX + targetMeasurements.width / 2,
+        marginBottom: -arrowWidth * 2 + 1,
+        transform: [{ translateX: -arrowWidth }],
+      }}
+    />
+  </>
+);
+
+export const FullWidthBottomArrow = ({
+  theme,
+  targetMeasurements,
+}: {
+  theme: Theme;
+  targetMeasurements: Measurements;
+}) => (
+  <>
+    <View
+      style={{
+        ...commonStyle,
+        borderBottomColor: theme.colors.border.muted,
+        left: targetMeasurements.pageX + targetMeasurements.width / 2,
+        marginTop: -arrowWidth * 2,
+        top: 0,
+        transform: [{ translateX: -arrowWidth }],
+      }}
+    />
+    <View
+      style={{
+        ...commonStyle,
+        borderBottomColor: 'white',
+        left: targetMeasurements.pageX + targetMeasurements.width / 2,
+        marginTop: -arrowWidth * 2 + 1,
+        top: 0,
+        transform: [{ translateX: -arrowWidth }],
+      }}
+    />
+  </>
+);
+
+export const getFullWidthPopoverArrow = ({
+  position,
+  targetMeasurements,
+  theme,
+}: {
+  position: Position;
+  targetMeasurements: Measurements;
+  theme: Theme;
+}) => {
+  switch (position) {
+    case 'top':
+      return (
+        <FullWidthTopArrow
+          theme={theme}
+          targetMeasurements={targetMeasurements}
+        />
+      );
+    case 'bottom':
+      return (
+        <FullWidthBottomArrow
+          theme={theme}
+          targetMeasurements={targetMeasurements}
+        />
+      );
+    default:
+      return <View />;
+  }
+};

@@ -10,7 +10,7 @@ import { POSITION, Position } from '../../constants';
 import { Theme, withTheme } from '../../theme';
 import { Measurements, ViewMeasure } from '../Helpers';
 import { Modal } from '../Modal';
-import { getPopoverArrow } from './getPopoverArrow';
+import { getFullWidthPopoverArrow, getPopoverArrow } from './getPopoverArrow';
 import { GetPopoverStyles, getPopoverStyles } from './Popover.styles';
 
 export interface PopoverProps {
@@ -19,6 +19,8 @@ export interface PopoverProps {
   onClose?: () => void;
   /** For dynamic size content of popovers we have to render all the items first so it precalculates popover position and layout, so that when user opens popover there is no flash of adjusting popover but immediately shows it. This is not `true` by default because it may causes small delay for the Popover to be properly available. @default false */
   isDynamicContent?: boolean;
+  /** Sets the popover to cover full width. Useful when wanting to display on mobile devices a full menu. Overrides `isDynamicContent`. Ignores `right` and `left` positions. */
+  isFullWidth?: boolean;
   children: React.ReactNode;
   content: React.ReactNode;
   /**
@@ -248,6 +250,54 @@ const getPopoverPosition = (params: GetPopoverPositionParams) => {
   }
 };
 
+const getPopoverFullWidthPosition = (params: GetPopoverPositionParams) => {
+  const {
+    screenLayout,
+    position,
+    targetMeasurements,
+    popoverMeasurements,
+    offset,
+  } = params;
+
+  const newPosition = resolveCorrectPosition(position)({
+    shouldFlipBottomToTop:
+      popoverMeasurements.height + offset >
+      screenLayout.height -
+        targetMeasurements.pageY +
+        targetMeasurements.height -
+        offset,
+    shouldFlipLeftToRight: false,
+    shouldFlipRightToLeft: false,
+    shouldFlipTopToBottom:
+      popoverMeasurements.height + offset > targetMeasurements.pageY,
+  })
+    .replace('-left', '')
+    .replace('-right', '');
+
+  switch (newPosition) {
+    case POSITION.TOP:
+      return {
+        position: POSITION.TOP,
+
+        left: 0,
+        right: 0,
+        top: targetMeasurements.pageY - popoverMeasurements.height - offset,
+      };
+    case POSITION.BOTTOM:
+      return {
+        position: POSITION.BOTTOM,
+
+        left: 0,
+        right: 0,
+        top: targetMeasurements.pageY + targetMeasurements.height + offset,
+      };
+    default:
+      return {
+        position: POSITION.BOTTOM_RIGHT,
+      };
+  }
+};
+
 export const getIsOverflowing = ({
   popoverMeasurements,
   screenLayout,
@@ -275,6 +325,7 @@ export interface PopoverState {
 
 const defaultProps = {
   isDynamicContent: false,
+  isFullWidth: false,
   position: POSITION.BOTTOM,
 };
 
@@ -289,7 +340,7 @@ const initialMeasurements = {
 
 class PopoverBase extends React.Component<PopoverProps, PopoverState> {
   /** Hack to get correct position of dynamic content */
-  private hasOverflowedOnce: boolean = false;
+  private hasOverflowedCounter: number = 0;
 
   constructor(props: PopoverProps) {
     super(props);
@@ -320,7 +371,8 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
       content,
       parentHeight,
       isVisible,
-      onClose,
+      isFullWidth = defaultProps.isFullWidth,
+      onClose = () => null,
       position = defaultProps.position,
       showArrow = true,
       targetMeasurements,
@@ -337,14 +389,9 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
 
     const screenLayout = Dimensions.get('window');
 
-    const popoverMeasurementsMeasured =
-      popoverMeasurements.width !== 0 && popoverMeasurements.height !== 0;
-
     const finalTargetMeasurements = targetMeasurements || childrenMeasurements;
-    const {
-      position: correctedPosition,
-      ...popoverPositionStyle
-    } = getPopoverPosition({
+
+    const getPopoverPositionParams = {
       offset: DEFAULT_OFFSET,
       popoverMeasurements,
       position,
@@ -353,20 +400,21 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
         height: parentHeight || screenLayout.height,
       },
       targetMeasurements: finalTargetMeasurements,
-    });
+    };
 
-    const isOverflowing = getIsOverflowing({
-      popoverMeasurements,
-      position,
-      screenLayout,
-    });
+    const { position: correctedPosition, ...popoverPositionStyle } = isFullWidth
+      ? getPopoverFullWidthPosition(getPopoverPositionParams)
+      : getPopoverPosition(getPopoverPositionParams);
 
-    const renderArrow = showArrow
-      ? getPopoverArrow({
-          position: correctedPosition,
-          targetMeasurements: finalTargetMeasurements,
-          theme,
-        })
+    const getPopoverArrowParams = {
+      position: correctedPosition,
+      targetMeasurements: finalTargetMeasurements,
+      theme,
+    };
+    const arrow = showArrow
+      ? isFullWidth
+        ? getFullWidthPopoverArrow(getPopoverArrowParams)
+        : getPopoverArrow(getPopoverArrowParams)
       : null;
 
     return (
@@ -394,29 +442,33 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
                 ...popoverStyle,
                 ...popoverPositionStyle,
                 // Hide flash mis-positioned content
-                opacity:
-                  popoverMeasurementsMeasured && !isAdjustingContent ? 1 : 0,
+                opacity: !isAdjustingContent ? 1 : 0,
               }}
               onMeasure={measurements => {
+                const isOverflowing = getIsOverflowing({
+                  popoverMeasurements,
+                  position,
+                  screenLayout,
+                });
                 /**
                  * Popover usually gets expected positioning after it has overflowed once.
                  */
-                if (!isOverflowing && !this.hasOverflowedOnce) {
+
+                if (this.hasOverflowedCounter === 0) {
+                  this.setState({ popoverMeasurements: measurements });
+                } else if (!isOverflowing) {
                   this.setState({ popoverMeasurements: measurements });
                 }
+
                 if (isOverflowing) {
-                  this.hasOverflowedOnce = true;
+                  this.hasOverflowedCounter++;
                 }
               }}
             >
               {content}
-              {renderArrow}
+              {arrow}
             </ViewMeasure>
-            <TouchableWithoutFeedback
-              onPress={() => {
-                if (onClose) onClose();
-              }}
-            >
+            <TouchableWithoutFeedback onPress={onClose}>
               <View style={overlayStyle} />
             </TouchableWithoutFeedback>
           </View>
