@@ -39,6 +39,7 @@ class ModalBase extends React.PureComponent<ModalBaseProps> {
     if (visible) {
       if (!isBackgroundScrollable) {
         document.body.style.overflow = 'hidden';
+        document.body.style.height = '100vh';
       }
 
       if (this.content.current) {
@@ -53,6 +54,7 @@ class ModalBase extends React.PureComponent<ModalBaseProps> {
     } else {
       if (!isBackgroundScrollable) {
         document.body.style.overflow = '';
+        document.body.style.height = '';
       }
     }
   }
@@ -76,6 +78,7 @@ class ModalBase extends React.PureComponent<ModalBaseProps> {
           backgroundColor: transparent ? 'transparent' : 'white',
           bottom: 0,
           left: 0,
+          overflow: 'auto',
           position: isBackgroundScrollable ? 'absolute' : 'fixed',
           right: 0,
           top: 0,
