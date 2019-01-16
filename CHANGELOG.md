@@ -1,3 +1,16 @@
+# [1.18.0](https://github.com/WeTrustPlatform/paramount/compare/v1.17.1...v1.18.0) (2019-01-16)
+
+
+### Bug Fixes
+
+* overflow of modal height ([9f65704](https://github.com/WeTrustPlatform/paramount/commit/9f65704))
+
+
+### Features
+
+* add createTheme utility ([e67763f](https://github.com/WeTrustPlatform/paramount/commit/e67763f))
+* extract popover from positioner ([156249b](https://github.com/WeTrustPlatform/paramount/commit/156249b))
+
 ## [1.17.1](https://github.com/WeTrustPlatform/paramount/compare/v1.17.0...v1.17.1) (2019-01-16)
 
 
