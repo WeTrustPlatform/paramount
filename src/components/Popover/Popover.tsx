@@ -37,7 +37,7 @@ export interface PopoverProps {
 const DEFAULT_MARGIN = 24;
 const DEFAULT_OFFSET = 14;
 /** Time to allow all the calculation to be done */
-const RENDER_CALCULATION_DURATION = 600;
+const RENDER_CALCULATION_DURATION = 700;
 
 const resolveCorrectPosition = (position: Position) => ({
   shouldFlipBottomToTop,
@@ -83,37 +83,51 @@ const resolveCorrectPosition = (position: Position) => ({
   return newPosition;
 };
 
-const getPopoverPosition = (position: Position) => (
-  screenLayout: ScaledSize,
-) => (targetMeasurements: Measurements) => (
-  popoverMeasurements: Measurements,
-) => (initialPopoverMeasurements: Measurements) => (offset: number) => (
-  isOverflowing: boolean,
-) => {
+interface GetPopoverPositionParams {
+  screenLayout: ScaledSize;
+  position: Position;
+  targetMeasurements: Measurements;
+  popoverMeasurements: Measurements;
+  offset: number;
+}
+const getPopoverPosition = (params: GetPopoverPositionParams) => {
+  const {
+    screenLayout,
+    position,
+    targetMeasurements,
+    popoverMeasurements,
+    offset,
+  } = params;
+
   const newPosition = resolveCorrectPosition(position)({
     shouldFlipBottomToTop:
-      initialPopoverMeasurements.height + offset >
+      popoverMeasurements.height + offset >
       screenLayout.height -
         targetMeasurements.pageY +
         targetMeasurements.height -
         offset,
     shouldFlipLeftToRight:
       position === POSITION.LEFT
-        ? initialPopoverMeasurements.width + offset + DEFAULT_MARGIN >
+        ? popoverMeasurements.width + offset + DEFAULT_MARGIN >
           targetMeasurements.pageX - offset
-        : initialPopoverMeasurements.width + offset >
+        : popoverMeasurements.width + offset >
           screenLayout.width - targetMeasurements.pageX,
     shouldFlipRightToLeft:
       position === POSITION.RIGHT
         ? targetMeasurements.pageX +
             targetMeasurements.width +
-            initialPopoverMeasurements.width +
+            popoverMeasurements.width +
             offset >
           screenLayout.width - offset
-        : targetMeasurements.pageX <
-          initialPopoverMeasurements.width + DEFAULT_MARGIN,
+        : targetMeasurements.pageX < popoverMeasurements.width + DEFAULT_MARGIN,
     shouldFlipTopToBottom:
-      initialPopoverMeasurements.height + offset > targetMeasurements.pageY,
+      popoverMeasurements.height + offset > targetMeasurements.pageY,
+  });
+
+  const isOverflowing = getIsOverflowing({
+    popoverMeasurements,
+    position,
+    screenLayout,
   });
 
   switch (newPosition) {
@@ -235,15 +249,15 @@ const getPopoverPosition = (position: Position) => (
 };
 
 export const getIsOverflowing = ({
-  initialPopoverMeasurements,
-  windowDimensions,
+  popoverMeasurements,
+  screenLayout,
   position,
 }: {
-  initialPopoverMeasurements: Measurements;
-  windowDimensions: ScaledSize;
+  popoverMeasurements: Measurements;
+  screenLayout: ScaledSize;
   position: Position;
 }) => {
-  if (initialPopoverMeasurements.width > windowDimensions.width - 48) {
+  if (popoverMeasurements.width > screenLayout.width - 48) {
     return true;
   }
 
@@ -251,12 +265,10 @@ export const getIsOverflowing = ({
 };
 
 export interface PopoverState {
-  /** This is the original measurements of the popover. It is static, and will not change. It is used to calculate whether popover should "flip" and also whether originally the popover overflows the window or not */
-  initialPopoverMeasurements: Measurements;
   /** This is the adjusted measurements of the popover when the content is of dynamic size. It adjusts several times when its position is being calculated to account for things like window overflow, margins and other layout calculations */
   popoverMeasurements: Measurements;
   /** Measurements of the wrapped component */
-  localTargetMeasurements: Measurements;
+  childrenMeasurements: Measurements;
   /** HACK: For dynamic size content of popovers we have to render all the items first so it precalculates popover position and layout, so that when user opens popover there is no flash of adjusting popover but immediately shows it */
   isAdjustingContent: boolean;
 }
@@ -266,23 +278,26 @@ const defaultProps = {
   position: POSITION.BOTTOM,
 };
 
+const initialMeasurements = {
+  height: 0,
+  pageX: 0,
+  pageY: 0,
+  width: 0,
+  x: 0,
+  y: 0,
+};
+
 class PopoverBase extends React.Component<PopoverProps, PopoverState> {
+  /** Hack to get correct position of dynamic content */
+  private hasOverflowedOnce: boolean = false;
+
   constructor(props: PopoverProps) {
     super(props);
     const { isDynamicContent = defaultProps.isDynamicContent } = props;
-    const initialMeasurements = {
-      height: 0,
-      pageX: 0,
-      pageY: 0,
-      width: 0,
-      x: 0,
-      y: 0,
-    };
 
     this.state = {
-      initialPopoverMeasurements: initialMeasurements,
+      childrenMeasurements: initialMeasurements,
       isAdjustingContent: isDynamicContent,
-      localTargetMeasurements: initialMeasurements,
       popoverMeasurements: initialMeasurements,
     };
   }
@@ -312,40 +327,46 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
     } = this.props;
     const {
       popoverMeasurements,
-      localTargetMeasurements,
-      initialPopoverMeasurements,
+      childrenMeasurements,
       isAdjustingContent,
     } = this.state;
+
     const { popoverStyle, modalContainerStyle, overlayStyle } = getStyles(
       theme,
     );
 
-    const windowDimensions = Dimensions.get('window');
-    const isOverflowing = getIsOverflowing({
-      initialPopoverMeasurements,
-      position,
-      windowDimensions,
-    });
-    const initialPopoverMeasurementsMeasured =
-      initialPopoverMeasurements.width !== 0 &&
-      initialPopoverMeasurements.height !== 0;
+    const screenLayout = Dimensions.get('window');
+
     const popoverMeasurementsMeasured =
       popoverMeasurements.width !== 0 && popoverMeasurements.height !== 0;
 
-    const finalTargetMeasurements =
-      targetMeasurements || localTargetMeasurements;
+    const finalTargetMeasurements = targetMeasurements || childrenMeasurements;
     const {
       position: correctedPosition,
       ...popoverPositionStyle
-    } = getPopoverPosition(position)({
-      ...windowDimensions,
-      height: parentHeight || windowDimensions.height,
-    })(finalTargetMeasurements)(popoverMeasurements)(
-      initialPopoverMeasurements,
-    )(DEFAULT_OFFSET)(isOverflowing);
+    } = getPopoverPosition({
+      offset: DEFAULT_OFFSET,
+      popoverMeasurements,
+      position,
+      screenLayout: {
+        ...screenLayout,
+        height: parentHeight || screenLayout.height,
+      },
+      targetMeasurements: finalTargetMeasurements,
+    });
+
+    const isOverflowing = getIsOverflowing({
+      popoverMeasurements,
+      position,
+      screenLayout,
+    });
 
     const renderArrow = showArrow
-      ? getPopoverArrow(correctedPosition)(finalTargetMeasurements)(theme)
+      ? getPopoverArrow({
+          position: correctedPosition,
+          targetMeasurements: finalTargetMeasurements,
+          theme,
+        })
       : null;
 
     return (
@@ -355,25 +376,10 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
         ) : (
           <ViewMeasure
             onMeasure={measurements => {
-              this.setState({ localTargetMeasurements: measurements });
+              this.setState({ childrenMeasurements: measurements });
             }}
           >
             {children}
-          </ViewMeasure>
-        )}
-        {/* Mounts an invisible node to measure initial Popover measurements, after which is removed */}
-        {!initialPopoverMeasurementsMeasured && (
-          <ViewMeasure
-            onMeasure={measurements =>
-              this.setState({ initialPopoverMeasurements: measurements })
-            }
-            style={{
-              opacity: 0,
-              position: 'absolute',
-              zIndex: -1,
-            }}
-          >
-            {content}
           </ViewMeasure>
         )}
         <Modal
@@ -392,7 +398,15 @@ class PopoverBase extends React.Component<PopoverProps, PopoverState> {
                   popoverMeasurementsMeasured && !isAdjustingContent ? 1 : 0,
               }}
               onMeasure={measurements => {
-                this.setState({ popoverMeasurements: measurements });
+                /**
+                 * Popover usually gets expected positioning after it has overflowed once.
+                 */
+                if (!isOverflowing && !this.hasOverflowedOnce) {
+                  this.setState({ popoverMeasurements: measurements });
+                }
+                if (isOverflowing) {
+                  this.hasOverflowedOnce = true;
+                }
               }}
             >
               {content}

@@ -262,9 +262,15 @@ export const BottomLeftArrow = ({
   </>
 );
 
-export const getPopoverArrow = (position: Position) => (
-  targetMeasurements: Measurements,
-) => (theme: Theme) => {
+export const getPopoverArrow = ({
+  position,
+  targetMeasurements,
+  theme,
+}: {
+  position: Position;
+  targetMeasurements: Measurements;
+  theme: Theme;
+}) => {
   switch (position) {
     case 'top-left':
       return (

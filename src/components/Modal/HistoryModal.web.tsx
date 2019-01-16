@@ -75,7 +75,7 @@ class HistoryModal extends React.PureComponent<HistoryModalProps> {
   }
 }
 
-export default ({ useHistory, ...props }: HistoryModalProps) => {
+export default ({ useHistory = false, ...props }: HistoryModalProps) => {
   if (useHistory) return <HistoryModal {...props} />;
 
   return <ModalBase {...props} />;

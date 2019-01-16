@@ -70,11 +70,14 @@ class RefMeasure extends React.Component<RefMeasureProps, Measurements> {
           pageY,
         };
 
-        this.setState(() => nodeMeasurements);
-
-        if (onMeasure) {
-          onMeasure(nodeMeasurements);
-        }
+        this.setState(
+          () => nodeMeasurements,
+          () => {
+            if (onMeasure) {
+              onMeasure(nodeMeasurements);
+            }
+          },
+        );
       },
     );
   };
