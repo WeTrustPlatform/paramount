@@ -10405,10 +10405,10 @@ react-sizes@^1.0.4:
     lodash.throttle "^4.1.1"
     prop-types "^15.6.0"
 
-react-spring@7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-7.0.0.tgz#a19151672176a63938be53b488f57e4bd6c8c900"
-  integrity sha512-HvWtCDalaHhQYn6VqYV8GHWI8ZuWCC9AzOpMq1f7GQcsbnbHzPwaoYETT5IFMSxne8n1PN4BE19W98ifkZU4RA==
+react-spring@7.2.8:
+  version "7.2.8"
+  resolved "https://registry.yarnpkg.com/react-spring/-/react-spring-7.2.8.tgz#a1f49653393332bf84431a898993eda2f3212e42"
+  integrity sha512-wgK0eXjWR5yT12kAd0b6CXF73qcoisTJF7vt8qw/IZmeYcPm/GA3zGV5MQ8R2hicbVwc5oV6FGFPSbkAFJ6pdA==
   dependencies:
     "@babel/runtime" "^7.0.0"
 
