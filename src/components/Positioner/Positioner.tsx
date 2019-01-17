@@ -400,7 +400,8 @@ class PositionerBase extends React.Component<PositionerProps, PositionerState> {
     const screenLayout = Dimensions.get('window');
 
     const finalTargetMeasurements = targetMeasurements || childrenMeasurements;
-
+    const hasPositionerMeasurementsMeasured =
+      positionerMeasurements.width !== 0 && positionerMeasurements.height !== 0;
     const getPositionerPositionParams = {
       offset: DEFAULT_OFFSET,
       position,
@@ -444,7 +445,10 @@ class PositionerBase extends React.Component<PositionerProps, PositionerState> {
                 ...positionerStyle,
                 ...positionerPositionStyle,
                 // Hide flash mis-positioned content
-                opacity: !isAdjustingContent ? 1 : 0,
+                opacity:
+                  hasPositionerMeasurementsMeasured && !isAdjustingContent
+                    ? 1
+                    : 0,
               }}
               onMeasure={measurements => {
                 const isOverflowing = getIsOverflowing({
