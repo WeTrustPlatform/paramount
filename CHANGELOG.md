@@ -1,3 +1,10 @@
+## [1.18.1](https://github.com/WeTrustPlatform/paramount/compare/v1.18.0...v1.18.1) (2019-01-17)
+
+
+### Bug Fixes
+
+* export positioner and change to popover ([5d1e909](https://github.com/WeTrustPlatform/paramount/commit/5d1e909))
+
 # [1.18.0](https://github.com/WeTrustPlatform/paramount/compare/v1.17.1...v1.18.0) (2019-01-16)
 
 
