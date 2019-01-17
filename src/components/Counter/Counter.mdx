@@ -20,12 +20,18 @@ import { Counter as CounterContainer } from 'react-powerplug';
   </CounterContainer>
 </Playground>
 
-### Counter with disabled decrement
+### Counter with min and max count
 
 <Playground>
   <CounterContainer initial={0}>
-    {({ count, inc }) => (
-      <Counter count={count} onIncrement={inc} isDecrementDisabled />
+    {({ count, inc, dec }) => (
+      <Counter
+        count={count}
+        onDecrement={dec}
+        onIncrement={inc}
+        min={0}
+        max={10}
+      />
     )}
   </CounterContainer>
 </Playground>

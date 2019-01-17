@@ -9,12 +9,12 @@ import { GetCounterStyles, getCounterStyles } from './Counter.styles';
 export interface CounterProps {
   theme: Theme;
   count: number;
+  min?: number;
+  max?: number;
   /* custom component in place of count */
   component?: React.ReactNode;
   onIncrement?: () => void;
   onDecrement?: () => void;
-  isIncrementDisabled?: boolean;
-  isDecrementDisabled?: boolean;
   /**
    * Inline styles for components
    */
@@ -25,10 +25,10 @@ const CounterBase = (props: CounterProps) => {
   const {
     count,
     component,
+    max,
+    min,
     onIncrement,
     onDecrement,
-    isIncrementDisabled,
-    isDecrementDisabled,
     getStyles = getCounterStyles,
     theme,
   } = props;
@@ -36,6 +36,9 @@ const CounterBase = (props: CounterProps) => {
   const { containerStyle, counterStyle, countStyle, disabledStyle } = getStyles(
     theme,
   );
+
+  const isDecrementDisabled = min === count;
+  const isIncrementDisabled = max === count;
 
   return (
     <View style={containerStyle}>
