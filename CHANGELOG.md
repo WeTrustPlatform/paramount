@@ -1,3 +1,10 @@
+## [1.18.4](https://github.com/WeTrustPlatform/paramount/compare/v1.18.3...v1.18.4) (2019-01-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-spring to v7.2.8 ([#67](https://github.com/WeTrustPlatform/paramount/issues/67)) ([40ba0ca](https://github.com/WeTrustPlatform/paramount/commit/40ba0ca))
+
 ## [1.18.3](https://github.com/WeTrustPlatform/paramount/compare/v1.18.2...v1.18.3) (2019-01-17)
 
 
