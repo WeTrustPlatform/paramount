@@ -58,7 +58,7 @@ export const getHeadingVariables = (theme: Theme): HeadingVariables => {
 
       medium: {
         color: theme.colors.text.dark,
-        fontFamily: theme.fontFamilies.text,
+        fontFamily: theme.fontFamilies.heading,
         fontSize: theme.headingSizes.medium,
         fontWeight: '600',
         letterSpacing: -0.05,
@@ -67,7 +67,7 @@ export const getHeadingVariables = (theme: Theme): HeadingVariables => {
 
       small: {
         color: theme.colors.text.dark,
-        fontFamily: theme.fontFamilies.text,
+        fontFamily: theme.fontFamilies.heading,
         fontSize: theme.headingSizes.small,
         fontWeight: '600',
         letterSpacing: -0.05,

@@ -16692,6 +16692,7 @@ exports[`Counter_1 1`] = `
     >
       <div
         data-focusable={true}
+        disabled={false}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
         onResponderGrant={[Function]}
@@ -16889,6 +16890,7 @@ exports[`Counter_1 1`] = `
     >
       <div
         data-focusable={true}
+        disabled={false}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
         onResponderGrant={[Function]}
@@ -17004,7 +17006,7 @@ exports[`Counter_1 1`] = `
 
 exports[`Counter_2 1`] = `
 <h3>
-  Counter with disabled decrement
+  Counter with min and max count
 </h3>
 `;
 
@@ -17292,6 +17294,7 @@ exports[`Counter_3 1`] = `
     >
       <div
         data-focusable={true}
+        disabled={false}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
         onResponderGrant={[Function]}
@@ -36015,7 +36018,7 @@ exports[`Typography_0 1`] = `
           "boxSizing": "border-box",
           "color": "rgba(126,126,126,1.00)",
           "display": "inline",
-          "fontFamily": "\\"SF UI Text\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+          "fontFamily": "\\"SF UI Display\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
           "fontSize": "16px",
           "fontStyle": "inherit",
           "fontVariant": "inherit",
@@ -36050,7 +36053,7 @@ exports[`Typography_0 1`] = `
           "boxSizing": "border-box",
           "color": "rgba(126,126,126,1.00)",
           "display": "inline",
-          "fontFamily": "\\"SF UI Text\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+          "fontFamily": "\\"SF UI Display\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
           "fontSize": "14px",
           "fontStyle": "inherit",
           "fontVariant": "inherit",
