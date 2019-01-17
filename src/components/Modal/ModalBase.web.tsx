@@ -11,6 +11,8 @@ class ModalBase extends React.PureComponent<ModalBaseProps> {
   public el: HTMLDivElement | null;
   public modalRoot: HTMLBodyElement | null;
   public focusTrap: FocusTrap | null;
+  /** Solves the scenario where it is unmounting, we should deactivate focus but not trigger `onRequestClose()` */
+  public isUnmounting: boolean = false;
   public content: React.RefObject<HTMLDivElement> = React.createRef<
     HTMLDivElement
   >();
@@ -49,6 +51,9 @@ class ModalBase extends React.PureComponent<ModalBaseProps> {
     if (this.modalRoot && this.el) {
       this.modalRoot.removeChild(this.el);
     }
+
+    this.isUnmounting = true;
+    this.deactivateFocus();
   }
 
   public freezeBody = () => {
@@ -68,7 +73,7 @@ class ModalBase extends React.PureComponent<ModalBaseProps> {
       this.focusTrap = createFocusTrap(this.content.current, {
         initialFocus: this.content.current,
         onDeactivate: () => {
-          if (onRequestClose && this.props.visible) {
+          if (onRequestClose && this.props.visible && !this.isUnmounting) {
             onRequestClose();
           }
         },

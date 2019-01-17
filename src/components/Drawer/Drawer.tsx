@@ -50,7 +50,7 @@ const DrawerBase = (props: DrawerProps) => {
   }).start();
 
   return (
-    <Modal visible={isVisible} transparent onRequestClose={onClose}>
+    <Modal visible transparent onRequestClose={onClose}>
       <View style={modalContainerStyle}>
         <Animated.View
           style={{
