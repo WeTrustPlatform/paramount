@@ -52,6 +52,10 @@ class ModalBase extends React.PureComponent<ModalBaseProps> {
         this.focusTrap.activate();
       }
     } else {
+      if (this.focusTrap) {
+        this.focusTrap.pause();
+      }
+
       if (!isBackgroundScrollable) {
         document.body.style.overflow = '';
         document.body.style.height = '';
