@@ -1,3 +1,10 @@
+## [1.18.3](https://github.com/WeTrustPlatform/paramount/compare/v1.18.2...v1.18.3) (2019-01-17)
+
+
+### Bug Fixes
+
+* properly fix focus management of modal ([c721612](https://github.com/WeTrustPlatform/paramount/commit/c721612))
+
 ## [1.18.2](https://github.com/WeTrustPlatform/paramount/compare/v1.18.1...v1.18.2) (2019-01-17)
 
 
