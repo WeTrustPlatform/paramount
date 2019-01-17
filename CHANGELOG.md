@@ -1,3 +1,10 @@
+## [1.18.2](https://github.com/WeTrustPlatform/paramount/compare/v1.18.1...v1.18.2) (2019-01-17)
+
+
+### Bug Fixes
+
+* focustrap should pause in modal ([c416c16](https://github.com/WeTrustPlatform/paramount/commit/c416c16))
+
 ## [1.18.1](https://github.com/WeTrustPlatform/paramount/compare/v1.18.0...v1.18.1) (2019-01-17)
 
 
