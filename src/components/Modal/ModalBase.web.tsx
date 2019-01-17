@@ -30,35 +30,17 @@ class ModalBase extends React.PureComponent<ModalBaseProps> {
   }
 
   public componentDidUpdate() {
-    const {
-      visible,
-      isBackgroundScrollable = false,
-      onRequestClose,
-    } = this.props;
+    const { visible, isBackgroundScrollable = false } = this.props;
 
     if (visible) {
+      this.activateFocus();
       if (!isBackgroundScrollable) {
-        document.body.style.overflow = 'hidden';
-        document.body.style.height = '100vh';
-      }
-
-      if (this.content.current) {
-        this.focusTrap = createFocusTrap(this.content.current, {
-          fallbackFocus: this.content.current,
-          initialFocus: this.content.current,
-          onDeactivate: onRequestClose,
-        });
-
-        this.focusTrap.activate();
+        this.freezeBody();
       }
     } else {
-      if (this.focusTrap) {
-        this.focusTrap.pause();
-      }
-
+      this.deactivateFocus();
       if (!isBackgroundScrollable) {
-        document.body.style.overflow = '';
-        document.body.style.height = '';
+        this.unfreezeBody();
       }
     }
   }
@@ -68,6 +50,40 @@ class ModalBase extends React.PureComponent<ModalBaseProps> {
       this.modalRoot.removeChild(this.el);
     }
   }
+
+  public freezeBody = () => {
+    document.body.style.overflow = 'hidden';
+    document.body.style.height = '100vh';
+  };
+
+  public unfreezeBody = () => {
+    document.body.style.overflow = '';
+    document.body.style.height = '';
+  };
+
+  public activateFocus = () => {
+    const { onRequestClose } = this.props;
+
+    if (this.content.current && !this.focusTrap) {
+      this.focusTrap = createFocusTrap(this.content.current, {
+        initialFocus: this.content.current,
+        onDeactivate: () => {
+          if (onRequestClose && this.props.visible) {
+            onRequestClose();
+          }
+        },
+      });
+
+      this.focusTrap.activate();
+    }
+  };
+
+  public deactivateFocus = () => {
+    if (this.focusTrap) {
+      this.focusTrap.deactivate();
+      this.focusTrap = null;
+    }
+  };
 
   public render() {
     const { transparent, visible, isBackgroundScrollable = false } = this.props;
