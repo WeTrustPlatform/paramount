@@ -1,3 +1,16 @@
+# [1.19.0](https://github.com/WeTrustPlatform/paramount/compare/v1.18.4...v1.19.0) (2019-01-17)
+
+
+### Bug Fixes
+
+* Modal unmounted scenario ([e75fcb7](https://github.com/WeTrustPlatform/paramount/commit/e75fcb7))
+* update snapshot and update heading font ([c85b4fa](https://github.com/WeTrustPlatform/paramount/commit/c85b4fa))
+
+
+### Features
+
+* simplify api of Counter ([7eebcaf](https://github.com/WeTrustPlatform/paramount/commit/7eebcaf))
+
 ## [1.18.4](https://github.com/WeTrustPlatform/paramount/compare/v1.18.3...v1.18.4) (2019-01-17)
 
 
