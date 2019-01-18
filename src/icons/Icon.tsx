@@ -1,14 +1,13 @@
 import { Feather } from '@expo/vector-icons';
 import * as React from 'react';
-import { TextProps } from 'react-native';
 
-export interface IconProps extends TextProps {
+export interface IconProps {
   color?: string;
-  name: FeatherIcon;
+  name: FeatherIconName;
   size?: number;
 }
 
-export type FeatherIcon =
+export type FeatherIconName =
   | 'activity'
   | 'airplay'
   | 'alert-circle'
