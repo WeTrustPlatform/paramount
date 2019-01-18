@@ -30,6 +30,57 @@ import { Text } from '../Typography';
   </Toggle>
 </Playground>
 
+## Nested Modals
+
+<Playground>
+  <Toggle initial={false}>
+    {({ on: outerOn, set: outerSet }) => (
+      <Box>
+        <Modal visible={outerOn} onRequestClose={() => outerSet(false)}>
+          <Box height={1800}>
+            <Text>Outer modal</Text>
+            <Button
+              onPress={() => outerSet(false)}
+              title="Close outer modal button one"
+            />
+            <Button
+              onPress={() => outerSet(false)}
+              title="Close outer modal button two"
+            />
+            <Toggle initial={false}>
+              {({ on: innerOn, set: innerSet }) => (
+                <Box>
+                  <Modal
+                    visible={innerOn}
+                    onRequestClose={() => innerSet(false)}
+                  >
+                    <Box height={1800}>
+                      <Text>Inner modal</Text>
+                      <Button
+                        onPress={() => innerSet(false)}
+                        title="Close inner modal button one"
+                      />
+                      <Button
+                        onPress={() => innerSet(false)}
+                        title="Close inner modal button two"
+                      />
+                    </Box>
+                  </Modal>
+                  <Button
+                    onPress={() => innerSet(true)}
+                    title="Open inner modal"
+                  />
+                </Box>
+              )}
+            </Toggle>
+          </Box>
+        </Modal>
+        <Button onPress={() => outerSet(true)} title="Open outer modal" />
+      </Box>
+    )}
+  </Toggle>
+</Playground>
+
 ## Modal using browser history
 
 Same as `Modal` below, with the difference that this uses `useHistory` prop that uses `hash` or `query-string` to determine visibility of the modal. The goal is to mimic Android's back button behavior on web which closes modals. On RN, this will have no effect and will use a regular `Modal`
