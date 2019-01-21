@@ -1,3 +1,10 @@
+## [1.20.2](https://github.com/WeTrustPlatform/paramount/compare/v1.20.1...v1.20.2) (2019-01-21)
+
+
+### Bug Fixes
+
+* remove console log ([1a36c03](https://github.com/WeTrustPlatform/paramount/commit/1a36c03))
+
 ## [1.20.1](https://github.com/WeTrustPlatform/paramount/compare/v1.20.0...v1.20.1) (2019-01-21)
 
 
