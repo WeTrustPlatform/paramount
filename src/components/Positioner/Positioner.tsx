@@ -471,7 +471,7 @@ class PositionerBase extends React.Component<PositionerProps, PositionerState> {
                 targetMeasurements: finalTargetMeasurements,
               })}
             </ViewMeasure>
-            <Overlay onPress={onClose} />
+            <Overlay transparent onPress={onClose} />
           </View>
         </Modal>
       </>

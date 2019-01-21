@@ -9,7 +9,6 @@ export interface OverlayVariables {
 export const getOverlayVariables = (theme: Theme): OverlayVariables => {
   return {
     overlay: {
-      backgroundColor: 'transparent',
       bottom: 0,
       cursor: 'auto',
       height: '100%',
@@ -26,12 +25,24 @@ export interface OverlayStyles {
   overlayStyle: ViewStyle;
 }
 
-export type GetOverlayStyles = (theme: Theme) => OverlayStyles;
+export interface OverlayStylesProps {
+  transparent: boolean;
+}
 
-export const getOverlayStyles: GetOverlayStyles = theme => {
+export type GetOverlayStyles = (
+  { transparent }: OverlayStylesProps,
+  theme: Theme,
+) => OverlayStyles;
+
+export const getOverlayStyles: GetOverlayStyles = ({ transparent }, theme) => {
   const overlayVariables = getOverlayVariables(theme);
-
+  console.log('transparent', transparent);
   return {
-    overlayStyle: overlayVariables.overlay,
+    overlayStyle: {
+      ...overlayVariables.overlay,
+      backgroundColor: transparent
+        ? 'transparent'
+        : theme.colors.background.overlay,
+    },
   };
 };

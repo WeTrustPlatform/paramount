@@ -7,12 +7,14 @@ import { getOverlayStyles } from './Overlay.styles';
 interface OverlayProps {
   onPress: () => void;
   theme: Theme;
+  transparent?: boolean;
 }
 
 const OverlayBase = (props: OverlayProps) => {
-  const { onPress, theme } = props;
+  const { onPress, transparent = false, theme } = props;
 
-  const { overlayStyle } = getOverlayStyles(theme);
+  const { overlayStyle } = getOverlayStyles({ transparent }, theme);
+
   return (
     <TouchableWithoutFeedback
       onPress={event => {
