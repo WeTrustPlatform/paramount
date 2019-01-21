@@ -36,7 +36,7 @@ export type GetOverlayStyles = (
 
 export const getOverlayStyles: GetOverlayStyles = ({ transparent }, theme) => {
   const overlayVariables = getOverlayVariables(theme);
-  console.log('transparent', transparent);
+
   return {
     overlayStyle: {
       ...overlayVariables.overlay,
