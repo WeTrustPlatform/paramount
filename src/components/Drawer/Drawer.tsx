@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { Animated, TouchableWithoutFeedback, View } from 'react-native';
+import { Animated, View } from 'react-native';
 
 import { Theme, withTheme } from '../../theme';
 import { Modal } from '../Modal';
+import { Overlay } from '../Overlay';
 import { GetDrawerStyles, getDrawerStyles } from './Drawer.styles';
 
 type Position = 'bottom' | 'top' | 'right' | 'left';
@@ -27,7 +28,7 @@ const DrawerBase = (props: DrawerProps) => {
   const {
     children,
     isVisible,
-    onClose,
+    onClose = () => null,
     position = 'bottom',
     offset = 0,
     space,
@@ -35,9 +36,7 @@ const DrawerBase = (props: DrawerProps) => {
     getStyles = getDrawerStyles,
   } = props;
 
-  const { modalContainerStyle, overlayStyle, containerStyle } = getStyles(
-    theme,
-  );
+  const { modalContainerStyle, containerStyle } = getStyles(theme);
 
   if (!isVisible) return null;
 
@@ -70,9 +69,7 @@ const DrawerBase = (props: DrawerProps) => {
         >
           {children}
         </Animated.View>
-        <TouchableWithoutFeedback onPress={onClose}>
-          <View style={overlayStyle} />
-        </TouchableWithoutFeedback>
+        <Overlay onPress={onClose} />
       </View>
     </Modal>
   );

@@ -11,6 +11,7 @@ export * from './FormField';
 export * from './Layout';
 export * from './Loading';
 export * from './Modal';
+export * from './Overlay';
 export * from './Picker';
 export * from './Positioner';
 export * from './Popover';

@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { TouchableWithoutFeedback, View } from 'react-native';
+import { View } from 'react-native';
 
 import { Theme, withTheme } from '../../theme';
 import { Modal } from '../Modal';
+import { Overlay } from '../Overlay';
 import { GetDialogStyles, getDialogStyles } from './Dialog.styles';
 
 // TODO: Import from react-native when react-native-web implementation is ready
@@ -30,17 +31,12 @@ const DialogBase = (props: DialogProps) => {
     footer,
     header,
     isVisible,
-    onClose,
+    onClose = () => null,
     theme,
     getStyles = getDialogStyles,
   } = props;
 
-  const {
-    modalContainerStyle,
-    overlayStyle,
-    containerStyle,
-    bodyStyle,
-  } = getStyles(theme);
+  const { modalContainerStyle, containerStyle, bodyStyle } = getStyles(theme);
 
   return (
     <Modal visible={isVisible} transparent onRequestClose={onClose}>
@@ -50,9 +46,7 @@ const DialogBase = (props: DialogProps) => {
           <View style={bodyStyle}>{children}</View>
           {footer}
         </View>
-        <TouchableWithoutFeedback onPress={onClose}>
-          <View style={overlayStyle} />
-        </TouchableWithoutFeedback>
+        <Overlay onPress={onClose} />
       </View>
     </Modal>
   );
