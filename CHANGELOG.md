@@ -1,3 +1,15 @@
+# [1.20.0](https://github.com/WeTrustPlatform/paramount/compare/v1.19.0...v1.20.0) (2019-01-21)
+
+
+### Bug Fixes
+
+* refactor overlay to prevent its default press ([1f70169](https://github.com/WeTrustPlatform/paramount/commit/1f70169))
+
+
+### Features
+
+* export icons ([427b182](https://github.com/WeTrustPlatform/paramount/commit/427b182))
+
 # [1.19.0](https://github.com/WeTrustPlatform/paramount/compare/v1.18.4...v1.19.0) (2019-01-17)
 
 

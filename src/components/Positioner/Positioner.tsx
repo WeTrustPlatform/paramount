@@ -1,15 +1,11 @@
 import * as React from 'react';
-import {
-  Dimensions,
-  ScaledSize,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
+import { Dimensions, ScaledSize, View } from 'react-native';
 
 import { POSITION, Position } from '../../constants';
 import { Theme, withTheme } from '../../theme';
 import { Measurements, ViewMeasure } from '../Helpers';
 import { Modal } from '../Modal';
+import { Overlay } from '../Overlay';
 import { GetPositionerStyles, getPositionerStyles } from './Positioner.styles';
 
 export interface ContentProps {
@@ -393,9 +389,7 @@ class PositionerBase extends React.Component<PositionerProps, PositionerState> {
       isAdjustingContent,
     } = this.state;
 
-    const { positionerStyle, modalContainerStyle, overlayStyle } = getStyles(
-      theme,
-    );
+    const { positionerStyle, modalContainerStyle } = getStyles(theme);
 
     const screenLayout = Dimensions.get('window');
 
@@ -477,9 +471,7 @@ class PositionerBase extends React.Component<PositionerProps, PositionerState> {
                 targetMeasurements: finalTargetMeasurements,
               })}
             </ViewMeasure>
-            <TouchableWithoutFeedback onPress={onClose}>
-              <View style={overlayStyle} />
-            </TouchableWithoutFeedback>
+            <Overlay onPress={onClose} />
           </View>
         </Modal>
       </>
