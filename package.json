@@ -45,7 +45,7 @@
     "react-icons": "3.3.0",
     "react-native-web": "0.9.13",
     "react-powerplug": "1.0.0",
-    "react-spring": "7.2.8",
+    "react-spring": "7.2.10",
     "ts-essentials": "^1.0.2"
   },
   "devDependencies": {
