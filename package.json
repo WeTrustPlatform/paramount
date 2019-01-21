@@ -78,7 +78,7 @@
     "merge": "1.2.1",
     "metro-react-native-babel-preset": "0.51.1",
     "prettier": "1.16.0",
-    "react-docgen-typescript-loader": "3.0.0",
+    "react-docgen-typescript-loader": "3.0.1",
     "react-test-renderer": "16.7.0",
     "rimraf": "2.6.3",
     "semantic-release": "15.13.3",
