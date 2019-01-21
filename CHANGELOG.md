@@ -1,3 +1,10 @@
+## [1.20.1](https://github.com/WeTrustPlatform/paramount/compare/v1.20.0...v1.20.1) (2019-01-21)
+
+
+### Bug Fixes
+
+* transparency of overlay ([9bba6ae](https://github.com/WeTrustPlatform/paramount/commit/9bba6ae))
+
 # [1.20.0](https://github.com/WeTrustPlatform/paramount/compare/v1.19.0...v1.20.0) (2019-01-21)
 
 
