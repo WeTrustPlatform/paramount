@@ -1,3 +1,10 @@
+## [1.20.3](https://github.com/WeTrustPlatform/paramount/compare/v1.20.2...v1.20.3) (2019-01-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-spring to v7.2.10 ([#76](https://github.com/WeTrustPlatform/paramount/issues/76)) ([3396ca9](https://github.com/WeTrustPlatform/paramount/commit/3396ca9))
+
 ## [1.20.2](https://github.com/WeTrustPlatform/paramount/compare/v1.20.1...v1.20.2) (2019-01-21)
 
 
