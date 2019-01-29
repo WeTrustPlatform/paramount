@@ -3,7 +3,7 @@ import { View, ViewStyle } from 'react-native';
 
 import { Theme, withTheme } from '../../theme';
 
-export const BASE_BORDER_RADI = 4;
+export const BASE_BORDER_RADII = 4;
 
 export type Shape =
   | 'circle'
@@ -33,19 +33,19 @@ const shapeMap = {
     borderRadius: '999px',
   },
   rounded: {
-    borderRadius: `${BASE_BORDER_RADI}px`,
+    borderRadius: `${BASE_BORDER_RADII}px`,
   },
   roundedBottom: {
-    borderRadius: `0 0 ${BASE_BORDER_RADI}px ${BASE_BORDER_RADI}px`,
+    borderRadius: `0 0 ${BASE_BORDER_RADII}px ${BASE_BORDER_RADII}px`,
   },
   roundedLeft: {
-    borderRadius: `${BASE_BORDER_RADI}px 0 0 ${BASE_BORDER_RADI}px`,
+    borderRadius: `${BASE_BORDER_RADII}px 0 0 ${BASE_BORDER_RADII}px`,
   },
   roundedRight: {
-    borderRadius: `0 ${BASE_BORDER_RADI}px ${BASE_BORDER_RADI}px 0`,
+    borderRadius: `0 ${BASE_BORDER_RADII}px ${BASE_BORDER_RADII}px 0`,
   },
   roundedTop: {
-    borderRadius: `${BASE_BORDER_RADI}px ${BASE_BORDER_RADI}px 0 0`,
+    borderRadius: `${BASE_BORDER_RADII}px ${BASE_BORDER_RADII}px 0 0`,
   },
   square: {
     borderRadius: '0',
