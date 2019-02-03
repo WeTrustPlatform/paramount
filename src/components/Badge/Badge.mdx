@@ -5,7 +5,7 @@ menu: Components
 
 import { Playground, PropsTable } from 'docz';
 import Badge from './Badge';
-import { ThemeConsumer } from '../../theme';
+import { ThemeContext } from '../../theme';
 import { Box } from '../Layout';
 
 ## Usage
@@ -15,7 +15,7 @@ import { Box } from '../Layout';
 ### Default
 
 <Playground>
-  <ThemeConsumer>
+  <ThemeContext.Consumer>
     {theme => (
       <Box>
         {Object.keys(theme.fills.solid).map(color => (
@@ -28,13 +28,13 @@ import { Box } from '../Layout';
         ))}
       </Box>
     )}
-  </ThemeConsumer>
+  </ThemeContext.Consumer>
 </Playground>
 
 ### Pills
 
 <Playground>
-  <ThemeConsumer>
+  <ThemeContext.Consumer>
     {theme => (
       <Box>
         {Object.keys(theme.fills.solid).map(color => (
@@ -49,7 +49,7 @@ import { Box } from '../Layout';
         ))}
       </Box>
     )}
-  </ThemeConsumer>
+  </ThemeContext.Consumer>
 </Playground>
 
 ## Props

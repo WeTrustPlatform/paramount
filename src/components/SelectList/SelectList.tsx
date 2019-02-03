@@ -33,13 +33,10 @@ const SelectListBase = (props: SelectListProps): any => {
     }
   };
 
-  return React.Children.map(children, (child, index) => {
-    if (!React.isValidElement(child)) {
-      return child;
+  return React.Children.map(children, (selectListItem, index) => {
+    if (!React.isValidElement(selectListItem)) {
+      return selectListItem;
     }
-
-    // @ts-ignore
-    const selectListItem = child as React.ReactElement<SelectListItemBaseProps>;
 
     const isSelected =
       isMulti && Array.isArray(selectedValue)

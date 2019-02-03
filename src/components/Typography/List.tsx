@@ -15,13 +15,10 @@ export interface ListProps {
 export const List = (props: ListProps) => {
   const { listType, children, icon, size = 'medium' } = props;
 
-  const finalChildren = React.Children.map(children, (child, index) => {
-    if (!React.isValidElement(child)) {
-      return child;
+  const finalChildren = React.Children.map(children, (listItem, index) => {
+    if (!React.isValidElement(listItem)) {
+      return listItem;
     }
-
-    // @ts-ignore
-    const listItem = child as React.ReactElement<ListItemProps>;
 
     return React.cloneElement(listItem, {
       // Prefer more granularly defined icon if present

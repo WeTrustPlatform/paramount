@@ -90,7 +90,7 @@ class ModalBase extends React.PureComponent<ModalBaseProps> {
     }
   };
 
-  public render() {
+  public render(): React.ReactPortal | null {
     const { transparent, visible, isBackgroundScrollable = false } = this.props;
 
     if (!visible || !this.el) return null;

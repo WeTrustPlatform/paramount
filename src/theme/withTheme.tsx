@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { ThemeConsumer } from './ThemeContext';
+import { ThemeContext } from './ThemeContext';
 import { Theme } from './ThemeInterface';
 
 export interface ThemeProps {
@@ -27,12 +27,12 @@ const withTheme = <TWrappedComponentProps extends any>(
 
     public render() {
       return (
-        <ThemeConsumer>
+        <ThemeContext.Consumer>
           {theme => {
             // @ts-ignore TODO: https://github.com/Microsoft/TypeScript/issues/28748
             return <WrappedComponent theme={theme} {...this.props} />;
           }}
-        </ThemeConsumer>
+        </ThemeContext.Consumer>
       );
     }
   };
