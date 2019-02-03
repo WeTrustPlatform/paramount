@@ -1,3 +1,10 @@
+## [1.20.5](https://github.com/WeTrustPlatform/paramount/compare/v1.20.4...v1.20.5) (2019-02-03)
+
+
+### Bug Fixes
+
+* export theme context ([7fea5fc](https://github.com/WeTrustPlatform/paramount/commit/7fea5fc))
+
 ## [1.20.4](https://github.com/WeTrustPlatform/paramount/compare/v1.20.3...v1.20.4) (2019-02-01)
 
 
