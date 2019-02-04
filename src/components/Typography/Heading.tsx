@@ -1,9 +1,15 @@
 import * as React from 'react';
 import { Platform, Text, TextProps } from 'react-native';
+import { DeepPartial } from 'ts-essentials';
 
 import { HeadingSize, Theme } from '../../theme/ThemeInterface';
 import withTheme from '../../theme/withTheme';
-import { GetHeadingStyles, getHeadingStyles } from './Heading.styles';
+import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import {
+  GetHeadingStyles,
+  getHeadingStyles,
+  HeadingStyles,
+} from './Heading.styles';
 import { TextAlign } from './types';
 
 export interface HeadingProps {
@@ -12,7 +18,7 @@ export interface HeadingProps {
   textAlign?: TextAlign;
   accessibilityLevel?: 1 | 2 | 3 | 4 | 5 | 6;
 
-  getStyles?: GetHeadingStyles;
+  getStyles?: ReplaceReturnType<GetHeadingStyles, DeepPartial<HeadingStyles>>;
 }
 
 const HeadingBase = (props: HeadingProps & TextProps) => {
@@ -21,11 +27,14 @@ const HeadingBase = (props: HeadingProps & TextProps) => {
     theme,
     size = 'medium',
     textAlign,
-    getStyles = getHeadingStyles,
+    getStyles,
     ...textProps
   } = props;
 
-  const { headingStyle } = getStyles({ size }, theme);
+  const { headingStyle } = mergeStyles(getHeadingStyles, getStyles)(
+    { size },
+    theme,
+  );
 
   return (
     <Text

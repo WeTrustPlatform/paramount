@@ -1,11 +1,18 @@
 import * as React from 'react';
+import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
 import { FillColor } from '../../theme/ThemeInterface';
+import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import Box, { Shape } from '../Layout/Box';
 import { Strong } from '../Typography';
 import { getTextStyles } from '../Typography/Text.styles';
-import { BadgeSize, GetBadgeStyles, getBadgeStyles } from './Badge.styles';
+import {
+  BadgeSize,
+  BadgeStyles,
+  GetBadgeStyles,
+  getBadgeStyles,
+} from './Badge.styles';
 
 export interface BadgeProps {
   children: React.ReactNode;
@@ -14,21 +21,24 @@ export interface BadgeProps {
   size?: BadgeSize;
   shape?: Shape;
   isSolid?: boolean;
-  getStyles?: GetBadgeStyles;
+  getStyles?: ReplaceReturnType<GetBadgeStyles, DeepPartial<BadgeStyles>>;
 }
 
 const BadgeBase = (props: BadgeProps) => {
   const {
     children,
     color = 'neutral',
-    getStyles = getBadgeStyles,
+    getStyles,
     isSolid = false,
     shape = 'rounded',
     size = 'small',
     theme,
   } = props;
 
-  const { boxStyle, textStyle } = getStyles({ size, color, isSolid }, theme);
+  const { boxStyle, textStyle } = mergeStyles(getBadgeStyles, getStyles)(
+    { size, color, isSolid },
+    theme,
+  );
 
   return (
     <Box

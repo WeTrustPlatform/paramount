@@ -4,7 +4,7 @@ menu: Components
 ---
 
 import { Playground, PropsTable } from 'docz';
-import { ToastConsumer, ToastProvider } from '.';
+import { ToastContext, ToastProvider } from '.';
 import { Button } from '../Button';
 import { Box } from '../Layout';
 import Toast from './Toast';
@@ -19,7 +19,7 @@ Composes `Alert`
 
 <Playground>
   <ToastProvider>
-    <ToastConsumer>
+    <ToastContext.Consumer>
       {({ notify }) => (
         <>
           <Button
@@ -64,7 +64,7 @@ Composes `Alert`
           />
         </>
       )}
-    </ToastConsumer>
+    </ToastContext.Consumer>
   </ToastProvider>
 </Playground>
 

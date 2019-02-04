@@ -21,9 +21,4 @@ const defaultToastContext: ToastContext = {
   warning: () => defaultToastInstance,
 };
 
-const {
-  Provider: ToastProvider,
-  Consumer: ToastConsumer,
-} = React.createContext(defaultToastContext);
-
-export { ToastProvider, ToastConsumer };
+export const ToastContext = React.createContext(defaultToastContext);

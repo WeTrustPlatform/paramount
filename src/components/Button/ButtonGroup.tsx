@@ -3,7 +3,6 @@ import * as React from 'react';
 import { Theme, withTheme } from '../../theme';
 import { Box } from '../Layout';
 import { ButtonProps } from './Button';
-import { ButtonStylesProps, getButtonStyles } from './Button.styles';
 
 export type ButtonGroupDirection = 'vertical' | 'horizontal';
 
@@ -37,13 +36,9 @@ const ButtonGroup: React.SFC<ButtonGroupProps> = props => {
     const buttonBorderRadius = theme.controlBorderRadius[buttonSize];
 
     return React.cloneElement(button, {
-      getStyles: (styleProps: ButtonStylesProps) => {
-        const defaultButtonStyles = getButtonStyles(styleProps, theme);
-
+      getStyles: () => {
         return {
-          ...defaultButtonStyles,
           buttonStyle: {
-            ...defaultButtonStyles.buttonStyle,
             ...(direction === 'vertical'
               ? {
                   borderBottomWidth: 1,

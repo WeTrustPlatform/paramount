@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Text as RNText, TextProps as RNTextProps } from 'react-native';
+import { DeepPartial } from 'ts-essentials';
 
 import {
   FontFamily,
@@ -8,7 +9,8 @@ import {
   Theme,
 } from '../../theme/ThemeInterface';
 import withTheme from '../../theme/withTheme';
-import { GetTextStyles, getTextStyles } from './Text.styles';
+import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { GetTextStyles, getTextStyles, TextStyles } from './Text.styles';
 import { TextAlign } from './types';
 
 export interface TextStyleProps {
@@ -25,7 +27,7 @@ export interface TextProps extends RNTextProps, TextStyleProps {
   theme: Theme;
   href?: string;
 
-  getStyles?: GetTextStyles;
+  getStyles?: ReplaceReturnType<GetTextStyles, DeepPartial<TextStyles>>;
 }
 
 const TextBase = (props: TextProps) => {
@@ -37,11 +39,14 @@ const TextBase = (props: TextProps) => {
     textAlign,
     isInline = false,
     theme,
-    getStyles = getTextStyles,
+    getStyles,
     ...textProps
   } = props;
 
-  const { textStyle } = getStyles({ size, color, fontFamily, isInline }, theme);
+  const { textStyle } = mergeStyles(getTextStyles, getStyles)(
+    { size, color, fontFamily, isInline },
+    theme,
+  );
 
   return (
     <RNText style={[{ textAlign }, textStyle]} {...textProps}>

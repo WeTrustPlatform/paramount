@@ -1,10 +1,16 @@
 import * as React from 'react';
 import { Animated, View } from 'react-native';
+import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
+import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Modal } from '../Modal';
 import { Overlay } from '../Overlay';
-import { GetDrawerStyles, getDrawerStyles } from './Drawer.styles';
+import {
+  DrawerStyles,
+  GetDrawerStyles,
+  getDrawerStyles,
+} from './Drawer.styles';
 
 type Position = 'bottom' | 'top' | 'right' | 'left';
 
@@ -21,7 +27,7 @@ export interface DrawerProps {
   space?: number | string;
   /** Which side to draw from @default bottom */
   position?: Position;
-  getStyles?: GetDrawerStyles;
+  getStyles?: ReplaceReturnType<GetDrawerStyles, DeepPartial<DrawerStyles>>;
 }
 
 const DrawerBase = (props: DrawerProps) => {
@@ -33,10 +39,13 @@ const DrawerBase = (props: DrawerProps) => {
     offset = 0,
     space,
     theme,
-    getStyles = getDrawerStyles,
+    getStyles,
   } = props;
 
-  const { modalContainerStyle, containerStyle } = getStyles(theme);
+  const { modalContainerStyle, containerStyle } = mergeStyles(
+    getDrawerStyles,
+    getStyles,
+  )(theme);
 
   if (!isVisible) return null;
 

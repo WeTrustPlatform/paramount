@@ -4,8 +4,10 @@ import {
   TouchableHighlightProps,
   View,
 } from 'react-native';
+import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
+import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Spacing } from '../Layout';
 import { LoadingDots } from '../Loading';
 import { Text } from '../Typography';
@@ -14,6 +16,7 @@ import {
   ButtonAppearance,
   ButtonColor,
   ButtonSize,
+  ButtonStyles,
   GetButtonStyles,
   getButtonStyles,
 } from './Button.styles';
@@ -95,7 +98,7 @@ export interface ButtonProps extends TouchableHighlightProps {
   /**
    * Inline styles for components
    */
-  getStyles?: GetButtonStyles;
+  getStyles?: ReplaceReturnType<GetButtonStyles, DeepPartial<ButtonStyles>>;
 }
 
 const ButtonBase = (props: ButtonProps) => {
@@ -103,7 +106,7 @@ const ButtonBase = (props: ButtonProps) => {
     appearance = 'primary',
     title,
     color = 'default',
-    getStyles = getButtonStyles,
+    getStyles,
     iconAfter,
     iconBefore,
     iconLoading,
@@ -120,7 +123,10 @@ const ButtonBase = (props: ButtonProps) => {
     ...touchableHighlightProps
   } = props;
 
-  const { buttonStyle, textStyle, focusColor } = getStyles(
+  const { buttonStyle, textStyle, focusColor } = mergeStyles(
+    getButtonStyles,
+    getStyles,
+  )(
     {
       appearance,
       color,

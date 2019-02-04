@@ -1,29 +1,30 @@
 import * as React from 'react';
 import { Platform, View } from 'react-native';
 import { Spring } from 'react-spring';
+import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
+import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
   GetProgressStyles,
   getProgressStyles,
   ProgressSize,
+  ProgressStyles,
 } from './Progress.styles';
 
 export interface ProgressProps {
   theme: Theme;
   percent?: number;
   size?: ProgressSize;
-  getStyles?: GetProgressStyles;
+  getStyles?: ReplaceReturnType<GetProgressStyles, DeepPartial<ProgressStyles>>;
 }
 
 const ProgressBase = (props: ProgressProps) => {
-  const {
-    percent = 0,
-    size = 'medium',
-    getStyles = getProgressStyles,
-    theme,
-  } = props;
-  const { containerStyle, progressStyle } = getStyles({ size }, theme);
+  const { percent = 0, size = 'medium', getStyles, theme } = props;
+  const { containerStyle, progressStyle } = mergeStyles(
+    getProgressStyles,
+    getStyles,
+  )({ size }, theme);
 
   return (
     <Spring to={{ value: percent }}>

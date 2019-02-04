@@ -5,10 +5,16 @@ import {
   TouchableHighlightProps,
   View,
 } from 'react-native';
+import { DeepPartial } from 'ts-essentials';
 
 import { Icon } from '../../icons';
 import { Theme, withTheme } from '../../theme';
-import { GetCheckboxStyles, getCheckboxStyles } from './Checkbox.styles';
+import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import {
+  CheckboxStyles,
+  GetCheckboxStyles,
+  getCheckboxStyles,
+} from './Checkbox.styles';
 
 export type CheckboxShape = 'circle' | 'square';
 
@@ -22,7 +28,7 @@ export interface CheckboxProps {
   /** @default square */
   shape?: CheckboxShape;
   onChange?: (e: GestureResponderEvent) => void | undefined;
-  getStyles?: GetCheckboxStyles;
+  getStyles?: ReplaceReturnType<GetCheckboxStyles, DeepPartial<CheckboxStyles>>;
 }
 
 const CheckboxBase = (props: CheckboxProps & TouchableHighlightProps) => {
@@ -34,14 +40,14 @@ const CheckboxBase = (props: CheckboxProps & TouchableHighlightProps) => {
     onChange = () => null,
     shape = 'square',
     theme,
-    getStyles = getCheckboxStyles,
+    getStyles,
     ...touchableHighlightProps
   } = props;
 
-  const { checkboxStyle, checkboxFocusBackgroundColor } = getStyles(
-    { isChecked, isDisabled, shape },
-    theme,
-  );
+  const { checkboxStyle, checkboxFocusBackgroundColor } = mergeStyles(
+    getCheckboxStyles,
+    getStyles,
+  )({ isChecked, isDisabled, shape }, theme);
 
   return (
     <TouchableHighlight

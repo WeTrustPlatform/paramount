@@ -5,12 +5,15 @@ import {
   TextInputFocusEventData,
   TextInputProps as RNTextInputProps,
 } from 'react-native';
+import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
+import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
   GetTextInputStyles,
   getTextInputStyles,
   TextInputSize,
+  TextInputStyles,
 } from './TextInput.styles';
 
 export interface TextInputProps extends RNTextInputProps {
@@ -19,11 +22,32 @@ export interface TextInputProps extends RNTextInputProps {
   isDisabled?: boolean;
   isRequired?: boolean;
   isInvalid?: boolean;
-  getStyles?: GetTextInputStyles;
+  getStyles?: ReplaceReturnType<
+    GetTextInputStyles,
+    DeepPartial<TextInputStyles>
+  >;
 }
 
 class TextInputBase extends React.Component<TextInputProps> {
   private root: any;
+
+  public getStyles = () => {
+    const {
+      isDisabled = false,
+      isInvalid = false,
+      theme,
+      size = 'medium',
+      getStyles,
+    } = this.props;
+    return mergeStyles(getTextInputStyles, getStyles)(
+      {
+        isDisabled,
+        isInvalid,
+        size,
+      },
+      theme,
+    );
+  };
 
   public handleOnFocus = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
     const {
@@ -32,16 +56,8 @@ class TextInputBase extends React.Component<TextInputProps> {
       onFocus,
       theme,
       size = 'medium',
-      getStyles = getTextInputStyles,
     } = this.props;
-    const { inputStyle, focusedStyle } = getStyles(
-      {
-        isDisabled,
-        isInvalid,
-        size,
-      },
-      theme,
-    );
+    const { inputStyle, focusedStyle } = this.getStyles();
 
     if (!isDisabled) {
       this.root.setNativeProps({
@@ -55,23 +71,9 @@ class TextInputBase extends React.Component<TextInputProps> {
   };
 
   public handleOnBlur = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
-    const {
-      onBlur,
-      isDisabled = false,
-      isInvalid = false,
-      theme,
-      size = 'medium',
-      getStyles = getTextInputStyles,
-    } = this.props;
+    const { onBlur } = this.props;
 
-    const { inputStyle } = getStyles(
-      {
-        isDisabled,
-        isInvalid,
-        size,
-      },
-      theme,
-    );
+    const { inputStyle } = this.getStyles();
 
     this.root.setNativeProps({
       style: [inputStyle],
@@ -93,14 +95,7 @@ class TextInputBase extends React.Component<TextInputProps> {
       ...textInputProps
     } = this.props;
 
-    const { inputStyle, placeholderTextColor } = getStyles(
-      {
-        isDisabled,
-        isInvalid,
-        size,
-      },
-      theme,
-    );
+    const { inputStyle, placeholderTextColor } = this.getStyles();
 
     return (
       <RNTextInput

@@ -7,11 +7,17 @@ export interface FormFieldProps<TChildren = any> {
   error?: string;
   label?: string;
   description?: string;
-  children: TChildren;
+  children?: TChildren;
 }
 
 const FormField = (props: FormFieldProps) => {
-  const { label, error, children, description, ...passThroughProps } = props;
+  const {
+    label,
+    error,
+    children = null,
+    description,
+    ...passThroughProps
+  } = props;
 
   return (
     <Box>

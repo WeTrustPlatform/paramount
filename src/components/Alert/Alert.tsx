@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { TouchableOpacity, View } from 'react-native';
+import { DeepPartial } from 'ts-essentials';
 
 import { Intent } from '../../constants/Intent';
 import { Icon } from '../../icons';
 import { Theme, withTheme } from '../../theme';
+import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Spacing } from '../Layout';
 import { Strong, Text } from '../Typography';
-import { GetAlertStyles, getAlertStyles } from './Alert.styles';
+import { AlertStyles, GetAlertStyles, getAlertStyles } from './Alert.styles';
 
 export interface AlertProps {
   theme: Theme;
@@ -19,7 +21,7 @@ export interface AlertProps {
   icon?: React.ReactNode | null;
   intent?: Intent;
 
-  getStyles?: GetAlertStyles;
+  getStyles?: ReplaceReturnType<GetAlertStyles, DeepPartial<AlertStyles>>;
 }
 
 const resolveIcon = (intent: Intent, theme: Theme) => {
@@ -54,11 +56,14 @@ const AlertBase = (props: AlertProps) => {
     isCloseable = false,
     icon,
     intent = 'info',
-    getStyles = getAlertStyles,
+    getStyles,
     theme,
   } = props;
 
-  const { containerStyle, bodyStyle } = getStyles({ intent }, theme);
+  const { containerStyle, bodyStyle } = mergeStyles(getAlertStyles, getStyles)(
+    { intent },
+    theme,
+  );
 
   return (
     <View style={containerStyle}>

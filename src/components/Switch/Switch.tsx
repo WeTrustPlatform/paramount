@@ -4,10 +4,16 @@ import {
   TouchableOpacity,
   TouchableOpacityProps,
 } from 'react-native';
+import { DeepPartial } from 'ts-essentials';
 
 import { Icon } from '../../icons';
 import { Theme, withTheme } from '../../theme';
-import { GetSwitchStyles, getSwitchStyles } from './Switch.styles';
+import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import {
+  GetSwitchStyles,
+  getSwitchStyles,
+  SwitchStyles,
+} from './Switch.styles';
 
 /* Copy pasted from https://github.com/react-native-seoul/react-native-switch-toggle */
 export interface SwitchProps extends TouchableOpacityProps {
@@ -21,7 +27,7 @@ export interface SwitchProps extends TouchableOpacityProps {
   /**
    * Inline styles for components
    */
-  getStyles?: GetSwitchStyles;
+  getStyles?: ReplaceReturnType<GetSwitchStyles, DeepPartial<SwitchStyles>>;
 }
 
 export interface SwitchState {
@@ -57,8 +63,11 @@ class SwitchBase extends React.Component<SwitchProps, SwitchState> {
 
   constructor(props: SwitchProps) {
     super(props);
-    const { theme, getStyles = getSwitchStyles } = props;
-    const { circleStyle, containerStyle } = getStyles(theme);
+    const { theme, getStyles } = props;
+    const { circleStyle, containerStyle } = mergeStyles(
+      getSwitchStyles,
+      getStyles,
+    )(theme);
 
     const endPosition =
       containerStyle.width - (circleStyle.width + containerStyle.padding * 2);
@@ -103,7 +112,7 @@ class SwitchBase extends React.Component<SwitchProps, SwitchState> {
       offIcon,
       theme,
       isSwitchedOn,
-      getStyles = getSwitchStyles,
+      getStyles,
       ...touchableOpacityProps
     } = this.props;
     const { animXValue, circlePosXStart, circlePosXEnd } = this.state;
@@ -115,7 +124,7 @@ class SwitchBase extends React.Component<SwitchProps, SwitchState> {
       backgroundColorOn,
       circleColorOff,
       circleColorOn,
-    } = getStyles(theme);
+    } = mergeStyles(getSwitchStyles, getStyles)(theme);
 
     return (
       <TouchableOpacity

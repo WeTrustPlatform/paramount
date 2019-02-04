@@ -1,13 +1,28 @@
 import * as React from 'react';
 import { View } from 'react-native';
+import { DeepPartial } from 'ts-essentials';
 
 import { withTheme } from '../../theme';
+import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Positioner, PositionerProps } from '../Positioner';
-import { getPopoverStyles } from './Popover.styles';
+import {
+  GetPopoverStyles,
+  getPopoverStyles,
+  PopoverStyles,
+} from './Popover.styles';
 
-const PopoverBase = (props: PositionerProps) => {
-  const { content, theme } = props;
-  const { popoverStyle } = getPopoverStyles(theme);
+export interface PopoverProps extends PositionerProps {
+  getContentStyles?: ReplaceReturnType<
+    GetPopoverStyles,
+    DeepPartial<PopoverStyles>
+  >;
+}
+
+const PopoverBase = (props: PopoverProps) => {
+  const { content, theme, getContentStyles } = props;
+  const { popoverStyle } = mergeStyles(getPopoverStyles, getContentStyles)(
+    theme,
+  );
 
   return (
     <Positioner

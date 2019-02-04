@@ -1,10 +1,16 @@
 import * as React from 'react';
 import { TouchableOpacity, View } from 'react-native';
+import { DeepPartial } from 'ts-essentials';
 
 import { Icon } from '../../icons';
 import { Theme, withTheme } from '../../theme';
+import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Spacing } from '../Layout';
-import { GetCounterStyles, getCounterStyles } from './Counter.styles';
+import {
+  CounterStyles,
+  GetCounterStyles,
+  getCounterStyles,
+} from './Counter.styles';
 
 export interface CounterProps {
   theme: Theme;
@@ -18,7 +24,7 @@ export interface CounterProps {
   /**
    * Inline styles for components
    */
-  getStyles?: GetCounterStyles;
+  getStyles?: ReplaceReturnType<GetCounterStyles, DeepPartial<CounterStyles>>;
 }
 
 const CounterBase = (props: CounterProps) => {
@@ -29,13 +35,16 @@ const CounterBase = (props: CounterProps) => {
     min,
     onIncrement,
     onDecrement,
-    getStyles = getCounterStyles,
+    getStyles,
     theme,
   } = props;
 
-  const { containerStyle, counterStyle, countStyle, disabledStyle } = getStyles(
-    theme,
-  );
+  const {
+    containerStyle,
+    counterStyle,
+    countStyle,
+    disabledStyle,
+  } = mergeStyles(getCounterStyles, getStyles)(theme);
 
   const isDecrementDisabled = min === count;
   const isIncrementDisabled = max === count;

@@ -1,11 +1,17 @@
 import * as React from 'react';
 import { Image, View } from 'react-native';
+import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
 import { FillColors } from '../../theme/ThemeInterface';
+import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Text } from '../Typography';
 import { getTextStyles } from '../Typography/Text.styles';
-import { GetAvatarStyles, getAvatarStyles } from './Avatar.styles';
+import {
+  AvatarStyles,
+  GetAvatarStyles,
+  getAvatarStyles,
+} from './Avatar.styles';
 
 // https://github.com/segmentio/evergreen/blob/master/source/avatar/README.md
 export type GetInitialsType = (name?: string, fallback?: string) => string;
@@ -77,7 +83,7 @@ export interface AvatarProps {
    */
   theme: Theme;
 
-  getStyles?: GetAvatarStyles;
+  getStyles?: ReplaceReturnType<GetAvatarStyles, DeepPartial<AvatarStyles>>;
 }
 
 export const AvatarBase = (props: AvatarProps) => {
@@ -93,7 +99,7 @@ export const AvatarBase = (props: AvatarProps) => {
     color = 'automatic',
     forceShowInitials = false,
     sizeLimitOneCharacter = 20,
-    getStyles = getAvatarStyles,
+    getStyles,
   } = props;
 
   const { imageHasFailedLoading } = { imageHasFailedLoading: false };
@@ -104,7 +110,10 @@ export const AvatarBase = (props: AvatarProps) => {
     initials = initials.substring(0, 1);
   }
 
-  const { boxStyle, textStyle, imageStyle } = getStyles(
+  const { boxStyle, textStyle, imageStyle } = mergeStyles(
+    getAvatarStyles,
+    getStyles,
+  )(
     {
       color,
       hashValue,

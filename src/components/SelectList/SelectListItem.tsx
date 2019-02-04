@@ -4,8 +4,10 @@ import {
   TouchableHighlightProps,
   View,
 } from 'react-native';
+import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
+import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Checkbox } from '../Checkbox';
 import { Text } from '../Typography';
 import { getTextStyles } from '../Typography/Text.styles';
@@ -13,6 +15,7 @@ import {
   GetSelectListStyles,
   getSelectListStyles,
   SelectListSize,
+  SelectListStyles,
 } from './SelectList.styles';
 
 export interface SelectListItemBaseProps {
@@ -29,12 +32,15 @@ export interface SelectListItemProps
   size?: SelectListSize;
   isDisabled?: boolean;
   label: string;
-  getStyles?: GetSelectListStyles;
+  getStyles?: ReplaceReturnType<
+    GetSelectListStyles,
+    DeepPartial<SelectListStyles>
+  >;
 }
 
 const SelectListItemBase = (props: SelectListItemProps) => {
   const {
-    getStyles = getSelectListStyles,
+    getStyles,
     index = 0,
     isDisabled = false,
     isSelected = false,
@@ -51,7 +57,10 @@ const SelectListItemBase = (props: SelectListItemProps) => {
     textStyle,
     focusBackgroundColor,
     wrapperStyle,
-  } = getStyles({ size, isDisabled, isSelected }, theme);
+  } = mergeStyles(getSelectListStyles, getStyles)(
+    { size, isDisabled, isSelected },
+    theme,
+  );
 
   return (
     <TouchableHighlight

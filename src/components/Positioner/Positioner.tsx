@@ -1,12 +1,18 @@
 import * as React from 'react';
 import { Dimensions, ScaledSize, View } from 'react-native';
+import { DeepPartial } from 'ts-essentials';
 
 import { POSITION, Position } from '../../constants';
 import { Theme, withTheme } from '../../theme';
+import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Measurements, ViewMeasure } from '../Helpers';
 import { Modal } from '../Modal';
 import { Overlay } from '../Overlay';
-import { GetPositionerStyles, getPositionerStyles } from './Positioner.styles';
+import {
+  GetPositionerStyles,
+  getPositionerStyles,
+  PositionerStyles,
+} from './Positioner.styles';
 
 export interface ContentProps {
   positionerMeasurements: Measurements;
@@ -33,7 +39,10 @@ export interface PositionerProps {
   isVisible?: boolean;
   position?: Position;
   targetMeasurements?: Measurements;
-  getStyles?: GetPositionerStyles;
+  getStyles?: ReplaceReturnType<
+    GetPositionerStyles,
+    DeepPartial<PositionerStyles>
+  >;
 }
 
 const DEFAULT_MARGIN = 24;
@@ -373,7 +382,7 @@ class PositionerBase extends React.Component<PositionerProps, PositionerState> {
   public render() {
     const {
       theme,
-      getStyles = getPositionerStyles,
+      getStyles,
       children,
       content,
       parentHeight,
@@ -389,7 +398,10 @@ class PositionerBase extends React.Component<PositionerProps, PositionerState> {
       isAdjustingContent,
     } = this.state;
 
-    const { positionerStyle, modalContainerStyle } = getStyles(theme);
+    const { positionerStyle, modalContainerStyle } = mergeStyles(
+      getPositionerStyles,
+      getStyles,
+    )(theme);
 
     const screenLayout = Dimensions.get('window');
 

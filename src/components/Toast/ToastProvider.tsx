@@ -1,15 +1,17 @@
 import * as React from 'react';
 import { View } from 'react-native';
+import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
+import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import Toast, { ToastId, ToastInstance, ToastSettings } from './Toast';
-import { GetToastStyles, getToastStyles } from './Toast.styles';
-import { ToastProvider as ToastContectProvider } from './ToastContext';
+import { GetToastStyles, getToastStyles, ToastStyles } from './Toast.styles';
+import { ToastContext } from './ToastContext';
 
 export interface ToastProviderProps {
   children?: React.ReactNode;
   theme: Theme;
-  getStyles?: GetToastStyles;
+  getStyles?: ReplaceReturnType<GetToastStyles, DeepPartial<ToastStyles>>;
 }
 
 export interface ToastProviderState {
@@ -79,16 +81,19 @@ export class ToastProvider extends React.Component<
   };
 
   public render() {
-    const { children, theme, getStyles = getToastStyles } = this.props;
+    const { children, theme, getStyles } = this.props;
     const { toasts } = this.state;
     const [currentToast] = toasts;
 
     // Intent does not matter here
     // Consider using a different style getter for toast provider
-    const { containerStyle } = getStyles({ intent: 'info' }, theme);
+    const { containerStyle } = mergeStyles(getToastStyles, getStyles)(
+      { intent: 'info' },
+      theme,
+    );
 
     return (
-      <ToastContectProvider
+      <ToastContext.Provider
         value={{
           danger: (toastSettings: ToastSettings) =>
             this.notify({ ...toastSettings, intent: 'danger' }),
@@ -105,7 +110,7 @@ export class ToastProvider extends React.Component<
         <View style={containerStyle}>
           {currentToast && <Toast key={currentToast.id} {...currentToast} />}
         </View>
-      </ToastContectProvider>
+      </ToastContext.Provider>
     );
   }
 }

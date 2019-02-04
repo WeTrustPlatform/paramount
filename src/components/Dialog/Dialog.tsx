@@ -1,10 +1,16 @@
 import * as React from 'react';
 import { View } from 'react-native';
+import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
+import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Modal } from '../Modal';
 import { Overlay } from '../Overlay';
-import { GetDialogStyles, getDialogStyles } from './Dialog.styles';
+import {
+  DialogStyles,
+  GetDialogStyles,
+  getDialogStyles,
+} from './Dialog.styles';
 
 // TODO: Import from react-native when react-native-web implementation is ready
 
@@ -22,7 +28,7 @@ export interface DialogProps {
   /**
    * Inline styles for components
    */
-  getStyles?: GetDialogStyles;
+  getStyles?: ReplaceReturnType<GetDialogStyles, DeepPartial<DialogStyles>>;
 }
 
 const DialogBase = (props: DialogProps) => {
@@ -33,10 +39,13 @@ const DialogBase = (props: DialogProps) => {
     isVisible,
     onClose = () => null,
     theme,
-    getStyles = getDialogStyles,
+    getStyles,
   } = props;
 
-  const { modalContainerStyle, containerStyle, bodyStyle } = getStyles(theme);
+  const { modalContainerStyle, containerStyle, bodyStyle } = mergeStyles(
+    getDialogStyles,
+    getStyles,
+  )(theme);
 
   return (
     <Modal visible={isVisible} transparent onRequestClose={onClose}>
