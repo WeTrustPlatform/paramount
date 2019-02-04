@@ -18,7 +18,6 @@ export * from './Popover';
 export * from './Progress';
 export * from './SelectList';
 export * from './Switch';
-export * from './TextArea';
 export * from './Inputs';
 export * from './Toast';
 export * from './Typography';

@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 import { Theme, withTheme } from '../../theme';
-import TextInput, { TextInputProps } from '../TextInput/TextInput';
-import { getTextInputStyles } from '../TextInput/TextInput.styles';
+import TextInput, { TextInputProps } from './TextInput';
+import { getTextInputStyles } from './TextInput.styles';
 
 export interface TextAreaProps extends TextInputProps {
   numberOfLines?: number;
