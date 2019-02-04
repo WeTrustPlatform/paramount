@@ -1,0 +1,31 @@
+---
+name: PhoneNumberInput
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import PhoneNumberInput from './PhoneNumberInput';
+import { State } from 'react-powerplug';
+
+## Usage
+
+### Default
+
+<Playground>
+  <State initial={{ countryCode: 'US', phoneNumber: '' }}>
+    {({ state, setState }) => (
+      <PhoneNumberInput
+        label="Select your country"
+        onChangeCountryCode={countryCode => setState({ countryCode })}
+        onChangePhoneNumber={phoneNumber => setState({ phoneNumber })}
+        phoneNumber={state.phoneNumber}
+        countryCode={state.countryCode}
+        placeholder="Enter your phone number"
+      />
+    )}
+  </State>
+</Playground>
+
+## Props
+
+<PropsTable of={PhoneNumberInput} />

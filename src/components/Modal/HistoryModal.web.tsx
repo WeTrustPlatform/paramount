@@ -3,6 +3,7 @@ import * as React from 'react';
 import { HistoryModalProps } from './HistoryModal';
 import ModalBase from './ModalBase';
 
+// TODO: needs more work
 class HistoryModal extends React.PureComponent<HistoryModalProps> {
   public static defaultProps = {
     hash: '#modal-open',

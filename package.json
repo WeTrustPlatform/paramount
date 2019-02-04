@@ -36,6 +36,7 @@
   "license": "MIT",
   "dependencies": {
     "@expo/vector-icons": "9.0.0",
+    "countries-list": "2.4.2",
     "deepmerge": "^3.0.0",
     "exenv": "1.2.2",
     "focus-trap": "4.0.2",

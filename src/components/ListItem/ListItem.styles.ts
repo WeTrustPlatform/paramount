@@ -3,24 +3,11 @@ import { TextStyle, ViewStyle } from 'react-native';
 import { Theme } from '../../theme/ThemeInterface';
 import { getTextVariables } from '../Typography/Text.styles';
 
-export type SelectListAppearanceStyles = ViewStyle & {
-  backgroundColor: string;
-  borderColor: string;
-};
-
-export type BaseState = SelectListAppearanceStyles;
-export type DisabledState = Partial<SelectListAppearanceStyles>;
-export type FocusState = Partial<SelectListAppearanceStyles>;
-export type SelectedState = Partial<SelectListAppearanceStyles>;
-
 export type SizeStyles = ViewStyle & {
   fontSize: number;
-  height: number;
-  paddingLeft: number;
-  paddingRight: number;
 };
 
-export interface SelectListSizes {
+export interface ListItemSizes {
   small: SizeStyles;
   medium: SizeStyles;
   large: SizeStyles;
@@ -32,20 +19,21 @@ export interface TextSizes {
   large: TextStyle;
 }
 
-export type SelectListSize = keyof SelectListSizes;
+export type ListItemSize = keyof ListItemSizes;
 
-export interface SelectListVariables {
+export interface ListItemVariables {
   wrapper: ViewStyle;
-  base: BaseState;
-  disabled: DisabledState;
-  selected: SelectedState;
+  base: ViewStyle;
+  disabled: ViewStyle;
+  selected: ViewStyle;
   focusBackgroundColor: string;
-  sizes: SelectListSizes;
+  sizes: ListItemSizes;
   textSizes: TextSizes;
 }
 
-export const getSelectListVariables = (theme: Theme): SelectListVariables => {
+export const getListItemVariables = (theme: Theme): ListItemVariables => {
   const textSizes = getTextVariables(theme);
+
   return {
     base: {
       backgroundColor: theme.colors.background.plain,
@@ -89,29 +77,32 @@ export const getSelectListVariables = (theme: Theme): SelectListVariables => {
   };
 };
 
-export interface SelectListStyles {
+export interface ListItemStyles {
+  imageWrapperStyle: ViewStyle;
   wrapperStyle: ViewStyle;
   containerStyle: ViewStyle;
+  leftWrapperStyle: ViewStyle;
+  textWrapperStyle: ViewStyle;
   focusBackgroundColor: string;
   textStyle: TextStyle;
 }
 
-export interface SelectListStylesProps {
-  size: SelectListSize;
+export interface ListItemStylesProps {
+  size: ListItemSize;
   isDisabled: boolean;
   isSelected: boolean;
 }
 
-export type GetSelectListStyles = (
-  selectListStylesProps: SelectListStylesProps,
+export type GetListItemStyles = (
+  selectListStylesProps: ListItemStylesProps,
   theme: Theme,
-) => SelectListStyles;
+) => ListItemStyles;
 
-export const getSelectListStyles: GetSelectListStyles = (
+export const getListItemStyles: GetListItemStyles = (
   { size, isDisabled, isSelected },
   theme,
 ) => {
-  const selectListVariables = getSelectListVariables(theme);
+  const selectListVariables = getListItemVariables(theme);
   const {
     base,
     disabled,
@@ -131,7 +122,17 @@ export const getSelectListStyles: GetSelectListStyles = (
       ...(isDisabled ? disabled : {}),
     },
     focusBackgroundColor,
+    imageWrapperStyle: {
+      marginRight: 8,
+    },
+    leftWrapperStyle: {
+      alignItems: 'center',
+      flexDirection: 'row',
+    },
     textStyle: textSizes[size],
+    textWrapperStyle: {
+      height: '100%',
+    },
     wrapperStyle: selectListVariables.wrapper,
   };
 };

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Image, View } from 'react-native';
+import { Image, ImageSourcePropType, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
@@ -32,7 +32,7 @@ export interface AvatarProps {
    * The source attribute of the image.
    * When it's not available, render initials instead.
    */
-  source?: string;
+  source?: ImageSourcePropType;
 
   /**
    * The size of the avatar.
@@ -91,7 +91,7 @@ export const AvatarBase = (props: AvatarProps) => {
     theme,
 
     source,
-    size = 40,
+    size = 48,
     name,
     isSolid = false,
     hashValue,
@@ -142,13 +142,8 @@ export const AvatarBase = (props: AvatarProps) => {
           {initials}
         </Text>
       )}
-      {!imageUnavailable && (
-        <Image
-          source={{
-            uri: source,
-          }}
-          style={imageStyle}
-        />
+      {!imageUnavailable && !!source && (
+        <Image source={source} style={imageStyle} />
       )}
     </View>
   );

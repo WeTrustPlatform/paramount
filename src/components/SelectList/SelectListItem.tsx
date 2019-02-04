@@ -1,22 +1,8 @@
 import * as React from 'react';
-import {
-  TouchableHighlight,
-  TouchableHighlightProps,
-  View,
-} from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Checkbox } from '../Checkbox';
-import { Text } from '../Typography';
-import { getTextStyles } from '../Typography/Text.styles';
-import {
-  GetSelectListStyles,
-  getSelectListStyles,
-  SelectListSize,
-  SelectListStyles,
-} from './SelectList.styles';
+import { ListItem, ListItemProps } from '../ListItem';
 
 export interface SelectListItemBaseProps {
   index?: number;
@@ -27,20 +13,14 @@ export interface SelectListItemBaseProps {
 
 export interface SelectListItemProps
   extends SelectListItemBaseProps,
-    TouchableHighlightProps {
+    ListItemProps {
   theme: Theme;
-  size?: SelectListSize;
   isDisabled?: boolean;
   label: string;
-  getStyles?: ReplaceReturnType<
-    GetSelectListStyles,
-    DeepPartial<SelectListStyles>
-  >;
 }
 
 const SelectListItemBase = (props: SelectListItemProps) => {
   const {
-    getStyles,
     index = 0,
     isDisabled = false,
     isSelected = false,
@@ -49,44 +29,18 @@ const SelectListItemBase = (props: SelectListItemProps) => {
     size = 'medium',
     theme,
     value,
-    ...touchableHighlightProps
+    ...listItemProps
   } = props;
 
-  const {
-    containerStyle,
-    textStyle,
-    focusBackgroundColor,
-    wrapperStyle,
-  } = mergeStyles(getSelectListStyles, getStyles)(
-    { size, isDisabled, isSelected },
-    theme,
-  );
-
   return (
-    <TouchableHighlight
-      disabled={isDisabled}
+    <ListItem
       onPress={() => onSelect(value, index, isSelected)}
-      underlayColor={focusBackgroundColor}
-      style={containerStyle}
-      {...touchableHighlightProps}
-    >
-      <View style={wrapperStyle}>
-        <Text
-          getStyles={(...params) => {
-            const { textStyle: defaultTextStyle } = getTextStyles(...params);
-            return {
-              textStyle: {
-                ...defaultTextStyle,
-                ...textStyle,
-              },
-            };
-          }}
-        >
-          {label}
-        </Text>
+      label={label}
+      rightIcon={
         <Checkbox isInteractive={false} shape="circle" isChecked={isSelected} />
-      </View>
-    </TouchableHighlight>
+      }
+      {...listItemProps}
+    />
   );
 };
 

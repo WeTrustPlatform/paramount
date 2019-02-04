@@ -1,0 +1,30 @@
+---
+name: ListItem
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import ListItem from './ListItem';
+import { Icon } from '../../icons';
+
+## Usage
+
+### All useful props
+
+For image, it composes `Avatar`, you can pass `avatarProps` provide more specific customizations
+
+<Playground>
+  <ListItem
+    onPress={() => null}
+    imageSource={{ uri: 'https://picsum.photos/200/200' }}
+    rightIcon={<Icon color="#7e7e7e" size={24} name="chevron-right" />}
+    label="Some label"
+    description="Some description"
+  />
+</Playground>
+
+## Props
+
+Extends `TouchableHighlightProps`. Read from `activeOpacity` and above for component specific props
+
+<PropsTable of={ListItem} />

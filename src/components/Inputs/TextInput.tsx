@@ -100,6 +100,7 @@ class TextInputBase extends React.Component<TextInputProps> {
       size = 'medium',
       theme,
       value,
+      getStyles,
       ...textInputProps
     } = this.props;
 
