@@ -1,3 +1,20 @@
+# [1.21.0](https://github.com/WeTrustPlatform/paramount/compare/v1.20.5...v1.21.0) (2019-02-04)
+
+
+### Bug Fixes
+
+* deepmerge resolution and snapshots ([055beb1](https://github.com/WeTrustPlatform/paramount/commit/055beb1))
+* docs build ([5857dd2](https://github.com/WeTrustPlatform/paramount/commit/5857dd2))
+* remove children check in form field ([3363dd2](https://github.com/WeTrustPlatform/paramount/commit/3363dd2))
+* reorganize text area ([7fde935](https://github.com/WeTrustPlatform/paramount/commit/7fde935))
+
+
+### Features
+
+* add form component ([55d297e](https://github.com/WeTrustPlatform/paramount/commit/55d297e))
+* clearable text input ([3b7cc3b](https://github.com/WeTrustPlatform/paramount/commit/3b7cc3b))
+* provide default styles when overriding ([e8ada92](https://github.com/WeTrustPlatform/paramount/commit/e8ada92))
+
 ## [1.20.5](https://github.com/WeTrustPlatform/paramount/compare/v1.20.4...v1.20.5) (2019-02-03)
 
 
