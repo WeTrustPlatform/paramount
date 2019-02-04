@@ -19,6 +19,6 @@ export * from './Progress';
 export * from './SelectList';
 export * from './Switch';
 export * from './TextArea';
-export * from './TextInput';
+export * from './Inputs';
 export * from './Toast';
 export * from './Typography';
