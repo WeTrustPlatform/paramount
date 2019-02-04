@@ -3,18 +3,18 @@ import * as React from 'react';
 import { Box } from '../Layout';
 import { Label, Text } from '../Typography';
 
-export interface FormFieldProps<TChildren = any> {
+export interface FormFieldProps {
   error?: string;
   label?: string;
   description?: string;
-  children?: TChildren;
 }
 
 const FormField = (props: FormFieldProps) => {
   const {
     label,
     error,
-    children = null,
+    // @ts-ignore
+    children,
     description,
     ...passThroughProps
   } = props;

@@ -50,13 +50,7 @@ class TextInputBase extends React.Component<TextInputProps> {
   };
 
   public handleOnFocus = (e: NativeSyntheticEvent<TextInputFocusEventData>) => {
-    const {
-      isDisabled = false,
-      isInvalid = false,
-      onFocus,
-      theme,
-      size = 'medium',
-    } = this.props;
+    const { isDisabled = false, onFocus } = this.props;
     const { inputStyle, focusedStyle } = this.getStyles();
 
     if (!isDisabled) {
