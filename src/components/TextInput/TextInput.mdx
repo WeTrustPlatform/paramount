@@ -4,6 +4,7 @@ menu: Components
 ---
 
 import { Playground, PropsTable } from 'docz';
+import { State } from 'react-powerplug';
 import TextInput from './TextInput';
 import TextInputField from './TextInputField';
 import { Box } from '../Layout';
@@ -50,22 +51,22 @@ import { Heading, Label } from '../Typography';
       placeholder="Placeholder text"
     />
   </Box>
+</Playground>
+
+### With Clearable Text
+
+<Playground>
   <Box marginBottom={24}>
-    <TextInputField
-      label="A required text input field"
-      isRequired
-      description="This is a description."
-      placeholder="Placeholder text"
-    />
-  </Box>
-  <Box marginBottom={24}>
-    <TextInputField
-      isInvalid
-      isRequired
-      label="A required text input field"
-      description="This is a description."
-      error="This field is required"
-    />
+    <State initial={{ value: '' }}>
+      {({ state, setState }) => (
+        <TextInput
+          onChangeText={text => setState({ value: text })}
+          value={state.value}
+          isClearable
+          placeholder="Clearable text input"
+        />
+      )}
+    </State>
   </Box>
 </Playground>
 

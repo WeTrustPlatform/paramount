@@ -1,4 +1,5 @@
-import * as deepMerge from 'deepmerge';
+// @ts-ignore
+import deepMerge from 'deepmerge';
 import { DeepPartial } from 'ts-essentials';
 
 import { defaultTheme } from './default-theme';

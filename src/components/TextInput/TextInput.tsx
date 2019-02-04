@@ -4,9 +4,12 @@ import {
   TextInput as RNTextInput,
   TextInputFocusEventData,
   TextInputProps as RNTextInputProps,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
+import { Icon } from '../../icons';
 import { Theme, withTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
@@ -20,7 +23,7 @@ export interface TextInputProps extends RNTextInputProps {
   theme: Theme;
   size?: TextInputSize;
   isDisabled?: boolean;
-  isRequired?: boolean;
+  isClearable?: boolean;
   isInvalid?: boolean;
   getStyles?: ReplaceReturnType<
     GetTextInputStyles,
@@ -35,12 +38,15 @@ class TextInputBase extends React.Component<TextInputProps> {
     const {
       isDisabled = false,
       isInvalid = false,
+      isClearable = false,
       theme,
       size = 'medium',
       getStyles,
     } = this.props;
+
     return mergeStyles(getTextInputStyles, getStyles)(
       {
+        isClearable,
         isDisabled,
         isInvalid,
         size,
@@ -78,31 +84,55 @@ class TextInputBase extends React.Component<TextInputProps> {
     }
   };
 
+  public handleOnClear = () => {
+    const { onChangeText } = this.props;
+    this.root.clear();
+    this.root.focus();
+
+    if (onChangeText) onChangeText('');
+  };
+
   public render() {
     const {
       isDisabled = false,
       isInvalid = false,
-      isRequired,
+      isClearable = false,
       size = 'medium',
       theme,
-      getStyles = getTextInputStyles,
+      value,
       ...textInputProps
     } = this.props;
 
-    const { inputStyle, placeholderTextColor } = this.getStyles();
+    const {
+      clearContainerStyle,
+      containerStyle,
+      inputStyle,
+      placeholderTextColor,
+    } = this.getStyles();
 
     return (
-      <RNTextInput
-        ref={(component: any) => {
-          this.root = component;
-        }}
-        style={inputStyle}
-        onFocus={e => this.handleOnFocus(e)}
-        onBlur={e => this.handleOnBlur(e)}
-        editable={!isDisabled}
-        placeholderTextColor={placeholderTextColor}
-        {...textInputProps}
-      />
+      <View style={containerStyle}>
+        <RNTextInput
+          ref={(component: any) => {
+            this.root = component;
+          }}
+          style={inputStyle}
+          onFocus={e => this.handleOnFocus(e)}
+          onBlur={e => this.handleOnBlur(e)}
+          editable={!isDisabled}
+          placeholderTextColor={placeholderTextColor}
+          value={value}
+          {...textInputProps}
+        />
+        {isClearable && !!value && (
+          <TouchableOpacity
+            style={clearContainerStyle}
+            onPress={this.handleOnClear}
+          >
+            <Icon name="x" size={24} color={theme.colors.text.default} />
+          </TouchableOpacity>
+        )}
+      </View>
     );
   }
 }
