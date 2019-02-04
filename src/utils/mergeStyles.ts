@@ -1,6 +1,7 @@
-// @ts-ignore
-import deepMerge from 'deepmerge';
 import { DeepPartial } from 'ts-essentials';
+
+// tslint:disable-next-line
+const deepMerge = require('deepmerge');
 
 export type GetStyles<TStyles = any> = (...args: any[]) => TStyles;
 
