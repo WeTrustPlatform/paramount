@@ -24,6 +24,7 @@ export interface TextInputProps extends RNTextInputProps {
   size?: TextInputSize;
   isDisabled?: boolean;
   isClearable?: boolean;
+  onClear?: () => void;
   isInvalid?: boolean;
   getStyles?: ReplaceReturnType<
     GetTextInputStyles,
@@ -85,11 +86,12 @@ class TextInputBase extends React.Component<TextInputProps> {
   };
 
   public handleOnClear = () => {
-    const { onChangeText } = this.props;
+    const { onChangeText, onClear } = this.props;
     this.root.clear();
     this.root.focus();
 
     if (onChangeText) onChangeText('');
+    if (onClear) onClear();
   };
 
   public render() {
@@ -101,6 +103,7 @@ class TextInputBase extends React.Component<TextInputProps> {
       theme,
       value,
       getStyles,
+      onClear,
       ...textInputProps
     } = this.props;
 

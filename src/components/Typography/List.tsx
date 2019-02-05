@@ -3,13 +3,13 @@ import { Platform, View } from 'react-native';
 
 import { TextSize } from '../../theme/ThemeInterface';
 import { Spacing } from '../Layout';
-import { ListItemProps } from './ListItem';
+import { LiProps } from './Li';
 
 export interface ListProps {
   icon?: React.ReactNode;
   listType?: 'ol' | 'ul';
   size?: TextSize;
-  children: Array<React.ReactElement<ListItemProps>>;
+  children: Array<React.ReactElement<LiProps>>;
 }
 
 export const List = (props: ListProps) => {

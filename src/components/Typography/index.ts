@@ -2,7 +2,7 @@ export { default as Code } from './Code';
 export { default as Heading, HeadingProps } from './Heading';
 export { default as Label } from './Label';
 export { default as Link } from './Link';
-export { default as ListItem, ListItemProps } from './ListItem';
+export { default as Li, LiProps } from './Li';
 export {
   default as OrderedList,
   ListProps as IOrderedListProps,

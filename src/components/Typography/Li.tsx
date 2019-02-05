@@ -13,7 +13,7 @@ const paddingLeftMap = {
   xsmall: 1,
 };
 
-export interface ListItemProps {
+export interface LiProps {
   icon?: React.ReactNode;
   children: React.ReactNode;
   index?: number | null;
@@ -21,7 +21,7 @@ export interface ListItemProps {
   size?: TextSize;
 }
 
-const ListItemBase = (props: TextProps & ListItemProps) => {
+const LiBase = (props: TextProps & LiProps) => {
   const { size = 'medium', index, icon, iconColor, ...textProps } = props;
 
   const paddingLeft = paddingLeftMap[size] as 1 | 2 | 3;
@@ -45,5 +45,5 @@ const ListItemBase = (props: TextProps & ListItemProps) => {
   );
 };
 
-export const ListItem = withTheme(ListItemBase);
-export default ListItem;
+export const Li = withTheme(LiBase);
+export default Li;
