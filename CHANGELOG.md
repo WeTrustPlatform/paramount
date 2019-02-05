@@ -1,3 +1,11 @@
+## [1.22.2](https://github.com/WeTrustPlatform/paramount/compare/v1.22.1...v1.22.2) (2019-02-05)
+
+
+### Bug Fixes
+
+* exports list item ([5f99857](https://github.com/WeTrustPlatform/paramount/commit/5f99857))
+* li mdx ([23a0d1b](https://github.com/WeTrustPlatform/paramount/commit/23a0d1b))
+
 ## [1.22.1](https://github.com/WeTrustPlatform/paramount/compare/v1.22.0...v1.22.1) (2019-02-05)
 
 
