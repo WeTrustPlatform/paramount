@@ -22,15 +22,15 @@ const FormField = (props: FormFieldProps) => {
   return (
     <Box>
       {label && (
-        <Box marginBottom={1}>
+        <Box marginBottom={4}>
           <Label>{label}</Label>
         </Box>
       )}
-      <Box marginBottom={1}>
+      <Box marginBottom={4}>
         {React.cloneElement(children, passThroughProps)}
       </Box>
       {error && (
-        <Box marginBottom={1}>
+        <Box marginBottom={4}>
           <Text color="danger">{error}</Text>
         </Box>
       )}

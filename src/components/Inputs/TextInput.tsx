@@ -33,7 +33,7 @@ export interface TextInputProps extends RNTextInputProps {
 }
 
 class TextInputBase extends React.Component<TextInputProps> {
-  private root: any;
+  public inputRef = React.createRef<RNTextInput>();
 
   public getStyles = () => {
     const {
@@ -60,8 +60,8 @@ class TextInputBase extends React.Component<TextInputProps> {
     const { isDisabled = false, onFocus } = this.props;
     const { inputStyle, focusedStyle } = this.getStyles();
 
-    if (!isDisabled) {
-      this.root.setNativeProps({
+    if (!isDisabled && this.inputRef.current) {
+      this.inputRef.current.setNativeProps({
         style: [inputStyle, focusedStyle],
       });
     }
@@ -76,9 +76,11 @@ class TextInputBase extends React.Component<TextInputProps> {
 
     const { inputStyle } = this.getStyles();
 
-    this.root.setNativeProps({
-      style: [inputStyle],
-    });
+    if (this.inputRef.current) {
+      this.inputRef.current.setNativeProps({
+        style: [inputStyle],
+      });
+    }
 
     if (onBlur) {
       onBlur(e);
@@ -87,8 +89,10 @@ class TextInputBase extends React.Component<TextInputProps> {
 
   public handleOnClear = () => {
     const { onChangeText, onClear } = this.props;
-    this.root.clear();
-    this.root.focus();
+    if (this.inputRef.current) {
+      this.inputRef.current.clear();
+      this.inputRef.current.focus();
+    }
 
     if (onChangeText) onChangeText('');
     if (onClear) onClear();
@@ -117,9 +121,7 @@ class TextInputBase extends React.Component<TextInputProps> {
     return (
       <View style={containerStyle}>
         <RNTextInput
-          ref={(component: any) => {
-            this.root = component;
-          }}
+          ref={this.inputRef}
           style={inputStyle}
           onFocus={e => this.handleOnFocus(e)}
           onBlur={e => this.handleOnBlur(e)}
