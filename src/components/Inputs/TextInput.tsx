@@ -21,6 +21,7 @@ import {
 
 export interface TextInputProps extends RNTextInputProps {
   theme: Theme;
+  name?: string;
   size?: TextInputSize;
   isDisabled?: boolean;
   isClearable?: boolean;
@@ -107,6 +108,7 @@ class TextInputBase extends React.Component<TextInputProps> {
       theme,
       value,
       getStyles,
+      name,
       onClear,
       ...textInputProps
     } = this.props;
@@ -120,6 +122,8 @@ class TextInputBase extends React.Component<TextInputProps> {
 
     return (
       <View style={containerStyle}>
+        {/*
+        // @ts-ignore: name prop does not exist, but on the web it is useful for browser autofill */}
         <RNTextInput
           ref={this.inputRef}
           style={inputStyle}
@@ -128,6 +132,7 @@ class TextInputBase extends React.Component<TextInputProps> {
           editable={!isDisabled}
           placeholderTextColor={placeholderTextColor}
           value={value}
+          name={name}
           {...textInputProps}
         />
         {isClearable && !!value && (
