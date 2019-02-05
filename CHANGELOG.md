@@ -1,3 +1,11 @@
+## [1.22.3](https://github.com/WeTrustPlatform/paramount/compare/v1.22.2...v1.22.3) (2019-02-05)
+
+
+### Bug Fixes
+
+* autofocus textinput ([f89d933](https://github.com/WeTrustPlatform/paramount/commit/f89d933))
+* form field snapshot ([ffe5a72](https://github.com/WeTrustPlatform/paramount/commit/ffe5a72))
+
 ## [1.22.2](https://github.com/WeTrustPlatform/paramount/compare/v1.22.1...v1.22.2) (2019-02-05)
 
 
