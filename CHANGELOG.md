@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/WeTrustPlatform/paramount/compare/v1.21.0...v1.22.0) (2019-02-04)
+
+
+### Features
+
+* factorize listitem, phone number input and modalcontent ([03dbf70](https://github.com/WeTrustPlatform/paramount/commit/03dbf70))
+
 # [1.21.0](https://github.com/WeTrustPlatform/paramount/compare/v1.20.5...v1.21.0) (2019-02-04)
 
 
