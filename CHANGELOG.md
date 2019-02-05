@@ -1,3 +1,10 @@
+## [1.22.1](https://github.com/WeTrustPlatform/paramount/compare/v1.22.0...v1.22.1) (2019-02-05)
+
+
+### Bug Fixes
+
+* modal content passing through click event ([10326bf](https://github.com/WeTrustPlatform/paramount/commit/10326bf))
+
 # [1.22.0](https://github.com/WeTrustPlatform/paramount/compare/v1.21.0...v1.22.0) (2019-02-04)
 
 
