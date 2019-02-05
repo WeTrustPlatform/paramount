@@ -25,12 +25,13 @@ const ModalContentBase = (props: ModalContentProps) => {
       }}
     >
       <TouchableOpacity
-        style={{
-          width: 40,
+        style={{ width: 56 }}
+        onPress={event => {
+          event.preventDefault();
+          if (onClose) onClose();
         }}
-        onPress={onClose}
       >
-        <View>
+        <View style={{ paddingHorizontal: 8 }}>
           <Icon color={theme.colors.text.default} size={40} name="x" />
         </View>
       </TouchableOpacity>

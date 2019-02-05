@@ -91,7 +91,7 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
                   <FlatList
                     ListHeaderComponent={
                       label ? (
-                        <Spacing marginBottom={3}>
+                        <Spacing marginVertical={3} paddingHorizontal={2}>
                           <Heading size="xxxlarge">{label}</Heading>
                         </Spacing>
                       ) : null
@@ -108,7 +108,8 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
                         <ListItem
                           key={country.countryCode}
                           label={country.name}
-                          onPress={() => {
+                          onPress={event => {
+                            event.preventDefault();
                             if (onChangeCountryCode) {
                               onChangeCountryCode(country.countryCode);
                             }
