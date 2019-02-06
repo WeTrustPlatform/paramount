@@ -1,3 +1,10 @@
+## [1.22.5](https://github.com/WeTrustPlatform/paramount/compare/v1.22.4...v1.22.5) (2019-02-06)
+
+
+### Bug Fixes
+
+* more flexible props for form field ([828abc2](https://github.com/WeTrustPlatform/paramount/commit/828abc2))
+
 ## [1.22.4](https://github.com/WeTrustPlatform/paramount/compare/v1.22.3...v1.22.4) (2019-02-05)
 
 
