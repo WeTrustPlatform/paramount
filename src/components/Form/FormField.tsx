@@ -4,9 +4,9 @@ import { Box } from '../Layout';
 import { Label, Text } from '../Typography';
 
 export interface FormFieldProps {
-  error?: string;
-  label?: string;
-  description?: string;
+  error?: string | null;
+  label?: string | null;
+  description?: string | null;
 }
 
 const FormField = (props: FormFieldProps) => {
