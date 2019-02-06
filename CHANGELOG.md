@@ -1,3 +1,10 @@
+## [1.22.4](https://github.com/WeTrustPlatform/paramount/compare/v1.22.3...v1.22.4) (2019-02-05)
+
+
+### Bug Fixes
+
+* better button outling visual ([743cbae](https://github.com/WeTrustPlatform/paramount/commit/743cbae))
+
 ## [1.22.3](https://github.com/WeTrustPlatform/paramount/compare/v1.22.2...v1.22.3) (2019-02-05)
 
 
