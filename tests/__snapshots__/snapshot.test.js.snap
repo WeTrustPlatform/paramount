@@ -21462,6 +21462,7 @@ exports[`PhoneNumberInput_1 1`] = `
         className="rn-placeholderTextColor-15ldjex"
         data-focusable={true}
         dir="auto"
+        name="phone"
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
@@ -21504,7 +21505,7 @@ exports[`PhoneNumberInput_1 1`] = `
             "resize": "none",
           }
         }
-        type="number"
+        type="tel"
         value=""
       />
     </div>
