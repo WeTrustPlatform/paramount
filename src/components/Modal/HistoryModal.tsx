@@ -7,4 +7,6 @@ export interface HistoryModalProps extends ModalBaseProps {
   useHistory?: boolean;
 }
 
-export default ModalBase;
+export default (props: HistoryModalProps) => {
+  return <ModalBase {...props} />;
+};
