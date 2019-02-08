@@ -1,3 +1,11 @@
+## [1.22.7](https://github.com/WeTrustPlatform/paramount/compare/v1.22.6...v1.22.7) (2019-02-08)
+
+
+### Bug Fixes
+
+* phonenumberinput extends textinput ([ab83a64](https://github.com/WeTrustPlatform/paramount/commit/ab83a64))
+* snapshots of phone number input ([4bf5c88](https://github.com/WeTrustPlatform/paramount/commit/4bf5c88))
+
 ## [1.22.6](https://github.com/WeTrustPlatform/paramount/compare/v1.22.5...v1.22.6) (2019-02-08)
 
 
