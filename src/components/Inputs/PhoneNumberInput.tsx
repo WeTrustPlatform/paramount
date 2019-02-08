@@ -8,11 +8,9 @@ import { Icon } from '../../icons';
 import { Theme, withTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Button } from '../Button';
-import { Spacing } from '../Layout';
 import { ListItem } from '../ListItem';
 import { Modal } from '../Modal';
 import ModalContent from '../Modal/ModalContent';
-import { Heading } from '../Typography';
 import {
   GetPhoneNumberInputStyles,
   getPhoneNumberInputStyles,
@@ -22,12 +20,13 @@ import TextInput from './TextInput';
 
 export interface PhoneNumberInputProps {
   countryCode?: string;
+  isInvalid?: boolean;
   onChangeCountryCode?: (countryCode: string) => void;
   phoneNumber?: string;
   onChangePhoneNumber?: (phoneNumber: string) => void;
   theme: Theme;
   /** Label displayed when showing country selection */
-  label?: string;
+  header?: React.ReactElement<any>;
   placeholder?: string;
   getStyles?: ReplaceReturnType<
     GetPhoneNumberInputStyles,
@@ -50,9 +49,10 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
     onChangeCountryCode,
     onChangePhoneNumber,
     placeholder,
-    label,
+    header,
     theme,
     getStyles,
+    isInvalid,
   } = props;
 
   const { containerStyle } = mergeStyles(getPhoneNumberInputStyles, getStyles)(
@@ -89,13 +89,7 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
               <Modal visible={on}>
                 <ModalContent onClose={() => set(false)}>
                   <FlatList
-                    ListHeaderComponent={
-                      label ? (
-                        <Spacing marginVertical={3} paddingHorizontal={2}>
-                          <Heading size="xxxlarge">{label}</Heading>
-                        </Spacing>
-                      ) : null
-                    }
+                    ListHeaderComponent={header}
                     keyExtractor={item => item.key}
                     getItemLayout={(data, index) => ({
                       index,
@@ -135,6 +129,7 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
             borderTopLeftRadius: 0,
           },
         })}
+        isInvalid={isInvalid}
         keyboardType="number-pad"
         value={phoneNumber}
         onChangeText={onChangePhoneNumber}

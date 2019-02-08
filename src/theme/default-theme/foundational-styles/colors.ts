@@ -3,14 +3,7 @@ import palette from './palette';
 
 // tslint:disable object-literal-sort-keys
 
-/**
- * This object are functional colors being used the default theme.
- * A required property is required by the default theme NOT by Evergreen itself.
- */
 const colors: Colors = {
-  /**
-   * Available on Pane as `<Pane background="tint1" />`
-   */
   background: {
     overlay: 'rgba(0,0,0,0.3)',
     plain: 'white',
@@ -53,9 +46,6 @@ const colors: Colors = {
     },
   },
 
-  /**
-   * Available on Pane as `<Pane borderBottom borderRight="muted" />`
-   */
   border: {
     default: palette.neutral.light,
     muted: '#EDF0F2',

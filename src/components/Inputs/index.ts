@@ -3,5 +3,13 @@ export {
   default as TextInputField,
   TextInputFieldProps,
 } from './TextInputField';
-export { default as TextArea, TextAreaProps } from '../Inputs/TextArea';
-export { default as TextAreaField } from '../Inputs/TextAreaField';
+export { default as TextArea, TextAreaProps } from './TextArea';
+export { default as TextAreaField, TextAreaFieldProps } from './TextAreaField';
+export {
+  default as PhoneNumberInput,
+  PhoneNumberInputProps,
+} from './PhoneNumberInput';
+export {
+  default as PhoneNumberInputField,
+  PhoneNumberInputFieldProps,
+} from './PhoneNumberInputField';
