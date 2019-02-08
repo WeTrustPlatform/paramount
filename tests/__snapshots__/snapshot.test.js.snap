@@ -21109,7 +21109,7 @@ exports[`Modal_2 1`] = `
               }
             }
           >
-            Open history modal
+            Open outer modal
           </div>
         </div>
       </div>

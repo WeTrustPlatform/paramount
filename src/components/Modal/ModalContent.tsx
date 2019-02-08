@@ -25,7 +25,7 @@ const ModalContentBase = (props: ModalContentProps) => {
       }}
     >
       <TouchableOpacity
-        style={{ width: 56 }}
+        style={{ width: 56, height: 60, justifyContent: 'center' }}
         onPress={event => {
           event.preventDefault();
           if (onClose) onClose();

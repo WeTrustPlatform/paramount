@@ -24,6 +24,8 @@ export interface PhoneNumberInputProps
   onChangeCountryCode?: (countryCode: string) => void;
   phoneNumber?: string;
   onChangePhoneNumber?: (phoneNumber: string) => void;
+  /** Prop to be passed to modal */
+  useHistory?: boolean;
   theme: Theme;
   /** Label displayed when showing country selection */
   header?: React.ReactElement<any>;
@@ -50,6 +52,7 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
     header,
     theme,
     getStyles,
+    useHistory = false,
     ...textInputProps
   } = props;
 
@@ -84,7 +87,11 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
                 }
                 title={`+${countryList[countryCode].phone}`}
               />
-              <Modal visible={on}>
+              <Modal
+                visible={on}
+                useHistory={useHistory}
+                onRequestClose={() => set(false)}
+              >
                 <ModalContent onClose={() => set(false)}>
                   <FlatList
                     ListHeaderComponent={header}

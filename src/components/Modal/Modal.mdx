@@ -83,20 +83,59 @@ import { Text } from '../Typography';
 
 ## Modal using browser history
 
-Same as `Modal` below, with the difference that this uses `useHistory` prop that uses `hash` or `query-string` to determine visibility of the modal. The goal is to mimic Android's back button behavior on web which closes modals. On RN, this will have no effect and will use a regular `Modal`
+By using `useHistory` prop it will mimic Android's back button behavior on web which closes modals. On RN, this will have no effect and will use a regular `Modal`. Works in nested modals as well.
+
+Note: Uses history `state` to manipulate modal state
 
 <Playground>
   <Toggle initial={false}>
-    {({ on, toggle, set }) => (
+    {({ on: outerOn, set: outerSet }) => (
       <Box>
-        <Modal useHistory visible={on} onRequestClose={() => set(false)}>
+        <Modal
+          useHistory
+          visible={outerOn}
+          onRequestClose={() => outerSet(false)}
+        >
           <Box height={1800}>
-            <Text>Put any content in the modal</Text>
-            <Button onPress={() => set(false)} title="Close button one" />
-            <Button onPress={() => set(false)} title="Close button two" />
+            <Text>Outer modal</Text>
+            <Button
+              onPress={() => outerSet(false)}
+              title="Close outer modal button one"
+            />
+            <Button
+              onPress={() => outerSet(false)}
+              title="Close outer modal button two"
+            />
+            <Toggle initial={false}>
+              {({ on: innerOn, set: innerSet }) => (
+                <Box>
+                  <Modal
+                    visible={innerOn}
+                    useHistory
+                    onRequestClose={() => innerSet(false)}
+                  >
+                    <Box height={1800}>
+                      <Text>Inner modal</Text>
+                      <Button
+                        onPress={() => innerSet(false)}
+                        title="Close inner modal button one"
+                      />
+                      <Button
+                        onPress={() => innerSet(false)}
+                        title="Close inner modal button two"
+                      />
+                    </Box>
+                  </Modal>
+                  <Button
+                    onPress={() => innerSet(true)}
+                    title="Open inner modal"
+                  />
+                </Box>
+              )}
+            </Toggle>
           </Box>
         </Modal>
-        <Button onPress={() => set(true)} title="Open history modal" />
+        <Button onPress={() => outerSet(true)} title="Open outer modal" />
       </Box>
     )}
   </Toggle>
