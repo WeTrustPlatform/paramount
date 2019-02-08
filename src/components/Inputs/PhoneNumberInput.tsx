@@ -2,7 +2,7 @@ import { countries as countryList } from 'countries-list';
 import * as React from 'react';
 import { FlatList, View } from 'react-native';
 import { Toggle } from 'react-powerplug';
-import { DeepPartial } from 'ts-essentials';
+import { DeepPartial, Omit } from 'ts-essentials';
 
 import { Icon } from '../../icons';
 import { Theme, withTheme } from '../../theme';
@@ -16,18 +16,17 @@ import {
   getPhoneNumberInputStyles,
   PhoneNumberInputStyles,
 } from './PhoneNumberInput.styles';
-import TextInput from './TextInput';
+import TextInput, { TextInputProps } from './TextInput';
 
-export interface PhoneNumberInputProps {
+export interface PhoneNumberInputProps
+  extends Omit<TextInputProps, 'getStyles'> {
   countryCode?: string;
-  isInvalid?: boolean;
   onChangeCountryCode?: (countryCode: string) => void;
   phoneNumber?: string;
   onChangePhoneNumber?: (phoneNumber: string) => void;
   theme: Theme;
   /** Label displayed when showing country selection */
   header?: React.ReactElement<any>;
-  placeholder?: string;
   getStyles?: ReplaceReturnType<
     GetPhoneNumberInputStyles,
     DeepPartial<PhoneNumberInputStyles>
@@ -48,11 +47,10 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
     phoneNumber,
     onChangeCountryCode,
     onChangePhoneNumber,
-    placeholder,
     header,
     theme,
     getStyles,
-    isInvalid,
+    ...textInputProps
   } = props;
 
   const { containerStyle } = mergeStyles(getPhoneNumberInputStyles, getStyles)(
@@ -120,6 +118,7 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
         }}
       </Toggle>
       <TextInput
+        name="phone"
         getStyles={() => ({
           containerStyle: {
             flex: 1,
@@ -129,11 +128,10 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
             borderTopLeftRadius: 0,
           },
         })}
-        isInvalid={isInvalid}
-        keyboardType="number-pad"
+        keyboardType="phone-pad"
         value={phoneNumber}
         onChangeText={onChangePhoneNumber}
-        placeholder={placeholder}
+        {...textInputProps}
       />
     </View>
   );
