@@ -1,3 +1,11 @@
+## [1.22.8](https://github.com/WeTrustPlatform/paramount/compare/v1.22.7...v1.22.8) (2019-02-08)
+
+
+### Bug Fixes
+
+* exports of modal ([14d6bdc](https://github.com/WeTrustPlatform/paramount/commit/14d6bdc))
+* modal useHistory polished ([3eca399](https://github.com/WeTrustPlatform/paramount/commit/3eca399))
+
 ## [1.22.7](https://github.com/WeTrustPlatform/paramount/compare/v1.22.6...v1.22.7) (2019-02-08)
 
 
