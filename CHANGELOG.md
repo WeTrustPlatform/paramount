@@ -1,3 +1,10 @@
+## [1.22.6](https://github.com/WeTrustPlatform/paramount/compare/v1.22.5...v1.22.6) (2019-02-08)
+
+
+### Bug Fixes
+
+* export phone number input ([0f9d751](https://github.com/WeTrustPlatform/paramount/commit/0f9d751))
+
 ## [1.22.5](https://github.com/WeTrustPlatform/paramount/compare/v1.22.4...v1.22.5) (2019-02-06)
 
 
