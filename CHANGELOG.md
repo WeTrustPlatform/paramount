@@ -1,3 +1,10 @@
+## [1.22.10](https://github.com/WeTrustPlatform/paramount/compare/v1.22.9...v1.22.10) (2019-02-15)
+
+
+### Bug Fixes
+
+* paragraph font family ([b67caad](https://github.com/WeTrustPlatform/paramount/commit/b67caad))
+
 ## [1.22.9](https://github.com/WeTrustPlatform/paramount/compare/v1.22.8...v1.22.9) (2019-02-15)
 
 
