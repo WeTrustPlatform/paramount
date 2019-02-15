@@ -45,7 +45,7 @@ const ParagraphBase = (props: ParagraphProps) => {
   } = props;
 
   const { paragraphStyle } = mergeStyles(getParagraphStyles, getStyles)(
-    { size },
+    { size, color, fontFamily },
     theme,
   );
 

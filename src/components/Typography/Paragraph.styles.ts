@@ -1,7 +1,13 @@
 import { TextStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
-import { getTextVariables } from './Text.styles';
+import {
+  FontFamilies,
+  FontFamily,
+  TextColor,
+  TextColors,
+  Theme,
+} from '../../theme/ThemeInterface';
+import { getFontFamily, getTextColor, getTextVariables } from './Text.styles';
 
 export interface ParagraphSizes {
   small: TextStyle;
@@ -11,13 +17,17 @@ export interface ParagraphSizes {
 export type ParagraphSize = keyof ParagraphSizes;
 
 export interface ParagraphVariables {
+  color: TextColors;
   size: ParagraphSizes;
+  fontFamily: FontFamilies;
 }
 
 export const getParagraphVariables = (theme: Theme): ParagraphVariables => {
   const textVariables = getTextVariables(theme);
 
   return {
+    color: theme.colors.text,
+    fontFamily: theme.fontFamilies,
     size: {
       small: {
         ...textVariables.size.small,
@@ -48,6 +58,8 @@ export const getParagraphVariables = (theme: Theme): ParagraphVariables => {
 
 export interface ParagraphStylesProps {
   size: ParagraphSize;
+  color: TextColor;
+  fontFamily: FontFamily;
 }
 
 export interface ParagraphStyles {
@@ -59,12 +71,17 @@ export type GetParagraphStyles = (
   theme: Theme,
 ) => ParagraphStyles;
 
-export const getParagraphStyles: GetParagraphStyles = ({ size }, theme) => {
+export const getParagraphStyles: GetParagraphStyles = (
+  { size, color, fontFamily },
+  theme,
+) => {
   const paragraphVariables = getParagraphVariables(theme);
 
   return {
     paragraphStyle: {
       ...paragraphVariables.size[size],
+      color: getTextColor(paragraphVariables.color)(color),
+      fontFamily: getFontFamily(paragraphVariables.fontFamily)(fontFamily),
     },
   };
 };
