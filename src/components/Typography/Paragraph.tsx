@@ -36,7 +36,7 @@ const ParagraphBase = (props: ParagraphProps) => {
   const {
     children,
     color = 'default',
-    fontFamily = 'ui',
+    fontFamily = 'text',
     size = 'medium',
     textAlign,
     theme,
