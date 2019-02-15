@@ -1,3 +1,10 @@
+## [1.22.9](https://github.com/WeTrustPlatform/paramount/compare/v1.22.8...v1.22.9) (2019-02-15)
+
+
+### Bug Fixes
+
+* paragraph styling ([13e6f33](https://github.com/WeTrustPlatform/paramount/commit/13e6f33))
+
 ## [1.22.8](https://github.com/WeTrustPlatform/paramount/compare/v1.22.7...v1.22.8) (2019-02-08)
 
 
