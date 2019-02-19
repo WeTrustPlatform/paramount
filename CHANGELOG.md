@@ -1,3 +1,19 @@
+# [1.23.0](https://github.com/WeTrustPlatform/paramount/compare/v1.22.11...v1.23.0) (2019-02-19)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-icons to v3.4.0 ([#114](https://github.com/WeTrustPlatform/paramount/issues/114)) ([8676d42](https://github.com/WeTrustPlatform/paramount/commit/8676d42))
+* **deps:** update dependency react-spring to v7.2.11 ([#112](https://github.com/WeTrustPlatform/paramount/issues/112)) ([5894e94](https://github.com/WeTrustPlatform/paramount/commit/5894e94))
+* **deps:** update dependency ts-essentials to v2 ([#111](https://github.com/WeTrustPlatform/paramount/issues/111)) ([ea54096](https://github.com/WeTrustPlatform/paramount/commit/ea54096))
+* types of SelectListField ([060d234](https://github.com/WeTrustPlatform/paramount/commit/060d234))
+
+
+### Features
+
+* add new input components ([2e44549](https://github.com/WeTrustPlatform/paramount/commit/2e44549))
+* consolidate and improve inputs ([6981092](https://github.com/WeTrustPlatform/paramount/commit/6981092))
+
 ## [1.22.11](https://github.com/WeTrustPlatform/paramount/compare/v1.22.10...v1.22.11) (2019-02-19)
 
 
