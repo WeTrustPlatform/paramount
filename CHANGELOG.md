@@ -1,3 +1,10 @@
+## [1.22.11](https://github.com/WeTrustPlatform/paramount/compare/v1.22.10...v1.22.11) (2019-02-19)
+
+
+### Bug Fixes
+
+* **deps:** update react monorepo to v16.8.2 ([#106](https://github.com/WeTrustPlatform/paramount/issues/106)) ([8303ae1](https://github.com/WeTrustPlatform/paramount/commit/8303ae1))
+
 ## [1.22.10](https://github.com/WeTrustPlatform/paramount/compare/v1.22.9...v1.22.10) (2019-02-15)
 
 
