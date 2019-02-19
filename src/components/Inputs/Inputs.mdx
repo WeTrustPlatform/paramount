@@ -5,10 +5,15 @@ menu: Components
 
 import { Playground, PropsTable } from 'docz';
 import { State } from 'react-powerplug';
+import { View } from 'react-native';
 
+import { Icon } from '../../icons';
 import { Heading, Label } from '../Typography';
 import { Box, Spacing } from '../Layout';
 import TextInput from './TextInput';
+import IconTextInput from './IconTextInput';
+import CopyTextInput from './CopyTextInput';
+import SearchTextInput from './SearchTextInput';
 import ClearableTextInput from './ClearableTextInput';
 import TextArea from './TextArea';
 import PhoneNumberInput from './PhoneNumberInput';
@@ -71,6 +76,31 @@ import PhoneNumberInput from './PhoneNumberInput';
   </Box>
 </Playground>
 
+## IconTextInput
+
+<Playground>
+  <Box marginBottom={24}>
+    <State initial={{ value: '' }}>
+      {({ state, setState }) => (
+        <IconTextInput
+          leftIcon={
+            <View>
+              <Icon name="menu" size={24} />
+            </View>
+          }
+          rightIcon={
+            <View>
+              <Icon name="menu" size={24} />
+            </View>
+          }
+          onChangeText={text => setState({ value: text })}
+          value={state.value}
+        />
+      )}
+    </State>
+  </Box>
+</Playground>
+
 ## ClearableTextInput
 
 <Playground>
@@ -84,6 +114,44 @@ import PhoneNumberInput from './PhoneNumberInput';
             console.log('Cleared!');
           }}
           placeholder="Clearable text input"
+        />
+      )}
+    </State>
+  </Box>
+</Playground>
+
+## SearchTextInput
+
+<Playground>
+  <Box marginBottom={24}>
+    <State initial={{ value: '' }}>
+      {({ state, setState }) => (
+        <SearchTextInput
+          onChangeText={text => setState({ value: text })}
+          value={state.value}
+          onClear={() => {
+            console.log('Cleared!');
+          }}
+          placeholder="Text input with search icon"
+        />
+      )}
+    </State>
+  </Box>
+</Playground>
+
+## CopyTextInput
+
+<Playground>
+  <Box marginBottom={24}>
+    <State initial={{ value: '' }}>
+      {({ state, setState }) => (
+        <CopyTextInput
+          onChangeText={text => setState({ value: text })}
+          value={state.value}
+          onCopy={text => {
+            console.log('Copied', text);
+          }}
+          placeholder="Text input wiht copy"
         />
       )}
     </State>

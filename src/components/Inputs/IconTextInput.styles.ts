@@ -2,29 +2,45 @@ import { ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/ThemeInterface';
 
-export interface TextInputWithIconStyles {
+export interface IconTextInputStyles {
+  inputStyle: ViewStyle;
   containerStyle: ViewStyle;
   leftContainerStyle: ViewStyle;
   rightContainerStyle: ViewStyle;
 }
 
-export type GetTextInputWithIconStyles = (
-  theme: Theme,
-) => TextInputWithIconStyles;
+export interface GetIconTextInputStylesProps {
+  hasLeftIcon: boolean;
+  hasRightIcon: boolean;
+}
 
-export const getTextInputWithIconStyles: GetTextInputWithIconStyles = theme => {
+export type GetIconTextInputStyles = (
+  props: GetIconTextInputStylesProps,
+  theme: Theme,
+) => IconTextInputStyles;
+
+export const getIconTextInputStyles: GetIconTextInputStyles = (
+  props: GetIconTextInputStylesProps,
+  theme,
+) => {
+  const { hasLeftIcon, hasRightIcon } = props;
+
   return {
     containerStyle: {
       position: 'relative',
+    },
+    inputStyle: {
+      ...(hasLeftIcon && { paddingLeft: 40 }),
+      ...(hasRightIcon && { paddingRight: 40 }),
     },
     leftContainerStyle: {
       alignItems: 'center',
       display: 'flex',
       height: '100%',
       justifyContent: 'center',
+      left: 0,
       paddingHorizontal: 8,
       position: 'absolute',
-      right: 0,
     },
     rightContainerStyle: {
       alignItems: 'center',

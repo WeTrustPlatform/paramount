@@ -13,3 +13,13 @@ export {
   default as PhoneNumberInputField,
   PhoneNumberInputFieldProps,
 } from './PhoneNumberInputField';
+export {
+  default as ClearableTextInput,
+  ClearableTextInputProps,
+} from './ClearableTextInput';
+export { default as IconTextInput, IconTextInputProps } from './IconTextInput';
+export {
+  default as SearchTextInput,
+  SearchTextInputProps,
+} from './SearchTextInput';
+export { default as CopyTextInput, CopyTextInputProps } from './CopyTextInput';

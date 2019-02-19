@@ -3,30 +3,39 @@ import { TextInput as RNTextInput, TouchableOpacity } from 'react-native';
 
 import { Icon } from '../../icons';
 import { ThemeContext } from '../../theme';
-import TextInputWithIcon, { TextInputWithIconProps } from './TextInputWithIcon';
+import IconTextInput, { IconTextInputProps } from './IconTextInput';
 
-export interface ClearableTextInputProps extends TextInputWithIconProps {
+export interface ClearableTextInputProps extends IconTextInputProps {
   onClear?: () => void;
 }
 
 const ClearableTextInputBase = (props: ClearableTextInputProps) => {
-  const { onClear, innerRef, onChangeText, ...textInputWithIconProps } = props;
+  const {
+    onClear,
+    innerRef,
+    onChangeText,
+    value,
+    ...textInputWithIconProps
+  } = props;
   const theme = React.useContext(ThemeContext);
 
   return (
-    <TextInputWithIcon
+    <IconTextInput
       ref={innerRef}
       rightIcon={
-        <TouchableOpacity
-          onPress={() => {
-            if (onChangeText) onChangeText('');
-            if (onClear) onClear();
-          }}
-        >
-          <Icon name="x" size={24} color={theme.colors.text.default} />
-        </TouchableOpacity>
+        value ? (
+          <TouchableOpacity
+            onPress={() => {
+              if (onChangeText) onChangeText('');
+              if (onClear) onClear();
+            }}
+          >
+            <Icon name="x" size={24} color={theme.colors.text.default} />
+          </TouchableOpacity>
+        ) : null
       }
       onChangeText={onChangeText}
+      value={value}
       {...textInputWithIconProps}
     />
   );

@@ -21463,6 +21463,186 @@ exports[`Inputs_2 1`] = `
             "flexShrink": 0,
             "height": "100%",
             "justifyContent": "center",
+            "left": "0px",
+            "marginBottom": "0px",
+            "marginLeft": "0px",
+            "marginRight": "0px",
+            "marginTop": "0px",
+            "minHeight": "0px",
+            "minWidth": "0px",
+            "msFlexAlign": "center",
+            "msFlexDirection": "column",
+            "msFlexNegative": 0,
+            "msFlexPack": "center",
+            "msFlexPreferredSize": "auto",
+            "paddingBottom": "0px",
+            "paddingLeft": "8px",
+            "paddingRight": "8px",
+            "paddingTop": "0px",
+            "position": "absolute",
+            "zIndex": 0,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "WebkitAlignItems": "stretch",
+              "WebkitBoxAlign": "stretch",
+              "WebkitBoxDirection": "normal",
+              "WebkitBoxOrient": "vertical",
+              "WebkitFlexBasis": "auto",
+              "WebkitFlexDirection": "column",
+              "WebkitFlexShrink": 0,
+              "alignItems": "stretch",
+              "borderBottomStyle": "solid",
+              "borderBottomWidth": "0px",
+              "borderLeftStyle": "solid",
+              "borderLeftWidth": "0px",
+              "borderRightStyle": "solid",
+              "borderRightWidth": "0px",
+              "borderTopStyle": "solid",
+              "borderTopWidth": "0px",
+              "boxSizing": "border-box",
+              "display": "flex",
+              "flexBasis": "auto",
+              "flexDirection": "column",
+              "flexShrink": 0,
+              "marginBottom": "0px",
+              "marginLeft": "0px",
+              "marginRight": "0px",
+              "marginTop": "0px",
+              "minHeight": "0px",
+              "minWidth": "0px",
+              "msFlexAlign": "stretch",
+              "msFlexDirection": "column",
+              "msFlexNegative": 0,
+              "msFlexPreferredSize": "auto",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "paddingRight": "0px",
+              "paddingTop": "0px",
+              "position": "relative",
+              "zIndex": 0,
+            }
+          }
+        >
+          <svg
+            fill="none"
+            height={24}
+            size={24}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width={24}
+          >
+            <line
+              x1="3"
+              x2="21"
+              y1="12"
+              y2="12"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="6"
+              y2="6"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="18"
+              y2="18"
+            />
+          </svg>
+        </div>
+      </div>
+      <input
+        autoCapitalize="sentences"
+        autoComplete="on"
+        autoCorrect="on"
+        className="rn-placeholderTextColor-15ldjex"
+        data-focusable={true}
+        dir="auto"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onSelect={[Function]}
+        readOnly={false}
+        spellCheck={true}
+        style={
+          Object {
+            "MozAppearance": "textfield",
+            "WebkitAppearance": "none",
+            "backgroundColor": "rgba(255,255,255,1.00)",
+            "borderBottomColor": "rgba(238,238,238,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "borderLeftColor": "rgba(238,238,238,1.00)",
+            "borderLeftStyle": "solid",
+            "borderLeftWidth": "1px",
+            "borderRightColor": "rgba(238,238,238,1.00)",
+            "borderRightStyle": "solid",
+            "borderRightWidth": "1px",
+            "borderTopColor": "rgba(238,238,238,1.00)",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "borderTopStyle": "solid",
+            "borderTopWidth": "1px",
+            "boxSizing": "border-box",
+            "color": "rgba(126,126,126,1.00)",
+            "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Ubuntu, \\"Helvetica Neue\\", sans-serif",
+            "fontSize": "16px",
+            "height": "48px",
+            "paddingBottom": "0px",
+            "paddingLeft": "40px",
+            "paddingRight": "40px",
+            "paddingTop": "0px",
+            "resize": "none",
+          }
+        }
+        type="text"
+        value=""
+      />
+      <div
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "vertical",
+            "WebkitBoxPack": "center",
+            "WebkitFlexBasis": "auto",
+            "WebkitFlexDirection": "column",
+            "WebkitFlexShrink": 0,
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "0px",
+            "borderLeftStyle": "solid",
+            "borderLeftWidth": "0px",
+            "borderRightStyle": "solid",
+            "borderRightWidth": "0px",
+            "borderTopStyle": "solid",
+            "borderTopWidth": "0px",
+            "boxSizing": "border-box",
+            "display": "flex",
+            "flexBasis": "auto",
+            "flexDirection": "column",
+            "flexShrink": 0,
+            "height": "100%",
+            "justifyContent": "center",
             "marginBottom": "0px",
             "marginLeft": "0px",
             "marginRight": "0px",
@@ -21480,6 +21660,228 @@ exports[`Inputs_2 1`] = `
             "paddingTop": "0px",
             "position": "absolute",
             "right": "0px",
+            "zIndex": 0,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "WebkitAlignItems": "stretch",
+              "WebkitBoxAlign": "stretch",
+              "WebkitBoxDirection": "normal",
+              "WebkitBoxOrient": "vertical",
+              "WebkitFlexBasis": "auto",
+              "WebkitFlexDirection": "column",
+              "WebkitFlexShrink": 0,
+              "alignItems": "stretch",
+              "borderBottomStyle": "solid",
+              "borderBottomWidth": "0px",
+              "borderLeftStyle": "solid",
+              "borderLeftWidth": "0px",
+              "borderRightStyle": "solid",
+              "borderRightWidth": "0px",
+              "borderTopStyle": "solid",
+              "borderTopWidth": "0px",
+              "boxSizing": "border-box",
+              "display": "flex",
+              "flexBasis": "auto",
+              "flexDirection": "column",
+              "flexShrink": 0,
+              "marginBottom": "0px",
+              "marginLeft": "0px",
+              "marginRight": "0px",
+              "marginTop": "0px",
+              "minHeight": "0px",
+              "minWidth": "0px",
+              "msFlexAlign": "stretch",
+              "msFlexDirection": "column",
+              "msFlexNegative": 0,
+              "msFlexPreferredSize": "auto",
+              "paddingBottom": "0px",
+              "paddingLeft": "0px",
+              "paddingRight": "0px",
+              "paddingTop": "0px",
+              "position": "relative",
+              "zIndex": 0,
+            }
+          }
+        >
+          <svg
+            fill="none"
+            height={24}
+            size={24}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width={24}
+          >
+            <line
+              x1="3"
+              x2="21"
+              y1="12"
+              y2="12"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="6"
+              y2="6"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="18"
+              y2="18"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Inputs_3 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "WebkitAlignItems": "stretch",
+        "WebkitBoxAlign": "stretch",
+        "WebkitBoxDirection": "normal",
+        "WebkitBoxOrient": "vertical",
+        "WebkitFlexBasis": "auto",
+        "WebkitFlexDirection": "column",
+        "WebkitFlexShrink": 0,
+        "alignItems": "stretch",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px",
+        "borderLeftStyle": "solid",
+        "borderLeftWidth": "0px",
+        "borderRightStyle": "solid",
+        "borderRightWidth": "0px",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "boxSizing": "border-box",
+        "display": "flex",
+        "flexBasis": "auto",
+        "flexDirection": "column",
+        "flexShrink": 0,
+        "marginBottom": "24px",
+        "marginLeft": "0px",
+        "marginRight": "0px",
+        "marginTop": "0px",
+        "minHeight": "0px",
+        "minWidth": "0px",
+        "msFlexAlign": "stretch",
+        "msFlexDirection": "column",
+        "msFlexNegative": 0,
+        "msFlexPreferredSize": "auto",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "paddingTop": "0px",
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "WebkitAlignItems": "stretch",
+          "WebkitBoxAlign": "stretch",
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxOrient": "vertical",
+          "WebkitFlexBasis": "auto",
+          "WebkitFlexDirection": "column",
+          "WebkitFlexShrink": 0,
+          "alignItems": "stretch",
+          "borderBottomStyle": "solid",
+          "borderBottomWidth": "0px",
+          "borderLeftStyle": "solid",
+          "borderLeftWidth": "0px",
+          "borderRightStyle": "solid",
+          "borderRightWidth": "0px",
+          "borderTopStyle": "solid",
+          "borderTopWidth": "0px",
+          "boxSizing": "border-box",
+          "display": "flex",
+          "flexBasis": "auto",
+          "flexDirection": "column",
+          "flexShrink": 0,
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+          "minHeight": "0px",
+          "minWidth": "0px",
+          "msFlexAlign": "stretch",
+          "msFlexDirection": "column",
+          "msFlexNegative": 0,
+          "msFlexPreferredSize": "auto",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "vertical",
+            "WebkitBoxPack": "center",
+            "WebkitFlexBasis": "auto",
+            "WebkitFlexDirection": "column",
+            "WebkitFlexShrink": 0,
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "0px",
+            "borderLeftStyle": "solid",
+            "borderLeftWidth": "0px",
+            "borderRightStyle": "solid",
+            "borderRightWidth": "0px",
+            "borderTopStyle": "solid",
+            "borderTopWidth": "0px",
+            "boxSizing": "border-box",
+            "display": "flex",
+            "flexBasis": "auto",
+            "flexDirection": "column",
+            "flexShrink": 0,
+            "height": "100%",
+            "justifyContent": "center",
+            "left": "0px",
+            "marginBottom": "0px",
+            "marginLeft": "0px",
+            "marginRight": "0px",
+            "marginTop": "0px",
+            "minHeight": "0px",
+            "minWidth": "0px",
+            "msFlexAlign": "center",
+            "msFlexDirection": "column",
+            "msFlexNegative": 0,
+            "msFlexPack": "center",
+            "msFlexPreferredSize": "auto",
+            "paddingBottom": "0px",
+            "paddingLeft": "8px",
+            "paddingRight": "8px",
+            "paddingTop": "0px",
+            "position": "absolute",
             "zIndex": 0,
           }
         }
@@ -21584,21 +21986,152 @@ exports[`Inputs_2 1`] = `
             "zIndex": 0,
           }
         }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Inputs_4 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "WebkitAlignItems": "stretch",
+        "WebkitBoxAlign": "stretch",
+        "WebkitBoxDirection": "normal",
+        "WebkitBoxOrient": "vertical",
+        "WebkitFlexBasis": "auto",
+        "WebkitFlexDirection": "column",
+        "WebkitFlexShrink": 0,
+        "alignItems": "stretch",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px",
+        "borderLeftStyle": "solid",
+        "borderLeftWidth": "0px",
+        "borderRightStyle": "solid",
+        "borderRightWidth": "0px",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "boxSizing": "border-box",
+        "display": "flex",
+        "flexBasis": "auto",
+        "flexDirection": "column",
+        "flexShrink": 0,
+        "marginBottom": "24px",
+        "marginLeft": "0px",
+        "marginRight": "0px",
+        "marginTop": "0px",
+        "minHeight": "0px",
+        "minWidth": "0px",
+        "msFlexAlign": "stretch",
+        "msFlexDirection": "column",
+        "msFlexNegative": 0,
+        "msFlexPreferredSize": "auto",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "paddingTop": "0px",
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "WebkitAlignItems": "stretch",
+          "WebkitBoxAlign": "stretch",
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxOrient": "vertical",
+          "WebkitFlexBasis": "auto",
+          "WebkitFlexDirection": "column",
+          "WebkitFlexShrink": 0,
+          "alignItems": "stretch",
+          "borderBottomStyle": "solid",
+          "borderBottomWidth": "0px",
+          "borderLeftStyle": "solid",
+          "borderLeftWidth": "0px",
+          "borderRightStyle": "solid",
+          "borderRightWidth": "0px",
+          "borderTopStyle": "solid",
+          "borderTopWidth": "0px",
+          "boxSizing": "border-box",
+          "display": "flex",
+          "flexBasis": "auto",
+          "flexDirection": "column",
+          "flexShrink": 0,
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+          "minHeight": "0px",
+          "minWidth": "0px",
+          "msFlexAlign": "stretch",
+          "msFlexDirection": "column",
+          "msFlexNegative": 0,
+          "msFlexPreferredSize": "auto",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "vertical",
+            "WebkitBoxPack": "center",
+            "WebkitFlexBasis": "auto",
+            "WebkitFlexDirection": "column",
+            "WebkitFlexShrink": 0,
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "0px",
+            "borderLeftStyle": "solid",
+            "borderLeftWidth": "0px",
+            "borderRightStyle": "solid",
+            "borderRightWidth": "0px",
+            "borderTopStyle": "solid",
+            "borderTopWidth": "0px",
+            "boxSizing": "border-box",
+            "display": "flex",
+            "flexBasis": "auto",
+            "flexDirection": "column",
+            "flexShrink": 0,
+            "height": "100%",
+            "justifyContent": "center",
+            "left": "0px",
+            "marginBottom": "0px",
+            "marginLeft": "0px",
+            "marginRight": "0px",
+            "marginTop": "0px",
+            "minHeight": "0px",
+            "minWidth": "0px",
+            "msFlexAlign": "center",
+            "msFlexDirection": "column",
+            "msFlexNegative": 0,
+            "msFlexPack": "center",
+            "msFlexPreferredSize": "auto",
+            "paddingBottom": "0px",
+            "paddingLeft": "8px",
+            "paddingRight": "8px",
+            "paddingTop": "0px",
+            "position": "absolute",
+            "zIndex": 0,
+          }
+        }
       >
         <div
-          data-focusable={true}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
           style={
             Object {
-              "MozTransitionProperty": "opacity",
-              "MozUserSelect": "none",
               "WebkitAlignItems": "stretch",
               "WebkitBoxAlign": "stretch",
               "WebkitBoxDirection": "normal",
@@ -21606,9 +22139,6 @@ exports[`Inputs_2 1`] = `
               "WebkitFlexBasis": "auto",
               "WebkitFlexDirection": "column",
               "WebkitFlexShrink": 0,
-              "WebkitTransitionDuration": "0.15s",
-              "WebkitTransitionProperty": "opacity",
-              "WebkitUserSelect": "none",
               "alignItems": "stretch",
               "borderBottomStyle": "solid",
               "borderBottomWidth": "0px",
@@ -21619,7 +22149,6 @@ exports[`Inputs_2 1`] = `
               "borderTopStyle": "solid",
               "borderTopWidth": "0px",
               "boxSizing": "border-box",
-              "cursor": "pointer",
               "display": "flex",
               "flexBasis": "auto",
               "flexDirection": "column",
@@ -21634,21 +22163,14 @@ exports[`Inputs_2 1`] = `
               "msFlexDirection": "column",
               "msFlexNegative": 0,
               "msFlexPreferredSize": "auto",
-              "msTouchAction": "manipulation",
-              "msUserSelect": "none",
               "paddingBottom": "0px",
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
               "position": "relative",
-              "touchAction": "manipulation",
-              "transitionDuration": "0.15s",
-              "transitionProperty": "opacity",
-              "userSelect": "none",
               "zIndex": 0,
             }
           }
-          tabIndex="0"
         >
           <svg
             color="#7e7e7e"
@@ -21667,33 +22189,376 @@ exports[`Inputs_2 1`] = `
             viewBox="0 0 24 24"
             width={24}
           >
-            <line
-              x1="18"
-              x2="6"
-              y1="6"
-              y2="18"
+            <circle
+              cx="11"
+              cy="11"
+              r="8"
             />
             <line
-              x1="6"
-              x2="18"
-              y1="6"
-              y2="18"
+              x1="21"
+              x2="16.65"
+              y1="21"
+              y2="16.65"
             />
           </svg>
         </div>
       </div>
+      <input
+        autoCapitalize="sentences"
+        autoComplete="on"
+        autoCorrect="on"
+        className="rn-placeholderTextColor-15ldjex"
+        data-focusable={true}
+        dir="auto"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onSelect={[Function]}
+        placeholder="Text input with search icon"
+        readOnly={false}
+        spellCheck={true}
+        style={
+          Object {
+            "MozAppearance": "textfield",
+            "WebkitAppearance": "none",
+            "backgroundColor": "rgba(255,255,255,1.00)",
+            "borderBottomColor": "rgba(238,238,238,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "borderLeftColor": "rgba(238,238,238,1.00)",
+            "borderLeftStyle": "solid",
+            "borderLeftWidth": "1px",
+            "borderRightColor": "rgba(238,238,238,1.00)",
+            "borderRightStyle": "solid",
+            "borderRightWidth": "1px",
+            "borderTopColor": "rgba(238,238,238,1.00)",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "borderTopStyle": "solid",
+            "borderTopWidth": "1px",
+            "boxSizing": "border-box",
+            "color": "rgba(126,126,126,1.00)",
+            "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Ubuntu, \\"Helvetica Neue\\", sans-serif",
+            "fontSize": "16px",
+            "height": "48px",
+            "paddingBottom": "0px",
+            "paddingLeft": "40px",
+            "paddingRight": "16px",
+            "paddingTop": "0px",
+            "resize": "none",
+          }
+        }
+        type="text"
+        value=""
+      />
+      <div
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "vertical",
+            "WebkitBoxPack": "center",
+            "WebkitFlexBasis": "auto",
+            "WebkitFlexDirection": "column",
+            "WebkitFlexShrink": 0,
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "0px",
+            "borderLeftStyle": "solid",
+            "borderLeftWidth": "0px",
+            "borderRightStyle": "solid",
+            "borderRightWidth": "0px",
+            "borderTopStyle": "solid",
+            "borderTopWidth": "0px",
+            "boxSizing": "border-box",
+            "display": "flex",
+            "flexBasis": "auto",
+            "flexDirection": "column",
+            "flexShrink": 0,
+            "height": "100%",
+            "justifyContent": "center",
+            "marginBottom": "0px",
+            "marginLeft": "0px",
+            "marginRight": "0px",
+            "marginTop": "0px",
+            "minHeight": "0px",
+            "minWidth": "0px",
+            "msFlexAlign": "center",
+            "msFlexDirection": "column",
+            "msFlexNegative": 0,
+            "msFlexPack": "center",
+            "msFlexPreferredSize": "auto",
+            "paddingBottom": "0px",
+            "paddingLeft": "8px",
+            "paddingRight": "8px",
+            "paddingTop": "0px",
+            "position": "absolute",
+            "right": "0px",
+            "zIndex": 0,
+          }
+        }
+      />
     </div>
   </div>
 </div>
 `;
 
-exports[`Inputs_3 1`] = `
+exports[`Inputs_5 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "WebkitAlignItems": "stretch",
+        "WebkitBoxAlign": "stretch",
+        "WebkitBoxDirection": "normal",
+        "WebkitBoxOrient": "vertical",
+        "WebkitFlexBasis": "auto",
+        "WebkitFlexDirection": "column",
+        "WebkitFlexShrink": 0,
+        "alignItems": "stretch",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px",
+        "borderLeftStyle": "solid",
+        "borderLeftWidth": "0px",
+        "borderRightStyle": "solid",
+        "borderRightWidth": "0px",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "boxSizing": "border-box",
+        "display": "flex",
+        "flexBasis": "auto",
+        "flexDirection": "column",
+        "flexShrink": 0,
+        "marginBottom": "24px",
+        "marginLeft": "0px",
+        "marginRight": "0px",
+        "marginTop": "0px",
+        "minHeight": "0px",
+        "minWidth": "0px",
+        "msFlexAlign": "stretch",
+        "msFlexDirection": "column",
+        "msFlexNegative": 0,
+        "msFlexPreferredSize": "auto",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "paddingTop": "0px",
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "WebkitAlignItems": "stretch",
+          "WebkitBoxAlign": "stretch",
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxOrient": "vertical",
+          "WebkitFlexBasis": "auto",
+          "WebkitFlexDirection": "column",
+          "WebkitFlexShrink": 0,
+          "alignItems": "stretch",
+          "borderBottomStyle": "solid",
+          "borderBottomWidth": "0px",
+          "borderLeftStyle": "solid",
+          "borderLeftWidth": "0px",
+          "borderRightStyle": "solid",
+          "borderRightWidth": "0px",
+          "borderTopStyle": "solid",
+          "borderTopWidth": "0px",
+          "boxSizing": "border-box",
+          "display": "flex",
+          "flexBasis": "auto",
+          "flexDirection": "column",
+          "flexShrink": 0,
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+          "minHeight": "0px",
+          "minWidth": "0px",
+          "msFlexAlign": "stretch",
+          "msFlexDirection": "column",
+          "msFlexNegative": 0,
+          "msFlexPreferredSize": "auto",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+          "position": "relative",
+          "zIndex": 0,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "vertical",
+            "WebkitBoxPack": "center",
+            "WebkitFlexBasis": "auto",
+            "WebkitFlexDirection": "column",
+            "WebkitFlexShrink": 0,
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "0px",
+            "borderLeftStyle": "solid",
+            "borderLeftWidth": "0px",
+            "borderRightStyle": "solid",
+            "borderRightWidth": "0px",
+            "borderTopStyle": "solid",
+            "borderTopWidth": "0px",
+            "boxSizing": "border-box",
+            "display": "flex",
+            "flexBasis": "auto",
+            "flexDirection": "column",
+            "flexShrink": 0,
+            "height": "100%",
+            "justifyContent": "center",
+            "left": "0px",
+            "marginBottom": "0px",
+            "marginLeft": "0px",
+            "marginRight": "0px",
+            "marginTop": "0px",
+            "minHeight": "0px",
+            "minWidth": "0px",
+            "msFlexAlign": "center",
+            "msFlexDirection": "column",
+            "msFlexNegative": 0,
+            "msFlexPack": "center",
+            "msFlexPreferredSize": "auto",
+            "paddingBottom": "0px",
+            "paddingLeft": "8px",
+            "paddingRight": "8px",
+            "paddingTop": "0px",
+            "position": "absolute",
+            "zIndex": 0,
+          }
+        }
+      />
+      <input
+        autoCapitalize="sentences"
+        autoComplete="on"
+        autoCorrect="on"
+        className="rn-placeholderTextColor-15ldjex"
+        data-focusable={true}
+        dir="auto"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onSelect={[Function]}
+        placeholder="Text input wiht copy"
+        readOnly={false}
+        spellCheck={true}
+        style={
+          Object {
+            "MozAppearance": "textfield",
+            "WebkitAppearance": "none",
+            "backgroundColor": "rgba(255,255,255,1.00)",
+            "borderBottomColor": "rgba(238,238,238,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "1px",
+            "borderLeftColor": "rgba(238,238,238,1.00)",
+            "borderLeftStyle": "solid",
+            "borderLeftWidth": "1px",
+            "borderRightColor": "rgba(238,238,238,1.00)",
+            "borderRightStyle": "solid",
+            "borderRightWidth": "1px",
+            "borderTopColor": "rgba(238,238,238,1.00)",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "borderTopStyle": "solid",
+            "borderTopWidth": "1px",
+            "boxSizing": "border-box",
+            "color": "rgba(126,126,126,1.00)",
+            "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Ubuntu, \\"Helvetica Neue\\", sans-serif",
+            "fontSize": "16px",
+            "height": "48px",
+            "paddingBottom": "0px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
+            "paddingTop": "0px",
+            "resize": "none",
+          }
+        }
+        type="text"
+        value=""
+      />
+      <div
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "vertical",
+            "WebkitBoxPack": "center",
+            "WebkitFlexBasis": "auto",
+            "WebkitFlexDirection": "column",
+            "WebkitFlexShrink": 0,
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "borderBottomStyle": "solid",
+            "borderBottomWidth": "0px",
+            "borderLeftStyle": "solid",
+            "borderLeftWidth": "0px",
+            "borderRightStyle": "solid",
+            "borderRightWidth": "0px",
+            "borderTopStyle": "solid",
+            "borderTopWidth": "0px",
+            "boxSizing": "border-box",
+            "display": "flex",
+            "flexBasis": "auto",
+            "flexDirection": "column",
+            "flexShrink": 0,
+            "height": "100%",
+            "justifyContent": "center",
+            "marginBottom": "0px",
+            "marginLeft": "0px",
+            "marginRight": "0px",
+            "marginTop": "0px",
+            "minHeight": "0px",
+            "minWidth": "0px",
+            "msFlexAlign": "center",
+            "msFlexDirection": "column",
+            "msFlexNegative": 0,
+            "msFlexPack": "center",
+            "msFlexPreferredSize": "auto",
+            "paddingBottom": "0px",
+            "paddingLeft": "8px",
+            "paddingRight": "8px",
+            "paddingTop": "0px",
+            "position": "absolute",
+            "right": "0px",
+            "zIndex": 0,
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Inputs_6 1`] = `
 <h3>
   Usage
 </h3>
 `;
 
-exports[`Inputs_4 1`] = `
+exports[`Inputs_7 1`] = `
 <div>
   <div
     style={
@@ -22032,13 +22897,13 @@ exports[`Inputs_4 1`] = `
 </div>
 `;
 
-exports[`Inputs_5 1`] = `
+exports[`Inputs_8 1`] = `
 <h3>
   Props
 </h3>
 `;
 
-exports[`Inputs_6 1`] = `<div />`;
+exports[`Inputs_9 1`] = `<div />`;
 
 exports[`ListItem_0 1`] = `
 <h3>

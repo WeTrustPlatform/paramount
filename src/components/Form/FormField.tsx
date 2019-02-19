@@ -7,17 +7,11 @@ export interface FormFieldProps {
   error?: string | null;
   label?: string | null;
   description?: string | null;
+  children?: React.ReactNode;
 }
 
 const FormField = (props: FormFieldProps) => {
-  const {
-    label,
-    error,
-    // @ts-ignore
-    children,
-    description,
-    ...passThroughProps
-  } = props;
+  const { label, error, children, description, ...passThroughProps } = props;
 
   return (
     <Box>
@@ -27,6 +21,8 @@ const FormField = (props: FormFieldProps) => {
         </Box>
       )}
       <Box marginBottom={4}>
+        {/*
+        // @ts-ignore: TODO: Find right way to type this */}
         {React.cloneElement(children, passThroughProps)}
       </Box>
       {error && (

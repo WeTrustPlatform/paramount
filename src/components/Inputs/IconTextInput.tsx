@@ -4,24 +4,23 @@ import { DeepPartial, Omit } from 'ts-essentials';
 
 import { ThemeContext } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import {
+  getIconTextInputStyles,
+  IconTextInputStyles,
+} from './IconTextInput.styles';
 import TextInput, { TextInputProps } from './TextInput';
 import { GetTextInputStyles, TextInputStyles } from './TextInput.styles';
-import {
-  getTextInputWithIconStyles,
-  TextInputWithIconStyles,
-} from './TextInputWithIcon.styles';
 
-export interface TextInputWithIconProps
-  extends Omit<TextInputProps, 'getStyles'> {
+export interface IconTextInputProps extends Omit<TextInputProps, 'getStyles'> {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   getStyles?: ReplaceReturnType<
     GetTextInputStyles,
-    DeepPartial<TextInputStyles & TextInputWithIconStyles>
+    DeepPartial<TextInputStyles & IconTextInputStyles>
   >;
 }
 
-const TextInputWithIconBase = (props: TextInputWithIconProps) => {
+const IconTextInputBase = (props: IconTextInputProps) => {
   const {
     leftIcon = null,
     rightIcon = null,
@@ -34,19 +33,29 @@ const TextInputWithIconBase = (props: TextInputWithIconProps) => {
     containerStyle,
     leftContainerStyle,
     rightContainerStyle,
-  } = mergeStyles(getTextInputWithIconStyles, getStyles)(theme);
+    inputStyle,
+  } = mergeStyles(getIconTextInputStyles, getStyles)(
+    { hasLeftIcon: !!leftIcon, hasRightIcon: !!rightIcon },
+    theme,
+  );
 
   return (
     <View style={containerStyle}>
       <View style={leftContainerStyle}>{leftIcon}</View>
-      <TextInput ref={innerRef} {...textInputProps} />
+      <TextInput
+        ref={innerRef}
+        getStyles={() => ({
+          inputStyle,
+        })}
+        {...textInputProps}
+      />
       <View style={rightContainerStyle}>{rightIcon}</View>
     </View>
   );
 };
 
-export const TextInputWithIcon = React.forwardRef<RNTextInput, TextInputProps>(
-  (props, ref) => <TextInputWithIconBase {...props} innerRef={ref} />,
+export const IconTextInput = React.forwardRef<RNTextInput, TextInputProps>(
+  (props, ref) => <IconTextInputBase {...props} innerRef={ref} />,
 );
 
-export default TextInputWithIcon;
+export default IconTextInput;
