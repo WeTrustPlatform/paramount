@@ -1,22 +1,21 @@
 import { countries as countryList } from 'countries-list';
 import * as React from 'react';
-import { FlatList, View } from 'react-native';
-import { Toggle } from 'react-powerplug';
+import { FlatList, TextInput as RNTextInput, View } from 'react-native';
 import { DeepPartial, Omit } from 'ts-essentials';
 
 import { Icon } from '../../icons';
-import { Theme, withTheme } from '../../theme';
+import { ThemeContext } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Button } from '../Button';
 import { ListItem } from '../ListItem';
 import { Modal } from '../Modal';
 import ModalContent from '../Modal/ModalContent';
 import {
-  GetPhoneNumberInputStyles,
   getPhoneNumberInputStyles,
   PhoneNumberInputStyles,
 } from './PhoneNumberInput.styles';
 import TextInput, { TextInputProps } from './TextInput';
+import { GetTextInputStyles, TextInputStyles } from './TextInput.styles';
 
 export interface PhoneNumberInputProps
   extends Omit<TextInputProps, 'getStyles'> {
@@ -26,12 +25,11 @@ export interface PhoneNumberInputProps
   onChangePhoneNumber?: (phoneNumber: string) => void;
   /** Prop to be passed to modal */
   useHistory?: boolean;
-  theme: Theme;
   /** Label displayed when showing country selection */
   header?: React.ReactElement<any>;
   getStyles?: ReplaceReturnType<
-    GetPhoneNumberInputStyles,
-    DeepPartial<PhoneNumberInputStyles>
+    GetTextInputStyles,
+    DeepPartial<TextInputStyles & PhoneNumberInputStyles>
   >;
 }
 
@@ -50,11 +48,13 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
     onChangeCountryCode,
     onChangePhoneNumber,
     header,
-    theme,
     getStyles,
+    innerRef,
     useHistory = false,
     ...textInputProps
   } = props;
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const theme = React.useContext(ThemeContext);
 
   const { containerStyle } = mergeStyles(getPhoneNumberInputStyles, getStyles)(
     {},
@@ -63,73 +63,63 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
 
   return (
     <View style={containerStyle}>
-      <Toggle initial={false}>
-        {({ on, set }) => {
-          return (
-            <>
-              <Button
-                onPress={() => set(true)}
-                appearance="outline"
-                getStyles={() => ({
-                  buttonStyle: {
-                    borderBottomRightRadius: 0,
-                    borderColor: theme.colors.border.muted,
-                    borderTopRightRadius: 0,
-                    borderWidth: 1,
-                  },
-                })}
-                iconAfter={
-                  <Icon
-                    size={20}
-                    color={theme.colors.text.default}
-                    name="chevron-down"
-                  />
-                }
-                title={`+${countryList[countryCode].phone}`}
-              />
-              <Modal
-                visible={on}
-                useHistory={useHistory}
-                onRequestClose={() => set(false)}
-              >
-                <ModalContent onClose={() => set(false)}>
-                  <FlatList
-                    ListHeaderComponent={header}
-                    keyExtractor={item => item.key}
-                    getItemLayout={(data, index) => ({
-                      index,
-                      length: theme.controlHeights.medium,
-                      offset: theme.controlHeights.medium * index,
-                    })}
-                    data={countries}
-                    renderItem={({ item: country }) => {
-                      return (
-                        <ListItem
-                          key={country.countryCode}
-                          label={country.name}
-                          onPress={event => {
-                            event.preventDefault();
-                            if (onChangeCountryCode) {
-                              onChangeCountryCode(country.countryCode);
-                            }
-                            set(false);
-                          }}
-                        />
-                      );
-                    }}
-                  />
-                </ModalContent>
-              </Modal>
-            </>
-          );
-        }}
-      </Toggle>
+      <Button
+        onPress={() => setIsModalOpen(true)}
+        appearance="outline"
+        getStyles={() => ({
+          buttonStyle: {
+            borderBottomRightRadius: 0,
+            borderColor: theme.colors.border.muted,
+            borderTopRightRadius: 0,
+            borderWidth: 1,
+          },
+        })}
+        iconAfter={
+          <Icon
+            size={20}
+            color={theme.colors.text.default}
+            name="chevron-down"
+          />
+        }
+        title={`+${countryList[countryCode].phone}`}
+      />
+      <Modal
+        visible={isModalOpen}
+        useHistory={useHistory}
+        onRequestClose={() => setIsModalOpen(false)}
+      >
+        <ModalContent onClose={() => setIsModalOpen(false)}>
+          <FlatList
+            ListHeaderComponent={header}
+            keyExtractor={item => item.key}
+            getItemLayout={(data, index) => ({
+              index,
+              length: theme.controlHeights.medium,
+              offset: theme.controlHeights.medium * index,
+            })}
+            data={countries}
+            renderItem={({ item: country }) => {
+              return (
+                <ListItem
+                  key={country.countryCode}
+                  label={country.name}
+                  onPress={event => {
+                    event.preventDefault();
+                    if (onChangeCountryCode) {
+                      onChangeCountryCode(country.countryCode);
+                    }
+                    setIsModalOpen(false);
+                  }}
+                />
+              );
+            }}
+          />
+        </ModalContent>
+      </Modal>
       <TextInput
+        ref={innerRef}
         name="phone"
         getStyles={() => ({
-          containerStyle: {
-            flex: 1,
-          },
           inputStyle: {
             borderBottomLeftRadius: 0,
             borderTopLeftRadius: 0,
@@ -144,5 +134,8 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
   );
 };
 
-export const PhoneNumberInput = withTheme(PhoneNumberInputBase);
+export const PhoneNumberInput = React.forwardRef<RNTextInput, TextInputProps>(
+  (props, ref) => <PhoneNumberInputBase {...props} innerRef={ref} />,
+);
+
 export default PhoneNumberInput;

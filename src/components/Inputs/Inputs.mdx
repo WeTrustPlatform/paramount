@@ -1,0 +1,118 @@
+---
+name: Inputs
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import { State } from 'react-powerplug';
+
+import { Heading, Label } from '../Typography';
+import { Box, Spacing } from '../Layout';
+import TextInput from './TextInput';
+import ClearableTextInput from './ClearableTextInput';
+import TextArea from './TextArea';
+import PhoneNumberInput from './PhoneNumberInput';
+
+## TextInput
+
+<Playground>
+  <Box marginBottom={24} width={360}>
+    <Label size="medium">Medium (default)</Label>
+    <TextInput placeholder="With placeholder" />
+  </Box>
+  <Box marginBottom={24} width={360}>
+    <Label size="medium">Disabled</Label>
+    <TextInput value="This is disabled" isDisabled />
+  </Box>
+  <Box marginBottom={24} width={360}>
+    <Label size="medium">Is Invalid</Label>
+    <TextInput isInvalid />
+  </Box>
+  <Box marginBottom={24}>
+    <Label size="small">Small</Label>
+    <TextInput size="small" />
+  </Box>
+  <Box marginBottom={24}>
+    <Label size="medium">Medium</Label>
+    <TextInput size="medium" />
+  </Box>
+  <Box marginBottom={24}>
+    <Label size="large">Large</Label>
+    <TextInput size="large" />
+  </Box>
+</Playground>
+
+## TextArea
+
+<Playground>
+  <Box marginBottom={24} width={360}>
+    <Label size="medium">Medium (default)</Label>
+    <TextArea placeholder="With placeholder" />
+  </Box>
+  <Box marginBottom={24} width={360}>
+    <Label size="medium">Disabled</Label>
+    <TextArea value="This is disabled" isDisabled />
+  </Box>
+  <Box marginBottom={24} width={360}>
+    <Label size="medium">Is Invalid</Label>
+    <TextArea isInvalid />
+  </Box>
+  <Box marginBottom={24}>
+    <Label size="small">Small</Label>
+    <TextArea size="small" />
+  </Box>
+  <Box marginBottom={24}>
+    <Label size="medium">Medium</Label>
+    <TextArea size="medium" />
+  </Box>
+  <Box marginBottom={24}>
+    <Label size="large">Large</Label>
+    <TextArea size="large" />
+  </Box>
+</Playground>
+
+## ClearableTextInput
+
+<Playground>
+  <Box marginBottom={24}>
+    <State initial={{ value: '' }}>
+      {({ state, setState }) => (
+        <ClearableTextInput
+          onChangeText={text => setState({ value: text })}
+          value={state.value}
+          onClear={() => {
+            console.log('Cleared!');
+          }}
+          placeholder="Clearable text input"
+        />
+      )}
+    </State>
+  </Box>
+</Playground>
+
+## PhoneNumberInput
+
+### Usage
+
+<Playground>
+  <State initial={{ countryCode: 'US', phoneNumber: '' }}>
+    {({ state, setState }) => (
+      <PhoneNumberInput
+        header={
+          <Spacing marginVertical={3} paddingHorizontal={2}>
+            <Heading size="xxxlarge">Select your country</Heading>
+          </Spacing>
+        }
+        onChangeCountryCode={countryCode => setState({ countryCode })}
+        onChangePhoneNumber={phoneNumber => setState({ phoneNumber })}
+        phoneNumber={state.phoneNumber}
+        countryCode={state.countryCode}
+        placeholder="Enter your phone number"
+      />
+    )}
+  </State>
+</Playground>
+
+### Props
+
+<PropsTable of={PhoneNumberInput} />

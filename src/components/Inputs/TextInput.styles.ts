@@ -22,7 +22,6 @@ export interface TextInputVariables {
   base: TextStyle;
   disabled: TextStyle;
   focus: TextStyle;
-  clearable: TextStyle;
   invalid: TextStyle;
   placeholderTextColor: string;
   sizes: TextInputSizes;
@@ -35,9 +34,6 @@ export const getTextInputVariables = (theme: Theme): TextInputVariables => {
       borderColor: theme.colors.border.default,
       borderWidth: 1,
       color: theme.colors.text.default,
-    },
-    clearable: {
-      paddingRight: 40,
     },
     disabled: {
       backgroundColor: theme.colors.background.disabled,
@@ -76,8 +72,6 @@ export const getTextInputVariables = (theme: Theme): TextInputVariables => {
 };
 
 export interface TextInputStyles {
-  containerStyle: ViewStyle;
-  clearContainerStyle: ViewStyle;
   inputStyle: TextStyle;
   focusedStyle: TextStyle;
   placeholderTextColor: string;
@@ -96,14 +90,13 @@ export type GetTextInputStyles = (
 ) => TextInputStyles;
 
 export const getTextInputStyles: GetTextInputStyles = (
-  { size, isDisabled, isInvalid, isClearable },
+  { size, isDisabled, isInvalid },
   theme,
 ) => {
   const textInputVariables = getTextInputVariables(theme);
 
   const {
     base,
-    clearable,
     disabled,
     focus,
     invalid,
@@ -114,25 +107,12 @@ export const getTextInputStyles: GetTextInputStyles = (
   const sizeStyles = sizes[size];
 
   return {
-    clearContainerStyle: {
-      alignItems: 'center',
-      display: 'flex',
-      height: '100%',
-      justifyContent: 'center',
-      paddingHorizontal: 8,
-      position: 'absolute',
-      right: 0,
-    },
-    containerStyle: {
-      position: 'relative',
-    },
     focusedStyle: focus,
     inputStyle: {
       ...base,
       ...sizeStyles,
       ...(isDisabled ? disabled : {}),
       ...(isInvalid ? invalid : {}),
-      ...(isClearable ? clearable : {}),
     },
     placeholderTextColor,
   };
