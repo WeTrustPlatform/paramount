@@ -63,7 +63,7 @@
     "@semantic-release/npm": "5.1.4",
     "@semantic-release/release-notes-generator": "7.1.4",
     "@types/exenv": "1.2.0",
-    "@types/expo__vector-icons": "9.0.0",
+    "@types/expo__vector-icons": "9.0.1",
     "@types/jest": "23.3.13",
     "@types/react": "16.8.1",
     "@types/react-dom": "16.0.11",
