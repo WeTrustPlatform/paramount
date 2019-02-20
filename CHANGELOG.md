@@ -1,3 +1,10 @@
+## [1.23.1](https://github.com/WeTrustPlatform/paramount/compare/v1.23.0...v1.23.1) (2019-02-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency terser to 3.16 ([#103](https://github.com/WeTrustPlatform/paramount/issues/103)) ([2d5de62](https://github.com/WeTrustPlatform/paramount/commit/2d5de62))
+
 # [1.23.0](https://github.com/WeTrustPlatform/paramount/compare/v1.22.11...v1.23.0) (2019-02-19)
 
 
