@@ -25,13 +25,7 @@ More:
 
 # Inspiration
 
-> Standing on the shoulders of giants
-
 Much of the architecture and implementation of this library are heavily inspired by work of existing design systems and libraries, and there are parts even copied directly into this project.
-
-- [Evergreen Design System](https://github.com/segmentio/evergreen) (Most inspired from)
-- [react-native-switch-toggle](https://github.com/react-native-seoul/react-native-switch-toggle)
-- More...
 
 # Contributing
 

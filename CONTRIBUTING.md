@@ -53,7 +53,7 @@ Follow this process if you'd like your work considered for inclusion in the proj
 
 ## Development
 
-The development of components also happen on the documentation site (living documentation).
+The development of components also happen on the documentation site
 
 ```bash
 cd <root>
@@ -62,7 +62,7 @@ yarn dev
 
 The development/docs will then be available at http://localhost:3000.
 
-The site is created based on `*.mdx` files ([see MDX](https://github.com/mdx-js/mdx)) throughout the codebase. Their main purpose is to provide:
+The site is created based on `*.mdx` files ([see MDX](https://github.com/mdx-js/mdx)) throughout the codebase which provides:
 
 1. **Component's playground**. Test out usage of the components and their features
 
@@ -87,44 +87,14 @@ The site is created based on `*.mdx` files ([see MDX](https://github.com/mdx-js/
 
 3. **Tests**. Snapshots of components are taken directly from `<Playground />` which provide a good basis for [snapshot testing](https://jestjs.io/docs/en/snapshot-testing) for UI tests
 
-<a name="understanding-codebase"></a>
+<a name="making-changes"></a>
 
-## Understanding codebase
+## Making changes
 
-### Directory layout
-
-```
-.
-├── /docs/                        # Extra docs for the library
-├── /src/                         # The source code of the application
-│   ├── /components/              # React components
-│       ├── /component/           # React Component folder
-│   ├── /constants/               # Constants
-│   ├── /theme/                   # GraphQL server schema and data models
-│       ├── /component-variables/ # Component variables
-│       ├── /default-theme/       # Default theme variables
-│       ├── /style-getters/       # Component style getters
-│   ├── /types/                   # Utility types or declarations for 3rd party libraries
-│   ├── index.ts                  # Package exports
-├── /tests/                       # Unit and end-to-end tests
-├── package.json                  # The list of 3rd party libraries and utilities
-└── yarn.lock                     # Fixed versions of all the dependencies
-```
-
-### Making changes to a Component
-
-There are few files required to each component. Let's say for `TextInput`
+There are two files required to each component. Let's say for `TextInput`
 
 1. `TextInput.tsx` - The actual React Component
-2. `textInputVariables.ts` - Component style variables. They should expose component state variables and contain corresponding styles. (e.g. `disabled: ...`, `active: ...`)
-3. `getTextInputStyles.ts` - Style getter of the component, which outputs style object of each React Node based on component's style props (e.g. `size`, `color`)
-
-For a new component, you would also have to add component entry to the following files:
-
-1. `theme/component-variables/index.ts`
-1. `theme/style-getters/index.ts`
-1. `theme/ThemeInterface.ts`
-1. `components/index.ts`
+2. `TextInput.styles.ts` - The Component styling
 
 <a name="running-tests"></a>
 

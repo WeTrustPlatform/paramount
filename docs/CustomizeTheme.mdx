@@ -1,20 +1,18 @@
 ---
-name: Customize Theme
+name: Customization
 order: 90
 ---
 
-# Customize Theme
+# Customization
 
-You can customize the theme using the theme object, additionally components expose API to override styles
+## Use ThemeProvider
 
-## 1. Use ThemeProvider
-
-First and foremost, in order to theme the library you need to use React Context's Provider
+You can customize the theme using the `Theme` object [See Themeinterface](https://github.com/WeTrustPlatform/paramount/blob/master/src/theme/ThemeInterface.ts) and passing it to `ThemeProvider`
 
 ```
 import { ThemeProvider, createTheme } from 'paramount-ui'
 
-const theme = createTheme()
+const theme = createTheme({})
 
 // in the outmost component insert the provider and pass Theme Object as value
 <ThemeProvider value={theme}>
@@ -23,6 +21,31 @@ const theme = createTheme()
 
 ```
 
-## 2. Theme Object
+## Override Component Styles
 
-Theme object [See Theme interface](theme/ThemeInterface.ts). You can choose to customize whichever part you want
+Each component exposts `getStyles` callback, which can be used to override component styles.
+
+```
+import { Button } from 'paramount-ui'
+
+const CustomButton = () => {
+  return (
+    <Button
+      color="primary"
+      title="Example"
+      getStyles={(buttonProps, theme) => {
+        const { color } = buttonProps;
+
+        // Each Component may use multiple style objects. The API enables to override each node's style
+        // VSCode intellisense would autofill available style fields; however, you can view the style spec of each component in their `Component*.styles.ts`
+        return {
+          buttonStyle: { ... },
+          textStyle: { ... },
+          focusColor: color
+        }
+      }}
+    >
+  )
+}
+
+```
