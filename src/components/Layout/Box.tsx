@@ -25,30 +25,36 @@ export interface BoxProps extends ViewStyle {
   shape?: Shape;
 }
 
-const shapeMap = {
+export const shapeMapping: {
+  [shape: string]: ViewStyle;
+} = {
   circle: {
-    borderRadius: '50%',
+    borderRadius: 999,
   },
   pill: {
-    borderRadius: '999px',
+    borderRadius: 999,
   },
   rounded: {
-    borderRadius: `${BASE_BORDER_RADII}px`,
+    borderRadius: BASE_BORDER_RADII,
   },
   roundedBottom: {
-    borderRadius: `0 0 ${BASE_BORDER_RADII}px ${BASE_BORDER_RADII}px`,
+    borderBottomLeftRadius: BASE_BORDER_RADII,
+    borderBottomRightRadius: BASE_BORDER_RADII,
   },
   roundedLeft: {
-    borderRadius: `${BASE_BORDER_RADII}px 0 0 ${BASE_BORDER_RADII}px`,
+    borderBottomLeftRadius: BASE_BORDER_RADII,
+    borderTopLeftRadius: BASE_BORDER_RADII,
   },
   roundedRight: {
-    borderRadius: `0 ${BASE_BORDER_RADII}px ${BASE_BORDER_RADII}px 0`,
+    borderBottomRightRadius: BASE_BORDER_RADII,
+    borderTopRightRadius: BASE_BORDER_RADII,
   },
   roundedTop: {
-    borderRadius: `${BASE_BORDER_RADII}px ${BASE_BORDER_RADII}px 0 0`,
+    borderTopLeftRadius: BASE_BORDER_RADII,
+    borderTopRightRadius: BASE_BORDER_RADII,
   },
   square: {
-    borderRadius: '0',
+    borderRadius: 0,
   },
 };
 
@@ -56,7 +62,7 @@ const propToFn = {
   elevation: (elevation: 0 | 1 | 2 | 3 | 4, theme: Theme) => {
     return theme.elevations[elevation];
   },
-  shape: (shape: Shape) => shapeMap[shape],
+  shape: (shape: Shape) => shapeMapping[shape],
 };
 
 const Box = ({ theme, ...props }: BoxProps) => {

@@ -18,7 +18,7 @@ import {
 
 export type CheckboxShape = 'circle' | 'square';
 
-export interface CheckboxProps {
+export interface CheckboxProps extends TouchableHighlightProps {
   theme: Theme;
   isChecked?: boolean;
   isDisabled?: boolean;
@@ -31,7 +31,7 @@ export interface CheckboxProps {
   getStyles?: ReplaceReturnType<GetCheckboxStyles, DeepPartial<CheckboxStyles>>;
 }
 
-const CheckboxBase = (props: CheckboxProps & TouchableHighlightProps) => {
+const CheckboxBase = (props: CheckboxProps) => {
   const {
     isChecked = false,
     isDisabled = false,

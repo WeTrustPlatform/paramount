@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { View, ViewProps } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
@@ -13,7 +14,7 @@ import {
   getBadgeStyles,
 } from './Badge.styles';
 
-export interface BadgeProps {
+export interface BadgeProps extends ViewProps {
   children: React.ReactNode;
   theme: Theme;
   color?: FillColor;
@@ -32,29 +33,16 @@ const BadgeBase = (props: BadgeProps) => {
     shape = 'rounded',
     size = 'small',
     theme,
+    ...viewProps
   } = props;
 
-  const { boxStyle, textStyle } = mergeStyles(getBadgeStyles, getStyles)(
-    { size, color, isSolid },
+  const { containerStyle, textStyle } = mergeStyles(getBadgeStyles, getStyles)(
+    { size, color, isSolid, shape },
     theme,
   );
 
   return (
-    <Box
-      shape={shape}
-      style={{
-        alignItems: 'center',
-        alignSelf: 'flex-start',
-        backgroundColor: boxStyle.backgroundColor,
-        display: 'flex',
-        flexDirection: 'row',
-        height: boxStyle.height,
-        justifyContent: 'center',
-        paddingLeft: boxStyle.paddingLeft,
-        paddingRight: boxStyle.paddingRight,
-        ...boxStyle,
-      }}
-    >
+    <View style={containerStyle} {...viewProps}>
       <Strong
         size={size}
         getStyles={() => ({
@@ -63,7 +51,7 @@ const BadgeBase = (props: BadgeProps) => {
       >
         {children}
       </Strong>
-    </Box>
+    </View>
   );
 };
 

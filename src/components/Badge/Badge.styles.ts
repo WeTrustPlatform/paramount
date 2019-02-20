@@ -1,6 +1,7 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
 import { FillColor, Fills, Theme } from '../../theme/ThemeInterface';
+import { Shape, shapeMapping } from '../Layout/Box';
 
 export interface BadgeSizes {
   small: ViewStyle;
@@ -41,6 +42,7 @@ export const getBadgeVariables = (theme: Theme): BadgeVariables => {
 };
 
 export interface BadgeStylesProps {
+  shape: Shape;
   size: BadgeSize;
   color: FillColor;
   isSolid: boolean;
@@ -48,7 +50,7 @@ export interface BadgeStylesProps {
 
 export interface BadgeStyles {
   textStyle: TextStyle;
-  boxStyle: ViewStyle;
+  containerStyle: ViewStyle;
 }
 
 export type GetBadgeStyles = (
@@ -57,11 +59,12 @@ export type GetBadgeStyles = (
 ) => BadgeStyles;
 
 export const getBadgeStyles: GetBadgeStyles = (
-  { size, color, isSolid },
+  { size, color, isSolid, shape },
   theme,
 ) => {
   const badgeVariables = getBadgeVariables(theme);
 
+  const shapeStyles = shapeMapping[shape];
   const fills = isSolid
     ? badgeVariables.fills.solid
     : badgeVariables.fills.subtle;
@@ -70,11 +73,17 @@ export const getBadgeStyles: GetBadgeStyles = (
   const { height, paddingLeft, paddingRight } = badgeVariables.sizes[size];
 
   return {
-    boxStyle: {
+    containerStyle: {
+      alignItems: 'center',
+      alignSelf: 'flex-start',
       backgroundColor: colors.backgroundColor,
+      display: 'flex',
+      flexDirection: 'row',
       height,
+      justifyContent: 'center',
       paddingLeft,
       paddingRight,
+      ...shapeStyles,
     },
     textStyle: {
       color: colors.color,
