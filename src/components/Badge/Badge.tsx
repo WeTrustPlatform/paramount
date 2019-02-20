@@ -6,7 +6,6 @@ import { FillColor } from '../../theme/ThemeInterface';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import Box, { Shape } from '../Layout/Box';
 import { Strong } from '../Typography';
-import { getTextStyles } from '../Typography/Text.styles';
 import {
   BadgeSize,
   BadgeStyles,
@@ -58,15 +57,9 @@ const BadgeBase = (props: BadgeProps) => {
     >
       <Strong
         size={size}
-        getStyles={(...params) => {
-          const { textStyle: defaultTextStyle } = getTextStyles(...params);
-          return {
-            textStyle: {
-              ...defaultTextStyle,
-              ...textStyle,
-            },
-          };
-        }}
+        getStyles={() => ({
+          textStyle,
+        })}
       >
         {children}
       </Strong>

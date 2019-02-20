@@ -11,7 +11,6 @@ import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Spacing } from '../Layout';
 import { LoadingDots } from '../Loading';
 import { Text } from '../Typography';
-import { getTextStyles } from '../Typography/Text.styles';
 import {
   ButtonAppearance,
   ButtonColor,
@@ -165,17 +164,9 @@ const ButtonBase = (props: ButtonProps) => {
             iconLoading || <LoadingDots color={textStyle.color} />
           ) : title ? (
             <Text
-              getStyles={(...params) => {
-                const { textStyle: defaultTextStyle } = getTextStyles(
-                  ...params,
-                );
-                return {
-                  textStyle: {
-                    ...defaultTextStyle,
-                    ...textStyle,
-                  },
-                };
-              }}
+              getStyles={() => ({
+                textStyle,
+              })}
             >
               {title}
             </Text>

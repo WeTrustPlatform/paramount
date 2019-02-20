@@ -6,7 +6,6 @@ import { Theme, withTheme } from '../../theme';
 import { FillColors } from '../../theme/ThemeInterface';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Text } from '../Typography';
-import { getTextStyles } from '../Typography/Text.styles';
 import {
   AvatarStyles,
   GetAvatarStyles,
@@ -129,15 +128,9 @@ export const AvatarBase = (props: AvatarProps) => {
     <View style={boxStyle}>
       {(imageUnavailable || forceShowInitials) && (
         <Text
-          getStyles={(...params) => {
-            const { textStyle: defaultTextStyle } = getTextStyles(...params);
-            return {
-              textStyle: {
-                ...defaultTextStyle,
-                ...textStyle,
-              },
-            };
-          }}
+          getStyles={() => ({
+            textStyle,
+          })}
         >
           {initials}
         </Text>
