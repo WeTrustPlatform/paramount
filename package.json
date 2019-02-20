@@ -67,7 +67,7 @@
     "@types/expo__vector-icons": "9.0.1",
     "@types/jest": "23.3.13",
     "@types/react": "16.8.3",
-    "@types/react-dom": "16.0.11",
+    "@types/react-dom": "16.8.2",
     "@types/react-native": "0.57.37",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "23.6.0",
