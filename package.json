@@ -47,7 +47,7 @@
     "react-native-web": "0.10.0",
     "react-powerplug": "1.0.0",
     "react-spring": "7.2.11",
-    "terser": "3.16",
+    "terser": "3.14",
     "ts-essentials": "^2.0.0"
   },
   "devDependencies": {
@@ -65,7 +65,7 @@
     "@semantic-release/release-notes-generator": "7.1.4",
     "@types/exenv": "1.2.0",
     "@types/expo__vector-icons": "9.0.1",
-    "@types/jest": "23.3.13",
+    "@types/jest": "23.3.14",
     "@types/react": "16.8.3",
     "@types/react-dom": "16.0.11",
     "@types/react-native": "0.57.37",
@@ -94,7 +94,7 @@
     "typescript": "3.3.3"
   },
   "resolutions": {
-    "terser": "3.16"
+    "terser": "3.14.1"
   },
   "prettier": {
     "semi": true,
