@@ -1,3 +1,10 @@
+## [1.23.2](https://github.com/WeTrustPlatform/paramount/compare/v1.23.1...v1.23.2) (2019-02-20)
+
+
+### Bug Fixes
+
+* pass through native props to components ([59151c4](https://github.com/WeTrustPlatform/paramount/commit/59151c4))
+
 ## [1.23.1](https://github.com/WeTrustPlatform/paramount/compare/v1.23.0...v1.23.1) (2019-02-20)
 
 
