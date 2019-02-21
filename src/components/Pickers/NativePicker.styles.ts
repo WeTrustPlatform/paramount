@@ -1,17 +1,16 @@
-import { ViewStyle } from 'react-native';
+import { Platform, ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/ThemeInterface';
 
-export type PickerAppearanceStyles = ViewStyle & {
-  backgroundColor: string;
+export type NativePickerAppearanceStyles = ViewStyle & {
   borderColor: string;
   color: string;
 };
 
-export type BaseState = PickerAppearanceStyles;
-export type DisabledState = Partial<PickerAppearanceStyles>;
-export type InvalidState = Partial<PickerAppearanceStyles>;
-export type FocusState = Partial<PickerAppearanceStyles>;
+export type BaseState = NativePickerAppearanceStyles;
+export type DisabledState = Partial<NativePickerAppearanceStyles>;
+export type InvalidState = Partial<NativePickerAppearanceStyles>;
+export type FocusState = Partial<NativePickerAppearanceStyles>;
 
 export type SizeStyles = ViewStyle & {
   borderRadius: number;
@@ -21,27 +20,28 @@ export type SizeStyles = ViewStyle & {
   paddingRight: number;
 };
 
-export interface PickerSizes {
+export interface NativePickerSizes {
   small: SizeStyles;
   medium: SizeStyles;
   large: SizeStyles;
 }
 
-export type PickerSize = keyof PickerSizes;
+export type NativePickerSize = keyof NativePickerSizes;
 
-export interface PickerVariables {
+export interface NativePickerVariables {
   base: BaseState;
   disabled: DisabledState;
   focus: FocusState;
   invalid: InvalidState;
   placeholderTextColor: string;
-  sizes: PickerSizes;
+  sizes: NativePickerSizes;
 }
 
-export const getPickerVariables = (theme: Theme): PickerVariables => {
+export const getNativePickerVariables = (
+  theme: Theme,
+): NativePickerVariables => {
   return {
     base: {
-      backgroundColor: theme.colors.background.plain,
       borderColor: theme.colors.border.default,
       borderWidth: 1,
       color: theme.colors.text.default,
@@ -60,7 +60,7 @@ export const getPickerVariables = (theme: Theme): PickerVariables => {
         fontSize: theme.textSizes.small,
         height: theme.controlHeights.small,
         paddingLeft: theme.controlPaddings.small,
-        paddingRight: theme.controlPaddings.small,
+        paddingRight: 40,
       },
 
       medium: {
@@ -68,7 +68,7 @@ export const getPickerVariables = (theme: Theme): PickerVariables => {
         fontSize: theme.textSizes.medium,
         height: theme.controlHeights.medium,
         paddingLeft: theme.controlPaddings.medium,
-        paddingRight: theme.controlPaddings.medium,
+        paddingRight: 40,
       },
 
       large: {
@@ -76,39 +76,62 @@ export const getPickerVariables = (theme: Theme): PickerVariables => {
         fontSize: theme.textSizes.large,
         height: theme.controlHeights.large,
         paddingLeft: theme.controlPaddings.large,
-        paddingRight: theme.controlPaddings.large,
+        paddingRight: 40,
       },
     },
   };
 };
 
-export interface PickerStyles {
+export interface NativePickerStyles {
+  containerStyle: ViewStyle;
+  rightContainerStyle: ViewStyle;
   pickerStyle: ViewStyle;
   itemStyle: any;
 }
 
-export interface PickerStylesProps {
-  size: PickerSize;
+export interface NativePickerStylesProps {
+  size: NativePickerSize;
 }
-export type GetPickerStyles = (
-  pickerStylesProps: PickerStylesProps,
+export type GetNativePickerStyles = (
+  pickerStylesProps: NativePickerStylesProps,
   theme: Theme,
-) => PickerStyles;
+) => NativePickerStyles;
 
-export const getPickerStyles: GetPickerStyles = (pickerStylesProps, theme) => {
-  const pickerVariables = getPickerVariables(theme);
+export const getNativePickerStyles: GetNativePickerStyles = (
+  pickerStylesProps,
+  theme,
+) => {
+  const pickerVariables = getNativePickerVariables(theme);
   const { base, sizes } = pickerVariables;
   const { size } = pickerStylesProps;
 
   const { fontSize, ...sizeStyles } = sizes[size];
 
   return {
+    containerStyle: {
+      backgroundColor: theme.colors.background.plain,
+      position: 'relative',
+    },
     itemStyle: {
       fontSize,
     },
     pickerStyle: {
+      backgroundColor: 'transparent',
       ...base,
       ...sizeStyles,
+      ...(Platform.OS === 'web' && {
+        appearance: 'none',
+      }),
+    },
+    rightContainerStyle: {
+      alignItems: 'center',
+      display: 'flex',
+      height: '100%',
+      justifyContent: 'center',
+      paddingHorizontal: 8,
+      position: 'absolute',
+      right: 0,
+      zIndex: -1,
     },
   };
 };

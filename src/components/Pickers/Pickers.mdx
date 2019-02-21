@@ -1,0 +1,26 @@
+---
+name: Pickers
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import NativePicker from './NativePicker';
+import NativePickerItem from './NativePickerItem';
+
+## NativePicker
+
+<Playground>
+  <NativePicker
+    selectedValue="js"
+    onValueChange={(itemValue, itemIndex) =>
+      console.log('itemValue', itemValue)
+    }
+  >
+    <NativePickerItem label="Java" value="java" />
+    <NativePickerItem label="JavaScript" value="js" />
+  </NativePicker>
+</Playground>
+
+### Props
+
+<PropsTable of={NativePicker} />
