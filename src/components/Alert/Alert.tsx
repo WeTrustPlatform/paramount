@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TouchableOpacity, View, ViewProps } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { Intent } from '../../constants/Intent';
@@ -10,10 +10,11 @@ import { Spacing } from '../Layout';
 import { Strong, Text } from '../Typography';
 import { AlertStyles, GetAlertStyles, getAlertStyles } from './Alert.styles';
 
-export interface AlertProps extends ViewProps {
+export interface AlertProps {
   theme: Theme;
   title?: string;
   description?: string;
+  testID?: string;
   /* custom component, will take precedence over title and description */
   component?: React.ReactNode;
   onClose?: () => void;
@@ -58,7 +59,7 @@ const AlertBase = (props: AlertProps) => {
     intent = 'info',
     getStyles,
     theme,
-    ...viewProps
+    testID,
   } = props;
 
   const { containerStyle, bodyStyle } = mergeStyles(getAlertStyles, getStyles)(
@@ -67,7 +68,7 @@ const AlertBase = (props: AlertProps) => {
   );
 
   return (
-    <View style={containerStyle} {...viewProps}>
+    <View style={containerStyle} testID={testID}>
       {icon || (
         <Spacing paddingRight={2} justifyContent="center">
           {resolveIcon(intent, theme)}

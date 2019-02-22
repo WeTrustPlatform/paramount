@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, ViewProps } from 'react-native';
+import { View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
@@ -14,7 +14,7 @@ import {
   getBadgeStyles,
 } from './Badge.styles';
 
-export interface BadgeProps extends ViewProps {
+export interface BadgeProps {
   children: React.ReactNode;
   theme: Theme;
   color?: FillColor;
@@ -22,6 +22,7 @@ export interface BadgeProps extends ViewProps {
   shape?: Shape;
   isSolid?: boolean;
   getStyles?: ReplaceReturnType<GetBadgeStyles, DeepPartial<BadgeStyles>>;
+  testID?: string;
 }
 
 const BadgeBase = (props: BadgeProps) => {
@@ -33,7 +34,7 @@ const BadgeBase = (props: BadgeProps) => {
     shape = 'rounded',
     size = 'small',
     theme,
-    ...viewProps
+    testID,
   } = props;
 
   const { containerStyle, textStyle } = mergeStyles(getBadgeStyles, getStyles)(
@@ -42,7 +43,7 @@ const BadgeBase = (props: BadgeProps) => {
   );
 
   return (
-    <View style={containerStyle} {...viewProps}>
+    <View style={containerStyle} testID={testID}>
       <Strong
         size={size}
         getStyles={() => ({

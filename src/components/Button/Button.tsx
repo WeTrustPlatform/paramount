@@ -1,9 +1,5 @@
 import * as React from 'react';
-import {
-  TouchableHighlight,
-  TouchableHighlightProps,
-  View,
-} from 'react-native';
+import { AccessibilityProps, TouchableHighlight, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
@@ -20,7 +16,7 @@ import {
   getButtonStyles,
 } from './Button.styles';
 
-export interface ButtonProps extends TouchableHighlightProps {
+export interface ButtonProps extends AccessibilityProps {
   title?: string;
 
   /**
@@ -98,6 +94,8 @@ export interface ButtonProps extends TouchableHighlightProps {
    * Inline styles for components
    */
   getStyles?: ReplaceReturnType<GetButtonStyles, DeepPartial<ButtonStyles>>;
+
+  testID?: string;
 }
 
 const ButtonBase = (props: ButtonProps) => {
@@ -118,8 +116,9 @@ const ButtonBase = (props: ButtonProps) => {
     },
     size = 'medium',
     theme,
+    testID,
 
-    ...touchableHighlightProps
+    ...accessibilityProps
   } = props;
 
   const { buttonStyle, textStyle, focusColor } = mergeStyles(
@@ -145,7 +144,8 @@ const ButtonBase = (props: ButtonProps) => {
       disabled={!!(isDisabled || isLoading)}
       onPress={onPress}
       style={buttonStyle}
-      {...touchableHighlightProps}
+      testID={testID}
+      {...accessibilityProps}
     >
       <View
         style={{

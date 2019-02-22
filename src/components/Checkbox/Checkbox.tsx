@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {
+  AccessibilityProps,
   GestureResponderEvent,
   TouchableHighlight,
-  TouchableHighlightProps,
   View,
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
@@ -18,7 +18,7 @@ import {
 
 export type CheckboxShape = 'circle' | 'square';
 
-export interface CheckboxProps extends TouchableHighlightProps {
+export interface CheckboxProps extends AccessibilityProps {
   theme: Theme;
   isChecked?: boolean;
   isDisabled?: boolean;
@@ -29,6 +29,7 @@ export interface CheckboxProps extends TouchableHighlightProps {
   shape?: CheckboxShape;
   onChange?: (e: GestureResponderEvent) => void | undefined;
   getStyles?: ReplaceReturnType<GetCheckboxStyles, DeepPartial<CheckboxStyles>>;
+  testID?: string;
 }
 
 const CheckboxBase = (props: CheckboxProps) => {
@@ -41,7 +42,8 @@ const CheckboxBase = (props: CheckboxProps) => {
     shape = 'square',
     theme,
     getStyles,
-    ...touchableHighlightProps
+    testID,
+    ...accessibilityProps
   } = props;
 
   const { checkboxStyle, checkboxFocusBackgroundColor } = mergeStyles(
@@ -62,7 +64,8 @@ const CheckboxBase = (props: CheckboxProps) => {
         : {
             disabled: true,
           })}
-      {...touchableHighlightProps}
+      testID={testID}
+      {...accessibilityProps}
     >
       <View
         style={{

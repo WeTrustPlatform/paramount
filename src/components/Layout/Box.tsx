@@ -66,7 +66,7 @@ const propToFn = {
 };
 
 const Box = ({ theme, ...props }: BoxProps) => {
-  const { children, style: propStyle, ...viewStyles } = props;
+  const { children, style: propStyle, testID, ...viewStyles } = props;
   const transformedStyles = [];
   const pureStyles = {};
 
@@ -88,7 +88,9 @@ const Box = ({ theme, ...props }: BoxProps) => {
   }
 
   return (
-    <View style={[pureStyles, transformedStyles, propStyle]}>{children}</View>
+    <View testID={testID} style={[pureStyles, transformedStyles, propStyle]}>
+      {children}
+    </View>
   );
 };
 

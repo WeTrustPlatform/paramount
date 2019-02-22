@@ -1,9 +1,5 @@
 import * as React from 'react';
-import {
-  Animated,
-  TouchableOpacity,
-  TouchableOpacityProps,
-} from 'react-native';
+import { AccessibilityProps, Animated, TouchableOpacity } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { Icon } from '../../icons';
@@ -16,7 +12,7 @@ import {
 } from './Switch.styles';
 
 /* Copy pasted from https://github.com/react-native-seoul/react-native-switch-toggle */
-export interface SwitchProps extends TouchableOpacityProps {
+export interface SwitchProps extends AccessibilityProps {
   isSwitchedOn?: boolean;
   isDisabled?: boolean;
   onChange?: () => void;
@@ -24,6 +20,7 @@ export interface SwitchProps extends TouchableOpacityProps {
   offIcon?: React.ReactNode;
   duration?: number;
   theme: Theme;
+  testID?: string;
   /**
    * Inline styles for components
    */
@@ -113,7 +110,8 @@ class SwitchBase extends React.Component<SwitchProps, SwitchState> {
       theme,
       isSwitchedOn,
       getStyles,
-      ...touchableOpacityProps
+      testID,
+      ...accessibilityProps
     } = this.props;
     const { animXValue, circlePosXStart, circlePosXEnd } = this.state;
 
@@ -137,7 +135,8 @@ class SwitchBase extends React.Component<SwitchProps, SwitchState> {
           flexDirection: 'row',
           flexWrap: 'wrap',
         }}
-        {...touchableOpacityProps}
+        testID={testID}
+        {...accessibilityProps}
       >
         <Animated.View
           style={[

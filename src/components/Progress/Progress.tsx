@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Platform, View, ViewProps } from 'react-native';
+import { Platform, View } from 'react-native';
 import { Spring } from 'react-spring';
 import { DeepPartial } from 'ts-essentials';
 
@@ -12,21 +12,16 @@ import {
   ProgressStyles,
 } from './Progress.styles';
 
-export interface ProgressProps extends ViewProps {
+export interface ProgressProps {
   theme: Theme;
   percent?: number;
   size?: ProgressSize;
   getStyles?: ReplaceReturnType<GetProgressStyles, DeepPartial<ProgressStyles>>;
+  testID?: string;
 }
 
 const ProgressBase = (props: ProgressProps) => {
-  const {
-    percent = 0,
-    size = 'medium',
-    getStyles,
-    theme,
-    ...viewProps
-  } = props;
+  const { percent = 0, size = 'medium', getStyles, theme, testID } = props;
   const { containerStyle, progressStyle } = mergeStyles(
     getProgressStyles,
     getStyles,
@@ -36,7 +31,7 @@ const ProgressBase = (props: ProgressProps) => {
     <Spring to={{ value: percent }}>
       {({ value }) => {
         return (
-          <View style={containerStyle} {...viewProps}>
+          <View style={containerStyle} testID={testID}>
             <View
               // @ts-ignore
               accessibilityRole={Platform.OS === 'web' ? 'progress' : 'none'}

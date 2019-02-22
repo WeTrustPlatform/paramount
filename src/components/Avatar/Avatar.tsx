@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Image, ImageSourcePropType, View, ViewProps } from 'react-native';
+import { Image, ImageSourcePropType, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
@@ -26,7 +26,7 @@ export const globalGetInitials: GetInitialsType = (name, fallback = '?') => {
     .join('');
 };
 
-export interface AvatarProps extends ViewProps {
+export interface AvatarProps {
   /**
    * The source attribute of the image.
    * When it's not available, render initials instead.
@@ -83,6 +83,8 @@ export interface AvatarProps extends ViewProps {
   theme: Theme;
 
   getStyles?: ReplaceReturnType<GetAvatarStyles, DeepPartial<AvatarStyles>>;
+
+  testID?: string;
 }
 
 export const AvatarBase = (props: AvatarProps) => {
@@ -99,7 +101,7 @@ export const AvatarBase = (props: AvatarProps) => {
     forceShowInitials = false,
     sizeLimitOneCharacter = 20,
     getStyles,
-    ...viewProps
+    testID,
   } = props;
 
   const { imageHasFailedLoading } = { imageHasFailedLoading: false };
@@ -126,7 +128,7 @@ export const AvatarBase = (props: AvatarProps) => {
   );
 
   return (
-    <View style={boxStyle} {...viewProps}>
+    <View style={boxStyle} testID={testID}>
       {(imageUnavailable || forceShowInitials) && (
         <Text
           getStyles={() => ({

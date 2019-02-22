@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {
+  AccessibilityProps,
   ImageSourcePropType,
   TouchableHighlight,
-  TouchableHighlightProps,
   View,
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
@@ -18,7 +18,7 @@ import {
   ListItemStyles,
 } from './ListItem.styles';
 
-export interface ListItemProps extends TouchableHighlightProps {
+export interface ListItemProps extends AccessibilityProps {
   theme: Theme;
   size?: ListItemSize;
   isDisabled?: boolean;
@@ -28,6 +28,7 @@ export interface ListItemProps extends TouchableHighlightProps {
   avatarProps?: AvatarProps;
   rightIcon?: React.ReactNode;
   getStyles?: ReplaceReturnType<GetListItemStyles, DeepPartial<ListItemStyles>>;
+  testID?: string;
 }
 
 const ListItemBase = (props: ListItemProps) => {
@@ -41,7 +42,8 @@ const ListItemBase = (props: ListItemProps) => {
     rightIcon = null,
     theme,
     avatarProps,
-    ...touchableHighlightProps
+    testID,
+    ...accessibilityProps
   } = props;
 
   const {
@@ -59,7 +61,8 @@ const ListItemBase = (props: ListItemProps) => {
       disabled={isDisabled}
       underlayColor={focusBackgroundColor}
       style={containerStyle}
-      {...touchableHighlightProps}
+      testID={testID}
+      {...accessibilityProps}
     >
       <View style={wrapperStyle}>
         <View style={leftWrapperStyle}>
