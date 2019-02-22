@@ -17,14 +17,14 @@ export interface ConfirmDialogProps
 export interface ConfirmDialogHeaderProps {
   /** Title displayed in the header */
   title?: string;
-  onClose?: () => void;
+  onRequestClose?: () => void;
   theme: Theme;
 }
 
 const ConfirmDialogHeader = ({
   title,
   theme,
-  onClose,
+  onRequestClose,
 }: ConfirmDialogHeaderProps) => (
   <Spacing
     padding={2}
@@ -33,7 +33,7 @@ const ConfirmDialogHeader = ({
     alignItems="center"
   >
     <Heading>{title}</Heading>
-    <TouchableOpacity onPress={onClose}>
+    <TouchableOpacity onPress={onRequestClose}>
       <Icon name="x" size={24} color={theme.colors.text.default} />
     </TouchableOpacity>
   </Spacing>
@@ -48,18 +48,18 @@ export interface ConfirmDialogFooterProps {
   /** Handler for confirm button */
   onConfirm?: () => void;
   /** Handler for cancel button */
-  onClose?: () => void;
+  onRequestClose?: () => void;
 }
 
 const ConfirmDialogFooter = ({
   color = 'primary',
-  onClose,
+  onRequestClose,
   onConfirm,
   cancelLabel,
   confirmLabel,
 }: ConfirmDialogFooterProps) => (
   <Spacing padding={2} flexDirection="row" justifyContent="flex-end">
-    <Button appearance="minimal" onPress={onClose} title={cancelLabel} />
+    <Button appearance="minimal" onPress={onRequestClose} title={cancelLabel} />
     <Spacing paddingLeft={2}>
       <Button color={color} onPress={onConfirm} title={confirmLabel} />
     </Spacing>
@@ -73,7 +73,7 @@ const ConfirmDialogBase = (props: ConfirmDialogProps) => {
     confirmLabel = 'Confirm',
     footer,
     header,
-    onClose,
+    onRequestClose,
     onConfirm,
     title,
     theme,
@@ -88,7 +88,7 @@ const ConfirmDialogBase = (props: ConfirmDialogProps) => {
           : header || (
               <ConfirmDialogHeader
                 theme={theme}
-                onClose={onClose}
+                onRequestClose={onRequestClose}
                 title={title}
               />
             )
@@ -98,14 +98,14 @@ const ConfirmDialogBase = (props: ConfirmDialogProps) => {
           ? null
           : footer || (
               <ConfirmDialogFooter
-                onClose={onClose}
+                onRequestClose={onRequestClose}
                 onConfirm={onConfirm}
                 cancelLabel={cancelLabel}
                 confirmLabel={confirmLabel}
               />
             )
       }
-      onClose={onClose}
+      onRequestClose={onRequestClose}
       {...dialogProps}
     >
       <Spacing padding={2}>{children}</Spacing>
