@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PickerProps as RNPickerProps } from 'react-native';
+import { PickerProps as RNPickerProps, ScrollView } from 'react-native';
 
 import { Modal } from '../Modal';
 import ModalContent from '../Modal/ModalContent';
@@ -48,16 +48,18 @@ const ModalPickerBase = (props: ModalPickerProps) => {
         onRequestClose={() => setIsModalOpen(false)}
       >
         <ModalContent onClose={() => setIsModalOpen(false)}>
-          {header}
-          <SelectList
-            selectedValue={selectedValue}
-            onValueChange={(value, index) => {
-              if (onValueChange) onValueChange(value, index);
-              setIsModalOpen(false);
-            }}
-          >
-            {children}
-          </SelectList>
+          <ScrollView>
+            {header}
+            <SelectList
+              selectedValue={selectedValue}
+              onValueChange={(value, index) => {
+                if (onValueChange) onValueChange(value, index);
+                setIsModalOpen(false);
+              }}
+            >
+              {children}
+            </SelectList>
+          </ScrollView>
         </ModalContent>
       </Modal>
     </>
