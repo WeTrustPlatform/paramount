@@ -1,5 +1,10 @@
 import * as React from 'react';
-import { AccessibilityProps, TouchableHighlight, View } from 'react-native';
+import {
+  AccessibilityProps,
+  GestureResponderEvent,
+  TouchableHighlight,
+  View,
+} from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
@@ -65,7 +70,7 @@ export interface ButtonProps extends AccessibilityProps {
    * Button press handler
    * @default () => {}
    */
-  onPress?: () => void;
+  onPress?: (event: GestureResponderEvent) => void;
 
   /**
    * Sets an icon before the text.

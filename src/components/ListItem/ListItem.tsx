@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {
   AccessibilityProps,
+  GestureResponderEvent,
   ImageSourcePropType,
   TouchableHighlight,
   View,
@@ -27,6 +28,7 @@ export interface ListItemProps extends AccessibilityProps {
   imageSource?: ImageSourcePropType;
   avatarProps?: AvatarProps;
   rightIcon?: React.ReactNode;
+  onPress?: (event: GestureResponderEvent) => void;
   getStyles?: ReplaceReturnType<GetListItemStyles, DeepPartial<ListItemStyles>>;
   testID?: string;
 }
@@ -39,6 +41,7 @@ const ListItemBase = (props: ListItemProps) => {
     description,
     imageSource,
     size = 'medium',
+    onPress,
     rightIcon = null,
     theme,
     avatarProps,
@@ -62,6 +65,7 @@ const ListItemBase = (props: ListItemProps) => {
       underlayColor={focusBackgroundColor}
       style={containerStyle}
       testID={testID}
+      onPress={onPress}
       {...accessibilityProps}
     >
       <View style={wrapperStyle}>

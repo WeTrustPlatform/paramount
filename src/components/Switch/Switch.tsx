@@ -1,5 +1,10 @@
 import * as React from 'react';
-import { AccessibilityProps, Animated, TouchableOpacity } from 'react-native';
+import {
+  AccessibilityProps,
+  Animated,
+  GestureResponderEvent,
+  TouchableOpacity,
+} from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { Icon } from '../../icons';
@@ -15,7 +20,7 @@ import {
 export interface SwitchProps extends AccessibilityProps {
   isSwitchedOn?: boolean;
   isDisabled?: boolean;
-  onChange?: () => void;
+  onChange?: (event: GestureResponderEvent) => void;
   onIcon?: React.ReactNode;
   offIcon?: React.ReactNode;
   duration?: number;
@@ -84,11 +89,11 @@ class SwitchBase extends React.Component<SwitchProps, SwitchState> {
     }
   }
 
-  public handleOnPress = () => {
+  public handleOnPress = (e: GestureResponderEvent) => {
     const { onChange } = this.props;
     this.runAnimation();
 
-    if (onChange) onChange();
+    if (onChange) onChange(e);
   };
 
   public runAnimation = () => {

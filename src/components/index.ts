@@ -13,7 +13,7 @@ export * from './ListItem';
 export * from './Loading';
 export * from './Modal';
 export * from './Overlay';
-export * from './Picker';
+export * from './Pickers';
 export * from './Positioner';
 export * from './Popover';
 export * from './Progress';
