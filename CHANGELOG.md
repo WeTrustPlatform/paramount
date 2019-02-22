@@ -1,3 +1,15 @@
+# [1.25.0](https://github.com/WeTrustPlatform/paramount/compare/v1.24.0...v1.25.0) (2019-02-22)
+
+
+### Bug Fixes
+
+* onrequestclose ([dba8605](https://github.com/WeTrustPlatform/paramount/commit/dba8605))
+
+
+### Features
+
+* more picker options ([a2b5665](https://github.com/WeTrustPlatform/paramount/commit/a2b5665))
+
 # [1.24.0](https://github.com/WeTrustPlatform/paramount/compare/v1.23.2...v1.24.0) (2019-02-22)
 
 
