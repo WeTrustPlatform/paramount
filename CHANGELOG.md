@@ -1,3 +1,16 @@
+# [1.24.0](https://github.com/WeTrustPlatform/paramount/compare/v1.23.2...v1.24.0) (2019-02-22)
+
+
+### Bug Fixes
+
+* types and handlers ([968682b](https://github.com/WeTrustPlatform/paramount/commit/968682b))
+
+
+### Features
+
+* change picker to native picker ([62708e2](https://github.com/WeTrustPlatform/paramount/commit/62708e2))
+* reduce api surface, change to testID ([ff66244](https://github.com/WeTrustPlatform/paramount/commit/ff66244))
+
 ## [1.23.2](https://github.com/WeTrustPlatform/paramount/compare/v1.23.1...v1.23.2) (2019-02-20)
 
 
