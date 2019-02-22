@@ -8,7 +8,10 @@ export interface SelectListProps {
   selectedValue: string | string[];
   isMulti?: boolean;
   theme: Theme;
-  onValueChange: (itemValue: string | string[], itemIndex: number) => void;
+  onValueChange: (
+    itemValue: string | string[],
+    itemIndex: number,
+  ) => void | undefined;
 }
 
 const SelectListBase = (props: SelectListProps): any => {

@@ -1,32 +1,20 @@
 import * as React from 'react';
-import {
-  Picker as RNPicker,
-  PickerProps as RNPickerProps,
-  View,
-} from 'react-native';
-import { DeepPartial } from 'ts-essentials';
+import { Picker as RNPicker, PickerProps as RNPickerProps } from 'react-native';
 
-import { Icon } from '../../icons';
 import { ThemeContext } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import {
-  GetNativePickerStyles,
-  getNativePickerStyles,
-  NativePickerSize,
-  NativePickerStyles,
-} from './NativePicker.styles';
+import { mergeStyles } from '../../utils/mergeStyles';
+import { GetPickerButtonStylesProp } from './PickerButton';
+import { getPickerButtonStyles, PickerButtonSize } from './PickerButton.styles';
+import PickerButtonWrapper from './PickerButtonWrapper';
 
 export interface NativePickerProps extends RNPickerProps {
-  size?: NativePickerSize;
+  size?: PickerButtonSize;
   innerRef?: React.Ref<RNPicker>;
   rightIcon?: React.ReactNode;
   /**
    * Inline styles for components
    */
-  getStyles?: ReplaceReturnType<
-    GetNativePickerStyles,
-    DeepPartial<NativePickerStyles>
-  >;
+  getStyles?: GetPickerButtonStylesProp;
 }
 
 const NativePickerBase = (props: NativePickerProps) => {
@@ -39,31 +27,20 @@ const NativePickerBase = (props: NativePickerProps) => {
   } = props;
   const theme = React.useContext(ThemeContext);
 
-  const {
-    containerStyle,
-    rightContainerStyle,
-    pickerStyle,
-    itemStyle,
-  } = mergeStyles(getNativePickerStyles, getStyles)({ size }, theme);
+  const { pickerStyle, itemStyle } = mergeStyles(
+    getPickerButtonStyles,
+    getStyles,
+  )({ size }, theme);
 
   return (
-    <View style={containerStyle}>
+    <PickerButtonWrapper getStyles={getStyles}>
       <RNPicker
         ref={innerRef}
         itemStyle={itemStyle}
         style={pickerStyle}
         {...pickerProps}
       />
-      <View style={rightContainerStyle}>
-        {rightIcon || (
-          <Icon
-            name="chevron-down"
-            size={32}
-            color={theme.colors.text.default}
-          />
-        )}
-      </View>
-    </View>
+    </PickerButtonWrapper>
   );
 };
 

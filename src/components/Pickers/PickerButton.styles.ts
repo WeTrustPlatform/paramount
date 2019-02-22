@@ -1,50 +1,40 @@
-import { Platform, ViewStyle } from 'react-native';
+import { Platform, TextStyle, ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/ThemeInterface';
 
-export type NativePickerAppearanceStyles = ViewStyle & {
-  borderColor: string;
-  color: string;
-};
-
-export type BaseState = NativePickerAppearanceStyles;
-export type DisabledState = Partial<NativePickerAppearanceStyles>;
-export type InvalidState = Partial<NativePickerAppearanceStyles>;
-export type FocusState = Partial<NativePickerAppearanceStyles>;
-
-export type SizeStyles = ViewStyle & {
-  borderRadius: number;
-  fontSize: number;
-  height: number;
-  paddingLeft: number;
-  paddingRight: number;
-};
-
-export interface NativePickerSizes {
-  small: SizeStyles;
-  medium: SizeStyles;
-  large: SizeStyles;
+export interface PickerButtonSizes {
+  small: ViewStyle;
+  medium: ViewStyle;
+  large: ViewStyle;
 }
 
-export type NativePickerSize = keyof NativePickerSizes;
+export type PickerButtonSize = keyof PickerButtonSizes;
 
-export interface NativePickerVariables {
-  base: BaseState;
-  disabled: DisabledState;
-  focus: FocusState;
-  invalid: InvalidState;
+export interface PickerButtonTextSizes {
+  small: TextStyle;
+  medium: TextStyle;
+  large: TextStyle;
+}
+
+export type PickerButtonTextSize = keyof PickerButtonTextSizes;
+
+export interface PickerButtonVariables {
+  base: ViewStyle;
+  disabled: ViewStyle;
+  focus: ViewStyle;
+  invalid: ViewStyle;
   placeholderTextColor: string;
-  sizes: NativePickerSizes;
+  sizes: PickerButtonSizes;
+  textSizes: PickerButtonTextSizes;
 }
 
-export const getNativePickerVariables = (
+export const getPickerButtonVariables = (
   theme: Theme,
-): NativePickerVariables => {
+): PickerButtonVariables => {
   return {
     base: {
       borderColor: theme.colors.border.default,
       borderWidth: 1,
-      color: theme.colors.text.default,
     },
     disabled: {
       backgroundColor: theme.colors.background.disabled,
@@ -57,7 +47,6 @@ export const getNativePickerVariables = (
     sizes: {
       small: {
         borderRadius: theme.controlBorderRadius.small,
-        fontSize: theme.textSizes.small,
         height: theme.controlHeights.small,
         paddingLeft: theme.controlPaddings.small,
         paddingRight: 40,
@@ -65,7 +54,6 @@ export const getNativePickerVariables = (
 
       medium: {
         borderRadius: theme.controlBorderRadius.medium,
-        fontSize: theme.textSizes.medium,
         height: theme.controlHeights.medium,
         paddingLeft: theme.controlPaddings.medium,
         paddingRight: 40,
@@ -73,39 +61,52 @@ export const getNativePickerVariables = (
 
       large: {
         borderRadius: theme.controlBorderRadius.large,
-        fontSize: theme.textSizes.large,
         height: theme.controlHeights.large,
         paddingLeft: theme.controlPaddings.large,
         paddingRight: 40,
       },
     },
+    textSizes: {
+      small: {
+        fontSize: theme.textSizes.small,
+      },
+
+      medium: {
+        fontSize: theme.textSizes.medium,
+      },
+
+      large: {
+        fontSize: theme.textSizes.large,
+      },
+    },
   };
 };
 
-export interface NativePickerStyles {
+export interface PickerButtonStyles {
   containerStyle: ViewStyle;
   rightContainerStyle: ViewStyle;
   pickerStyle: ViewStyle;
   itemStyle: any;
 }
 
-export interface NativePickerStylesProps {
-  size: NativePickerSize;
+export interface PickerButtonStylesProps {
+  size: PickerButtonSize;
 }
-export type GetNativePickerStyles = (
-  pickerStylesProps: NativePickerStylesProps,
+export type GetPickerButtonStyles = (
+  pickerStylesProps: PickerButtonStylesProps,
   theme: Theme,
-) => NativePickerStyles;
+) => PickerButtonStyles;
 
-export const getNativePickerStyles: GetNativePickerStyles = (
+export const getPickerButtonStyles: GetPickerButtonStyles = (
   pickerStylesProps,
   theme,
 ) => {
-  const pickerVariables = getNativePickerVariables(theme);
-  const { base, sizes } = pickerVariables;
+  const pickerVariables = getPickerButtonVariables(theme);
+  const { base, sizes, textSizes } = pickerVariables;
   const { size } = pickerStylesProps;
 
-  const { fontSize, ...sizeStyles } = sizes[size];
+  const controlSizeStyles = sizes[size];
+  const textSizeStyles = textSizes[size];
 
   return {
     containerStyle: {
@@ -113,12 +114,12 @@ export const getNativePickerStyles: GetNativePickerStyles = (
       position: 'relative',
     },
     itemStyle: {
-      fontSize,
+      ...textSizeStyles,
     },
     pickerStyle: {
       backgroundColor: 'transparent',
       ...base,
-      ...sizeStyles,
+      ...controlSizeStyles,
       ...(Platform.OS === 'web' && {
         appearance: 'none',
       }),

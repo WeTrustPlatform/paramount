@@ -17,10 +17,12 @@ import {
 export interface DialogProps {
   children: React.ReactNode;
   theme: Theme;
+  /** Prop to be passed to Modal */
+  useHistory?: boolean;
   /** To show dialog or not */
   isVisible?: boolean;
-  /** Called when clicking on overlay or pressing Esc */
-  onClose?: () => void;
+  /** Called when clicking on overlay or pressing Esc, or using back button (requires useHistory to be true) */
+  onRequestClose?: () => void;
   /** In ConfirmDialog, you can pass null to render nothing. If it is undefined, it will use default value */
   header?: React.ReactNode;
   /** In ConfirmDialog, you can pass null to render nothing. If it is undefined, it will use default value */
@@ -37,9 +39,10 @@ const DialogBase = (props: DialogProps) => {
     footer,
     header,
     isVisible,
-    onClose = () => null,
+    onRequestClose = () => null,
     theme,
     getStyles,
+    useHistory,
   } = props;
 
   const { modalContainerStyle, containerStyle, bodyStyle } = mergeStyles(
@@ -48,14 +51,19 @@ const DialogBase = (props: DialogProps) => {
   )(theme);
 
   return (
-    <Modal visible={isVisible} transparent onRequestClose={onClose}>
+    <Modal
+      useHistory={useHistory}
+      visible={isVisible}
+      transparent
+      onRequestClose={onRequestClose}
+    >
       <View style={modalContainerStyle}>
         <View style={containerStyle}>
           {header}
           <View style={bodyStyle}>{children}</View>
           {footer}
         </View>
-        <Overlay onPress={onClose} />
+        <Overlay onPress={onRequestClose} />
       </View>
     </Modal>
   );

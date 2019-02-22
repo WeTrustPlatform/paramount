@@ -23,7 +23,7 @@ Opposed to `Dialog` (below), `ConfirmDialog` has predefined styling and handlers
         <ConfirmDialog
           title="Confirm dialog"
           isVisible={on}
-          onClose={toggle}
+          onRequestClose={toggle}
           cancelLabel="Cancel label"
           confirmLabel="Confirm label"
         >
@@ -44,7 +44,7 @@ Opposed to `Dialog` (below), `ConfirmDialog` has predefined styling and handlers
         <ConfirmDialog
           header={null}
           isVisible={on}
-          onClose={toggle}
+          onRequestClose={toggle}
           cancelLabel="Cancel label"
           confirmLabel="Confirm label"
         >
@@ -72,7 +72,7 @@ Dialog has no predefined styling and handlers. The content, header and footer is
           header={<Text>Header</Text>}
           footer={<Text>Footer</Text>}
           isVisible={on}
-          onClose={toggle}
+          onRequestClose={toggle}
         >
           <Box height={1800}>
             <Text>Put any content in the dialog</Text>

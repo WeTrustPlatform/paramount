@@ -9,6 +9,7 @@ export interface SelectListItemBaseProps {
   isSelected?: boolean;
   onSelect?: (value: string, index: number, isSelected: boolean) => void;
   value: string;
+  label: string;
 }
 
 export interface SelectListItemProps
@@ -16,7 +17,6 @@ export interface SelectListItemProps
     ListItemProps {
   theme: Theme;
   isDisabled?: boolean;
-  label: string;
 }
 
 const SelectListItemBase = (props: SelectListItemProps) => {

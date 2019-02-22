@@ -4,7 +4,10 @@ menu: Components
 ---
 
 import { Playground, PropsTable } from 'docz';
+import ModalPicker from './ModalPicker';
+import DialogPicker from './DialogPicker';
 import NativePicker from './NativePicker';
+import PickerItem from './PickerItem';
 import NativePickerItem from './NativePickerItem';
 
 ## NativePicker
@@ -21,6 +24,30 @@ import NativePickerItem from './NativePickerItem';
   </NativePicker>
 </Playground>
 
-### Props
+## DialogPicker
 
-<PropsTable of={NativePicker} />
+<Playground>
+  <DialogPicker
+    selectedValue="js"
+    onValueChange={(itemValue, itemIndex) =>
+      console.log('itemValue', itemValue)
+    }
+  >
+    <PickerItem label="Java" value="java" />
+    <PickerItem label="JavaScript" value="js" />
+  </DialogPicker>
+</Playground>
+
+## ModalPicker
+
+<Playground>
+  <ModalPicker
+    selectedValue="js"
+    onValueChange={(itemValue, itemIndex) =>
+      console.log('itemValue', itemValue)
+    }
+  >
+    <PickerItem label="Java" value="java" />
+    <PickerItem label="JavaScript" value="js" />
+  </ModalPicker>
+</Playground>
