@@ -1,0 +1,1 @@
+export const DEFAULT_MONTH_DAY_HEIGHT = 48;

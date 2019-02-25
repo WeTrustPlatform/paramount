@@ -1,0 +1,59 @@
+---
+name: Calendars
+menu: Components
+---
+
+import { format, addDays, subDays, isSameDay, isBefore } from 'date-fns';
+import { Playground, PropsTable } from 'docz';
+import { State } from 'react-powerplug';
+
+import { Box, Spacing } from '../../Layout';
+import { Heading } from '../../Typography';
+import MonthCalendar from './MonthCalendar';
+import WeekDays from './WeekDays';
+
+## MonthCalendar
+
+<Playground>
+  <Spacing paddingBottom={4}>
+    <Heading size="xxxlarge">{format(new Date(), 'MMMM YYYY')}</Heading>
+  </Spacing>
+  <WeekDays />
+  <State
+    initial={{
+      selectedStartDate: null,
+      selectedEndDate: null,
+    }}
+  >
+    {({ state: { selectedStartDate, selectedEndDate }, setState }) => (
+      <MonthCalendar
+        selectedStartDate={selectedStartDate}
+        selectedEndDate={selectedEndDate}
+        onSelect={date => {
+          if (!selectedStartDate && !selectedEndDate) {
+            setState({
+              selectedStartDate: date,
+              selectedEndDate: null,
+            });
+          } else if (selectedStartDate && !selectedEndDate) {
+            if (isBefore(date, selectedStartDate)) {
+              setState({
+                selectedStartDate: date,
+                selectedEndDate: null,
+              });
+            } else if (!isSameDay(selectedStartDate, date)) {
+              setState({
+                selectedEndDate: date,
+              });
+            }
+          } else {
+            setState({
+              selectedStartDate: date,
+              selectedEndDate: null,
+            });
+          }
+        }}
+      />
+    )}
+  </State>
+</Playground>
