@@ -34,7 +34,10 @@ const SelectListItemBase = (props: SelectListItemProps) => {
 
   return (
     <ListItem
-      onPress={() => onSelect(value, index, isSelected)}
+      onPress={e => {
+        e.preventDefault();
+        onSelect(value, index, isSelected);
+      }}
       label={label}
       rightIcon={
         <Checkbox isInteractive={false} shape="circle" isChecked={isSelected} />
