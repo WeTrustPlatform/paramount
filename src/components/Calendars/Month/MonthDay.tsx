@@ -12,7 +12,6 @@ export interface MonthDayBaseProps {
 
 export interface MonthDayProps extends MonthDayBaseProps {
   date: Date;
-  isCurrentDay: boolean;
   isSelected: boolean;
   isSelectionStart: boolean;
   hasNext: boolean;

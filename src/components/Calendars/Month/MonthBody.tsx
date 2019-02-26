@@ -17,9 +17,9 @@ import MonthDay, { MonthDayBaseProps } from './MonthDay';
 export interface MonthBodyBaseProps extends MonthDayBaseProps {
   /** Date to which display its month for. @default Date */
   date?: Date;
-  /** Date highlighted in the calendar */
-  currentDate?: Date;
+  /** Highlights the date or start date on the calendar */
   selectedStartDate?: Date;
+  /** Highlights the end date on the calendar. Will created a selected range */
   selectedEndDate?: Date;
 }
 
@@ -53,7 +53,6 @@ const MonthBody = (props: MonthBodyProps) => {
     weeks,
     onSelect,
     date = new Date(),
-    currentDate = new Date(),
     selectedStartDate: propSelectedStartDate = null,
     selectedEndDate: propSelectedEndDate = null,
   } = props;
@@ -115,7 +114,6 @@ const MonthBody = (props: MonthBodyProps) => {
                 <MonthDay
                   onSelect={onSelect}
                   date={day.date}
-                  isCurrentDay={isSameDay(day.date, currentDate)}
                   isSelected={
                     selectedStartDate && selectedEndDate
                       ? isWithinRange(
