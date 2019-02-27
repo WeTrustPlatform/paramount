@@ -51,13 +51,13 @@ const MultiMonthCalendar = (props: MultiMonthCalendarProps) => {
     <Box flex={1} width="100%">
       {months.map(month => {
         return (
-          <Box key={month.month.toISOString()}>
+          <Box key={month.key}>
             <Spacing paddingVertical={3}>
               <Heading size="xlarge">
                 {format(month.month, 'MMMM YYYY')}
               </Heading>
             </Spacing>
-            <MonthBody weeks={month.weeks} onSelect={onSelect} />
+            <MonthBody month={month} onSelect={onSelect} />
           </Box>
         );
       })}

@@ -31,7 +31,7 @@ const MonthCalendar = (props: MonthCalendarProps) => {
     propSelectedEndDate,
   );
 
-  const weeks = getWeeksInMonth(
+  const month = getWeeksInMonth(
     date,
     selectedStartDate,
     selectedEndDate,
@@ -40,7 +40,7 @@ const MonthCalendar = (props: MonthCalendarProps) => {
 
   return (
     <Box flex={1} width="100%">
-      <MonthBody onSelect={onSelect} weeks={weeks} />
+      <MonthBody onSelect={onSelect} month={month} />
     </Box>
   );
 };

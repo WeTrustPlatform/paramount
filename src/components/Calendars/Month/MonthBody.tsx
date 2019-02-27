@@ -2,22 +2,22 @@ import * as React from 'react';
 
 import { ThemeContext } from '../../../theme';
 import { Box } from '../../Layout';
-import { Week } from '../types';
+import { Month } from '../types';
 import MonthDay, { MonthDayBaseProps } from './MonthDay';
 
 export interface MonthBodyProps extends MonthDayBaseProps {
-  weeks: Week[];
+  month: Month;
 }
 
 const MonthBody = (props: MonthBodyProps) => {
-  const { onSelect, weeks } = props;
+  const { onSelect, month } = props;
 
   const theme = React.useContext(ThemeContext);
 
   return (
     <Box>
-      {weeks.map(week => (
-        <Box flexDirection="row" key={week.weekIndex}>
+      {month.weeks.map(week => (
+        <Box flexDirection="row" key={week.key}>
           {week.days.map(day => {
             const {
               date,
@@ -74,4 +74,8 @@ const MonthBody = (props: MonthBodyProps) => {
   );
 };
 
-export default React.memo(MonthBody);
+const propsAreEqual = (prevProps: MonthBodyProps, props: MonthBodyProps) => {
+  return prevProps.month.selectedDatesCount === props.month.selectedDatesCount;
+};
+
+export default React.memo(MonthBody, propsAreEqual);
