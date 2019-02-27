@@ -1,27 +1,18 @@
-export type RelativeFromTodayType = 'past' | 'today' | 'future';
-
-/** DayDate is in a format of YYYY-MM-DD */
-export type DayDate = string;
-
-/** Assumes within a day. MUST NOT BE spanning over two days */
-export interface AvailableTime {
-  endTime: Date;
-  startTime: Date;
-}
-
-export interface Day<TCalendarEvent = any> {
+export interface Day {
   date: Date;
-  calendarEvents: TCalendarEvent[];
-  availableTimes: AvailableTime[];
+
+  /** Is the date in the month within the current month */
+  isCurrentMonth: boolean;
+
+  /** Is it in the selection */
+  isSelected: boolean;
+  /** Is it the first item in the selection */
+  isSelectedStart: boolean;
+  /** Is it the last item in the selection */
+  isSelectedEnd: boolean;
 }
 
 export interface Week {
   days: Day[];
   weekIndex: number;
-}
-
-export interface CalendarEvent {
-  startTime: Date;
-  endTime: Date;
-  id: string;
 }

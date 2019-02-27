@@ -14,13 +14,11 @@ export interface MonthDayProps extends MonthDayBaseProps {
   date: Date;
   isSelected: boolean;
   isSelectionStart: boolean;
-  hasNext: boolean;
   isSelectionEnd: boolean;
 }
 
 const MonthDay = (props: MonthDayProps) => {
   const {
-    hasNext,
     isSelected,
     isSelectionStart,
     isSelectionEnd,
@@ -55,7 +53,7 @@ const MonthDay = (props: MonthDayProps) => {
           position: 'relative',
         }}
       >
-        {isSelectionStart && hasNext && (
+        {isSelectionStart && !isSelectionEnd && (
           <View
             style={{
               backgroundColor: theme.colors.background.primary.focus,
@@ -66,7 +64,7 @@ const MonthDay = (props: MonthDayProps) => {
             }}
           />
         )}
-        {isSelectionEnd && (
+        {isSelectionEnd && !isSelectionStart && (
           <View
             style={{
               backgroundColor: theme.colors.background.primary.focus,
@@ -80,10 +78,9 @@ const MonthDay = (props: MonthDayProps) => {
         <View
           style={{
             alignItems: 'center',
-            backgroundColor:
-              isSelected || isSelectionStart
-                ? theme.colors.background.primary.focus
-                : 'transparent',
+            backgroundColor: isSelected
+              ? theme.colors.background.primary.focus
+              : 'transparent',
             borderRadius: 999,
             flexDirection: 'row',
             height: DEFAULT_MONTH_DAY_HEIGHT - 4,
@@ -91,7 +88,7 @@ const MonthDay = (props: MonthDayProps) => {
             width: DEFAULT_MONTH_DAY_HEIGHT - 4,
           }}
         >
-          <Text color={isSelected || isSelectionStart ? 'plain' : 'default'}>
+          <Text color={isSelected ? 'plain' : 'default'}>
             {format(date, 'D')}
           </Text>
         </View>

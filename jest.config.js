@@ -16,5 +16,6 @@ module.exports = {
     'web.tsx',
     'tsx',
   ],
+  testMatch: null,
   setupFiles: ['jest-canvas-mock'],
 };

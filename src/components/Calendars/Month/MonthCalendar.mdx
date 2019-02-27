@@ -3,13 +3,22 @@ name: Calendars
 menu: Components
 ---
 
-import { format, addDays, subDays, isSameDay, isBefore } from 'date-fns';
+import {
+  format,
+  addDays,
+  subDays,
+  addMonths,
+  subMonths,
+  isSameDay,
+  isBefore,
+} from 'date-fns';
 import { Playground, PropsTable } from 'docz';
 import { State } from 'react-powerplug';
 
 import { Box, Spacing } from '../../Layout';
 import { Heading } from '../../Typography';
 import MonthCalendar from './MonthCalendar';
+import MultiMonthCalendar from './MultiMonthCalendar';
 import WeekDays from './WeekDays';
 
 ## MonthCalendar
@@ -21,8 +30,8 @@ import WeekDays from './WeekDays';
   <WeekDays />
   <State
     initial={{
-      selectedStartDate: null,
-      selectedEndDate: null,
+      selectedStartDate: new Date(2019, 0, 12),
+      selectedEndDate: new Date(2019, 1, 3),
     }}
   >
     {({ state: { selectedStartDate, selectedEndDate }, setState }) => (
@@ -57,6 +66,50 @@ import WeekDays from './WeekDays';
     )}
   </State>
 </Playground>
+
+<!-- ## MultiMonthCalendar
+
+<Playground>
+  <State
+    initial={{
+      selectedStartDate: null,
+      selectedEndDate: null,
+    }}
+  >
+    {({ state: { selectedStartDate, selectedEndDate }, setState }) => (
+      <MultiMonthCalendar
+        selectedStartDate={selectedStartDate}
+        selectedEndDate={selectedEndDate}
+        startMonthDate={subMonths(new Date(), 12)}
+        endMonthDate={addMonths(new Date(), 12)}
+        onSelect={date => {
+          if (!selectedStartDate && !selectedEndDate) {
+            setState({
+              selectedStartDate: date,
+              selectedEndDate: null,
+            });
+          } else if (selectedStartDate && !selectedEndDate) {
+            if (isBefore(date, selectedStartDate)) {
+              setState({
+                selectedStartDate: date,
+                selectedEndDate: null,
+              });
+            } else if (!isSameDay(selectedStartDate, date)) {
+              setState({
+                selectedEndDate: date,
+              });
+            }
+          } else {
+            setState({
+              selectedStartDate: date,
+              selectedEndDate: null,
+            });
+          }
+        }}
+      />
+    )}
+  </State>
+</Playground> -->
 
 ### Props
 

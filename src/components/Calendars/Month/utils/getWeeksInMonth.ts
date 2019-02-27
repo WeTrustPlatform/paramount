@@ -2,87 +2,217 @@ import {
   addDays,
   eachDay,
   endOfMonth,
-  format,
-  getMonth,
-  getYear,
   isAfter,
   isBefore,
+  isSameDay,
   startOfMonth,
   subDays,
 } from 'date-fns';
 
-import { DAY_DATE_FORMAT } from '../../constants';
-import { Week } from '../../types';
+import { Day, Week } from '../../types';
 import { chunk } from './chunk';
 
-export const getDay = (date: Date) => format(date, 'D');
-
-export const getFirstDayOfWeek = (firstDayOfWeekIndex: number) =>
+const getFirstDayOfWeek = (firstDayOfWeekIndex: number) =>
   (7 + firstDayOfWeekIndex) % 7 || 7;
 
-export const getLastDayOfWeek = (firstDayOfWeekIndex: number) =>
+const getLastDayOfWeek = (firstDayOfWeekIndex: number) =>
   (firstDayOfWeekIndex + 6) % 7;
 
 const getMonthDatesFromDate = (date: Date): Date[] =>
   eachDay(startOfMonth(date), endOfMonth(date));
 
-export const getMonthDates = (
-  month: number,
-  year: 'current' | number = 'current',
-): Date[] => {
-  if (year === 'current') {
-    const currentYearMonthDate = new Date();
-    currentYearMonthDate.setMonth(month);
+const getDatesBefore = (
+  startOfMonthDate: Date,
+  firstDayOfWeekIndex: number,
+) => {
+  const firstDayOfWeek = getFirstDayOfWeek(firstDayOfWeekIndex);
+  let beforeDates: Date[] = [];
 
-    return getMonthDatesFromDate(currentYearMonthDate);
+  let fromDate = startOfMonthDate;
+
+  if (fromDate.getDay() !== firstDayOfWeek) {
+    fromDate = addDays(fromDate, -(fromDate.getDay() + 7 - firstDayOfWeek) % 7);
   }
 
-  const currentMonthDate = new Date(year, month);
-  return getMonthDatesFromDate(currentMonthDate);
+  if (isBefore(fromDate, startOfMonthDate)) {
+    beforeDates = eachDay(fromDate, subDays(startOfMonthDate, 1));
+  }
+
+  return beforeDates;
 };
 
-export const getMonthDayDates = (
-  month: number,
-  year: 'current' | number = 'current',
-) => getMonthDates(month, year).map(d => format(d, DAY_DATE_FORMAT));
+const getDatesAfter = (endOfMonthDate: Date, firstDayOfWeekIndex: number) => {
+  let afterDates: Date[] = [];
 
-export const monthPage = (date: Date, firstDayOfWeekIndex: number) => {
-  const month = getMonth(date);
-  const days = getMonthDates(month, getYear(date));
-  let before: Date[] = [];
-  let after: Date[] = [];
-
-  const firstDayOfWeek = getFirstDayOfWeek(firstDayOfWeekIndex);
   const lastDayOfWeek = getLastDayOfWeek(firstDayOfWeekIndex);
 
-  let from = days[0];
-  if (from.getDay() !== firstDayOfWeek) {
-    from = addDays(from, -(from.getDay() + 7 - firstDayOfWeek) % 7);
+  let toDate = endOfMonthDate;
+
+  if (toDate.getDay() !== lastDayOfWeek) {
+    toDate = addDays(toDate, (lastDayOfWeek + 7 - toDate.getDay()) % 7);
   }
 
-  let to = days[days.length - 1];
-  if (to.getDay() !== lastDayOfWeek) {
-    to = addDays(to, (lastDayOfWeek + 7 - to.getDay()) % 7);
+  if (isAfter(toDate, endOfMonthDate)) {
+    afterDates = eachDay(addDays(endOfMonthDate, 1), toDate);
   }
 
-  if (isBefore(from, days[0])) {
-    before = eachDay(from, subDays(days[0], 1));
-  }
-
-  if (isAfter(to, days[days.length - 1])) {
-    after = eachDay(addDays(days[days.length - 1], 1), to);
-  }
-
-  return before.concat(days, after);
+  return afterDates;
 };
 
-export const getWeeksInMonth = (date: Date, firstDayOfWeek: number): Week[] => {
-  return chunk(
-    monthPage(date, firstDayOfWeek).map(dateInMonth => ({
-      availableTimes: [],
-      calendarEvents: [],
-      date: dateInMonth,
-    })),
-    7,
-  ).map((week, index) => ({ days: week, weekIndex: index }));
+export const monthPageInDates = (
+  date: Date,
+  firstDayOfWeekIndex: number,
+): Date[] => {
+  const monthDates = getMonthDatesFromDate(date);
+  const startOfMonthDate = monthDates[0];
+  const endOfMonthDate = monthDates[monthDates.length - 1];
+
+  const beforeDates = getDatesBefore(startOfMonthDate, firstDayOfWeekIndex);
+  const afterDates = getDatesAfter(endOfMonthDate, firstDayOfWeekIndex);
+
+  return beforeDates.concat(monthDates, afterDates);
+};
+
+const chunkBySeven = <TData = any>(array: TData[]) => chunk(array, 7);
+
+export const monthPageInWeeks = (
+  monthDate: Date,
+  firstDayOfWeekIndex: number = 1,
+) => chunkBySeven(monthPageInDates(monthDate, firstDayOfWeekIndex));
+
+const transformDateToDay = (
+  isSelected: boolean,
+  isCurrentMonth: boolean = true,
+) => (date: Date): Day => ({
+  date,
+  isCurrentMonth,
+  isSelected,
+  isSelectedEnd: false,
+  isSelectedStart: false,
+});
+
+const getCurrentMonthDays = (
+  monthDates: Date[],
+  selectedStartDate: Date | null,
+  selectedEndDate: Date | null,
+) => {
+  if (!selectedStartDate) return monthDates.map(transformDateToDay(false));
+
+  const selectedStartDateIndex = monthDates.findIndex(date =>
+    isSameDay(date, selectedStartDate),
+  );
+  const isSelectedStartDateWithinMonth = selectedStartDateIndex !== -1;
+
+  const selectedEndDateIndex = selectedEndDate
+    ? monthDates.findIndex(date => isSameDay(date, selectedEndDate))
+    : selectedStartDateIndex;
+
+  const isSelectedEndDateWithinMonth = selectedEndDateIndex !== -1;
+
+  const beforeSelectedDays = isSelectedStartDateWithinMonth
+    ? monthDates.slice(0, selectedStartDateIndex).map(transformDateToDay(false))
+    : [];
+
+  const selectedDates = monthDates.slice(
+    isSelectedStartDateWithinMonth ? selectedStartDateIndex : 0,
+    isSelectedEndDateWithinMonth ? selectedEndDateIndex : monthDates.length,
+  );
+
+  const selectedDays = selectedDates.map(transformDateToDay(true));
+
+  const afterSelectedDays = isSelectedEndDateWithinMonth
+    ? monthDates.slice(selectedEndDateIndex).map(transformDateToDay(false))
+    : [];
+
+  const days = beforeSelectedDays.concat(selectedDays, afterSelectedDays);
+
+  days[selectedStartDateIndex] = {
+    ...days[selectedStartDateIndex],
+    isSelected: true,
+    isSelectedStart: true,
+  };
+
+  days[selectedEndDateIndex] = {
+    ...days[selectedEndDateIndex],
+    isSelected: true,
+    isSelectedEnd: true,
+  };
+
+  return days;
+};
+
+const getBeforeMonthDays = (
+  startOfMonthDate: Date,
+  selectedStartDate: Date | null,
+  firstDayOfWeekIndex: number = 1,
+) => {
+  const hasSelectedDatesBeforeMonth = !!(
+    selectedStartDate && isBefore(selectedStartDate, startOfMonthDate)
+  );
+  const beforeDates = getDatesBefore(startOfMonthDate, firstDayOfWeekIndex);
+
+  return beforeDates.map(
+    transformDateToDay(hasSelectedDatesBeforeMonth, false),
+  );
+};
+
+const getAfterMonthDays = (
+  endOfMonthDate: Date,
+  selectedEndDate: Date | null,
+  firstDayOfWeekIndex: number = 1,
+) => {
+  const hasSelectedDatesAfterMonth = !!(
+    selectedEndDate && isAfter(selectedEndDate, endOfMonthDate)
+  );
+  const afterDates = getDatesAfter(endOfMonthDate, firstDayOfWeekIndex);
+
+  return afterDates.map(transformDateToDay(hasSelectedDatesAfterMonth, false));
+};
+
+export const getDaysInMonth = (
+  monthDate: Date,
+  selectedStartDate: Date | null,
+  selectedEndDate: Date | null,
+  firstDayOfWeekIndex: number = 1,
+) => {
+  const monthDates = getMonthDatesFromDate(monthDate);
+  const startOfMonthDate = monthDates[0];
+  const endOfMonthDate = monthDates[monthDates.length - 1];
+
+  const currentDays = getCurrentMonthDays(
+    monthDates,
+    selectedStartDate,
+    selectedEndDate,
+  );
+  const beforeDays = getBeforeMonthDays(
+    startOfMonthDate,
+    selectedStartDate,
+    firstDayOfWeekIndex,
+  );
+  const afterDays = getAfterMonthDays(
+    endOfMonthDate,
+    selectedEndDate,
+    firstDayOfWeekIndex,
+  );
+
+  return beforeDays.concat(currentDays, afterDays);
+};
+
+export const getWeeksInMonth = (
+  monthDate: Date,
+  selectedStartDate: Date | null,
+  selectedEndDate: Date | null,
+  firstDayOfWeekIndex: number = 1,
+): Week[] => {
+  const days = getDaysInMonth(
+    monthDate,
+    selectedStartDate,
+    selectedEndDate,
+    firstDayOfWeekIndex,
+  );
+
+  return chunkBySeven(days).map((week, index) => ({
+    days: week,
+    weekIndex: index,
+  }));
 };
