@@ -39,6 +39,7 @@
     "countries-list": "2.4.2",
     "deepmerge": "^3.0.0",
     "exenv": "1.2.2",
+    "fast-memoize": "^2.5.1",
     "focus-trap": "4.0.2",
     "react": "16.8.2",
     "react-art": "16.8.2",

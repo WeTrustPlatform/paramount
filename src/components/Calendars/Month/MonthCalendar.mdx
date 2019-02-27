@@ -30,8 +30,8 @@ import WeekDays from './WeekDays';
   <WeekDays />
   <State
     initial={{
-      selectedStartDate: new Date(2019, 0, 12),
-      selectedEndDate: new Date(2019, 1, 3),
+      selectedStartDate: null,
+      selectedEndDate: null,
     }}
   >
     {({ state: { selectedStartDate, selectedEndDate }, setState }) => (
@@ -67,7 +67,7 @@ import WeekDays from './WeekDays';
   </State>
 </Playground>
 
-<!-- ## MultiMonthCalendar
+## MultiMonthCalendar
 
 <Playground>
   <State
@@ -109,7 +109,7 @@ import WeekDays from './WeekDays';
       />
     )}
   </State>
-</Playground> -->
+</Playground>
 
 ### Props
 

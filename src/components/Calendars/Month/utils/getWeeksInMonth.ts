@@ -1,15 +1,20 @@
 import {
   addDays,
+  addMonths,
+  areRangesOverlapping,
+  differenceInMonths,
   eachDay,
   endOfMonth,
   isAfter,
   isBefore,
   isSameDay,
+  isWithinRange,
   startOfMonth,
   subDays,
 } from 'date-fns';
+import memoize from 'fast-memoize';
 
-import { Day, Week } from '../../types';
+import { Day, Month, Week } from '../../types';
 import { chunk } from './chunk';
 
 const getFirstDayOfWeek = (firstDayOfWeekIndex: number) =>
@@ -198,13 +203,15 @@ export const getDaysInMonth = (
   return beforeDays.concat(currentDays, afterDays);
 };
 
+const memoizedGetDaysInMonth = memoize(getDaysInMonth);
+
 export const getWeeksInMonth = (
   monthDate: Date,
   selectedStartDate: Date | null,
   selectedEndDate: Date | null,
   firstDayOfWeekIndex: number = 1,
 ): Week[] => {
-  const days = getDaysInMonth(
+  const days = memoizedGetDaysInMonth(
     monthDate,
     selectedStartDate,
     selectedEndDate,
@@ -215,4 +222,83 @@ export const getWeeksInMonth = (
     days: week,
     weekIndex: index,
   }));
+};
+
+const getMonthsDates = (startDate: Date, endDate: Date) => {
+  const monthsCount = differenceInMonths(endDate, startDate);
+
+  const monthsDates: Date[] = [];
+
+  for (let index = 0; index < monthsCount; index++) {
+    monthsDates.push(addMonths(startDate, index));
+  }
+
+  return monthsDates;
+};
+
+export const getWeeksInMultiMonth = (
+  startMonthDate: Date,
+  endMonthDate: Date,
+  selectedStartDate: Date | null,
+  selectedEndDate: Date | null,
+  firstDayOfWeekIndex: number = 1,
+): Month[] => {
+  const monthsDates = getMonthsDates(startMonthDate, endMonthDate);
+
+  return monthsDates.map(monthDate => {
+    if (!selectedStartDate) {
+      return {
+        month: monthDate,
+        weeks: getWeeksInMonth(monthDate, null, null, firstDayOfWeekIndex),
+      };
+    }
+
+    const startOfMonthDate = startOfMonth(monthDate);
+    const endOfMonthDate = endOfMonth(monthDate);
+
+    if (!selectedEndDate) {
+      const isSelectedStartDateWithinMonth = isWithinRange(
+        selectedStartDate,
+        startOfMonthDate,
+        endOfMonthDate,
+      );
+
+      return isSelectedStartDateWithinMonth
+        ? {
+            month: monthDate,
+            weeks: getWeeksInMonth(
+              monthDate,
+              selectedStartDate,
+              null,
+              firstDayOfWeekIndex,
+            ),
+          }
+        : {
+            month: monthDate,
+            weeks: getWeeksInMonth(monthDate, null, null, firstDayOfWeekIndex),
+          };
+    }
+
+    const isMonthOverlappingWithSelectedRange = areRangesOverlapping(
+      startOfMonthDate,
+      endOfMonthDate,
+      selectedStartDate,
+      selectedEndDate,
+    );
+
+    return isMonthOverlappingWithSelectedRange
+      ? {
+          month: monthDate,
+          weeks: getWeeksInMonth(
+            monthDate,
+            selectedStartDate,
+            selectedEndDate,
+            firstDayOfWeekIndex,
+          ),
+        }
+      : {
+          month: monthDate,
+          weeks: getWeeksInMonth(monthDate, null, null, firstDayOfWeekIndex),
+        };
+  });
 };

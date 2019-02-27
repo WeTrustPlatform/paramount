@@ -1,4 +1,4 @@
-import { addMonths, differenceInMonths, format } from 'date-fns';
+import { addMonths, format } from 'date-fns';
 import * as React from 'react';
 import { Omit } from 'ts-essentials';
 
@@ -6,7 +6,9 @@ import { Box, Spacing } from '../../Layout';
 import { Heading } from '../../Typography';
 import { DEFAULT_FIRST_DAY_OF_WEEK } from '../constants';
 import { marshalTimeRange } from '../utils';
-import MonthCalendar, { MonthCalendarProps } from './MonthCalendar';
+import MonthBody from './MonthBody';
+import { MonthCalendarProps } from './MonthCalendar';
+import { getWeeksInMultiMonth } from './utils/getWeeksInMonth';
 
 export interface MultiMonthCalendarProps
   extends Omit<MonthCalendarProps, 'date'> {
@@ -14,46 +16,48 @@ export interface MultiMonthCalendarProps
   endMonthDate: Date;
 }
 
-const getMonthsDates = (startDate: Date, endDate: Date) => {
-  const monthsCount = differenceInMonths(endDate, startDate);
-
-  const dates: Date[] = [];
-
-  for (let index = 0; index < monthsCount; index++) {
-    dates.push(addMonths(startDate, index));
-  }
-
-  return dates;
-};
-
 const MultiMonthCalendar = (props: MultiMonthCalendarProps) => {
   const {
     firstDayOfWeekIndex = DEFAULT_FIRST_DAY_OF_WEEK,
     startMonthDate = new Date(),
     endMonthDate = addMonths(new Date(), 1),
-    selectedStartDate,
-    selectedEndDate,
+    selectedStartDate: propSelectedStartDate = null,
+    selectedEndDate: propSelectedEndDate = null,
     onSelect,
   } = props;
 
   const [startDate, endDate] = marshalTimeRange(startMonthDate, endMonthDate);
-  const months = startDate && endDate ? getMonthsDates(startDate, endDate) : [];
+
+  if (!startDate || !endDate) {
+    throw new Error(
+      'Please pass correct startMonthDate and endMonthDate in MultiMonthCalendar',
+    );
+  }
+
+  const [selectedStartDate, selectedEndDate] = marshalTimeRange(
+    propSelectedStartDate,
+    propSelectedEndDate,
+  );
+
+  const months = getWeeksInMultiMonth(
+    startDate,
+    endDate,
+    selectedStartDate,
+    selectedEndDate,
+    firstDayOfWeekIndex,
+  );
 
   return (
     <Box flex={1} width="100%">
       {months.map(month => {
         return (
-          <Box key={month.toISOString()}>
+          <Box key={month.month.toISOString()}>
             <Spacing paddingVertical={3}>
-              <Heading size="xlarge">{format(month, 'MMMM YYYY')}</Heading>
+              <Heading size="xlarge">
+                {format(month.month, 'MMMM YYYY')}
+              </Heading>
             </Spacing>
-            <MonthCalendar
-              date={month}
-              firstDayOfWeekIndex={firstDayOfWeekIndex}
-              selectedStartDate={selectedStartDate}
-              selectedEndDate={selectedEndDate}
-              onSelect={onSelect}
-            />
+            <MonthBody weeks={month.weeks} onSelect={onSelect} />
           </Box>
         );
       })}

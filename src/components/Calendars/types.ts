@@ -16,3 +16,8 @@ export interface Week {
   days: Day[];
   weekIndex: number;
 }
+
+export interface Month {
+  weeks: Week[];
+  month: Date;
+}
