@@ -51,7 +51,7 @@ const MultiMonthCalendar = (props: MultiMonthCalendarProps) => {
     <Box flex={1} width="100%">
       {months.map(month => {
         return (
-          <Box key={month.key}>
+          <Box key={month.formattedMonth}>
             <Spacing paddingVertical={3}>
               <Heading size="xlarge">
                 {format(month.month, 'MMMM YYYY')}

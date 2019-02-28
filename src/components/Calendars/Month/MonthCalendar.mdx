@@ -11,6 +11,7 @@ import {
   subMonths,
   isSameDay,
   isBefore,
+  isAfter,
 } from 'date-fns';
 import { Playground, PropsTable } from 'docz';
 import { State } from 'react-powerplug';
@@ -80,8 +81,8 @@ import WeekDays from './WeekDays';
       <MultiMonthCalendar
         selectedStartDate={selectedStartDate}
         selectedEndDate={selectedEndDate}
-        startMonthDate={subMonths(new Date(), 12)}
-        endMonthDate={addMonths(new Date(), 12)}
+        startMonthDate={subMonths(new Date(), 2)}
+        endMonthDate={addMonths(new Date(), 2)}
         onSelect={date => {
           if (!selectedStartDate && !selectedEndDate) {
             setState({
@@ -94,7 +95,7 @@ import WeekDays from './WeekDays';
                 selectedStartDate: date,
                 selectedEndDate: null,
               });
-            } else if (!isSameDay(selectedStartDate, date)) {
+            } else if (isAfter(date, selectedStartDate)) {
               setState({
                 selectedEndDate: date,
               });

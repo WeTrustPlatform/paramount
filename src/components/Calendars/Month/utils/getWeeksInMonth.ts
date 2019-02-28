@@ -5,6 +5,8 @@ import {
   differenceInMonths,
   eachDay,
   endOfMonth,
+  format,
+  getISOWeek,
   isAfter,
   isBefore,
   isSameDay,
@@ -12,9 +14,9 @@ import {
   startOfMonth,
   subDays,
 } from 'date-fns';
-import memoize from 'fast-memoize';
 
 import { Day, Month } from '../../types';
+import { DATE_FORMAT } from '../constants';
 import { chunk } from './chunk';
 
 const getFirstDayOfWeek = (firstDayOfWeekIndex: number) =>
@@ -203,31 +205,30 @@ export const getDaysInMonth = (
   return beforeDays.concat(currentDays, afterDays);
 };
 
-const memoizedGetDaysInMonth = memoize(getDaysInMonth);
-
 export const getWeeksInMonth = (
   monthDate: Date,
   selectedStartDate: Date | null,
   selectedEndDate: Date | null,
   firstDayOfWeekIndex: number = 1,
 ): Month => {
-  const days = memoizedGetDaysInMonth(
+  const days = getDaysInMonth(
     monthDate,
     selectedStartDate,
     selectedEndDate,
     firstDayOfWeekIndex,
   );
 
-  const selectedDatesCount = days.filter(day => day.isSelected).length;
+  const selectedRange = `${
+    selectedStartDate ? format(selectedStartDate, DATE_FORMAT) : ''
+  }-${selectedEndDate ? format(selectedEndDate, DATE_FORMAT) : ''}`;
 
-  const key = `${monthDate.getMonth()}${monthDate.getFullYear()}`;
   return {
-    key,
+    formattedMonth: format(monthDate, DATE_FORMAT),
     month: monthDate,
-    selectedDatesCount,
-    weeks: chunkBySeven(days).map((week, index) => ({
+    selectedRange,
+    weeks: chunkBySeven(days).map(week => ({
       days: week,
-      key: `${index}${key}`,
+      index: getISOWeek(week[0].date),
     })),
   };
 };
@@ -278,12 +279,13 @@ export const getWeeksInMultiMonth = (
         : getWeeksInMonth(monthDate, null, null, firstDayOfWeekIndex);
     }
 
-    const isMonthOverlappingWithSelectedRange = areRangesOverlapping(
-      startOfMonthDate,
-      endOfMonthDate,
-      selectedStartDate,
-      selectedEndDate,
-    );
+    const isMonthOverlappingWithSelectedRange =
+      areRangesOverlapping(
+        startOfMonthDate,
+        endOfMonthDate,
+        selectedStartDate,
+        selectedEndDate,
+      ) || isSameDay(selectedEndDate, startOfMonthDate);
 
     return isMonthOverlappingWithSelectedRange
       ? getWeeksInMonth(

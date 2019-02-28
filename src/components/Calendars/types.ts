@@ -14,12 +14,12 @@ export interface Day {
 
 export interface Week {
   days: Day[];
-  key: string;
+  index: number;
 }
 
 export interface Month {
   weeks: Week[];
-  selectedDatesCount: number;
-  key: string;
+  selectedRange: string;
+  formattedMonth: string;
   month: Date;
 }

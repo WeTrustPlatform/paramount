@@ -1,8 +1,10 @@
+import { format } from 'date-fns';
 import * as React from 'react';
 
 import { ThemeContext } from '../../../theme';
 import { Box } from '../../Layout';
 import { Month } from '../types';
+import { DATE_FORMAT } from './constants';
 import MonthDay, { MonthDayBaseProps } from './MonthDay';
 
 export interface MonthBodyProps extends MonthDayBaseProps {
@@ -17,7 +19,7 @@ const MonthBody = (props: MonthBodyProps) => {
   return (
     <Box>
       {month.weeks.map(week => (
-        <Box flexDirection="row" key={week.key}>
+        <Box flexDirection="row" key={week.index}>
           {week.days.map(day => {
             const {
               date,
@@ -56,7 +58,7 @@ const MonthBody = (props: MonthBodyProps) => {
                 flex={1}
                 justifyContent="center"
                 alignItems="flex-start"
-                key={date.toISOString()}
+                key={format(date, DATE_FORMAT)}
               >
                 <MonthDay
                   onSelect={onSelect}
@@ -75,7 +77,7 @@ const MonthBody = (props: MonthBodyProps) => {
 };
 
 const propsAreEqual = (prevProps: MonthBodyProps, props: MonthBodyProps) => {
-  return prevProps.month.selectedDatesCount === props.month.selectedDatesCount;
+  return prevProps.month.selectedRange === props.month.selectedRange;
 };
 
 export default React.memo(MonthBody, propsAreEqual);
