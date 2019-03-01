@@ -76,4 +76,14 @@ const MonthBody = (props: MonthBodyProps) => {
   );
 };
 
-export default React.memo(MonthBody);
+const propsAreEqual = (
+  prevProps: MonthBodyProps,
+  nextProps: MonthBodyProps,
+) => {
+  return (
+    prevProps.month.selectedRange === nextProps.month.selectedRange &&
+    prevProps.onSelect === nextProps.onSelect
+  );
+};
+
+export default React.memo(MonthBody, propsAreEqual);
