@@ -76,9 +76,4 @@ const MonthBody = (props: MonthBodyProps) => {
   );
 };
 
-// Waits on issue: https://github.com/facebook/react/issues/14972
-const propsAreEqual = (prevProps: MonthBodyProps, props: MonthBodyProps) => {
-  return prevProps.month.selectedRange === props.month.selectedRange;
-};
-
 export default React.memo(MonthBody);
