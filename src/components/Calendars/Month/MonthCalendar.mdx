@@ -1,0 +1,122 @@
+---
+name: Calendars
+menu: Components
+---
+
+import {
+  format,
+  addDays,
+  subDays,
+  addMonths,
+  subMonths,
+  isSameDay,
+  isBefore,
+  isAfter,
+} from 'date-fns';
+import { Playground, PropsTable } from 'docz';
+import { State } from 'react-powerplug';
+
+import { Box, Spacing } from '../../Layout';
+import { Heading } from '../../Typography';
+import MonthCalendar from './MonthCalendar';
+import MultiMonthCalendar from './MultiMonthCalendar';
+import WeekDays from './WeekDays';
+
+## MonthCalendar
+
+<Playground>
+  <Spacing paddingBottom={4}>
+    <Heading size="xxxlarge">{format(new Date(), 'MMMM YYYY')}</Heading>
+  </Spacing>
+  <WeekDays />
+  <State
+    initial={{
+      selectedStartDate: null,
+      selectedEndDate: null,
+    }}
+  >
+    {({ state: { selectedStartDate, selectedEndDate }, setState }) => (
+      <MonthCalendar
+        selectedStartDate={selectedStartDate}
+        selectedEndDate={selectedEndDate}
+        // MUST SEE https://github.com/facebook/react/issues/14972
+        onSelect={date => {
+          if (!selectedStartDate && !selectedEndDate) {
+            setState({
+              selectedStartDate: date,
+              selectedEndDate: null,
+            });
+          } else if (selectedStartDate && !selectedEndDate) {
+            if (isBefore(date, selectedStartDate)) {
+              setState({
+                selectedStartDate: date,
+                selectedEndDate: null,
+              });
+            } else if (!isSameDay(selectedStartDate, date)) {
+              setState({
+                selectedEndDate: date,
+              });
+            }
+          } else {
+            setState({
+              selectedStartDate: date,
+              selectedEndDate: null,
+            });
+          }
+        }}
+      />
+    )}
+  </State>
+</Playground>
+
+## MultiMonthCalendar
+
+Check out this issue for idiomatic use of MultiMonthCalendar event handler https://github.com/facebook/react/issues/14972
+Also applies to `MonthCalendar`
+
+<Playground>
+  <State
+    initial={{
+      selectedStartDate: null,
+      selectedEndDate: null,
+    }}
+  >
+    {({ state: { selectedStartDate, selectedEndDate }, setState }) => (
+      <MultiMonthCalendar
+        selectedStartDate={selectedStartDate}
+        selectedEndDate={selectedEndDate}
+        startMonthDate={subMonths(new Date(), 2)}
+        endMonthDate={addMonths(new Date(), 2)}
+        // MUST SEE https://github.com/facebook/react/issues/14972
+        onSelect={date => {
+          if (!selectedStartDate && !selectedEndDate) {
+            setState({
+              selectedStartDate: date,
+              selectedEndDate: null,
+            });
+          } else if (selectedStartDate && !selectedEndDate) {
+            if (isBefore(date, selectedStartDate)) {
+              setState({
+                selectedStartDate: date,
+                selectedEndDate: null,
+              });
+            } else if (isAfter(date, selectedStartDate)) {
+              setState({
+                selectedEndDate: date,
+              });
+            }
+          } else {
+            setState({
+              selectedStartDate: date,
+              selectedEndDate: null,
+            });
+          }
+        }}
+      />
+    )}
+  </State>
+</Playground>
+
+### Props
+
+<PropsTable of={MonthCalendar} />

@@ -27,7 +27,7 @@
     "fix:lint": "tslint --project ./tsconfig.json \"./src/**/*.{ts,tsx}\"",
     "fix:prettier": "prettier \"./src/**/*.{ts,tsx}\" --write",
     "semantic-release": "semantic-release",
-    "test": "jest",
+    "test": "jest -c jest.config.snapshot.js",
     "travis-deploy-once": "travis-deploy-once"
   },
   "contributors": [
