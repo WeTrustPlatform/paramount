@@ -1137,10 +1137,10 @@
     "@mdx-js/tag" "^0.16.8"
     loader-utils "^1.1.0"
 
-"@mdx-js/mdx@0.17.5":
-  version "0.17.5"
-  resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-0.17.5.tgz#0c760562e9ad66458c40c78c09cdeea768d5e073"
-  integrity sha512-GVJCWbgVonPelL74Ec/uNyUzH0DGce6ob50L8gySCKQmgIvPvYYd0PflalhxVwMfmaQdcalDAzUVsUR7P2l/3w==
+"@mdx-js/mdx@0.19.0":
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-0.19.0.tgz#54c161d6e2f8f904a12a8fca36660925e1cbc1fd"
+  integrity sha512-RkiTJqAjVdIVxRNH0YATyHUj0P0HD/JgDF7OKCHrt1LcyAScdMSHDk5QAHLGPmfW1f0j+dyAQhkM5wkw8Dr3Nw==
   dependencies:
     "@babel/plugin-proposal-object-rest-spread" "^7.3.2"
     "@babel/plugin-syntax-jsx" "^7.2.0"
