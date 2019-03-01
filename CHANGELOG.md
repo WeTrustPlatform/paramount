@@ -1,3 +1,15 @@
+# [1.26.0](https://github.com/WeTrustPlatform/paramount/compare/v1.25.0...v1.26.0) (2019-03-01)
+
+
+### Bug Fixes
+
+* prevent default in listitem ([e53b3a4](https://github.com/WeTrustPlatform/paramount/commit/e53b3a4))
+
+
+### Features
+
+* **calendars:** add MonthCalendar and MultiMonthCalendar components ([#129](https://github.com/WeTrustPlatform/paramount/issues/129)) ([b96d862](https://github.com/WeTrustPlatform/paramount/commit/b96d862))
+
 # [1.25.0](https://github.com/WeTrustPlatform/paramount/compare/v1.24.0...v1.25.0) (2019-02-22)
 
 
