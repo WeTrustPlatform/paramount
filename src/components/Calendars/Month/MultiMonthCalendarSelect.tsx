@@ -6,6 +6,7 @@ import { IncrementalMultiMonthCalendar } from '.';
 import { Spacing } from '../../Layout';
 import { IncrementalMultiMonthCalendarProps } from './IncrementalMultiMonthCalendar';
 import MonthCalendarHeader from './MonthCalendarHeader';
+import WeekDays from './WeekDays';
 
 export interface MultiMonthCalendarSelectProps
   extends IncrementalMultiMonthCalendarProps {
@@ -83,6 +84,9 @@ const MultiMonthCalendarSelectBase = (props: MultiMonthCalendarSelectProps) => {
           headerEndDateText={text.headerEndDate}
           placeholderEndDateText={text.placeholderEndDate}
         />
+        <Spacing paddingTop={1}>
+          <WeekDays />
+        </Spacing>
       </Spacing>
       <ScrollView>
         <Spacing paddingVertical={3} paddingHorizontal={2}>
