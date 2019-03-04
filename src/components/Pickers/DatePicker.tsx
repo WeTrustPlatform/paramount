@@ -225,9 +225,11 @@ const DatePickerBase = (props: DatePickerProps) => {
               </Heading>
             </TouchableOpacity>
           </Box>
-          <Box paddingHorizontal={4}>
-            <Divider position="vertical" />
-          </Box>
+          {useRange && (
+            <Box paddingHorizontal={4}>
+              <Divider position="vertical" />
+            </Box>
+          )}
           {useRange && (
             <Box flex={1}>
               <Heading size="xlarge">
