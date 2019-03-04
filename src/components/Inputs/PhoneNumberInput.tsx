@@ -8,8 +8,7 @@ import { ThemeContext } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Button } from '../Button';
 import { ListItem } from '../ListItem';
-import { Modal } from '../Modal';
-import ModalContent from '../Modal/ModalContent';
+import { CloseableModal } from '../Modal';
 import {
   getPhoneNumberInputStyles,
   PhoneNumberInputStyles,
@@ -83,39 +82,38 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
         }
         title={`+${countryList[countryCode].phone}`}
       />
-      <Modal
+      <CloseableModal
         visible={isModalOpen}
         useHistory={useHistory}
         onRequestClose={() => setIsModalOpen(false)}
+        onClose={() => setIsModalOpen(false)}
       >
-        <ModalContent onClose={() => setIsModalOpen(false)}>
-          <FlatList
-            ListHeaderComponent={header}
-            keyExtractor={item => item.key}
-            getItemLayout={(data, index) => ({
-              index,
-              length: theme.controlHeights.medium,
-              offset: theme.controlHeights.medium * index,
-            })}
-            data={countries}
-            renderItem={({ item: country }) => {
-              return (
-                <ListItem
-                  key={country.countryCode}
-                  label={country.name}
-                  onPress={event => {
-                    event.preventDefault();
-                    if (onChangeCountryCode) {
-                      onChangeCountryCode(country.countryCode);
-                    }
-                    setIsModalOpen(false);
-                  }}
-                />
-              );
-            }}
-          />
-        </ModalContent>
-      </Modal>
+        <FlatList
+          ListHeaderComponent={header}
+          keyExtractor={item => item.key}
+          getItemLayout={(data, index) => ({
+            index,
+            length: theme.controlHeights.medium,
+            offset: theme.controlHeights.medium * index,
+          })}
+          data={countries}
+          renderItem={({ item: country }) => {
+            return (
+              <ListItem
+                key={country.countryCode}
+                label={country.name}
+                onPress={event => {
+                  event.preventDefault();
+                  if (onChangeCountryCode) {
+                    onChangeCountryCode(country.countryCode);
+                  }
+                  setIsModalOpen(false);
+                }}
+              />
+            );
+          }}
+        />
+      </CloseableModal>
       <TextInput
         ref={innerRef}
         name="phone"
