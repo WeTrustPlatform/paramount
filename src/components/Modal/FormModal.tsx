@@ -6,10 +6,17 @@ import CloseableModal, { CloseableModalProps } from './CloseableModal';
 
 export interface FormModalProps extends CloseableModalProps {
   onClear: () => void;
+  clearText?: string;
 }
 
 const FormModalBase = (props: FormModalProps) => {
-  const { children, onClose, onClear, ...closeableModalProps } = props;
+  const {
+    children,
+    onClose,
+    onClear,
+    clearText = 'Clear',
+    ...closeableModalProps
+  } = props;
 
   return (
     <CloseableModal
@@ -30,7 +37,7 @@ const FormModalBase = (props: FormModalProps) => {
               paddingHorizontal: 16,
             }}
           >
-            <Strong>Clear</Strong>
+            <Strong>{clearText}</Strong>
           </View>
         </TouchableOpacity>
       }

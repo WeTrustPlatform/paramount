@@ -18,6 +18,7 @@ export interface ModalMultiMonthCalendarSelectText
   extends MultiMonthCalendarSelectText {
   applyChanges: string;
   title: string;
+  clear: string;
 }
 
 export type SetText = (
@@ -62,6 +63,7 @@ export const defaultSetText: SetText = (
 
   return {
     applyChanges: 'Apply changes',
+    clear: 'Clear',
     headerEndDate,
     headerStartDate,
     placeholderEndDate: 'End date',
@@ -109,6 +111,7 @@ const ModalMultiMonthCalendarSelectBase = (
         useHistory={useHistory}
         onRequestClose={handleClose}
         onClose={handleClose}
+        clearText={text.clear}
         onClear={() => {
           setSelectedDateRange({
             selectedEndDate: null,
