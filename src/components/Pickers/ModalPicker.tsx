@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { PickerProps as RNPickerProps, ScrollView } from 'react-native';
 
-import { Modal } from '../Modal';
-import ModalContent from '../Modal/ModalContent';
+import { CloseableModal } from '../Modal';
 import { SelectList, SelectListItemBaseProps } from '../SelectList';
 import PickerButton, { GetPickerButtonStylesProp } from './PickerButton';
 import { PickerButtonSize } from './PickerButton.styles';
@@ -42,26 +41,25 @@ const ModalPickerBase = (props: ModalPickerProps) => {
         size={size}
         title={selectedLabel}
       />
-      <Modal
+      <CloseableModal
         visible={isModalOpen}
         useHistory={useHistory}
         onRequestClose={() => setIsModalOpen(false)}
+        onClose={() => setIsModalOpen(false)}
       >
-        <ModalContent onClose={() => setIsModalOpen(false)}>
-          <ScrollView>
-            {header}
-            <SelectList
-              selectedValue={selectedValue}
-              onValueChange={(value, index) => {
-                if (onValueChange) onValueChange(value, index);
-                setIsModalOpen(false);
-              }}
-            >
-              {children}
-            </SelectList>
-          </ScrollView>
-        </ModalContent>
-      </Modal>
+        <ScrollView>
+          {header}
+          <SelectList
+            selectedValue={selectedValue}
+            onValueChange={(value, index) => {
+              if (onValueChange) onValueChange(value, index);
+              setIsModalOpen(false);
+            }}
+          >
+            {children}
+          </SelectList>
+        </ScrollView>
+      </CloseableModal>
     </>
   );
 };

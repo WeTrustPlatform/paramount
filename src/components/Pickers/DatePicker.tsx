@@ -4,11 +4,9 @@ import { ScrollView, TouchableOpacity } from 'react-native';
 
 import { Button } from '../Button';
 import { MultiMonthCalendar } from '../Calendars';
-import { DAY_DATE_FORMAT } from '../Calendars/constants';
 import { Divider } from '../Divider';
 import { Box, Spacing } from '../Layout';
-import { Modal } from '../Modal';
-import ModalContent from '../Modal/ModalContent';
+import { FormModal } from '../Modal';
 import { SelectListItemBaseProps } from '../SelectList';
 import { Heading } from '../Typography';
 import PickerButton, { GetPickerButtonStylesProp } from './PickerButton';
@@ -113,6 +111,9 @@ const reducer = (state: ReducerState, action: SelectAction | ResetAction) => {
   throw new Error();
 };
 
+const DATE_FORMAT = 'D MMM YYYY';
+const FULL_DATE_FORMAT = 'Do MMMM YYYY';
+
 const defaultSetText: SetText = (
   selectedStartDate: Date | null,
   selectedEndDate: Date | null,
@@ -124,15 +125,15 @@ const defaultSetText: SetText = (
   if (!selectedStartDate) {
     title = 'Select date';
   } else if (selectedStartDate && !selectedEndDate) {
-    title = format(selectedStartDate, DAY_DATE_FORMAT);
-    headerStartDate = format(selectedStartDate, DAY_DATE_FORMAT);
+    title = format(selectedStartDate, FULL_DATE_FORMAT);
+    headerStartDate = format(selectedStartDate, DATE_FORMAT);
   } else if (selectedStartDate && selectedEndDate) {
-    title = `${format(selectedStartDate, DAY_DATE_FORMAT)} - ${format(
+    title = `${format(selectedStartDate, DATE_FORMAT)} - ${format(
       selectedEndDate,
-      DAY_DATE_FORMAT,
+      DATE_FORMAT,
     )}`;
-    headerStartDate = `${format(selectedStartDate, DAY_DATE_FORMAT)}`;
-    headerEndDate = `${format(selectedEndDate, DAY_DATE_FORMAT)}`;
+    headerStartDate = `${format(selectedStartDate, DATE_FORMAT)}`;
+    headerEndDate = `${format(selectedEndDate, DATE_FORMAT)}`;
   }
 
   return {
@@ -171,7 +172,7 @@ const DatePickerBase = (props: DatePickerProps) => {
       type: 'reset',
     });
     setIsModalOpen(false);
-  }, []);
+  }, [propSelectedEndDate, propSelectedStartDate]);
 
   const { selectedStartDate, selectedEndDate } = state;
 
@@ -188,79 +189,86 @@ const DatePickerBase = (props: DatePickerProps) => {
         size={size}
         title={text.title}
       />
-      <Modal
+      <FormModal
         visible={isModalOpen}
         useHistory={useHistory}
         onRequestClose={handleClose}
+        onClose={handleClose}
+        onClear={() => {
+          dispatch({
+            selectedEndDate: null,
+            selectedStartDate: null,
+            type: 'reset',
+          });
+        }}
       >
-        <ModalContent onClose={handleClose}>
-          <Spacing
-            flexDirection="row"
-            paddingHorizontal={2}
-            paddingTop={1}
-            paddingBottom={2}
-          >
+        <Spacing
+          flexDirection="row"
+          paddingHorizontal={2}
+          paddingTop={1}
+          paddingBottom={2}
+        >
+          <Box flex={1}>
+            <TouchableOpacity
+              onPress={() =>
+                dispatch({
+                  selectedEndDate: null,
+                  selectedStartDate: null,
+                  type: 'reset',
+                })
+              }
+            >
+              <Heading size="xlarge">
+                {selectedStartDate
+                  ? text.headerStartDate
+                  : text.placeholderStartDate}
+              </Heading>
+            </TouchableOpacity>
+          </Box>
+          <Box paddingHorizontal={4}>
+            <Divider position="vertical" />
+          </Box>
+          {useRange && (
             <Box flex={1}>
-              <TouchableOpacity
-                onPress={() =>
-                  dispatch({
-                    selectedEndDate: null,
-                    selectedStartDate: null,
-                    type: 'reset',
-                  })
-                }
-              >
-                <Heading size="xlarge">
-                  {selectedStartDate
-                    ? text.headerStartDate
-                    : text.placeholderStartDate}
-                </Heading>
-              </TouchableOpacity>
+              <Heading size="xlarge">
+                {selectedEndDate ? text.headerEndDate : text.placeholderEndDate}
+              </Heading>
             </Box>
-            {useRange && (
-              <Box flex={1}>
-                <Heading size="xlarge">
-                  {selectedEndDate
-                    ? text.headerEndDate
-                    : text.placeholderEndDate}
-                </Heading>
-              </Box>
-            )}
-          </Spacing>
-          <ScrollView>
-            <Spacing paddingVertical={3} paddingHorizontal={2}>
-              <MultiMonthCalendar
-                selectedStartDate={selectedStartDate}
-                selectedEndDate={selectedEndDate}
-                startMonthDate={subMonths(new Date(), 1)}
-                endMonthDate={addMonths(new Date(), monthsToShow)}
-                onSelect={handleSelect}
-              />
-              <Spacing paddingTop={3}>
-                <Button
-                  onPress={() => {
-                    setMonthsToShow(monthsToShow + 2);
-                  }}
-                  title={text.showMoreMonths}
-                  appearance="minimal"
-                  color="primary"
-                />
-              </Spacing>
-            </Spacing>
-          </ScrollView>
-          <Divider />
-          <Spacing paddingVertical={1} paddingHorizontal={2}>
-            <Button
-              onPress={() => {
-                setIsModalOpen(false);
-                onValueChange(selectedStartDate, selectedEndDate);
-              }}
-              title={text.applyChanges}
-              color="primary"
+          )}
+        </Spacing>
+        <ScrollView>
+          <Spacing paddingVertical={3} paddingHorizontal={2}>
+            <MultiMonthCalendar
+              selectedStartDate={selectedStartDate}
+              selectedEndDate={selectedEndDate}
+              startMonthDate={subMonths(new Date(), 1)}
+              endMonthDate={addMonths(new Date(), monthsToShow)}
+              onSelect={handleSelect}
             />
+            <Spacing paddingTop={3}>
+              <Button
+                onPress={() => {
+                  setMonthsToShow(monthsToShow + 2);
+                }}
+                title={text.showMoreMonths}
+                appearance="minimal"
+                color="primary"
+              />
+            </Spacing>
           </Spacing>
-        </ModalContent>
-      </Modal>
+        </ScrollView>
+        <Divider />
+        <Spacing paddingVertical={1} paddingHorizontal={2}>
+          <Button
+            onPress={() => {
+              setIsModalOpen(false);
+              onValueChange(selectedStartDate, selectedEndDate);
+            }}
+            title={text.applyChanges}
+            color="primary"
+          />
+        </Spacing>
+      </FormModal>
     </>
   );
 };

@@ -1,19 +1,12 @@
 import * as React from 'react';
-import { TouchableOpacity, View } from 'react-native';
-
-import { Icon } from '../../icons';
-import { Theme, withTheme } from '../../theme';
-
-export type ModalContentShape = 'circle' | 'square';
+import { View } from 'react-native';
 
 export interface ModalContentProps {
-  theme: Theme;
-  onClose?: () => void;
   children: React.ReactNode;
 }
 
 const ModalContentBase = (props: ModalContentProps) => {
-  const { children, onClose, theme } = props;
+  const { children } = props;
 
   return (
     <View
@@ -24,21 +17,11 @@ const ModalContentBase = (props: ModalContentProps) => {
         maxWidth: 960,
       }}
     >
-      <TouchableOpacity
-        style={{ width: 56, height: 60, justifyContent: 'center' }}
-        onPress={event => {
-          event.preventDefault();
-          if (onClose) onClose();
-        }}
-      >
-        <View style={{ paddingHorizontal: 8 }}>
-          <Icon color={theme.colors.text.default} size={40} name="x" />
-        </View>
-      </TouchableOpacity>
       {children}
     </View>
   );
 };
 
-export const ModalContent = withTheme(ModalContentBase);
+export const ModalContent = ModalContentBase;
+
 export default ModalContent;

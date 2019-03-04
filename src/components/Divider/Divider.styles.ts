@@ -2,28 +2,16 @@ import { TextStyle } from 'react-native';
 
 import { Theme } from '../../theme/ThemeInterface';
 
-export interface DividerVariables {
-  color: string;
-  size: number;
-  radius: number;
-}
-
-export const getDividerVariables = (theme: Theme): DividerVariables => {
-  return {
-    color: theme.colors.border.default,
-    radius: 6,
-    size: 1,
-  };
-};
-
 export interface DividerStyles {
   dividerStyle: TextStyle;
 }
 
+export type DividerPosition = 'horizontal' | 'vertical';
+
 export interface DividerStylesProps {
   size?: number;
   color?: string;
-  radius?: number;
+  position?: DividerPosition;
 }
 
 export type GetDividerStyles = (
@@ -32,17 +20,23 @@ export type GetDividerStyles = (
 ) => DividerStyles;
 
 export const getDividerStyles: GetDividerStyles = (
-  { size, color, radius },
+  { size, color, position },
   theme,
 ) => {
-  const dividerVariables = getDividerVariables(theme);
-
-  return {
-    dividerStyle: {
-      backgroundColor: color || dividerVariables.color,
-      borderRadius: radius || dividerVariables.radius,
-      height: size || dividerVariables.size,
+  const styleMap = {
+    horizontal: {
+      backgroundColor: color || theme.colors.border.default,
+      height: size || 1,
       width: '100%',
     },
+    vertical: {
+      backgroundColor: color || theme.colors.border.default,
+      height: '100%',
+      width: size || 1,
+    },
+  };
+
+  return {
+    dividerStyle: position ? styleMap[position] : styleMap.horizontal,
   };
 };
