@@ -12,8 +12,8 @@ import { getWeeksInMultiMonth } from './utils/getWeeksInMonth';
 
 export interface MultiMonthCalendarProps
   extends Omit<MonthCalendarProps, 'date'> {
-  startMonthDate: Date;
-  endMonthDate: Date;
+  startMonthDate?: Date;
+  endMonthDate?: Date;
 }
 
 const MultiMonthCalendar = (props: MultiMonthCalendarProps) => {
