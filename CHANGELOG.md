@@ -1,3 +1,10 @@
+# [1.27.0](https://github.com/WeTrustPlatform/paramount/compare/v1.26.0...v1.27.0) (2019-03-04)
+
+
+### Features
+
+* **datepicker:** initial implementation ([#134](https://github.com/WeTrustPlatform/paramount/issues/134)) ([c7eec00](https://github.com/WeTrustPlatform/paramount/commit/c7eec00))
+
 # [1.26.0](https://github.com/WeTrustPlatform/paramount/compare/v1.25.0...v1.26.0) (2019-03-01)
 
 
