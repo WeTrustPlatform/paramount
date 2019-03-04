@@ -8,7 +8,7 @@ import { State } from 'react-powerplug';
 import ModalPicker from './ModalPicker';
 import DialogPicker from './DialogPicker';
 import NativePicker from './NativePicker';
-import DatePicker from './DatePicker';
+import CalendarDatePicker from './CalendarDatePicker';
 import PickerItem from './PickerItem';
 import NativePickerItem from './NativePickerItem';
 
@@ -111,7 +111,7 @@ import NativePickerItem from './NativePickerItem';
   </State>
 </Playground>
 
-## DatePicker
+## CalendarDatePicker
 
 <Playground>
   <State
@@ -121,7 +121,7 @@ import NativePickerItem from './NativePickerItem';
     }}
   >
     {({ state: { selectedStartDate, selectedEndDate }, setState }) => (
-      <DatePicker
+      <CalendarDatePicker
         useRange
         selectedStartDate={selectedStartDate}
         selectedEndDate={selectedEndDate}

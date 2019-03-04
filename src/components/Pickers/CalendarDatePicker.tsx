@@ -25,7 +25,7 @@ export type SetText = (
   title: string;
 };
 
-export interface DatePickerProps {
+export interface CalendarDatePickerProps {
   children: Array<React.ReactElement<SelectListItemBaseProps>>;
   /** Prop to be passed to modal */
   useHistory?: boolean;
@@ -147,7 +147,7 @@ const defaultSetText: SetText = (
   };
 };
 
-const DatePickerBase = (props: DatePickerProps) => {
+const CalendarDatePickerBase = (props: CalendarDatePickerProps) => {
   const {
     getStyles,
     useHistory = false,
@@ -275,6 +275,6 @@ const DatePickerBase = (props: DatePickerProps) => {
   );
 };
 
-export const DatePicker = DatePickerBase;
+export const CalendarDatePicker = CalendarDatePickerBase;
 
-export default DatePicker;
+export default CalendarDatePicker;
