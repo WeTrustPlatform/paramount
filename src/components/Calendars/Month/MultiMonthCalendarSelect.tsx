@@ -89,7 +89,7 @@ const MultiMonthCalendarSelectBase = (props: MultiMonthCalendarSelectProps) => {
         </Spacing>
       </Spacing>
       <ScrollView>
-        <Spacing paddingVertical={3} paddingHorizontal={2}>
+        <Spacing paddingBottom={3} paddingHorizontal={2}>
           <IncrementalMultiMonthCalendar
             selectedStartDate={selectedStartDate}
             selectedEndDate={selectedEndDate}
