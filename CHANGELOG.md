@@ -1,3 +1,10 @@
+## [1.27.1](https://github.com/WeTrustPlatform/paramount/compare/v1.27.0...v1.27.1) (2019-03-05)
+
+
+### Bug Fixes
+
+* **deps:** update react monorepo to v16.8.3 ([#125](https://github.com/WeTrustPlatform/paramount/issues/125)) ([760a879](https://github.com/WeTrustPlatform/paramount/commit/760a879))
+
 # [1.27.0](https://github.com/WeTrustPlatform/paramount/compare/v1.26.0...v1.27.0) (2019-03-04)
 
 
