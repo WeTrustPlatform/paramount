@@ -37,7 +37,8 @@
   "dependencies": {
     "@expo/vector-icons": "9.0.0",
     "countries-list": "2.4.2",
-    "deepmerge": "^3.0.0",
+    "date-fns": "1.30.1",
+    "deepmerge": "3.0.0",
     "exenv": "1.2.2",
     "focus-trap": "4.0.2",
     "react": "16.8.3",
@@ -48,7 +49,7 @@
     "react-powerplug": "1.0.0",
     "react-spring": "7.2.11",
     "terser": "3.16",
-    "ts-essentials": "^2.0.0"
+    "ts-essentials": "2.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.3.4",

@@ -30,8 +30,8 @@ export const getIconTextInputStyles: GetIconTextInputStyles = (
       position: 'relative',
     },
     inputStyle: {
-      ...(hasLeftIcon && { paddingLeft: 40 }),
-      ...(hasRightIcon && { paddingRight: 40 }),
+      ...(hasLeftIcon && { paddingLeft: 48 }),
+      ...(hasRightIcon && { paddingRight: 48 }),
     },
     leftContainerStyle: {
       alignItems: 'center',
