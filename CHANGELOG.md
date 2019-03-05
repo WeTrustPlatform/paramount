@@ -1,3 +1,15 @@
+# [1.28.0](https://github.com/WeTrustPlatform/paramount/compare/v1.27.2...v1.28.0) (2019-03-05)
+
+
+### Bug Fixes
+
+* **test:** update snapshots ([128ce7c](https://github.com/WeTrustPlatform/paramount/commit/128ce7c))
+
+
+### Features
+
+* **refactor:** refactor typography and toast ([8190dfa](https://github.com/WeTrustPlatform/paramount/commit/8190dfa))
+
 ## [1.27.2](https://github.com/WeTrustPlatform/paramount/compare/v1.27.1...v1.27.2) (2019-03-05)
 
 
