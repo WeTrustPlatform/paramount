@@ -232,7 +232,6 @@ exports[`Alert_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -516,7 +515,6 @@ exports[`Alert_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -809,7 +807,6 @@ exports[`Alert_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -1104,7 +1101,6 @@ exports[`Alert_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -1367,7 +1363,6 @@ exports[`Alert_3 1`] = `
       }
     >
       <div
-        aria-label="strong"
         dir="auto"
         style={
           Object {
@@ -2320,7 +2315,6 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -2413,7 +2407,6 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -2550,7 +2543,6 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -2643,7 +2635,6 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -2780,7 +2771,6 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -2873,7 +2863,6 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -3010,7 +2999,6 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -3103,7 +3091,6 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -3240,7 +3227,6 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -3333,7 +3319,6 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -3470,7 +3455,6 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -3563,7 +3547,6 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -3700,7 +3683,6 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -3793,7 +3775,6 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -3930,7 +3911,6 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -4023,7 +4003,6 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -4215,7 +4194,6 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -4308,7 +4286,6 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -4445,7 +4422,6 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -4538,7 +4514,6 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -4675,7 +4650,6 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -4768,7 +4742,6 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -4905,7 +4878,6 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -4998,7 +4970,6 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -5135,7 +5106,6 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -5228,7 +5198,6 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -5365,7 +5334,6 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -5458,7 +5426,6 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -5595,7 +5562,6 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -5688,7 +5654,6 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -5825,7 +5790,6 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -5918,7 +5882,6 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
-          aria-label="strong"
           dir="auto"
           style={
             Object {
@@ -83223,7 +83186,7 @@ exports[`Toast_0 1`] = `
         "paddingLeft": "0px",
         "paddingRight": "0px",
         "paddingTop": "0px",
-        "position": "absolute",
+        "position": "fixed",
         "right": "32px",
         "top": "10px",
         "zIndex": 100,
@@ -84323,6 +84286,95 @@ exports[`Typography_7 1`] = `
 `;
 
 exports[`Typography_8 1`] = `
+<h3>
+  Variations
+</h3>
+`;
+
+exports[`Typography_9 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "WebkitAlignItems": "stretch",
+        "WebkitBoxAlign": "stretch",
+        "WebkitBoxDirection": "normal",
+        "WebkitBoxOrient": "vertical",
+        "WebkitFlexBasis": "auto",
+        "WebkitFlexDirection": "column",
+        "WebkitFlexShrink": 0,
+        "alignItems": "stretch",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "0px",
+        "borderLeftStyle": "solid",
+        "borderLeftWidth": "0px",
+        "borderRightStyle": "solid",
+        "borderRightWidth": "0px",
+        "borderTopStyle": "solid",
+        "borderTopWidth": "0px",
+        "boxSizing": "border-box",
+        "display": "flex",
+        "flexBasis": "auto",
+        "flexDirection": "column",
+        "flexShrink": 0,
+        "marginBottom": "0px",
+        "marginLeft": "0px",
+        "marginRight": "0px",
+        "marginTop": "0px",
+        "minHeight": "0px",
+        "minWidth": "0px",
+        "msFlexAlign": "stretch",
+        "msFlexDirection": "column",
+        "msFlexNegative": 0,
+        "msFlexPreferredSize": "auto",
+        "paddingBottom": "0px",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "paddingTop": "0px",
+        "position": "relative",
+        "zIndex": 0,
+      }
+    }
+  >
+    <div
+      dir="auto"
+      style={
+        Object {
+          "borderBottomWidth": "0px",
+          "borderLeftWidth": "0px",
+          "borderRightWidth": "0px",
+          "borderTopWidth": "0px",
+          "boxSizing": "border-box",
+          "color": "rgba(126,126,126,1.00)",
+          "display": "inline",
+          "fontFamily": "\\"SF UI Text\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+          "fontSize": "16px",
+          "fontStyle": "inherit",
+          "fontVariant": "inherit",
+          "fontWeight": "600",
+          "letterSpacing": "-0.05px",
+          "lineHeight": "20px",
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+          "textDecoration": "none",
+          "whiteSpace": "pre-wrap",
+          "wordWrap": "break-word",
+        }
+      }
+    >
+      A red flair silhouetted.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Typography_10 1`] = `
 <div>
   <ul
     role="list"
@@ -84608,6 +84660,7 @@ exports[`Typography_8 1`] = `
           >
             <div
               dir="auto"
+              index={null}
               style={
                 Object {
                   "WebkitAlignSelf": "flex-start",
@@ -84847,6 +84900,7 @@ exports[`Typography_8 1`] = `
           >
             <div
               dir="auto"
+              index={null}
               style={
                 Object {
                   "WebkitAlignSelf": "flex-start",
@@ -85086,6 +85140,7 @@ exports[`Typography_8 1`] = `
           >
             <div
               dir="auto"
+              index={null}
               style={
                 Object {
                   "WebkitAlignSelf": "flex-start",
@@ -85325,6 +85380,7 @@ exports[`Typography_8 1`] = `
           >
             <div
               dir="auto"
+              index={null}
               style={
                 Object {
                   "WebkitAlignSelf": "flex-start",
@@ -85373,7 +85429,7 @@ exports[`Typography_8 1`] = `
 </div>
 `;
 
-exports[`Typography_9 1`] = `
+exports[`Typography_11 1`] = `
 <div>
   <ul
     role="list"
@@ -86738,173 +86794,6 @@ exports[`Typography_9 1`] = `
 </div>
 `;
 
-exports[`Typography_10 1`] = `
-<div>
-  <div
-    style={
-      Object {
-        "WebkitAlignItems": "stretch",
-        "WebkitBoxAlign": "stretch",
-        "WebkitBoxDirection": "normal",
-        "WebkitBoxOrient": "vertical",
-        "WebkitFlexBasis": "auto",
-        "WebkitFlexDirection": "column",
-        "WebkitFlexShrink": 0,
-        "alignItems": "stretch",
-        "borderBottomStyle": "solid",
-        "borderBottomWidth": "0px",
-        "borderLeftStyle": "solid",
-        "borderLeftWidth": "0px",
-        "borderRightStyle": "solid",
-        "borderRightWidth": "0px",
-        "borderTopStyle": "solid",
-        "borderTopWidth": "0px",
-        "boxSizing": "border-box",
-        "display": "flex",
-        "flexBasis": "auto",
-        "flexDirection": "column",
-        "flexShrink": 0,
-        "marginBottom": "0px",
-        "marginLeft": "0px",
-        "marginRight": "0px",
-        "marginTop": "0px",
-        "minHeight": "0px",
-        "minWidth": "0px",
-        "msFlexAlign": "stretch",
-        "msFlexDirection": "column",
-        "msFlexNegative": 0,
-        "msFlexPreferredSize": "auto",
-        "paddingBottom": "0px",
-        "paddingLeft": "0px",
-        "paddingRight": "0px",
-        "paddingTop": "0px",
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      dir="auto"
-      style={
-        Object {
-          "borderBottomWidth": "0px",
-          "borderLeftWidth": "0px",
-          "borderRightWidth": "0px",
-          "borderTopWidth": "0px",
-          "boxSizing": "border-box",
-          "color": "rgba(126,126,126,1.00)",
-          "display": "inline",
-          "fontFamily": "\\"SF UI Text\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
-          "fontSize": "14px",
-          "fontStyle": "inherit",
-          "fontVariant": "inherit",
-          "fontWeight": "400",
-          "letterSpacing": "-0.05px",
-          "lineHeight": "20px",
-          "marginBottom": "0px",
-          "marginLeft": "0px",
-          "marginRight": "0px",
-          "marginTop": "0px",
-          "paddingBottom": "0px",
-          "paddingLeft": "0px",
-          "paddingRight": "0px",
-          "paddingTop": "0px",
-          "textDecoration": "none",
-          "whiteSpace": "pre-wrap",
-          "wordWrap": "break-word",
-        }
-      }
-    >
-      A red flair silhouetted.
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Typography_11 1`] = `
-<div>
-  <div
-    style={
-      Object {
-        "WebkitAlignItems": "stretch",
-        "WebkitBoxAlign": "stretch",
-        "WebkitBoxDirection": "normal",
-        "WebkitBoxOrient": "vertical",
-        "WebkitFlexBasis": "auto",
-        "WebkitFlexDirection": "column",
-        "WebkitFlexShrink": 0,
-        "alignItems": "stretch",
-        "borderBottomStyle": "solid",
-        "borderBottomWidth": "0px",
-        "borderLeftStyle": "solid",
-        "borderLeftWidth": "0px",
-        "borderRightStyle": "solid",
-        "borderRightWidth": "0px",
-        "borderTopStyle": "solid",
-        "borderTopWidth": "0px",
-        "boxSizing": "border-box",
-        "display": "flex",
-        "flexBasis": "auto",
-        "flexDirection": "column",
-        "flexShrink": 0,
-        "marginBottom": "0px",
-        "marginLeft": "0px",
-        "marginRight": "0px",
-        "marginTop": "0px",
-        "minHeight": "0px",
-        "minWidth": "0px",
-        "msFlexAlign": "stretch",
-        "msFlexDirection": "column",
-        "msFlexNegative": 0,
-        "msFlexPreferredSize": "auto",
-        "paddingBottom": "0px",
-        "paddingLeft": "0px",
-        "paddingRight": "0px",
-        "paddingTop": "0px",
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      aria-label="strong"
-      dir="auto"
-      style={
-        Object {
-          "borderBottomWidth": "0px",
-          "borderLeftWidth": "0px",
-          "borderRightWidth": "0px",
-          "borderTopWidth": "0px",
-          "boxSizing": "border-box",
-          "color": "rgba(126,126,126,1.00)",
-          "display": "inline",
-          "fontFamily": "\\"SF UI Text\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
-          "fontSize": "16px",
-          "fontStyle": "inherit",
-          "fontVariant": "inherit",
-          "fontWeight": "600",
-          "letterSpacing": "-0.05px",
-          "lineHeight": "20px",
-          "marginBottom": "0px",
-          "marginLeft": "0px",
-          "marginRight": "0px",
-          "marginTop": "0px",
-          "paddingBottom": "0px",
-          "paddingLeft": "0px",
-          "paddingRight": "0px",
-          "paddingTop": "0px",
-          "textDecoration": "none",
-          "whiteSpace": "pre-wrap",
-          "wordWrap": "break-word",
-        }
-      }
-    >
-      A red flair silhouetted.
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Typography_12 1`] = `
 <div>
   <div
@@ -87072,89 +86961,6 @@ exports[`Typography_13 1`] = `
 `;
 
 exports[`Typography_14 1`] = `
-<div>
-  <div
-    style={
-      Object {
-        "WebkitAlignItems": "stretch",
-        "WebkitBoxAlign": "stretch",
-        "WebkitBoxDirection": "normal",
-        "WebkitBoxOrient": "vertical",
-        "WebkitFlexBasis": "auto",
-        "WebkitFlexDirection": "column",
-        "WebkitFlexShrink": 0,
-        "alignItems": "stretch",
-        "borderBottomStyle": "solid",
-        "borderBottomWidth": "0px",
-        "borderLeftStyle": "solid",
-        "borderLeftWidth": "0px",
-        "borderRightStyle": "solid",
-        "borderRightWidth": "0px",
-        "borderTopStyle": "solid",
-        "borderTopWidth": "0px",
-        "boxSizing": "border-box",
-        "display": "flex",
-        "flexBasis": "auto",
-        "flexDirection": "column",
-        "flexShrink": 0,
-        "marginBottom": "0px",
-        "marginLeft": "0px",
-        "marginRight": "0px",
-        "marginTop": "0px",
-        "minHeight": "0px",
-        "minWidth": "0px",
-        "msFlexAlign": "stretch",
-        "msFlexDirection": "column",
-        "msFlexNegative": 0,
-        "msFlexPreferredSize": "auto",
-        "paddingBottom": "0px",
-        "paddingLeft": "0px",
-        "paddingRight": "0px",
-        "paddingTop": "0px",
-        "position": "relative",
-        "zIndex": 0,
-      }
-    }
-  >
-    <div
-      dir="auto"
-      style={
-        Object {
-          "borderBottomWidth": "0px",
-          "borderLeftWidth": "0px",
-          "borderRightWidth": "0px",
-          "borderTopWidth": "0px",
-          "boxSizing": "border-box",
-          "color": "rgba(126,126,126,1.00)",
-          "display": "inline",
-          "fontFamily": "\\"SF UI Text\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
-          "fontSize": "16px",
-          "fontStyle": "inherit",
-          "fontVariant": "inherit",
-          "fontWeight": "400",
-          "letterSpacing": "-0.05px",
-          "lineHeight": "20px",
-          "marginBottom": "0px",
-          "marginLeft": "0px",
-          "marginRight": "0px",
-          "marginTop": "0px",
-          "paddingBottom": "0px",
-          "paddingLeft": "0px",
-          "paddingRight": "0px",
-          "paddingTop": "0px",
-          "textDecoration": "none",
-          "whiteSpace": "pre-wrap",
-          "wordWrap": "break-word",
-        }
-      }
-    >
-      A red flair silhouetted.
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Typography_15 1`] = `
 <div>
   <div
     style={
