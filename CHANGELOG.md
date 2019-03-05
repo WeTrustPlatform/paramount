@@ -1,3 +1,11 @@
+## [1.27.2](https://github.com/WeTrustPlatform/paramount/compare/v1.27.1...v1.27.2) (2019-03-05)
+
+
+### Bug Fixes
+
+* **deps:** add missing dependency ([3dbbcf9](https://github.com/WeTrustPlatform/paramount/commit/3dbbcf9))
+* **test:** snapshots ([61e74b7](https://github.com/WeTrustPlatform/paramount/commit/61e74b7))
+
 ## [1.27.1](https://github.com/WeTrustPlatform/paramount/compare/v1.27.0...v1.27.1) (2019-03-05)
 
 
