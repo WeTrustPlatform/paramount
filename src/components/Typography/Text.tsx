@@ -19,6 +19,7 @@ export interface TextStyleProps {
   color?: TextColor;
   textAlign?: TextAlign;
   fontFamily?: FontFamily;
+  bold?: boolean;
 }
 
 // @ts-ignore: need to override for web purposes
@@ -40,11 +41,12 @@ const TextBase = (props: TextProps) => {
     isInline = false,
     theme,
     getStyles,
+    bold = false,
     ...textProps
   } = props;
 
   const { textStyle } = mergeStyles(getTextStyles, getStyles)(
-    { size, color, fontFamily, isInline },
+    { size, color, fontFamily, isInline, bold },
     theme,
   );
 

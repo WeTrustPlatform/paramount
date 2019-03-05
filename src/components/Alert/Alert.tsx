@@ -7,7 +7,7 @@ import { Icon } from '../../icons';
 import { Theme, withTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Spacing } from '../Layout';
-import { Strong, Text } from '../Typography';
+import { Text } from '../Typography';
 import { AlertStyles, GetAlertStyles, getAlertStyles } from './Alert.styles';
 
 export interface AlertProps {
@@ -76,7 +76,7 @@ const AlertBase = (props: AlertProps) => {
       )}
       {component || (
         <View style={bodyStyle}>
-          <Strong>{title}</Strong>
+          <Text bold>{title}</Text>
           <Text>{description}</Text>
         </View>
       )}

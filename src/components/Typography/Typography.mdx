@@ -10,12 +10,10 @@ import {
   Heading,
   Label,
   Link,
-  Li,
+  NumberedItem,
+  BulletItem,
   OrderedList,
   Paragraph,
-  Pre,
-  Small,
-  Strong,
   Text,
   UnorderedList,
 } from '.';
@@ -82,14 +80,22 @@ import { Box } from '../Layout';
   </Box>
 </Playground>
 
+### Variations
+
+<Playground>
+  <Box flexDirection="column">
+    <Text bold>A red flair silhouetted.</Text>
+  </Box>
+</Playground>
+
 ## Unordered list
 
 <Playground>
   <UnorderedList icon={<Icon name="check" />}>
-    <Li>Lorem ipsum dolar set amet</Li>
-    <Li>Lorem ipsum dolar set amet</Li>
-    <Li>Lorem ipsum dolar set amet</Li>
-    <Li>Lorem ipsum dolar set amet</Li>
+    <BulletItem>Lorem ipsum dolar set amet</BulletItem>
+    <BulletItem>Lorem ipsum dolar set amet</BulletItem>
+    <BulletItem>Lorem ipsum dolar set amet</BulletItem>
+    <BulletItem>Lorem ipsum dolar set amet</BulletItem>
   </UnorderedList>
 </Playground>
 
@@ -97,28 +103,12 @@ import { Box } from '../Layout';
 
 <Playground>
   <OrderedList>
-    <Li>Lorem ipsum dolar set amet</Li>
-    <Li>Lorem ipsum dolar set amet</Li>
-    <Li>Lorem ipsum dolar set amet</Li>
-    <Li>Lorem ipsum dolar set amet</Li>
-    <Li>Lorem ipsum dolar set amet</Li>
+    <NumberedItem>Lorem ipsum dolar set amet</NumberedItem>
+    <NumberedItem>Lorem ipsum dolar set amet</NumberedItem>
+    <NumberedItem>Lorem ipsum dolar set amet</NumberedItem>
+    <NumberedItem>Lorem ipsum dolar set amet</NumberedItem>
+    <NumberedItem>Lorem ipsum dolar set amet</NumberedItem>
   </OrderedList>
-</Playground>
-
-## Small
-
-<Playground>
-  <Box flexDirection="column">
-    <Small>A red flair silhouetted.</Small>
-  </Box>
-</Playground>
-
-## Strong
-
-<Playground>
-  <Box flexDirection="column">
-    <Strong>A red flair silhouetted.</Strong>
-  </Box>
 </Playground>
 
 ## Link
@@ -134,14 +124,6 @@ import { Box } from '../Layout';
 <Playground>
   <Box flexDirection="column">
     <Code>A red flair silhouetted.</Code>
-  </Box>
-</Playground>
-
-## Pre
-
-<Playground>
-  <Box flexDirection="column">
-    <Pre>A red flair silhouetted.</Pre>
   </Box>
 </Playground>
 

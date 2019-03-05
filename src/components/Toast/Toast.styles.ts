@@ -1,4 +1,4 @@
-import { TextStyle, ViewStyle } from 'react-native';
+import { Platform, TextStyle, ViewStyle } from 'react-native';
 
 import { Intent } from '../../constants';
 import { Theme } from '../../theme/ThemeInterface';
@@ -65,7 +65,8 @@ export const getToastVariables = (theme: Theme): ToastVariables => {
       marginRight: 'auto',
       marginTop: 0,
       maxWidth: 560,
-      position: 'absolute',
+      // @ts-ignore: Compat with web
+      position: Platform.OS === 'web' ? 'fixed' : 'absolute',
       right: 32,
       top: 10,
       zIndex: 100,

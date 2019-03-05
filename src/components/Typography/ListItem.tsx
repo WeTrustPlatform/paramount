@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { Platform, View } from 'react-native';
 
-import { withTheme } from '../../theme';
-import { TextColor, TextSize } from '../../theme/ThemeInterface';
+import { TextSize } from '../../theme/ThemeInterface';
 import { Spacing } from '../Layout';
 import Text, { TextProps } from './Text';
 
@@ -13,24 +12,16 @@ const paddingLeftMap = {
   xsmall: 1,
 };
 
-export interface LiProps {
-  icon?: React.ReactNode;
+export interface ListItemProps extends TextProps {
   children: React.ReactNode;
-  index?: number | null;
-  iconColor?: TextColor;
   size?: TextSize;
+  mark: React.ReactNode;
 }
 
-const LiBase = (props: TextProps & LiProps) => {
-  const { size = 'medium', index, icon, iconColor, ...textProps } = props;
+const ListItem = (props: ListItemProps) => {
+  const { size = 'medium', mark, ...textProps } = props;
 
   const paddingLeft = paddingLeftMap[size] as 1 | 2 | 3;
-
-  const mark = index ? (
-    <Text size={size} {...textProps}>{`${index}.`}</Text>
-  ) : icon ? (
-    icon
-  ) : null;
 
   return (
     // @ts-ignore
@@ -45,5 +36,4 @@ const LiBase = (props: TextProps & LiProps) => {
   );
 };
 
-export const Li = withTheme(LiBase);
-export default Li;
+export default ListItem;

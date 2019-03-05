@@ -6,7 +6,7 @@ import { Theme, withTheme } from '../../theme';
 import { FillColor } from '../../theme/ThemeInterface';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import Box, { Shape } from '../Layout/Box';
-import { Strong } from '../Typography';
+import { Text } from '../Typography';
 import {
   BadgeSize,
   BadgeStyles,
@@ -44,14 +44,15 @@ const BadgeBase = (props: BadgeProps) => {
 
   return (
     <View style={containerStyle} testID={testID}>
-      <Strong
+      <Text
+        bold
         size={size}
         getStyles={() => ({
           textStyle,
         })}
       >
         {children}
-      </Strong>
+      </Text>
     </View>
   );
 };

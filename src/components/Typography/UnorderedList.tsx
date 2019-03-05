@@ -2,14 +2,14 @@ import * as React from 'react';
 
 import { TextColor, TextSize } from '../../theme/ThemeInterface';
 import withTheme from '../../theme/withTheme';
-import { LiProps } from './Li';
 import List from './List';
+import { ListItemProps } from './ListItem';
 
 export interface ListProps {
   size?: TextSize;
   icon?: React.ReactNode;
   iconColor?: TextColor;
-  children: Array<React.ReactElement<LiProps>>;
+  children: Array<React.ReactElement<ListItemProps>>;
 }
 
 const UnorderedListBase = (props: ListProps) => {

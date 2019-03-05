@@ -66,6 +66,7 @@ export const getTextVariables = (theme: Theme): TextVariables => {
 };
 
 export interface TextStylesProps {
+  bold: boolean;
   size: TextSize;
   color: TextColor;
   fontFamily: FontFamily;
@@ -89,7 +90,7 @@ export const getTextColor = (textColors: TextColors) => (
 ) => textColors[textColor];
 
 export const getTextStyles: GetTextStyles = (
-  { size, color, fontFamily, isInline },
+  { size, color, fontFamily, isInline, bold },
   theme,
 ) => {
   const textVariables = getTextVariables(theme);
@@ -105,6 +106,9 @@ export const getTextStyles: GetTextStyles = (
           }
         : {}),
       ...textVariables.size[size],
+      ...(bold && {
+        fontWeight: '600',
+      }),
     },
   };
 };

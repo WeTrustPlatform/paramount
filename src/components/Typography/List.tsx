@@ -3,13 +3,14 @@ import { Platform, View } from 'react-native';
 
 import { TextSize } from '../../theme/ThemeInterface';
 import { Spacing } from '../Layout';
-import { LiProps } from './Li';
+import { BulletItemProps } from './BulletItem';
+import { NumberedItemProps } from './NumberedItem';
 
 export interface ListProps {
   icon?: React.ReactNode;
   listType?: 'ol' | 'ul';
   size?: TextSize;
-  children: Array<React.ReactElement<LiProps>>;
+  children: Array<React.ReactElement<NumberedItemProps | BulletItemProps>>;
 }
 
 export const List = (props: ListProps) => {
@@ -22,6 +23,7 @@ export const List = (props: ListProps) => {
 
     return React.cloneElement(listItem, {
       // Prefer more granularly defined icon if present
+      // @ts-ignore
       icon: listItem.props.icon || icon,
       index: listType === 'ol' ? index + 1 : null,
       size: listItem.props.size || size,

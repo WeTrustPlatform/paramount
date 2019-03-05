@@ -45,7 +45,7 @@ class ToastBase extends React.Component<ToastProps, ToastState> {
   }
 
   public componentDidMount() {
-    const { onRemove, duration = 3000, offset = 75 } = this.props;
+    const { onRemove, duration = 3000, offset = 16 } = this.props;
     const { value } = this.state;
 
     Animated.sequence([

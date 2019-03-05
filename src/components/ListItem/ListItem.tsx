@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { Theme, withTheme } from '../../theme';
+import { ThemeContext } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Avatar, AvatarProps } from '../Avatar';
 import { Text } from '../Typography';
@@ -20,7 +20,6 @@ import {
 } from './ListItem.styles';
 
 export interface ListItemProps extends AccessibilityProps {
-  theme: Theme;
   size?: ListItemSize;
   isDisabled?: boolean;
   label: string;
@@ -33,7 +32,7 @@ export interface ListItemProps extends AccessibilityProps {
   testID?: string;
 }
 
-const ListItemBase = (props: ListItemProps) => {
+const ListItem = (props: ListItemProps) => {
   const {
     getStyles,
     isDisabled = false,
@@ -43,11 +42,11 @@ const ListItemBase = (props: ListItemProps) => {
     size = 'medium',
     onPress,
     rightIcon = null,
-    theme,
     avatarProps,
     testID,
     ...accessibilityProps
   } = props;
+  const theme = React.useContext(ThemeContext);
 
   const {
     imageWrapperStyle,
@@ -90,5 +89,4 @@ const ListItemBase = (props: ListItemProps) => {
   );
 };
 
-export const ListItem = withTheme(React.memo(ListItemBase));
 export default ListItem;
