@@ -1,3 +1,16 @@
+# [1.29.0](https://github.com/WeTrustPlatform/paramount/compare/v1.28.0...v1.29.0) (2019-03-06)
+
+
+### Bug Fixes
+
+* **test:** update snapshots ([d14e294](https://github.com/WeTrustPlatform/paramount/commit/d14e294))
+
+
+### Features
+
+* **select:** enhance select list ([0ea3054](https://github.com/WeTrustPlatform/paramount/commit/0ea3054))
+* **text:** add more text transforms ([ae86c4d](https://github.com/WeTrustPlatform/paramount/commit/ae86c4d))
+
 # [1.28.0](https://github.com/WeTrustPlatform/paramount/compare/v1.27.2...v1.28.0) (2019-03-05)
 
 
