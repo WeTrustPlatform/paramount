@@ -232,6 +232,7 @@ exports[`Alert_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -246,7 +247,7 @@ exports[`Alert_1 1`] = `
               "fontSize": "16px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -257,6 +258,7 @@ exports[`Alert_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "whiteSpace": "pre-wrap",
               "wordWrap": "break-word",
@@ -291,6 +293,7 @@ exports[`Alert_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "whiteSpace": "pre-wrap",
               "wordWrap": "break-word",
@@ -515,6 +518,7 @@ exports[`Alert_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -529,7 +533,7 @@ exports[`Alert_1 1`] = `
               "fontSize": "16px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -540,6 +544,7 @@ exports[`Alert_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "whiteSpace": "pre-wrap",
               "wordWrap": "break-word",
@@ -574,6 +579,7 @@ exports[`Alert_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "whiteSpace": "pre-wrap",
               "wordWrap": "break-word",
@@ -807,6 +813,7 @@ exports[`Alert_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -821,7 +828,7 @@ exports[`Alert_1 1`] = `
               "fontSize": "16px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -832,6 +839,7 @@ exports[`Alert_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "whiteSpace": "pre-wrap",
               "wordWrap": "break-word",
@@ -866,6 +874,7 @@ exports[`Alert_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "whiteSpace": "pre-wrap",
               "wordWrap": "break-word",
@@ -1101,6 +1110,7 @@ exports[`Alert_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -1115,7 +1125,7 @@ exports[`Alert_1 1`] = `
               "fontSize": "16px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -1126,6 +1136,7 @@ exports[`Alert_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "whiteSpace": "pre-wrap",
               "wordWrap": "break-word",
@@ -1160,6 +1171,7 @@ exports[`Alert_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "whiteSpace": "pre-wrap",
               "wordWrap": "break-word",
@@ -1363,6 +1375,7 @@ exports[`Alert_3 1`] = `
       }
     >
       <div
+        bold={true}
         dir="auto"
         style={
           Object {
@@ -1377,7 +1390,7 @@ exports[`Alert_3 1`] = `
             "fontSize": "16px",
             "fontStyle": "inherit",
             "fontVariant": "inherit",
-            "fontWeight": "600",
+            "fontWeight": "400",
             "letterSpacing": "-0.05px",
             "lineHeight": "20px",
             "marginBottom": "0px",
@@ -1388,6 +1401,7 @@ exports[`Alert_3 1`] = `
             "paddingLeft": "0px",
             "paddingRight": "0px",
             "paddingTop": "0px",
+            "textAlign": "left",
             "textDecoration": "none",
             "whiteSpace": "pre-wrap",
             "wordWrap": "break-word",
@@ -1422,6 +1436,7 @@ exports[`Alert_3 1`] = `
             "paddingLeft": "0px",
             "paddingRight": "0px",
             "paddingTop": "0px",
+            "textAlign": "left",
             "textDecoration": "none",
             "whiteSpace": "pre-wrap",
             "wordWrap": "break-word",
@@ -1667,6 +1682,7 @@ exports[`Avatar_1 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -1769,6 +1785,7 @@ exports[`Avatar_3 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -2059,6 +2076,7 @@ exports[`Avatar_7 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -2150,6 +2168,7 @@ exports[`Avatar_7 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -2315,6 +2334,7 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -2329,7 +2349,7 @@ exports[`Badge_1 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -2340,6 +2360,7 @@ exports[`Badge_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -2407,6 +2428,7 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -2421,7 +2443,7 @@ exports[`Badge_1 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -2432,6 +2454,7 @@ exports[`Badge_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -2543,6 +2566,7 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -2557,7 +2581,7 @@ exports[`Badge_1 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -2568,6 +2592,7 @@ exports[`Badge_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -2635,6 +2660,7 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -2649,7 +2675,7 @@ exports[`Badge_1 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -2660,6 +2686,7 @@ exports[`Badge_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -2771,6 +2798,7 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -2785,7 +2813,7 @@ exports[`Badge_1 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -2796,6 +2824,7 @@ exports[`Badge_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -2863,6 +2892,7 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -2877,7 +2907,7 @@ exports[`Badge_1 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -2888,6 +2918,7 @@ exports[`Badge_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -2999,6 +3030,7 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -3013,7 +3045,7 @@ exports[`Badge_1 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -3024,6 +3056,7 @@ exports[`Badge_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -3091,6 +3124,7 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -3105,7 +3139,7 @@ exports[`Badge_1 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -3116,6 +3150,7 @@ exports[`Badge_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -3227,6 +3262,7 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -3241,7 +3277,7 @@ exports[`Badge_1 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -3252,6 +3288,7 @@ exports[`Badge_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -3319,6 +3356,7 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -3333,7 +3371,7 @@ exports[`Badge_1 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -3344,6 +3382,7 @@ exports[`Badge_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -3455,6 +3494,7 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -3469,7 +3509,7 @@ exports[`Badge_1 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -3480,6 +3520,7 @@ exports[`Badge_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -3547,6 +3588,7 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -3561,7 +3603,7 @@ exports[`Badge_1 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -3572,6 +3614,7 @@ exports[`Badge_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -3683,6 +3726,7 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -3697,7 +3741,7 @@ exports[`Badge_1 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -3708,6 +3752,7 @@ exports[`Badge_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -3775,6 +3820,7 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -3789,7 +3835,7 @@ exports[`Badge_1 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -3800,6 +3846,7 @@ exports[`Badge_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -3911,6 +3958,7 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -3925,7 +3973,7 @@ exports[`Badge_1 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -3936,6 +3984,7 @@ exports[`Badge_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -4003,6 +4052,7 @@ exports[`Badge_1 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -4017,7 +4067,7 @@ exports[`Badge_1 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -4028,6 +4078,7 @@ exports[`Badge_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -4194,6 +4245,7 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -4208,7 +4260,7 @@ exports[`Badge_3 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -4219,6 +4271,7 @@ exports[`Badge_3 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -4286,6 +4339,7 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -4300,7 +4354,7 @@ exports[`Badge_3 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -4311,6 +4365,7 @@ exports[`Badge_3 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -4422,6 +4477,7 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -4436,7 +4492,7 @@ exports[`Badge_3 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -4447,6 +4503,7 @@ exports[`Badge_3 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -4514,6 +4571,7 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -4528,7 +4586,7 @@ exports[`Badge_3 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -4539,6 +4597,7 @@ exports[`Badge_3 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -4650,6 +4709,7 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -4664,7 +4724,7 @@ exports[`Badge_3 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -4675,6 +4735,7 @@ exports[`Badge_3 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -4742,6 +4803,7 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -4756,7 +4818,7 @@ exports[`Badge_3 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -4767,6 +4829,7 @@ exports[`Badge_3 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -4878,6 +4941,7 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -4892,7 +4956,7 @@ exports[`Badge_3 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -4903,6 +4967,7 @@ exports[`Badge_3 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -4970,6 +5035,7 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -4984,7 +5050,7 @@ exports[`Badge_3 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -4995,6 +5061,7 @@ exports[`Badge_3 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -5106,6 +5173,7 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -5120,7 +5188,7 @@ exports[`Badge_3 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -5131,6 +5199,7 @@ exports[`Badge_3 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -5198,6 +5267,7 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -5212,7 +5282,7 @@ exports[`Badge_3 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -5223,6 +5293,7 @@ exports[`Badge_3 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -5334,6 +5405,7 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -5348,7 +5420,7 @@ exports[`Badge_3 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -5359,6 +5431,7 @@ exports[`Badge_3 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -5426,6 +5499,7 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -5440,7 +5514,7 @@ exports[`Badge_3 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -5451,6 +5525,7 @@ exports[`Badge_3 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -5562,6 +5637,7 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -5576,7 +5652,7 @@ exports[`Badge_3 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -5587,6 +5663,7 @@ exports[`Badge_3 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -5654,6 +5731,7 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -5668,7 +5746,7 @@ exports[`Badge_3 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -5679,6 +5757,7 @@ exports[`Badge_3 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -5790,6 +5869,7 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -5804,7 +5884,7 @@ exports[`Badge_3 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -5815,6 +5895,7 @@ exports[`Badge_3 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -5882,6 +5963,7 @@ exports[`Badge_3 1`] = `
         }
       >
         <div
+          bold={true}
           dir="auto"
           style={
             Object {
@@ -5896,7 +5978,7 @@ exports[`Badge_3 1`] = `
               "fontSize": "14px",
               "fontStyle": "inherit",
               "fontVariant": "inherit",
-              "fontWeight": "600",
+              "fontWeight": "400",
               "letterSpacing": "-0.05px",
               "lineHeight": "20px",
               "marginBottom": "0px",
@@ -5907,6 +5989,7 @@ exports[`Badge_3 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
+              "textAlign": "left",
               "textDecoration": "none",
               "textTransform": "uppercase",
               "whiteSpace": "pre-wrap",
@@ -15780,6 +15863,7 @@ exports[`Checkbox_3 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -16045,6 +16129,7 @@ exports[`Checkbox_3 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -16284,6 +16369,7 @@ exports[`Checkbox_3 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -16545,6 +16631,7 @@ exports[`Checkbox_3 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -19822,6 +19909,7 @@ exports[`Inputs_0 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -19952,6 +20040,7 @@ exports[`Inputs_0 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -20082,6 +20171,7 @@ exports[`Inputs_0 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -20210,6 +20300,7 @@ exports[`Inputs_0 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -20338,6 +20429,7 @@ exports[`Inputs_0 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -20466,6 +20558,7 @@ exports[`Inputs_0 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -20600,6 +20693,7 @@ exports[`Inputs_1 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -20730,6 +20824,7 @@ exports[`Inputs_1 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -20860,6 +20955,7 @@ exports[`Inputs_1 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -20988,6 +21084,7 @@ exports[`Inputs_1 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -21116,6 +21213,7 @@ exports[`Inputs_1 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -21244,6 +21342,7 @@ exports[`Inputs_1 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -23324,6 +23423,7 @@ exports[`ListItem_1 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -23358,6 +23458,7 @@ exports[`ListItem_1 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -24398,6 +24499,7 @@ exports[`MonthCalendar_0 1`] = `
             "paddingLeft": "0px",
             "paddingRight": "0px",
             "paddingTop": "0px",
+            "textAlign": "left",
             "textDecoration": "none",
             "whiteSpace": "pre-wrap",
             "wordWrap": "break-word",
@@ -24484,6 +24586,7 @@ exports[`MonthCalendar_0 1`] = `
             "paddingLeft": "0px",
             "paddingRight": "0px",
             "paddingTop": "0px",
+            "textAlign": "left",
             "textDecoration": "none",
             "whiteSpace": "pre-wrap",
             "wordWrap": "break-word",
@@ -24570,6 +24673,7 @@ exports[`MonthCalendar_0 1`] = `
             "paddingLeft": "0px",
             "paddingRight": "0px",
             "paddingTop": "0px",
+            "textAlign": "left",
             "textDecoration": "none",
             "whiteSpace": "pre-wrap",
             "wordWrap": "break-word",
@@ -24656,6 +24760,7 @@ exports[`MonthCalendar_0 1`] = `
             "paddingLeft": "0px",
             "paddingRight": "0px",
             "paddingTop": "0px",
+            "textAlign": "left",
             "textDecoration": "none",
             "whiteSpace": "pre-wrap",
             "wordWrap": "break-word",
@@ -24742,6 +24847,7 @@ exports[`MonthCalendar_0 1`] = `
             "paddingLeft": "0px",
             "paddingRight": "0px",
             "paddingTop": "0px",
+            "textAlign": "left",
             "textDecoration": "none",
             "whiteSpace": "pre-wrap",
             "wordWrap": "break-word",
@@ -24828,6 +24934,7 @@ exports[`MonthCalendar_0 1`] = `
             "paddingLeft": "0px",
             "paddingRight": "0px",
             "paddingTop": "0px",
+            "textAlign": "left",
             "textDecoration": "none",
             "whiteSpace": "pre-wrap",
             "wordWrap": "break-word",
@@ -24914,6 +25021,7 @@ exports[`MonthCalendar_0 1`] = `
             "paddingLeft": "0px",
             "paddingRight": "0px",
             "paddingTop": "0px",
+            "textAlign": "left",
             "textDecoration": "none",
             "whiteSpace": "pre-wrap",
             "wordWrap": "break-word",
@@ -25716,6 +25824,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -25978,6 +26087,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -26240,6 +26350,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -26546,6 +26657,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -26808,6 +26920,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -27070,6 +27183,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -27332,6 +27446,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -27594,6 +27709,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -27856,6 +27972,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -28118,6 +28235,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -28424,6 +28542,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -28686,6 +28805,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -28948,6 +29068,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -29210,6 +29331,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -29472,6 +29594,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -29734,6 +29857,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -29996,6 +30120,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -30302,6 +30427,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -30564,6 +30690,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -30826,6 +30953,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -31088,6 +31216,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -31350,6 +31479,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -31612,6 +31742,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -31874,6 +32005,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -32180,6 +32312,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -32442,6 +32575,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -32704,6 +32838,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -32966,6 +33101,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -33228,6 +33364,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -33490,6 +33627,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -33752,6 +33890,7 @@ exports[`MonthCalendar_0 1`] = `
                       "paddingLeft": "0px",
                       "paddingRight": "0px",
                       "paddingTop": "0px",
+                      "textAlign": "left",
                       "textDecoration": "none",
                       "whiteSpace": "pre-wrap",
                       "wordWrap": "break-word",
@@ -34380,6 +34519,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -34642,6 +34782,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -34904,6 +35045,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -35166,6 +35308,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -35428,6 +35571,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -35690,6 +35834,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -35996,6 +36141,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -36258,6 +36404,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -36520,6 +36667,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -36782,6 +36930,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -37044,6 +37193,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -37306,6 +37456,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -37568,6 +37719,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -37874,6 +38026,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -38136,6 +38289,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -38398,6 +38552,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -38660,6 +38815,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -38922,6 +39078,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -39184,6 +39341,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -39446,6 +39604,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -39752,6 +39911,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -40014,6 +40174,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -40276,6 +40437,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -40538,6 +40700,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -40800,6 +40963,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -41062,6 +41226,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -41324,6 +41489,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -41630,6 +41796,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -41892,6 +42059,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -42154,6 +42322,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -42416,6 +42585,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -43603,6 +43773,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -43865,6 +44036,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -44127,6 +44299,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -44433,6 +44606,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -44695,6 +44869,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -44957,6 +45132,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -45219,6 +45395,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -45481,6 +45658,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -45743,6 +45921,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -46005,6 +46184,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -46311,6 +46491,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -46573,6 +46754,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -46835,6 +47017,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -47097,6 +47280,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -47359,6 +47543,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -47621,6 +47806,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -47883,6 +48069,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -48189,6 +48376,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -48451,6 +48639,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -48713,6 +48902,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -48975,6 +49165,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -49237,6 +49428,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -49499,6 +49691,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -49761,6 +49954,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -50067,6 +50261,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -50329,6 +50524,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -50591,6 +50787,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -50853,6 +51050,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -52040,6 +52238,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -52302,6 +52501,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -52564,6 +52764,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -52870,6 +53071,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -53132,6 +53334,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -53394,6 +53597,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -53656,6 +53860,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -53918,6 +54123,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -54180,6 +54386,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -54442,6 +54649,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -54748,6 +54956,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -55010,6 +55219,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -55272,6 +55482,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -55534,6 +55745,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -55796,6 +56008,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -56058,6 +56271,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -56320,6 +56534,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -56626,6 +56841,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -56888,6 +57104,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -57150,6 +57367,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -57412,6 +57630,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -57674,6 +57893,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -57936,6 +58156,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -58198,6 +58419,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -58504,6 +58726,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -58766,6 +58989,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -59028,6 +59252,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -59290,6 +59515,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -59552,6 +59778,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -59814,6 +60041,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -60076,6 +60304,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -60549,6 +60778,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -60811,6 +61041,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -61073,6 +61304,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -61335,6 +61567,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -61597,6 +61830,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -61859,6 +62093,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -62121,6 +62356,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -62427,6 +62663,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -62689,6 +62926,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -62951,6 +63189,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -63213,6 +63452,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -63475,6 +63715,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -63737,6 +63978,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -63999,6 +64241,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -64305,6 +64548,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -64567,6 +64811,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -64829,6 +65074,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -65091,6 +65337,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -65353,6 +65600,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -65615,6 +65863,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -65877,6 +66126,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -66183,6 +66433,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -66445,6 +66696,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -66707,6 +66959,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -66969,6 +67222,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -67231,6 +67485,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -67493,6 +67748,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -67755,6 +68011,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -68061,6 +68318,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -68323,6 +68581,7 @@ exports[`MonthCalendar_1 1`] = `
                         "paddingLeft": "0px",
                         "paddingRight": "0px",
                         "paddingTop": "0px",
+                        "textAlign": "left",
                         "textDecoration": "none",
                         "whiteSpace": "pre-wrap",
                         "wordWrap": "break-word",
@@ -77451,6 +77710,7 @@ exports[`SelectList_1 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -77485,6 +77745,7 @@ exports[`SelectList_1 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -77843,6 +78104,7 @@ exports[`SelectList_1 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -77877,6 +78139,7 @@ exports[`SelectList_1 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -78257,6 +78520,7 @@ exports[`SelectList_1 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -78291,6 +78555,7 @@ exports[`SelectList_1 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -78649,6 +78914,7 @@ exports[`SelectList_1 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -78683,6 +78949,7 @@ exports[`SelectList_1 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -79041,6 +79308,7 @@ exports[`SelectList_1 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -79075,6 +79343,7 @@ exports[`SelectList_1 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -79433,6 +79702,7 @@ exports[`SelectList_1 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -79467,6 +79737,7 @@ exports[`SelectList_1 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -79858,6 +80129,7 @@ exports[`SelectList_3 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -79892,6 +80164,7 @@ exports[`SelectList_3 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -80250,6 +80523,7 @@ exports[`SelectList_3 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -80284,6 +80558,7 @@ exports[`SelectList_3 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -80642,6 +80917,7 @@ exports[`SelectList_3 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -80676,6 +80952,7 @@ exports[`SelectList_3 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -81034,6 +81311,7 @@ exports[`SelectList_3 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -81068,6 +81346,7 @@ exports[`SelectList_3 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -81426,6 +81705,7 @@ exports[`SelectList_3 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -81460,6 +81740,7 @@ exports[`SelectList_3 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -81818,6 +82099,7 @@ exports[`SelectList_3 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -81852,6 +82134,7 @@ exports[`SelectList_3 1`] = `
                 "paddingLeft": "0px",
                 "paddingRight": "0px",
                 "paddingTop": "0px",
+                "textAlign": "left",
                 "textDecoration": "none",
                 "whiteSpace": "pre-wrap",
                 "wordWrap": "break-word",
@@ -83688,6 +83971,7 @@ exports[`Typography_3 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -83722,6 +84006,7 @@ exports[`Typography_3 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -83756,6 +84041,7 @@ exports[`Typography_3 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -83845,6 +84131,7 @@ exports[`Typography_5 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -83879,6 +84166,7 @@ exports[`Typography_5 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -83913,6 +84201,7 @@ exports[`Typography_5 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -83947,6 +84236,7 @@ exports[`Typography_5 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -83981,6 +84271,7 @@ exports[`Typography_5 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -84015,6 +84306,7 @@ exports[`Typography_5 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -84048,6 +84340,7 @@ exports[`Typography_5 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -84082,6 +84375,7 @@ exports[`Typography_5 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -84116,6 +84410,7 @@ exports[`Typography_5 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -84205,6 +84500,7 @@ exports[`Typography_7 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -84239,6 +84535,7 @@ exports[`Typography_7 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -84273,6 +84570,7 @@ exports[`Typography_7 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -84362,7 +84660,291 @@ exports[`Typography_9 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
+          "whiteSpace": "pre-wrap",
+          "wordWrap": "break-word",
+        }
+      }
+    >
+      A red flair silhouetted.
+    </div>
+    <div
+      dir="auto"
+      style={
+        Object {
+          "borderBottomWidth": "0px",
+          "borderLeftWidth": "0px",
+          "borderRightWidth": "0px",
+          "borderTopWidth": "0px",
+          "boxSizing": "border-box",
+          "color": "rgba(126,126,126,1.00)",
+          "display": "inline",
+          "fontFamily": "\\"SF UI Text\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+          "fontSize": "16px",
+          "fontStyle": "italic",
+          "fontVariant": "inherit",
+          "fontWeight": "400",
+          "letterSpacing": "-0.05px",
+          "lineHeight": "20px",
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+          "textAlign": "left",
+          "textDecoration": "none",
+          "whiteSpace": "pre-wrap",
+          "wordWrap": "break-word",
+        }
+      }
+    >
+      A red flair silhouetted.
+    </div>
+    <div
+      dir="auto"
+      style={
+        Object {
+          "borderBottomWidth": "0px",
+          "borderLeftWidth": "0px",
+          "borderRightWidth": "0px",
+          "borderTopWidth": "0px",
+          "boxSizing": "border-box",
+          "color": "rgba(126,126,126,1.00)",
+          "display": "inline",
+          "fontFamily": "\\"SF UI Text\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+          "fontSize": "16px",
+          "fontStyle": "italic",
+          "fontVariant": "inherit",
+          "fontWeight": "600",
+          "letterSpacing": "-0.05px",
+          "lineHeight": "20px",
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+          "textAlign": "left",
+          "textDecoration": "none",
+          "whiteSpace": "pre-wrap",
+          "wordWrap": "break-word",
+        }
+      }
+    >
+      A red flair silhouetted.
+    </div>
+    <div
+      dir="auto"
+      style={
+        Object {
+          "borderBottomWidth": "0px",
+          "borderLeftWidth": "0px",
+          "borderRightWidth": "0px",
+          "borderTopWidth": "0px",
+          "boxSizing": "border-box",
+          "color": "rgba(126,126,126,1.00)",
+          "display": "inline",
+          "fontFamily": "\\"SF UI Text\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+          "fontSize": "16px",
+          "fontStyle": "inherit",
+          "fontVariant": "inherit",
+          "fontWeight": "400",
+          "letterSpacing": "-0.05px",
+          "lineHeight": "20px",
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+          "textAlign": "left",
+          "textDecoration": "none",
+          "whiteSpace": "pre-wrap",
+          "wordWrap": "break-word",
+        }
+      }
+    >
+      A red flair silhouetted.
+    </div>
+    <div
+      dir="auto"
+      style={
+        Object {
+          "borderBottomWidth": "0px",
+          "borderLeftWidth": "0px",
+          "borderRightWidth": "0px",
+          "borderTopWidth": "0px",
+          "boxSizing": "border-box",
+          "color": "rgba(126,126,126,1.00)",
+          "display": "inline",
+          "fontFamily": "\\"SF UI Text\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+          "fontSize": "16px",
+          "fontStyle": "inherit",
+          "fontVariant": "inherit",
+          "fontWeight": "400",
+          "letterSpacing": "-0.05px",
+          "lineHeight": "20px",
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+          "textAlign": "center",
+          "textDecoration": "none",
+          "whiteSpace": "pre-wrap",
+          "wordWrap": "break-word",
+        }
+      }
+    >
+      A red flair silhouetted.
+    </div>
+    <div
+      dir="auto"
+      style={
+        Object {
+          "borderBottomWidth": "0px",
+          "borderLeftWidth": "0px",
+          "borderRightWidth": "0px",
+          "borderTopWidth": "0px",
+          "boxSizing": "border-box",
+          "color": "rgba(126,126,126,1.00)",
+          "display": "inline",
+          "fontFamily": "\\"SF UI Text\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+          "fontSize": "16px",
+          "fontStyle": "inherit",
+          "fontVariant": "inherit",
+          "fontWeight": "400",
+          "letterSpacing": "-0.05px",
+          "lineHeight": "20px",
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+          "textAlign": "right",
+          "textDecoration": "none",
+          "whiteSpace": "pre-wrap",
+          "wordWrap": "break-word",
+        }
+      }
+    >
+      A red flair silhouetted.
+    </div>
+    <div
+      dir="auto"
+      style={
+        Object {
+          "borderBottomWidth": "0px",
+          "borderLeftWidth": "0px",
+          "borderRightWidth": "0px",
+          "borderTopWidth": "0px",
+          "boxSizing": "border-box",
+          "color": "rgba(126,126,126,1.00)",
+          "display": "inline",
+          "fontFamily": "\\"SF UI Text\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+          "fontSize": "16px",
+          "fontStyle": "inherit",
+          "fontVariant": "inherit",
+          "fontWeight": "400",
+          "letterSpacing": "-0.05px",
+          "lineHeight": "20px",
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+          "textAlign": "left",
+          "textDecoration": "none",
+          "textTransform": "uppercase",
+          "whiteSpace": "pre-wrap",
+          "wordWrap": "break-word",
+        }
+      }
+    >
+      A red flair silhouetted.
+    </div>
+    <div
+      dir="auto"
+      style={
+        Object {
+          "borderBottomWidth": "0px",
+          "borderLeftWidth": "0px",
+          "borderRightWidth": "0px",
+          "borderTopWidth": "0px",
+          "boxSizing": "border-box",
+          "color": "rgba(126,126,126,1.00)",
+          "display": "inline",
+          "fontFamily": "\\"SF UI Text\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+          "fontSize": "16px",
+          "fontStyle": "inherit",
+          "fontVariant": "inherit",
+          "fontWeight": "400",
+          "letterSpacing": "-0.05px",
+          "lineHeight": "20px",
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+          "textAlign": "left",
+          "textDecoration": "none",
+          "textTransform": "lowercase",
+          "whiteSpace": "pre-wrap",
+          "wordWrap": "break-word",
+        }
+      }
+    >
+      A red flair silhouetted.
+    </div>
+    <div
+      dir="auto"
+      style={
+        Object {
+          "borderBottomWidth": "0px",
+          "borderLeftWidth": "0px",
+          "borderRightWidth": "0px",
+          "borderTopWidth": "0px",
+          "boxSizing": "border-box",
+          "color": "rgba(126,126,126,1.00)",
+          "display": "inline",
+          "fontFamily": "\\"SF UI Text\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+          "fontSize": "16px",
+          "fontStyle": "inherit",
+          "fontVariant": "inherit",
+          "fontWeight": "400",
+          "letterSpacing": "-0.05px",
+          "lineHeight": "20px",
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+          "textAlign": "left",
+          "textDecoration": "none",
+          "textTransform": "capitalize",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
         }
@@ -84693,6 +85275,7 @@ exports[`Typography_10 1`] = `
                   "paddingLeft": "0px",
                   "paddingRight": "0px",
                   "paddingTop": "0px",
+                  "textAlign": "left",
                   "textDecoration": "none",
                   "whiteSpace": "pre-wrap",
                   "wordWrap": "break-word",
@@ -84933,6 +85516,7 @@ exports[`Typography_10 1`] = `
                   "paddingLeft": "0px",
                   "paddingRight": "0px",
                   "paddingTop": "0px",
+                  "textAlign": "left",
                   "textDecoration": "none",
                   "whiteSpace": "pre-wrap",
                   "wordWrap": "break-word",
@@ -85173,6 +85757,7 @@ exports[`Typography_10 1`] = `
                   "paddingLeft": "0px",
                   "paddingRight": "0px",
                   "paddingTop": "0px",
+                  "textAlign": "left",
                   "textDecoration": "none",
                   "whiteSpace": "pre-wrap",
                   "wordWrap": "break-word",
@@ -85413,6 +85998,7 @@ exports[`Typography_10 1`] = `
                   "paddingLeft": "0px",
                   "paddingRight": "0px",
                   "paddingTop": "0px",
+                  "textAlign": "left",
                   "textDecoration": "none",
                   "whiteSpace": "pre-wrap",
                   "wordWrap": "break-word",
@@ -85675,6 +86261,7 @@ exports[`Typography_11 1`] = `
                   "paddingLeft": "0px",
                   "paddingRight": "0px",
                   "paddingTop": "0px",
+                  "textAlign": "left",
                   "textDecoration": "none",
                   "whiteSpace": "pre-wrap",
                   "wordWrap": "break-word",
@@ -85762,6 +86349,7 @@ exports[`Typography_11 1`] = `
                   "paddingLeft": "0px",
                   "paddingRight": "0px",
                   "paddingTop": "0px",
+                  "textAlign": "left",
                   "textDecoration": "none",
                   "whiteSpace": "pre-wrap",
                   "wordWrap": "break-word",
@@ -85929,6 +86517,7 @@ exports[`Typography_11 1`] = `
                   "paddingLeft": "0px",
                   "paddingRight": "0px",
                   "paddingTop": "0px",
+                  "textAlign": "left",
                   "textDecoration": "none",
                   "whiteSpace": "pre-wrap",
                   "wordWrap": "break-word",
@@ -86016,6 +86605,7 @@ exports[`Typography_11 1`] = `
                   "paddingLeft": "0px",
                   "paddingRight": "0px",
                   "paddingTop": "0px",
+                  "textAlign": "left",
                   "textDecoration": "none",
                   "whiteSpace": "pre-wrap",
                   "wordWrap": "break-word",
@@ -86183,6 +86773,7 @@ exports[`Typography_11 1`] = `
                   "paddingLeft": "0px",
                   "paddingRight": "0px",
                   "paddingTop": "0px",
+                  "textAlign": "left",
                   "textDecoration": "none",
                   "whiteSpace": "pre-wrap",
                   "wordWrap": "break-word",
@@ -86270,6 +86861,7 @@ exports[`Typography_11 1`] = `
                   "paddingLeft": "0px",
                   "paddingRight": "0px",
                   "paddingTop": "0px",
+                  "textAlign": "left",
                   "textDecoration": "none",
                   "whiteSpace": "pre-wrap",
                   "wordWrap": "break-word",
@@ -86437,6 +87029,7 @@ exports[`Typography_11 1`] = `
                   "paddingLeft": "0px",
                   "paddingRight": "0px",
                   "paddingTop": "0px",
+                  "textAlign": "left",
                   "textDecoration": "none",
                   "whiteSpace": "pre-wrap",
                   "wordWrap": "break-word",
@@ -86524,6 +87117,7 @@ exports[`Typography_11 1`] = `
                   "paddingLeft": "0px",
                   "paddingRight": "0px",
                   "paddingTop": "0px",
+                  "textAlign": "left",
                   "textDecoration": "none",
                   "whiteSpace": "pre-wrap",
                   "wordWrap": "break-word",
@@ -86691,6 +87285,7 @@ exports[`Typography_11 1`] = `
                   "paddingLeft": "0px",
                   "paddingRight": "0px",
                   "paddingTop": "0px",
+                  "textAlign": "left",
                   "textDecoration": "none",
                   "whiteSpace": "pre-wrap",
                   "wordWrap": "break-word",
@@ -86778,6 +87373,7 @@ exports[`Typography_11 1`] = `
                   "paddingLeft": "0px",
                   "paddingRight": "0px",
                   "paddingTop": "0px",
+                  "textAlign": "left",
                   "textDecoration": "none",
                   "whiteSpace": "pre-wrap",
                   "wordWrap": "break-word",
@@ -86865,6 +87461,7 @@ exports[`Typography_12 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -86948,6 +87545,7 @@ exports[`Typography_13 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
@@ -87031,6 +87629,7 @@ exports[`Typography_14 1`] = `
           "paddingLeft": "0px",
           "paddingRight": "0px",
           "paddingTop": "0px",
+          "textAlign": "left",
           "textDecoration": "none",
           "whiteSpace": "pre-wrap",
           "wordWrap": "break-word",
