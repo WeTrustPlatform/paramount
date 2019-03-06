@@ -7,19 +7,12 @@ import {
   TextColors,
   Theme,
 } from '../../theme/ThemeInterface';
+import { TextAlign, TextTransform } from './types';
 
 export interface TextSizes {
   small: TextStyle;
   medium: TextStyle;
   large: TextStyle;
-}
-
-export interface ColorVariations {
-  lightest: string;
-  light: string;
-  base: string;
-  dark: string;
-  darkest: string;
 }
 
 export type TextSize = keyof TextSizes;
@@ -33,10 +26,6 @@ export interface TextVariables {
 export const getTextVariables = (theme: Theme): TextVariables => {
   return {
     size: {
-      /**
-       * It's useful to have xlarge because `Link` uses the `Text` component.
-       * A `Link` could be used as xlarge in the context of a breadcrumb.
-       */
       large: {
         fontSize: theme.textSizes.large,
         fontWeight: '400',
@@ -66,9 +55,12 @@ export const getTextVariables = (theme: Theme): TextVariables => {
 };
 
 export interface TextStylesProps {
-  bold: boolean;
+  isBold: boolean;
+  isItalic: boolean;
   size: TextSize;
   color: TextColor;
+  align: TextAlign;
+  transform?: TextTransform;
   fontFamily: FontFamily;
   isInline: boolean;
 }
@@ -90,7 +82,7 @@ export const getTextColor = (textColors: TextColors) => (
 ) => textColors[textColor];
 
 export const getTextStyles: GetTextStyles = (
-  { size, color, fontFamily, isInline, bold },
+  { size, color, fontFamily, isInline, isBold, isItalic, align, transform },
   theme,
 ) => {
   const textVariables = getTextVariables(theme);
@@ -99,6 +91,7 @@ export const getTextStyles: GetTextStyles = (
     textStyle: {
       color: getTextColor(textVariables.color)(color),
       fontFamily: getFontFamily(textVariables.fontFamily)(fontFamily),
+      textAlign: align,
       ...(isInline
         ? {
             alignSelf: 'flex-start',
@@ -106,8 +99,14 @@ export const getTextStyles: GetTextStyles = (
           }
         : {}),
       ...textVariables.size[size],
-      ...(bold && {
+      ...(isBold && {
         fontWeight: '600',
+      }),
+      ...(isItalic && {
+        fontStyle: 'italic',
+      }),
+      ...(transform && {
+        textTransform: transform,
       }),
     },
   };

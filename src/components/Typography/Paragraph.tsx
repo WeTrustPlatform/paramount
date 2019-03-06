@@ -23,7 +23,7 @@ export interface ParagraphProps extends TextProps {
   color?: TextColor;
   size?: ParagraphSize;
   theme: Theme;
-  textAlign?: TextAlign;
+  align?: TextAlign;
   fontFamily?: FontFamily;
 
   getStyles?: ReplaceReturnType<
@@ -38,7 +38,7 @@ const ParagraphBase = (props: ParagraphProps) => {
     color = 'default',
     fontFamily = 'text',
     size = 'medium',
-    textAlign,
+    align,
     theme,
     getStyles,
     ...textProps
@@ -53,7 +53,7 @@ const ParagraphBase = (props: ParagraphProps) => {
     <Text
       // @ts-ignore
       accessibilityLabel="p"
-      style={[{ textAlign }, paragraphStyle]}
+      style={[{ textAlign: align }, paragraphStyle]}
       {...textProps}
     >
       {children}

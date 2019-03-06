@@ -11,15 +11,17 @@ import {
 import withTheme from '../../theme/withTheme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { GetTextStyles, getTextStyles, TextStyles } from './Text.styles';
-import { TextAlign } from './types';
+import { TextAlign, TextTransform } from './types';
 
 export interface TextStyleProps {
   isInline?: boolean;
   size?: TextSize;
   color?: TextColor;
-  textAlign?: TextAlign;
+  align?: TextAlign;
+  transform?: TextTransform;
   fontFamily?: FontFamily;
-  bold?: boolean;
+  isBold?: boolean;
+  isItalic?: boolean;
 }
 
 // @ts-ignore: need to override for web purposes
@@ -37,21 +39,23 @@ const TextBase = (props: TextProps) => {
     color = 'default',
     fontFamily = 'text',
     size = 'medium',
-    textAlign,
+    align = 'left',
     isInline = false,
     theme,
     getStyles,
-    bold = false,
+    isBold = false,
+    isItalic = false,
+    transform,
     ...textProps
   } = props;
 
   const { textStyle } = mergeStyles(getTextStyles, getStyles)(
-    { size, color, fontFamily, isInline, bold },
+    { size, color, fontFamily, isInline, isBold, isItalic, align, transform },
     theme,
   );
 
   return (
-    <RNText style={[{ textAlign }, textStyle]} {...textProps}>
+    <RNText style={textStyle} {...textProps}>
       {children}
     </RNText>
   );
