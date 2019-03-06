@@ -45,7 +45,7 @@ const BadgeBase = (props: BadgeProps) => {
   return (
     <View style={containerStyle} testID={testID}>
       <Text
-        bold
+        isBold
         size={size}
         getStyles={() => ({
           textStyle,

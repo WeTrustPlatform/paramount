@@ -136,7 +136,8 @@ const ModalMultiMonthCalendarSelectBase = (
         <Divider />
         <Spacing paddingVertical={1} paddingHorizontal={2}>
           <Button
-            onPress={() => {
+            onPress={event => {
+              event.preventDefault();
               setIsModalOpen(false);
               if (onValueChange) {
                 onValueChange(selectedStartDate, selectedEndDate);

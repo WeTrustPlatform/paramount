@@ -76,7 +76,7 @@ const AlertBase = (props: AlertProps) => {
       )}
       {component || (
         <View style={bodyStyle}>
-          <Text bold>{title}</Text>
+          <Text isBold>{title}</Text>
           <Text>{description}</Text>
         </View>
       )}

@@ -1,13 +1,19 @@
 import * as React from 'react';
+import { FlatList, FlatListProps } from 'react-native';
+import { Omit } from 'ts-essentials';
 
-import { Theme, withTheme } from '../../theme';
+import { ThemeContext } from '../../theme';
 import { SelectListItemBaseProps } from './SelectListItem';
 
-export interface SelectListProps {
+export interface SelectListProps
+  extends Omit<
+    Omit<FlatListProps<SelectListItemBaseProps>, 'data'>,
+    'renderItem'
+  > {
   children: Array<React.ReactElement<SelectListItemBaseProps>>;
   selectedValue: string | string[];
+  innerRef?: React.Ref<FlatList<SelectListItemBaseProps>>;
   isMulti?: boolean;
-  theme: Theme;
   onValueChange: (
     itemValue: string | string[],
     itemIndex: number,
@@ -15,7 +21,15 @@ export interface SelectListProps {
 }
 
 const SelectListBase = (props: SelectListProps): any => {
-  const { selectedValue, onValueChange, isMulti, children } = props;
+  const {
+    selectedValue,
+    onValueChange,
+    isMulti,
+    children,
+    innerRef,
+    ...flatListProps
+  } = props;
+  const theme = React.useContext(ThemeContext);
 
   const handleOnPress = (
     itemValue: string,
@@ -36,23 +50,43 @@ const SelectListBase = (props: SelectListProps): any => {
     }
   };
 
-  return React.Children.map(children, (selectListItem, index) => {
-    if (!React.isValidElement(selectListItem)) {
-      return selectListItem;
-    }
+  const childrenArray = React.Children.toArray(children);
+  const data = childrenArray.map(child => child.props);
 
-    const isSelected =
-      isMulti && Array.isArray(selectedValue)
-        ? selectedValue.some(selVal => selVal === selectListItem.props.value)
-        : selectedValue === selectListItem.props.value;
+  return (
+    <FlatList
+      ref={innerRef}
+      keyExtractor={item => item.value}
+      getItemLayout={(_, index) => ({
+        index,
+        length: theme.controlHeights.medium,
+        offset: theme.controlHeights.medium * index,
+      })}
+      data={data}
+      renderItem={({ item, index }) => {
+        const selectListItem = childrenArray[index];
 
-    return React.cloneElement(selectListItem, {
-      index,
-      isSelected,
-      onSelect: handleOnPress,
-    });
-  });
+        const isSelected =
+          isMulti && Array.isArray(selectedValue)
+            ? selectedValue.some(selVal => selVal === item.value)
+            : selectedValue === item.value;
+
+        return React.cloneElement(selectListItem, {
+          index,
+          isSelected,
+          onSelect: handleOnPress,
+        });
+      }}
+      {...flatListProps}
+    />
+  );
 };
 
-export const SelectList = withTheme(SelectListBase);
+export const SelectList = React.forwardRef<
+  FlatList<SelectListItemBaseProps>,
+  SelectListProps
+>((props, ref) => {
+  return <SelectListBase {...props} innerRef={ref} />;
+});
+
 export default SelectList;

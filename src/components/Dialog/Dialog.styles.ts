@@ -12,7 +12,6 @@ export const getDialogVariables = (theme: Theme): DialogVariables => {
   return {
     body: {
       maxHeight: 400,
-      overflow: 'scroll',
     },
     container: {
       backgroundColor: 'white',

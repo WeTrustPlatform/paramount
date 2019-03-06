@@ -28,7 +28,6 @@ const OverlayBase = (props: OverlayProps) => {
   return (
     <TouchableWithoutFeedback
       onPress={event => {
-        // @ts-ignore
         event.preventDefault();
         onPress();
       }}

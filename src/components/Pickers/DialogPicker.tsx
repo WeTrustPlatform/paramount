@@ -16,6 +16,8 @@ export interface DialogPickerProps extends RNPickerProps {
   size?: PickerButtonSize;
 }
 
+const SELECTED_INDEX_OFFSET = 3;
+
 const DialogPickerBase = (props: DialogPickerProps) => {
   const {
     header,
@@ -30,7 +32,8 @@ const DialogPickerBase = (props: DialogPickerProps) => {
 
   const childrenArray = React.Children.toArray(children);
   const data = childrenArray.map(child => child.props);
-  const selectedData = data.find(d => d.value === selectedValue);
+  const selectedIndex = data.findIndex(d => d.value === selectedValue);
+  const selectedData = selectedIndex >= 0 ? data[selectedIndex] : null;
   const selectedLabel = selectedData ? selectedData.label : null;
 
   return (
@@ -48,6 +51,7 @@ const DialogPickerBase = (props: DialogPickerProps) => {
         onRequestClose={() => setIsDialogOpen(false)}
       >
         <SelectList
+          initialScrollIndex={selectedIndex - SELECTED_INDEX_OFFSET}
           selectedValue={selectedValue}
           onValueChange={(value, index) => {
             if (onValueChange) onValueChange(value, index);

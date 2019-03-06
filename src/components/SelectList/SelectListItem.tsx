@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import { Theme, withTheme } from '../../theme';
 import { Checkbox } from '../Checkbox';
 import { ListItem, ListItemProps } from '../ListItem';
 
@@ -15,7 +14,6 @@ export interface SelectListItemBaseProps {
 export interface SelectListItemProps
   extends SelectListItemBaseProps,
     ListItemProps {
-  theme: Theme;
   isDisabled?: boolean;
 }
 
@@ -27,7 +25,6 @@ const SelectListItemBase = (props: SelectListItemProps) => {
     label,
     onSelect = () => null,
     size = 'medium',
-    theme,
     value,
     ...listItemProps
   } = props;
@@ -47,5 +44,6 @@ const SelectListItemBase = (props: SelectListItemProps) => {
   );
 };
 
-export const SelectListItem = withTheme(SelectListItemBase);
+export const SelectListItem = React.memo(SelectListItemBase);
+
 export default SelectListItem;

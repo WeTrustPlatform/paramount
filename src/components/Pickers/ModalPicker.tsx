@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PickerProps as RNPickerProps, ScrollView } from 'react-native';
+import { PickerProps as RNPickerProps } from 'react-native';
 
 import { CloseableModal } from '../Modal';
 import { SelectList, SelectListItemBaseProps } from '../SelectList';
@@ -16,6 +16,10 @@ export interface ModalPickerProps extends RNPickerProps {
   size?: PickerButtonSize;
 }
 
+const SELECTED_INDEX_OFFSET = 3;
+
+// REVIEW: When the window height is larger than the select list, and initial scroll index is at the bottom half, there is unscrollable blank space
+// it is a rare use case that can be solved by using ref to `scrollToIndex`
 const ModalPickerBase = (props: ModalPickerProps) => {
   const {
     header,
@@ -30,7 +34,8 @@ const ModalPickerBase = (props: ModalPickerProps) => {
 
   const childrenArray = React.Children.toArray(children);
   const data = childrenArray.map(child => child.props);
-  const selectedData = data.find(d => d.value === selectedValue);
+  const selectedIndex = data.findIndex(d => d.value === selectedValue);
+  const selectedData = selectedIndex >= 0 ? data[selectedIndex] : null;
   const selectedLabel = selectedData ? selectedData.label : null;
 
   return (
@@ -47,18 +52,18 @@ const ModalPickerBase = (props: ModalPickerProps) => {
         onRequestClose={() => setIsModalOpen(false)}
         onClose={() => setIsModalOpen(false)}
       >
-        <ScrollView>
-          {header}
-          <SelectList
-            selectedValue={selectedValue}
-            onValueChange={(value, index) => {
-              if (onValueChange) onValueChange(value, index);
-              setIsModalOpen(false);
-            }}
-          >
-            {children}
-          </SelectList>
-        </ScrollView>
+        {header}
+        <SelectList
+          initialScrollIndex={selectedIndex - SELECTED_INDEX_OFFSET}
+          initialNumToRender={30}
+          selectedValue={selectedValue}
+          onValueChange={(value, index) => {
+            if (onValueChange) onValueChange(value, index);
+            setIsModalOpen(false);
+          }}
+        >
+          {children}
+        </SelectList>
       </CloseableModal>
     </>
   );

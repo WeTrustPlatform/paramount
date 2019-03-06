@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { Theme, withTheme } from '../../theme';
+import { ThemeContext } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Modal } from '../Modal';
 import { Overlay } from '../Overlay';
@@ -16,7 +16,6 @@ import {
 
 export interface DialogProps {
   children: React.ReactNode;
-  theme: Theme;
   /** Prop to be passed to Modal */
   useHistory?: boolean;
   /** To show dialog or not */
@@ -40,10 +39,10 @@ const DialogBase = (props: DialogProps) => {
     header,
     isVisible,
     onRequestClose = () => null,
-    theme,
     getStyles,
     useHistory,
   } = props;
+  const theme = React.useContext(ThemeContext);
 
   const { modalContainerStyle, containerStyle, bodyStyle } = mergeStyles(
     getDialogStyles,
@@ -69,5 +68,6 @@ const DialogBase = (props: DialogProps) => {
   );
 };
 
-export const Dialog = withTheme(DialogBase);
+export const Dialog = DialogBase;
+
 export default Dialog;
