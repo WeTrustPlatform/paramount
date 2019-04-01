@@ -1,3 +1,13 @@
+## [1.29.3](https://github.com/WeTrustPlatform/paramount/compare/v1.29.2...v1.29.3) (2019-04-01)
+
+
+### Bug Fixes
+
+* **button:** remove comment ([1f05772](https://github.com/WeTrustPlatform/paramount/commit/1f05772))
+* **deps:** remove react-powerplug from lib deps ([36f4ab5](https://github.com/WeTrustPlatform/paramount/commit/36f4ab5))
+* **test:** snaps ([5df6b59](https://github.com/WeTrustPlatform/paramount/commit/5df6b59))
+* **typography:** pass align prop to styles getter ([5a3308d](https://github.com/WeTrustPlatform/paramount/commit/5a3308d))
+
 ## [1.29.2](https://github.com/WeTrustPlatform/paramount/compare/v1.29.1...v1.29.2) (2019-04-01)
 
 
