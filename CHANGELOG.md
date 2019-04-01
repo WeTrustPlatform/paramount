@@ -1,3 +1,10 @@
+## [1.29.1](https://github.com/WeTrustPlatform/paramount/compare/v1.29.0...v1.29.1) (2019-04-01)
+
+
+### Bug Fixes
+
+* **input:** add default width 100% ([e2078cd](https://github.com/WeTrustPlatform/paramount/commit/e2078cd))
+
 # [1.29.0](https://github.com/WeTrustPlatform/paramount/compare/v1.28.0...v1.29.0) (2019-03-06)
 
 
