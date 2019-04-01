@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { LayoutChangeEvent } from 'react-native';
-import { Toggle } from 'react-powerplug';
 
 import { Measurements, RefMeasure } from '../Helpers';
 
@@ -18,28 +17,25 @@ export interface PositionerControllerProps {
 }
 
 export const PositionerController = (props: PositionerControllerProps) => {
+  const [isPositionerVisible, setIsPositionerVisible] = React.useState(false);
   const { children } = props;
 
   return (
-    <Toggle>
-      {({ set, on }) => (
-        <RefMeasure>
-          {({ forwardRef, measurements, onLayout, measure }) => {
-            return children({
-              closePositioner: () => set(false),
-              isPositionerVisible: on,
-              onTargetLayout: onLayout,
-              openPositioner: () => {
-                measure();
-                set(true);
-              },
-              setTarget: forwardRef,
-              targetMeasurements: measurements,
-            });
-          }}
-        </RefMeasure>
-      )}
-    </Toggle>
+    <RefMeasure>
+      {({ forwardRef, measurements, onLayout, measure }) => {
+        return children({
+          closePositioner: () => setIsPositionerVisible(false),
+          isPositionerVisible,
+          onTargetLayout: onLayout,
+          openPositioner: () => {
+            measure();
+            setIsPositionerVisible(true);
+          },
+          setTarget: forwardRef,
+          targetMeasurements: measurements,
+        });
+      }}
+    </RefMeasure>
   );
 };
 
