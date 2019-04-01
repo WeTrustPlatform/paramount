@@ -263,7 +263,6 @@ export const getButtonStyles: GetButtonStyles = (buttonStyleProps, theme) => {
       fontSize,
       fontWeight: '600',
       justifyContent: 'center',
-      // lineHeight: shapeStyles.height,
       textAlign: 'center',
     },
   };
