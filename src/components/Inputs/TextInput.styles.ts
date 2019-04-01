@@ -34,6 +34,7 @@ export const getTextInputVariables = (theme: Theme): TextInputVariables => {
       borderColor: theme.colors.border.default,
       borderWidth: 1,
       color: theme.colors.text.default,
+      width: '100%',
     },
     disabled: {
       backgroundColor: theme.colors.background.disabled,
