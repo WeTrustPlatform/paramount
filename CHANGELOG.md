@@ -1,3 +1,10 @@
+## [1.29.2](https://github.com/WeTrustPlatform/paramount/compare/v1.29.1...v1.29.2) (2019-04-01)
+
+
+### Bug Fixes
+
+* **typography:** add typography fixes ([49510a0](https://github.com/WeTrustPlatform/paramount/commit/49510a0))
+
 ## [1.29.1](https://github.com/WeTrustPlatform/paramount/compare/v1.29.0...v1.29.1) (2019-04-01)
 
 
