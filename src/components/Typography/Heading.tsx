@@ -15,7 +15,7 @@ import { TextAlign } from './types';
 export interface HeadingProps {
   size?: HeadingSize;
   theme: Theme;
-  textAlign?: TextAlign;
+  align?: TextAlign;
   accessibilityLevel?: 1 | 2 | 3 | 4 | 5 | 6;
 
   getStyles?: ReplaceReturnType<GetHeadingStyles, DeepPartial<HeadingStyles>>;
@@ -26,13 +26,13 @@ const HeadingBase = (props: HeadingProps & TextProps) => {
     accessibilityLevel,
     theme,
     size = 'medium',
-    textAlign,
+    align = 'left',
     getStyles,
     ...textProps
   } = props;
 
   const { headingStyle } = mergeStyles(getHeadingStyles, getStyles)(
-    { size },
+    { size, align },
     theme,
   );
 
@@ -41,7 +41,7 @@ const HeadingBase = (props: HeadingProps & TextProps) => {
       // @ts-ignore
       accessibilityRole={Platform.OS === 'web' ? 'heading' : 'none'}
       aria-level={accessibilityLevel} // Web
-      style={[{ textAlign }, headingStyle]}
+      style={headingStyle}
       {...textProps}
     />
   );

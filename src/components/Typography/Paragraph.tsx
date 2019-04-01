@@ -38,7 +38,7 @@ const ParagraphBase = (props: ParagraphProps) => {
     color = 'default',
     fontFamily = 'text',
     size = 'medium',
-    align,
+    align = 'left',
     theme,
     getStyles,
     ...textProps
@@ -53,7 +53,7 @@ const ParagraphBase = (props: ParagraphProps) => {
     <Text
       // @ts-ignore
       accessibilityLabel="p"
-      style={[{ textAlign: align }, paragraphStyle]}
+      style={paragraphStyle}
       {...textProps}
     >
       {children}

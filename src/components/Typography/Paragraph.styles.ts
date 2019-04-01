@@ -8,6 +8,7 @@ import {
   Theme,
 } from '../../theme/ThemeInterface';
 import { getFontFamily, getTextColor, getTextVariables } from './Text.styles';
+import { TextAlign } from './types';
 
 export interface ParagraphSizes {
   small: TextStyle;
@@ -57,6 +58,7 @@ export const getParagraphVariables = (theme: Theme): ParagraphVariables => {
 };
 
 export interface ParagraphStylesProps {
+  align: TextAlign;
   size: ParagraphSize;
   color: TextColor;
   fontFamily: FontFamily;
@@ -72,7 +74,7 @@ export type GetParagraphStyles = (
 ) => ParagraphStyles;
 
 export const getParagraphStyles: GetParagraphStyles = (
-  { size, color, fontFamily },
+  { size, color, fontFamily, align },
   theme,
 ) => {
   const paragraphVariables = getParagraphVariables(theme);
@@ -82,6 +84,7 @@ export const getParagraphStyles: GetParagraphStyles = (
       ...paragraphVariables.size[size],
       color: getTextColor(paragraphVariables.color)(color),
       fontFamily: getFontFamily(paragraphVariables.fontFamily)(fontFamily),
+      textAlign: align,
     },
   };
 };
