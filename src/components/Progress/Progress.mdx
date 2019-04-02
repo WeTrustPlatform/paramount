@@ -3,28 +3,39 @@ name: Progress
 menu: Components
 ---
 
+import { Counter as CounterContainer } from 'react-powerplug';
 import { Playground, PropsTable } from 'docz';
 import Progress from './Progress';
 import { Box } from '../Layout';
 import { Button } from '../Button';
-import { Counter } from 'react-powerplug';
+import { Counter } from '../Counter';
 
-## Usage
+# Progress
 
-### Default
+### Usage
 
 <Playground>
-  <Counter initial={0}>
+  <CounterContainer initial={0}>
     {({ count, incBy, decBy }) => (
       <Box>
-        <Progress percent={count} />
-        <Box flexDirection="row">
-          <Button onPress={() => incBy(10)} title="Inc 10%" />
-          <Button onPress={() => decBy(10)} title="Dec 10%" />
-        </Box>
+        <Progress
+          percent={count}
+          size="large"
+          getStyles={(props, theme) => ({
+            containerStyle: {},
+            progressStyle: {},
+          })}
+        />
+        <Counter
+          count={count}
+          onDecrement={() => decBy(10)}
+          onIncrement={() => incBy(10)}
+          min={0}
+          max={100}
+        />
       </Box>
     )}
-  </Counter>
+  </CounterContainer>
 </Playground>
 
 ## Props

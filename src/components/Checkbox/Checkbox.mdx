@@ -3,36 +3,40 @@ name: Checkbox
 menu: Components
 ---
 
+import { Toggle } from 'react-powerplug';
 import { Playground, PropsTable } from 'docz';
 import Checkbox from './Checkbox';
 import LabeledCheckbox from './LabeledCheckbox';
 
-## Usage
+# Usage
 
-### Checkboxes
+### Usage
 
 <Playground>
-  <Checkbox />
-  <Checkbox isChecked />
-  <Checkbox isDisabled />
-  <Checkbox isChecked isDisabled />
-  <Checkbox shape="circle" />
-  <Checkbox shape="circle" isChecked />
-  <Checkbox shape="circle" isDisabled />
-  <Checkbox shape="circle" isChecked isDisabled />
+  <Toggle initial={false}>
+    {({ on, toggle }) => (
+      <Checkbox
+        shape="square" // or "circle"
+        isChecked={on}
+        isDisabled={false}
+        isInteractive={true}
+        checkedIcon={null}
+        onChange={toggle}
+        getStyles={(props, theme) => ({
+          checkboxStyle: {},
+          checkboxFocusBackgroundColor: '',
+        })}
+      />
+    )}
+  </Toggle>
 </Playground>
 
 ### Labeled Checkboxes
 
 <Playground>
-  <LabeledCheckbox label="Default" />
-  <LabeledCheckbox label="Checked" isChecked />
-  <LabeledCheckbox label="Disabled" isDisabled />
-  <LabeledCheckbox label="Checked and disabled" isChecked isDisabled />
+  <LabeledCheckbox shape="circle" label="Default" />
 </Playground>
 
 ## Props
-
-Extends `TouchableHighlightProps`. Read from `activeOpacity` and above for component specific props
 
 <PropsTable of={Checkbox} />

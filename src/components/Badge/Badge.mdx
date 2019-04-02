@@ -8,9 +8,28 @@ import Badge from './Badge';
 import { ThemeContext } from '../../theme';
 import { Box } from '../Layout';
 
-## Usage
+# Badge
 
 **Note** Accessibility/Interactivity is a responsibility of a wrapping component
+
+### Usage
+
+<Playground>
+  <Box>
+    <Badge
+      color="blue"
+      size="large"
+      shape="rounded"
+      isSolid={false}
+      getStyles={(props, theme) => ({
+        containerStyle: {},
+        textStyle: {},
+      })}
+    >
+      Badge
+    </Badge>
+  </Box>
+</Playground>
 
 ### Default
 

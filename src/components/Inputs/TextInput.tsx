@@ -32,7 +32,6 @@ const TextInputBase = (props: TextInputProps) => {
     isDisabled = false,
     isInvalid = false,
     size = 'medium',
-    value,
     getStyles,
     name,
     innerRef,
@@ -59,7 +58,6 @@ const TextInputBase = (props: TextInputProps) => {
       style={inputStyle}
       editable={!isDisabled}
       placeholderTextColor={placeholderTextColor}
-      value={value}
       name={name}
       {...textInputProps}
     />

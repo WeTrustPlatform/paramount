@@ -28,7 +28,6 @@ export interface TextStyleProps {
 export interface TextProps extends RNTextProps, TextStyleProps {
   children: React.ReactNode;
   theme: Theme;
-  href?: string;
 
   getStyles?: ReplaceReturnType<GetTextStyles, DeepPartial<TextStyles>>;
 }

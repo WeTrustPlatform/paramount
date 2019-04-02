@@ -12,7 +12,7 @@ import {
 } from './Heading.styles';
 import { TextAlign } from './types';
 
-export interface HeadingProps {
+export interface HeadingProps extends TextProps {
   size?: HeadingSize;
   theme: Theme;
   align?: TextAlign;
@@ -21,7 +21,7 @@ export interface HeadingProps {
   getStyles?: ReplaceReturnType<GetHeadingStyles, DeepPartial<HeadingStyles>>;
 }
 
-const HeadingBase = (props: HeadingProps & TextProps) => {
+const HeadingBase = (props: HeadingProps) => {
   const {
     accessibilityLevel,
     theme,

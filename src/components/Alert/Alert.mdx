@@ -7,9 +7,25 @@ import { Playground, PropsTable } from 'docz';
 import Alert from './Alert';
 import { Spacing } from '../Layout';
 
-## Usage
+# Alert
 
-### Alerts
+### Usage
+
+<Playground>
+  <Alert
+    title="Kitchen sink"
+    description="Message"
+    isCloseable
+    intent="success"
+    component={null} // Overrides body
+    getStyles={(props, theme) => ({
+      bodyStyle: {},
+      containerStyle: {},
+    })}
+  />
+</Playground>
+
+### Variants
 
 <Playground>
   <Spacing paddingVertical={2}>
@@ -24,12 +40,6 @@ import { Spacing } from '../Layout';
   <Spacing paddingVertical={2}>
     <Alert intent="danger" title="Danger" description="Message" />
   </Spacing>
-</Playground>
-
-### Closable Alerts
-
-<Playground>
-  <Alert isCloseable title="Closeable" description="Message" />
 </Playground>
 
 ## Props

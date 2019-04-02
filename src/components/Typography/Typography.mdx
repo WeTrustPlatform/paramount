@@ -19,7 +19,26 @@ import {
 } from '.';
 import { Box } from '../Layout';
 
+# Typography
+
+All Typogrography components compose of React Native's `Text` component (i.e. you can pass its props)
+
 ## Heading
+
+### Usage
+
+<Playground>
+  <Heading
+    accessibilityLevel={3} // 1-6
+    align="left"
+    size="xxlarge"
+    getStyles={(props, theme) => ({
+      headingStyle: {},
+    })}
+  >
+    A red flair silhouetted.
+  </Heading>
+</Playground>
 
 <Playground>
   <Box flexDirection="column">
@@ -34,6 +53,24 @@ import { Box } from '../Layout';
 
 ## Paragraph
 
+### Usage
+
+<Playground>
+  <Paragraph
+    color="primary"
+    align="left"
+    size="large" // small - large
+    fontFamily="text"
+    getStyles={(props, theme) => ({
+      paragraphStyle: {},
+    })}
+  >
+    A red flair silhouetted.
+  </Paragraph>
+</Playground>
+
+### Sizes
+
 <Playground>
   <Box flexDirection="column">
     <Paragraph size="small">A red flair silhouetted.</Paragraph>
@@ -43,6 +80,28 @@ import { Box } from '../Layout';
 </Playground>
 
 ## Text
+
+Also, all components below `Text` composes it, thus they will inherit this component's props
+
+### Usage
+
+<Playground>
+  <Text
+    color="primary"
+    align="left"
+    size="large" // small - large
+    fontFamily="text"
+    isBold
+    isItalic
+    isInline
+    transform="uppercase"
+    getStyles={(props, theme) => ({
+      textStyle: {},
+    })}
+  >
+    A red flair silhouetted.
+  </Text>
+</Playground>
 
 ### Sizes
 
@@ -121,22 +180,6 @@ import { Box } from '../Layout';
   </OrderedList>
 </Playground>
 
-## Link
-
-<Playground>
-  <Box flexDirection="column">
-    <Link>A red flair silhouetted.</Link>
-  </Box>
-</Playground>
-
-## Code
-
-<Playground>
-  <Box flexDirection="column">
-    <Code>A red flair silhouetted.</Code>
-  </Box>
-</Playground>
-
 ## Label
 
 <Playground>
@@ -144,3 +187,15 @@ import { Box } from '../Layout';
     <Label>A red flair silhouetted.</Label>
   </Box>
 </Playground>
+
+### Heading Props
+
+<PropsTable of={Heading} />
+
+### Paragraph Props
+
+<PropsTable of={Paragraph} />
+
+### Text Props
+
+<PropsTable of={Text} />

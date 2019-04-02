@@ -1,4 +1,4 @@
-import { ViewStyle } from 'react-native';
+import { TextStyle, ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/ThemeInterface';
 
@@ -39,6 +39,7 @@ export interface CounterStyles {
   countStyle: ViewStyle;
   counterStyle: ViewStyle;
   disabledStyle: ViewStyle;
+  textStyle: TextStyle;
 }
 
 export type GetCounterStyles = (theme: Theme) => CounterStyles;
@@ -52,5 +53,6 @@ export const getCounterStyles: GetCounterStyles = theme => {
     countStyle: count,
     counterStyle: counter,
     disabledStyle: disabled,
+    textStyle: {},
   };
 };

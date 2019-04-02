@@ -3,24 +3,14 @@ name: Counter
 menu: Components
 ---
 
+import { Counter as CounterContainer } from 'react-powerplug';
 import { Playground, PropsTable } from 'docz';
 import Counter from './Counter';
 import { Spacing } from '../Layout';
-import { Counter as CounterContainer } from 'react-powerplug';
 
-## Usage
+# Counter
 
-### Counter
-
-<Playground>
-  <CounterContainer initial={1}>
-    {({ count, inc, dec }) => (
-      <Counter count={count} onIncrement={inc} onDecrement={dec} />
-    )}
-  </CounterContainer>
-</Playground>
-
-### Counter with min and max count
+### Usage
 
 <Playground>
   <CounterContainer initial={0}>
@@ -31,6 +21,14 @@ import { Counter as CounterContainer } from 'react-powerplug';
         onIncrement={inc}
         min={0}
         max={10}
+        component={null}
+        getStyles={(props, theme) => ({
+          containerStyle: {},
+          counterStyle: {},
+          countStyle: {},
+          disabledStyle: {},
+          ntextStyle: {},
+        })}
       />
     )}
   </CounterContainer>

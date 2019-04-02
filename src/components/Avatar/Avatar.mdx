@@ -6,33 +6,30 @@ menu: Components
 import { Playground, PropsTable } from 'docz';
 import Avatar from './Avatar';
 
-## Usage
+# Avatar
 
-**Note** Accessibility/Interactivity is a responsibility of a wrapping component
+### Usage
 
-### Automatic default usage
+<Playground>
+  <Avatar
+    name="Bill Gates"
+    source={{ uri: 'https://picsum.photos/200/200' }}
+    size={40}
+    isSolid={false}
+    color="automatic"
+    getInitials={(name, fallback) => `${name.charAt(0)}${name.charAt(5)}`}
+    getStyles={(props, theme) => ({
+      boxStyle: {},
+      textStyle: {},
+      imageStyle: {},
+    })}
+  />
+</Playground>
+
+### Automatic name usage
 
 <Playground>
   <Avatar name="Bill Gates" />
-</Playground>
-
-### Automatic solid usage
-
-<Playground>
-  <Avatar isSolid name="Eri Reis" />
-</Playground>
-
-### Using image source
-
-<Playground>
-  <Avatar source={{ uri: 'https://picsum.photos/200/200' }} />
-</Playground>
-
-### Avatar sizes
-
-<Playground>
-  <Avatar name="Andy Grove" />
-  <Avatar name="Bill Gates" size={60} />
 </Playground>
 
 ## Props

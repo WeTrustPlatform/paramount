@@ -18,65 +18,54 @@ import ClearableTextInput from './ClearableTextInput';
 import TextArea from './TextArea';
 import PhoneNumberInput from './PhoneNumberInput';
 
+# Inputs
+
+Paramount provides a set of common input elements for modern applications
+
 ## TextInput
 
+Composes of React Native's `TextInput` component (i.e. you can pass its props). [See more details](https://facebook.github.io/react-native/docs/textinput)
+
+### Usage
+
 <Playground>
-  <Box marginBottom={24} width={360}>
-    <Label size="medium">Medium (default)</Label>
-    <TextInput placeholder="With placeholder" />
-  </Box>
-  <Box marginBottom={24} width={360}>
-    <Label size="medium">Disabled</Label>
-    <TextInput value="This is disabled" isDisabled />
-  </Box>
-  <Box marginBottom={24} width={360}>
-    <Label size="medium">Is Invalid</Label>
-    <TextInput isInvalid />
-  </Box>
-  <Box marginBottom={24}>
-    <Label size="small">Small</Label>
-    <TextInput size="small" />
-  </Box>
-  <Box marginBottom={24}>
-    <Label size="medium">Medium</Label>
-    <TextInput size="medium" />
-  </Box>
-  <Box marginBottom={24}>
-    <Label size="large">Large</Label>
-    <TextInput size="large" />
-  </Box>
+  <TextInput
+    name="field"
+    value={undefined}
+    placeholder="Add your own placeholder"
+    size="large"
+    isDisabled={false}
+    isInvalid={false}
+    keyboardType="email-address"
+    onChangeText={text => console.log('field', text)}
+    onSubmitEditing={e => console.log('Submit on enter')}
+    getStyles={(props, theme) => ({
+      inputStyle: {},
+      placeholderTextColor: theme.colors.text.muted,
+    })}
+  />
 </Playground>
 
 ## TextArea
 
+Composes of `TextInput`
+
 <Playground>
-  <Box marginBottom={24} width={360}>
-    <Label size="medium">Medium (default)</Label>
-    <TextArea placeholder="With placeholder" />
-  </Box>
-  <Box marginBottom={24} width={360}>
-    <Label size="medium">Disabled</Label>
-    <TextArea value="This is disabled" isDisabled />
-  </Box>
-  <Box marginBottom={24} width={360}>
-    <Label size="medium">Is Invalid</Label>
-    <TextArea isInvalid />
-  </Box>
-  <Box marginBottom={24}>
-    <Label size="small">Small</Label>
-    <TextArea size="small" />
-  </Box>
-  <Box marginBottom={24}>
-    <Label size="medium">Medium</Label>
-    <TextArea size="medium" />
-  </Box>
-  <Box marginBottom={24}>
-    <Label size="large">Large</Label>
-    <TextArea size="large" />
-  </Box>
+  <TextArea
+    name="field"
+    placeholder="Add your own placeholder"
+    size="large"
+    isDisabled={false}
+    isInvalid={false}
+    keyboardType="email-address"
+    onChangeText={text => console.log('field', text)}
+    onSubmitEditing={e => console.log('Submit on enter')}
+  />
 </Playground>
 
 ## IconTextInput
+
+Add custom icons on the left or right within the input box. Composes of `TextInput`
 
 <Playground>
   <Box marginBottom={24}>
@@ -103,6 +92,8 @@ import PhoneNumberInput from './PhoneNumberInput';
 
 ## ClearableTextInput
 
+Adds a Close icon when there is an input which can be cleared. On clearing, it will change text to `''` and `onClear` callback is called. Composes of `TextInput`
+
 <Playground>
   <Box marginBottom={24}>
     <State initial={{ value: '' }}>
@@ -121,6 +112,8 @@ import PhoneNumberInput from './PhoneNumberInput';
 </Playground>
 
 ## SearchTextInput
+
+Adds a Search icon. Composes `ClearableTextInput`
 
 <Playground>
   <Box marginBottom={24}>
@@ -141,6 +134,8 @@ import PhoneNumberInput from './PhoneNumberInput';
 
 ## CopyTextInput
 
+Adds a Copy icon when there is an input, and upon clicking it, it will save the content to clipboard. Composes `IconTextInput`
+
 <Playground>
   <Box marginBottom={24}>
     <State initial={{ value: '' }}>
@@ -159,6 +154,8 @@ import PhoneNumberInput from './PhoneNumberInput';
 </Playground>
 
 ## PhoneNumberInput
+
+Appends a button to select country code
 
 ### Usage
 

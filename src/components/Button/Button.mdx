@@ -7,7 +7,31 @@ import { Playground, PropsTable } from 'docz';
 import Button from './Button';
 import { Box } from '../Layout';
 
-## Usage
+# Button
+
+### Usage
+
+<Playground>
+  <Button
+    color="primary"
+    appearance="primary"
+    size="large"
+    isLoading={false}
+    isActive={false}
+    isDisabled={false}
+    isInline={false}
+    iconBefore={null}
+    iconAfter={null}
+    iconLoading={null}
+    title="Usage"
+    onPress={() => console.log('Pressed!')}
+    getStyles={(props, theme) => ({
+      buttonStyle: {},
+      textStyle: {},
+      focusColor: '',
+    })}
+  />
+</Playground>
 
 ### Primary appearance (default)
 
@@ -64,7 +88,5 @@ import { Box } from '../Layout';
 If `isInline` does not inline the button, try wrapping it with `Box`
 
 ## Props
-
-Extends `TouchableHighlightProps`. Read from `activeOpacity` and above for component specific props
 
 <PropsTable of={Button} />

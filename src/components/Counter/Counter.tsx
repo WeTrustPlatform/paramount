@@ -6,6 +6,7 @@ import { Icon } from '../../icons';
 import { Theme, withTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Spacing } from '../Layout';
+import { Text } from '../Typography';
 import {
   CounterStyles,
   GetCounterStyles,
@@ -43,6 +44,7 @@ const CounterBase = (props: CounterProps) => {
     containerStyle,
     counterStyle,
     countStyle,
+    textStyle,
     disabledStyle,
   } = mergeStyles(getCounterStyles, getStyles)(theme);
 
@@ -72,7 +74,11 @@ const CounterBase = (props: CounterProps) => {
           />
         </TouchableOpacity>
       </Spacing>
-      {component || <View style={countStyle}>{count}</View>}
+      {component || (
+        <View style={countStyle}>
+          <Text getStyles={() => ({ textStyle })}>{`${count}`}</Text>
+        </View>
+      )}
       <Spacing paddingLeft={2}>
         <TouchableOpacity
           activeOpacity={0.7}
