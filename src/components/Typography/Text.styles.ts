@@ -3,7 +3,10 @@ import { TextStyle } from 'react-native';
 import {
   FontFamilies,
   FontFamily,
+  FontWeight,
+  FontWeights,
   PresetTextColors,
+  RNFontWeight,
   TextColor,
   Theme,
 } from '../../theme/ThemeInterface';
@@ -27,24 +30,14 @@ export const getTextVariables = (theme: Theme): TextVariables => {
     size: {
       large: {
         fontSize: theme.textSizes.large,
-        fontWeight: '400',
-        letterSpacing: -0.07,
-        lineHeight: 24,
       },
 
-      // Default
       medium: {
         fontSize: theme.textSizes.medium,
-        fontWeight: '400',
-        letterSpacing: -0.05,
-        lineHeight: 20,
       },
 
       small: {
         fontSize: theme.textSizes.small,
-        fontWeight: '400',
-        letterSpacing: -0.05,
-        lineHeight: 20,
       },
     },
 
@@ -61,6 +54,7 @@ export interface TextStylesProps {
   transform?: TextTransform;
   fontFamily: FontFamily;
   isInline: boolean;
+  weight: FontWeight;
 }
 
 export interface TextStyles {
@@ -76,6 +70,16 @@ export const getFontFamily = (fontFamilies: FontFamilies) => (
   fontFamily: FontFamily,
 ) => fontFamilies[fontFamily];
 
+export const getFontWeight = (fontWeights: FontWeights) => (
+  fontWeight: FontWeight,
+): RNFontWeight => {
+  // @ts-ignore
+  const presetFontWeight = fontWeights[fontWeight] as RNFontWeight | undefined;
+
+  // @ts-ignore
+  return presetFontWeight || fontWeight;
+};
+
 export const getTextColor = (textColors: PresetTextColors) => (
   textColor: TextColor,
 ) => {
@@ -85,7 +89,17 @@ export const getTextColor = (textColors: PresetTextColors) => (
 };
 
 export const getTextStyles: GetTextStyles = (
-  { size, color, fontFamily, isInline, isBold, isItalic, align, transform },
+  {
+    size,
+    color,
+    fontFamily,
+    isInline,
+    isBold,
+    isItalic,
+    align,
+    transform,
+    weight,
+  },
   theme,
 ) => {
   const textVariables = getTextVariables(theme);
@@ -94,6 +108,7 @@ export const getTextStyles: GetTextStyles = (
     textStyle: {
       color: getTextColor(theme.colors.text)(color),
       fontFamily: getFontFamily(textVariables.fontFamily)(fontFamily),
+      fontWeight: getFontWeight(theme.fontWeights)(weight),
       textAlign: align,
       ...(isInline
         ? {

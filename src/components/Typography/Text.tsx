@@ -4,6 +4,7 @@ import { DeepPartial } from 'ts-essentials';
 
 import {
   FontFamily,
+  FontWeight,
   TextColor,
   TextSize,
   Theme,
@@ -20,6 +21,7 @@ export interface TextStyleProps {
   align?: TextAlign;
   transform?: TextTransform;
   fontFamily?: FontFamily;
+  weight?: FontWeight;
   isBold?: boolean;
   isItalic?: boolean;
 }
@@ -39,6 +41,7 @@ const TextBase = (props: TextProps) => {
     fontFamily = 'text',
     size = 'medium',
     align = 'left',
+    weight = 'normal',
     isInline = false,
     theme,
     getStyles,
@@ -49,7 +52,17 @@ const TextBase = (props: TextProps) => {
   } = props;
 
   const { textStyle } = mergeStyles(getTextStyles, getStyles)(
-    { size, color, fontFamily, isInline, isBold, isItalic, align, transform },
+    {
+      align,
+      color,
+      fontFamily,
+      isBold,
+      isInline,
+      isItalic,
+      size,
+      transform,
+      weight,
+    },
     theme,
   );
 

@@ -4,6 +4,7 @@ import { DeepPartial } from 'ts-essentials';
 
 import {
   FontFamily,
+  FontWeight,
   ParagraphSize,
   TextColor,
   Theme,
@@ -22,6 +23,7 @@ export interface ParagraphProps extends TextProps {
   children: React.ReactNode;
   color?: TextColor;
   size?: ParagraphSize;
+  weight?: FontWeight;
   theme: Theme;
   align?: TextAlign;
   fontFamily?: FontFamily;
@@ -39,13 +41,14 @@ const ParagraphBase = (props: ParagraphProps) => {
     fontFamily = 'text',
     size = 'medium',
     align = 'left',
+    weight = 'normal',
     theme,
     getStyles,
     ...textProps
   } = props;
 
   const { paragraphStyle } = mergeStyles(getParagraphStyles, getStyles)(
-    { align, size, color, fontFamily },
+    { align, size, color, fontFamily, weight },
     theme,
   );
 

@@ -64,6 +64,7 @@ All Typogrography components compose of React Native's `Text` component (i.e. yo
     align="left"
     size="large" // small - large
     fontFamily="text"
+    weight="normal"
     getStyles={(props, theme) => ({
       paragraphStyle: {},
     })}
@@ -92,6 +93,7 @@ All Typogrography components compose of React Native's `Text` component (i.e. yo
     align="left"
     size="large" // small - large
     fontFamily="text"
+    weight="normal"
     isBold
     isItalic
     isInline
@@ -138,6 +140,18 @@ All Typogrography components compose of React Native's `Text` component (i.e. yo
     <Text fontFamily="heading">heading</Text>
     <Text fontFamily="text">text</Text>
     <Text fontFamily="mono">mono</Text>
+  </Box>
+</Playground>
+
+### Font Weights
+
+<Playground>
+  <Box flexDirection="column">
+    <Text weight="500">500</Text>
+    <Text weight="700">700</Text>
+    <Text weight="bold">bold</Text>
+    <Text weight="normal">normal</Text>
+    <Text weight="light">light</Text>
   </Box>
 </Playground>
 

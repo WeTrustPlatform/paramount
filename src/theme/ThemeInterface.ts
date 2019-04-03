@@ -50,7 +50,8 @@ export interface FontWeights {
   normal?: RNFontWeight;
   bold?: RNFontWeight;
 }
-export type FontWeight = keyof FontWeights;
+
+export type FontWeight = keyof FontWeights | RNFontWeight;
 
 export interface IntentColors {
   danger: string;
