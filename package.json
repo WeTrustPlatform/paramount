@@ -79,7 +79,7 @@
     "jest-canvas-mock": "1.1.0",
     "lint-staged": "8.1.5",
     "merge": "1.2.1",
-    "metro-react-native-babel-preset": "0.52.0",
+    "metro-react-native-babel-preset": "0.53.1",
     "prettier": "1.16.4",
     "react-docgen-typescript-loader": "3.0.1",
     "react-powerplug": "1.0.0",
