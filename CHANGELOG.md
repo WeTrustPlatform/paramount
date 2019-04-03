@@ -1,3 +1,11 @@
+## [1.29.4](https://github.com/WeTrustPlatform/paramount/compare/v1.29.3...v1.29.4) (2019-04-03)
+
+
+### Bug Fixes
+
+* **docs:** add more docs ([dfc7df5](https://github.com/WeTrustPlatform/paramount/commit/dfc7df5))
+* **test:** snaps ([2aa10c6](https://github.com/WeTrustPlatform/paramount/commit/2aa10c6))
+
 ## [1.29.3](https://github.com/WeTrustPlatform/paramount/compare/v1.29.2...v1.29.3) (2019-04-01)
 
 
