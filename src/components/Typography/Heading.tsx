@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Platform, Text, TextProps } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { HeadingSize, Theme } from '../../theme/ThemeInterface';
+import { HeadingSize, TextColor, Theme } from '../../theme/ThemeInterface';
 import withTheme from '../../theme/withTheme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
@@ -16,6 +16,7 @@ export interface HeadingProps extends TextProps {
   size?: HeadingSize;
   theme: Theme;
   align?: TextAlign;
+  color?: TextColor;
   accessibilityLevel?: 1 | 2 | 3 | 4 | 5 | 6;
 
   getStyles?: ReplaceReturnType<GetHeadingStyles, DeepPartial<HeadingStyles>>;
@@ -27,12 +28,13 @@ const HeadingBase = (props: HeadingProps) => {
     theme,
     size = 'medium',
     align = 'left',
+    color = 'default',
     getStyles,
     ...textProps
   } = props;
 
   const { headingStyle } = mergeStyles(getHeadingStyles, getStyles)(
-    { size, align },
+    { size, align, color },
     theme,
   );
 

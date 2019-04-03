@@ -3,8 +3,8 @@ import { TextStyle } from 'react-native';
 import {
   FontFamilies,
   FontFamily,
+  PresetTextColors,
   TextColor,
-  TextColors,
   Theme,
 } from '../../theme/ThemeInterface';
 import { getFontFamily, getTextColor, getTextVariables } from './Text.styles';
@@ -18,7 +18,7 @@ export interface ParagraphSizes {
 export type ParagraphSize = keyof ParagraphSizes;
 
 export interface ParagraphVariables {
-  color: TextColors;
+  color: PresetTextColors;
   size: ParagraphSizes;
   fontFamily: FontFamilies;
 }
@@ -82,7 +82,7 @@ export const getParagraphStyles: GetParagraphStyles = (
   return {
     paragraphStyle: {
       ...paragraphVariables.size[size],
-      color: getTextColor(paragraphVariables.color)(color),
+      color: getTextColor(theme.colors.text)(color),
       fontFamily: getFontFamily(paragraphVariables.fontFamily)(fontFamily),
       textAlign: align,
     },

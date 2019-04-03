@@ -1,6 +1,7 @@
 import { TextStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
+import { TextColor, Theme } from '../../theme/ThemeInterface';
+import { getTextColor } from './Text.styles';
 import { TextAlign } from './types';
 
 export interface HeadingSizes {
@@ -85,6 +86,7 @@ export interface HeadingStyles {
 export interface HeadingStylesProps {
   size: HeadingSize;
   align: TextAlign;
+  color: TextColor;
 }
 
 export type GetHeadingStyles = (
@@ -92,12 +94,16 @@ export type GetHeadingStyles = (
   theme: Theme,
 ) => HeadingStyles;
 
-export const getHeadingStyles: GetHeadingStyles = ({ size, align }, theme) => {
+export const getHeadingStyles: GetHeadingStyles = (
+  { size, align, color },
+  theme,
+) => {
   const headingVariables = getHeadingVariables(theme);
 
   return {
     headingStyle: {
       ...headingVariables.size[size],
+      color: getTextColor(theme.colors.text)(color),
       textAlign: align,
     },
   };

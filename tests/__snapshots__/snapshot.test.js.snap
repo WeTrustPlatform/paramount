@@ -91575,7 +91575,7 @@ exports[`Typography_1 1`] = `
         "borderRightWidth": "0px",
         "borderTopWidth": "0px",
         "boxSizing": "border-box",
-        "color": "rgba(126,126,126,1.00)",
+        "color": "rgba(27,135,122,1.00)",
         "display": "inline",
         "fontFamily": "\\"SF UI Display\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
         "fontSize": "29px",
@@ -91599,7 +91599,7 @@ exports[`Typography_1 1`] = `
       }
     }
   >
-    A red flair silhouetted.
+    Lorem ipsum dolar set amet
   </h3>
 </div>
 `;
@@ -91683,7 +91683,7 @@ exports[`Typography_2 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      xxxlarge
     </h1>
     <h1
       dir="auto"
@@ -91719,7 +91719,7 @@ exports[`Typography_2 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      xxlarge
     </h1>
     <h1
       dir="auto"
@@ -91755,7 +91755,7 @@ exports[`Typography_2 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      xlarge
     </h1>
     <h1
       dir="auto"
@@ -91791,7 +91791,7 @@ exports[`Typography_2 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      large
     </h1>
     <h1
       dir="auto"
@@ -91827,7 +91827,7 @@ exports[`Typography_2 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      medium
     </h1>
     <h1
       dir="auto"
@@ -91863,7 +91863,7 @@ exports[`Typography_2 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      small
     </h1>
   </div>
 </div>
@@ -91911,7 +91911,7 @@ exports[`Typography_4 1`] = `
       }
     }
   >
-    A red flair silhouetted.
+    Lorem ipsum dolar set amet
   </div>
 </div>
 `;
@@ -92001,7 +92001,7 @@ exports[`Typography_6 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      Lorem ipsum dolar set amet
     </div>
     <div
       aria-label="p"
@@ -92037,7 +92037,7 @@ exports[`Typography_6 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      Lorem ipsum dolar set amet
     </div>
     <div
       aria-label="p"
@@ -92073,7 +92073,7 @@ exports[`Typography_6 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      Lorem ipsum dolar set amet
     </div>
   </div>
 </div>
@@ -92129,7 +92129,7 @@ exports[`Typography_8 1`] = `
       }
     }
   >
-    A red flair silhouetted.
+    Lorem ipsum dolar set amet
   </div>
 </div>
 `;
@@ -92218,7 +92218,7 @@ exports[`Typography_10 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      small
     </div>
     <div
       dir="auto"
@@ -92253,7 +92253,7 @@ exports[`Typography_10 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      medium
     </div>
     <div
       dir="auto"
@@ -92288,7 +92288,7 @@ exports[`Typography_10 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      large
     </div>
   </div>
 </div>
@@ -92354,7 +92354,7 @@ exports[`Typography_12 1`] = `
           "borderRightWidth": "0px",
           "borderTopWidth": "0px",
           "boxSizing": "border-box",
-          "color": "rgba(126,126,126,1.00)",
+          "color": "rgba(22,160,84,1.00)",
           "display": "inline",
           "fontFamily": "\\"SF UI Text\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
           "fontSize": "16px",
@@ -92378,7 +92378,7 @@ exports[`Typography_12 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      #16a054
     </div>
     <div
       dir="auto"
@@ -92413,7 +92413,42 @@ exports[`Typography_12 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      dark
+    </div>
+    <div
+      dir="auto"
+      style={
+        Object {
+          "borderBottomWidth": "0px",
+          "borderLeftWidth": "0px",
+          "borderRightWidth": "0px",
+          "borderTopWidth": "0px",
+          "boxSizing": "border-box",
+          "color": "rgba(126,126,126,1.00)",
+          "display": "inline",
+          "fontFamily": "\\"SF UI Text\\", -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Helvetica, Arial, sans-serif, \\"Apple Color Emoji\\", \\"Segoe UI Emoji\\", \\"Segoe UI Symbol\\"",
+          "fontSize": "16px",
+          "fontStyle": "inherit",
+          "fontVariant": "inherit",
+          "fontWeight": "400",
+          "letterSpacing": "-0.05px",
+          "lineHeight": "20px",
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+          "paddingBottom": "0px",
+          "paddingLeft": "0px",
+          "paddingRight": "0px",
+          "paddingTop": "0px",
+          "textAlign": "left",
+          "textDecoration": "none",
+          "whiteSpace": "pre-wrap",
+          "wordWrap": "break-word",
+        }
+      }
+    >
+      default
     </div>
     <div
       dir="auto"
@@ -92448,7 +92483,7 @@ exports[`Typography_12 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      muted
     </div>
     <div
       dir="auto"
@@ -92483,7 +92518,7 @@ exports[`Typography_12 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      selected
     </div>
     <div
       dir="auto"
@@ -92518,7 +92553,7 @@ exports[`Typography_12 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      danger
     </div>
     <div
       dir="auto"
@@ -92553,7 +92588,7 @@ exports[`Typography_12 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      info
     </div>
     <div
       dir="auto"
@@ -92587,7 +92622,7 @@ exports[`Typography_12 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      none
     </div>
     <div
       dir="auto"
@@ -92622,7 +92657,7 @@ exports[`Typography_12 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      success
     </div>
     <div
       dir="auto"
@@ -92657,7 +92692,7 @@ exports[`Typography_12 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      warning
     </div>
   </div>
 </div>
@@ -92747,7 +92782,7 @@ exports[`Typography_14 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      heading
     </div>
     <div
       dir="auto"
@@ -92782,7 +92817,7 @@ exports[`Typography_14 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      text
     </div>
     <div
       dir="auto"
@@ -92817,7 +92852,7 @@ exports[`Typography_14 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      mono
     </div>
   </div>
 </div>
@@ -92907,7 +92942,7 @@ exports[`Typography_16 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      Lorem ipsum dolar set amet
     </div>
     <div
       dir="auto"
@@ -92942,7 +92977,7 @@ exports[`Typography_16 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      Lorem ipsum dolar set amet
     </div>
     <div
       dir="auto"
@@ -92977,7 +93012,7 @@ exports[`Typography_16 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      Lorem ipsum dolar set amet
     </div>
     <div
       dir="auto"
@@ -93012,7 +93047,7 @@ exports[`Typography_16 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      Lorem ipsum dolar set amet
     </div>
     <div
       dir="auto"
@@ -93047,7 +93082,7 @@ exports[`Typography_16 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      Lorem ipsum dolar set amet
     </div>
     <div
       dir="auto"
@@ -93082,7 +93117,7 @@ exports[`Typography_16 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      Lorem ipsum dolar set amet
     </div>
     <div
       dir="auto"
@@ -93118,7 +93153,7 @@ exports[`Typography_16 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      Lorem ipsum dolar set amet
     </div>
     <div
       dir="auto"
@@ -93154,7 +93189,7 @@ exports[`Typography_16 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      Lorem ipsum dolar set amet
     </div>
     <div
       dir="auto"
@@ -93190,7 +93225,7 @@ exports[`Typography_16 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      Lorem ipsum dolar set amet
     </div>
   </div>
 </div>
@@ -95708,7 +95743,7 @@ exports[`Typography_19 1`] = `
         }
       }
     >
-      A red flair silhouetted.
+      Lorem ipsum dolar set amet
     </label>
   </div>
 </div>

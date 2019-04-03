@@ -72,26 +72,11 @@ export interface BackgroundColorVariations {
   focusLight: string;
 }
 
-export interface TextColors {
-  dark: string;
-  default: string;
-  muted: string;
-  plain: string;
-  selected: string;
-
-  primary: string;
-  secondary: string;
-
-  danger: string;
-  info: string;
-  success: string;
-  warning: string;
+export interface PresetTextColors {
+  [color: string]: string;
 }
 
-export type TextColor =
-  | keyof TextColors
-  | keyof IntentColors
-  | keyof BrandColors;
+export type TextColor = string;
 
 export interface IconColor {
   default: string;
@@ -132,7 +117,7 @@ export interface BackgroundColor {
 export interface Colors {
   background: BackgroundColor;
   border: BorderColor;
-  text: TextColors;
+  text: PresetTextColors;
 }
 
 export type Elevations = ViewStyle[];
@@ -166,6 +151,7 @@ export interface Fills {
   subtle: FillColors;
   solid: FillColors;
 }
+
 export interface Theme {
   colors: Colors;
   fills: Fills;

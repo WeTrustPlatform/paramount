@@ -3,8 +3,8 @@ import { TextStyle } from 'react-native';
 import {
   FontFamilies,
   FontFamily,
+  PresetTextColors,
   TextColor,
-  TextColors,
   Theme,
 } from '../../theme/ThemeInterface';
 import { TextAlign, TextTransform } from './types';
@@ -18,7 +18,6 @@ export interface TextSizes {
 export type TextSize = keyof TextSizes;
 
 export interface TextVariables {
-  color: TextColors;
   size: TextSizes;
   fontFamily: FontFamilies;
 }
@@ -49,7 +48,6 @@ export const getTextVariables = (theme: Theme): TextVariables => {
       },
     },
 
-    color: theme.colors.text,
     fontFamily: theme.fontFamilies,
   };
 };
@@ -77,9 +75,14 @@ export type GetTextStyles = (
 export const getFontFamily = (fontFamilies: FontFamilies) => (
   fontFamily: FontFamily,
 ) => fontFamilies[fontFamily];
-export const getTextColor = (textColors: TextColors) => (
+
+export const getTextColor = (textColors: PresetTextColors) => (
   textColor: TextColor,
-) => textColors[textColor];
+) => {
+  const presetColor = textColors[textColor];
+
+  return presetColor || textColor;
+};
 
 export const getTextStyles: GetTextStyles = (
   { size, color, fontFamily, isInline, isBold, isItalic, align, transform },
@@ -89,7 +92,7 @@ export const getTextStyles: GetTextStyles = (
 
   return {
     textStyle: {
-      color: getTextColor(textVariables.color)(color),
+      color: getTextColor(theme.colors.text)(color),
       fontFamily: getFontFamily(textVariables.fontFamily)(fontFamily),
       textAlign: align,
       ...(isInline

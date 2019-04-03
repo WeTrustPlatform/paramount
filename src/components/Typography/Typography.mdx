@@ -23,6 +23,8 @@ import { Box } from '../Layout';
 
 All Typogrography components compose of React Native's `Text` component (i.e. you can pass its props)
 
+`color` prop takes preset color names from the theme (which includes `primary`, `secondary`, `success` etc.), it also can take a custom color such as `#16a054`
+
 ## Heading
 
 ### Usage
@@ -32,22 +34,23 @@ All Typogrography components compose of React Native's `Text` component (i.e. yo
     accessibilityLevel={3} // 1-6
     align="left"
     size="xxlarge"
+    color="primary"
     getStyles={(props, theme) => ({
       headingStyle: {},
     })}
   >
-    A red flair silhouetted.
+    Lorem ipsum dolar set amet
   </Heading>
 </Playground>
 
 <Playground>
   <Box flexDirection="column">
-    <Heading size="xxxlarge">A red flair silhouetted.</Heading>
-    <Heading size="xxlarge">A red flair silhouetted.</Heading>
-    <Heading size="xlarge">A red flair silhouetted.</Heading>
-    <Heading size="large">A red flair silhouetted.</Heading>
-    <Heading size="medium">A red flair silhouetted.</Heading>
-    <Heading size="small">A red flair silhouetted.</Heading>
+    <Heading size="xxxlarge">xxxlarge</Heading>
+    <Heading size="xxlarge">xxlarge</Heading>
+    <Heading size="xlarge">xlarge</Heading>
+    <Heading size="large">large</Heading>
+    <Heading size="medium">medium</Heading>
+    <Heading size="small">small</Heading>
   </Box>
 </Playground>
 
@@ -65,7 +68,7 @@ All Typogrography components compose of React Native's `Text` component (i.e. yo
       paragraphStyle: {},
     })}
   >
-    A red flair silhouetted.
+    Lorem ipsum dolar set amet
   </Paragraph>
 </Playground>
 
@@ -73,15 +76,13 @@ All Typogrography components compose of React Native's `Text` component (i.e. yo
 
 <Playground>
   <Box flexDirection="column">
-    <Paragraph size="small">A red flair silhouetted.</Paragraph>
-    <Paragraph size="medium">A red flair silhouetted.</Paragraph>
-    <Paragraph size="large">A red flair silhouetted.</Paragraph>
+    <Paragraph size="small">Lorem ipsum dolar set amet</Paragraph>
+    <Paragraph size="medium">Lorem ipsum dolar set amet</Paragraph>
+    <Paragraph size="large">Lorem ipsum dolar set amet</Paragraph>
   </Box>
 </Playground>
 
 ## Text
-
-Also, all components below `Text` composes it, thus they will inherit this component's props
 
 ### Usage
 
@@ -99,7 +100,7 @@ Also, all components below `Text` composes it, thus they will inherit this compo
       textStyle: {},
     })}
   >
-    A red flair silhouetted.
+    Lorem ipsum dolar set amet
   </Text>
 </Playground>
 
@@ -107,9 +108,9 @@ Also, all components below `Text` composes it, thus they will inherit this compo
 
 <Playground>
   <Box flexDirection="column">
-    <Text size="small">A red flair silhouetted.</Text>
-    <Text size="medium">A red flair silhouetted.</Text>
-    <Text size="large">A red flair silhouetted.</Text>
+    <Text size="small">small</Text>
+    <Text size="medium">medium</Text>
+    <Text size="large">large</Text>
   </Box>
 </Playground>
 
@@ -117,15 +118,16 @@ Also, all components below `Text` composes it, thus they will inherit this compo
 
 <Playground>
   <Box flexDirection="column">
-    <Text color="dark">A red flair silhouetted.</Text>
-    <Text color="default">A red flair silhouetted.</Text>
-    <Text color="muted">A red flair silhouetted.</Text>
-    <Text color="selected">A red flair silhouetted.</Text>
-    <Text color="danger">A red flair silhouetted.</Text>
-    <Text color="info">A red flair silhouetted.</Text>
-    <Text color="none">A red flair silhouetted.</Text>
-    <Text color="success">A red flair silhouetted.</Text>
-    <Text color="warning">A red flair silhouetted.</Text>
+    <Text color="#16a054">#16a054</Text>
+    <Text color="dark">dark</Text>
+    <Text color="default">default</Text>
+    <Text color="muted">muted</Text>
+    <Text color="selected">selected</Text>
+    <Text color="danger">danger</Text>
+    <Text color="info">info</Text>
+    <Text color="none">none</Text>
+    <Text color="success">success</Text>
+    <Text color="warning">warning</Text>
   </Box>
 </Playground>
 
@@ -133,9 +135,9 @@ Also, all components below `Text` composes it, thus they will inherit this compo
 
 <Playground>
   <Box flexDirection="column">
-    <Text fontFamily="heading">A red flair silhouetted.</Text>
-    <Text fontFamily="text">A red flair silhouetted.</Text>
-    <Text fontFamily="mono">A red flair silhouetted.</Text>
+    <Text fontFamily="heading">heading</Text>
+    <Text fontFamily="text">text</Text>
+    <Text fontFamily="mono">mono</Text>
   </Box>
 </Playground>
 
@@ -143,17 +145,17 @@ Also, all components below `Text` composes it, thus they will inherit this compo
 
 <Playground>
   <Box flexDirection="column">
-    <Text isBold>A red flair silhouetted.</Text>
-    <Text isItalic>A red flair silhouetted.</Text>
+    <Text isBold>Lorem ipsum dolar set amet</Text>
+    <Text isItalic>Lorem ipsum dolar set amet</Text>
     <Text isItalic isBold>
-      A red flair silhouetted.
+      Lorem ipsum dolar set amet
     </Text>
-    <Text align="left">A red flair silhouetted.</Text>
-    <Text align="center">A red flair silhouetted.</Text>
-    <Text align="right">A red flair silhouetted.</Text>
-    <Text transform="uppercase">A red flair silhouetted.</Text>
-    <Text transform="lowercase">A red flair silhouetted.</Text>
-    <Text transform="capitalize">A red flair silhouetted.</Text>
+    <Text align="left">Lorem ipsum dolar set amet</Text>
+    <Text align="center">Lorem ipsum dolar set amet</Text>
+    <Text align="right">Lorem ipsum dolar set amet</Text>
+    <Text transform="uppercase">Lorem ipsum dolar set amet</Text>
+    <Text transform="lowercase">Lorem ipsum dolar set amet</Text>
+    <Text transform="capitalize">Lorem ipsum dolar set amet</Text>
   </Box>
 </Playground>
 
@@ -184,7 +186,7 @@ Also, all components below `Text` composes it, thus they will inherit this compo
 
 <Playground>
   <Box flexDirection="column">
-    <Label>A red flair silhouetted.</Label>
+    <Label>Lorem ipsum dolar set amet</Label>
   </Box>
 </Playground>
 
