@@ -12,7 +12,258 @@ You can customize the theme using the `Theme` object [See Themeinterface](https:
 ```
 import { ThemeProvider, createTheme } from 'paramount-ui'
 
-const theme = createTheme({})
+const theme = createTheme({
+  colors: {
+    background: {
+        overlay: 'rgba(0,0,0,0.3)',
+        plain: 'white',
+        disabled: palette.neutral.light,
+        tint1: palette.neutral.lightest,
+        tint2: '#F5F6F7',
+
+        // Brand colors
+        primary: {
+          default: palette.teal.base,
+          focus: palette.teal.dark,
+          focusLight: palette.teal.lightest,
+        },
+        secondary: {
+          default: palette.orange.base,
+          focus: palette.orange.dark,
+          focusLight: palette.orange.lightest,
+        },
+
+        // Intent.
+        danger: {
+          default: palette.red.base,
+          focus: palette.red.dark,
+          focusLight: palette.red.lightest,
+        },
+        info: {
+          default: palette.blue.base,
+          focus: palette.blue.dark,
+          focusLight: palette.blue.lightest,
+        },
+        success: {
+          default: palette.green.base,
+          focus: palette.green.dark,
+          focusLight: palette.green.lightest,
+        },
+        warning: {
+          default: palette.orange.base,
+          focus: palette.orange.dark,
+          focusLight: palette.orange.lightest,
+        },
+      },
+
+      border: {
+        default: palette.neutral.light,
+        muted: '#EDF0F2',
+
+        // Brand colors
+        primary: palette.teal.darkest,
+        secondary: palette.orange.darkest,
+
+        // Intent.
+        danger: palette.red.darkest,
+        info: palette.blue.darkest,
+        success: palette.green.darkest,
+        warning: palette.orange.darkest,
+      },
+
+      text: {
+        dark: palette.neutral.darkest,
+        default: palette.neutral.darkest,
+        muted: palette.neutral.dark,
+        plain: 'white',
+        selected: 'white',
+
+        // Brand colors
+        primary: palette.teal.darkest,
+        secondary: palette.orange.darkest,
+
+        // Intent.
+        danger: palette.red.darkest,
+        info: palette.blue.darkest,
+        success: palette.green.darkest,
+        warning: palette.orange.darkest,
+      },
+    }
+  },
+
+  textSizes: {
+    large: 20,
+    medium: 16,
+    small: 14,
+  },
+
+  fills: {
+    solid: {
+        neutral: {
+          backgroundColor: palette.neutral.base,
+          color: 'white',
+        },
+
+        blue: {
+          backgroundColor: palette.blue.base,
+          color: 'white',
+        },
+
+        red: {
+          backgroundColor: palette.red.base,
+          color: 'white',
+        },
+
+        orange: {
+          backgroundColor: palette.orange.base,
+          color: 'white',
+        },
+
+        yellow: {
+          backgroundColor: palette.yellow.base,
+          color: palette.yellow.darkest,
+        },
+
+        green: {
+          backgroundColor: palette.green.base,
+          color: 'white',
+        },
+
+        teal: {
+          backgroundColor: palette.teal.base,
+          color: 'white',
+        },
+
+        purple: {
+          backgroundColor: palette.purple.base,
+          color: 'white',
+        },
+      },
+
+      subtle: {
+        neutral: {
+          backgroundColor: palette.neutral.light,
+          color: palette.neutral.darkest,
+        },
+
+        blue: {
+          backgroundColor: palette.blue.light,
+          color: palette.blue.darkest,
+        },
+
+        red: {
+          backgroundColor: palette.red.light,
+          color: palette.red.darkest,
+        },
+
+        orange: {
+          backgroundColor: palette.orange.light,
+          color: palette.orange.darkest,
+        },
+
+        yellow: {
+          backgroundColor: palette.yellow.light,
+          color: palette.yellow.darkest,
+        },
+
+        green: {
+          backgroundColor: palette.green.light,
+          color: palette.green.darkest,
+        },
+
+        teal: {
+          backgroundColor: palette.teal.light,
+          color: palette.teal.darkest,
+        },
+
+        purple: {
+          backgroundColor: palette.purple.light,
+          color: palette.purple.darkest,
+        },
+      },
+    },
+  },
+
+  fontFamilies: {
+    heading: `"SF UI Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+    mono: `"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace`,
+    text: `"SF UI Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+  },
+
+  fontWeights: {
+    bold: '700',
+    light: '300',
+    normal: '600',
+  },
+
+  headingSizes: {
+    xxxlarge: 35,
+
+    xxlarge: 29,
+
+    xlarge: 24,
+
+    large: 20,
+
+    medium: 16,
+
+    small: 14,
+  },
+
+  paragraphSizes: {
+    large: 20,
+    medium: 16,
+    small: 14,
+  },
+
+
+  elevations: [
+    {
+      elevation: 0,
+      shadowColor: palette.neutral.dark,
+      shadowOffset: { width: 0, height: 0 },
+      shadowOpacity: 0,
+      shadowRadius: 0,
+    },
+    {
+      elevation: 1,
+      shadowColor: palette.neutral.dark,
+      shadowOffset: { width: 1, height: 1 },
+      shadowOpacity: 0.15,
+      shadowRadius: 8,
+    },
+    {
+      elevation: 2,
+      shadowColor: palette.neutral.dark,
+      shadowOffset: { width: 2, height: 2 },
+      shadowOpacity: 0.2,
+      shadowRadius: 10,
+    },
+    // ...add more elevations
+  ],
+
+  controlBorderRadius: {
+    small: 4,
+
+    medium: 4,
+
+    large: 4,
+  },
+  controlHeights: {
+    small: 40,
+
+    medium: 48,
+
+    large: 56,
+  },
+  controlPaddings: {
+    small: 8,
+
+    medium: 16,
+
+    large: 24,
+  }
+})
 
 // in the outmost component insert the provider and pass Theme Object as value
 <ThemeProvider value={theme}>
@@ -23,7 +274,7 @@ const theme = createTheme({})
 
 ## Override Component Styles
 
-Each component exposts `getStyles` callback, which can be used to override component styles.
+Each component exposes `getStyles` callback, which can be used to override component styles.
 
 ```
 import { Button } from 'paramount-ui'
