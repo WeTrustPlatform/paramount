@@ -1,3 +1,14 @@
+## [1.30.2](https://github.com/WeTrustPlatform/paramount/compare/v1.30.1...v1.30.2) (2019-04-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @expo/vector-icons to v10 ([#154](https://github.com/WeTrustPlatform/paramount/issues/154)) ([ede6be4](https://github.com/WeTrustPlatform/paramount/commit/ede6be4))
+* **deps:** update dependency deepmerge to v3.2.0 ([#139](https://github.com/WeTrustPlatform/paramount/issues/139)) ([2f8ad2b](https://github.com/WeTrustPlatform/paramount/commit/2f8ad2b))
+* **deps:** update dependency focus-trap to v5 ([#158](https://github.com/WeTrustPlatform/paramount/issues/158)) ([219b7f3](https://github.com/WeTrustPlatform/paramount/commit/219b7f3))
+* **deps:** update dependency ts-essentials to v2.0.3 ([#140](https://github.com/WeTrustPlatform/paramount/issues/140)) ([523865b](https://github.com/WeTrustPlatform/paramount/commit/523865b))
+* **deps:** upgrade deps ([f2f5d69](https://github.com/WeTrustPlatform/paramount/commit/f2f5d69))
+
 ## [1.30.1](https://github.com/WeTrustPlatform/paramount/compare/v1.30.0...v1.30.1) (2019-04-03)
 
 
