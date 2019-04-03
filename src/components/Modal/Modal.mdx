@@ -11,7 +11,11 @@ import { Button } from '../Button';
 import { Box } from '../Layout';
 import { Text } from '../Typography';
 
-## Modal
+# Modal
+
+Modal covers the full screen. For a prompt/small version of modal, use `Dialog`
+
+### Usage
 
 <Playground>
   <Toggle initial={false}>
@@ -30,7 +34,7 @@ import { Text } from '../Typography';
   </Toggle>
 </Playground>
 
-## Nested Modals
+### Nested
 
 <Playground>
   <Toggle initial={false}>
@@ -81,7 +85,7 @@ import { Text } from '../Typography';
   </Toggle>
 </Playground>
 
-## Modal using browser history
+### Using browser history
 
 By using `useHistory` prop it will mimic Android's back button behavior on web which closes modals. On RN, this will have no effect and will use a regular `Modal`. Works in nested modals as well.
 

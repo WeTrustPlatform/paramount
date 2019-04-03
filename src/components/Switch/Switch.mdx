@@ -8,14 +8,31 @@ import { Toggle } from 'react-powerplug';
 import Switch from './Switch';
 import { Box } from '../Layout';
 
-## Usage
+# Switch
 
-### Default
+### Usage
 
 <Playground>
   <Box>
     <Toggle initial={true}>
-      {({ on, toggle }) => <Switch isSwitchedOn={on} onChange={toggle} />}
+      {({ on, toggle }) => (
+        <Switch
+          isSwitchedOn={on}
+          onChange={toggle}
+          isDisabled={false}
+          onIcon={null}
+          offIcon={null}
+          duration={300}
+          getStyles={(props, theme) => ({
+            circleStyle: {},
+            containerStyle: {},
+            backgroundColorOff: '#F5F6F7',
+            backgroundColorOn: '#67c6bb',
+            circleColorOff: 'white',
+            circleColorOn: 'white',
+          })}
+        />
+      )}
     </Toggle>
   </Box>
 </Playground>

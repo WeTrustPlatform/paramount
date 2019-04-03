@@ -11,9 +11,25 @@ import { Button } from '../Button';
 import { Box, Spacing } from '../Layout';
 import { Text } from '../Typography';
 
-## Usage
+# Drawer
 
-### Drawers with fixed width and height content
+### Usage
+
+<Playground>
+  <Drawer
+    space="30%"
+    isVisible={false}
+    onClose={() => console.log('Close')}
+    offset={0}
+    position="left"
+    getStyles={(props, theme) => ({
+      modalContainerStyle: {},
+      containerStyle: {},
+    })}
+  />
+</Playground>
+
+### Variants
 
 <Playground>
   <Toggle>

@@ -9,9 +9,40 @@ import { Button } from '../Button';
 import { Box } from '../Layout';
 import Toast from './Toast';
 
-## Usage
+# Toast
 
-Composes `Alert`
+Composes `Alert`.
+
+### Usage
+
+<Playground>
+  <ToastProvider
+    getStyles={(props, theme) => ({
+      containerStyle: {},
+    })}
+  >
+    <ToastContext.Consumer>
+      {({ notify }) => (
+        <Button
+          onPress={() => {
+            notify({
+              title: 'Title',
+              description: 'Description',
+              component: null, // A React Component that overrides title and description
+              isCloseable: true,
+              offset: 16,
+              duration: 3000,
+              // ...Alert props e.g. getStyles
+            });
+          }}
+          title="Use"
+        />
+      )}
+    </ToastContext.Consumer>
+  </ToastProvider>
+</Playground>
+
+### Variants
 
 <Playground>
   <ToastProvider>
@@ -36,6 +67,7 @@ Composes `Alert`
                 title: 'Title',
               })
             }
+            color="primary"
             title="Open success toast"
           />
           <Button
@@ -46,6 +78,7 @@ Composes `Alert`
                 title: 'Title',
               })
             }
+            color="danger"
             title="Open danger toast"
           />
           <Button
@@ -56,6 +89,7 @@ Composes `Alert`
                 title: 'Title',
               })
             }
+            color="secondary"
             title="Open warning toast"
           />
         </>

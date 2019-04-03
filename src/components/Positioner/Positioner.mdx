@@ -18,9 +18,32 @@ export default ({ children }) => {
   return <div>{children}</div>;
 };
 
-## Usage
+# Positioner
 
-### Positioners with fixed width and height content
+A base component for manipulating the position of the element on the screen. Used by `Popover`
+
+### Usage
+
+<Playground>
+  <Positioner
+    isVisible={false}
+    onClose={() => console.log('Close')}
+    isDynamicContent={false}
+    position="top-right"
+    content={props => null}
+    isFullWidth={false}
+    parentHeight={1000}
+    targetMeasurements={{}}
+    getStyles={(props, theme) => ({
+      positionerStyle: {},
+      modalContainerStyle: {},
+    })}
+  >
+    <Button title="Usage" />
+  </Positioner>
+</Playground>
+
+### Variants
 
 <Playground>
   <Spacing paddingBottom={8} zIndex={1}>
@@ -188,7 +211,7 @@ export default ({ children }) => {
   </Spacing>
 </Playground>
 
-### Positioners with dynamic width and height content
+### Dynamically sized content
 
 Add `isDynamicContent` to props to give time for Positioner to calculate its layout of dynamic content prior to displaying it
 

@@ -10,7 +10,6 @@ import PickerButtonWrapper from './PickerButtonWrapper';
 export interface NativePickerProps extends RNPickerProps {
   size?: PickerButtonSize;
   innerRef?: React.Ref<RNPicker>;
-  rightIcon?: React.ReactNode;
   /**
    * Inline styles for components
    */
@@ -18,13 +17,7 @@ export interface NativePickerProps extends RNPickerProps {
 }
 
 const NativePickerBase = (props: NativePickerProps) => {
-  const {
-    size = 'medium',
-    getStyles,
-    innerRef,
-    rightIcon,
-    ...pickerProps
-  } = props;
+  const { size = 'medium', getStyles, innerRef, ...pickerProps } = props;
   const theme = React.useContext(ThemeContext);
 
   const { pickerStyle, itemStyle } = mergeStyles(

@@ -2,7 +2,6 @@ import * as React from 'react';
 import {
   AccessibilityProps,
   GestureResponderEvent,
-  ImageSourcePropType,
   TouchableHighlight,
   View,
 } from 'react-native';
@@ -10,7 +9,7 @@ import { DeepPartial } from 'ts-essentials';
 
 import { ThemeContext } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { Avatar, AvatarProps } from '../Avatar';
+import { AvatarProps } from '../Avatar';
 import { Text } from '../Typography';
 import {
   GetListItemStyles,
@@ -24,8 +23,8 @@ export interface ListItemProps extends AccessibilityProps {
   isDisabled?: boolean;
   label: string;
   description?: string;
-  imageSource?: ImageSourcePropType;
   avatarProps?: AvatarProps;
+  leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   onPress?: (event: GestureResponderEvent) => void;
   getStyles?: ReplaceReturnType<GetListItemStyles, DeepPartial<ListItemStyles>>;
@@ -38,11 +37,10 @@ const ListItem = (props: ListItemProps) => {
     isDisabled = false,
     label,
     description,
-    imageSource,
     size = 'medium',
     onPress,
     rightIcon = null,
-    avatarProps,
+    leftIcon,
     testID,
     ...accessibilityProps
   } = props;
@@ -69,15 +67,7 @@ const ListItem = (props: ListItemProps) => {
     >
       <View style={wrapperStyle}>
         <View style={leftWrapperStyle}>
-          {(imageSource || avatarProps) && (
-            <View style={imageWrapperStyle}>
-              <Avatar
-                source={imageSource}
-                size={theme.controlHeights[size] - 8}
-                {...avatarProps}
-              />
-            </View>
-          )}
+          <View style={imageWrapperStyle}>{leftIcon}</View>
           <View style={textWrapperStyle}>
             <Text getStyles={() => ({ textStyle })}>{label}</Text>
             <Text size="small">{description}</Text>

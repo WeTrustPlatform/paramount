@@ -22,7 +22,6 @@ export interface ContentProps {
 
 export interface PositionerProps {
   theme: Theme;
-  onTap?: () => void;
   onClose?: () => void;
   /** For dynamic size content of positioners we have to render all the items first so it precalculates positioner position and layout, so that when user opens positioner there is no flash of adjusting positioner but immediately shows it. This is not `true` by default because it may causes small delay for the Positioner to be properly available. @default false */
   isDynamicContent?: boolean;

@@ -16,11 +16,28 @@ export default ({ children }) => {
   return <div>{children}</div>;
 };
 
-## Usage
+# Popover
 
 `Popover` composes `Positioner` and adds only a white box wrapping. Content that can be anything. Popover just applies some styles for the content. For more low-level usage, use `Positioner`
 
-### Popovers with fixed width and height content
+### Usage
+
+<Playground>
+  <Popover
+    isVisible={false}
+    onClose={() => console.log('Close')}
+    position="top-right"
+    content={() => <Box width={200} height={200} />}
+    getStyles={(props, theme) => ({
+      popoverStyle: {},
+    })}
+    // ...Positioner props
+  >
+    <Button title="Child" />
+  </Popover>
+</Playground>
+
+### Variants
 
 <Playground>
   <Spacing paddingBottom={8} zIndex={1}>

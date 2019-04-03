@@ -1,5 +1,5 @@
 ---
-name: DropdownMenu
+name: Menus
 menu: Components
 ---
 
@@ -7,13 +7,59 @@ import { Playground, PropsTable } from 'docz';
 import { Toggle } from 'react-powerplug';
 
 import DropdownMenu from './DropdownMenu';
+import DrawerMenu from './DrawerMenu';
 import { Button } from '../Button';
-import { Box } from '../Layout';
+import { Box, Spacing } from '../Layout';
 import { Text } from '../Typography';
 
-## Usage
+# Menus
 
-### Dropdown Menu
+## DrawerMenu
+
+### Usage
+
+<Playground>
+  <Toggle>
+    {({ on, toggle }) => (
+      <>
+        <Button onPress={toggle} isInline title="Open overlay menu" />
+        <DrawerMenu
+          options={[
+            {
+              onPress: toggle,
+              title: 'Menu Option 1',
+              color: 'danger',
+              appearance: 'minimal',
+            },
+            {
+              onPress: toggle,
+              title: 'Menu Option 2',
+              color: 'primary',
+              appearance: 'minimal',
+            },
+            {
+              onPress: toggle,
+              title: 'Menu Option 3',
+              color: 'secondary',
+              appearance: 'minimal',
+            },
+            {
+              onPress: toggle,
+              title: 'Menu Option 4',
+              appearance: 'minimal',
+            },
+          ]}
+          isVisible={on}
+          onClose={toggle}
+        />
+      </>
+    )}
+  </Toggle>
+</Playground>
+
+## DropdownMenu
+
+### Usage
 
 <Playground>
   <Box>

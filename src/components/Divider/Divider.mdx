@@ -7,13 +7,20 @@ import { Playground, PropsTable } from 'docz';
 import Divider from './Divider';
 import { Box } from '../Layout';
 
-## Usage
+# Divider
 
-### Default
+### Usage
 
 <Playground>
   <Box paddingVertical={40}>
-    <Divider />
+    <Divider
+      size={3}
+      color="#67c6bb"
+      position="horizontal"
+      getStyles={(props, theme) => ({
+        dividerStyle: {},
+      })}
+    />
   </Box>
 </Playground>
 

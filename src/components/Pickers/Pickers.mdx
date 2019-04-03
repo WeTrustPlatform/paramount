@@ -12,7 +12,13 @@ import CalendarDatePicker from './CalendarDatePicker';
 import PickerItem from './PickerItem';
 import NativePickerItem from './NativePickerItem';
 
+# Pickers
+
+Paramount provides a set of common picker elements for modern applications
+
 ## NativePicker
+
+### Usage
 
 <Playground>
   <State initial={{ value: 'js' }}>
@@ -20,6 +26,11 @@ import NativePickerItem from './NativePickerItem';
       <NativePicker
         selectedValue={state.value}
         onValueChange={(itemValue, itemIndex) => setState({ value: itemValue })}
+        size="large"
+        getStyles={(props, theme) => ({
+          pickerStyle: {},
+          itemStyle: {},
+        })}
       >
         <NativePickerItem label="C" value="c" />
         <NativePickerItem label="C#" value="c#" />
@@ -51,8 +62,15 @@ import NativePickerItem from './NativePickerItem';
   <State initial={{ value: 'js' }}>
     {({ state, setState }) => (
       <DialogPicker
+        useHistory={false}
+        header={null}
+        size="large"
         selectedValue={state.value}
         onValueChange={(itemValue, itemIndex) => setState({ value: itemValue })}
+        getStyles={(props, theme) => ({
+          pickerStyle: {},
+          itemStyle: {},
+        })}
       >
         <PickerItem label="C" value="c" />
         <PickerItem label="C#" value="c#" />
@@ -80,12 +98,21 @@ import NativePickerItem from './NativePickerItem';
 
 ## ModalPicker
 
+### Usage
+
 <Playground>
   <State initial={{ value: 'css' }}>
     {({ state, setState }) => (
       <ModalPicker
+        useHistory={false}
+        header={null}
+        size="large"
         selectedValue={state.value}
         onValueChange={(itemValue, itemIndex) => setState({ value: itemValue })}
+        getStyles={(props, theme) => ({
+          pickerStyle: {},
+          itemStyle: {},
+        })}
       >
         <PickerItem label="C" value="c" />
         <PickerItem label="C#" value="c#" />
@@ -113,6 +140,10 @@ import NativePickerItem from './NativePickerItem';
 
 ## CalendarDatePicker
 
+Composes `ModalMultiMonthCalendarSelect`
+
+### Usage
+
 <Playground>
   <State
     initial={{
@@ -131,6 +162,7 @@ import NativePickerItem from './NativePickerItem';
             selectedEndDate: endDate,
           })
         }
+        // ... MultiMonthCalendar Props
       />
     )}
   </State>

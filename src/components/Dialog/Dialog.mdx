@@ -12,20 +12,33 @@ import { Button } from '../Button';
 import { Box } from '../Layout';
 import { Text } from '../Typography';
 
+# Dialog
+
 ## ConfirmDialog
 
 Opposed to `Dialog` (below), `ConfirmDialog` has predefined styling and handlers; however, it still can pass props from `Dialog`
 
+### Usage
+
 <Playground>
   <Toggle initial={false}>
     {({ on, toggle }) => (
       <Box>
         <ConfirmDialog
-          title="Confirm dialog"
+          title="Title"
           isVisible={on}
           onRequestClose={toggle}
-          cancelLabel="Cancel label"
-          confirmLabel="Confirm label"
+          cancelLabel="Cancel"
+          confirmLabel="Confirm"
+          header={undefined}
+          footer={undefined}
+          useHistory={false}
+          onConfirm={() => console.log('Confirmed')}
+          getStyles={(props, theme) => ({
+            modalContainerStyle: {},
+            containerStyle: {},
+            bodyStyle: {},
+          })}
         >
           <Text>Add custom content here</Text>
         </ConfirmDialog>
@@ -34,35 +47,12 @@ Opposed to `Dialog` (below), `ConfirmDialog` has predefined styling and handlers
     )}
   </Toggle>
 </Playground>
-
-## ConfirmDialog without header
-
-<Playground>
-  <Toggle initial={false}>
-    {({ on, toggle }) => (
-      <Box>
-        <ConfirmDialog
-          header={null}
-          isVisible={on}
-          onRequestClose={toggle}
-          cancelLabel="Cancel label"
-          confirmLabel="Confirm label"
-        >
-          <Text>Add custom content here</Text>
-        </ConfirmDialog>
-        <Button onPress={toggle} title="Open dialog" />
-      </Box>
-    )}
-  </Toggle>
-</Playground>
-
-## ConfirmDialog Props
-
-<PropsTable of={ConfirmDialog} />
 
 ## Dialog
 
 Dialog has no predefined styling and handlers. The content, header and footer is completely in your control. For a more out-of-box usage, you can use `ConfirmDialog` below
+
+### Usage
 
 <Playground>
   <Toggle initial={false}>
@@ -73,6 +63,12 @@ Dialog has no predefined styling and handlers. The content, header and footer is
           footer={<Text>Footer</Text>}
           isVisible={on}
           onRequestClose={toggle}
+          useHistory={false}
+          getStyles={(props, theme) => ({
+            modalContainerStyle: {},
+            containerStyle: {},
+            bodyStyle: {},
+          })}
         >
           <Box height={1800}>
             <Text>Put any content in the dialog</Text>
@@ -83,6 +79,10 @@ Dialog has no predefined styling and handlers. The content, header and footer is
     )}
   </Toggle>
 </Playground>
+
+## ConfirmDialog Props
+
+<PropsTable of={ConfirmDialog} />
 
 ## Dialog Props
 
