@@ -1,3 +1,10 @@
+## [1.30.1](https://github.com/WeTrustPlatform/paramount/compare/v1.30.0...v1.30.1) (2019-04-03)
+
+
+### Bug Fixes
+
+* **typography:** change default font weight ([3c6ca38](https://github.com/WeTrustPlatform/paramount/commit/3c6ca38))
+
 # [1.30.0](https://github.com/WeTrustPlatform/paramount/compare/v1.29.4...v1.30.0) (2019-04-03)
 
 
