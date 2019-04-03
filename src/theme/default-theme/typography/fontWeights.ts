@@ -1,9 +1,9 @@
 import { FontWeights } from '../../ThemeInterface';
 
 export const fontWeights: FontWeights = {
-  bold: '700',
+  bold: 'bold',
   light: '300',
-  normal: '600',
+  normal: 'normal',
 };
 
 export default fontWeights;
