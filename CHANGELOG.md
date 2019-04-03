@@ -1,3 +1,10 @@
+# [1.30.0](https://github.com/WeTrustPlatform/paramount/compare/v1.29.4...v1.30.0) (2019-04-03)
+
+
+### Features
+
+* **typography:** add text weight ([38a7ec8](https://github.com/WeTrustPlatform/paramount/commit/38a7ec8))
+
 ## [1.29.4](https://github.com/WeTrustPlatform/paramount/compare/v1.29.3...v1.29.4) (2019-04-03)
 
 
