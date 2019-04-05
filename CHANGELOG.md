@@ -1,3 +1,11 @@
+## [1.30.4](https://github.com/WeTrustPlatform/paramount/compare/v1.30.3...v1.30.4) (2019-04-05)
+
+
+### Bug Fixes
+
+* **deps:** add react as devdependencies ([6634fcf](https://github.com/WeTrustPlatform/paramount/commit/6634fcf))
+* **deps:** remove deps on react-spring ([490c9a0](https://github.com/WeTrustPlatform/paramount/commit/490c9a0))
+
 ## [1.30.3](https://github.com/WeTrustPlatform/paramount/compare/v1.30.2...v1.30.3) (2019-04-03)
 
 
