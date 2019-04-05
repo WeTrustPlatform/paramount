@@ -1,3 +1,12 @@
+## [1.30.6](https://github.com/WeTrustPlatform/paramount/compare/v1.30.5...v1.30.6) (2019-04-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-icons to v3.5.0 ([658a6ac](https://github.com/WeTrustPlatform/paramount/commit/658a6ac))
+* **deps:** update dependency react-native-web to v0.11.2 ([b07d626](https://github.com/WeTrustPlatform/paramount/commit/b07d626))
+* **tests:** types ([ba3890a](https://github.com/WeTrustPlatform/paramount/commit/ba3890a))
+
 ## [1.30.5](https://github.com/WeTrustPlatform/paramount/compare/v1.30.4...v1.30.5) (2019-04-05)
 
 
