@@ -12,9 +12,9 @@ describe('monthPageInWeeks', () => {
   ];
 
   test.each(table)('%s should have %i weeks', (month, numberOfWeeks, date) => {
-    const dates = monthPageInWeeks(date);
+    const dates = monthPageInWeeks(date as Date);
 
-    expect(dates).toHaveLength(numberOfWeeks);
+    expect(dates).toHaveLength(numberOfWeeks as number);
   });
 });
 
@@ -26,9 +26,9 @@ describe('monthPageInDates', () => {
   ];
 
   test.each(table)('%s should have %i days', (month, numberOfDays, date) => {
-    const dates = monthPageInDates(date, 1);
+    const dates = monthPageInDates(date as Date, 1);
 
-    expect(dates).toHaveLength(numberOfDays);
+    expect(dates).toHaveLength(numberOfDays as number);
   });
 });
 
@@ -49,9 +49,9 @@ describe('getDaysInMonth', () => {
       selectedEndDate,
     ) => {
       const days = getDaysInMonth(
-        monthDate,
-        selectedStartDate,
-        selectedEndDate,
+        monthDate as Date,
+        selectedStartDate as Date,
+        selectedEndDate as Date,
       );
 
       const selectedDaysCount = days.filter(day => day.isSelected).length;
