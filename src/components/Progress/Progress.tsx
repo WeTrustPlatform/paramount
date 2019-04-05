@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Platform, View } from 'react-native';
-import { Spring } from 'react-spring';
 import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
@@ -28,22 +27,16 @@ const ProgressBase = (props: ProgressProps) => {
   )({ size }, theme);
 
   return (
-    <Spring to={{ value: percent }}>
-      {({ value }) => {
-        return (
-          <View style={containerStyle} testID={testID}>
-            <View
-              // @ts-ignore
-              accessibilityRole={Platform.OS === 'web' ? 'progress' : 'none'}
-              style={{
-                width: `${value}%`,
-                ...progressStyle,
-              }}
-            />
-          </View>
-        );
-      }}
-    </Spring>
+    <View style={containerStyle} testID={testID}>
+      <View
+        // @ts-ignore
+        accessibilityRole={Platform.OS === 'web' ? 'progress' : 'none'}
+        style={{
+          width: `${percent}%`,
+          ...progressStyle,
+        }}
+      />
+    </View>
   );
 };
 

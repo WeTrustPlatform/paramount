@@ -41,12 +41,8 @@
     "deepmerge": "3.2.0",
     "exenv": "1.2.2",
     "focus-trap": "5.0.0",
-    "react": "16.8.6",
-    "react-art": "16.8.6",
-    "react-dom": "16.8.6",
     "react-icons": "3.3.0",
     "react-native-web": "0.10.0",
-    "react-spring": "7.2.11",
     "ts-essentials": "2.0.3"
   },
   "devDependencies": {
@@ -92,6 +88,11 @@
     "tslint": "5.15.0",
     "tslint-sonarts": "1.9.0",
     "typescript": "3.4.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-art": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "resolutions": {
     "terser": "3.16"
