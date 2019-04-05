@@ -1,4 +1,4 @@
-import { Platform, TextStyle, ViewStyle } from 'react-native';
+import { TextStyle, ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/ThemeInterface';
 
@@ -118,11 +118,9 @@ export const getPickerButtonStyles: GetPickerButtonStyles = (
     },
     pickerStyle: {
       backgroundColor: 'transparent',
+      width: '100%',
       ...base,
       ...controlSizeStyles,
-      ...(Platform.OS === 'web' && {
-        appearance: 'none',
-      }),
     },
     rightContainerStyle: {
       alignItems: 'center',

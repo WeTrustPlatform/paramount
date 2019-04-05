@@ -65527,252 +65527,134 @@ exports[`Pickers_0 1`] = `
 
 exports[`Pickers_1 1`] = `
 <div>
-  <div
+  <select
+    data-focusable={true}
+    onChange={[Function]}
     style={
       Object {
-        "WebkitAlignItems": "stretch",
-        "WebkitBoxAlign": "stretch",
-        "WebkitBoxDirection": "normal",
-        "WebkitBoxOrient": "vertical",
-        "WebkitFlexBasis": "auto",
-        "WebkitFlexDirection": "column",
-        "WebkitFlexShrink": 0,
-        "alignItems": "stretch",
-        "backgroundColor": "rgba(255,255,255,1.00)",
-        "borderBottomStyle": "solid",
-        "borderBottomWidth": "0px",
-        "borderLeftStyle": "solid",
-        "borderLeftWidth": "0px",
-        "borderRightStyle": "solid",
-        "borderRightWidth": "0px",
-        "borderTopStyle": "solid",
-        "borderTopWidth": "0px",
-        "boxSizing": "border-box",
-        "display": "flex",
-        "flexBasis": "auto",
-        "flexDirection": "column",
-        "flexShrink": 0,
+        "backgroundColor": "rgba(0,0,0,0.00)",
+        "borderBottomColor": "rgba(238,238,238,1.00)",
+        "borderBottomLeftRadius": "4px",
+        "borderBottomRightRadius": "4px",
+        "borderBottomWidth": "1px",
+        "borderLeftColor": "rgba(238,238,238,1.00)",
+        "borderLeftWidth": "1px",
+        "borderRightColor": "rgba(238,238,238,1.00)",
+        "borderRightWidth": "1px",
+        "borderTopColor": "rgba(238,238,238,1.00)",
+        "borderTopLeftRadius": "4px",
+        "borderTopRightRadius": "4px",
+        "borderTopWidth": "1px",
+        "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Ubuntu, \\"Helvetica Neue\\", sans-serif",
+        "fontSize": "inherit",
+        "height": "56px",
         "marginBottom": "0px",
         "marginLeft": "0px",
         "marginRight": "0px",
         "marginTop": "0px",
-        "minHeight": "0px",
-        "minWidth": "0px",
-        "msFlexAlign": "stretch",
-        "msFlexDirection": "column",
-        "msFlexNegative": 0,
-        "msFlexPreferredSize": "auto",
-        "paddingBottom": "0px",
-        "paddingLeft": "0px",
-        "paddingRight": "0px",
-        "paddingTop": "0px",
-        "position": "relative",
-        "zIndex": 0,
+        "paddingLeft": "24px",
+        "paddingRight": "40px",
+        "width": "100%",
       }
     }
+    value="js"
   >
-    <select
-      data-focusable={true}
-      onChange={[Function]}
-      style={
-        Object {
-          "MozAppearance": "none",
-          "WebkitAppearance": "none",
-          "appearance": "none",
-          "backgroundColor": "rgba(0,0,0,0.00)",
-          "borderBottomColor": "rgba(238,238,238,1.00)",
-          "borderBottomLeftRadius": "4px",
-          "borderBottomRightRadius": "4px",
-          "borderBottomWidth": "1px",
-          "borderLeftColor": "rgba(238,238,238,1.00)",
-          "borderLeftWidth": "1px",
-          "borderRightColor": "rgba(238,238,238,1.00)",
-          "borderRightWidth": "1px",
-          "borderTopColor": "rgba(238,238,238,1.00)",
-          "borderTopLeftRadius": "4px",
-          "borderTopRightRadius": "4px",
-          "borderTopWidth": "1px",
-          "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \\"Segoe UI\\", Roboto, Ubuntu, \\"Helvetica Neue\\", sans-serif",
-          "fontSize": "inherit",
-          "height": "56px",
-          "marginBottom": "0px",
-          "marginLeft": "0px",
-          "marginRight": "0px",
-          "marginTop": "0px",
-          "paddingLeft": "24px",
-          "paddingRight": "40px",
-        }
-      }
+    <option
+      value="c"
+    >
+      C
+    </option>
+    <option
+      value="c#"
+    >
+      C#
+    </option>
+    <option
+      value="c++"
+    >
+      C++
+    </option>
+    <option
+      value="css"
+    >
+      CSS
+    </option>
+    <option
+      value="elixir"
+    >
+      Elixir
+    </option>
+    <option
+      value="elm"
+    >
+      Elm
+    </option>
+    <option
+      value="erlang"
+    >
+      Erlang
+    </option>
+    <option
+      value="go"
+    >
+      Go
+    </option>
+    <option
+      value="haskell"
+    >
+      Haskell
+    </option>
+    <option
+      value="html"
+    >
+      HTML
+    </option>
+    <option
+      value="java"
+    >
+      Java
+    </option>
+    <option
       value="js"
     >
-      <option
-        value="c"
-      >
-        C
-      </option>
-      <option
-        value="c#"
-      >
-        C#
-      </option>
-      <option
-        value="c++"
-      >
-        C++
-      </option>
-      <option
-        value="css"
-      >
-        CSS
-      </option>
-      <option
-        value="elixir"
-      >
-        Elixir
-      </option>
-      <option
-        value="elm"
-      >
-        Elm
-      </option>
-      <option
-        value="erlang"
-      >
-        Erlang
-      </option>
-      <option
-        value="go"
-      >
-        Go
-      </option>
-      <option
-        value="haskell"
-      >
-        Haskell
-      </option>
-      <option
-        value="html"
-      >
-        HTML
-      </option>
-      <option
-        value="java"
-      >
-        Java
-      </option>
-      <option
-        value="js"
-      >
-        JavaScript
-      </option>
-      <option
-        value="lua"
-      >
-        Lua
-      </option>
-      <option
-        value="python"
-      >
-        Python
-      </option>
-      <option
-        value="r"
-      >
-        R
-      </option>
-      <option
-        value="ruby"
-      >
-        Ruby
-      </option>
-      <option
-        value="rust"
-      >
-        Rust
-      </option>
-      <option
-        value="swift"
-      >
-        Switft
-      </option>
-      <option
-        value="typescript"
-      >
-        Typescript
-      </option>
-    </select>
-    <div
-      style={
-        Object {
-          "WebkitAlignItems": "center",
-          "WebkitBoxAlign": "center",
-          "WebkitBoxDirection": "normal",
-          "WebkitBoxOrient": "vertical",
-          "WebkitBoxPack": "center",
-          "WebkitFlexBasis": "auto",
-          "WebkitFlexDirection": "column",
-          "WebkitFlexShrink": 0,
-          "WebkitJustifyContent": "center",
-          "alignItems": "center",
-          "borderBottomStyle": "solid",
-          "borderBottomWidth": "0px",
-          "borderLeftStyle": "solid",
-          "borderLeftWidth": "0px",
-          "borderRightStyle": "solid",
-          "borderRightWidth": "0px",
-          "borderTopStyle": "solid",
-          "borderTopWidth": "0px",
-          "boxSizing": "border-box",
-          "display": "flex",
-          "flexBasis": "auto",
-          "flexDirection": "column",
-          "flexShrink": 0,
-          "height": "100%",
-          "justifyContent": "center",
-          "marginBottom": "0px",
-          "marginLeft": "0px",
-          "marginRight": "0px",
-          "marginTop": "0px",
-          "minHeight": "0px",
-          "minWidth": "0px",
-          "msFlexAlign": "center",
-          "msFlexDirection": "column",
-          "msFlexNegative": 0,
-          "msFlexPack": "center",
-          "msFlexPreferredSize": "auto",
-          "paddingBottom": "0px",
-          "paddingLeft": "8px",
-          "paddingRight": "8px",
-          "paddingTop": "0px",
-          "position": "absolute",
-          "right": "0px",
-          "zIndex": -1,
-        }
-      }
+      JavaScript
+    </option>
+    <option
+      value="lua"
     >
-      <svg
-        color="#7e7e7e"
-        fill="none"
-        height={32}
-        size={32}
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        style={
-          Object {
-            "color": "#7e7e7e",
-          }
-        }
-        viewBox="0 0 24 24"
-        width={32}
-      >
-        <polyline
-          points="6 9 12 15 18 9"
-        />
-      </svg>
-    </div>
-  </div>
+      Lua
+    </option>
+    <option
+      value="python"
+    >
+      Python
+    </option>
+    <option
+      value="r"
+    >
+      R
+    </option>
+    <option
+      value="ruby"
+    >
+      Ruby
+    </option>
+    <option
+      value="rust"
+    >
+      Rust
+    </option>
+    <option
+      value="swift"
+    >
+      Switft
+    </option>
+    <option
+      value="typescript"
+    >
+      Typescript
+    </option>
+  </select>
 </div>
 `;
 
@@ -65834,11 +65716,9 @@ exports[`Pickers_2 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "MozAppearance": "none",
           "MozTransitionProperty": "opacity",
           "MozUserSelect": "none",
           "WebkitAlignItems": "stretch",
-          "WebkitAppearance": "none",
           "WebkitBoxAlign": "stretch",
           "WebkitBoxDirection": "normal",
           "WebkitBoxOrient": "vertical",
@@ -65851,7 +65731,6 @@ exports[`Pickers_2 1`] = `
           "WebkitTransitionProperty": "opacity",
           "WebkitUserSelect": "none",
           "alignItems": "stretch",
-          "appearance": "none",
           "backgroundColor": "rgba(0,0,0,0.00)",
           "borderBottomColor": "rgba(238,238,238,1.00)",
           "borderBottomLeftRadius": "4px",
@@ -65899,6 +65778,7 @@ exports[`Pickers_2 1`] = `
           "transitionDuration": "0.15s",
           "transitionProperty": "opacity",
           "userSelect": "none",
+          "width": "100%",
           "zIndex": 0,
         }
       }
@@ -66077,11 +65957,9 @@ exports[`Pickers_4 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "MozAppearance": "none",
           "MozTransitionProperty": "opacity",
           "MozUserSelect": "none",
           "WebkitAlignItems": "stretch",
-          "WebkitAppearance": "none",
           "WebkitBoxAlign": "stretch",
           "WebkitBoxDirection": "normal",
           "WebkitBoxOrient": "vertical",
@@ -66094,7 +65972,6 @@ exports[`Pickers_4 1`] = `
           "WebkitTransitionProperty": "opacity",
           "WebkitUserSelect": "none",
           "alignItems": "stretch",
-          "appearance": "none",
           "backgroundColor": "rgba(0,0,0,0.00)",
           "borderBottomColor": "rgba(238,238,238,1.00)",
           "borderBottomLeftRadius": "4px",
@@ -66142,6 +66019,7 @@ exports[`Pickers_4 1`] = `
           "transitionDuration": "0.15s",
           "transitionProperty": "opacity",
           "userSelect": "none",
+          "width": "100%",
           "zIndex": 0,
         }
       }
@@ -66320,11 +66198,9 @@ exports[`Pickers_6 1`] = `
       onStartShouldSetResponder={[Function]}
       style={
         Object {
-          "MozAppearance": "none",
           "MozTransitionProperty": "opacity",
           "MozUserSelect": "none",
           "WebkitAlignItems": "stretch",
-          "WebkitAppearance": "none",
           "WebkitBoxAlign": "stretch",
           "WebkitBoxDirection": "normal",
           "WebkitBoxOrient": "vertical",
@@ -66337,7 +66213,6 @@ exports[`Pickers_6 1`] = `
           "WebkitTransitionProperty": "opacity",
           "WebkitUserSelect": "none",
           "alignItems": "stretch",
-          "appearance": "none",
           "backgroundColor": "rgba(0,0,0,0.00)",
           "borderBottomColor": "rgba(238,238,238,1.00)",
           "borderBottomLeftRadius": "4px",
@@ -66385,6 +66260,7 @@ exports[`Pickers_6 1`] = `
           "transitionDuration": "0.15s",
           "transitionProperty": "opacity",
           "userSelect": "none",
+          "width": "100%",
           "zIndex": 0,
         }
       }
