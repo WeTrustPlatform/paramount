@@ -121,6 +121,7 @@ exports[`Alert_1 1`] = `
         }
         viewBox="0 0 24 24"
         width={24}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <path
           d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
@@ -370,6 +371,7 @@ exports[`Alert_1 1`] = `
           }
           viewBox="0 0 24 24"
           width={24}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <line
             x1="18"
@@ -554,6 +556,7 @@ exports[`Alert_3 1`] = `
           }
           viewBox="0 0 24 24"
           width={24}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <circle
             cx="12"
@@ -848,6 +851,7 @@ exports[`Alert_3 1`] = `
           }
           viewBox="0 0 24 24"
           width={24}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
             d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
@@ -1131,6 +1135,7 @@ exports[`Alert_3 1`] = `
           }
           viewBox="0 0 24 24"
           width={24}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <path
             d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
@@ -1423,6 +1428,7 @@ exports[`Alert_3 1`] = `
           }
           viewBox="0 0 24 24"
           width={24}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <circle
             cx="12"
@@ -15602,6 +15608,7 @@ exports[`Counter_1 1`] = `
           }
           viewBox="0 0 24 24"
           width={16}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <line
             x1="5"
@@ -15833,6 +15840,7 @@ exports[`Counter_1 1`] = `
           }
           viewBox="0 0 24 24"
           width={16}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <line
             x1="12"
@@ -17698,6 +17706,7 @@ exports[`Inputs_3 1`] = `
             }
             viewBox="0 0 24 24"
             width={24}
+            xmlns="http://www.w3.org/2000/svg"
           >
             <line
               x1="3"
@@ -17879,6 +17888,7 @@ exports[`Inputs_3 1`] = `
             }
             viewBox="0 0 24 24"
             width={24}
+            xmlns="http://www.w3.org/2000/svg"
           >
             <line
               x1="3"
@@ -18346,6 +18356,7 @@ exports[`Inputs_5 1`] = `
             }
             viewBox="0 0 24 24"
             width={24}
+            xmlns="http://www.w3.org/2000/svg"
           >
             <circle
               cx="11"
@@ -18992,6 +19003,7 @@ exports[`Inputs_8 1`] = `
           }
           viewBox="0 0 24 24"
           width={20}
+          xmlns="http://www.w3.org/2000/svg"
         >
           <polyline
             points="6 9 12 15 18 9"
@@ -19585,6 +19597,7 @@ exports[`ListItem_1 1`] = `
         }
         viewBox="0 0 24 24"
         width={24}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <polyline
           points="9 18 15 12 9 6"
@@ -65883,6 +65896,7 @@ exports[`Pickers_2 1`] = `
         }
         viewBox="0 0 24 24"
         width={32}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <polyline
           points="6 9 12 15 18 9"
@@ -66124,6 +66138,7 @@ exports[`Pickers_4 1`] = `
         }
         viewBox="0 0 24 24"
         width={32}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <polyline
           points="6 9 12 15 18 9"
@@ -66365,6 +66380,7 @@ exports[`Pickers_6 1`] = `
         }
         viewBox="0 0 24 24"
         width={32}
+        xmlns="http://www.w3.org/2000/svg"
       >
         <polyline
           points="6 9 12 15 18 9"
@@ -73929,6 +73945,7 @@ exports[`Progress_1 1`] = `
             }
             viewBox="0 0 24 24"
             width={16}
+            xmlns="http://www.w3.org/2000/svg"
           >
             <line
               x1="5"
@@ -74160,6 +74177,7 @@ exports[`Progress_1 1`] = `
             }
             viewBox="0 0 24 24"
             width={16}
+            xmlns="http://www.w3.org/2000/svg"
           >
             <line
               x1="12"
@@ -74789,6 +74807,7 @@ exports[`SelectList_1 1`] = `
                   }
                   viewBox="0 0 24 24"
                   width={20}
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <polyline
                     points="20 6 9 17 4 12"
@@ -78763,6 +78782,7 @@ exports[`SelectList_3 1`] = `
                   }
                   viewBox="0 0 24 24"
                   width={20}
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <polyline
                     points="20 6 9 17 4 12"
@@ -88650,6 +88670,7 @@ exports[`SelectList_7 1`] = `
                   }
                   viewBox="0 0 24 24"
                   width={20}
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <polyline
                     points="20 6 9 17 4 12"
@@ -89885,6 +89906,7 @@ exports[`Switch_1 1`] = `
             }
             viewBox="0 0 24 24"
             width={20}
+            xmlns="http://www.w3.org/2000/svg"
           >
             <polyline
               points="20 6 9 17 4 12"
@@ -93196,6 +93218,7 @@ exports[`Typography_19 1`] = `
               }
               viewBox="0 0 24 24"
               width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <polyline
                 points="20 6 9 17 4 12"
@@ -93436,6 +93459,7 @@ exports[`Typography_19 1`] = `
               }
               viewBox="0 0 24 24"
               width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <polyline
                 points="20 6 9 17 4 12"
@@ -93676,6 +93700,7 @@ exports[`Typography_19 1`] = `
               }
               viewBox="0 0 24 24"
               width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <polyline
                 points="20 6 9 17 4 12"
@@ -93916,6 +93941,7 @@ exports[`Typography_19 1`] = `
               }
               viewBox="0 0 24 24"
               width="1em"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <polyline
                 points="20 6 9 17 4 12"
