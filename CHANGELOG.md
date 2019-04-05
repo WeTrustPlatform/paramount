@@ -1,3 +1,10 @@
+## [1.30.5](https://github.com/WeTrustPlatform/paramount/compare/v1.30.4...v1.30.5) (2019-04-05)
+
+
+### Bug Fixes
+
+* **picker:** change native picker style ([234b871](https://github.com/WeTrustPlatform/paramount/commit/234b871))
+
 ## [1.30.4](https://github.com/WeTrustPlatform/paramount/compare/v1.30.3...v1.30.4) (2019-04-05)
 
 
