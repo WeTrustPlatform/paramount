@@ -8,42 +8,16 @@ import {
   PresetTextColors,
   RNFontWeight,
   TextColor,
+  TextSize,
+  TextSizes,
   Theme,
 } from '../../theme/ThemeInterface';
 import { TextAlign, TextTransform } from './types';
-
-export interface TextSizes {
-  small: TextStyle;
-  medium: TextStyle;
-  large: TextStyle;
-}
-
-export type TextSize = keyof TextSizes;
 
 export interface TextVariables {
   size: TextSizes;
   fontFamily: FontFamilies;
 }
-
-export const getTextVariables = (theme: Theme): TextVariables => {
-  return {
-    size: {
-      large: {
-        fontSize: theme.textSizes.large,
-      },
-
-      medium: {
-        fontSize: theme.textSizes.medium,
-      },
-
-      small: {
-        fontSize: theme.textSizes.small,
-      },
-    },
-
-    fontFamily: theme.fontFamilies,
-  };
-};
 
 export interface TextStylesProps {
   isBold: boolean;
@@ -83,9 +57,19 @@ export const getFontWeight = (fontWeights: FontWeights) => (
 export const getTextColor = (textColors: PresetTextColors) => (
   textColor: TextColor,
 ) => {
-  const presetColor = textColors[textColor];
+  // @ts-ignore
+  const presetColor = textColors[textColor] as string;
 
   return presetColor || textColor;
+};
+
+export const getTextSize = (textSizes: TextSizes) => (
+  size: TextSize,
+): TextStyle => {
+  // @ts-ignore
+  const presetTextSize = textSizes[size] as TextStyle;
+
+  return presetTextSize || { fontSize: size };
 };
 
 export const getTextStyles: GetTextStyles = (
@@ -102,12 +86,11 @@ export const getTextStyles: GetTextStyles = (
   },
   theme,
 ) => {
-  const textVariables = getTextVariables(theme);
-
   return {
     textStyle: {
+      ...getTextSize(theme.textSizes)(size),
       color: getTextColor(theme.colors.text)(color),
-      fontFamily: getFontFamily(textVariables.fontFamily)(fontFamily),
+      fontFamily: getFontFamily(theme.fontFamilies)(fontFamily),
       fontWeight: getFontWeight(theme.fontWeights)(weight),
       textAlign: align,
       ...(isInline
@@ -116,7 +99,6 @@ export const getTextStyles: GetTextStyles = (
             flexDirection: 'row',
           }
         : {}),
-      ...textVariables.size[size],
       ...(isBold && {
         fontWeight: '600',
       }),

@@ -4,6 +4,7 @@ menu: Components
 ---
 
 import { Playground, PropsTable } from 'docz';
+import { Text as RNText } from 'react-native';
 import { Icon } from '../../icons';
 import {
   Code,
@@ -23,24 +24,28 @@ import { Box } from '../Layout';
 
 All Typogrography components compose of React Native's `Text` component (i.e. you can pass its props)
 
-`color` prop takes preset color names from the theme (which includes `primary`, `secondary`, `success` etc.), it also can take a custom color such as `#16a054`
+`color` prop takes preset color names from the theme (which includes `primary`, `secondary`, `success` etc.), it also can take a custom color such as `#16a054`. Same applies for `size` prop
+
+**Note!!!** In web environment sometimes you need to wrap `Typography` components in a `<Box>` or provide a parent node with `display: flex` and `flex-direction: column` for centering to work properly. In React Native it is non issue because all nodes be default have these properties
 
 ## Heading
 
 ### Usage
 
 <Playground>
-  <Heading
-    accessibilityLevel={3} // 1-6
-    align="left"
-    size="xxlarge"
-    color="primary"
-    getStyles={(props, theme) => ({
-      headingStyle: {},
-    })}
-  >
-    Lorem ipsum dolar set amet
-  </Heading>
+  <Box>
+    <Heading
+      accessibilityLevel={3} // 1-6
+      align="center"
+      size="xxlarge" // small - xxxlarge or number
+      color="primary"
+      getStyles={(props, theme) => ({
+        headingStyle: {},
+      })}
+    >
+      Lorem ipsum dolar set amet
+    </Heading>
+  </Box>
 </Playground>
 
 <Playground>
@@ -59,18 +64,20 @@ All Typogrography components compose of React Native's `Text` component (i.e. yo
 ### Usage
 
 <Playground>
-  <Paragraph
-    color="primary"
-    align="left"
-    size="large" // small - large
-    fontFamily="text"
-    weight="normal"
-    getStyles={(props, theme) => ({
-      paragraphStyle: {},
-    })}
-  >
-    Lorem ipsum dolar set amet
-  </Paragraph>
+  <Box>
+    <Paragraph
+      color="primary"
+      align="left"
+      size="large" // small - large or number
+      fontFamily="text"
+      weight="normal"
+      getStyles={(props, theme) => ({
+        paragraphStyle: {},
+      })}
+    >
+      Lorem ipsum dolar set amet
+    </Paragraph>
+  </Box>
 </Playground>
 
 ### Sizes
@@ -88,22 +95,24 @@ All Typogrography components compose of React Native's `Text` component (i.e. yo
 ### Usage
 
 <Playground>
-  <Text
-    color="primary"
-    align="left"
-    size="large" // small - large
-    fontFamily="text"
-    weight="normal"
-    isBold
-    isItalic
-    isInline
-    transform="uppercase"
-    getStyles={(props, theme) => ({
-      textStyle: {},
-    })}
-  >
-    Lorem ipsum dolar set amet
-  </Text>
+  <Box>
+    <Text
+      color="primary"
+      align="left"
+      size="large" // small - large or number
+      fontFamily="text"
+      weight="normal"
+      isBold
+      isItalic
+      isInline
+      transform="uppercase"
+      getStyles={(props, theme) => ({
+        textStyle: {},
+      })}
+    >
+      Lorem ipsum dolar set amet
+    </Text>
+  </Box>
 </Playground>
 
 ### Sizes

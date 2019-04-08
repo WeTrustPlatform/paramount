@@ -1,13 +1,39 @@
-export default {
-  xxxlarge: 35,
+import { HeadingSizes } from '../../ThemeInterface';
 
-  xxlarge: 29,
+export const headingSizes: HeadingSizes = {
+  xxxlarge: {
+    fontSize: 35,
+    letterSpacing: -0.2,
+    lineHeight: 40,
+  },
 
-  xlarge: 24,
+  xxlarge: {
+    fontSize: 29,
+    letterSpacing: -0.2,
+    lineHeight: 32,
+  },
 
-  large: 20,
+  xlarge: {
+    fontSize: 24,
+    letterSpacing: -0.07,
+    lineHeight: 28,
+  },
 
-  medium: 16,
+  large: {
+    fontSize: 20,
+    letterSpacing: -0.07,
+    lineHeight: 24,
+  },
 
-  small: 14,
+  medium: {
+    fontSize: 16,
+    letterSpacing: -0.05,
+    lineHeight: 20,
+  },
+
+  small: {
+    fontSize: 14,
+    letterSpacing: -0.05,
+    lineHeight: 20,
+  },
 };

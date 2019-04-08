@@ -25,7 +25,6 @@ export interface PickerButtonVariables {
   invalid: ViewStyle;
   placeholderTextColor: string;
   sizes: PickerButtonSizes;
-  textSizes: PickerButtonTextSizes;
 }
 
 export const getPickerButtonVariables = (
@@ -66,19 +65,6 @@ export const getPickerButtonVariables = (
         paddingRight: 40,
       },
     },
-    textSizes: {
-      small: {
-        fontSize: theme.textSizes.small,
-      },
-
-      medium: {
-        fontSize: theme.textSizes.medium,
-      },
-
-      large: {
-        fontSize: theme.textSizes.large,
-      },
-    },
   };
 };
 
@@ -102,11 +88,11 @@ export const getPickerButtonStyles: GetPickerButtonStyles = (
   theme,
 ) => {
   const pickerVariables = getPickerButtonVariables(theme);
-  const { base, sizes, textSizes } = pickerVariables;
+  const { base, sizes } = pickerVariables;
   const { size } = pickerStylesProps;
 
   const controlSizeStyles = sizes[size];
-  const textSizeStyles = textSizes[size];
+  const textSizeStyles = theme.textSizes[size];
 
   return {
     containerStyle: {

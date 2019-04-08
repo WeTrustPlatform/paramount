@@ -1,7 +1,6 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/ThemeInterface';
-import { getTextVariables } from '../Typography/Text.styles';
 
 export type SizeStyles = ViewStyle & {
   fontSize: number;
@@ -28,12 +27,9 @@ export interface ListItemVariables {
   selected: ViewStyle;
   focusBackgroundColor: string;
   sizes: ListItemSizes;
-  textSizes: TextSizes;
 }
 
 export const getListItemVariables = (theme: Theme): ListItemVariables => {
-  const textSizes = getTextVariables(theme);
-
   return {
     base: {
       backgroundColor: theme.colors.background.plain,
@@ -48,27 +44,26 @@ export const getListItemVariables = (theme: Theme): ListItemVariables => {
     selected: {},
     sizes: {
       small: {
-        fontSize: theme.textSizes.small,
+        fontSize: theme.textSizes.small.fontSize || 14,
         height: theme.controlHeights.small,
         paddingLeft: theme.controlPaddings.small,
         paddingRight: theme.controlPaddings.small,
       },
 
       medium: {
-        fontSize: theme.textSizes.medium,
+        fontSize: theme.textSizes.medium.fontSize || 16,
         height: theme.controlHeights.medium,
         paddingLeft: theme.controlPaddings.medium,
         paddingRight: theme.controlPaddings.medium,
       },
 
       large: {
-        fontSize: theme.textSizes.large,
+        fontSize: theme.textSizes.large.fontSize || 18,
         height: theme.controlHeights.large,
         paddingLeft: theme.controlPaddings.large,
         paddingRight: theme.controlPaddings.large,
       },
     },
-    textSizes: textSizes.size,
     wrapper: {
       alignItems: 'center',
       flexDirection: 'row',
@@ -109,7 +104,6 @@ export const getListItemStyles: GetListItemStyles = (
     selected,
     focusBackgroundColor,
     sizes,
-    textSizes,
   } = selectListVariables;
 
   const { fontSize, ...sizeStyles } = sizes[size];
@@ -129,7 +123,7 @@ export const getListItemStyles: GetListItemStyles = (
       alignItems: 'center',
       flexDirection: 'row',
     },
-    textStyle: textSizes[size],
+    textStyle: theme.textSizes[size],
     textWrapperStyle: {
       height: '100%',
     },

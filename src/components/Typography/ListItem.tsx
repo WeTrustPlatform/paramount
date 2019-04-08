@@ -21,7 +21,8 @@ export interface ListItemProps extends TextProps {
 const ListItem = (props: ListItemProps) => {
   const { size = 'medium', mark, ...textProps } = props;
 
-  const paddingLeft = paddingLeftMap[size] as 1 | 2 | 3;
+  const paddingLeft =
+    typeof size === 'number' ? 2 : (paddingLeftMap[size] as 1 | 2 | 3);
 
   return (
     // @ts-ignore

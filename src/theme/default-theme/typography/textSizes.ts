@@ -1,5 +1,13 @@
-export default {
-  large: 20,
-  medium: 16,
-  small: 14,
+import { TextSizes } from '../../ThemeInterface';
+
+export const textSizes: TextSizes = {
+  large: {
+    fontSize: 20,
+  },
+  medium: {
+    fontSize: 16,
+  },
+  small: {
+    fontSize: 14,
+  },
 };

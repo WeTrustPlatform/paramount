@@ -1,29 +1,28 @@
-import { ViewStyle } from 'react-native';
+import { TextStyle, ViewStyle } from 'react-native';
 
 export interface TextSizes {
-  small: number;
-  medium: number;
-  large: number;
+  small: TextStyle;
+  medium: TextStyle;
+  large: TextStyle;
 }
-
-export type TextSize = keyof TextSizes;
+export type TextSize = keyof TextSizes | number;
 
 export interface HeadingSizes {
-  xxxlarge: number; // h1
-  xxlarge: number; // h2
-  xlarge: number; // h3
-  large: number; // h4
-  medium: number; // h5
-  small: number; // h6
+  xxxlarge: TextStyle; // h1
+  xxlarge: TextStyle; // h2
+  xlarge: TextStyle; // h3
+  large: TextStyle; // h4
+  medium: TextStyle; // h5
+  small: TextStyle; // h6
 }
-export type HeadingSize = keyof HeadingSizes;
+export type HeadingSize = keyof HeadingSizes | number;
 
 export interface ParagraphSizes {
-  small: number;
-  medium: number;
-  large: number;
+  small: TextStyle;
+  medium: TextStyle;
+  large: TextStyle;
 }
-export type ParagraphSize = keyof ParagraphSizes;
+export type ParagraphSize = keyof ParagraphSizes | number;
 
 export interface FontFamilies {
   heading?: string;
@@ -74,10 +73,24 @@ export interface BackgroundColorVariations {
 }
 
 export interface PresetTextColors {
-  [color: string]: string;
+  dark: string;
+  default: string;
+  muted: string;
+  plain: string;
+  selected: string;
+
+  // Brand colors
+  primary: string;
+  secondary: string;
+
+  // Intent.
+  danger: string;
+  info: string;
+  success: string;
+  warning: string;
 }
 
-export type TextColor = string;
+export type TextColor = keyof PresetTextColors | string;
 
 export interface IconColor {
   default: string;

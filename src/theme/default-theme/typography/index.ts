@@ -1,5 +1,5 @@
-export { default as fontFamilies } from './fontFamilies';
-export { default as fontWeights } from './fontWeights';
-export { default as textSizes } from './textSizes';
-export { default as paragraphSizes } from './paragraphSizes';
-export { default as headingSizes } from './headingSizes';
+export { fontFamilies } from './fontFamilies';
+export { fontWeights } from './fontWeights';
+export { textSizes } from './textSizes';
+export { paragraphSizes } from './paragraphSizes';
+export { headingSizes } from './headingSizes';

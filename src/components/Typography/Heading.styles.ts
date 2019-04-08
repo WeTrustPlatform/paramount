@@ -1,83 +1,17 @@
 import { TextStyle } from 'react-native';
 
-import { TextColor, Theme } from '../../theme/ThemeInterface';
+import {
+  HeadingSize,
+  HeadingSizes,
+  TextColor,
+  Theme,
+} from '../../theme/ThemeInterface';
 import { getTextColor } from './Text.styles';
 import { TextAlign } from './types';
-
-export interface HeadingSizes {
-  xxxlarge: TextStyle; // h1
-  xxlarge: TextStyle; // h2
-  xlarge: TextStyle; // h3
-  large: TextStyle; // h4
-  medium: TextStyle; // h5
-  small: TextStyle; // h6
-}
-
-export type HeadingSize = keyof HeadingSizes;
 
 export interface HeadingVariables {
   size: HeadingSizes;
 }
-
-export const getHeadingVariables = (theme: Theme): HeadingVariables => {
-  return {
-    size: {
-      xxxlarge: {
-        color: theme.colors.text.dark,
-        fontFamily: theme.fontFamilies.heading,
-        fontSize: theme.headingSizes.xxxlarge,
-        fontWeight: '600',
-        letterSpacing: -0.2,
-        lineHeight: 40,
-      },
-
-      xxlarge: {
-        color: theme.colors.text.dark,
-        fontFamily: theme.fontFamilies.heading,
-        fontSize: theme.headingSizes.xxlarge,
-        fontWeight: '600',
-        letterSpacing: -0.2,
-        lineHeight: 32,
-      },
-
-      xlarge: {
-        color: theme.colors.text.dark,
-        fontFamily: theme.fontFamilies.heading,
-        fontSize: theme.headingSizes.xlarge,
-        fontWeight: '600',
-        letterSpacing: -0.07,
-        lineHeight: 28,
-      },
-
-      large: {
-        color: theme.colors.text.dark,
-        fontFamily: theme.fontFamilies.heading,
-        fontSize: theme.headingSizes.large,
-        fontWeight: '600',
-        letterSpacing: -0.07,
-        lineHeight: 24,
-      },
-
-      medium: {
-        color: theme.colors.text.dark,
-        fontFamily: theme.fontFamilies.heading,
-        fontSize: theme.headingSizes.medium,
-        fontWeight: '600',
-        letterSpacing: -0.05,
-        lineHeight: 20,
-      },
-
-      small: {
-        color: theme.colors.text.dark,
-        fontFamily: theme.fontFamilies.heading,
-        fontSize: theme.headingSizes.small,
-        fontWeight: '600',
-        letterSpacing: -0.05,
-        lineHeight: 20,
-      },
-    },
-  };
-};
 
 export interface HeadingStyles {
   headingStyle: TextStyle;
@@ -94,16 +28,25 @@ export type GetHeadingStyles = (
   theme: Theme,
 ) => HeadingStyles;
 
+export const getHeadingSize = (headingSizes: HeadingSizes) => (
+  size: HeadingSize,
+): TextStyle => {
+  // @ts-ignore
+  const presetHeadingSize = headingSizes[size] as TextStyle;
+
+  return presetHeadingSize || { fontSize: size };
+};
+
 export const getHeadingStyles: GetHeadingStyles = (
   { size, align, color },
   theme,
 ) => {
-  const headingVariables = getHeadingVariables(theme);
-
   return {
     headingStyle: {
-      ...headingVariables.size[size],
+      ...getHeadingSize(theme.headingSizes)(size),
       color: getTextColor(theme.colors.text)(color),
+      fontFamily: theme.fontFamilies.heading,
+      fontWeight: '600',
       textAlign: align,
     },
   };

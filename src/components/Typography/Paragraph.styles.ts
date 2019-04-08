@@ -4,6 +4,8 @@ import {
   FontFamilies,
   FontFamily,
   FontWeight,
+  ParagraphSize,
+  ParagraphSizes,
   PresetTextColors,
   TextColor,
   Theme,
@@ -11,47 +13,11 @@ import {
 import { getFontFamily, getFontWeight, getTextColor } from './Text.styles';
 import { TextAlign } from './types';
 
-export interface ParagraphSizes {
-  small: TextStyle;
-  medium: TextStyle;
-  large: TextStyle;
-}
-export type ParagraphSize = keyof ParagraphSizes;
-
 export interface ParagraphVariables {
   color: PresetTextColors;
   size: ParagraphSizes;
   fontFamily: FontFamilies;
 }
-
-export const getParagraphVariables = (theme: Theme): ParagraphVariables => {
-  return {
-    color: theme.colors.text,
-    fontFamily: theme.fontFamilies,
-    size: {
-      small: {
-        fontSize: theme.paragraphSizes.small,
-        lineHeight: 24,
-        marginBottom: '1em',
-        marginTop: '1em',
-      },
-
-      medium: {
-        fontSize: theme.paragraphSizes.medium,
-        lineHeight: 21,
-        marginBottom: '1em',
-        marginTop: '1em',
-      },
-
-      large: {
-        fontSize: theme.paragraphSizes.large,
-        lineHeight: 18,
-        marginBottom: '1em',
-        marginTop: '1em',
-      },
-    },
-  };
-};
 
 export interface ParagraphStylesProps {
   align: TextAlign;
@@ -70,18 +36,27 @@ export type GetParagraphStyles = (
   theme: Theme,
 ) => ParagraphStyles;
 
+export const getParagraphSize = (paragraphSizes: ParagraphSizes) => (
+  size: ParagraphSize,
+): TextStyle => {
+  // @ts-ignore
+  const presetParagraphSize = paragraphSizes[size] as TextStyle;
+
+  return presetParagraphSize || { fontSize: size };
+};
+
 export const getParagraphStyles: GetParagraphStyles = (
   { size, color, fontFamily, align, weight },
   theme,
 ) => {
-  const paragraphVariables = getParagraphVariables(theme);
-
   return {
     paragraphStyle: {
-      ...paragraphVariables.size[size],
+      ...getParagraphSize(theme.paragraphSizes)(size),
       color: getTextColor(theme.colors.text)(color),
-      fontFamily: getFontFamily(paragraphVariables.fontFamily)(fontFamily),
+      fontFamily: getFontFamily(theme.fontFamilies)(fontFamily),
       fontWeight: getFontWeight(theme.fontWeights)(weight),
+      marginBottom: '1em',
+      marginTop: '1em',
       textAlign: align,
     },
   };

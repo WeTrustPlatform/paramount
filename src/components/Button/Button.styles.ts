@@ -166,7 +166,7 @@ export const getButtonVariables = (theme: Theme): ButtonVariables => {
     sizes: {
       small: {
         borderRadius: theme.controlBorderRadius.small,
-        fontSize: theme.textSizes.small,
+        fontSize: theme.textSizes.small.fontSize || 14,
         height: theme.controlHeights.small,
         paddingLeft: theme.controlPaddings.small,
         paddingRight: theme.controlPaddings.small,
@@ -174,7 +174,7 @@ export const getButtonVariables = (theme: Theme): ButtonVariables => {
 
       medium: {
         borderRadius: theme.controlBorderRadius.medium,
-        fontSize: theme.textSizes.medium,
+        fontSize: theme.textSizes.medium.fontSize || 16,
         height: theme.controlHeights.medium,
         paddingLeft: theme.controlPaddings.medium,
         paddingRight: theme.controlPaddings.medium,
@@ -182,7 +182,7 @@ export const getButtonVariables = (theme: Theme): ButtonVariables => {
 
       large: {
         borderRadius: theme.controlBorderRadius.large,
-        fontSize: theme.textSizes.large,
+        fontSize: theme.textSizes.large.fontSize || 20,
         height: theme.controlHeights.large,
         paddingLeft: theme.controlPaddings.large,
         paddingRight: theme.controlPaddings.large,

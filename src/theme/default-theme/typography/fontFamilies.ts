@@ -16,5 +16,3 @@ export const fontFamilies: FontFamilies =
         mono: undefined,
         text: undefined,
       };
-
-export default fontFamilies;

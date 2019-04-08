@@ -5,5 +5,3 @@ export const fontWeights: FontWeights = {
   light: '300',
   normal: 'normal',
 };
-
-export default fontWeights;

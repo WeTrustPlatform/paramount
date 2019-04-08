@@ -43778,25 +43778,29 @@ exports[`Typography_0 1`] = `
 
 exports[`Typography_1 1`] = `
 <div>
-  <h3
-    aria-level={3}
-    className="css-reset-4rbku5 css-text-76zvg2"
-    dir="auto"
-    role="heading"
-    style={
-      Object {
-        "color": "rgba(27,135,122,1.00)",
-        "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-        "fontSize": "29px",
-        "fontWeight": "600",
-        "letterSpacing": "-0.2px",
-        "lineHeight": "32px",
-        "textAlign": "left",
-      }
-    }
+  <div
+    className="css-view-1dbjc4n"
   >
-    Lorem ipsum dolar set amet
-  </h3>
+    <h3
+      aria-level={3}
+      className="css-reset-4rbku5 css-text-76zvg2"
+      dir="auto"
+      role="heading"
+      style={
+        Object {
+          "color": "rgba(27,135,122,1.00)",
+          "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+          "fontSize": "29px",
+          "fontWeight": "600",
+          "letterSpacing": "-0.2px",
+          "lineHeight": "32px",
+          "textAlign": "center",
+        }
+      }
+    >
+      Lorem ipsum dolar set amet
+    </h3>
+  </div>
 </div>
 `;
 
@@ -43935,23 +43939,27 @@ exports[`Typography_3 1`] = `
 exports[`Typography_4 1`] = `
 <div>
   <div
-    aria-label="p"
-    className="css-text-76zvg2"
-    dir="auto"
-    style={
-      Object {
-        "color": "rgba(27,135,122,1.00)",
-        "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-        "fontSize": "20px",
-        "fontWeight": "normal",
-        "lineHeight": "18px",
-        "marginBottom": "1em",
-        "marginTop": "1em",
-        "textAlign": "left",
-      }
-    }
+    className="css-view-1dbjc4n"
   >
-    Lorem ipsum dolar set amet
+    <div
+      aria-label="p"
+      className="css-text-76zvg2"
+      dir="auto"
+      style={
+        Object {
+          "color": "rgba(27,135,122,1.00)",
+          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+          "fontSize": "18px",
+          "fontWeight": "normal",
+          "lineHeight": "18px",
+          "marginBottom": "1em",
+          "marginTop": "1em",
+          "textAlign": "left",
+        }
+      }
+    >
+      Lorem ipsum dolar set amet
+    </div>
   </div>
 </div>
 `;
@@ -44022,7 +44030,7 @@ exports[`Typography_6 1`] = `
         Object {
           "color": "rgba(126,126,126,1.00)",
           "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-          "fontSize": "20px",
+          "fontSize": "18px",
           "fontWeight": "normal",
           "lineHeight": "18px",
           "marginBottom": "1em",
@@ -44046,29 +44054,33 @@ exports[`Typography_7 1`] = `
 exports[`Typography_8 1`] = `
 <div>
   <div
-    className="css-text-76zvg2"
-    dir="auto"
-    style={
-      Object {
-        "WebkitAlignSelf": "flex-start",
-        "WebkitBoxDirection": "normal",
-        "WebkitBoxOrient": "horizontal",
-        "WebkitFlexDirection": "row",
-        "alignSelf": "flex-start",
-        "color": "rgba(27,135,122,1.00)",
-        "flexDirection": "row",
-        "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-        "fontSize": "20px",
-        "fontStyle": "italic",
-        "fontWeight": "600",
-        "msFlexDirection": "row",
-        "msFlexItemAlign": "start",
-        "textAlign": "left",
-        "textTransform": "uppercase",
-      }
-    }
+    className="css-view-1dbjc4n"
   >
-    Lorem ipsum dolar set amet
+    <div
+      className="css-text-76zvg2"
+      dir="auto"
+      style={
+        Object {
+          "WebkitAlignSelf": "flex-start",
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxOrient": "horizontal",
+          "WebkitFlexDirection": "row",
+          "alignSelf": "flex-start",
+          "color": "rgba(27,135,122,1.00)",
+          "flexDirection": "row",
+          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+          "fontSize": "20px",
+          "fontStyle": "italic",
+          "fontWeight": "600",
+          "msFlexDirection": "row",
+          "msFlexItemAlign": "start",
+          "textAlign": "left",
+          "textTransform": "uppercase",
+        }
+      }
+    >
+      Lorem ipsum dolar set amet
+    </div>
   </div>
 </div>
 `;
