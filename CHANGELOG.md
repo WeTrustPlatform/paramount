@@ -1,3 +1,10 @@
+# [1.31.0](https://github.com/WeTrustPlatform/paramount/compare/v1.30.6...v1.31.0) (2019-04-08)
+
+
+### Features
+
+* **typography:** refactor and enable numeric size ([f8f6550](https://github.com/WeTrustPlatform/paramount/commit/f8f6550))
+
 ## [1.30.6](https://github.com/WeTrustPlatform/paramount/compare/v1.30.5...v1.30.6) (2019-04-05)
 
 
