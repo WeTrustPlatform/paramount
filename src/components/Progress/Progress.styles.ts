@@ -19,10 +19,10 @@ export type ProgressSize = keyof ProgressSizes;
 export const getProgressVariables = (theme: Theme): ProgressVariables => {
   return {
     container: {
-      backgroundColor: theme.colors.background.tint2,
+      backgroundColor: theme.colors.background.greyDefault,
     },
     progress: {
-      backgroundColor: theme.colors.background.primary.default,
+      backgroundColor: theme.colors.background.primaryDefault,
       height: '100%',
     },
     size: {

@@ -5,56 +5,45 @@ import palette from './palette';
 
 const colors: Colors = {
   background: {
+    white: 'white',
     overlay: 'rgba(0,0,0,0.3)',
-    plain: 'white',
-    disabled: palette.neutral.light,
-    tint1: palette.neutral.lightest,
-    tint2: '#F5F6F7',
 
-    // Brand colors
-    primary: {
-      default: palette.teal.base,
-      focus: palette.teal.dark,
-      focusLight: palette.teal.lightest,
-    },
-    secondary: {
-      default: palette.orange.base,
-      focus: palette.orange.dark,
-      focusLight: palette.orange.lightest,
-    },
+    greyLight: palette.neutral.lightest,
+    greyDefault: '#F5F6F7',
+    greyDark: palette.neutral.light,
 
-    // Intent.
-    danger: {
-      default: palette.red.base,
-      focus: palette.red.dark,
-      focusLight: palette.red.lightest,
-    },
-    info: {
-      default: palette.blue.base,
-      focus: palette.blue.dark,
-      focusLight: palette.blue.lightest,
-    },
-    success: {
-      default: palette.green.base,
-      focus: palette.green.dark,
-      focusLight: palette.green.lightest,
-    },
-    warning: {
-      default: palette.orange.base,
-      focus: palette.orange.dark,
-      focusLight: palette.orange.lightest,
-    },
+    primaryLight: palette.teal.lightest,
+    primaryDefault: palette.teal.base,
+    primaryDark: palette.teal.dark,
+
+    secondaryLight: palette.orange.lightest,
+    secondaryDefault: palette.orange.base,
+    secondaryDark: palette.orange.dark,
+
+    dangerLight: palette.red.lightest,
+    dangerDefault: palette.red.base,
+    dangerDark: palette.red.dark,
+
+    infoLight: palette.blue.lightest,
+    infoDefault: palette.blue.base,
+    infoDark: palette.blue.dark,
+
+    successLight: palette.green.lightest,
+    successDefault: palette.green.base,
+    successDark: palette.green.dark,
+
+    warningLight: palette.orange.lightest,
+    warningDefault: palette.orange.base,
+    warningDark: palette.orange.dark,
   },
 
   border: {
     default: palette.neutral.light,
-    muted: '#EDF0F2',
+    dark: '#EDF0F2',
 
-    // Brand colors
     primary: palette.teal.darkest,
     secondary: palette.orange.darkest,
 
-    // Intent.
     danger: palette.red.darkest,
     info: palette.blue.darkest,
     success: palette.green.darkest,
@@ -62,17 +51,16 @@ const colors: Colors = {
   },
 
   text: {
+    link: palette.neutral.darkest,
     dark: palette.neutral.darkest,
     default: palette.neutral.darkest,
     muted: palette.neutral.dark,
-    plain: 'white',
+    white: 'white',
     selected: 'white',
 
-    // Brand colors
     primary: palette.teal.darkest,
     secondary: palette.orange.darkest,
 
-    // Intent.
     danger: palette.red.darkest,
     info: palette.blue.darkest,
     success: palette.green.darkest,

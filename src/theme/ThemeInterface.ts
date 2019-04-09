@@ -8,20 +8,26 @@ export interface TextSizes {
 export type TextSize = keyof TextSizes | number;
 
 export interface HeadingSizes {
-  xxxlarge: TextStyle; // h1
-  xxlarge: TextStyle; // h2
-  xlarge: TextStyle; // h3
-  large: TextStyle; // h4
-  medium: TextStyle; // h5
-  small: TextStyle; // h6
+  xxxlarge: TextStyle;
+  xxlarge: TextStyle;
+  xlarge: TextStyle;
+  large: TextStyle;
+  medium: TextStyle;
+  small: TextStyle;
+
+  [size: string]: TextStyle | undefined;
 }
+
 export type HeadingSize = keyof HeadingSizes | number;
 
 export interface ParagraphSizes {
   small: TextStyle;
   medium: TextStyle;
   large: TextStyle;
+
+  [size: string]: TextStyle | undefined;
 }
+
 export type ParagraphSize = keyof ParagraphSizes | number;
 
 export interface FontFamilies {
@@ -52,56 +58,29 @@ export interface FontWeights {
 
 export type FontWeight = keyof FontWeights | RNFontWeight;
 
-export interface IntentColors {
-  danger: string;
-  info: string;
-  success: string;
-  warning: string;
-}
-
-export interface BrandColors {
-  primary: string;
-  secondary?: string;
-}
-
-export interface BackgroundColorVariations {
-  default: string;
-  /* Focus/Active on colored background */
-  focus: string;
-  /* Focus/Active on light background */
-  focusLight: string;
-}
-
-export interface PresetTextColors {
-  dark: string;
-  default: string;
+export interface TextColors {
   muted: string;
-  plain: string;
+  default: string;
+  dark: string;
+
+  link: string;
+  white: string;
   selected: string;
 
-  // Brand colors
   primary: string;
   secondary: string;
 
-  // Intent.
   danger: string;
   info: string;
   success: string;
   warning: string;
 }
 
-export type TextColor = keyof PresetTextColors | string;
-
-export interface IconColor {
-  default: string;
-  disabled: string;
-  muted: string;
-  selected: string;
-}
+export type TextColor = string;
 
 export interface BorderColor {
   default: string;
-  muted: string;
+  dark: string;
 
   primary: string;
   secondary: string;
@@ -113,25 +92,42 @@ export interface BorderColor {
 }
 
 export interface BackgroundColor {
+  white: string;
   overlay: string;
-  plain: string;
-  disabled: string;
-  tint1: string;
-  tint2: string;
 
-  primary: BackgroundColorVariations;
-  secondary: BackgroundColorVariations;
+  greyLight: string;
+  greyDefault: string;
+  greyDark: string;
 
-  danger: BackgroundColorVariations;
-  info: BackgroundColorVariations;
-  success: BackgroundColorVariations;
-  warning: BackgroundColorVariations;
+  primaryLight: string;
+  primaryDefault: string;
+  primaryDark: string;
+
+  secondaryLight: string;
+  secondaryDefault: string;
+  secondaryDark: string;
+
+  dangerLight: string;
+  dangerDefault: string;
+  dangerDark: string;
+
+  infoLight: string;
+  infoDefault: string;
+  infoDark: string;
+
+  successLight: string;
+  successDefault: string;
+  successDark: string;
+
+  warningLight: string;
+  warningDefault: string;
+  warningDark: string;
 }
 
 export interface Colors {
   background: BackgroundColor;
   border: BorderColor;
-  text: PresetTextColors;
+  text: TextColors;
 }
 
 export type Elevations = ViewStyle[];

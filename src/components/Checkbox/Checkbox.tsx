@@ -77,7 +77,7 @@ const CheckboxBase = (props: CheckboxProps) => {
       >
         {isChecked
           ? checkedIcon || (
-              <Icon name="check" size={20} color={theme.colors.text.plain} />
+              <Icon name="check" size={20} color={theme.colors.text.white} />
             )
           : null}
       </View>

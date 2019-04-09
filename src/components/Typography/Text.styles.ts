@@ -5,9 +5,9 @@ import {
   FontFamily,
   FontWeight,
   FontWeights,
-  PresetTextColors,
   RNFontWeight,
   TextColor,
+  TextColors,
   TextSize,
   TextSizes,
   Theme,
@@ -54,11 +54,11 @@ export const getFontWeight = (fontWeights: FontWeights) => (
   return presetFontWeight || fontWeight;
 };
 
-export const getTextColor = (textColors: PresetTextColors) => (
+export const getTextColor = (textColors: TextColors) => (
   textColor: TextColor,
 ) => {
   // @ts-ignore
-  const presetColor = textColors[textColor] as string;
+  const presetColor = textColors[textColor] as string | undefined;
 
   return presetColor || textColor;
 };

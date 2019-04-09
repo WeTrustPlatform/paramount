@@ -55,111 +55,111 @@ export const getButtonVariables = (theme: Theme): ButtonVariables => {
     appearances: {
       minimal: {
         default: {
-          backgroundColor: theme.colors.background.plain,
+          backgroundColor: theme.colors.background.white,
           color: theme.colors.text.default,
 
-          focusColor: theme.colors.background.tint2,
+          focusColor: theme.colors.background.greyDefault,
         },
 
         danger: {
-          backgroundColor: theme.colors.background.plain,
+          backgroundColor: theme.colors.background.white,
           color: theme.colors.text.danger,
 
-          focusColor: theme.colors.background.tint2,
+          focusColor: theme.colors.background.greyDefault,
         },
         primary: {
-          backgroundColor: theme.colors.background.plain,
+          backgroundColor: theme.colors.background.white,
           color: theme.colors.text.primary,
 
-          focusColor: theme.colors.background.tint2,
+          focusColor: theme.colors.background.greyDefault,
         },
         secondary: {
-          backgroundColor: theme.colors.background.plain,
+          backgroundColor: theme.colors.background.white,
           color: theme.colors.text.secondary
             ? theme.colors.text.secondary
             : theme.colors.text.default,
 
-          focusColor: theme.colors.background.tint2,
+          focusColor: theme.colors.background.greyDefault,
         },
       },
       primary: {
         default: {
-          backgroundColor: theme.colors.background.tint1,
+          backgroundColor: theme.colors.background.greyLight,
           borderColor: theme.colors.border.default,
           color: theme.colors.text.default,
 
-          focusColor: theme.colors.background.tint2,
+          focusColor: theme.colors.background.greyDefault,
           loadingBackgroundColor: theme.colors.background.overlay,
         },
 
         danger: {
-          backgroundColor: theme.colors.background.danger.default,
+          backgroundColor: theme.colors.background.dangerDefault,
           borderColor: theme.colors.border.danger,
           color: 'white',
 
-          focusColor: theme.colors.background.danger.focus,
-          loadingBackgroundColor: theme.colors.background.danger.focusLight,
+          focusColor: theme.colors.background.dangerDark,
+          loadingBackgroundColor: theme.colors.background.dangerLight,
         },
 
         primary: {
-          backgroundColor: theme.colors.background.primary.default,
+          backgroundColor: theme.colors.background.primaryDefault,
           borderColor: theme.colors.border.primary,
           color: 'white',
 
-          focusColor: theme.colors.background.primary.focus,
-          loadingBackgroundColor: theme.colors.background.primary.focusLight,
+          focusColor: theme.colors.background.primaryDark,
+          loadingBackgroundColor: theme.colors.background.primaryLight,
         },
 
         secondary: {
-          backgroundColor: theme.colors.background.secondary.default,
+          backgroundColor: theme.colors.background.secondaryDefault,
           borderColor: theme.colors.border.secondary,
           color: 'white',
 
-          focusColor: theme.colors.background.secondary.focus,
-          loadingBackgroundColor: theme.colors.background.secondary.focusLight,
+          focusColor: theme.colors.background.secondaryDark,
+          loadingBackgroundColor: theme.colors.background.secondaryLight,
         },
       },
 
       outline: {
         default: {
-          backgroundColor: theme.colors.background.plain,
+          backgroundColor: theme.colors.background.white,
           borderColor: theme.colors.text.default,
           borderWidth: 3,
           color: theme.colors.text.default,
 
-          focusColor: theme.colors.background.tint2,
+          focusColor: theme.colors.background.greyDefault,
         },
 
         danger: {
-          backgroundColor: theme.colors.background.plain,
+          backgroundColor: theme.colors.background.white,
           borderColor: theme.colors.border.danger,
           borderWidth: 3,
           color: theme.colors.text.danger,
 
-          focusColor: theme.colors.background.danger.focusLight,
+          focusColor: theme.colors.background.dangerLight,
         },
 
         primary: {
-          backgroundColor: theme.colors.background.plain,
+          backgroundColor: theme.colors.background.white,
           borderColor: theme.colors.border.primary,
           borderWidth: 3,
           color: theme.colors.text.primary,
 
-          focusColor: theme.colors.background.primary.focusLight,
+          focusColor: theme.colors.background.primaryLight,
         },
 
         secondary: {
-          backgroundColor: theme.colors.background.plain,
+          backgroundColor: theme.colors.background.white,
           borderColor: theme.colors.border.secondary,
           borderWidth: 3,
           color: theme.colors.text.secondary,
 
-          focusColor: theme.colors.background.secondary.focusLight,
+          focusColor: theme.colors.background.secondaryLight,
         },
       },
     },
     disabled: {
-      backgroundColor: theme.colors.background.disabled,
+      backgroundColor: theme.colors.background.greyDark,
 
       color: theme.colors.text.muted,
     },

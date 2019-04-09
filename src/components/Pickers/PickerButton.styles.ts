@@ -36,7 +36,7 @@ export const getPickerButtonVariables = (
       borderWidth: 1,
     },
     disabled: {
-      backgroundColor: theme.colors.background.disabled,
+      backgroundColor: theme.colors.background.greyDark,
     },
     focus: {},
     invalid: {
@@ -96,7 +96,7 @@ export const getPickerButtonStyles: GetPickerButtonStyles = (
 
   return {
     containerStyle: {
-      backgroundColor: theme.colors.background.plain,
+      backgroundColor: theme.colors.background.white,
       position: 'relative',
     },
     itemStyle: {

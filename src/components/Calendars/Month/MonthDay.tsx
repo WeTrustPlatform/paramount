@@ -44,7 +44,7 @@ const MonthDay = (props: MonthDayProps) => {
           alignItems: 'center',
           backgroundColor:
             isSelected && !isSelectionStart && !isSelectionEnd
-              ? theme.colors.background.primary.focus
+              ? theme.colors.background.primaryDark
               : 'transparent',
           flex: 1,
           flexDirection: 'row',
@@ -56,7 +56,7 @@ const MonthDay = (props: MonthDayProps) => {
         {isSelectionStart && !isSelectionEnd && (
           <View
             style={{
-              backgroundColor: theme.colors.background.primary.focus,
+              backgroundColor: theme.colors.background.primaryDark,
               height: '100%',
               position: 'absolute',
               right: 0,
@@ -67,7 +67,7 @@ const MonthDay = (props: MonthDayProps) => {
         {isSelectionEnd && !isSelectionStart && (
           <View
             style={{
-              backgroundColor: theme.colors.background.primary.focus,
+              backgroundColor: theme.colors.background.primaryDark,
               height: '100%',
               left: 0,
               position: 'absolute',
@@ -79,7 +79,7 @@ const MonthDay = (props: MonthDayProps) => {
           style={{
             alignItems: 'center',
             backgroundColor: isSelected
-              ? theme.colors.background.primary.focus
+              ? theme.colors.background.primaryDark
               : 'transparent',
             borderRadius: 999,
             flexDirection: 'row',

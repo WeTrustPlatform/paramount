@@ -20,21 +20,21 @@ export interface CheckboxVariables {
 export const getCheckboxVariables = (theme: Theme): CheckboxVariables => {
   return {
     base: {
-      backgroundColor: theme.colors.background.plain,
+      backgroundColor: theme.colors.background.white,
       borderColor: theme.colors.border.default,
       borderWidth: 1,
       height: 32,
       width: 32,
     },
     checked: {
-      backgroundColor: theme.colors.background.primary.default,
+      backgroundColor: theme.colors.background.primaryDefault,
       borderColor: 'transparent',
     },
     checkedFocus: {
-      backgroundColor: theme.colors.background.primary.focus,
+      backgroundColor: theme.colors.background.primaryDark,
     },
     disabled: {
-      backgroundColor: theme.colors.background.disabled,
+      backgroundColor: theme.colors.background.greyDark,
       borderColor: theme.colors.border.default,
     },
     shape: {
@@ -46,7 +46,7 @@ export const getCheckboxVariables = (theme: Theme): CheckboxVariables => {
       },
     },
     uncheckedFocus: {
-      backgroundColor: theme.colors.background.tint1,
+      backgroundColor: theme.colors.background.greyLight,
     },
   };
 };

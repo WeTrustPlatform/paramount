@@ -30,7 +30,7 @@ export const alertVariables = (theme: Theme): AlertVariables => {
       flex: 1,
     },
     container: {
-      backgroundColor: theme.colors.background.plain,
+      backgroundColor: theme.colors.background.white,
       borderLeftWidth: 5,
       borderRadius: theme.controlBorderRadius.medium,
       display: 'flex',

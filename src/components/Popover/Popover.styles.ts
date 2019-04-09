@@ -9,7 +9,7 @@ export interface PopoverVariables {
 export const getPopoverVariables = (theme: Theme): PopoverVariables => {
   return {
     popover: {
-      backgroundColor: theme.colors.background.plain,
+      backgroundColor: theme.colors.background.white,
       padding: 16,
       ...theme.elevations[2],
     },

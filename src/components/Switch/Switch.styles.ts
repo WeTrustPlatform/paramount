@@ -14,14 +14,14 @@ export interface SwitchVariables {
 
 export const getSwitchVariables = (theme: Theme): SwitchVariables => {
   return {
-    backgroundColorOff: theme.colors.background.tint2,
-    backgroundColorOn: theme.colors.background.primary.default,
-    circleColorOff: theme.colors.background.plain,
-    circleColorOn: theme.colors.background.plain,
+    backgroundColorOff: theme.colors.background.greyDefault,
+    backgroundColorOn: theme.colors.background.primaryDefault,
+    circleColorOff: theme.colors.background.white,
+    circleColorOn: theme.colors.background.white,
 
     circle: {
       alignItems: 'center',
-      backgroundColor: theme.colors.background.plain,
+      backgroundColor: theme.colors.background.white,
       borderRadius: 24,
       display: 'flex',
       height: 38,
@@ -32,7 +32,7 @@ export const getSwitchVariables = (theme: Theme): SwitchVariables => {
 
     container: {
       alignItems: 'center',
-      backgroundColor: theme.colors.background.tint1,
+      backgroundColor: theme.colors.background.greyLight,
       borderRadius: 24,
       flexDirection: 'row',
       height: 44,

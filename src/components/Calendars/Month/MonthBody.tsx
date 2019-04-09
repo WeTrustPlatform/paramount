@@ -42,7 +42,7 @@ const MonthBody = (props: MonthBodyProps) => {
                   <Box
                     backgroundColor={
                       isSelected
-                        ? theme.colors.background.primary.focus
+                        ? theme.colors.background.primaryDark
                         : 'transparent'
                     }
                     flex={1}

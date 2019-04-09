@@ -21,7 +21,7 @@ const CodeBase = (props: CodeProps & TextProps) => {
         style={[
           styles.default,
           {
-            backgroundColor: theme.colors.background.tint2,
+            backgroundColor: theme.colors.background.greyDefault,
           },
         ]}
       >

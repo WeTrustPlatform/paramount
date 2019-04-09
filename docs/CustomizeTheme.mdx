@@ -15,86 +15,79 @@ import { ThemeProvider, createTheme } from 'paramount-ui'
 const theme = createTheme({
   colors: {
     background: {
-        overlay: 'rgba(0,0,0,0.3)',
-        plain: 'white',
-        disabled: palette.neutral.light,
-        tint1: palette.neutral.lightest,
-        tint2: '#F5F6F7',
+      white: 'white',
+      overlay: 'rgba(0,0,0,0.3)',
 
-        // Brand colors
-        primary: {
-          default: palette.teal.base,
-          focus: palette.teal.dark,
-          focusLight: palette.teal.lightest,
-        },
-        secondary: {
-          default: palette.orange.base,
-          focus: palette.orange.dark,
-          focusLight: palette.orange.lightest,
-        },
+      greyLight: palette.neutral.lightest,
+      greyDefault: '#F5F6F7',
+      greyDark: palette.neutral.light,
 
-        // Intent.
-        danger: {
-          default: palette.red.base,
-          focus: palette.red.dark,
-          focusLight: palette.red.lightest,
-        },
-        info: {
-          default: palette.blue.base,
-          focus: palette.blue.dark,
-          focusLight: palette.blue.lightest,
-        },
-        success: {
-          default: palette.green.base,
-          focus: palette.green.dark,
-          focusLight: palette.green.lightest,
-        },
-        warning: {
-          default: palette.orange.base,
-          focus: palette.orange.dark,
-          focusLight: palette.orange.lightest,
-        },
-      },
+      primaryLight: palette.teal.lightest,
+      primaryDefault: palette.teal.base,
+      primaryDark: palette.teal.dark,
 
-      border: {
-        default: palette.neutral.light,
-        muted: '#EDF0F2',
+      secondaryLight: palette.orange.lightest,
+      secondaryDefault: palette.orange.base,
+      secondaryDark: palette.orange.dark,
 
-        // Brand colors
-        primary: palette.teal.darkest,
-        secondary: palette.orange.darkest,
+      errorLight: palette.red.lightest,
+      errorDefault: palette.red.base,
+      errorDark: palette.red.dark,
 
-        // Intent.
-        danger: palette.red.darkest,
-        info: palette.blue.darkest,
-        success: palette.green.darkest,
-        warning: palette.orange.darkest,
-      },
+      infoLight: palette.blue.lightest,
+      infoDefault: palette.blue.base,
+      infoDark: palette.blue.dark,
 
-      text: {
-        dark: palette.neutral.darkest,
-        default: palette.neutral.darkest,
-        muted: palette.neutral.dark,
-        plain: 'white',
-        selected: 'white',
+      successLight: palette.green.lightest,
+      successDefault: palette.green.base,
+      successDark: palette.green.dark,
 
-        // Brand colors
-        primary: palette.teal.darkest,
-        secondary: palette.orange.darkest,
+      warningLight: palette.orange.lightest,
+      warningDefault: palette.orange.base,
+      warningDark: palette.orange.dark,
+    },
 
-        // Intent.
-        danger: palette.red.darkest,
-        info: palette.blue.darkest,
-        success: palette.green.darkest,
-        warning: palette.orange.darkest,
-      },
-    }
+    border: {
+      default: palette.neutral.light,
+      dark: '#EDF0F2',
+
+      primary: palette.teal.darkest,
+      secondary: palette.orange.darkest,
+
+      error: palette.red.darkest,
+      info: palette.blue.darkest,
+      success: palette.green.darkest,
+      warning: palette.orange.darkest,
+    },
+
+    text: {
+      link: palette.neutral.darkest,
+      dark: palette.neutral.darkest,
+      default: palette.neutral.darkest,
+      muted: palette.neutral.dark,
+      white: 'white',
+      selected: 'white',
+
+      primary: palette.teal.darkest,
+      secondary: palette.orange.darkest,
+
+      error: palette.red.darkest,
+      info: palette.blue.darkest,
+      success: palette.green.darkest,
+      warning: palette.orange.darkest,
+    },
   },
 
   textSizes: {
-    large: 20,
-    medium: 16,
-    small: 14,
+    large: {
+      fontSize: 20,
+    },
+    medium: {
+      fontSize: 16,
+    },
+    small: {
+      fontSize: 14,
+    },
   },
 
   fills: {
@@ -191,29 +184,64 @@ const theme = createTheme({
   },
 
   fontWeights: {
-    bold: '700',
+    bold: 'bold',
     light: '300',
-    normal: '600',
+    normal: 'normal',
   },
 
   headingSizes: {
-    xxxlarge: 35,
+    xxxlarge: {
+      fontSize: 35,
+      letterSpacing: -0.2,
+      lineHeight: 40,
+    },
 
-    xxlarge: 29,
+    xxlarge: {
+      fontSize: 29,
+      letterSpacing: -0.2,
+      lineHeight: 32,
+    },
 
-    xlarge: 24,
+    xlarge: {
+      fontSize: 24,
+      letterSpacing: -0.07,
+      lineHeight: 28,
+    },
 
-    large: 20,
+    large: {
+      fontSize: 20,
+      letterSpacing: -0.07,
+      lineHeight: 24,
+    },
 
-    medium: 16,
+    medium: {
+      fontSize: 16,
+      letterSpacing: -0.05,
+      lineHeight: 20,
+    },
 
-    small: 14,
+    small: {
+      fontSize: 14,
+      letterSpacing: -0.05,
+      lineHeight: 20,
+    },
   },
 
   paragraphSizes: {
-    large: 20,
-    medium: 16,
-    small: 14,
+    small: {
+      fontSize: 14,
+      lineHeight: 24,
+    },
+
+    medium: {
+      fontSize: 16,
+      lineHeight: 21,
+    },
+
+    large: {
+      fontSize: 18,
+      lineHeight: 18,
+    },
   },
 
 
@@ -249,6 +277,7 @@ const theme = createTheme({
 
     large: 4,
   },
+
   controlHeights: {
     small: 40,
 
@@ -256,6 +285,7 @@ const theme = createTheme({
 
     large: 56,
   },
+
   controlPaddings: {
     small: 8,
 

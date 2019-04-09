@@ -32,15 +32,15 @@ export interface ListItemVariables {
 export const getListItemVariables = (theme: Theme): ListItemVariables => {
   return {
     base: {
-      backgroundColor: theme.colors.background.plain,
+      backgroundColor: theme.colors.background.white,
       borderBottomWidth: 1,
       borderColor: theme.colors.border.default,
       justifyContent: 'center',
     },
     disabled: {
-      backgroundColor: theme.colors.background.disabled,
+      backgroundColor: theme.colors.background.greyDark,
     },
-    focusBackgroundColor: theme.colors.background.tint1,
+    focusBackgroundColor: theme.colors.background.greyLight,
     selected: {},
     sizes: {
       small: {

@@ -6,15 +6,15 @@ import {
   FontWeight,
   ParagraphSize,
   ParagraphSizes,
-  PresetTextColors,
   TextColor,
+  TextColors,
   Theme,
 } from '../../theme/ThemeInterface';
 import { getFontFamily, getFontWeight, getTextColor } from './Text.styles';
 import { TextAlign } from './types';
 
 export interface ParagraphVariables {
-  color: PresetTextColors;
+  color: TextColors;
   size: ParagraphSizes;
   fontFamily: FontFamilies;
 }
