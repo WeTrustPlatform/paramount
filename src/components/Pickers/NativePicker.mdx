@@ -1,0 +1,47 @@
+---
+name: NativePicker
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import { State } from 'react-powerplug';
+import NativePicker from './NativePicker';
+import NativePickerItem from './NativePickerItem';
+
+# NativePicker
+
+<Playground>
+  <State initial={{ value: 'js' }}>
+    {({ state, setState }) => (
+      <NativePicker
+        selectedValue={state.value}
+        onValueChange={(itemValue, itemIndex) => setState({ value: itemValue })}
+        size="large"
+        getStyles={(props, theme) => ({
+          pickerStyle: {},
+          itemStyle: {},
+        })}
+      >
+        <NativePickerItem label="C" value="c" />
+        <NativePickerItem label="C#" value="c#" />
+        <NativePickerItem label="C++" value="c++" />
+        <NativePickerItem label="CSS" value="css" />
+        <NativePickerItem label="Elixir" value="elixir" />
+        <NativePickerItem label="Elm" value="elm" />
+        <NativePickerItem label="Erlang" value="erlang" />
+        <NativePickerItem label="Go" value="go" />
+        <NativePickerItem label="Haskell" value="haskell" />
+        <NativePickerItem label="HTML" value="html" />
+        <NativePickerItem label="Java" value="java" />
+        <NativePickerItem label="JavaScript" value="js" />
+        <NativePickerItem label="Lua" value="lua" />
+        <NativePickerItem label="Python" value="python" />
+        <NativePickerItem label="R" value="r" />
+        <NativePickerItem label="Ruby" value="ruby" />
+        <NativePickerItem label="Rust" value="rust" />
+        <NativePickerItem label="Switft" value="swift" />
+        <NativePickerItem label="Typescript" value="typescript" />
+      </NativePicker>
+    )}
+  </State>
+</Playground>

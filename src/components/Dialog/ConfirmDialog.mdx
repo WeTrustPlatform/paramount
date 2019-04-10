@@ -1,19 +1,19 @@
 ---
-name: Dialog
+name: ConfirmDialog
 menu: Components
 ---
 
 import { Toggle } from 'react-powerplug';
 import { Playground, PropsTable } from 'docz';
 
-import { Dialog } from '.';
+import { ConfirmDialog } from '.';
 import { Button } from '../Button';
 import { Box } from '../Layout';
 import { Text } from '../Typography';
 
-# Dialog
+# ConfirmDialog
 
-Dialog has no predefined styling and handlers. The content, header and footer is completely in your control. For a more out-of-box usage, you can use `ConfirmDialog` below
+Opposed to `Dialog` (below), `ConfirmDialog` has predefined styling and handlers; however, it still can pass props from `Dialog`
 
 ### Usage
 
@@ -21,28 +21,30 @@ Dialog has no predefined styling and handlers. The content, header and footer is
   <Toggle initial={false}>
     {({ on, toggle }) => (
       <Box>
-        <Dialog
-          header={<Text>Header</Text>}
-          footer={<Text>Footer</Text>}
+        <ConfirmDialog
+          title="Title"
           isVisible={on}
           onRequestClose={toggle}
+          cancelLabel="Cancel"
+          confirmLabel="Confirm"
+          header={undefined}
+          footer={undefined}
           useHistory={false}
+          onConfirm={() => console.log('Confirmed')}
           getStyles={(props, theme) => ({
             modalContainerStyle: {},
             containerStyle: {},
             bodyStyle: {},
           })}
         >
-          <Box height={1800}>
-            <Text>Put any content in the dialog</Text>
-          </Box>
-        </Dialog>
+          <Text>Add custom content here</Text>
+        </ConfirmDialog>
         <Button onPress={toggle} title="Open dialog" />
       </Box>
     )}
   </Toggle>
 </Playground>
 
-### Dialog Props
+### ConfirmDialog Props
 
-<PropsTable of={Dialog} />
+<PropsTable of={ConfirmDialog} />

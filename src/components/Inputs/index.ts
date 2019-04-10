@@ -1,4 +1,3 @@
-export { default as TextInput, TextInputProps } from './TextInput';
 export {
   default as TextInputField,
   TextInputFieldProps,
@@ -14,10 +13,9 @@ export {
   PhoneNumberInputFieldProps,
 } from './PhoneNumberInputField';
 export {
-  default as ClearableTextInput,
-  ClearableTextInputProps,
+  default as TextInput,
+  ClearableTextInputProps as TextInputProps,
 } from './ClearableTextInput';
-export { default as IconTextInput, IconTextInputProps } from './IconTextInput';
 export {
   default as SearchTextInput,
   SearchTextInputProps,

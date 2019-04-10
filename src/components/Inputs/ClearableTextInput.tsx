@@ -7,6 +7,7 @@ import IconTextInput, { IconTextInputProps } from './IconTextInput';
 
 export interface ClearableTextInputProps extends IconTextInputProps {
   onClear?: () => void;
+  isClearable?: boolean;
 }
 
 const ClearableTextInputBase = (props: ClearableTextInputProps) => {
@@ -15,6 +16,8 @@ const ClearableTextInputBase = (props: ClearableTextInputProps) => {
     innerRef,
     onChangeText,
     value,
+    isClearable,
+    rightIcon,
     ...textInputWithIconProps
   } = props;
   const theme = React.useContext(ThemeContext);
@@ -22,8 +25,10 @@ const ClearableTextInputBase = (props: ClearableTextInputProps) => {
   return (
     <IconTextInput
       ref={innerRef}
+      onChangeText={onChangeText}
+      value={value}
       rightIcon={
-        value ? (
+        value && isClearable ? (
           <TouchableOpacity
             onPress={() => {
               if (onChangeText) onChangeText('');
@@ -32,10 +37,10 @@ const ClearableTextInputBase = (props: ClearableTextInputProps) => {
           >
             <Icon name="x" size={24} color={theme.colors.text.default} />
           </TouchableOpacity>
-        ) : null
+        ) : (
+          rightIcon || null
+        )
       }
-      onChangeText={onChangeText}
-      value={value}
       {...textInputWithIconProps}
     />
   );

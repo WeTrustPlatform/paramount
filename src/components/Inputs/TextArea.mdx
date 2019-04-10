@@ -1,0 +1,24 @@
+---
+name: TextArea
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import TextArea from './TextArea';
+
+# TextArea
+
+Composes of `TextInput`
+
+<Playground>
+  <TextArea
+    name="field"
+    placeholder="Add your own placeholder"
+    size="large"
+    isDisabled={false}
+    isInvalid={false}
+    keyboardType="email-address"
+    onChangeText={text => console.log('field', text)}
+    onSubmitEditing={e => console.log('Submit on enter')}
+  />
+</Playground>

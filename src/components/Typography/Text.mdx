@@ -1,0 +1,104 @@
+---
+name: Text
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import { Text } from '.';
+import { Box } from '../Layout';
+
+# Text
+
+Composes React Native's `Text` component (i.e. you can pass its props)
+
+**Note!!!** In web environment sometimes you need to wrap `Text` in a `<Box>` or provide a parent node with `display: flex` and `flex-direction: column` for centering to work properly. In React Native it is non issue because all nodes be default have these properties
+
+### Usage
+
+<Playground>
+  <Box>
+    <Text
+      color="primary" // or custom
+      align="left"
+      size="large" // small - large or number
+      fontFamily="text"
+      weight="normal"
+      isBold
+      isItalic
+      isInline
+      transform="uppercase"
+      getStyles={(props, theme) => ({
+        textStyle: {},
+      })}
+    >
+      Lorem ipsum dolar set amet
+    </Text>
+  </Box>
+</Playground>
+
+### Sizes
+
+<Playground>
+  <Box flexDirection="column">
+    <Text size="small">small</Text>
+    <Text size="medium">medium</Text>
+    <Text size="large">large</Text>
+  </Box>
+</Playground>
+
+### Colors
+
+<Playground>
+  <Box flexDirection="column">
+    <Text color="#16a054">#16a054</Text>
+    <Text color="dark">dark</Text>
+    <Text color="default">default</Text>
+    <Text color="muted">muted</Text>
+    <Text color="selected">selected</Text>
+    <Text color="danger">danger</Text>
+    <Text color="info">info</Text>
+    <Text color="none">none</Text>
+    <Text color="success">success</Text>
+    <Text color="warning">warning</Text>
+  </Box>
+</Playground>
+
+### Font Families
+
+<Playground>
+  <Box flexDirection="column">
+    <Text fontFamily="heading">heading</Text>
+    <Text fontFamily="text">text</Text>
+    <Text fontFamily="mono">mono</Text>
+  </Box>
+</Playground>
+
+### Font Weights
+
+<Playground>
+  <Box flexDirection="column">
+    <Text weight="500">500</Text>
+    <Text weight="700">700</Text>
+    <Text weight="bold">bold</Text>
+    <Text weight="normal">normal</Text>
+    <Text weight="light">light</Text>
+  </Box>
+</Playground>
+
+### Variations
+
+<Playground>
+  <Box flexDirection="column">
+    <Text isBold>Lorem ipsum dolar set amet</Text>
+    <Text isItalic>Lorem ipsum dolar set amet</Text>
+    <Text isItalic isBold>
+      Lorem ipsum dolar set amet
+    </Text>
+    <Text align="left">Lorem ipsum dolar set amet</Text>
+    <Text align="center">Lorem ipsum dolar set amet</Text>
+    <Text align="right">Lorem ipsum dolar set amet</Text>
+    <Text transform="uppercase">Lorem ipsum dolar set amet</Text>
+    <Text transform="lowercase">Lorem ipsum dolar set amet</Text>
+    <Text transform="capitalize">Lorem ipsum dolar set amet</Text>
+  </Box>
+</Playground>

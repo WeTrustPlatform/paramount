@@ -1,0 +1,34 @@
+---
+name: CalendarDatePicker
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import { State } from 'react-powerplug';
+import CalendarDatePicker from './CalendarDatePicker';
+
+# CalendarDatePicker
+
+<Playground>
+  <State
+    initial={{
+      selectedStartDate: null,
+      selectedEndDate: null,
+    }}
+  >
+    {({ state: { selectedStartDate, selectedEndDate }, setState }) => (
+      <CalendarDatePicker
+        useRange
+        selectedStartDate={selectedStartDate}
+        selectedEndDate={selectedEndDate}
+        onValueChange={(startDate, endDate) =>
+          setState({
+            selectedStartDate: startDate,
+            selectedEndDate: endDate,
+          })
+        }
+        // ... MultiMonthCalendar Props
+      />
+    )}
+  </State>
+</Playground>

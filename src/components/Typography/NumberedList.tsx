@@ -10,9 +10,9 @@ export interface ListProps {
   children: Array<React.ReactElement<ListItemProps>>;
 }
 
-const OrderedListBase = (props: ListProps) => {
+const NumberedListBase = (props: ListProps) => {
   return <List listType="ol" {...props} />;
 };
 
-export const OrderedList = withTheme(OrderedListBase);
-export default OrderedList;
+export const NumberedList = withTheme(NumberedListBase);
+export default NumberedList;

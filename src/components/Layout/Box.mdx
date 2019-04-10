@@ -1,16 +1,13 @@
 ---
-name: Layout
+name: Box
 menu: Components
 ---
 
 import { Playground, PropsTable } from 'docz';
 
 import Box from './Box';
-import Spacing from './Spacing';
 
-# Layout
-
-## Box
+# Box
 
 Box is a primitive component for convenient layout of components. All style properties are passed as props and has some convenient props such as `paddingHorizontal`, `marginVertical`, `shape` for styling
 
@@ -22,22 +19,6 @@ Box is a primitive component for convenient layout of components. All style prop
     paddingHorizontal={40}
     height={200}
     width={200}
-    backgroundColor="#67c6bb"
-  />
-</Playground>
-
-## Spacing
-
-`Spacing` is the same as `Box`; The difference are in numeric props which are multiplied by 8 to provide consistent 8px grid spacing: `8px`, `16px`, `24px`...
-
-### Usage
-
-<Playground>
-  <Spacing
-    paddingVertical={10}
-    paddingHorizontal={10}
-    height={33}
-    width={33}
     backgroundColor="#67c6bb"
   />
 </Playground>

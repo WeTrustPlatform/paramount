@@ -12,9 +12,9 @@ export interface ListProps {
   children: Array<React.ReactElement<ListItemProps>>;
 }
 
-const UnorderedListBase = (props: ListProps) => {
+const BulletedListBase = (props: ListProps) => {
   return <List listType="ul" {...props} />;
 };
 
-export const UnorderedList = withTheme(UnorderedListBase);
-export default UnorderedList;
+export const BulletedList = withTheme(BulletedListBase);
+export default BulletedList;

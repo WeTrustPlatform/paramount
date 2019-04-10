@@ -1,0 +1,47 @@
+---
+name: TextInput
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import { State } from 'react-powerplug';
+import { View } from 'react-native';
+
+import { Icon } from '../../icons';
+import { TextInput } from '.';
+
+# TextInput
+
+Composes of React Native's `TextInput` component (i.e. you can pass its props). [See more details](https://facebook.github.io/react-native/docs/textinput)
+
+### Usage
+
+<Playground>
+  <State initial={{ value: '' }}>
+    {({ state, setState }) => (
+      <TextInput
+        name="field"
+        value={state.value}
+        placeholder="Add your own placeholder"
+        size="large"
+        isDisabled={false}
+        isInvalid={false}
+        keyboardType="email-address"
+        onChangeText={text => setState({ value: text })}
+        onSubmitEditing={e => console.log('Submit on enter')}
+        leftIcon={
+          <View>
+            <Icon name="menu" size={24} />
+          </View>
+        }
+        rightIcon={undefined}
+        isClearable={true} // Mutually exclusive with rightIcon
+        onClear={() => console.log('Cleared!')} // Only triggered with `isClearable`
+        getStyles={(props, theme) => ({
+          inputStyle: {},
+          placeholderTextColor: theme.colors.text.muted,
+        })}
+      />
+    )}
+  </State>
+</Playground>

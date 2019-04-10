@@ -54,7 +54,7 @@ const IconTextInputBase = (props: IconTextInputProps) => {
   );
 };
 
-export const IconTextInput = React.forwardRef<RNTextInput, TextInputProps>(
+export const IconTextInput = React.forwardRef<RNTextInput, IconTextInputProps>(
   (props, ref) => <IconTextInputBase {...props} innerRef={ref} />,
 );
 

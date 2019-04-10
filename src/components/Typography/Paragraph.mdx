@@ -1,0 +1,43 @@
+---
+name: Paragraph
+menu: Components
+---
+
+import { Playground, PropsTable } from 'docz';
+import { Paragraph } from '.';
+import { Box } from '../Layout';
+
+# Paragraph
+
+Composes React Native's `Text` component (i.e. you can pass its props)
+
+**Note!!!** In web environment sometimes you need to wrap `Paragraph` in a `<Box>` or provide a parent node with `display: flex` and `flex-direction: column` for centering to work properly. In React Native it is non issue because all nodes be default have these properties
+
+### Usage
+
+<Playground>
+  <Box>
+    <Paragraph
+      color="primary"
+      align="left"
+      size="large" // small - large or number
+      fontFamily="text"
+      weight="normal"
+      getStyles={(props, theme) => ({
+        paragraphStyle: {},
+      })}
+    >
+      Lorem ipsum dolar set amet
+    </Paragraph>
+  </Box>
+</Playground>
+
+### Sizes
+
+<Playground>
+  <Box flexDirection="column">
+    <Paragraph size="small">Lorem ipsum dolar set amet</Paragraph>
+    <Paragraph size="medium">Lorem ipsum dolar set amet</Paragraph>
+    <Paragraph size="large">Lorem ipsum dolar set amet</Paragraph>
+  </Box>
+</Playground>
