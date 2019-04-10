@@ -1,3 +1,10 @@
+# [1.33.0](https://github.com/WeTrustPlatform/paramount/compare/v1.32.0...v1.33.0) (2019-04-10)
+
+
+### Features
+
+* **docs:** flatten docs for easier search ([5e3a22e](https://github.com/WeTrustPlatform/paramount/commit/5e3a22e))
+
 # [1.32.0](https://github.com/WeTrustPlatform/paramount/compare/v1.31.0...v1.32.0) (2019-04-09)
 
 
