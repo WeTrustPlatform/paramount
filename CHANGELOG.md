@@ -1,3 +1,10 @@
+# [1.32.0](https://github.com/WeTrustPlatform/paramount/compare/v1.31.0...v1.32.0) (2019-04-09)
+
+
+### Features
+
+* refactor colors ([2d03909](https://github.com/WeTrustPlatform/paramount/commit/2d03909))
+
 # [1.31.0](https://github.com/WeTrustPlatform/paramount/compare/v1.30.6...v1.31.0) (2019-04-08)
 
 
