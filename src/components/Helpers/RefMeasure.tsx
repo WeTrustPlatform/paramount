@@ -23,7 +23,7 @@ export interface RefMeasureChildrenProps {
 }
 export type RefMeasureRenderPropType = (
   props: RefMeasureChildrenProps,
-) => React.ReactNode;
+) => React.ReactElement | null;
 
 export interface RefMeasureProps {
   onMeasure?: (props: Measurements) => void;
@@ -33,64 +33,50 @@ export interface RefMeasureProps {
 /**
  * A render prop to measure given node by passing `onLayout` and `ref` handlers. This differs from `ViewMeasure` in that it does not create any node in the tree
  */
-export class RefMeasure extends React.Component<RefMeasureProps, Measurements> {
-  public container: React.RefObject<any>;
+export const RefMeasure = (props: RefMeasureProps) => {
+  const forwardRef = React.createRef();
+  const { children, onMeasure } = props;
+  const [measurements, setMeasurements] = React.useState({
+    height: 0,
+    pageX: 0,
+    pageY: 0,
+    width: 0,
+    x: 0,
+    y: 0,
+  });
 
-  constructor(props: RefMeasureProps) {
-    super(props);
-    this.container = React.createRef();
-
-    this.state = {
-      height: 0,
-      pageX: 0,
-      pageY: 0,
-      width: 0,
-      x: 0,
-      y: 0,
-    };
-  }
-
-  public handleLayout = (e: LayoutChangeEvent) => {
+  const handleLayout = (e: LayoutChangeEvent) => {
     // Use the value from here, isntead of inside UIManager.measure callback
     // Async behavior will nullify nativeEvent
     const layout = e.nativeEvent.layout;
-    this.handleMeasure(layout);
+    handleMeasure(layout);
   };
 
-  public handleMeasure = (layout?: LayoutRectangle) => {
-    const { onMeasure } = this.props;
-
+  const handleMeasure = (layout?: LayoutRectangle) => {
     UIManager.measure(
-      findNodeHandle(this.container.current)!,
+      // @ts-ignore
+      findNodeHandle(forwardRef.current)!,
       (x, y, width, height, pageX, pageY) => {
-        const nodeMeasurements = {
-          ...this.state,
+        const newMeasurements = {
+          ...measurements,
           ...layout,
           pageX,
           pageY,
         };
 
-        this.setState(
-          () => nodeMeasurements,
-          () => {
-            if (onMeasure) {
-              onMeasure(nodeMeasurements);
-            }
-          },
-        );
+        setMeasurements(newMeasurements);
+
+        if (onMeasure) {
+          onMeasure(newMeasurements);
+        }
       },
     );
   };
 
-  public render() {
-    const { children } = this.props;
-    const measurements = this.state;
-
-    return children({
-      forwardRef: this.container,
-      measure: this.handleMeasure,
-      measurements,
-      onLayout: this.handleLayout,
-    });
-  }
-}
+  return children({
+    forwardRef,
+    measure: handleMeasure,
+    measurements,
+    onLayout: handleLayout,
+  });
+};

@@ -6,10 +6,9 @@ menu: Components
 import { Playground, PropsTable } from 'docz';
 import { Toggle } from 'react-powerplug';
 
-import { Positioner, PositionerController } from '.';
+import { Positioner } from '.';
 import { Button } from '../Button';
 import { Box, Spacing } from '../Layout';
-import { RefMeasure } from '../Helpers';
 import { Text } from '../Typography';
 
 export default ({ children }) => {
@@ -400,57 +399,6 @@ Add `isDynamicContent` to props to give time for Positioner to calculate its lay
         )}
       </Toggle>
     </Box>
-  </Spacing>
-</Playground>
-
-### Positioner with PositionerController
-
-For more advanced usage, you can use `PositionerController`.
-
-- Adds convenient methods for opening/closing Positioner
-- You must use this for compatibility in React-Native. (It gets correct targetMeasurements on open)
-- You do want to separate `Positioner` and the anchor
-
-<Playground>
-  <Spacing paddingVertical={10}>
-    <PositionerController>
-      {({
-        openPositioner,
-        closePositioner,
-        isPositionerVisible,
-        setTarget,
-        onTargetLayout,
-        targetMeasurements,
-      }) => {
-        return (
-          <>
-            <Positioner
-              targetMeasurements={targetMeasurements}
-              isVisible={isPositionerVisible}
-              onClose={closePositioner}
-              position="top-right"
-              content={() => (
-                <Box>
-                  <Text>
-                    Content that can be anything. By default it has no styling
-                    at all. You can use `Popover` that comes with predefined
-                    styles. Positioner is used as a base for `Popovers`,
-                    `Tooltips`, `DropdownMenus`
-                  </Text>
-                </Box>
-              )}
-            />
-            <Button
-              onLayout={onTargetLayout}
-              ref={setTarget}
-              onPress={openPositioner}
-              isInline
-              title="Some Button"
-            />
-          </>
-        );
-      }}
-    </PositionerController>
   </Spacing>
 </Playground>
 
