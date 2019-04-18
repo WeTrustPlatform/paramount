@@ -41,9 +41,9 @@
     "deepmerge": "3.2.0",
     "exenv": "1.2.2",
     "focus-trap": "5.0.0",
-    "react-icons": "3.5.0",
+    "react-icons": "3.6.1",
     "react-native-web": "0.11.2",
-    "ts-essentials": "2.0.3"
+    "ts-essentials": "2.0.4"
   },
   "devDependencies": {
     "@babel/core": "7.4.3",
@@ -63,7 +63,7 @@
     "@types/jest": "24.0.11",
     "@types/react": "16.8.13",
     "@types/react-dom": "16.8.4",
-    "@types/react-native": "0.57.43",
+    "@types/react-native": "0.57.45",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "24.7.1",
     "docz": "0.13.7",
@@ -76,7 +76,7 @@
     "lint-staged": "8.1.5",
     "merge": "1.2.1",
     "metro-react-native-babel-preset": "0.53.1",
-    "prettier": "1.16.4",
+    "prettier": "1.17.0",
     "react": "16.8.6",
     "react-art": "16.8.6",
     "react-docgen-typescript-loader": "3.1.0",
@@ -88,7 +88,7 @@
     "travis-deploy-once": "5.0.11",
     "ts-jest": "24.0.2",
     "ts-loader": "5.3.3",
-    "tslint": "5.15.0",
+    "tslint": "5.16.0",
     "tslint-sonarts": "1.9.0",
     "typescript": "3.4.3"
   },
