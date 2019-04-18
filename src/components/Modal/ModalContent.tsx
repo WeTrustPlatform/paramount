@@ -5,7 +5,7 @@ export interface ModalContentProps {
   children: React.ReactNode;
 }
 
-const ModalContentBase = (props: ModalContentProps) => {
+export const ModalContent = (props: ModalContentProps) => {
   const { children } = props;
 
   return (
@@ -21,7 +21,3 @@ const ModalContentBase = (props: ModalContentProps) => {
     </View>
   );
 };
-
-export const ModalContent = ModalContentBase;
-
-export default ModalContent;

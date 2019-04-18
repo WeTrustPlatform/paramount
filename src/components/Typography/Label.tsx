@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { Platform } from 'react-native';
 
-import withTheme from '../../theme/withTheme';
-import Text, { TextProps } from './Text';
+import { Text, TextProps } from './Text';
 
-const LabelBase = (props: TextProps) => {
+export const Label = (props: TextProps) => {
   const { children, ...textProps } = props;
 
   return (
@@ -17,6 +16,3 @@ const LabelBase = (props: TextProps) => {
     </Text>
   );
 };
-
-export const Label = withTheme(LabelBase);
-export default Label;

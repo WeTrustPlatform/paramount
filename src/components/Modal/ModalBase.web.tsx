@@ -7,7 +7,7 @@ import { ModalBaseProps } from './ModalBase';
 // Temporary usage until it is integrated
 // https://github.com/necolas/react-native-web/issues/1020
 
-class ModalBase extends React.PureComponent<ModalBaseProps> {
+export class ModalBase extends React.PureComponent<ModalBaseProps> {
   public el: HTMLDivElement | null;
   public modalRoot: HTMLBodyElement | null;
   public focusTrap: FocusTrap | null;
@@ -116,5 +116,3 @@ class ModalBase extends React.PureComponent<ModalBaseProps> {
     );
   }
 }
-
-export default ModalBase;

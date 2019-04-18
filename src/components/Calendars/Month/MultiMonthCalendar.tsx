@@ -16,7 +16,7 @@ export interface MultiMonthCalendarProps
   endMonthDate?: Date;
 }
 
-const MultiMonthCalendar = (props: MultiMonthCalendarProps) => {
+export const MultiMonthCalendar = (props: MultiMonthCalendarProps) => {
   const {
     firstDayOfWeekIndex = DEFAULT_FIRST_DAY_OF_WEEK,
     startMonthDate = new Date(),
@@ -64,5 +64,3 @@ const MultiMonthCalendar = (props: MultiMonthCalendarProps) => {
     </Box>
   );
 };
-
-export default MultiMonthCalendar;

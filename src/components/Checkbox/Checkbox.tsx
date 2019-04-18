@@ -8,7 +8,7 @@ import {
 import { DeepPartial } from 'ts-essentials';
 
 import { Icon } from '../../icons';
-import { Theme, withTheme } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
   CheckboxStyles,
@@ -19,7 +19,6 @@ import {
 export type CheckboxShape = 'circle' | 'square';
 
 export interface CheckboxProps extends AccessibilityProps {
-  theme: Theme;
   isChecked?: boolean;
   isDisabled?: boolean;
   /** Sometimes we just want the display of the checkbox  */
@@ -32,7 +31,7 @@ export interface CheckboxProps extends AccessibilityProps {
   testID?: string;
 }
 
-const CheckboxBase = (props: CheckboxProps) => {
+export const Checkbox = (props: CheckboxProps) => {
   const {
     isChecked = false,
     isDisabled = false,
@@ -40,11 +39,12 @@ const CheckboxBase = (props: CheckboxProps) => {
     checkedIcon,
     onChange = () => null,
     shape = 'square',
-    theme,
     getStyles,
     testID,
     ...accessibilityProps
   } = props;
+
+  const theme = useTheme();
 
   const { checkboxStyle, checkboxFocusBackgroundColor } = mergeStyles(
     getCheckboxStyles,
@@ -84,6 +84,3 @@ const CheckboxBase = (props: CheckboxProps) => {
     </TouchableHighlight>
   );
 };
-
-export const Checkbox = withTheme(CheckboxBase);
-export default Checkbox;

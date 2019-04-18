@@ -2,14 +2,14 @@ import * as React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 
 import { Text } from '../Typography';
-import CloseableModal, { CloseableModalProps } from './CloseableModal';
+import { CloseableModal, CloseableModalProps } from './CloseableModal';
 
 export interface FormModalProps extends CloseableModalProps {
   onClear: () => void;
   clearText?: string;
 }
 
-const FormModalBase = (props: FormModalProps) => {
+export const FormModal = (props: FormModalProps) => {
   const {
     children,
     onClose,
@@ -47,7 +47,3 @@ const FormModalBase = (props: FormModalProps) => {
     </CloseableModal>
   );
 };
-
-export const FormModal = FormModalBase;
-
-export default FormModal;

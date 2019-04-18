@@ -2,13 +2,13 @@ import * as React from 'react';
 import { TextInput as RNTextInput, View } from 'react-native';
 import { DeepPartial, Omit } from 'ts-essentials';
 
-import { ThemeContext } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
   getIconTextInputStyles,
   IconTextInputStyles,
 } from './IconTextInput.styles';
-import TextInput, { TextInputProps } from './TextInput';
+import { TextInput, TextInputProps } from './TextInput';
 import { GetTextInputStyles, TextInputStyles } from './TextInput.styles';
 
 export interface IconTextInputProps extends Omit<TextInputProps, 'getStyles'> {
@@ -28,7 +28,9 @@ const IconTextInputBase = (props: IconTextInputProps) => {
     innerRef,
     ...textInputProps
   } = props;
-  const theme = React.useContext(ThemeContext);
+
+  const theme = useTheme();
+
   const {
     containerStyle,
     leftContainerStyle,
@@ -57,5 +59,3 @@ const IconTextInputBase = (props: IconTextInputProps) => {
 export const IconTextInput = React.forwardRef<RNTextInput, IconTextInputProps>(
   (props, ref) => <IconTextInputBase {...props} innerRef={ref} />,
 );
-
-export default IconTextInput;

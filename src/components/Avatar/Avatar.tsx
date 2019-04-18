@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Image, ImageSourcePropType, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { Theme, withTheme } from '../../theme';
+import { useTheme } from '../../theme';
 import { FillColors } from '../../theme/ThemeInterface';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Text } from '../Typography';
@@ -15,7 +15,7 @@ import {
 // https://github.com/segmentio/evergreen/blob/master/source/avatar/README.md
 export type GetInitialsType = (name?: string, fallback?: string) => string;
 
-export const globalGetInitials: GetInitialsType = (name, fallback = '?') => {
+const globalGetInitials: GetInitialsType = (name, fallback = '?') => {
   if (!name) return fallback;
 
   return name
@@ -77,20 +77,13 @@ export interface AvatarProps {
    */
   sizeLimitOneCharacter?: number;
 
-  /**
-   * Theme provided by ThemeProvider.
-   */
-  theme: Theme;
-
   getStyles?: ReplaceReturnType<GetAvatarStyles, DeepPartial<AvatarStyles>>;
 
   testID?: string;
 }
 
-export const AvatarBase = (props: AvatarProps) => {
+export const Avatar = (props: AvatarProps) => {
   const {
-    theme,
-
     source,
     size = 48,
     name,
@@ -103,6 +96,8 @@ export const AvatarBase = (props: AvatarProps) => {
     getStyles,
     testID,
   } = props;
+
+  const theme = useTheme();
 
   const { imageHasFailedLoading } = { imageHasFailedLoading: false };
   const imageUnavailable = !source || imageHasFailedLoading;
@@ -144,6 +139,3 @@ export const AvatarBase = (props: AvatarProps) => {
     </View>
   );
 };
-
-export const Avatar = withTheme(AvatarBase);
-export default Avatar;

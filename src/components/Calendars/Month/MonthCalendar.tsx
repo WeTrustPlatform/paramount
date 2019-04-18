@@ -17,7 +17,7 @@ export interface MonthCalendarProps extends MonthDayBaseProps {
   firstDayOfWeekIndex?: number;
 }
 
-const MonthCalendar = (props: MonthCalendarProps) => {
+export const MonthCalendar = (props: MonthCalendarProps) => {
   const {
     date = new Date(),
     firstDayOfWeekIndex = DEFAULT_FIRST_DAY_OF_WEEK,
@@ -44,5 +44,3 @@ const MonthCalendar = (props: MonthCalendarProps) => {
     </Box>
   );
 };
-
-export default MonthCalendar;

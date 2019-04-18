@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, ViewStyle } from 'react-native';
 
-import { Theme, withTheme } from '../../theme';
+import { Theme, useTheme } from '../../theme';
 
 export const BASE_BORDER_RADII = 4;
 
@@ -17,7 +17,6 @@ export type Shape =
 
 export interface BoxProps extends ViewStyle {
   style?: ViewStyle;
-  theme: Theme;
   children?: React.ReactNode;
 
   elevation?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
@@ -65,8 +64,9 @@ const propToFn = {
   shape: (shape: Shape) => shapeMapping[shape],
 };
 
-const Box = ({ theme, ...props }: BoxProps) => {
+export const Box = (props: BoxProps) => {
   const { children, style: propStyle, testID, ...viewStyles } = props;
+  const theme = useTheme();
   const transformedStyles = [];
   const pureStyles = {};
 
@@ -93,5 +93,3 @@ const Box = ({ theme, ...props }: BoxProps) => {
     </View>
   );
 };
-
-export default withTheme(Box);

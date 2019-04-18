@@ -1,17 +1,16 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
-import withTheme from '../../theme/withTheme';
-import Text, { TextProps } from './Text';
+import { useTheme } from '../../theme';
+import { Text, TextProps } from './Text';
 
-export interface CodeProps {
+export interface CodeProps extends TextProps {
   appearance?: 'default' | 'minimal';
-  theme: Theme;
 }
 
-const CodeBase = (props: CodeProps & TextProps) => {
-  const { appearance, theme, ...textProps } = props;
+export const Code = (props: CodeProps) => {
+  const { appearance, ...textProps } = props;
+  const theme = useTheme();
 
   const code = <Text fontFamily="mono" {...textProps} />;
 
@@ -42,6 +41,3 @@ const styles = StyleSheet.create({
     paddingTop: 3,
   },
 });
-
-export const Code = withTheme(CodeBase);
-export default Code;

@@ -1,20 +1,22 @@
 import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 
-import RefMeasure, { Measurements } from './RefMeasure';
+import { Measurements, RefMeasure } from './RefMeasure';
 
-export type RenderPropType = (props: Measurements) => React.ReactNode;
+export type ViewMeasureRenderPropType = (
+  props: Measurements,
+) => React.ReactNode;
 
 export interface ViewMeasureProps extends ViewProps {
   onMeasure?: (props: Measurements) => void;
-  children: React.ReactNode | RenderPropType;
+  children: React.ReactNode | ViewMeasureRenderPropType;
 }
 
 /**
  * Wraps content in a `View` with which the measurements are calculated
  */
 
-const ViewMeasure = (props: ViewMeasureProps) => {
+export const ViewMeasure = (props: ViewMeasureProps) => {
   const { onMeasure, children, ...viewProps } = props;
   const isRenderProp = typeof children === 'function';
 
@@ -34,5 +36,3 @@ const ViewMeasure = (props: ViewMeasureProps) => {
     </RefMeasure>
   );
 };
-
-export default ViewMeasure;

@@ -2,14 +2,13 @@ import * as React from 'react';
 import { Text, TextProps } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
+import { useTheme } from '../../theme';
 import {
   FontFamily,
   FontWeight,
   ParagraphSize,
   TextColor,
-  Theme,
 } from '../../theme/ThemeInterface';
-import withTheme from '../../theme/withTheme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
   GetParagraphStyles,
@@ -24,7 +23,6 @@ export interface ParagraphProps extends TextProps {
   color?: TextColor;
   size?: ParagraphSize;
   weight?: FontWeight;
-  theme: Theme;
   align?: TextAlign;
   fontFamily?: FontFamily;
 
@@ -34,7 +32,7 @@ export interface ParagraphProps extends TextProps {
   >;
 }
 
-const ParagraphBase = (props: ParagraphProps) => {
+export const Paragraph = (props: ParagraphProps) => {
   const {
     children,
     color = 'default',
@@ -42,10 +40,10 @@ const ParagraphBase = (props: ParagraphProps) => {
     size = 'medium',
     align = 'left',
     weight = 'normal',
-    theme,
     getStyles,
     ...textProps
   } = props;
+  const theme = useTheme();
 
   const { paragraphStyle } = mergeStyles(getParagraphStyles, getStyles)(
     { align, size, color, fontFamily, weight },
@@ -63,6 +61,3 @@ const ParagraphBase = (props: ParagraphProps) => {
     </Text>
   );
 };
-
-export const Paragraph = withTheme(ParagraphBase);
-export default Paragraph;

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { ThemeContext } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Modal } from '../Modal';
 import { Overlay } from '../Overlay';
@@ -32,7 +32,7 @@ export interface DialogProps {
   getStyles?: ReplaceReturnType<GetDialogStyles, DeepPartial<DialogStyles>>;
 }
 
-const DialogBase = (props: DialogProps) => {
+export const Dialog = (props: DialogProps) => {
   const {
     children,
     footer,
@@ -42,7 +42,7 @@ const DialogBase = (props: DialogProps) => {
     getStyles,
     useHistory,
   } = props;
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
 
   const { modalContainerStyle, containerStyle, bodyStyle } = mergeStyles(
     getDialogStyles,
@@ -67,7 +67,3 @@ const DialogBase = (props: DialogProps) => {
     </Modal>
   );
 };
-
-export const Dialog = DialogBase;
-
-export default Dialog;

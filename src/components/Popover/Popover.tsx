@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { withTheme } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Positioner, PositionerProps } from '../Positioner';
 import {
@@ -18,8 +18,9 @@ export interface PopoverProps extends PositionerProps {
   >;
 }
 
-const PopoverBase = (props: PopoverProps) => {
-  const { content, theme, getContentStyles } = props;
+export const Popover = (props: PopoverProps) => {
+  const { content, getContentStyles } = props;
+  const theme = useTheme();
   const { popoverStyle } = mergeStyles(getPopoverStyles, getContentStyles)(
     theme,
   );
@@ -31,5 +32,3 @@ const PopoverBase = (props: PopoverProps) => {
     />
   );
 };
-
-export const Popover = withTheme(PopoverBase);

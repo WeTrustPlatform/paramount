@@ -38,5 +38,3 @@ export const PositionerController = (props: PositionerControllerProps) => {
     </RefMeasure>
   );
 };
-
-export default PositionerController;

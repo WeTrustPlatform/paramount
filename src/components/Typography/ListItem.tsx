@@ -3,7 +3,7 @@ import { Platform, View } from 'react-native';
 
 import { TextSize } from '../../theme/ThemeInterface';
 import { Spacing } from '../Layout';
-import Text, { TextProps } from './Text';
+import { Text, TextProps } from './Text';
 
 const paddingLeftMap = {
   large: 3,
@@ -18,7 +18,7 @@ export interface ListItemProps extends TextProps {
   mark: React.ReactNode;
 }
 
-const ListItem = (props: ListItemProps) => {
+export const ListItem = (props: ListItemProps) => {
   const { size = 'medium', mark, ...textProps } = props;
 
   const paddingLeft =
@@ -36,5 +36,3 @@ const ListItem = (props: ListItemProps) => {
     </View>
   );
 };
-
-export default ListItem;

@@ -8,8 +8,7 @@ import { Alert, AlertProps } from '../Alert';
 // Animation taken from https://medium.com/@norbajunior/react-native-facebook-and-instagram-like-top-bar-notifications-with-animated-api-43c48d0443dd
 export type ToastId = string;
 
-export interface ToastSettings
-  extends Omit<Omit<AlertProps, 'onClose'>, 'theme'> {
+export interface ToastSettings extends Omit<AlertProps, 'onClose'> {
   id?: ToastId;
   offset?: number;
   /* duration for how long the toast should stay active */
@@ -86,4 +85,3 @@ class ToastBase extends React.Component<ToastProps, ToastState> {
 }
 
 export const Toast = withTheme(ToastBase);
-export default Toast;

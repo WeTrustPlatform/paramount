@@ -1,11 +1,12 @@
 import * as React from 'react';
 
 import { Icon } from '../../icons';
-import { withTheme } from '../../theme';
-import Button, { ButtonProps } from './Button';
+import { useTheme } from '../../theme';
+import { Button, ButtonProps } from './Button';
 
-const BackButton = (props: ButtonProps) => {
-  const { theme } = props;
+export const BackButton = (props: ButtonProps) => {
+  const theme = useTheme();
+
   return (
     <Button
       appearance="minimal"
@@ -18,5 +19,3 @@ const BackButton = (props: ButtonProps) => {
     />
   );
 };
-
-export default withTheme(BackButton);

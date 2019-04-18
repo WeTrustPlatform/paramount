@@ -10,7 +10,7 @@ export interface FormFieldProps {
   children?: React.ReactNode;
 }
 
-const FormField = (props: FormFieldProps) => {
+export const FormField = (props: FormFieldProps) => {
   const { label, error, children, description, ...passThroughProps } = props;
 
   return (
@@ -34,5 +34,3 @@ const FormField = (props: FormFieldProps) => {
     </Box>
   );
 };
-
-export default FormField;

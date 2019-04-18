@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import * as React from 'react';
 
-import { ThemeContext } from '../../../theme';
+import { useTheme } from '../../../theme';
 import { Box } from '../../Layout';
 import { Month } from '../types';
 import { DATE_FORMAT } from './constants';
@@ -14,7 +14,7 @@ export interface MonthBodyProps extends MonthDayBaseProps {
 const MonthBody = (props: MonthBodyProps) => {
   const { onSelect, month } = props;
 
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
 
   return (
     <Box>

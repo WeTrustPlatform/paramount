@@ -20,7 +20,7 @@ const getDaysInWeek = (firstDayOfWeekIndex: number) => {
   return week;
 };
 
-const WeekDays = (props: WeekDaysProps) => {
+export const WeekDays = (props: WeekDaysProps) => {
   const { firstDayOfWeekIndex = DEFAULT_FIRST_DAY_OF_WEEK } = props;
   const dates = getDaysInWeek(firstDayOfWeekIndex);
 
@@ -42,5 +42,3 @@ const WeekDays = (props: WeekDaysProps) => {
     </Box>
   );
 };
-
-export default WeekDays;

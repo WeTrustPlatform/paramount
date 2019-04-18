@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 import * as React from 'react';
 import { TouchableHighlight, View } from 'react-native';
 
-import { ThemeContext } from '../../../theme';
+import { useTheme } from '../../../theme';
 import { Text } from '../../Typography';
 import { DEFAULT_MONTH_DAY_HEIGHT } from './constants';
 
@@ -25,7 +25,7 @@ const MonthDay = (props: MonthDayProps) => {
     date,
     onSelect = () => null,
   } = props;
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
 
   return (
     <TouchableHighlight

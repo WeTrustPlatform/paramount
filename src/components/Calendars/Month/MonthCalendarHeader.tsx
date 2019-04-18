@@ -19,7 +19,7 @@ export interface MonthCalendarHeaderProps {
   placeholderEndDateText?: string;
 }
 
-const MonthCalendarHeaderBase = (props: MonthCalendarHeaderProps) => {
+export const MonthCalendarHeader = (props: MonthCalendarHeaderProps) => {
   const {
     selectedStartDate = null,
     selectedEndDate = null,
@@ -53,7 +53,3 @@ const MonthCalendarHeaderBase = (props: MonthCalendarHeaderProps) => {
     </Box>
   );
 };
-
-export const MonthCalendarHeader = MonthCalendarHeaderBase;
-
-export default MonthCalendarHeader;

@@ -5,7 +5,8 @@ import { Button } from '../../Button';
 import { Divider } from '../../Divider';
 import { Spacing } from '../../Layout';
 import { FormModal } from '../../Modal';
-import MultiMonthCalendarSelect, {
+import {
+  MultiMonthCalendarSelect,
   MultiMonthCalendarSelectProps,
   MultiMonthCalendarSelectText,
 } from './MultiMonthCalendarSelect';
@@ -73,7 +74,7 @@ export const defaultSetText: SetText = (
   };
 };
 
-const ModalMultiMonthCalendarSelectBase = (
+export const ModalMultiMonthCalendarSelect = (
   props: ModalMultiMonthCalendarSelectProps,
 ) => {
   const {
@@ -152,7 +153,3 @@ const ModalMultiMonthCalendarSelectBase = (
     </>
   );
 };
-
-export const ModalMultiMonthCalendarSelect = ModalMultiMonthCalendarSelectBase;
-
-export default ModalMultiMonthCalendarSelect;

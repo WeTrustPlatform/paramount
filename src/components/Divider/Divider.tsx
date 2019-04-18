@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { ThemeContext } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
   DividerPosition,
@@ -18,9 +18,9 @@ export interface DividerProps {
   getStyles?: ReplaceReturnType<GetDividerStyles, DeepPartial<DividerStyles>>;
 }
 
-const DividerBase = (props: DividerProps) => {
+export const Divider = (props: DividerProps) => {
   const { size, color, position = 'horizontal', getStyles } = props;
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
 
   const { dividerStyle } = mergeStyles(getDividerStyles, getStyles)(
     { size, color, position },
@@ -29,7 +29,3 @@ const DividerBase = (props: DividerProps) => {
 
   return <View style={dividerStyle} />;
 };
-
-export const Divider = DividerBase;
-
-export default Divider;

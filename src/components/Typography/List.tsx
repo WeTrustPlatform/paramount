@@ -41,5 +41,3 @@ export const List = (props: ListProps) => {
     </View>
   );
 };
-
-export default List;

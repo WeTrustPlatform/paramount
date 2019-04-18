@@ -3,7 +3,7 @@ import { PickerProps as RNPickerProps } from 'react-native';
 
 import { Dialog } from '../Dialog';
 import { SelectList, SelectListItemBaseProps } from '../SelectList';
-import PickerButton, { GetPickerButtonStylesProp } from './PickerButton';
+import { GetPickerButtonStylesProp, PickerButton } from './PickerButton';
 import { PickerButtonSize } from './PickerButton.styles';
 
 export interface DialogPickerProps extends RNPickerProps {
@@ -18,7 +18,7 @@ export interface DialogPickerProps extends RNPickerProps {
 
 const SELECTED_INDEX_OFFSET = 3;
 
-const DialogPickerBase = (props: DialogPickerProps) => {
+export const DialogPicker = (props: DialogPickerProps) => {
   const {
     header,
     getStyles,
@@ -64,7 +64,3 @@ const DialogPickerBase = (props: DialogPickerProps) => {
     </>
   );
 };
-
-export const DialogPicker = DialogPickerBase;
-
-export default DialogPicker;

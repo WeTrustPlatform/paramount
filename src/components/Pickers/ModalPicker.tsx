@@ -3,7 +3,7 @@ import { PickerProps as RNPickerProps } from 'react-native';
 
 import { CloseableModal } from '../Modal';
 import { SelectList, SelectListItemBaseProps } from '../SelectList';
-import PickerButton, { GetPickerButtonStylesProp } from './PickerButton';
+import { GetPickerButtonStylesProp, PickerButton } from './PickerButton';
 import { PickerButtonSize } from './PickerButton.styles';
 
 export interface ModalPickerProps extends RNPickerProps {
@@ -20,7 +20,7 @@ const SELECTED_INDEX_OFFSET = 3;
 
 // REVIEW: When the window height is larger than the select list, and initial scroll index is at the bottom half, there is unscrollable blank space
 // it is a rare use case that can be solved by using ref to `scrollToIndex`
-const ModalPickerBase = (props: ModalPickerProps) => {
+export const ModalPicker = (props: ModalPickerProps) => {
   const {
     header,
     getStyles,
@@ -68,7 +68,3 @@ const ModalPickerBase = (props: ModalPickerProps) => {
     </>
   );
 };
-
-export const ModalPicker = ModalPickerBase;
-
-export default ModalPicker;

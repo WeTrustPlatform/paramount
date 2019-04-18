@@ -1,14 +1,15 @@
 import * as React from 'react';
 
-import { withTheme } from '../../theme';
+import { useTheme } from '../../theme';
 import { Positioner, PositionerProps } from '../Positioner';
 import {
   getFullWidthPositionerArrow,
   getPositionerArrow,
 } from './getPositionerArrow';
 
-const ArrowedPositionedBase = (props: PositionerProps) => {
-  const { content, isFullWidth, theme } = props;
+export const ArrowedPositioned = (props: PositionerProps) => {
+  const { content, isFullWidth } = props;
+  const theme = useTheme();
 
   return (
     <Positioner
@@ -32,5 +33,3 @@ const ArrowedPositionedBase = (props: PositionerProps) => {
     />
   );
 };
-
-export const ArrowedPositioned = withTheme(ArrowedPositionedBase);

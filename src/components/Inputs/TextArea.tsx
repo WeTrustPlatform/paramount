@@ -1,20 +1,16 @@
 import * as React from 'react';
+import { TextInput as RNTextInput } from 'react-native';
 
-import { Theme, withTheme } from '../../theme';
-import TextInput, { TextInputProps } from './TextInput';
+import { useTheme } from '../../theme';
+import { TextInput, TextInputProps } from './TextInput';
 
 export interface TextAreaProps extends TextInputProps {
   numberOfLines?: number;
-  theme: Theme;
 }
 
 const TextAreaBase = (props: TextAreaProps) => {
-  const {
-    numberOfLines = 3,
-    size = 'medium',
-    theme,
-    ...textInputProps
-  } = props;
+  const { numberOfLines = 3, size = 'medium', ...textInputProps } = props;
+  const theme = useTheme();
   const controlHeight = theme.controlHeights[size];
 
   return (
@@ -34,5 +30,6 @@ const TextAreaBase = (props: TextAreaProps) => {
   );
 };
 
-export const TextArea = withTheme(TextAreaBase);
-export default TextArea;
+export const TextArea = React.forwardRef<RNTextInput, TextAreaProps>(
+  (props, ref) => <TextAreaBase {...props} innerRef={ref} />,
+);

@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { ThemeContext } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Text } from '../Typography';
 import {
@@ -14,7 +14,7 @@ import {
   getPickerButtonStyles,
   PickerButtonSize,
 } from './PickerButton.styles';
-import PickerButtonWrapper from './PickerButtonWrapper';
+import { PickerButtonWrapper } from './PickerButtonWrapper';
 
 export type GetPickerButtonStylesProp = ReplaceReturnType<
   GetPickerButtonStyles,
@@ -28,7 +28,7 @@ export interface PickerButtonStyles extends AccessibilityProps {
   getStyles?: GetPickerButtonStylesProp;
 }
 
-const PickerButtonBase = (props: PickerButtonStyles) => {
+export const PickerButton = (props: PickerButtonStyles) => {
   const {
     getStyles,
     onPress,
@@ -36,7 +36,7 @@ const PickerButtonBase = (props: PickerButtonStyles) => {
     title,
     ...accessibilityProps
   } = props;
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
 
   const { pickerStyle, itemStyle } = mergeStyles(
     getPickerButtonStyles,
@@ -55,7 +55,3 @@ const PickerButtonBase = (props: PickerButtonStyles) => {
     </PickerButtonWrapper>
   );
 };
-
-export const PickerButton = PickerButtonBase;
-
-export default PickerButton;

@@ -5,7 +5,7 @@ import {
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { ThemeContext } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
   GetTextInputStyles,
@@ -37,7 +37,7 @@ const TextInputBase = (props: TextInputProps) => {
     innerRef,
     ...textInputProps
   } = props;
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
 
   const { inputStyle, placeholderTextColor } = mergeStyles(
     getTextInputStyles,
@@ -69,5 +69,3 @@ export const TextInput = React.forwardRef<RNTextInput, TextInputProps>(
     return <TextInputBase {...props} innerRef={ref} />;
   },
 );
-
-export default TextInput;

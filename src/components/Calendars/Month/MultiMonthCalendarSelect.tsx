@@ -5,8 +5,8 @@ import { ScrollView } from 'react-native';
 import { IncrementalMultiMonthCalendar } from '.';
 import { Spacing } from '../../Layout';
 import { IncrementalMultiMonthCalendarProps } from './IncrementalMultiMonthCalendar';
-import MonthCalendarHeader from './MonthCalendarHeader';
-import WeekDays from './WeekDays';
+import { MonthCalendarHeader } from './MonthCalendarHeader';
+import { WeekDays } from './WeekDays';
 
 export interface MultiMonthCalendarSelectProps
   extends IncrementalMultiMonthCalendarProps {
@@ -27,7 +27,9 @@ export interface MultiMonthCalendarSelectText {
   placeholderEndDate: string;
 }
 
-const MultiMonthCalendarSelectBase = (props: MultiMonthCalendarSelectProps) => {
+export const MultiMonthCalendarSelect = (
+  props: MultiMonthCalendarSelectProps,
+) => {
   const {
     selectedStartDate = null,
     selectedEndDate = null,
@@ -103,7 +105,3 @@ const MultiMonthCalendarSelectBase = (props: MultiMonthCalendarSelectProps) => {
     </>
   );
 };
-
-export const MultiMonthCalendarSelect = MultiMonthCalendarSelectBase;
-
-export default MultiMonthCalendarSelect;

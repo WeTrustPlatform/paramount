@@ -4,7 +4,7 @@ import { FlatList, TextInput as RNTextInput, View } from 'react-native';
 import { DeepPartial, Omit } from 'ts-essentials';
 
 import { Icon } from '../../icons';
-import { ThemeContext } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Button } from '../Button';
 import { ListItem } from '../ListItem';
@@ -13,7 +13,7 @@ import {
   getPhoneNumberInputStyles,
   PhoneNumberInputStyles,
 } from './PhoneNumberInput.styles';
-import TextInput, { TextInputProps } from './TextInput';
+import { TextInput, TextInputProps } from './TextInput';
 import { GetTextInputStyles, TextInputStyles } from './TextInput.styles';
 
 export interface PhoneNumberInputProps
@@ -53,7 +53,7 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
     ...textInputProps
   } = props;
   const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
 
   const { containerStyle } = mergeStyles(getPhoneNumberInputStyles, getStyles)(
     {},
@@ -135,5 +135,3 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
 export const PhoneNumberInput = React.forwardRef<RNTextInput, TextInputProps>(
   (props, ref) => <PhoneNumberInputBase {...props} innerRef={ref} />,
 );
-
-export default PhoneNumberInput;

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { TouchableWithoutFeedback, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { Theme, withTheme } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
   GetOverlayStyles,
@@ -12,13 +12,13 @@ import {
 
 interface OverlayProps {
   onPress: () => void;
-  theme: Theme;
   transparent?: boolean;
   getStyles?: ReplaceReturnType<GetOverlayStyles, DeepPartial<OverlayStyles>>;
 }
 
-const OverlayBase = (props: OverlayProps) => {
-  const { onPress, transparent = false, theme, getStyles } = props;
+export const Overlay = (props: OverlayProps) => {
+  const { onPress, transparent = false, getStyles } = props;
+  const theme = useTheme();
 
   const { overlayStyle } = mergeStyles(getOverlayStyles, getStyles)(
     { transparent },
@@ -36,5 +36,3 @@ const OverlayBase = (props: OverlayProps) => {
     </TouchableWithoutFeedback>
   );
 };
-
-export const Overlay = withTheme(OverlayBase);

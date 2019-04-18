@@ -1,7 +1,6 @@
 import * as React from 'react';
 
-import { Theme, withTheme } from '../../theme';
-import Box, { BoxProps } from './Box';
+import { Box, BoxProps } from './Box';
 
 export type GridScale =
   | 0
@@ -27,8 +26,6 @@ export type GridScale =
 const DEFAULT_GRD_POINT_MULTPLIER = 8;
 
 export interface SpacingProps extends BoxProps {
-  theme: Theme;
-
   gridPointMultiplier?: number;
   height?: GridScale;
 
@@ -77,7 +74,7 @@ const hasGrid = {
   paddingVertical: true,
 };
 
-const Spacing = (props: SpacingProps) => {
+export const Spacing = (props: SpacingProps) => {
   const marshalledProps = { ...props };
 
   for (const prop in props) {
@@ -93,5 +90,3 @@ const Spacing = (props: SpacingProps) => {
 
   return <Box {...marshalledProps} />;
 };
-
-export default withTheme(Spacing);

@@ -353,7 +353,10 @@ const initialMeasurements = {
   y: 0,
 };
 
-class PositionerBase extends React.Component<PositionerProps, PositionerState> {
+export class PositionerBase extends React.Component<
+  PositionerProps,
+  PositionerState
+> {
   /** Hack to get correct position of dynamic content */
   private hasOverflowedCounter: number = 0;
 
@@ -491,4 +494,3 @@ class PositionerBase extends React.Component<PositionerProps, PositionerState> {
 }
 
 export const Positioner = withTheme(PositionerBase);
-export default Positioner;

@@ -3,7 +3,7 @@ import { TouchableOpacity, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { Icon } from '../../icons';
-import { Theme, withTheme } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Spacing } from '../Layout';
 import { Text } from '../Typography';
@@ -14,7 +14,6 @@ import {
 } from './Counter.styles';
 
 export interface CounterProps {
-  theme: Theme;
   count: number;
   min?: number;
   max?: number;
@@ -28,7 +27,7 @@ export interface CounterProps {
   getStyles?: ReplaceReturnType<GetCounterStyles, DeepPartial<CounterStyles>>;
 }
 
-const CounterBase = (props: CounterProps) => {
+export const Counter = (props: CounterProps) => {
   const {
     count,
     component,
@@ -37,8 +36,9 @@ const CounterBase = (props: CounterProps) => {
     onIncrement,
     onDecrement,
     getStyles,
-    theme,
   } = props;
+
+  const theme = useTheme();
 
   const {
     containerStyle,
@@ -103,6 +103,3 @@ const CounterBase = (props: CounterProps) => {
     </View>
   );
 };
-
-export const Counter = withTheme(CounterBase);
-export default Counter;

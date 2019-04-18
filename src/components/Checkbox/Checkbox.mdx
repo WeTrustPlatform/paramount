@@ -5,8 +5,7 @@ menu: Components
 
 import { Toggle } from 'react-powerplug';
 import { Playground, PropsTable } from 'docz';
-import Checkbox from './Checkbox';
-import LabeledCheckbox from './LabeledCheckbox';
+import { Checkbox } from '.';
 
 # Usage
 
@@ -26,15 +25,11 @@ import LabeledCheckbox from './LabeledCheckbox';
           checkboxStyle: {},
           checkboxFocusBackgroundColor: '',
         })}
+        position="right"
+        label="Label"
       />
     )}
   </Toggle>
-</Playground>
-
-### Labeled Checkboxes
-
-<Playground>
-  <LabeledCheckbox shape="circle" label="Default" />
 </Playground>
 
 ### Props

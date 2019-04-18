@@ -2,8 +2,8 @@ import * as React from 'react';
 import { Platform, Text, TextProps } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { HeadingSize, TextColor, Theme } from '../../theme/ThemeInterface';
-import withTheme from '../../theme/withTheme';
+import { useTheme } from '../../theme';
+import { HeadingSize, TextColor } from '../../theme/ThemeInterface';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
   GetHeadingStyles,
@@ -13,8 +13,8 @@ import {
 import { TextAlign } from './types';
 
 export interface HeadingProps extends TextProps {
+  children: React.ReactNode;
   size?: HeadingSize;
-  theme: Theme;
   align?: TextAlign;
   color?: TextColor;
   accessibilityLevel?: 1 | 2 | 3 | 4 | 5 | 6;
@@ -22,16 +22,16 @@ export interface HeadingProps extends TextProps {
   getStyles?: ReplaceReturnType<GetHeadingStyles, DeepPartial<HeadingStyles>>;
 }
 
-const HeadingBase = (props: HeadingProps) => {
+export const Heading = (props: HeadingProps) => {
   const {
     accessibilityLevel,
-    theme,
     size = 'medium',
     align = 'left',
     color = 'default',
     getStyles,
     ...textProps
   } = props;
+  const theme = useTheme();
 
   const { headingStyle } = mergeStyles(getHeadingStyles, getStyles)(
     { size, align, color },
@@ -48,6 +48,3 @@ const HeadingBase = (props: HeadingProps) => {
     />
   );
 };
-
-export const Heading = withTheme(HeadingBase);
-export default Heading;

@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { withTheme } from '../../theme';
 import { FormField, FormFieldProps } from '../Form';
-import PhoneNumberInput, { PhoneNumberInputProps } from './PhoneNumberInput';
+import { PhoneNumberInput, PhoneNumberInputProps } from './PhoneNumberInput';
 
 export interface PhoneNumberInputFieldProps
   extends FormFieldProps,

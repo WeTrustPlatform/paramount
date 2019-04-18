@@ -12,7 +12,7 @@ export interface LoadingDotsProps {
 /**
  * Ported from https://github.com/adorableio/react-native-animated-ellipsis
  */
-class LoadingDots extends React.Component<LoadingDotsProps> {
+export class LoadingDots extends React.Component<LoadingDotsProps> {
   public static defaultProps = {
     color: '#aaa',
     duration: 300,
@@ -106,5 +106,3 @@ class LoadingDots extends React.Component<LoadingDotsProps> {
     );
   }
 }
-
-export default LoadingDots;

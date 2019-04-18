@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Dimensions } from 'react-native';
 
-export type RenderPropType = (
+export type ResponsiveRenderPropType = (
   props: ResponsiveChildrenProps,
 ) => React.ReactNode;
 
@@ -10,7 +10,7 @@ export interface ResponsiveChildrenProps {
 }
 
 export interface ResponsiveProps {
-  children: React.ReactNode | RenderPropType;
+  children: React.ReactNode | ResponsiveRenderPropType;
   minWidth?: number;
   maxWidth?: number;
 }

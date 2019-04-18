@@ -4,14 +4,13 @@ import { DeepPartial } from 'ts-essentials';
 
 import { Intent } from '../../constants/Intent';
 import { Icon } from '../../icons';
-import { Theme, withTheme } from '../../theme';
+import { Theme, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Spacing } from '../Layout';
 import { Text } from '../Typography';
 import { AlertStyles, GetAlertStyles, getAlertStyles } from './Alert.styles';
 
 export interface AlertProps {
-  theme: Theme;
   title?: string;
   description?: string;
   testID?: string;
@@ -48,7 +47,7 @@ const resolveIcon = (intent: Intent, theme: Theme) => {
   }
 };
 
-const AlertBase = (props: AlertProps) => {
+export const Alert = (props: AlertProps) => {
   const {
     title,
     description,
@@ -58,9 +57,10 @@ const AlertBase = (props: AlertProps) => {
     icon,
     intent = 'info',
     getStyles,
-    theme,
     testID,
   } = props;
+
+  const theme = useTheme();
 
   const { containerStyle, bodyStyle } = mergeStyles(getAlertStyles, getStyles)(
     { intent },
@@ -90,6 +90,3 @@ const AlertBase = (props: AlertProps) => {
     </View>
   );
 };
-
-export const Alert = withTheme(AlertBase);
-export default Alert;

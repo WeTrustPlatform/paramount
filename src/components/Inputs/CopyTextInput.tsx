@@ -6,8 +6,8 @@ import {
 } from 'react-native';
 
 import { Icon } from '../../icons';
-import { ThemeContext } from '../../theme';
-import IconTextInput, { IconTextInputProps } from './IconTextInput';
+import { useTheme } from '../../theme';
+import { IconTextInput, IconTextInputProps } from './IconTextInput';
 
 export interface CopyTextInputProps extends IconTextInputProps {
   onCopy?: (text: string) => void;
@@ -15,7 +15,7 @@ export interface CopyTextInputProps extends IconTextInputProps {
 
 const CopyTextInputBase = (props: CopyTextInputProps) => {
   const { onCopy, innerRef, value, ...textInputWithIconProps } = props;
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
 
   return (
     <IconTextInput
@@ -43,5 +43,3 @@ const CopyTextInputBase = (props: CopyTextInputProps) => {
 export const CopyTextInput = React.forwardRef<RNTextInput, CopyTextInputProps>(
   (props, ref) => <CopyTextInputBase {...props} innerRef={ref} />,
 );
-
-export default CopyTextInput;

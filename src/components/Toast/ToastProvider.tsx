@@ -4,7 +4,7 @@ import { DeepPartial } from 'ts-essentials';
 
 import { Theme, withTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import Toast, { ToastId, ToastInstance, ToastSettings } from './Toast';
+import { Toast, ToastId, ToastInstance, ToastSettings } from './Toast';
 import { GetToastStyles, getToastStyles, ToastStyles } from './Toast.styles';
 import { ToastContext } from './ToastContext';
 
@@ -20,7 +20,7 @@ export interface ToastProviderState {
 
 const hasCustomId = (toastSettings: ToastSettings) => !!toastSettings.id;
 
-export class ToastProvider extends React.Component<
+class ToastProviderBase extends React.Component<
   ToastProviderProps,
   ToastProviderState
 > {
@@ -68,7 +68,7 @@ export class ToastProvider extends React.Component<
   public createToastInstance = (
     toastSettings: ToastSettings,
   ): ToastInstance => {
-    const uniqueId = ++ToastProvider.idCounter;
+    const uniqueId = ++ToastProviderBase.idCounter;
     const id = hasCustomId(toastSettings)
       ? `${toastSettings.id}-${uniqueId}`
       : `${uniqueId}`;
@@ -115,4 +115,4 @@ export class ToastProvider extends React.Component<
   }
 }
 
-export default withTheme(ToastProvider);
+export const ToastProvider = withTheme(ToastProviderBase);

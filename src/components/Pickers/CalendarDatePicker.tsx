@@ -6,7 +6,7 @@ import {
   ModalMultiMonthCalendarSelectProps,
   SetText,
 } from '../Calendars/Month/ModalMultiMonthCalendarSelect';
-import PickerButton, { GetPickerButtonStylesProp } from './PickerButton';
+import { GetPickerButtonStylesProp, PickerButton } from './PickerButton';
 import { PickerButtonSize } from './PickerButton.styles';
 
 export interface CalendarDatePickerProps
@@ -19,7 +19,7 @@ export interface CalendarDatePickerProps
   size?: PickerButtonSize;
 }
 
-const CalendarDatePickerBase = (props: CalendarDatePickerProps) => {
+export const CalendarDatePicker = (props: CalendarDatePickerProps) => {
   const {
     getStyles,
     useHistory = false,
@@ -56,7 +56,3 @@ const CalendarDatePickerBase = (props: CalendarDatePickerProps) => {
     </>
   );
 };
-
-export const CalendarDatePicker = CalendarDatePickerBase;
-
-export default CalendarDatePicker;

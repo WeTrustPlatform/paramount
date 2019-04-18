@@ -6,6 +6,4 @@ export interface ModalBaseProps extends ModalProps {
   isBackgroundScrollable?: boolean;
 }
 
-const ModalBase = (props: ModalBaseProps) => <Modal {...props} />;
-
-export default ModalBase;
+export const ModalBase = (props: ModalBaseProps) => <Modal {...props} />;

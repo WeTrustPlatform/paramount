@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Animated, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { Theme, withTheme } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Modal } from '../Modal';
 import { Overlay } from '../Overlay';
@@ -16,7 +16,6 @@ type Position = 'bottom' | 'top' | 'right' | 'left';
 
 export interface DrawerProps {
   children: React.ReactNode;
-  theme: Theme;
   /** To show dialog or not */
   isVisible?: boolean;
   /** Called when clicking on overlay or pressing Esc */
@@ -30,7 +29,7 @@ export interface DrawerProps {
   getStyles?: ReplaceReturnType<GetDrawerStyles, DeepPartial<DrawerStyles>>;
 }
 
-const DrawerBase = (props: DrawerProps) => {
+export const Drawer = (props: DrawerProps) => {
   const {
     children,
     isVisible,
@@ -38,9 +37,10 @@ const DrawerBase = (props: DrawerProps) => {
     position = 'bottom',
     offset = 0,
     space,
-    theme,
     getStyles,
   } = props;
+
+  const theme = useTheme();
 
   const { modalContainerStyle, containerStyle } = mergeStyles(
     getDrawerStyles,
@@ -83,6 +83,3 @@ const DrawerBase = (props: DrawerProps) => {
     </Modal>
   );
 };
-
-export const Drawer = withTheme(DrawerBase);
-export default Drawer;

@@ -45,5 +45,3 @@ const SelectListItemBase = (props: SelectListItemProps) => {
 };
 
 export const SelectListItem = React.memo(SelectListItemBase);
-
-export default SelectListItem;

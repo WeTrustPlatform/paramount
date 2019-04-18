@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { HistoryModalProps } from './HistoryModal';
-import ModalBase from './ModalBase';
+import { ModalBase } from './ModalBase';
 
 let modalId = 0;
 
@@ -12,7 +12,7 @@ let modalId = 0;
  * 3. Manually closed from within the modal (e.g. Close button)
  * Each of them should properly restore the page user was at
  */
-class HistoryModal extends React.PureComponent<HistoryModalProps> {
+class HistoryModalBase extends React.PureComponent<HistoryModalProps> {
   public modalId = ++modalId;
 
   public componentDidUpdate = (previousProps: HistoryModalProps) => {
@@ -133,8 +133,11 @@ class HistoryModal extends React.PureComponent<HistoryModalProps> {
   }
 }
 
-export default ({ useHistory = false, ...props }: HistoryModalProps) => {
-  if (useHistory) return <HistoryModal {...props} />;
+export const HistoryModal = ({
+  useHistory = false,
+  ...props
+}: HistoryModalProps) => {
+  if (useHistory) return <HistoryModalBase {...props} />;
 
   return <ModalBase {...props} />;
 };

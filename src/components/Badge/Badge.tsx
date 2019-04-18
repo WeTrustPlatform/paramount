@@ -2,10 +2,10 @@ import * as React from 'react';
 import { View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { Theme, withTheme } from '../../theme';
+import { useTheme } from '../../theme';
 import { FillColor } from '../../theme/ThemeInterface';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import Box, { Shape } from '../Layout/Box';
+import { Shape } from '../Layout/Box';
 import { Text } from '../Typography';
 import {
   BadgeSize,
@@ -16,7 +16,6 @@ import {
 
 export interface BadgeProps {
   children: React.ReactNode;
-  theme: Theme;
   color?: FillColor;
   size?: BadgeSize;
   shape?: Shape;
@@ -25,7 +24,7 @@ export interface BadgeProps {
   testID?: string;
 }
 
-const BadgeBase = (props: BadgeProps) => {
+export const Badge = (props: BadgeProps) => {
   const {
     children,
     color = 'neutral',
@@ -33,9 +32,10 @@ const BadgeBase = (props: BadgeProps) => {
     isSolid = false,
     shape = 'rounded',
     size = 'small',
-    theme,
     testID,
   } = props;
+
+  const theme = useTheme();
 
   const { containerStyle, textStyle } = mergeStyles(getBadgeStyles, getStyles)(
     { size, color, isSolid, shape },
@@ -56,6 +56,3 @@ const BadgeBase = (props: BadgeProps) => {
     </View>
   );
 };
-
-export const Badge = withTheme(BadgeBase);
-export default Badge;

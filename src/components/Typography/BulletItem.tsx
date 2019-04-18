@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { TextColor } from '../../theme/ThemeInterface';
-import ListItem, { ListItemProps } from './ListItem';
+import { ListItem, ListItemProps } from './ListItem';
 
 export interface BulletItemProps extends ListItemProps {
   icon?: React.ReactNode;
@@ -9,10 +9,8 @@ export interface BulletItemProps extends ListItemProps {
   iconColor?: TextColor;
 }
 
-const BulletItem = (props: BulletItemProps) => {
+export const BulletItem = (props: BulletItemProps) => {
   const { icon, iconColor, ...listItemProps } = props;
 
   return <ListItem mark={icon} {...listItemProps} />;
 };
-
-export default BulletItem;

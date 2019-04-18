@@ -1,2 +1,3 @@
+export * from './Toast';
 export * from './ToastContext';
-export { default as ToastProvider } from './ToastProvider';
+export * from './ToastProvider';

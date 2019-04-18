@@ -1,1 +1,1 @@
-export { default as Drawer, DrawerProps } from './Drawer';
+export * from './Drawer';

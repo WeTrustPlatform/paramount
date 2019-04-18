@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FlatList, FlatListProps } from 'react-native';
 import { Omit } from 'ts-essentials';
 
-import { ThemeContext } from '../../theme';
+import { useTheme } from '../../theme';
 import { SelectListItemBaseProps } from './SelectListItem';
 
 export interface SelectListProps
@@ -29,7 +29,7 @@ const SelectListBase = (props: SelectListProps): any => {
     innerRef,
     ...flatListProps
   } = props;
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
 
   const handleOnPress = (
     itemValue: string,
@@ -88,5 +88,3 @@ export const SelectList = React.forwardRef<
 >((props, ref) => {
   return <SelectListBase {...props} innerRef={ref} />;
 });
-
-export default SelectList;

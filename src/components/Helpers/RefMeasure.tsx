@@ -33,7 +33,7 @@ export interface RefMeasureProps {
 /**
  * A render prop to measure given node by passing `onLayout` and `ref` handlers. This differs from `ViewMeasure` in that it does not create any node in the tree
  */
-class RefMeasure extends React.Component<RefMeasureProps, Measurements> {
+export class RefMeasure extends React.Component<RefMeasureProps, Measurements> {
   public container: React.RefObject<any>;
 
   constructor(props: RefMeasureProps) {
@@ -94,5 +94,3 @@ class RefMeasure extends React.Component<RefMeasureProps, Measurements> {
     });
   }
 }
-
-export default RefMeasure;

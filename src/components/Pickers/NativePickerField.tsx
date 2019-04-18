@@ -1,14 +1,13 @@
 import * as React from 'react';
 
-import { withTheme } from '../../theme';
 import { FormField, FormFieldProps } from '../Form';
-import NativePicker, { NativePickerProps } from './NativePicker';
+import { NativePicker, NativePickerProps } from './NativePicker';
 
 export interface NativePickerFieldProps
   extends FormFieldProps,
     NativePickerProps {}
 
-const NativePickerFieldBase = (props: NativePickerFieldProps) => {
+export const NativePickerField = (props: NativePickerFieldProps) => {
   const { label, error, description, ...passThroughProps } = props;
 
   return (
@@ -17,6 +16,3 @@ const NativePickerFieldBase = (props: NativePickerFieldProps) => {
     </FormField>
   );
 };
-
-export const NativePickerField = withTheme(NativePickerFieldBase);
-export default NativePickerField;

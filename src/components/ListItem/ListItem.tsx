@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { ThemeContext } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { AvatarProps } from '../Avatar';
 import { Text } from '../Typography';
@@ -31,7 +31,7 @@ export interface ListItemProps extends AccessibilityProps {
   testID?: string;
 }
 
-const ListItem = (props: ListItemProps) => {
+export const ListItem = (props: ListItemProps) => {
   const {
     getStyles,
     isDisabled = false,
@@ -44,7 +44,7 @@ const ListItem = (props: ListItemProps) => {
     testID,
     ...accessibilityProps
   } = props;
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
 
   const {
     imageWrapperStyle,
@@ -78,5 +78,3 @@ const ListItem = (props: ListItemProps) => {
     </TouchableHighlight>
   );
 };
-
-export default ListItem;

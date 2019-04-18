@@ -13,7 +13,7 @@ export interface IncrementalMultiMonthCalendarProps
   initialEndMonthDate?: Date;
 }
 
-const IncrementalMultiMonthCalendarBase = (
+export const IncrementalMultiMonthCalendar = (
   props: IncrementalMultiMonthCalendarProps,
 ) => {
   const {
@@ -45,7 +45,3 @@ const IncrementalMultiMonthCalendarBase = (
     </>
   );
 };
-
-export const IncrementalMultiMonthCalendar = IncrementalMultiMonthCalendarBase;
-
-export default IncrementalMultiMonthCalendar;

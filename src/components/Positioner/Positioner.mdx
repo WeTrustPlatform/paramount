@@ -4,13 +4,13 @@ menu: Components
 ---
 
 import { Playground, PropsTable } from 'docz';
-import Positioner from './Positioner';
-import PositionerController from './PositionerController';
+import { Toggle } from 'react-powerplug';
+
+import { Positioner, PositionerController } from '.';
 import { Button } from '../Button';
 import { Box, Spacing } from '../Layout';
 import { RefMeasure } from '../Helpers';
 import { Text } from '../Typography';
-import { Toggle } from 'react-powerplug';
 
 export default ({ children }) => {
   document.body.style.height = 'initial';
@@ -25,22 +25,36 @@ A base component for manipulating the position of the element on the screen. Use
 ### Usage
 
 <Playground>
-  <Positioner
-    isVisible={false}
-    onClose={() => console.log('Close')}
-    isDynamicContent={false}
-    position="top-right"
-    content={props => null}
-    isFullWidth={false}
-    parentHeight={1000}
-    targetMeasurements={{}}
-    getStyles={(props, theme) => ({
-      positionerStyle: {},
-      modalContainerStyle: {},
-    })}
-  >
-    <Button title="Usage" />
-  </Positioner>
+  <Toggle>
+    {({ on, toggle }) => (
+      <Positioner
+        isVisible={on}
+        onClose={toggle}
+        isDynamicContent={false}
+        position="top-right"
+        content={props => (
+          <Box width={200} height={200}>
+            <Text>
+              Content that can be anything. By default it has no styling at all.
+              You can use `Popover` that comes with predefined styles.
+              Positioner is used as a base for `Popovers`, `Tooltips`,
+              `DropdownMenus`
+            </Text>
+          </Box>
+        )}
+        isFullWidth={false}
+        parentHeight={1000}
+        // Use this prop to specify the position of a component u want to wrap with the positioner
+        // targetMeasurements={{}}
+        getStyles={(props, theme) => ({
+          positionerStyle: {},
+          modalContainerStyle: {},
+        })}
+      >
+        <Button onPress={toggle} title="Usage" />
+      </Positioner>
+    )}
+  </Toggle>
 </Playground>
 
 ### Variants

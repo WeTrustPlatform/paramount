@@ -2,8 +2,9 @@ import * as React from 'react';
 import { TextInput as RNTextInput, View } from 'react-native';
 
 import { Icon } from '../../icons';
-import { ThemeContext } from '../../theme';
-import ClearableTextInput, {
+import { useTheme } from '../../theme';
+import {
+  ClearableTextInput,
   ClearableTextInputProps,
 } from './ClearableTextInput';
 
@@ -12,7 +13,7 @@ export interface SearchTextInputProps extends ClearableTextInputProps {}
 
 const SearchTextInputBase = (props: SearchTextInputProps) => {
   const { onClear, innerRef, ...textInputWithIconProps } = props;
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
 
   return (
     <ClearableTextInput

@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { Theme, withTheme } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Spacing } from '../Layout';
 import { LoadingDots } from '../Loading';
@@ -91,11 +91,6 @@ export interface ButtonProps extends AccessibilityProps {
   iconLoading?: React.ReactNode;
 
   /**
-   * Theme provided by ThemeProvider.
-   */
-  theme: Theme;
-
-  /**
    * Inline styles for components
    */
   getStyles?: ReplaceReturnType<GetButtonStyles, DeepPartial<ButtonStyles>>;
@@ -103,7 +98,7 @@ export interface ButtonProps extends AccessibilityProps {
   testID?: string;
 }
 
-const ButtonBase = (props: ButtonProps) => {
+export const Button = (props: ButtonProps) => {
   const {
     appearance = 'primary',
     title,
@@ -120,11 +115,12 @@ const ButtonBase = (props: ButtonProps) => {
       return;
     },
     size = 'medium',
-    theme,
     testID,
 
     ...accessibilityProps
   } = props;
+
+  const theme = useTheme();
 
   const { buttonStyle, textStyle, focusColor } = mergeStyles(
     getButtonStyles,
@@ -182,6 +178,3 @@ const ButtonBase = (props: ButtonProps) => {
     </TouchableHighlight>
   );
 };
-
-export const Button = withTheme(ButtonBase);
-export default Button;

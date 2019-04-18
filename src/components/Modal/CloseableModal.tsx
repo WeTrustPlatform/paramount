@@ -3,9 +3,9 @@ import { TouchableOpacity, View } from 'react-native';
 
 import { Modal, ModalProps } from '.';
 import { Icon } from '../../icons';
-import { ThemeContext } from '../../theme';
+import { useTheme } from '../../theme';
 import { Box } from '../Layout';
-import ModalContent from './ModalContent';
+import { ModalContent } from './ModalContent';
 
 export interface CloseableModalProps extends ModalProps {
   onClose: () => void;
@@ -13,10 +13,10 @@ export interface CloseableModalProps extends ModalProps {
   rightSide?: React.ReactNode;
 }
 
-const CloseableModalBase = (props: CloseableModalProps) => {
+export const CloseableModal = (props: CloseableModalProps) => {
   const { children, rightSide, onClose, ...modalProps } = props;
 
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
 
   return (
     <Modal {...modalProps}>
@@ -40,7 +40,3 @@ const CloseableModalBase = (props: CloseableModalProps) => {
     </Modal>
   );
 };
-
-export const CloseableModal = CloseableModalBase;
-
-export default CloseableModal;

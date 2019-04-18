@@ -1,12 +1,11 @@
 import * as React from 'react';
 
-import { Theme, withTheme } from '../../theme';
-import { Button, ButtonGroup, ButtonProps } from '../Button';
+import { useTheme } from '../../theme';
+import { Button, ButtonProps } from '../Button';
 import { Drawer } from '../Drawer';
 import { Box, Spacing } from '../Layout';
 
 export interface DrawerMenuProps {
-  theme: Theme;
   /** To show dialog or not */
   isVisible?: boolean;
   /** Called when clicking on overlay or pressing Esc */
@@ -15,8 +14,9 @@ export interface DrawerMenuProps {
   options?: ButtonProps[];
 }
 
-const DrawerMenuBase = (props: DrawerMenuProps) => {
-  const { options = [], isVisible, onClose, theme } = props;
+export const DrawerMenu = (props: DrawerMenuProps) => {
+  const { options = [], isVisible, onClose } = props;
+  const theme = useTheme();
 
   return (
     <Drawer isVisible={isVisible} onClose={onClose}>
@@ -27,11 +27,9 @@ const DrawerMenuBase = (props: DrawerMenuProps) => {
           borderWidth={1}
           borderColor={theme.colors.border.default}
         >
-          <ButtonGroup>
-            {options.map(option => (
-              <Button key={option.title} {...option} />
-            ))}
-          </ButtonGroup>
+          {options.map(option => (
+            <Button key={option.title} {...option} />
+          ))}
         </Box>
         <Spacing paddingTop={3}>
           <Button onPress={onClose} title="Close" />
@@ -40,6 +38,3 @@ const DrawerMenuBase = (props: DrawerMenuProps) => {
     </Drawer>
   );
 };
-
-export const DrawerMenu = withTheme(DrawerMenuBase);
-export default DrawerMenu;

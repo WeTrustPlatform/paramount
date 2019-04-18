@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View } from 'react-native';
 
 import { Icon } from '../../icons';
-import { ThemeContext } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles } from '../../utils/mergeStyles';
 import { GetPickerButtonStylesProp } from './PickerButton';
 import { getPickerButtonStyles, PickerButtonSize } from './PickerButton.styles';
@@ -13,9 +13,9 @@ export interface PickerButtonWrapperProps {
   children: React.ReactNode;
 }
 
-const PickerButtonWrapperBase = (props: PickerButtonWrapperProps) => {
+export const PickerButtonWrapper = (props: PickerButtonWrapperProps) => {
   const { getStyles, children, size = 'medium' } = props;
-  const theme = React.useContext(ThemeContext);
+  const theme = useTheme();
 
   const { containerStyle, rightContainerStyle } = mergeStyles(
     getPickerButtonStyles,
@@ -31,7 +31,3 @@ const PickerButtonWrapperBase = (props: PickerButtonWrapperProps) => {
     </View>
   );
 };
-
-export const PickerButtonWrapper = PickerButtonWrapperBase;
-
-export default PickerButtonWrapper;

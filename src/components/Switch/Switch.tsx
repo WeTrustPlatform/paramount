@@ -38,7 +38,7 @@ export interface SwitchState {
   circlePosXStart: number;
 }
 
-class SwitchBase extends React.Component<SwitchProps, SwitchState> {
+export class SwitchBase extends React.Component<SwitchProps, SwitchState> {
   public static defaultProps = {
     backgroundColorOff: 'rgb(215,215,215)',
     backgroundColorOn: 'rgb(227,227,227)',
@@ -194,4 +194,3 @@ class SwitchBase extends React.Component<SwitchProps, SwitchState> {
 }
 
 export const Switch = withTheme(SwitchBase);
-export default Switch;
