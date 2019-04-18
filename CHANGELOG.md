@@ -1,3 +1,11 @@
+## [1.33.3](https://github.com/WeTrustPlatform/paramount/compare/v1.33.2...v1.33.3) (2019-04-18)
+
+
+### Bug Fixes
+
+* massive refactor ([9ca1695](https://github.com/WeTrustPlatform/paramount/commit/9ca1695))
+* **refmeasure:** fix warning ([64ece92](https://github.com/WeTrustPlatform/paramount/commit/64ece92))
+
 ## [1.33.2](https://github.com/WeTrustPlatform/paramount/compare/v1.33.1...v1.33.2) (2019-04-17)
 
 
