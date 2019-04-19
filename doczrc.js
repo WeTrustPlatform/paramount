@@ -34,4 +34,5 @@ export default {
   },
   codeSandbox: false,
   menu: ['Introduction', 'Getting Started', 'Customization', 'Components'],
+  base: '/paramount/',
 };
