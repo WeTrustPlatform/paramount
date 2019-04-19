@@ -1,3 +1,5 @@
+const path = require('path');
+
 const overridingExtensions = [
   '.web.js',
   '.web.jsx',
@@ -16,19 +18,20 @@ export default {
   title: 'Paramount',
   typescript: true,
   native: true,
-  hashRouter: true,
   modifyBundlerConfig: defaultConfig => {
-    return {
+    const modifiedConfig = {
       ...defaultConfig,
       resolve: {
         ...defaultConfig.resolve,
         extensions: overridingExtensions,
       },
     };
+
+    return modifiedConfig;
   },
   themeConfig: {
     showPlaygroundEditor: true,
   },
   codeSandbox: false,
-  base: './',
+  menu: ['Introduction', 'Getting Started', 'Customization', 'Components'],
 };
