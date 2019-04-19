@@ -1,3 +1,14 @@
+## [1.33.4](https://github.com/WeTrustPlatform/paramount/compare/v1.33.3...v1.33.4) (2019-04-19)
+
+
+### Bug Fixes
+
+* **deps:** revert mdx dep version ([595d652](https://github.com/WeTrustPlatform/paramount/commit/595d652))
+* **deps:** update breaking deps ([f5ea189](https://github.com/WeTrustPlatform/paramount/commit/f5ea189))
+* **deps:** update dependency ts-essentials to v2.0.5 ([#183](https://github.com/WeTrustPlatform/paramount/issues/183)) ([1fbb59e](https://github.com/WeTrustPlatform/paramount/commit/1fbb59e))
+* **deps:** update lock ([b979dce](https://github.com/WeTrustPlatform/paramount/commit/b979dce))
+* **test:** fix attempt with transformer ([11497fc](https://github.com/WeTrustPlatform/paramount/commit/11497fc))
+
 ## [1.33.3](https://github.com/WeTrustPlatform/paramount/compare/v1.33.2...v1.33.3) (2019-04-18)
 
 
