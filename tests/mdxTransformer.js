@@ -7,7 +7,6 @@ module.exports = {
 
     const code = `
     import React from 'react'
-    import mdx from '@mdx-js/mdx';
     import { MDXTag } from '@mdx-js/tag'
     ${result}
     `;
