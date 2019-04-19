@@ -1,5 +1,5 @@
-var mdx = require('@mdx-js/mdx');
-var babel = require('babel-core');
+const mdx = require('@mdx-js/mdx');
+const babel = require('babel-core');
 
 module.exports = {
   process: function(src, filename, config, options) {
@@ -7,6 +7,7 @@ module.exports = {
 
     const code = `
     import React from 'react'
+    import mdx from '@mdx-js/mdx';
     import { MDXTag } from '@mdx-js/tag'
     ${result}
     `;
