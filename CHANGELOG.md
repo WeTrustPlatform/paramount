@@ -1,3 +1,10 @@
+## [1.33.5](https://github.com/WeTrustPlatform/paramount/compare/v1.33.4...v1.33.5) (2019-04-19)
+
+
+### Bug Fixes
+
+* **docs:** set base url ([9d78f41](https://github.com/WeTrustPlatform/paramount/commit/9d78f41))
+
 ## [1.33.4](https://github.com/WeTrustPlatform/paramount/compare/v1.33.3...v1.33.4) (2019-04-19)
 
 
