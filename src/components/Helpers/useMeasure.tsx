@@ -14,28 +14,16 @@ export interface Measurements {
   x: number;
   y: number;
 }
-
-export interface RefMeasureChildrenProps {
-  measurements: Measurements;
-  forwardRef: React.RefObject<any>;
-  onLayout: (e: LayoutChangeEvent) => void;
-  measure: (layout?: LayoutRectangle) => void;
-}
-export type RefMeasureRenderPropType = (
-  props: RefMeasureChildrenProps,
-) => React.ReactElement | null;
-
-export interface RefMeasureProps {
+export interface UseMeasureProps {
   onMeasure?: (props: Measurements) => void;
-  children: RefMeasureRenderPropType;
 }
 
 /**
  * A render prop to measure given node by passing `onLayout` and `ref` handlers. This differs from `ViewMeasure` in that it does not create any node in the tree
  */
-export const RefMeasure = (props: RefMeasureProps) => {
-  const forwardRef = React.createRef();
-  const { children, onMeasure } = props;
+export const useMeasure = (props: UseMeasureProps) => {
+  const forwardRef = React.createRef<any>();
+  const { onMeasure } = props;
   const [measurements, setMeasurements] = React.useState({
     height: 0,
     pageX: 0,
@@ -73,10 +61,10 @@ export const RefMeasure = (props: RefMeasureProps) => {
     );
   };
 
-  return children({
+  return {
     forwardRef,
-    measure: handleMeasure,
     measurements,
     onLayout: handleLayout,
-  });
+    onMeasure: handleMeasure,
+  };
 };
