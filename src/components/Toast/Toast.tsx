@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { Animated } from 'react-native';
+import { View } from 'react-native';
+import { animated, useSpring } from 'react-spring/native';
 import { Omit } from 'ts-essentials';
 
-import { Theme, withTheme } from '../../theme';
 import { Alert, AlertProps } from '../Alert';
 
-// Animation taken from https://medium.com/@norbajunior/react-native-facebook-and-instagram-like-top-bar-notifications-with-animated-api-43c48d0443dd
+const AnimatedView = animated(View);
+
 export type ToastId = string;
 
 export interface ToastSettings extends Omit<AlertProps, 'onClose'> {
@@ -22,66 +23,35 @@ export interface ToastInstance extends ToastSettings {
   onRemove: () => void;
 }
 
-export interface ToastProps extends ToastInstance {
-  theme: Theme;
-}
+// tslint:disable-next-line
+export interface ToastProps extends ToastInstance {}
 
-export interface ToastState {
-  value: Animated.Value;
-}
+export const Toast = (props: ToastProps) => {
+  const {
+    component,
+    id,
+    onRemove,
+    duration = 3000,
+    offset = 16,
+    ...toastSettings
+  } = props;
 
-const DEFAULT_VALUE = 500;
+  const style = useSpring({
+    config: { tension: 240, friction: 24 },
+    from: { translateY: -500 },
+    onRest: () => onRemove(),
+    to: async next => {
+      // tslint:disable-next-line
+      await next({ translateY: 10 });
+      // tslint:disable-next-line
+      await next({ translateY: -500, delay: duration });
+    },
+  });
 
-class ToastBase extends React.Component<ToastProps, ToastState> {
-  public closeTimer: number | null = null;
-
-  constructor(props: ToastProps) {
-    super(props);
-
-    this.state = {
-      value: new Animated.Value(-DEFAULT_VALUE),
-    };
-  }
-
-  public componentDidMount() {
-    const { onRemove, duration = 3000, offset = 16 } = this.props;
-    const { value } = this.state;
-
-    Animated.sequence([
-      Animated.spring(value, {
-        bounciness: 8,
-        speed: 25,
-        toValue: offset,
-      }),
-      Animated.delay(duration),
-      Animated.spring(value, {
-        bounciness: 8,
-        speed: 25,
-        toValue: -DEFAULT_VALUE,
-      }),
-    ]).start(() => onRemove());
-  }
-
-  public render() {
-    const {
-      component,
-      offset,
-      duration,
-      id,
-      onRemove,
-      ...toastSettings
-    } = this.props;
-
-    return (
-      <Animated.View
-        style={{
-          transform: [{ translateY: this.state.value }],
-        }}
-      >
-        {component || <Alert {...toastSettings} onClose={onRemove} />}
-      </Animated.View>
-    );
-  }
-}
-
-export const Toast = withTheme(ToastBase);
+  return (
+    // @ts-ignore
+    <AnimatedView style={{ transform: [{ translateY: style.translateY }] }}>
+      {component || <Alert {...toastSettings} onClose={onRemove} />}
+    </AnimatedView>
+  );
+};
