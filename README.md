@@ -20,12 +20,8 @@ More:
 
 # Documentation
 
-[Getting started](stub)
+[Getting started](stub)  
 [Customize theme](stub)
-
-# Inspiration
-
-Much of the architecture and implementation of this library are heavily inspired by work of existing design systems and libraries, and there are parts even copied directly into this project.
 
 # Contributing
 

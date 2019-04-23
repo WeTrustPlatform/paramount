@@ -37,7 +37,6 @@ export const Toast = (props: ToastProps) => {
   } = props;
 
   const style = useSpring({
-    config: { tension: 240, friction: 24 },
     from: { translateY: -500 },
     onRest: () => onRemove(),
     to: async next => {

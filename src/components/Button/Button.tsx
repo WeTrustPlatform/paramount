@@ -2,6 +2,7 @@ import * as React from 'react';
 import {
   AccessibilityProps,
   GestureResponderEvent,
+  TextStyle,
   TouchableHighlight,
   View,
 } from 'react-native';
@@ -23,6 +24,12 @@ import {
 
 export interface ButtonProps extends AccessibilityProps {
   title?: string;
+
+  /**
+   * Icon in place of title
+   * @default "null"
+   */
+  icon?: React.ReactNode;
 
   /**
    * The intent of the button.
@@ -104,6 +111,7 @@ export const Button = (props: ButtonProps) => {
     title,
     color = 'default',
     getStyles,
+    icon,
     iconAfter,
     iconBefore,
     iconLoading,
@@ -161,20 +169,26 @@ export const Button = (props: ButtonProps) => {
           paddingLeft={iconBefore ? 1 : 0}
           paddingRight={iconAfter ? 1 : 0}
         >
-          {isLoading ? (
-            iconLoading || <LoadingDots color={textStyle.color} />
-          ) : title ? (
-            <Text
-              getStyles={() => ({
-                textStyle,
-              })}
-            >
-              {title}
-            </Text>
-          ) : null}
+          {/*
+        // @ts-ignore */}
+          <ButtonContent {...props} textStyle={textStyle} />
         </Spacing>
         {iconAfter}
       </View>
     </TouchableHighlight>
   );
+};
+
+export interface ButtonContentProps extends ButtonProps {
+  textStyle: TextStyle;
+}
+
+const ButtonContent = (props: ButtonContentProps) => {
+  const { isLoading, iconLoading, icon, title, textStyle } = props;
+
+  if (isLoading) return iconLoading || <LoadingDots color={textStyle.color} />;
+  if (icon) return icon;
+  if (title) return <Text getStyles={() => ({ textStyle })}>{title}</Text>;
+
+  return null;
 };
