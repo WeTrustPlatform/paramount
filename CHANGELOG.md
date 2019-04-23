@@ -1,3 +1,10 @@
+# [1.34.0](https://github.com/WeTrustPlatform/paramount/compare/v1.33.5...v1.34.0) (2019-04-23)
+
+
+### Features
+
+* **toast:** use react-spring for animation ([09dda82](https://github.com/WeTrustPlatform/paramount/commit/09dda82))
+
 ## [1.33.5](https://github.com/WeTrustPlatform/paramount/compare/v1.33.4...v1.33.5) (2019-04-19)
 
 
