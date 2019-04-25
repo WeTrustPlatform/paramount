@@ -1,3 +1,10 @@
+# [1.35.0](https://github.com/WeTrustPlatform/paramount/compare/v1.34.0...v1.35.0) (2019-04-25)
+
+
+### Features
+
+* refactor animations and modal ([f9ccdf3](https://github.com/WeTrustPlatform/paramount/commit/f9ccdf3))
+
 # [1.34.0](https://github.com/WeTrustPlatform/paramount/compare/v1.33.5...v1.34.0) (2019-04-23)
 
 
