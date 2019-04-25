@@ -12,7 +12,7 @@ let modalId = 0;
  * 3. Manually closed from within the modal (e.g. Close button)
  * Each of them should properly restore the page user was at
  */
-class HistoryModalBase extends React.PureComponent<HistoryModalProps> {
+class HistoryModalBase extends React.Component<HistoryModalProps> {
   public modalId = ++modalId;
 
   public componentDidUpdate = (previousProps: HistoryModalProps) => {

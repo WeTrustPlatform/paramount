@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { animated, useSpring } from 'react-spring/native';
+import { animated, useSpring } from 'react-spring/native.cjs';
 import { Omit } from 'ts-essentials';
 
 import { Alert, AlertProps } from '../Alert';

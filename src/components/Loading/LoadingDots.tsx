@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { animated, useTrail } from 'react-spring/native';
+import { animated, useTrail } from 'react-spring/native.cjs';
 
 const AnimatedView = animated(View);
 

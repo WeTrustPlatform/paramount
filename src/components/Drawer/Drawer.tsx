@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Animated, View } from 'react-native';
+import { View } from 'react-native';
+import { animated, useSpring } from 'react-spring/native.cjs';
 import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
@@ -13,6 +14,7 @@ import {
 } from './Drawer.styles';
 
 type Position = 'bottom' | 'top' | 'right' | 'left';
+const AnimatedView = animated(View);
 
 export interface DrawerProps {
   children: React.ReactNode;
@@ -47,23 +49,21 @@ export const Drawer = (props: DrawerProps) => {
     getStyles,
   )(theme);
 
-  if (!isVisible) return null;
-
-  const value = new Animated.Value(-500);
-
-  Animated.spring(value, {
-    bounciness: 0,
-    speed: 70,
-    toValue: offset,
-  }).start();
+  const animation = useSpring({
+    [position]: offset,
+    from: { [position]: -600 },
+    reset: true,
+  });
 
   return (
-    <Modal visible transparent onRequestClose={onClose}>
+    <Modal visible={isVisible} transparent onRequestClose={onClose}>
       <View style={modalContainerStyle}>
-        <Animated.View
+        {/*
+        // @ts-ignore */}
+        <AnimatedView
           style={{
             ...containerStyle,
-            [position]: value,
+            [position]: animation[position],
             ...((position === 'left' || position === 'right') &&
               space && {
                 height: '100%',
@@ -77,7 +77,7 @@ export const Drawer = (props: DrawerProps) => {
           }}
         >
           {children}
-        </Animated.View>
+        </AnimatedView>
         <Overlay onPress={onClose} />
       </View>
     </Modal>

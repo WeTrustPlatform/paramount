@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { animated, useSpring } from 'react-spring/native';
+import { animated, useSpring } from 'react-spring/native.cjs';
 import { DeepPartial } from 'ts-essentials';
 
 import { Icon } from '../../icons';

@@ -2,117 +2,79 @@ import createFocusTrap, { FocusTrap } from 'focus-trap';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
+import { useElement, useFreezeBody } from '../Helpers';
 import { ModalBaseProps } from './ModalBase';
 
 // Temporary usage until it is integrated
 // https://github.com/necolas/react-native-web/issues/1020
 
-export class ModalBase extends React.PureComponent<ModalBaseProps> {
-  public el: HTMLDivElement | null;
-  public modalRoot: HTMLBodyElement | null;
-  public focusTrap: FocusTrap | null;
-  /** Solves the scenario where it is unmounting, we should deactivate focus but not trigger `onRequestClose()` */
-  public isUnmounting: boolean = false;
-  public content: React.RefObject<HTMLDivElement> = React.createRef<
-    HTMLDivElement
-  >();
+export const ModalBase = (props: ModalBaseProps): React.ReactPortal | null => {
+  const {
+    children,
+    transparent,
+    visible,
+    isBackgroundScrollable = false,
+    onRequestClose,
+  } = props;
+  let isUnmounting = false;
+  const targetElement = useElement('modal');
+  const elementRef = React.useRef<HTMLDivElement>(null);
+  const focusTrapRef = React.useRef<FocusTrap>(null);
 
-  constructor(props: ModalBaseProps) {
-    super(props);
-    this.el = null;
-    this.modalRoot = null;
-    this.focusTrap = null;
-  }
+  useFreezeBody({ isFrozen: !!(!isBackgroundScrollable && visible) });
 
-  public componentDidMount() {
-    this.el = document.createElement('div');
-    this.modalRoot = document.getElementsByTagName('body')[0];
-    this.modalRoot.appendChild(this.el);
-    this.forceUpdate();
-  }
-
-  public componentDidUpdate() {
-    const { visible, isBackgroundScrollable = false } = this.props;
-
-    if (visible) {
-      this.activateFocus();
-      if (!isBackgroundScrollable) {
-        this.freezeBody();
+  React.useEffect(() => {
+    const deactivateFocus = () => {
+      if (focusTrapRef.current) {
+        focusTrapRef.current.deactivate();
+        // @ts-ignore
+        focusTrapRef.current = null;
       }
-    } else {
-      this.deactivateFocus();
-      if (!isBackgroundScrollable) {
-        this.unfreezeBody();
+    };
+
+    const activateFocus = () => {
+      if (elementRef.current && !focusTrapRef.current) {
+        // @ts-ignore
+        focusTrapRef.current = createFocusTrap(elementRef.current, {
+          initialFocus: elementRef.current,
+          onDeactivate: () => {
+            if (onRequestClose && visible && !isUnmounting) {
+              onRequestClose();
+            }
+          },
+        });
+
+        focusTrapRef.current.activate();
       }
-    }
-  }
+    };
 
-  public componentWillUnmount() {
-    if (this.modalRoot && this.el) {
-      this.modalRoot.removeChild(this.el);
-    }
+    if (visible) activateFocus();
+    else deactivateFocus();
 
-    this.isUnmounting = true;
-    this.deactivateFocus();
-  }
+    return () => {
+      isUnmounting = true;
+      deactivateFocus();
+    };
+  }, [visible]);
 
-  public freezeBody = () => {
-    document.body.style.overflow = 'hidden';
-    document.body.style.height = '100vh';
-  };
+  if (!visible) return null;
 
-  public unfreezeBody = () => {
-    document.body.style.overflow = '';
-    document.body.style.height = '';
-  };
-
-  public activateFocus = () => {
-    const { onRequestClose } = this.props;
-
-    if (this.content.current && !this.focusTrap) {
-      this.focusTrap = createFocusTrap(this.content.current, {
-        initialFocus: this.content.current,
-        onDeactivate: () => {
-          if (onRequestClose && this.props.visible && !this.isUnmounting) {
-            onRequestClose();
-          }
-        },
-      });
-
-      this.focusTrap.activate();
-    }
-  };
-
-  public deactivateFocus = () => {
-    if (this.focusTrap) {
-      this.focusTrap.deactivate();
-      this.focusTrap = null;
-    }
-  };
-
-  public render(): React.ReactPortal | null {
-    const { transparent, visible, isBackgroundScrollable = false } = this.props;
-
-    if (!visible || !this.el) return null;
-
-    return ReactDOM.createPortal(
-      <div
-        tabIndex={-1}
-        ref={this.content}
-        style={{
-          backgroundColor: transparent ? 'transparent' : 'white',
-          bottom: 0,
-          left: 0,
-          overflow: 'auto',
-          position: isBackgroundScrollable ? 'absolute' : 'fixed',
-          right: 0,
-          top: 0,
-          zIndex: 1000,
-        }}
-      >
-        {this.props.children}
-      </div>,
-      this.el,
-    );
-  }
-}
+  return ReactDOM.createPortal(
+    <div
+      tabIndex={-1}
+      ref={elementRef}
+      style={{
+        backgroundColor: transparent ? 'transparent' : 'white',
+        bottom: 0,
+        left: 0,
+        position: isBackgroundScrollable ? 'absolute' : 'fixed',
+        right: 0,
+        top: 0,
+        zIndex: 1000,
+      }}
+    >
+      {children}
+    </div>,
+    targetElement,
+  );
+};

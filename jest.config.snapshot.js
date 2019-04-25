@@ -19,7 +19,6 @@ module.exports = {
     'tsx',
     ...defaults.moduleFileExtensions,
   ],
-  transformIgnorePatterns: ['/node_modules/(?!@expo/vector-icons).+\\.js$'],
   testRegex: './tests/snapshot.test.js',
   setupFiles: ['jest-canvas-mock'],
 };

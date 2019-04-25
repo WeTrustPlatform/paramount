@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Platform, View } from 'react-native';
+import { animated, useSpring } from 'react-spring/native.cjs';
 import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
@@ -10,6 +11,8 @@ import {
   ProgressSize,
   ProgressStyles,
 } from './Progress.styles';
+
+const AnimatedView = animated(View);
 
 export interface ProgressProps {
   percent?: number;
@@ -27,14 +30,18 @@ export const Progress = (props: ProgressProps) => {
     getStyles,
   )({ size }, theme);
 
+  const boundPercent = Math.max(Math.min(percent, 100), 0);
+  const { width } = useSpring({ width: boundPercent });
+
   return (
     <View style={containerStyle} testID={testID}>
-      <View
+      <AnimatedView
         // @ts-ignore
         accessibilityRole={Platform.OS === 'web' ? 'progress' : 'none'}
+        // @ts-ignore
         style={{
-          width: `${percent}%`,
           ...progressStyle,
+          width: width.interpolate(w => `${w}%`),
         }}
       />
     </View>
