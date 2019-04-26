@@ -1,3 +1,10 @@
+# [1.37.0](https://github.com/WeTrustPlatform/paramount/compare/v1.36.0...v1.37.0) (2019-04-26)
+
+
+### Features
+
+* **dialog:** add fade animation ([afcf650](https://github.com/WeTrustPlatform/paramount/commit/afcf650))
+
 # [1.36.0](https://github.com/WeTrustPlatform/paramount/compare/v1.35.0...v1.36.0) (2019-04-26)
 
 
