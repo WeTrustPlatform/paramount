@@ -31,7 +31,10 @@ export const Progress = (props: ProgressProps) => {
   )({ size }, theme);
 
   const boundPercent = Math.max(Math.min(percent, 100), 0);
-  const { width } = useSpring({ width: boundPercent });
+  const { width } = useSpring({
+    from: { width: boundPercent },
+    width: boundPercent,
+  });
 
   return (
     <View style={containerStyle} testID={testID}>

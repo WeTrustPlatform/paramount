@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-// ported from https://www.jayfreestone.com/writing/react-portals-with-hooks/
-
 const createRootElement = (id: string) => {
   const rootContainer = document.createElement('div');
   rootContainer.setAttribute('id', id);
@@ -21,13 +19,10 @@ export const useElement = (id: string) => {
   const rootElemRef = React.useRef<Element>(null);
 
   React.useEffect(() => {
-    const existingParent = document.querySelector(`#${id}`);
-    const parentElem = existingParent || createRootElement(id);
+    const parentElem = createRootElement(id);
 
     // If there is no existing DOM element, add a new one.
-    if (!existingParent) {
-      addRootElement(parentElem);
-    }
+    addRootElement(parentElem);
 
     if (rootElemRef.current) {
       parentElem.appendChild(rootElemRef.current);

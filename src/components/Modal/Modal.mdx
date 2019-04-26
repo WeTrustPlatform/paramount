@@ -21,7 +21,11 @@ Modal covers the full screen. For a prompt/small version of modal, use `Dialog`
   <Toggle initial={false}>
     {({ on, toggle, set }) => (
       <Box>
-        <Modal visible={on} onRequestClose={() => set(false)}>
+        <Modal
+          visible={on}
+          animationType="slide"
+          onRequestClose={() => set(false)}
+        >
           <Box height={1800}>
             <Text>Put any content in the modal</Text>
             <Button onPress={() => set(false)} title="Close button one" />
@@ -40,7 +44,11 @@ Modal covers the full screen. For a prompt/small version of modal, use `Dialog`
   <Toggle initial={false}>
     {({ on: outerOn, set: outerSet }) => (
       <Box>
-        <Modal visible={outerOn} onRequestClose={() => outerSet(false)}>
+        <Modal
+          visible={outerOn}
+          animationType="fade"
+          onRequestClose={() => outerSet(false)}
+        >
           <Box height={1800}>
             <Text>Outer modal</Text>
             <Button
@@ -56,6 +64,7 @@ Modal covers the full screen. For a prompt/small version of modal, use `Dialog`
                 <Box>
                   <Modal
                     visible={innerOn}
+                    animationType="slide"
                     onRequestClose={() => innerSet(false)}
                   >
                     <Box height={1800}>
