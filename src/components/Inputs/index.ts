@@ -8,4 +8,3 @@ export {
   ClearableTextInputProps as TextInputProps,
 } from './ClearableTextInput';
 export * from './SearchTextInput';
-export * from './CopyTextInput';
