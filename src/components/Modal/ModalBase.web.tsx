@@ -65,11 +65,6 @@ export const ModalBase = (props: ModalBaseProps): React.ReactPortal | null => {
   }, [visible]);
 
   const { opacity, y } = useSpring({
-    config: {
-      clamp: true,
-      friction: 24,
-      tension: 240,
-    },
     onRest: () => {
       if (!visible) setIsInView(false);
     },

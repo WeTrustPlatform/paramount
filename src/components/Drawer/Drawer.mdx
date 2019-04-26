@@ -16,17 +16,56 @@ import { Text } from '../Typography';
 ### Usage
 
 <Playground>
-  <Drawer
-    space="30%"
-    isVisible={false}
-    onClose={() => console.log('Close')}
-    offset={0}
-    position="left"
-    getStyles={(props, theme) => ({
-      modalContainerStyle: {},
-      containerStyle: {},
-    })}
-  />
+  <Drawer />
+  <Toggle>
+    {({ on, toggle }) => (
+      <>
+        <Button onPress={toggle} isInline title="Open drawer menu" />
+        <Drawer
+          space={null} // px or %, null fits the content
+          offset={0}
+          position="bottom"
+          isVisible={on}
+          onClose={toggle}
+          getStyles={(props, theme) => ({
+            modalContainerStyle: {},
+            containerStyle: {},
+          })}
+        >
+          <Spacing padding={3}>
+            <Box elevation={1} backgroundColor="white" borderRadius={4}>
+              {[
+                {
+                  onPress: toggle,
+                  title: 'Menu Option 1',
+                  color: 'danger',
+                },
+                {
+                  onPress: toggle,
+                  title: 'Menu Option 2',
+                  color: 'primary',
+                },
+                {
+                  onPress: toggle,
+                  title: 'Menu Option 3',
+                  color: 'secondary',
+                },
+                {
+                  onPress: toggle,
+                  title: 'Menu Option 4',
+                },
+              ].map(option => (
+                <Button key={option.title} appearance="minimal" {...option} />
+              ))}
+            </Box>
+            <Spacing paddingTop={3}>
+              <Button onPress={toggle} title="Close" />
+            </Spacing>
+          </Spacing>
+        </Drawer>
+      </>
+    )}
+  </Toggle>
 </Playground>
 
 ### Variants
