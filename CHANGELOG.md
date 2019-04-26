@@ -1,3 +1,10 @@
+# [1.36.0](https://github.com/WeTrustPlatform/paramount/compare/v1.35.0...v1.36.0) (2019-04-26)
+
+
+### Features
+
+* **modal:** add animation type ([b9228d6](https://github.com/WeTrustPlatform/paramount/commit/b9228d6))
+
 # [1.35.0](https://github.com/WeTrustPlatform/paramount/compare/v1.34.0...v1.35.0) (2019-04-25)
 
 
