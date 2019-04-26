@@ -1,3 +1,11 @@
+# [1.38.0](https://github.com/WeTrustPlatform/paramount/compare/v1.37.0...v1.38.0) (2019-04-26)
+
+
+### Features
+
+* **input:** remove copytextinput ([dddb8ad](https://github.com/WeTrustPlatform/paramount/commit/dddb8ad))
+* **menu:** remove menus and custom animations ([297de6d](https://github.com/WeTrustPlatform/paramount/commit/297de6d))
+
 # [1.37.0](https://github.com/WeTrustPlatform/paramount/compare/v1.36.0...v1.37.0) (2019-04-26)
 
 
