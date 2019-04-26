@@ -168,24 +168,24 @@ export const getButtonVariables = (theme: Theme): ButtonVariables => {
         borderRadius: theme.controlBorderRadius.small,
         fontSize: theme.textSizes.small.fontSize || 14,
         height: theme.controlHeights.small,
-        paddingLeft: theme.controlPaddings.small,
-        paddingRight: theme.controlPaddings.small,
+        paddingLeft: theme.controlPaddings.small * 2,
+        paddingRight: theme.controlPaddings.small * 2,
       },
 
       medium: {
         borderRadius: theme.controlBorderRadius.medium,
         fontSize: theme.textSizes.medium.fontSize || 16,
         height: theme.controlHeights.medium,
-        paddingLeft: theme.controlPaddings.medium,
-        paddingRight: theme.controlPaddings.medium,
+        paddingLeft: theme.controlPaddings.medium * 2,
+        paddingRight: theme.controlPaddings.medium * 2,
       },
 
       large: {
         borderRadius: theme.controlBorderRadius.large,
         fontSize: theme.textSizes.large.fontSize || 20,
         height: theme.controlHeights.large,
-        paddingLeft: theme.controlPaddings.large,
-        paddingRight: theme.controlPaddings.large,
+        paddingLeft: theme.controlPaddings.large * 2,
+        paddingRight: theme.controlPaddings.large * 2,
       },
     },
   };

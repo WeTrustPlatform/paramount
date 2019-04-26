@@ -28,7 +28,7 @@ export const DrawerMenu = (props: DrawerMenuProps) => {
           borderColor={theme.colors.border.default}
         >
           {options.map(option => (
-            <Button key={option.title} {...option} />
+            <Button key={option.title} appearance="minimal" {...option} />
           ))}
         </Box>
         <Spacing paddingTop={3}>

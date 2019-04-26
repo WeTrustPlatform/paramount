@@ -50,6 +50,12 @@ export const Drawer = (props: DrawerProps) => {
   )(theme);
 
   const animation = useSpring({
+    config: {
+      clamp: true,
+      friction: 24,
+      tension: 240,
+    },
+
     [position]: offset,
     from: { [position]: -600 },
     reset: true,

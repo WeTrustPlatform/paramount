@@ -5,7 +5,7 @@ menu: Components
 
 import { Playground, Props } from 'docz';
 import { Button } from './Button';
-import { Box } from '../Layout';
+import { Box, Spacing } from '../Layout';
 
 # Button
 
@@ -33,55 +33,53 @@ import { Box } from '../Layout';
   />
 </Playground>
 
-### Primary appearance (default)
+### Variants
 
 <Playground>
-  <Button color="default" title="Default" />
-  <Button color="primary" title="Primary" />
-  <Button color="secondary" title="Secondary" />
-  <Button color="danger" title="Danger" />
+  <Box flexDirection="row">
+    <Spacing paddingRight={2} height={30} justifyContent="space-between">
+      <Button color="default" title="Default" />
+      <Button color="default" appearance="outline" title="Default" />
+      <Button color="default" appearance="minimal" title="Default" />
+      <Button color="default" appearance="primary" title="Default" isLoading />
+    </Spacing>
+    <Spacing paddingRight={2} height={30} justifyContent="space-between">
+      <Button color="primary" title="Primary" />
+      <Button color="primary" appearance="outline" title="Primary" />
+      <Button color="primary" appearance="minimal" title="Primary" />
+      <Button color="primary" appearance="primary" title="Primary" isLoading />
+    </Spacing>
+    <Spacing paddingRight={2} height={30} justifyContent="space-between">
+      <Button color="secondary" title="Secondary" />
+      <Button color="secondary" appearance="outline" title="Secondary" />
+      <Button color="secondary" appearance="minimal" title="Secondary" />
+      <Button
+        color="secondary"
+        appearance="primary"
+        title="Secondary"
+        isLoading
+      />
+    </Spacing>
+    <Spacing paddingRight={2} height={30} justifyContent="space-between">
+      <Button color="danger" title="Danger" />
+      <Button color="danger" appearance="outline" title="Danger" />
+      <Button color="danger" appearance="minimal" title="Danger" />
+      <Button color="danger" appearance="primary" title="Danger" isLoading />
+    </Spacing>
+  </Box>
 </Playground>
 
-### Outline appearance
+### Positioning inline button with different sizes
 
 <Playground>
-  <Button appearance="outline" color="default" title="Default" />
-  <Button appearance="outline" color="primary" title="Primary" />
-  <Button appearance="outline" color="secondary" title="Secondary" />
-  <Button appearance="outline" color="danger" title="Danger" />
-</Playground>
-
-### Minimal appearance
-
-<Playground>
-  <Button appearance="minimal" color="default" title="Default" />
-  <Button appearance="minimal" color="primary" title="Primary" />
-  <Button appearance="minimal" color="secondary" title="Secondary" />
-  <Button appearance="minimal" color="danger" title="Danger" />
-</Playground>
-
-### Loading Primary button
-
-<Playground>
-  <Button isLoading appearance="primary" color="primary" title="Default" />
-  <Button isLoading appearance="outline" color="primary" title="Primary" />
-  <Button isLoading appearance="minimal" color="primary" title="Secondary" />
-</Playground>
-
-### Loading Secondary button
-
-<Playground>
-  <Button isLoading appearance="primary" color="secondary" title="Default" />
-  <Button isLoading appearance="outline" color="secondary" title="Primary" />
-  <Button isLoading appearance="minimal" color="secondary" title="Secondary" />
-</Playground>
-
-### Other props
-
-<Playground>
-  <Box>
-    <Button isInline color="primary" title="Inline" />
-    <Button isDisabled color="primary" title="Disabled" />
+  <Box flexDirection="row" justifyContent="flex-start">
+    <Button isInline color="primary" title="Left small" size="small" />
+  </Box>
+  <Box flexDirection="row" justifyContent="center">
+    <Button isInline color="primary" title="Center medium" size="medium" />
+  </Box>
+  <Box flexDirection="row" justifyContent="flex-end">
+    <Button isInline color="primary" title="Right large" size="large" />
   </Box>
 </Playground>
 
