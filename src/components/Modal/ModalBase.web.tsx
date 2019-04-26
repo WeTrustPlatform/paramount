@@ -19,23 +19,16 @@ export const ModalBase = (props: ModalBaseProps): React.ReactPortal | null => {
     animationType = 'none',
   } = props;
   let isUnmounting = false;
-  let animationTimer: any = null;
   const targetElement = useElement('modal');
   const [isInView, setIsInView] = React.useState(visible);
   const elementRef = React.useRef<HTMLDivElement>(null);
   const focusTrapRef = React.useRef<FocusTrap>(null);
-  const animationDuration = animationType === 'none' ? 0 : 350;
 
   useFreezeBody({ isFrozen: !!(!isBackgroundScrollable && visible) });
 
   React.useEffect(() => {
     const deactivateFocus = () => {
       if (focusTrapRef.current) {
-        animationTimer = setTimeout(
-          () => setIsInView(false),
-          animationDuration,
-        );
-
         focusTrapRef.current.deactivate();
         // @ts-ignore
         focusTrapRef.current = null;
@@ -67,12 +60,20 @@ export const ModalBase = (props: ModalBaseProps): React.ReactPortal | null => {
 
     return () => {
       isUnmounting = true;
-      clearTimeout(animationTimer);
       deactivateFocus();
     };
   }, [visible]);
 
   const { opacity, y } = useSpring({
+    config: {
+      clamp: true,
+      friction: 24,
+      tension: 240,
+    },
+    onRest: () => {
+      if (!visible) setIsInView(false);
+    },
+
     opacity: animationType === 'fade' ? (visible ? 1 : 0) : 1,
     y: animationType === 'slide' ? (visible ? 0 : 100) : 0,
   });

@@ -57,6 +57,7 @@ export const Dialog = (props: DialogProps) => {
       useHistory={useHistory}
       visible={isVisible}
       transparent
+      animationType="fade"
       onRequestClose={onRequestClose}
       isBackgroundScrollable={isBackgroundScrollable}
     >

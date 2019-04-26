@@ -15,6 +15,7 @@ export const getDialogVariables = (theme: Theme): DialogVariables => {
     },
     container: {
       backgroundColor: 'white',
+      borderRadius: theme.controlBorderRadius.medium,
       elevation: 1,
       maxWidth: 600,
       minWidth: 280,
