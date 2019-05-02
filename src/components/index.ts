@@ -20,5 +20,6 @@ export * from './Progress';
 export * from './SelectList';
 export * from './Switch';
 export * from './Inputs';
+export * from './Tabs';
 export * from './Toast';
 export * from './Typography';

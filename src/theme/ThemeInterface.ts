@@ -75,9 +75,9 @@ export interface TextColors {
   warning: string;
 }
 
-export type TextColor = string;
+export type TextColor = keyof TextColors | string;
 
-export interface BorderColor {
+export interface BorderColors {
   default: string;
 
   primary: string;
@@ -89,7 +89,9 @@ export interface BorderColor {
   warning: string;
 }
 
-export interface BackgroundColor {
+export type BorderColor = keyof BorderColors | string;
+
+export interface BackgroundColors {
   content: string;
   base: string;
   overlay: string;
@@ -123,9 +125,11 @@ export interface BackgroundColor {
   warningDark: string;
 }
 
+export type BackgroundColor = keyof BackgroundColors | string;
+
 export interface Colors {
-  background: BackgroundColor;
-  border: BorderColor;
+  background: BackgroundColors;
+  border: BorderColors;
   text: TextColors;
 }
 

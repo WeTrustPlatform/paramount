@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { useTheme } from '../../theme';
+import { BorderColor, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
   DividerPosition,
@@ -13,7 +13,7 @@ import {
 
 export interface DividerProps {
   size?: number;
-  color?: string;
+  color?: BorderColor | string;
   position?: DividerPosition;
   getStyles?: ReplaceReturnType<GetDividerStyles, DeepPartial<DividerStyles>>;
 }

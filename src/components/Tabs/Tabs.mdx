@@ -1,0 +1,86 @@
+---
+name: Tabs
+menu: Components
+---
+
+import { Playground, Props } from 'docz';
+import { State } from 'react-powerplug';
+import { View } from 'react-native';
+
+import { Icon } from '../../icons';
+import { Tabs, Tab } from '.';
+
+# Tabs
+
+### Usage
+
+<Playground>
+  <Tabs
+    defaultActiveTabIndex={1}
+    onSetActiveTabIndex={index => console.log('Clicked', index)}
+    activeTabIndex={undefined}
+    onPress={undefined}
+    distribution="fit" // or 'scrollable'
+    getStyles={(props, theme) => ({
+      containerStyle: {}, // Only applied when distribution="fit"
+      tabContainerStyle: {},
+      buttonStyle: {},
+      textStyle: {},
+      dividerStyle: {},
+    })}
+  >
+    <Tab title="Tab 1" />
+    <Tab title="Tab 2" />
+    <Tab title="Tab 3" />
+  </Tabs>
+</Playground>
+
+### Controlled
+
+<Playground>
+  <State initial={{ activeTabIndex: 0 }}>
+    {({ state, setState }) => (
+      <Tabs
+        distribution="scrollable"
+        activeTabIndex={state.activeTabIndex}
+        onPress={index => setState({ activeTabIndex: index })}
+      >
+        <Tab
+          icon={
+            <Icon
+              name="home"
+              size={24}
+              color={state.activeTabIndex === 0 ? '#1b877a' : '#7e7e7e'}
+            />
+          }
+        />
+        <Tab title="Tab 2" />
+        <Tab isDisabled title="Tab 3" />
+      </Tabs>
+    )}
+  </State>
+</Playground>
+
+### Scrollable
+
+<Playground>
+  <Tabs distribution="scrollable">
+    <Tab title="Unnamed Tab" />
+    <Tab title="Unnamed Tab" />
+    <Tab title="Unnamed Tab" />
+    <Tab title="Unnamed Tab" />
+    <Tab title="Unnamed Tab" />
+    <Tab title="Unnamed Tab" />
+    <Tab title="Unnamed Tab" />
+    <Tab title="Unnamed Tab" />
+    <Tab title="Unnamed Tab" />
+    <Tab title="Unnamed Tab" />
+    <Tab title="Unnamed Tab" />
+    <Tab title="Unnamed Tab" />
+    <Tab title="Unnamed Tab" />
+  </Tabs>
+</Playground>
+
+### Props
+
+<Props of={Tabs} />
