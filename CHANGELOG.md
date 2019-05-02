@@ -1,3 +1,10 @@
+## [1.38.1](https://github.com/WeTrustPlatform/paramount/compare/v1.38.0...v1.38.1) (2019-04-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ts-essentials to v2.0.6 ([#195](https://github.com/WeTrustPlatform/paramount/issues/195)) ([4904347](https://github.com/WeTrustPlatform/paramount/commit/4904347))
+
 # [1.38.0](https://github.com/WeTrustPlatform/paramount/compare/v1.37.0...v1.38.0) (2019-04-26)
 
 
