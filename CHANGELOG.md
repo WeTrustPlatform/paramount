@@ -1,3 +1,12 @@
+# [1.39.0](https://github.com/WeTrustPlatform/paramount/compare/v1.38.1...v1.39.0) (2019-05-02)
+
+
+### Features
+
+* remove user land components ([c9470cc](https://github.com/WeTrustPlatform/paramount/commit/c9470cc))
+* **animation:** speed up animation config ([6dc4539](https://github.com/WeTrustPlatform/paramount/commit/6dc4539))
+* **colors:** rename colors ([c217cbf](https://github.com/WeTrustPlatform/paramount/commit/c217cbf))
+
 ## [1.38.1](https://github.com/WeTrustPlatform/paramount/compare/v1.38.0...v1.38.1) (2019-04-26)
 
 
