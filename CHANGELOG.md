@@ -1,3 +1,10 @@
+# [1.40.0](https://github.com/WeTrustPlatform/paramount/compare/v1.39.0...v1.40.0) (2019-05-02)
+
+
+### Features
+
+* **tabs:** add tabs component ([34e42f9](https://github.com/WeTrustPlatform/paramount/commit/34e42f9))
+
 # [1.39.0](https://github.com/WeTrustPlatform/paramount/compare/v1.38.1...v1.39.0) (2019-05-02)
 
 
