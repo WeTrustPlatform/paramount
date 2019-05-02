@@ -16,12 +16,12 @@ export const getSwitchVariables = (theme: Theme): SwitchVariables => {
   return {
     backgroundColorOff: theme.colors.background.greyDefault,
     backgroundColorOn: theme.colors.background.primaryDefault,
-    circleColorOff: theme.colors.background.white,
-    circleColorOn: theme.colors.background.white,
+    circleColorOff: theme.colors.background.content,
+    circleColorOn: theme.colors.background.content,
 
     circle: {
       alignItems: 'center',
-      backgroundColor: theme.colors.background.white,
+      backgroundColor: theme.colors.background.content,
       borderRadius: 24,
       display: 'flex',
       height: 38,

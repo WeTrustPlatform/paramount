@@ -20,7 +20,7 @@ export interface CheckboxVariables {
 export const getCheckboxVariables = (theme: Theme): CheckboxVariables => {
   return {
     base: {
-      backgroundColor: theme.colors.background.white,
+      backgroundColor: theme.colors.background.content,
       borderColor: theme.colors.border.default,
       borderWidth: 1,
       height: 32,

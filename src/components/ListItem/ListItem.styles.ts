@@ -32,7 +32,7 @@ export interface ListItemVariables {
 export const getListItemVariables = (theme: Theme): ListItemVariables => {
   return {
     base: {
-      backgroundColor: theme.colors.background.white,
+      backgroundColor: theme.colors.background.content,
       borderBottomWidth: 1,
       borderColor: theme.colors.border.default,
       justifyContent: 'center',

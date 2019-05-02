@@ -5,7 +5,8 @@ import palette from './palette';
 
 const colors: Colors = {
   background: {
-    white: 'white',
+    base: 'white',
+    content: 'white',
     overlay: 'rgba(0,0,0,0.3)',
 
     greyLight: palette.neutral.lightest,
@@ -39,7 +40,6 @@ const colors: Colors = {
 
   border: {
     default: palette.neutral.light,
-    dark: '#EDF0F2',
 
     primary: palette.teal.darkest,
     secondary: palette.orange.darkest,
@@ -52,7 +52,6 @@ const colors: Colors = {
 
   text: {
     link: palette.neutral.darkest,
-    dark: palette.neutral.darkest,
     default: palette.neutral.darkest,
     muted: palette.neutral.dark,
     white: 'white',

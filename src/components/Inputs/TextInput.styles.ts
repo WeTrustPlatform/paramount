@@ -30,7 +30,7 @@ export interface TextInputVariables {
 export const getTextInputVariables = (theme: Theme): TextInputVariables => {
   return {
     base: {
-      backgroundColor: theme.colors.background.white,
+      backgroundColor: theme.colors.background.content,
       borderColor: theme.colors.border.default,
       borderWidth: 1,
       color: theme.colors.text.default,

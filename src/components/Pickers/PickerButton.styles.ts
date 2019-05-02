@@ -96,7 +96,7 @@ export const getPickerButtonStyles: GetPickerButtonStyles = (
 
   return {
     containerStyle: {
-      backgroundColor: theme.colors.background.white,
+      backgroundColor: theme.colors.background.content,
       position: 'relative',
     },
     itemStyle: {

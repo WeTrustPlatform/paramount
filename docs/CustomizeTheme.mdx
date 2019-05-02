@@ -15,7 +15,8 @@ import { ThemeProvider, createTheme } from 'paramount-ui'
 const theme = createTheme({
   colors: {
     background: {
-      white: 'white',
+      base: 'white',
+      content: 'white',
       overlay: 'rgba(0,0,0,0.3)',
 
       greyLight: palette.neutral.lightest,
@@ -30,9 +31,9 @@ const theme = createTheme({
       secondaryDefault: palette.orange.base,
       secondaryDark: palette.orange.dark,
 
-      errorLight: palette.red.lightest,
-      errorDefault: palette.red.base,
-      errorDark: palette.red.dark,
+      dangerLight: palette.red.lightest,
+      dangerDefault: palette.red.base,
+      dangerDark: palette.red.dark,
 
       infoLight: palette.blue.lightest,
       infoDefault: palette.blue.base,
@@ -49,12 +50,11 @@ const theme = createTheme({
 
     border: {
       default: palette.neutral.light,
-      dark: '#EDF0F2',
 
       primary: palette.teal.darkest,
       secondary: palette.orange.darkest,
 
-      error: palette.red.darkest,
+      danger: palette.red.darkest,
       info: palette.blue.darkest,
       success: palette.green.darkest,
       warning: palette.orange.darkest,
@@ -62,7 +62,6 @@ const theme = createTheme({
 
     text: {
       link: palette.neutral.darkest,
-      dark: palette.neutral.darkest,
       default: palette.neutral.darkest,
       muted: palette.neutral.dark,
       white: 'white',
@@ -71,7 +70,7 @@ const theme = createTheme({
       primary: palette.teal.darkest,
       secondary: palette.orange.darkest,
 
-      error: palette.red.darkest,
+      danger: palette.red.darkest,
       info: palette.blue.darkest,
       success: palette.green.darkest,
       warning: palette.orange.darkest,

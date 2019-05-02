@@ -68,7 +68,7 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
         getStyles={() => ({
           buttonStyle: {
             borderBottomRightRadius: 0,
-            borderColor: theme.colors.border.dark,
+            borderColor: theme.colors.border.default,
             borderTopRightRadius: 0,
             borderWidth: 1,
           },

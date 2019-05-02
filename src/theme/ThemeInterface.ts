@@ -61,7 +61,6 @@ export type FontWeight = keyof FontWeights | RNFontWeight;
 export interface TextColors {
   muted: string;
   default: string;
-  dark: string;
 
   link: string;
   white: string;
@@ -80,7 +79,6 @@ export type TextColor = string;
 
 export interface BorderColor {
   default: string;
-  dark: string;
 
   primary: string;
   secondary: string;
@@ -92,7 +90,8 @@ export interface BorderColor {
 }
 
 export interface BackgroundColor {
-  white: string;
+  content: string;
+  base: string;
   overlay: string;
 
   greyLight: string;

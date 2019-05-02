@@ -21,7 +21,7 @@ export interface ToastVariables {
 export const getToastVariables = (theme: Theme): ToastVariables => {
   return {
     base: {
-      backgroundColor: theme.colors.background.white,
+      backgroundColor: theme.colors.background.content,
       borderRadius: theme.controlBorderRadius.medium,
       paddingBottom: 16,
       paddingLeft: 16,
@@ -38,7 +38,7 @@ export const getToastVariables = (theme: Theme): ToastVariables => {
     },
 
     backgroundInfo: {
-      backgroundColor: theme.colors.background.white,
+      backgroundColor: theme.colors.background.content,
     },
     textInfo: {
       color: theme.colors.text.default,

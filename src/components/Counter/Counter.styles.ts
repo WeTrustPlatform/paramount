@@ -29,7 +29,7 @@ export const getCounterVariables = (theme: Theme): CounterVariables => {
       width: 40,
     },
     disabled: {
-      borderColor: theme.colors.border.dark,
+      borderColor: theme.colors.border.default,
     },
   };
 };
