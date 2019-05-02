@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import { animated, useSpring } from 'react-spring/native.cjs';
 import { DeepPartial } from 'ts-essentials';
 
+import { springDefaultConfig } from '../../constants/Animation';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Modal } from '../Modal';
@@ -51,6 +52,7 @@ export const Drawer = (props: DrawerProps) => {
 
   const animation = useSpring({
     [position]: offset,
+    config: springDefaultConfig,
     from: { [position]: -600 },
     reset: true,
   });

@@ -3,6 +3,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { animated, useSpring } from 'react-spring/web.cjs';
 
+import { springDefaultConfig } from '../../constants/Animation';
 import { useElement, useFreezeBody } from '../Helpers';
 import { ModalBaseProps } from './ModalBase';
 
@@ -68,6 +69,8 @@ export const ModalBase = (props: ModalBaseProps): React.ReactPortal | null => {
     onRest: () => {
       if (!visible) setIsInView(false);
     },
+
+    config: springDefaultConfig,
 
     opacity: animationType === 'fade' ? (visible ? 1 : 0) : 1,
     y: animationType === 'slide' ? (visible ? 0 : 100) : 0,

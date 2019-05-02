@@ -8,6 +8,7 @@ import {
 import { animated, useSpring } from 'react-spring/native.cjs';
 import { DeepPartial } from 'ts-essentials';
 
+import { springDefaultConfig } from '../../constants/Animation';
 import { Icon } from '../../icons';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
@@ -53,6 +54,8 @@ export const Switch = (props: SwitchProps) => {
   } = mergeStyles(getSwitchStyles, getStyles)(theme);
 
   const { backgroundColor, circleColor, circlePosition } = useSpring({
+    config: springDefaultConfig,
+
     backgroundColor: isSwitchedOn ? backgroundColorOn : backgroundColorOff,
     circleColor: isSwitchedOn ? circleColorOn : circleColorOff,
     circlePosition: isSwitchedOn

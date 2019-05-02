@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import { animated, useSpring } from 'react-spring/native.cjs';
 import { Omit } from 'ts-essentials';
 
+import { springDefaultConfig } from '../../constants/Animation';
 import { Alert, AlertProps } from '../Alert';
 
 const AnimatedView = animated(View);
@@ -37,6 +38,8 @@ export const Toast = (props: ToastProps) => {
   } = props;
 
   const style = useSpring({
+    config: springDefaultConfig,
+
     from: { translateY: -500 },
     onRest: () => onRemove(),
     to: async next => {

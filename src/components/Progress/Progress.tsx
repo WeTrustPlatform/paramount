@@ -3,6 +3,7 @@ import { Platform, View } from 'react-native';
 import { animated, useSpring } from 'react-spring/native.cjs';
 import { DeepPartial } from 'ts-essentials';
 
+import { springDefaultConfig } from '../../constants/Animation';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
@@ -32,6 +33,7 @@ export const Progress = (props: ProgressProps) => {
 
   const boundPercent = Math.max(Math.min(percent, 100), 0);
   const { width } = useSpring({
+    config: springDefaultConfig,
     from: { width: boundPercent },
     width: boundPercent,
   });
