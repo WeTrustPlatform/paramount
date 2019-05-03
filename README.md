@@ -20,8 +20,8 @@ More:
 
 # Documentation
 
-[Getting started](stub)  
-[Customize theme](stub)
+[Getting started](https://wetrustplatform.github.io/paramount/docs-getting-started)  
+[Customize theme](https://wetrustplatform.github.io/paramount/docs-customize-theme)
 
 # Contributing
 
