@@ -10,7 +10,7 @@ import { Playground, Props } from 'docz';
 import { Icon } from '../../icons';
 import { Dialog } from '.';
 import { Button } from '../Button';
-import { Box, Spacing } from '../Layout';
+import { Box } from '../Layout';
 import { Text, Heading } from '../Typography';
 
 # Dialog
@@ -25,8 +25,8 @@ Dialog has no predefined styling and handlers. The content, header and footer is
       <Box>
         <Dialog
           header={
-            <Spacing
-              padding={2}
+            <Box
+              padding={16}
               flexDirection="row"
               justifyContent="space-between"
               alignItems="center"
@@ -35,19 +35,19 @@ Dialog has no predefined styling and handlers. The content, header and footer is
               <TouchableOpacity onPress={toggle}>
                 <Icon name="x" size={24} />
               </TouchableOpacity>
-            </Spacing>
+            </Box>
           }
           footer={
-            <Spacing padding={2} flexDirection="row" justifyContent="flex-end">
+            <Box padding={16} flexDirection="row" justifyContent="flex-end">
               <Button appearance="minimal" onPress={toggle} title="Cancel" />
-              <Spacing paddingLeft={2}>
+              <Box paddingLeft={16}>
                 <Button
                   color="primary"
                   onPress={() => console.log('Button clicked')}
                   title="Accept"
                 />
-              </Spacing>
-            </Spacing>
+              </Box>
+            </Box>
           }
           isVisible={on}
           onRequestClose={toggle}

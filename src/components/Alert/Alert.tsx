@@ -6,7 +6,7 @@ import { Intent } from '../../constants/Intent';
 import { Icon } from '../../icons';
 import { Theme, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { Spacing } from '../Layout';
+import { Box } from '../Layout';
 import { Text } from '../Typography';
 import { AlertStyles, GetAlertStyles, getAlertStyles } from './Alert.styles';
 
@@ -70,9 +70,9 @@ export const Alert = (props: AlertProps) => {
   return (
     <View style={containerStyle} testID={testID}>
       {icon || (
-        <Spacing paddingRight={2} justifyContent="center">
+        <Box paddingRight={16} justifyContent="center">
           {resolveIcon(intent, theme)}
-        </Spacing>
+        </Box>
       )}
       {component || (
         <View style={bodyStyle}>
@@ -82,9 +82,9 @@ export const Alert = (props: AlertProps) => {
       )}
       {isCloseable && (
         <TouchableOpacity onPress={onClose}>
-          <Spacing paddingLeft={2}>
+          <Box paddingLeft={16}>
             <Icon name="x" size={24} color={theme.colors.text.default} />
-          </Spacing>
+          </Box>
         </TouchableOpacity>
       )}
     </View>

@@ -8,7 +8,7 @@ import { Toggle } from 'react-powerplug';
 
 import { Positioner } from '.';
 import { Button } from '../Button';
-import { Box, Spacing } from '../Layout';
+import { Box } from '../Layout';
 import { Text } from '../Typography';
 
 export default ({ children }) => {
@@ -59,7 +59,7 @@ A base component for manipulating the position of the element on the screen. Use
 ### Variants
 
 <Playground>
-  <Spacing paddingBottom={8} zIndex={1}>
+  <Box paddingBottom={64} zIndex={1}>
     <Box flexDirection="row" justifyContent="space-between">
       <Toggle>
         {({ on, toggle }) => (
@@ -116,9 +116,9 @@ A base component for manipulating the position of the element on the screen. Use
         )}
       </Toggle>
     </Box>
-  </Spacing>
+  </Box>
 
-<Spacing paddingVertical={8} zIndex={2}>
+<Box paddingVertical={64} zIndex={2}>
   <Box flexDirection="row" justifyContent="space-between">
     <Toggle>
       {({ on, toggle }) => (
@@ -163,9 +163,9 @@ A base component for manipulating the position of the element on the screen. Use
       )}
     </Toggle>
   </Box>
-</Spacing>
+</Box>
 
-  <Spacing paddingTop={8} zIndex={3}>
+  <Box paddingTop={64} zIndex={3}>
     <Box flexDirection="row" justifyContent="space-between">
       <Toggle>
         {({ on, toggle }) => (
@@ -221,7 +221,7 @@ A base component for manipulating the position of the element on the screen. Use
         )}
       </Toggle>
     </Box>
-  </Spacing>
+  </Box>
 </Playground>
 
 ### Dynamically sized content
@@ -229,7 +229,7 @@ A base component for manipulating the position of the element on the screen. Use
 Add `isDynamicContent` to props to give time for Positioner to calculate its layout of dynamic content prior to displaying it
 
 <Playground>
-  <Spacing paddingBottom={8} zIndex={1}>
+  <Box paddingBottom={64} zIndex={1}>
     <Box flexDirection="row" justifyContent="space-between">
       <Toggle>
         {({ on, toggle }) => (
@@ -289,9 +289,9 @@ Add `isDynamicContent` to props to give time for Positioner to calculate its lay
         )}
       </Toggle>
     </Box>
-  </Spacing>
+  </Box>
 
-<Spacing paddingVertical={8} zIndex={2}>
+<Box paddingVertical={64} zIndex={2}>
   <Box flexDirection="row" justifyContent="space-between">
     <Toggle>
       {({ on, toggle }) => (
@@ -338,9 +338,9 @@ Add `isDynamicContent` to props to give time for Positioner to calculate its lay
       )}
     </Toggle>
   </Box>
-</Spacing>
+</Box>
 
-  <Spacing paddingTop={8} zIndex={3}>
+  <Box paddingTop={64} zIndex={3}>
     <Box flexDirection="row" justifyContent="space-between">
       <Toggle>
         {({ on, toggle }) => (
@@ -399,7 +399,7 @@ Add `isDynamicContent` to props to give time for Positioner to calculate its lay
         )}
       </Toggle>
     </Box>
-  </Spacing>
+  </Box>
 </Playground>
 
 ### Positioner with full width
@@ -407,8 +407,8 @@ Add `isDynamicContent` to props to give time for Positioner to calculate its lay
 On Mobile sometimes we want the content to stretch full width of the window. There is the prop `isFullWidth` for that
 
 <Playground>
-  <Spacing flexDirection="row">
-    <Spacing flex={1}>
+  <Box flexDirection="row">
+    <Box flex={1}>
       <Toggle>
         {({ on, toggle }) => (
           <Positioner
@@ -431,8 +431,8 @@ On Mobile sometimes we want the content to stretch full width of the window. The
           </Positioner>
         )}
       </Toggle>
-    </Spacing>
-    <Spacing flex={1}>
+    </Box>
+    <Box flex={1}>
       <Toggle>
         {({ on, toggle }) => (
           <Positioner
@@ -455,8 +455,8 @@ On Mobile sometimes we want the content to stretch full width of the window. The
           </Positioner>
         )}
       </Toggle>
-    </Spacing>
-  </Spacing>
+    </Box>
+  </Box>
 </Playground>
 
 ### Props

@@ -8,7 +8,7 @@ import { Toggle } from 'react-powerplug';
 
 import { Drawer } from '.';
 import { Button } from '../Button';
-import { Box, Spacing } from '../Layout';
+import { Box } from '../Layout';
 import { Text } from '../Typography';
 
 # Drawer
@@ -32,7 +32,7 @@ import { Text } from '../Typography';
             containerStyle: {},
           })}
         >
-          <Spacing padding={3}>
+          <Box padding={24}>
             <Box elevation={1} backgroundColor="white" borderRadius={4}>
               {[
                 {
@@ -58,10 +58,10 @@ import { Text } from '../Typography';
                 <Button key={option.title} appearance="minimal" {...option} />
               ))}
             </Box>
-            <Spacing paddingTop={3}>
+            <Box paddingTop={24}>
               <Button onPress={toggle} title="Close" />
-            </Spacing>
-          </Spacing>
+            </Box>
+          </Box>
         </Drawer>
       </>
     )}

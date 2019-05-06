@@ -5,7 +5,7 @@ menu: Components
 
 import { Playground, Props } from 'docz';
 import { Alert } from './Alert';
-import { Spacing } from '../Layout';
+import { Box } from '../Layout';
 
 # Alert
 
@@ -28,18 +28,18 @@ import { Spacing } from '../Layout';
 ### Variants
 
 <Playground>
-  <Spacing paddingVertical={2}>
+  <Box paddingVertical={16}>
     <Alert title="Info" description="Message" />
-  </Spacing>
-  <Spacing paddingVertical={2}>
+  </Box>
+  <Box paddingVertical={16}>
     <Alert intent="success" title="Success" description="Message" />
-  </Spacing>
-  <Spacing paddingVertical={2}>
+  </Box>
+  <Box paddingVertical={16}>
     <Alert intent="warning" title="Warning" description="Message" />
-  </Spacing>
-  <Spacing paddingVertical={2}>
+  </Box>
+  <Box paddingVertical={16}>
     <Alert intent="danger" title="Danger" description="Message" />
-  </Spacing>
+  </Box>
 </Playground>
 
 ### Props

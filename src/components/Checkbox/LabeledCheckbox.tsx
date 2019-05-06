@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { TextColor, TextSize } from '../../theme/ThemeInterface';
 import { Checkbox, CheckboxProps } from '../Checkbox/Checkbox';
-import { Box, Spacing } from '../Layout';
+import { Box } from '../Layout';
 import { Text } from '../Typography';
 
 export interface LabeledCheckboxProps extends CheckboxProps {
@@ -26,9 +26,9 @@ export const LabeledCheckbox = (props: LabeledCheckboxProps) => {
           {label}
         </Text>
       )}
-      <Spacing paddingHorizontal={1}>
+      <Box paddingHorizontal={8}>
         <Checkbox {...restProps} />
-      </Spacing>
+      </Box>
       {position === 'right' && (
         <Text size={size} color={color}>
           {label}

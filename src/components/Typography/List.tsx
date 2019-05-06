@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Platform, View } from 'react-native';
 
 import { TextSize } from '../../theme/ThemeInterface';
-import { Spacing } from '../Layout';
+import { Box } from '../Layout';
 import { BulletItemProps } from './BulletItem';
 import { NumberedItemProps } from './NumberedItem';
 
@@ -35,9 +35,9 @@ export const List = (props: ListProps) => {
       // @ts-ignore
       accessibilityRole={Platform.OS === 'web' ? 'list' : 'none'}
     >
-      <Spacing margin={0} marginLeft={1} padding={0}>
+      <Box margin={0} marginLeft={8} padding={0}>
         {finalChildren}
-      </Spacing>
+      </Box>
     </View>
   );
 };

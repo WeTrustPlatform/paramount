@@ -5,7 +5,7 @@ import { DeepPartial } from 'ts-essentials';
 import { Icon } from '../../icons';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { Spacing } from '../Layout';
+import { Box } from '../Layout';
 import { Text } from '../Typography';
 import {
   CounterStyles,
@@ -53,7 +53,7 @@ export const Counter = (props: CounterProps) => {
 
   return (
     <View style={containerStyle}>
-      <Spacing paddingRight={2}>
+      <Box paddingRight={16}>
         <TouchableOpacity
           activeOpacity={0.7}
           style={{
@@ -73,13 +73,13 @@ export const Counter = (props: CounterProps) => {
             }
           />
         </TouchableOpacity>
-      </Spacing>
+      </Box>
       {component || (
         <View style={countStyle}>
           <Text getStyles={() => ({ textStyle })}>{`${count}`}</Text>
         </View>
       )}
-      <Spacing paddingLeft={2}>
+      <Box paddingLeft={16}>
         <TouchableOpacity
           activeOpacity={0.7}
           style={{
@@ -99,7 +99,7 @@ export const Counter = (props: CounterProps) => {
             }
           />
         </TouchableOpacity>
-      </Spacing>
+      </Box>
     </View>
   );
 };

@@ -16897,31 +16897,6 @@ exports[`SelectList_9 1`] = `
 
 exports[`SelectList_10 1`] = `<div />`;
 
-exports[`Spacing_0 1`] = `
-<h3>
-  Usage
-</h3>
-`;
-
-exports[`Spacing_1 1`] = `
-<div>
-  <div
-    className="css-view-1dbjc4n"
-    style={
-      Object {
-        "backgroundColor": "rgba(103,198,187,1.00)",
-        "height": "264px",
-        "paddingBottom": "80px",
-        "paddingLeft": "80px",
-        "paddingRight": "80px",
-        "paddingTop": "80px",
-        "width": "33px",
-      }
-    }
-  />
-</div>
-`;
-
 exports[`Switch_0 1`] = `
 <h3>
   Usage

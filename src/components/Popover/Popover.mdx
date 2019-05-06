@@ -6,7 +6,7 @@ menu: Components
 import { Playground, Props } from 'docz';
 import { Popover } from '.';
 import { Button } from '../Button';
-import { Box, Spacing } from '../Layout';
+import { Box } from '../Layout';
 import { Text } from '../Typography';
 import { Toggle } from 'react-powerplug';
 
@@ -40,7 +40,7 @@ export default ({ children }) => {
 ### Variants
 
 <Playground>
-  <Spacing paddingBottom={8} zIndex={1}>
+  <Box paddingBottom={64} zIndex={1}>
     <Box flexDirection="row" justifyContent="space-between">
       <Toggle>
         {({ on, toggle }) => (
@@ -100,7 +100,7 @@ export default ({ children }) => {
         )}
       </Toggle>
     </Box>
-  </Spacing>
+  </Box>
 </Playground>
 
 ### Props

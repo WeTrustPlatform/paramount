@@ -2,14 +2,14 @@ import * as React from 'react';
 import { Platform, View } from 'react-native';
 
 import { TextSize } from '../../theme/ThemeInterface';
-import { Spacing } from '../Layout';
+import { Box } from '../Layout';
 import { Text, TextProps } from './Text';
 
 const paddingLeftMap = {
-  large: 3,
-  medium: 2,
-  small: 2,
-  xsmall: 1,
+  large: 24,
+  medium: 16,
+  small: 16,
+  xsmall: 8,
 };
 
 export interface ListItemProps extends TextProps {
@@ -22,17 +22,17 @@ export const ListItem = (props: ListItemProps) => {
   const { size = 'medium', mark, ...textProps } = props;
 
   const paddingLeft =
-    typeof size === 'number' ? 2 : (paddingLeftMap[size] as 1 | 2 | 3);
+    typeof size === 'number' ? 16 : (paddingLeftMap[size] as 1 | 2 | 3);
 
   return (
     // @ts-ignore
     <View accessibilityRole={Platform.OS === 'web' ? 'listitem' : 'none'}>
-      <Spacing flexDirection="row" alignItems="center" marginVertical={1}>
-        <Spacing>{mark}</Spacing>
-        <Spacing width="100%" paddingLeft={paddingLeft}>
+      <Box flexDirection="row" alignItems="center" marginVertical={8}>
+        <Box>{mark}</Box>
+        <Box width="100%" paddingLeft={paddingLeft}>
           <Text isInline size={size} {...textProps} />
-        </Spacing>
-      </Spacing>
+        </Box>
+      </Box>
     </View>
   );
 };

@@ -10,7 +10,7 @@ import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { Spacing } from '../Layout';
+import { Box } from '../Layout';
 import { LoadingDots } from '../Loading';
 import { Text } from '../Typography';
 import {
@@ -165,14 +165,11 @@ export const Button = (props: ButtonProps) => {
         }}
       >
         {iconBefore}
-        <Spacing
-          paddingLeft={iconBefore ? 1 : 0}
-          paddingRight={iconAfter ? 1 : 0}
-        >
+        <Box paddingLeft={iconBefore ? 8 : 0} paddingRight={iconAfter ? 8 : 0}>
           {/*
         // @ts-ignore */}
           <ButtonContent {...props} textStyle={textStyle} />
-        </Spacing>
+        </Box>
         {iconAfter}
       </View>
     </TouchableHighlight>

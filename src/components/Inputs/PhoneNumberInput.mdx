@@ -7,7 +7,7 @@ import { Playground, Props } from 'docz';
 import { State } from 'react-powerplug';
 
 import { Heading } from '../Typography';
-import { Spacing } from '../Layout';
+import { Box } from '../Layout';
 
 import { PhoneNumberInput } from './PhoneNumberInput';
 
@@ -22,9 +22,9 @@ Appends a button to select country code
     {({ state, setState }) => (
       <PhoneNumberInput
         header={
-          <Spacing marginVertical={3} paddingHorizontal={2}>
+          <Box marginVertical={24} paddingHorizontal={16}>
             <Heading size="xxxlarge">Select your country</Heading>
-          </Spacing>
+          </Box>
         }
         onChangeCountryCode={countryCode => setState({ countryCode })}
         onChangePhoneNumber={phoneNumber => setState({ phoneNumber })}
