@@ -1,3 +1,10 @@
+# [1.41.0](https://github.com/WeTrustPlatform/paramount/compare/v1.40.2...v1.41.0) (2019-05-06)
+
+
+### Features
+
+* **layout:** remove spacing component ([22780ee](https://github.com/WeTrustPlatform/paramount/commit/22780ee))
+
 ## [1.40.2](https://github.com/WeTrustPlatform/paramount/compare/v1.40.1...v1.40.2) (2019-05-06)
 
 
