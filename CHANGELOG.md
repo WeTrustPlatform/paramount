@@ -1,3 +1,10 @@
+## [1.40.2](https://github.com/WeTrustPlatform/paramount/compare/v1.40.1...v1.40.2) (2019-05-06)
+
+
+### Bug Fixes
+
+* **spacing:** enable 0.5 point in spacing ([#211](https://github.com/WeTrustPlatform/paramount/issues/211)) ([2cc470c](https://github.com/WeTrustPlatform/paramount/commit/2cc470c))
+
 ## [1.40.1](https://github.com/WeTrustPlatform/paramount/compare/v1.40.0...v1.40.1) (2019-05-06)
 
 
