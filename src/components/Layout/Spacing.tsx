@@ -4,6 +4,7 @@ import { Box, BoxProps } from './Box';
 
 export type GridScale =
   | 0
+  | 0.5
   | 1
   | 2
   | 3
