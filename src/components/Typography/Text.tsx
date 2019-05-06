@@ -39,7 +39,7 @@ export const Text = (props: TextProps) => {
     fontFamily = 'text',
     size = 'medium',
     align = 'left',
-    weight = 'normal',
+    weight,
     isInline = false,
     getStyles,
     isBold = false,

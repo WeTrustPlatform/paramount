@@ -1,12 +1,13 @@
 import { TextStyle } from 'react-native';
 
 import {
+  FontWeight,
   HeadingSize,
   HeadingSizes,
   TextColor,
   Theme,
 } from '../../theme/ThemeInterface';
-import { getTextColor } from './Text.styles';
+import { getFontWeight, getTextColor } from './Text.styles';
 import { TextAlign } from './types';
 
 export interface HeadingVariables {
@@ -21,6 +22,7 @@ export interface HeadingStylesProps {
   size: HeadingSize;
   align: TextAlign;
   color: TextColor;
+  weight?: FontWeight;
 }
 
 export type GetHeadingStyles = (
@@ -38,15 +40,18 @@ export const getHeadingSize = (headingSizes: HeadingSizes) => (
 };
 
 export const getHeadingStyles: GetHeadingStyles = (
-  { size, align, color },
+  { size, align, color, weight },
   theme,
 ) => {
+  const sizeStyle = getHeadingSize(theme.headingSizes)(size);
+
   return {
     headingStyle: {
-      ...getHeadingSize(theme.headingSizes)(size),
+      ...sizeStyle,
       color: getTextColor(theme.colors.text)(color),
       fontFamily: theme.fontFamilies.heading,
-      fontWeight: '600',
+      fontWeight:
+        getFontWeight(theme.fontWeights)(weight) || sizeStyle.fontWeight,
       textAlign: align,
     },
   };

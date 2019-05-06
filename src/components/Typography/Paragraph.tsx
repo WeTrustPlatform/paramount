@@ -39,7 +39,7 @@ export const Paragraph = (props: ParagraphProps) => {
     fontFamily = 'text',
     size = 'medium',
     align = 'left',
-    weight = 'normal',
+    weight,
     getStyles,
     ...textProps
   } = props;

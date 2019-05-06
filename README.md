@@ -15,22 +15,13 @@ More:
 - Built on TypeScript (typings!)
 - Tree-shaking friendly (ESM)
 - Server-side rendering friendly
-- Accessibility available (You can pass accessibility props on all touchable components)
 - [Styles in JavaScript](https://twitter.com/necolas/status/1058949412284592128)
 
 # Documentation
 
-[Getting started](https://wetrustplatform.github.io/paramount/docs-getting-started)  
-[Customize theme](https://wetrustplatform.github.io/paramount/docs-customize-theme)
+[Getting started](https://github.com/WeTrustPlatform/paramount/blob/master/docs/GettingStarted.mdx)
+[Customize theme](https://github.com/WeTrustPlatform/paramount/blob/master/docs/CustomizeTheme.mdx)
 
 # Contributing
 
 Follow [Contributing guide](CONTRIBUTING.md)
-
-## Sponsors
-
-Special thanks to sponsors that help build paramount.
-
-[![Browserstack](https://i1.wp.com/www.diogonunes.com/blog/wp-content/uploads/2016/07/browserstack-logo.png?w=512&ssl=1)](http://www.browserstack.com/)
-
-Browserstack provides cross-browser testing tools. Used to test paramount components against different browsers including IE10

@@ -28,7 +28,7 @@ export interface TextStylesProps {
   transform?: TextTransform;
   fontFamily: FontFamily;
   isInline: boolean;
-  weight: FontWeight;
+  weight?: FontWeight;
 }
 
 export interface TextStyles {
@@ -45,8 +45,9 @@ export const getFontFamily = (fontFamilies: FontFamilies) => (
 ) => fontFamilies[fontFamily];
 
 export const getFontWeight = (fontWeights: FontWeights) => (
-  fontWeight: FontWeight,
-): RNFontWeight => {
+  fontWeight?: FontWeight,
+): RNFontWeight | undefined => {
+  if (!fontWeight) return;
   // @ts-ignore
   const presetFontWeight = fontWeights[fontWeight] as RNFontWeight | undefined;
 
@@ -86,12 +87,18 @@ export const getTextStyles: GetTextStyles = (
   },
   theme,
 ) => {
+  const sizeStyle = getTextSize(theme.textSizes)(size);
+
   return {
     textStyle: {
-      ...getTextSize(theme.textSizes)(size),
+      ...sizeStyle,
       color: getTextColor(theme.colors.text)(color),
       fontFamily: getFontFamily(theme.fontFamilies)(fontFamily),
-      fontWeight: getFontWeight(theme.fontWeights)(weight),
+      ...(isBold && {
+        fontWeight: '600',
+      }),
+      fontWeight:
+        getFontWeight(theme.fontWeights)(weight) || sizeStyle.fontWeight,
       textAlign: align,
       ...(isInline
         ? {
@@ -99,9 +106,6 @@ export const getTextStyles: GetTextStyles = (
             flexDirection: 'row',
           }
         : {}),
-      ...(isBold && {
-        fontWeight: '600',
-      }),
       ...(isItalic && {
         fontStyle: 'italic',
       }),

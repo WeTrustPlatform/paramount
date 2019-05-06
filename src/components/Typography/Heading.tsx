@@ -3,7 +3,7 @@ import { Platform, Text, TextProps } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { HeadingSize, TextColor } from '../../theme/ThemeInterface';
+import { FontWeight, HeadingSize, TextColor } from '../../theme/ThemeInterface';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
   GetHeadingStyles,
@@ -17,6 +17,7 @@ export interface HeadingProps extends TextProps {
   size?: HeadingSize;
   align?: TextAlign;
   color?: TextColor;
+  weight?: FontWeight;
   accessibilityLevel?: 1 | 2 | 3 | 4 | 5 | 6;
 
   getStyles?: ReplaceReturnType<GetHeadingStyles, DeepPartial<HeadingStyles>>;
@@ -28,13 +29,14 @@ export const Heading = (props: HeadingProps) => {
     size = 'medium',
     align = 'left',
     color = 'default',
+    weight,
     getStyles,
     ...textProps
   } = props;
   const theme = useTheme();
 
   const { headingStyle } = mergeStyles(getHeadingStyles, getStyles)(
-    { size, align, color },
+    { size, align, color, weight },
     theme,
   );
 

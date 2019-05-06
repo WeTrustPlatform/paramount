@@ -24,7 +24,7 @@ export interface ParagraphStylesProps {
   size: ParagraphSize;
   color: TextColor;
   fontFamily: FontFamily;
-  weight: FontWeight;
+  weight?: FontWeight;
 }
 
 export interface ParagraphStyles {
@@ -49,12 +49,15 @@ export const getParagraphStyles: GetParagraphStyles = (
   { size, color, fontFamily, align, weight },
   theme,
 ) => {
+  const sizeStyle = getParagraphSize(theme.paragraphSizes)(size);
+
   return {
     paragraphStyle: {
-      ...getParagraphSize(theme.paragraphSizes)(size),
+      ...sizeStyle,
       color: getTextColor(theme.colors.text)(color),
       fontFamily: getFontFamily(theme.fontFamilies)(fontFamily),
-      fontWeight: getFontWeight(theme.fontWeights)(weight),
+      fontWeight:
+        getFontWeight(theme.fontWeights)(weight) || sizeStyle.fontWeight,
       marginBottom: '1em',
       marginTop: '1em',
       textAlign: align,
