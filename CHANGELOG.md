@@ -1,3 +1,10 @@
+## [1.40.1](https://github.com/WeTrustPlatform/paramount/compare/v1.40.0...v1.40.1) (2019-05-06)
+
+
+### Bug Fixes
+
+* **typography:** fix overriding issues ([4e7e78a](https://github.com/WeTrustPlatform/paramount/commit/4e7e78a))
+
 # [1.40.0](https://github.com/WeTrustPlatform/paramount/compare/v1.39.0...v1.40.0) (2019-05-02)
 
 
