@@ -2,8 +2,8 @@ import * as React from 'react';
 import { View, ViewStyle } from 'react-native';
 
 import { Position } from '../../constants';
+import { Measurements } from '../../hooks';
 import { Theme } from '../../theme';
-import { Measurements } from '../Helpers';
 
 const arrowWidth = 11;
 const commonStyle = {

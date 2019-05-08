@@ -3,9 +3,10 @@ import { Dimensions, ScaledSize, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { POSITION, Position } from '../../constants';
+import { Measurements } from '../../hooks';
 import { Theme, withTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { Measurements, ViewMeasure } from '../Helpers';
+import { ViewMeasure } from '../Helpers';
 import { Modal } from '../Modal';
 import { Overlay } from '../Overlay';
 import {
