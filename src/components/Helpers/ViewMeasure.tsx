@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 
-import { Measurements, useMeasure } from './useMeasure';
+import { Measurements, useMeasure } from '../../hooks/useMeasure';
 
 export type ViewMeasureRenderPropType = (
   props: Measurements,

@@ -4,7 +4,7 @@ import * as ReactDOM from 'react-dom';
 import { animated, useSpring } from 'react-spring/web.cjs';
 
 import { springDefaultConfig } from '../../constants/Animation';
-import { useElement, useFreezeBody } from '../Helpers';
+import { useElement, useLockBodyScroll } from '../../hooks';
 import { ModalBaseProps } from './ModalBase';
 
 // Temporary usage until it is integrated
@@ -20,12 +20,17 @@ export const ModalBase = (props: ModalBaseProps): React.ReactPortal | null => {
     animationType = 'none',
   } = props;
   let isUnmounting = false;
-  const targetElement = useElement('modal');
+  const targetElement = useElement();
+
+  // It will not work if targetElement is falsy so we exit early
+  // This may happen e.g. during SSR
+  if (!targetElement) return null;
+
   const [isInView, setIsInView] = React.useState(visible);
   const elementRef = React.useRef<HTMLDivElement>(null);
   const focusTrapRef = React.useRef<FocusTrap>(null);
 
-  useFreezeBody({ isFrozen: !!(!isBackgroundScrollable && visible) });
+  useLockBodyScroll({ isLocked: !!(!isBackgroundScrollable && visible) });
 
   React.useEffect(() => {
     const deactivateFocus = () => {
