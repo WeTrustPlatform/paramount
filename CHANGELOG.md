@@ -1,3 +1,11 @@
+## [1.41.1](https://github.com/WeTrustPlatform/paramount/compare/v1.41.0...v1.41.1) (2019-05-08)
+
+
+### Bug Fixes
+
+* **modal:** make modal ssr friendly ([934a0e3](https://github.com/WeTrustPlatform/paramount/commit/934a0e3))
+* **refactor:** fix breaking build imports ([c97a7c6](https://github.com/WeTrustPlatform/paramount/commit/c97a7c6))
+
 # [1.41.0](https://github.com/WeTrustPlatform/paramount/compare/v1.40.2...v1.41.0) (2019-05-06)
 
 
