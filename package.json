@@ -70,7 +70,7 @@
     "babel-jest": "24.8.0",
     "docz": "1.2.0",
     "docz-plugin-snapshots": "0.2.0",
-    "docz-theme-default": "1.0.4",
+    "docz-theme-default": "1.2.0",
     "emotion-theming": "10.0.10",
     "husky": "2.2.0",
     "jest": "24.8.0",
