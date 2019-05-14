@@ -77,7 +77,7 @@
     "jest-canvas-mock": "2.0.0",
     "lint-staged": "8.1.5",
     "merge": "1.2.1",
-    "metro-react-native-babel-preset": "0.53.1",
+    "metro-react-native-babel-preset": "0.54.0",
     "prettier": "1.17.0",
     "react": "16.8.6",
     "react-art": "16.8.6",
