@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 import { TextColor, TextSize } from '../../theme/ThemeInterface';
+import { Box } from '../Box';
 import { Checkbox, CheckboxProps } from '../Checkbox/Checkbox';
-import { Box } from '../Layout';
 import { Text } from '../Typography';
 
 export interface LabeledCheckboxProps extends CheckboxProps {

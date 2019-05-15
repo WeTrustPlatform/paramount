@@ -6,7 +6,7 @@ import { Intent } from '../../constants/Intent';
 import { Icon } from '../../icons';
 import { Theme, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { Box } from '../Layout';
+import { Box } from '../Box';
 import { Text } from '../Typography';
 import { AlertStyles, GetAlertStyles, getAlertStyles } from './Alert.styles';
 

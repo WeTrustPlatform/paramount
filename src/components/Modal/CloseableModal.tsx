@@ -4,7 +4,7 @@ import { TouchableOpacity, View } from 'react-native';
 import { Modal, ModalProps } from '.';
 import { Icon } from '../../icons';
 import { useTheme } from '../../theme';
-import { Box } from '../Layout';
+import { Box } from '../Box';
 import { ModalContent } from './ModalContent';
 
 export interface CloseableModalProps extends ModalProps {

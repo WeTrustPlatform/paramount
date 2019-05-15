@@ -10,7 +10,7 @@ import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { Box } from '../Layout';
+import { Box } from '../Box';
 import { LoadingDots } from '../Loading';
 import { Text } from '../Typography';
 import {

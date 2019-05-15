@@ -5,7 +5,7 @@ import { DeepPartial } from 'ts-essentials';
 import { Icon } from '../../icons';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { Box } from '../Layout';
+import { Box } from '../Box';
 import { Text } from '../Typography';
 import {
   CounterStyles,

@@ -1,7 +1,7 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
 import { FillColor, Fills, Theme } from '../../theme/ThemeInterface';
-import { Shape, shapeMapping } from '../Layout/Box';
+import { Shape, shapeMapping } from '../Box';
 
 export interface BadgeSizes {
   small: ViewStyle;

@@ -5,7 +5,7 @@ import { DeepPartial } from 'ts-essentials';
 import { useTheme } from '../../theme';
 import { FillColor } from '../../theme/ThemeInterface';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { Shape } from '../Layout/Box';
+import { Shape } from '../Box';
 import { Text } from '../Typography';
 import {
   BadgeSize,

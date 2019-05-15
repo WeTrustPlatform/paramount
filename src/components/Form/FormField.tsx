@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Box } from '../Layout';
+import { Box } from '../Box';
 import { Label, Text } from '../Typography';
 
 export interface FormFieldProps {

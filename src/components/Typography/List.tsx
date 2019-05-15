@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Platform, View } from 'react-native';
 
 import { TextSize } from '../../theme/ThemeInterface';
-import { Box } from '../Layout';
+import { Box } from '../Box';
 import { BulletItemProps } from './BulletItem';
 import { NumberedItemProps } from './NumberedItem';
 
