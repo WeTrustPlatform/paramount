@@ -1,0 +1,40 @@
+---
+name: Visible
+menu: Components
+---
+
+import { Counter as CounterContainer } from 'react-powerplug';
+import { Playground, Props } from 'docz';
+import { Visible, LayoutProvider } from '.';
+import { Box } from '../Box';
+import { Text } from '../Typography';
+
+# Visible
+
+### Usage
+
+<Playground>
+  <LayoutProvider>
+    <Visible largeUp>
+      <Box backgroundColor="#67c6bb" height={48}>
+        <Text align="center" color="white">
+          Large Up
+        </Text>
+      </Box>
+    </Visible>
+    <Visible medium>
+      <Box backgroundColor="#1ca5F7" height={48}>
+        <Text align="center" color="white">
+          Medium
+        </Text>
+      </Box>
+    </Visible>
+    <Visible smallDown>
+      <Box backgroundColor="#d26557" height={48}>
+        <Text align="center" color="white">
+          Small Down
+        </Text>
+      </Box>
+    </Visible>
+  </LayoutProvider>
+</Playground>
