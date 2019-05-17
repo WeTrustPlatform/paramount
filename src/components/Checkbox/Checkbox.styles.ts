@@ -3,19 +3,6 @@ import { TextStyle, ViewStyle } from 'react-native';
 import { ControlSize, Theme } from '../../theme/ThemeInterface';
 import { CheckboxLabelPosition, CheckboxShape } from './Checkbox';
 
-export interface ShapeStyle {
-  circle: ViewStyle;
-  square: ViewStyle;
-}
-
-export interface CheckboxVariables {
-  disabled: ViewStyle;
-  checked: ViewStyle;
-  checkedFocus: ViewStyle;
-  uncheckedFocus: ViewStyle;
-  shape: ShapeStyle;
-}
-
 export interface CheckboxStylesProps {
   isChecked: boolean;
   isDisabled: boolean;

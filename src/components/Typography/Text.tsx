@@ -21,7 +21,6 @@ export interface TextStyleProps {
   transform?: TextTransform;
   fontFamily?: FontFamily;
   weight?: FontWeight;
-  isBold?: boolean;
   isItalic?: boolean;
 }
 
@@ -42,7 +41,6 @@ export const Text = (props: TextProps) => {
     weight,
     isInline = false,
     getStyles,
-    isBold = false,
     isItalic = false,
     transform,
     ...textProps
@@ -54,7 +52,6 @@ export const Text = (props: TextProps) => {
       align,
       color,
       fontFamily,
-      isBold,
       isInline,
       isItalic,
       size,

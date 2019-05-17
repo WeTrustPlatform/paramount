@@ -37,7 +37,7 @@ export const FormModal = (props: FormModalProps) => {
               paddingHorizontal: 16,
             }}
           >
-            <Text isBold>{clearText}</Text>
+            <Text weight="bold">{clearText}</Text>
           </View>
         </TouchableOpacity>
       }

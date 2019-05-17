@@ -20,7 +20,6 @@ export interface TextVariables {
 }
 
 export interface TextStylesProps {
-  isBold: boolean;
   isItalic: boolean;
   size: TextSize;
   color: TextColor;
@@ -74,17 +73,7 @@ export const getTextSize = (textSizes: TextSizes) => (
 };
 
 export const getTextStyles: GetTextStyles = (
-  {
-    size,
-    color,
-    fontFamily,
-    isInline,
-    isBold,
-    isItalic,
-    align,
-    transform,
-    weight,
-  },
+  { size, color, fontFamily, isInline, isItalic, align, transform, weight },
   theme,
 ) => {
   const sizeStyle = getTextSize(theme.textSizes)(size);
@@ -94,9 +83,6 @@ export const getTextStyles: GetTextStyles = (
       ...sizeStyle,
       color: getTextColor(theme.colors.text)(color),
       fontFamily: getFontFamily(theme.fontFamilies)(fontFamily),
-      ...(isBold && {
-        fontWeight: '600',
-      }),
       fontWeight:
         getFontWeight(theme.fontWeights)(weight) || sizeStyle.fontWeight,
       textAlign: align,

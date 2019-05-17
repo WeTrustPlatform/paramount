@@ -18,20 +18,22 @@ export interface UseMeasureProps {
   onMeasure?: (props: Measurements) => void;
 }
 
+export const initialMeasurements = {
+  height: 0,
+  pageX: 0,
+  pageY: 0,
+  width: 0,
+  x: 0,
+  y: 0,
+};
+
 /**
  * A render prop to measure given node by passing `onLayout` and `ref` handlers. This differs from `ViewMeasure` in that it does not create any node in the tree
  */
-export const useMeasure = (props: UseMeasureProps) => {
+export const useMeasure = (props: UseMeasureProps = {}) => {
   const forwardRef = React.createRef<any>();
   const { onMeasure } = props;
-  const [measurements, setMeasurements] = React.useState({
-    height: 0,
-    pageX: 0,
-    pageY: 0,
-    width: 0,
-    x: 0,
-    y: 0,
-  });
+  const [measurements, setMeasurements] = React.useState(initialMeasurements);
 
   const handleLayout = (e: LayoutChangeEvent) => {
     // Use the value from here, isntead of inside UIManager.measure callback

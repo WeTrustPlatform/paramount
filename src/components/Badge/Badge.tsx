@@ -26,7 +26,7 @@ export const Badge = (props: BadgeProps) => {
     getStyles,
     isSolid = false,
     shape = 'rounded',
-    size = 'small',
+    size = 'medium',
     testID,
   } = props;
 
@@ -40,7 +40,7 @@ export const Badge = (props: BadgeProps) => {
   return (
     <View style={containerStyle} testID={testID}>
       <Text
-        isBold
+        weight="bold"
         size={size}
         getStyles={() => ({
           textStyle,

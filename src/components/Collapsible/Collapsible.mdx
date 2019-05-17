@@ -1,0 +1,53 @@
+---
+name: Collapsible
+menu: Components
+---
+
+import { Toggle } from 'react-powerplug';
+import { Playground, Props } from 'docz';
+import { Collapsible } from '.';
+import { Box } from '../Box';
+import { Text } from '../Typography';
+
+# Collapsible
+
+### Usage
+
+<Playground>
+  <Toggle initial={false}>
+    {({ on, toggle }) => (
+      <Collapsible
+        isAnimated={true}
+        // The header will move to the end of the content when revealing content
+        shouldMoveWithEndOfContent={true}
+        initialIsOpen={false}
+        isOpen={on}
+        onOpen={toggle}
+        onClose={toggle}
+        getStyles={() => ({
+          touchableStyle: {},
+          outerWrapperStyle: {},
+          contentWrapperStyle: {},
+          textStyle: {},
+          iconWrapperStyle: {},
+        })}
+        title="Header title"
+        header={null}
+      >
+        <Box
+          marginVertical={16}
+          justifyContent="center"
+          alignItems="center"
+          height={300}
+          backgroundColor="#67c6bb"
+        >
+          <Text color="white">Content of the Collapsible</Text>
+        </Box>
+      </Collapsible>
+    )}
+  </Toggle>
+</Playground>
+
+### Props
+
+<Props of={Collapsible} />

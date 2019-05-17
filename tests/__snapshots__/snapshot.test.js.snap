@@ -96,6 +96,7 @@ exports[`Alert_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "16px",
+            "fontWeight": "bold",
             "textAlign": "left",
           }
         }
@@ -307,6 +308,7 @@ exports[`Alert_3 1`] = `
               "color": "rgba(126,126,126,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
               "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
             }
           }
@@ -427,6 +429,7 @@ exports[`Alert_3 1`] = `
               "color": "rgba(126,126,126,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
               "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
             }
           }
@@ -556,6 +559,7 @@ exports[`Alert_3 1`] = `
               "color": "rgba(126,126,126,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
               "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
             }
           }
@@ -687,6 +691,7 @@ exports[`Alert_3 1`] = `
               "color": "rgba(126,126,126,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
               "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
             }
           }
@@ -913,6 +918,7 @@ exports[`Badge_1 1`] = `
             "color": "rgba(51,73,95,1.00)",
             "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "20px",
+            "fontWeight": "bold",
             "textAlign": "left",
             "textTransform": "uppercase",
           }
@@ -969,14 +975,14 @@ exports[`Badge_3 1`] = `
             "borderTopRightRadius": "4px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -987,7 +993,8 @@ exports[`Badge_3 1`] = `
             Object {
               "color": "rgba(126,126,126,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1017,14 +1024,14 @@ exports[`Badge_3 1`] = `
             "borderTopRightRadius": "4px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1035,7 +1042,8 @@ exports[`Badge_3 1`] = `
             Object {
               "color": "rgba(255,255,255,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1078,14 +1086,14 @@ exports[`Badge_3 1`] = `
             "borderTopRightRadius": "4px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1096,7 +1104,8 @@ exports[`Badge_3 1`] = `
             Object {
               "color": "rgba(51,73,95,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1126,14 +1135,14 @@ exports[`Badge_3 1`] = `
             "borderTopRightRadius": "4px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1144,7 +1153,8 @@ exports[`Badge_3 1`] = `
             Object {
               "color": "rgba(255,255,255,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1187,14 +1197,14 @@ exports[`Badge_3 1`] = `
             "borderTopRightRadius": "4px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1205,7 +1215,8 @@ exports[`Badge_3 1`] = `
             Object {
               "color": "rgba(183,64,51,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1235,14 +1246,14 @@ exports[`Badge_3 1`] = `
             "borderTopRightRadius": "4px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1253,7 +1264,8 @@ exports[`Badge_3 1`] = `
             Object {
               "color": "rgba(255,255,255,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1296,14 +1308,14 @@ exports[`Badge_3 1`] = `
             "borderTopRightRadius": "4px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1314,7 +1326,8 @@ exports[`Badge_3 1`] = `
             Object {
               "color": "rgba(178,101,0,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1344,14 +1357,14 @@ exports[`Badge_3 1`] = `
             "borderTopRightRadius": "4px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1362,7 +1375,8 @@ exports[`Badge_3 1`] = `
             Object {
               "color": "rgba(255,255,255,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1405,14 +1419,14 @@ exports[`Badge_3 1`] = `
             "borderTopRightRadius": "4px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1423,7 +1437,8 @@ exports[`Badge_3 1`] = `
             Object {
               "color": "rgba(126,101,20,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1453,14 +1468,14 @@ exports[`Badge_3 1`] = `
             "borderTopRightRadius": "4px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1471,7 +1486,8 @@ exports[`Badge_3 1`] = `
             Object {
               "color": "rgba(126,101,20,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1514,14 +1530,14 @@ exports[`Badge_3 1`] = `
             "borderTopRightRadius": "4px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1532,7 +1548,8 @@ exports[`Badge_3 1`] = `
             Object {
               "color": "rgba(22,160,84,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1562,14 +1579,14 @@ exports[`Badge_3 1`] = `
             "borderTopRightRadius": "4px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1580,7 +1597,8 @@ exports[`Badge_3 1`] = `
             Object {
               "color": "rgba(255,255,255,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1623,14 +1641,14 @@ exports[`Badge_3 1`] = `
             "borderTopRightRadius": "4px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1641,7 +1659,8 @@ exports[`Badge_3 1`] = `
             Object {
               "color": "rgba(27,135,122,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1671,14 +1690,14 @@ exports[`Badge_3 1`] = `
             "borderTopRightRadius": "4px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1689,7 +1708,8 @@ exports[`Badge_3 1`] = `
             Object {
               "color": "rgba(255,255,255,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1732,14 +1752,14 @@ exports[`Badge_3 1`] = `
             "borderTopRightRadius": "4px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1750,7 +1770,8 @@ exports[`Badge_3 1`] = `
             Object {
               "color": "rgba(55,36,143,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1780,14 +1801,14 @@ exports[`Badge_3 1`] = `
             "borderTopRightRadius": "4px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1798,7 +1819,8 @@ exports[`Badge_3 1`] = `
             Object {
               "color": "rgba(255,255,255,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1856,14 +1878,14 @@ exports[`Badge_5 1`] = `
             "borderTopRightRadius": "999px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1874,7 +1896,8 @@ exports[`Badge_5 1`] = `
             Object {
               "color": "rgba(126,126,126,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1904,14 +1927,14 @@ exports[`Badge_5 1`] = `
             "borderTopRightRadius": "999px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1922,7 +1945,8 @@ exports[`Badge_5 1`] = `
             Object {
               "color": "rgba(255,255,255,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -1965,14 +1989,14 @@ exports[`Badge_5 1`] = `
             "borderTopRightRadius": "999px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -1983,7 +2007,8 @@ exports[`Badge_5 1`] = `
             Object {
               "color": "rgba(51,73,95,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -2013,14 +2038,14 @@ exports[`Badge_5 1`] = `
             "borderTopRightRadius": "999px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -2031,7 +2056,8 @@ exports[`Badge_5 1`] = `
             Object {
               "color": "rgba(255,255,255,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -2074,14 +2100,14 @@ exports[`Badge_5 1`] = `
             "borderTopRightRadius": "999px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -2092,7 +2118,8 @@ exports[`Badge_5 1`] = `
             Object {
               "color": "rgba(183,64,51,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -2122,14 +2149,14 @@ exports[`Badge_5 1`] = `
             "borderTopRightRadius": "999px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -2140,7 +2167,8 @@ exports[`Badge_5 1`] = `
             Object {
               "color": "rgba(255,255,255,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -2183,14 +2211,14 @@ exports[`Badge_5 1`] = `
             "borderTopRightRadius": "999px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -2201,7 +2229,8 @@ exports[`Badge_5 1`] = `
             Object {
               "color": "rgba(178,101,0,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -2231,14 +2260,14 @@ exports[`Badge_5 1`] = `
             "borderTopRightRadius": "999px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -2249,7 +2278,8 @@ exports[`Badge_5 1`] = `
             Object {
               "color": "rgba(255,255,255,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -2292,14 +2322,14 @@ exports[`Badge_5 1`] = `
             "borderTopRightRadius": "999px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -2310,7 +2340,8 @@ exports[`Badge_5 1`] = `
             Object {
               "color": "rgba(126,101,20,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -2340,14 +2371,14 @@ exports[`Badge_5 1`] = `
             "borderTopRightRadius": "999px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -2358,7 +2389,8 @@ exports[`Badge_5 1`] = `
             Object {
               "color": "rgba(126,101,20,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -2401,14 +2433,14 @@ exports[`Badge_5 1`] = `
             "borderTopRightRadius": "999px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -2419,7 +2451,8 @@ exports[`Badge_5 1`] = `
             Object {
               "color": "rgba(22,160,84,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -2449,14 +2482,14 @@ exports[`Badge_5 1`] = `
             "borderTopRightRadius": "999px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -2467,7 +2500,8 @@ exports[`Badge_5 1`] = `
             Object {
               "color": "rgba(255,255,255,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -2510,14 +2544,14 @@ exports[`Badge_5 1`] = `
             "borderTopRightRadius": "999px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -2528,7 +2562,8 @@ exports[`Badge_5 1`] = `
             Object {
               "color": "rgba(27,135,122,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -2558,14 +2593,14 @@ exports[`Badge_5 1`] = `
             "borderTopRightRadius": "999px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -2576,7 +2611,8 @@ exports[`Badge_5 1`] = `
             Object {
               "color": "rgba(255,255,255,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -2619,14 +2655,14 @@ exports[`Badge_5 1`] = `
             "borderTopRightRadius": "999px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -2637,7 +2673,8 @@ exports[`Badge_5 1`] = `
             Object {
               "color": "rgba(55,36,143,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -2667,14 +2704,14 @@ exports[`Badge_5 1`] = `
             "borderTopRightRadius": "999px",
             "display": "flex",
             "flexDirection": "row",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "msFlexItemAlign": "start",
             "msFlexPack": "center",
-            "paddingLeft": "8px",
-            "paddingRight": "8px",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
           }
         }
       >
@@ -2685,7 +2722,8 @@ exports[`Badge_5 1`] = `
             Object {
               "color": "rgba(255,255,255,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "14px",
+              "fontSize": "16px",
+              "fontWeight": "bold",
               "textAlign": "left",
               "textTransform": "uppercase",
             }
@@ -5474,6 +5512,167 @@ exports[`Checkbox_2 1`] = `
 `;
 
 exports[`Checkbox_3 1`] = `<div />`;
+
+exports[`Collapsible_0 1`] = `
+<h3>
+  Usage
+</h3>
+`;
+
+exports[`Collapsible_1 1`] = `
+<div>
+  <div
+    className="css-view-1dbjc4n"
+    style={
+      Object {
+        "height": "0px",
+        "overflowX": "hidden",
+        "overflowY": "hidden",
+      }
+    }
+  >
+    <div
+      className="css-view-1dbjc4n"
+    >
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxPack": "center",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "backgroundColor": "rgba(103,198,187,1.00)",
+            "height": "300px",
+            "justifyContent": "center",
+            "marginBottom": "16px",
+            "marginTop": "16px",
+            "msFlexAlign": "center",
+            "msFlexPack": "center",
+          }
+        }
+      >
+        <div
+          className="css-text-76zvg2"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(255,255,255,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "textAlign": "left",
+            }
+          }
+        >
+          Content of the Collapsible
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-view-1dbjc4n"
+    data-focusable={true}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "MozTransitionProperty": "opacity",
+        "MozUserSelect": "none",
+        "WebkitTransitionDuration": "0.15s",
+        "WebkitTransitionProperty": "opacity",
+        "WebkitUserSelect": "none",
+        "cursor": "pointer",
+        "msTouchAction": "manipulation",
+        "msUserSelect": "none",
+        "touchAction": "manipulation",
+        "transitionDuration": "0.15s",
+        "transitionProperty": "opacity",
+        "userSelect": "none",
+      }
+    }
+    tabIndex="0"
+  >
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "WebkitAlignItems": "center",
+          "WebkitBoxAlign": "center",
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxOrient": "horizontal",
+          "WebkitFlexDirection": "row",
+          "alignItems": "center",
+          "display": "flex",
+          "flexDirection": "row",
+          "msFlexAlign": "center",
+          "msFlexDirection": "row",
+        }
+      }
+    >
+      <div
+        className="css-text-76zvg2"
+        dir="auto"
+        style={
+          Object {
+            "color": "rgba(126,126,126,1.00)",
+            "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+            "fontSize": "20px",
+            "textAlign": "left",
+          }
+        }
+      >
+        Header title
+      </div>
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "paddingLeft": "4px",
+          }
+        }
+      >
+        <svg
+          color="#7e7e7e"
+          fill="none"
+          height={28}
+          size={28}
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          style={
+            Object {
+              "color": "#7e7e7e",
+            }
+          }
+          viewBox="0 0 24 24"
+          width={28}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polyline
+            points="6 9 12 15 18 9"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Collapsible_2 1`] = `
+<h3>
+  Props
+</h3>
+`;
+
+exports[`Collapsible_3 1`] = `<div />`;
 
 exports[`Container_0 1`] = `
 <h3>
@@ -21689,35 +21888,6 @@ exports[`Text_11 1`] = `
       }
     }
   >
-    <div
-      className="css-text-76zvg2"
-      dir="auto"
-      style={
-        Object {
-          "color": "rgba(126,126,126,1.00)",
-          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-          "fontSize": "16px",
-          "textAlign": "left",
-        }
-      }
-    >
-      Lorem ipsum dolar set amet
-    </div>
-    <div
-      className="css-text-76zvg2"
-      dir="auto"
-      style={
-        Object {
-          "color": "rgba(126,126,126,1.00)",
-          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-          "fontSize": "16px",
-          "fontStyle": "italic",
-          "textAlign": "left",
-        }
-      }
-    >
-      Lorem ipsum dolar set amet
-    </div>
     <div
       className="css-text-76zvg2"
       dir="auto"

@@ -76,7 +76,7 @@ export const Alert = (props: AlertProps) => {
       )}
       {component || (
         <View style={bodyStyle}>
-          <Text isBold>{title}</Text>
+          <Text weight="bold">{title}</Text>
           <Text>{description}</Text>
         </View>
       )}
