@@ -1,3 +1,15 @@
+# [1.43.0](https://github.com/WeTrustPlatform/paramount/compare/v1.42.0...v1.43.0) (2019-05-17)
+
+
+### Bug Fixes
+
+* fix checkbox size and style refactorings ([accaf63](https://github.com/WeTrustPlatform/paramount/commit/accaf63))
+
+
+### Features
+
+* **checkbox:** reimplement checkbox ([9165581](https://github.com/WeTrustPlatform/paramount/commit/9165581))
+
 # [1.42.0](https://github.com/WeTrustPlatform/paramount/compare/v1.41.3...v1.42.0) (2019-05-16)
 
 
