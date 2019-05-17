@@ -8,8 +8,9 @@ import {
 import { DeepPartial } from 'ts-essentials';
 
 import { Icon } from '../../icons';
-import { useTheme } from '../../theme';
+import { ControlSize, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { Text } from '../Typography';
 import {
   CheckboxStyles,
   GetCheckboxStyles,
@@ -17,18 +18,22 @@ import {
 } from './Checkbox.styles';
 
 export type CheckboxShape = 'circle' | 'square';
+export type CheckboxLabelPosition = 'left' | 'right';
 
 export interface CheckboxProps extends AccessibilityProps {
   isChecked?: boolean;
   isDisabled?: boolean;
   /** Sometimes we just want the display of the checkbox  */
   isInteractive?: boolean;
-  checkedIcon?: React.ReactNode;
   /** @default square */
   shape?: CheckboxShape;
   onChange?: (e: GestureResponderEvent) => void | undefined;
   getStyles?: ReplaceReturnType<GetCheckboxStyles, DeepPartial<CheckboxStyles>>;
   testID?: string;
+  checkColor?: string;
+  label?: string;
+  size?: ControlSize;
+  labelPosition?: 'left' | 'right';
 }
 
 export const Checkbox = (props: CheckboxProps) => {
@@ -36,9 +41,12 @@ export const Checkbox = (props: CheckboxProps) => {
     isChecked = false,
     isDisabled = false,
     isInteractive = true,
-    checkedIcon,
     onChange = () => null,
     shape = 'square',
+    labelPosition = 'right',
+    size = 'small',
+    label,
+    checkColor,
     getStyles,
     testID,
     ...accessibilityProps
@@ -46,15 +54,30 @@ export const Checkbox = (props: CheckboxProps) => {
 
   const theme = useTheme();
 
-  const { checkboxStyle, checkboxFocusBackgroundColor } = mergeStyles(
-    getCheckboxStyles,
-    getStyles,
-  )({ isChecked, isDisabled, shape }, theme);
+  const {
+    touchableStyle,
+    outerWrapperStyle,
+    checkboxStyle,
+    textStyle,
+    iconColor,
+    checkboxFocusBackgroundColor,
+  } = mergeStyles(getCheckboxStyles, getStyles)(
+    {
+      checkColor,
+      hasLabel: !!label,
+      isChecked,
+      isDisabled,
+      labelPosition,
+      shape,
+      size,
+    },
+    theme,
+  );
 
   return (
     <TouchableHighlight
-      accessible
-      style={checkboxStyle}
+      accessible={isInteractive}
+      style={touchableStyle}
       underlayColor={checkboxFocusBackgroundColor}
       {...(isInteractive
         ? {
@@ -67,19 +90,18 @@ export const Checkbox = (props: CheckboxProps) => {
       testID={testID}
       {...accessibilityProps}
     >
-      <View
-        style={{
-          alignItems: 'center',
-          display: 'flex',
-          height: '100%',
-          justifyContent: 'center',
-        }}
-      >
-        {isChecked
-          ? checkedIcon || (
-              <Icon name="check" size={20} color={theme.colors.text.white} />
-            )
-          : null}
+      <View style={outerWrapperStyle}>
+        {labelPosition === 'left' && (
+          <Text getStyles={() => ({ textStyle })}>{label}</Text>
+        )}
+
+        <View style={checkboxStyle}>
+          {isChecked ? <Icon name="check" size={20} color={iconColor} /> : null}
+        </View>
+
+        {labelPosition === 'right' && (
+          <Text getStyles={() => ({ textStyle })}>{label}</Text>
+        )}
       </View>
     </TouchableHighlight>
   );

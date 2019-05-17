@@ -1,4 +1,1 @@
-export {
-  LabeledCheckbox as Checkbox,
-  LabeledCheckboxProps as CheckboxProps,
-} from './LabeledCheckbox';
+export { Checkbox, CheckboxProps } from './Checkbox';

@@ -1,7 +1,7 @@
-import { ViewStyle } from 'react-native';
+import { TextStyle, ViewStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
-import { CheckboxShape } from './Checkbox';
+import { ControlSize, Theme } from '../../theme/ThemeInterface';
+import { CheckboxLabelPosition, CheckboxShape } from './Checkbox';
 
 export interface ShapeStyle {
   circle: ViewStyle;
@@ -9,7 +9,6 @@ export interface ShapeStyle {
 }
 
 export interface CheckboxVariables {
-  base: ViewStyle;
   disabled: ViewStyle;
   checked: ViewStyle;
   checkedFocus: ViewStyle;
@@ -17,49 +16,23 @@ export interface CheckboxVariables {
   shape: ShapeStyle;
 }
 
-export const getCheckboxVariables = (theme: Theme): CheckboxVariables => {
-  return {
-    base: {
-      backgroundColor: theme.colors.background.content,
-      borderColor: theme.colors.border.default,
-      borderWidth: 1,
-      height: 32,
-      width: 32,
-    },
-    checked: {
-      backgroundColor: theme.colors.background.primaryDefault,
-      borderColor: 'transparent',
-    },
-    checkedFocus: {
-      backgroundColor: theme.colors.background.primaryDark,
-    },
-    disabled: {
-      backgroundColor: theme.colors.background.greyDark,
-      borderColor: theme.colors.border.default,
-    },
-    shape: {
-      circle: {
-        borderRadius: 999,
-      },
-      square: {
-        borderRadius: theme.controlBorderRadius.small,
-      },
-    },
-    uncheckedFocus: {
-      backgroundColor: theme.colors.background.greyLight,
-    },
-  };
-};
-
 export interface CheckboxStylesProps {
   isChecked: boolean;
   isDisabled: boolean;
   shape: CheckboxShape;
+  labelPosition: CheckboxLabelPosition;
+  hasLabel: boolean;
+  checkColor: string;
+  size: ControlSize;
 }
 
 export interface CheckboxStyles {
+  touchableStyle: ViewStyle;
+  outerWrapperStyle: ViewStyle;
   checkboxStyle: ViewStyle;
-  checkboxFocusBackgroundColor?: string;
+  textStyle: TextStyle;
+  iconColor: string;
+  checkboxFocusBackgroundColor: string;
 }
 
 export type GetCheckboxStyles = (
@@ -68,20 +41,57 @@ export type GetCheckboxStyles = (
 ) => CheckboxStyles;
 
 export const getCheckboxStyles: GetCheckboxStyles = (
-  { isChecked, isDisabled, shape },
+  { isChecked, isDisabled, shape, hasLabel, labelPosition, checkColor, size },
   theme,
 ) => {
-  const checkboxVariables = getCheckboxVariables(theme);
+  const sizeValue = theme.controlHeights[size];
 
   return {
     checkboxFocusBackgroundColor: isChecked
-      ? checkboxVariables.checkedFocus.backgroundColor
-      : checkboxVariables.uncheckedFocus.backgroundColor,
+      ? theme.colors.background.primaryDark
+      : theme.colors.background.greyLight,
+
     checkboxStyle: {
-      ...checkboxVariables.base,
-      ...(isChecked ? checkboxVariables.checked : {}),
-      ...(isDisabled ? checkboxVariables.disabled : {}),
-      ...checkboxVariables.shape[shape],
+      alignItems: 'center',
+      backgroundColor: theme.colors.background.content,
+      borderColor: theme.colors.border.default,
+      borderWidth: 1,
+      height: sizeValue,
+      justifyContent: 'center',
+      width: sizeValue,
+      ...(hasLabel
+        ? labelPosition === 'right'
+          ? { marginRight: 8 }
+          : { marginLeft: 8 }
+        : {}),
+      ...(isChecked
+        ? {
+            backgroundColor: theme.colors.background.primaryDefault,
+            borderColor: 'transparent',
+          }
+        : {}),
+      ...(isDisabled
+        ? {
+            backgroundColor: theme.colors.background.greyDark,
+            borderColor: theme.colors.border.default,
+          }
+        : {}),
+      ...{
+        circle: {
+          borderRadius: 999,
+        },
+        square: {
+          borderRadius: theme.controlBorderRadius.small,
+        },
+      }[shape],
     },
+    iconColor: checkColor || theme.colors.text.white,
+
+    outerWrapperStyle: {
+      alignItems: 'center',
+      flexDirection: 'row',
+    },
+    textStyle: {},
+    touchableStyle: {},
   };
 };

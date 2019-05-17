@@ -142,6 +142,8 @@ export interface ControlSizes {
   large: number;
 }
 
+export type ControlSize = keyof ControlSizes;
+
 export interface FillColorProps {
   backgroundColor: string;
   color: string;

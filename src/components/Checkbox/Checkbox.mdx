@@ -19,13 +19,13 @@ import { Checkbox } from '.';
         isChecked={on}
         isDisabled={false}
         isInteractive={true}
-        checkedIcon={null}
         onChange={toggle}
+        size="small"
         getStyles={(props, theme) => ({
           checkboxStyle: {},
           checkboxFocusBackgroundColor: '',
         })}
-        position="right"
+        labelPosition="right" // or left
         label="Label"
       />
     )}
