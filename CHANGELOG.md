@@ -1,3 +1,10 @@
+# [1.42.0](https://github.com/WeTrustPlatform/paramount/compare/v1.41.3...v1.42.0) (2019-05-16)
+
+
+### Features
+
+* **grid:** add grid and layout ([6dcc3f6](https://github.com/WeTrustPlatform/paramount/commit/6dcc3f6))
+
 ## [1.41.3](https://github.com/WeTrustPlatform/paramount/compare/v1.41.2...v1.41.3) (2019-05-14)
 
 
