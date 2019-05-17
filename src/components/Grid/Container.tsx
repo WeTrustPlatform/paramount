@@ -4,14 +4,20 @@ import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { GetProgressStyles, ProgressStyles } from '../Progress/Progress.styles';
-import { getContainerStyles } from './Container.styles';
+import {
+  ContainerStyles,
+  GetContainerStyles,
+  getContainerStyles,
+} from './Container.styles';
 import { LayoutContext } from './LayoutContext';
 
 export interface ContainerProps {
   children: React.ReactNode;
   maxWidth?: number;
-  getStyles?: ReplaceReturnType<GetProgressStyles, DeepPartial<ProgressStyles>>;
+  getStyles?: ReplaceReturnType<
+    GetContainerStyles,
+    DeepPartial<ContainerStyles>
+  >;
 }
 
 /**

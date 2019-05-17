@@ -44,7 +44,7 @@ export const Checkbox = (props: CheckboxProps) => {
     onChange = () => null,
     shape = 'square',
     labelPosition = 'right',
-    size = 'small',
+    size = 'medium',
     label,
     checkColor,
     getStyles,
@@ -92,7 +92,9 @@ export const Checkbox = (props: CheckboxProps) => {
     >
       <View style={outerWrapperStyle}>
         {labelPosition === 'left' && (
-          <Text getStyles={() => ({ textStyle })}>{label}</Text>
+          <Text size={size} getStyles={() => ({ textStyle })}>
+            {label}
+          </Text>
         )}
 
         <View style={checkboxStyle}>
@@ -100,7 +102,9 @@ export const Checkbox = (props: CheckboxProps) => {
         </View>
 
         {labelPosition === 'right' && (
-          <Text getStyles={() => ({ textStyle })}>{label}</Text>
+          <Text size={size} getStyles={() => ({ textStyle })}>
+            {label}
+          </Text>
         )}
       </View>
     </TouchableHighlight>

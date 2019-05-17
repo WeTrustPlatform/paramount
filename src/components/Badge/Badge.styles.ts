@@ -1,19 +1,16 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { FillColor, Fills, Theme } from '../../theme/ThemeInterface';
+import {
+  ControlSize,
+  FillColor,
+  Fills,
+  Theme,
+} from '../../theme/ThemeInterface';
 import { Shape, shapeMapping } from '../Box';
-
-export interface BadgeSizes {
-  small: ViewStyle;
-  medium: ViewStyle;
-  large: ViewStyle;
-}
-
-export type BadgeSize = keyof BadgeSizes;
 
 export interface BadgeVariables {
   fills: Fills;
-  sizes: BadgeSizes;
+  sizes: { [size in ControlSize]: ViewStyle };
 }
 export const getBadgeVariables = (theme: Theme): BadgeVariables => {
   return {
@@ -43,7 +40,7 @@ export const getBadgeVariables = (theme: Theme): BadgeVariables => {
 
 export interface BadgeStylesProps {
   shape: Shape;
-  size: BadgeSize;
+  size: ControlSize;
   color: FillColor;
   isSolid: boolean;
 }

@@ -44,7 +44,7 @@ export const getCheckboxStyles: GetCheckboxStyles = (
   { isChecked, isDisabled, shape, hasLabel, labelPosition, checkColor, size },
   theme,
 ) => {
-  const sizeValue = theme.controlHeights[size];
+  const sizeValue = theme.controlHeights[size] - 16;
 
   return {
     checkboxFocusBackgroundColor: isChecked

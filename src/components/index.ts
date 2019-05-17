@@ -16,7 +16,7 @@ export * from './Overlay';
 export * from './Pickers';
 export * from './Positioner';
 export * from './Popover';
-export * from './Progress';
+export * from './ProgressBar';
 export * from './SelectList';
 export * from './Switch';
 export * from './Inputs';

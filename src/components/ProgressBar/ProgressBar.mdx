@@ -1,16 +1,16 @@
 ---
-name: Progress
+name: ProgressBar
 menu: Components
 ---
 
 import { Counter as CounterContainer } from 'react-powerplug';
 import { Playground, Props } from 'docz';
-import { Progress } from './Progress';
+import { ProgressBar } from '.';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Counter } from '../Counter';
 
-# Progress
+# ProgressBar
 
 ### Usage
 
@@ -18,7 +18,7 @@ import { Counter } from '../Counter';
   <CounterContainer initial={0}>
     {({ count, incBy, decBy }) => (
       <Box>
-        <Progress
+        <ProgressBar
           percent={count}
           size="large"
           getStyles={(props, theme) => ({
@@ -40,4 +40,4 @@ import { Counter } from '../Counter';
 
 ### Props
 
-<Props of={Progress} />
+<Props of={ProgressBar} />

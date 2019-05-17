@@ -4,30 +4,32 @@ import { animated, useSpring } from 'react-spring/native.cjs';
 import { DeepPartial } from 'ts-essentials';
 
 import { springDefaultConfig } from '../../constants/Animation';
-import { useTheme } from '../../theme';
+import { ControlSize, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
-  GetProgressStyles,
-  getProgressStyles,
-  ProgressSize,
-  ProgressStyles,
-} from './Progress.styles';
+  GetProgressBarStyles,
+  getProgressBarStyles,
+  ProgressBarStyles,
+} from './ProgressBar.styles';
 
 const AnimatedView = animated(View);
 
-export interface ProgressProps {
+export interface ProgressBarProps {
   percent?: number;
-  size?: ProgressSize;
-  getStyles?: ReplaceReturnType<GetProgressStyles, DeepPartial<ProgressStyles>>;
+  size?: ControlSize;
+  getStyles?: ReplaceReturnType<
+    GetProgressBarStyles,
+    DeepPartial<ProgressBarStyles>
+  >;
   testID?: string;
 }
 
-export const Progress = (props: ProgressProps) => {
+export const ProgressBar = (props: ProgressBarProps) => {
   const { percent = 0, size = 'medium', getStyles, testID } = props;
   const theme = useTheme();
 
   const { containerStyle, progressStyle } = mergeStyles(
-    getProgressStyles,
+    getProgressBarStyles,
     getStyles,
   )({ size }, theme);
 

@@ -3,21 +3,16 @@ import { View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { FillColor } from '../../theme/ThemeInterface';
+import { ControlSize, FillColor } from '../../theme/ThemeInterface';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Shape } from '../Box';
 import { Text } from '../Typography';
-import {
-  BadgeSize,
-  BadgeStyles,
-  GetBadgeStyles,
-  getBadgeStyles,
-} from './Badge.styles';
+import { BadgeStyles, GetBadgeStyles, getBadgeStyles } from './Badge.styles';
 
 export interface BadgeProps {
   children: React.ReactNode;
   color?: FillColor;
-  size?: BadgeSize;
+  size?: ControlSize;
   shape?: Shape;
   isSolid?: boolean;
   getStyles?: ReplaceReturnType<GetBadgeStyles, DeepPartial<BadgeStyles>>;

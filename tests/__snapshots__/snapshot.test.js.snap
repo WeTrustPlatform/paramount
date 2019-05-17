@@ -5439,12 +5439,12 @@ exports[`Checkbox_1 1`] = `
             "borderTopLeftRadius": "4px",
             "borderTopRightRadius": "4px",
             "borderTopWidth": "1px",
-            "height": "40px",
+            "height": "32px",
             "justifyContent": "center",
             "marginRight": "8px",
             "msFlexAlign": "center",
             "msFlexPack": "center",
-            "width": "40px",
+            "width": "32px",
           }
         }
       />
@@ -12144,13 +12144,13 @@ exports[`Positioner_0 1`] = `
 </div>
 `;
 
-exports[`Progress_0 1`] = `
+exports[`ProgressBar_0 1`] = `
 <h3>
   Usage
 </h3>
 `;
 
-exports[`Progress_1 1`] = `
+exports[`ProgressBar_1 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -12164,7 +12164,9 @@ exports[`Progress_1 1`] = `
           "borderBottomRightRadius": "999px",
           "borderTopLeftRadius": "999px",
           "borderTopRightRadius": "999px",
-          "height": "32px",
+          "height": "40px",
+          "overflowX": "hidden",
+          "overflowY": "hidden",
         }
       }
     >
@@ -12406,13 +12408,13 @@ exports[`Progress_1 1`] = `
 </div>
 `;
 
-exports[`Progress_2 1`] = `
+exports[`ProgressBar_2 1`] = `
 <h3>
   Props
 </h3>
 `;
 
-exports[`Progress_3 1`] = `<div />`;
+exports[`ProgressBar_3 1`] = `<div />`;
 
 exports[`SelectList_0 1`] = `
 <h3>
@@ -12642,11 +12644,11 @@ exports[`SelectList_1 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 >
@@ -12923,11 +12925,11 @@ exports[`SelectList_3 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
@@ -13129,11 +13131,11 @@ exports[`SelectList_3 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
@@ -13335,11 +13337,11 @@ exports[`SelectList_3 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
@@ -13541,11 +13543,11 @@ exports[`SelectList_3 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
@@ -13747,11 +13749,11 @@ exports[`SelectList_3 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
@@ -13953,11 +13955,11 @@ exports[`SelectList_3 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
@@ -14159,11 +14161,11 @@ exports[`SelectList_3 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
@@ -14365,11 +14367,11 @@ exports[`SelectList_3 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 >
@@ -14594,11 +14596,11 @@ exports[`SelectList_3 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
@@ -14800,11 +14802,11 @@ exports[`SelectList_3 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
@@ -15066,11 +15068,11 @@ exports[`SelectList_5 1`] = `
                         "borderTopLeftRadius": "999px",
                         "borderTopRightRadius": "999px",
                         "borderTopWidth": "1px",
-                        "height": "40px",
+                        "height": "32px",
                         "justifyContent": "center",
                         "msFlexAlign": "center",
                         "msFlexPack": "center",
-                        "width": "40px",
+                        "width": "32px",
                       }
                     }
                   />
@@ -15272,11 +15274,11 @@ exports[`SelectList_5 1`] = `
                         "borderTopLeftRadius": "999px",
                         "borderTopRightRadius": "999px",
                         "borderTopWidth": "1px",
-                        "height": "40px",
+                        "height": "32px",
                         "justifyContent": "center",
                         "msFlexAlign": "center",
                         "msFlexPack": "center",
-                        "width": "40px",
+                        "width": "32px",
                       }
                     }
                   />
@@ -15478,11 +15480,11 @@ exports[`SelectList_5 1`] = `
                         "borderTopLeftRadius": "999px",
                         "borderTopRightRadius": "999px",
                         "borderTopWidth": "1px",
-                        "height": "40px",
+                        "height": "32px",
                         "justifyContent": "center",
                         "msFlexAlign": "center",
                         "msFlexPack": "center",
-                        "width": "40px",
+                        "width": "32px",
                       }
                     }
                   />
@@ -15684,11 +15686,11 @@ exports[`SelectList_5 1`] = `
                         "borderTopLeftRadius": "999px",
                         "borderTopRightRadius": "999px",
                         "borderTopWidth": "1px",
-                        "height": "40px",
+                        "height": "32px",
                         "justifyContent": "center",
                         "msFlexAlign": "center",
                         "msFlexPack": "center",
-                        "width": "40px",
+                        "width": "32px",
                       }
                     }
                   />
@@ -15890,11 +15892,11 @@ exports[`SelectList_5 1`] = `
                         "borderTopLeftRadius": "999px",
                         "borderTopRightRadius": "999px",
                         "borderTopWidth": "1px",
-                        "height": "40px",
+                        "height": "32px",
                         "justifyContent": "center",
                         "msFlexAlign": "center",
                         "msFlexPack": "center",
-                        "width": "40px",
+                        "width": "32px",
                       }
                     }
                   />
@@ -16096,11 +16098,11 @@ exports[`SelectList_5 1`] = `
                         "borderTopLeftRadius": "999px",
                         "borderTopRightRadius": "999px",
                         "borderTopWidth": "1px",
-                        "height": "40px",
+                        "height": "32px",
                         "justifyContent": "center",
                         "msFlexAlign": "center",
                         "msFlexPack": "center",
-                        "width": "40px",
+                        "width": "32px",
                       }
                     }
                   />
@@ -16302,11 +16304,11 @@ exports[`SelectList_5 1`] = `
                         "borderTopLeftRadius": "999px",
                         "borderTopRightRadius": "999px",
                         "borderTopWidth": "1px",
-                        "height": "40px",
+                        "height": "32px",
                         "justifyContent": "center",
                         "msFlexAlign": "center",
                         "msFlexPack": "center",
-                        "width": "40px",
+                        "width": "32px",
                       }
                     }
                   />
@@ -16508,11 +16510,11 @@ exports[`SelectList_5 1`] = `
                         "borderTopLeftRadius": "999px",
                         "borderTopRightRadius": "999px",
                         "borderTopWidth": "1px",
-                        "height": "40px",
+                        "height": "32px",
                         "justifyContent": "center",
                         "msFlexAlign": "center",
                         "msFlexPack": "center",
-                        "width": "40px",
+                        "width": "32px",
                       }
                     }
                   />
@@ -16714,11 +16716,11 @@ exports[`SelectList_5 1`] = `
                         "borderTopLeftRadius": "999px",
                         "borderTopRightRadius": "999px",
                         "borderTopWidth": "1px",
-                        "height": "40px",
+                        "height": "32px",
                         "justifyContent": "center",
                         "msFlexAlign": "center",
                         "msFlexPack": "center",
-                        "width": "40px",
+                        "width": "32px",
                       }
                     }
                   />
@@ -16920,11 +16922,11 @@ exports[`SelectList_5 1`] = `
                         "borderTopLeftRadius": "999px",
                         "borderTopRightRadius": "999px",
                         "borderTopWidth": "1px",
-                        "height": "40px",
+                        "height": "32px",
                         "justifyContent": "center",
                         "msFlexAlign": "center",
                         "msFlexPack": "center",
-                        "width": "40px",
+                        "width": "32px",
                       }
                     }
                   />
@@ -17179,11 +17181,11 @@ exports[`SelectList_7 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
@@ -17385,11 +17387,11 @@ exports[`SelectList_7 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
@@ -17591,11 +17593,11 @@ exports[`SelectList_7 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
@@ -17797,11 +17799,11 @@ exports[`SelectList_7 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
@@ -18003,11 +18005,11 @@ exports[`SelectList_7 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
@@ -18209,11 +18211,11 @@ exports[`SelectList_7 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
@@ -18415,11 +18417,11 @@ exports[`SelectList_7 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
@@ -18621,11 +18623,11 @@ exports[`SelectList_7 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 >
@@ -18850,11 +18852,11 @@ exports[`SelectList_7 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
@@ -19056,11 +19058,11 @@ exports[`SelectList_7 1`] = `
                       "borderTopLeftRadius": "999px",
                       "borderTopRightRadius": "999px",
                       "borderTopWidth": "1px",
-                      "height": "40px",
+                      "height": "32px",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
                       "msFlexPack": "center",
-                      "width": "40px",
+                      "width": "32px",
                     }
                   }
                 />
