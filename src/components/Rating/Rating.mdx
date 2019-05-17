@@ -1,0 +1,35 @@
+---
+name: Rating
+menu: Components
+---
+
+import { Counter as CounterContainer } from 'react-powerplug';
+import { Playground, Props } from 'docz';
+import { Rating } from '.';
+
+# Rating
+
+### Usage
+
+<Playground>
+  <CounterContainer initial={3}>
+    {({ count: rating, set }) => (
+      <Rating
+        value={rating}
+        size="small"
+        color="#67c6bb"
+        onChange={value => set(value)}
+        getStyles={(props, theme) => ({
+          containerStyle: {},
+          touchableStyle: {},
+          starColor: '#67c6bb', // defined as color prop
+          starSize: 40, // defined as size prop
+        })}
+      />
+    )}
+  </CounterContainer>
+</Playground>
+
+### Props
+
+<Props of={Rating} />

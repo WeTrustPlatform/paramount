@@ -12615,6 +12615,263 @@ exports[`ProgressBar_2 1`] = `
 
 exports[`ProgressBar_3 1`] = `<div />`;
 
+exports[`Rating_0 1`] = `
+<h3>
+  Usage
+</h3>
+`;
+
+exports[`Rating_1 1`] = `
+<div>
+  <div
+    className="css-view-1dbjc4n"
+    style={
+      Object {
+        "WebkitBoxDirection": "normal",
+        "WebkitBoxOrient": "horizontal",
+        "WebkitFlexDirection": "row",
+        "flexDirection": "row",
+        "msFlexDirection": "row",
+      }
+    }
+  >
+    <div
+      className="css-view-1dbjc4n"
+      data-focusable={true}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "MozTransitionProperty": "opacity",
+          "MozUserSelect": "none",
+          "WebkitTransitionDuration": "0.15s",
+          "WebkitTransitionProperty": "opacity",
+          "WebkitUserSelect": "none",
+          "cursor": "pointer",
+          "msTouchAction": "manipulation",
+          "msUserSelect": "none",
+          "paddingRight": "8px",
+          "touchAction": "manipulation",
+          "transitionDuration": "0.15s",
+          "transitionProperty": "opacity",
+          "userSelect": "none",
+        }
+      }
+      tabIndex="0"
+    >
+      <svg
+        fill="#67c6bb"
+        height="40"
+        stroke="#67c6bb"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        viewBox="0 0 24 24"
+        width="40"
+      >
+        <polygon
+          points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+        />
+      </svg>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      data-focusable={true}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "MozTransitionProperty": "opacity",
+          "MozUserSelect": "none",
+          "WebkitTransitionDuration": "0.15s",
+          "WebkitTransitionProperty": "opacity",
+          "WebkitUserSelect": "none",
+          "cursor": "pointer",
+          "msTouchAction": "manipulation",
+          "msUserSelect": "none",
+          "paddingRight": "8px",
+          "touchAction": "manipulation",
+          "transitionDuration": "0.15s",
+          "transitionProperty": "opacity",
+          "userSelect": "none",
+        }
+      }
+      tabIndex="0"
+    >
+      <svg
+        fill="#67c6bb"
+        height="40"
+        stroke="#67c6bb"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        viewBox="0 0 24 24"
+        width="40"
+      >
+        <polygon
+          points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+        />
+      </svg>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      data-focusable={true}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "MozTransitionProperty": "opacity",
+          "MozUserSelect": "none",
+          "WebkitTransitionDuration": "0.15s",
+          "WebkitTransitionProperty": "opacity",
+          "WebkitUserSelect": "none",
+          "cursor": "pointer",
+          "msTouchAction": "manipulation",
+          "msUserSelect": "none",
+          "paddingRight": "8px",
+          "touchAction": "manipulation",
+          "transitionDuration": "0.15s",
+          "transitionProperty": "opacity",
+          "userSelect": "none",
+        }
+      }
+      tabIndex="0"
+    >
+      <svg
+        fill="#67c6bb"
+        height="40"
+        stroke="#67c6bb"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        viewBox="0 0 24 24"
+        width="40"
+      >
+        <polygon
+          points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+        />
+      </svg>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      data-focusable={true}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "MozTransitionProperty": "opacity",
+          "MozUserSelect": "none",
+          "WebkitTransitionDuration": "0.15s",
+          "WebkitTransitionProperty": "opacity",
+          "WebkitUserSelect": "none",
+          "cursor": "pointer",
+          "msTouchAction": "manipulation",
+          "msUserSelect": "none",
+          "paddingRight": "8px",
+          "touchAction": "manipulation",
+          "transitionDuration": "0.15s",
+          "transitionProperty": "opacity",
+          "userSelect": "none",
+        }
+      }
+      tabIndex="0"
+    >
+      <svg
+        fill="none"
+        height="40"
+        stroke="#67c6bb"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        viewBox="0 0 24 24"
+        width="40"
+      >
+        <polygon
+          points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+        />
+      </svg>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      data-focusable={true}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "MozTransitionProperty": "opacity",
+          "MozUserSelect": "none",
+          "WebkitTransitionDuration": "0.15s",
+          "WebkitTransitionProperty": "opacity",
+          "WebkitUserSelect": "none",
+          "cursor": "pointer",
+          "msTouchAction": "manipulation",
+          "msUserSelect": "none",
+          "paddingRight": "0px",
+          "touchAction": "manipulation",
+          "transitionDuration": "0.15s",
+          "transitionProperty": "opacity",
+          "userSelect": "none",
+        }
+      }
+      tabIndex="0"
+    >
+      <svg
+        fill="none"
+        height="40"
+        stroke="#67c6bb"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        viewBox="0 0 24 24"
+        width="40"
+      >
+        <polygon
+          points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+        />
+      </svg>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Rating_2 1`] = `
+<h3>
+  Props
+</h3>
+`;
+
+exports[`Rating_3 1`] = `<div />`;
+
 exports[`SelectList_0 1`] = `
 <h3>
   Usage
