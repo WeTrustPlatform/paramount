@@ -1,3 +1,10 @@
+# [1.44.0](https://github.com/WeTrustPlatform/paramount/compare/v1.43.0...v1.44.0) (2019-05-17)
+
+
+### Features
+
+* **collapsible:** add collapsible component ([4bded33](https://github.com/WeTrustPlatform/paramount/commit/4bded33))
+
 # [1.43.0](https://github.com/WeTrustPlatform/paramount/compare/v1.42.0...v1.43.0) (2019-05-17)
 
 
