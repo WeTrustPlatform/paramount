@@ -1,22 +1,6 @@
-import { TextStyle, ViewStyle } from 'react-native';
+import { TextStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
-
-export type SizeStyles = ViewStyle & {
-  borderRadius: number;
-  fontSize: number;
-  height: number;
-  paddingLeft: number;
-  paddingRight: number;
-};
-
-export interface TextInputSizes {
-  small: SizeStyles;
-  medium: SizeStyles;
-  large: SizeStyles;
-}
-
-export type TextInputSize = keyof TextInputSizes;
+import { ControlSize, Theme } from '../../theme/ThemeInterface';
 
 export interface TextInputVariables {
   base: TextStyle;
@@ -24,7 +8,7 @@ export interface TextInputVariables {
   focus: TextStyle;
   invalid: TextStyle;
   placeholderTextColor: string;
-  sizes: TextInputSizes;
+  sizes: { [size in ControlSize]: TextStyle };
 }
 
 export const getTextInputVariables = (theme: Theme): TextInputVariables => {
@@ -79,10 +63,11 @@ export interface TextInputStyles {
 }
 
 export interface TextInputStylesProps {
-  size: TextInputSize;
+  size: ControlSize;
   isDisabled: boolean;
   isClearable: boolean;
   isInvalid: boolean;
+  numberOfLines?: number;
 }
 
 export type GetTextInputStyles = (
@@ -91,10 +76,11 @@ export type GetTextInputStyles = (
 ) => TextInputStyles;
 
 export const getTextInputStyles: GetTextInputStyles = (
-  { size, isDisabled, isInvalid },
+  { size, isDisabled, isInvalid, numberOfLines },
   theme,
 ) => {
   const textInputVariables = getTextInputVariables(theme);
+  const controlHeight = theme.controlHeights[size];
 
   const {
     base,
@@ -114,6 +100,12 @@ export const getTextInputStyles: GetTextInputStyles = (
       ...sizeStyles,
       ...(isDisabled ? disabled : {}),
       ...(isInvalid ? invalid : {}),
+      ...(numberOfLines
+        ? {
+            height: numberOfLines * controlHeight,
+            paddingVertical: 16,
+          }
+        : {}),
     },
     placeholderTextColor,
   };

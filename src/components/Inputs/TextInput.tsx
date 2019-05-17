@@ -5,12 +5,11 @@ import {
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { useTheme } from '../../theme';
+import { ControlSize, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
   GetTextInputStyles,
   getTextInputStyles,
-  TextInputSize,
   TextInputStyles,
 } from './TextInput.styles';
 
@@ -18,7 +17,7 @@ export interface TextInputProps extends RNTextInputProps {
   children?: React.ReactNode;
   name?: string;
   innerRef?: React.Ref<RNTextInput>;
-  size?: TextInputSize;
+  size?: ControlSize;
   isDisabled?: boolean;
   isInvalid?: boolean;
   getStyles?: ReplaceReturnType<
@@ -35,6 +34,7 @@ const TextInputBase = (props: TextInputProps) => {
     getStyles,
     name,
     innerRef,
+    numberOfLines,
     ...textInputProps
   } = props;
   const theme = useTheme();
@@ -46,6 +46,7 @@ const TextInputBase = (props: TextInputProps) => {
     {
       isDisabled,
       isInvalid,
+      numberOfLines,
       size,
     },
     theme,
@@ -59,6 +60,7 @@ const TextInputBase = (props: TextInputProps) => {
       editable={!isDisabled}
       placeholderTextColor={placeholderTextColor}
       name={name}
+      numberOfLines={numberOfLines}
       {...textInputProps}
     />
   );

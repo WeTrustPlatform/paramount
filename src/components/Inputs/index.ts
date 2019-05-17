@@ -1,6 +1,4 @@
 export * from './TextInputField';
-export * from './TextArea';
-export * from './TextAreaField';
 export * from './PhoneNumberInput';
 export * from './PhoneNumberInputField';
 export {
