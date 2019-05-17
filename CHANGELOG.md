@@ -1,3 +1,11 @@
+# [1.45.0](https://github.com/WeTrustPlatform/paramount/compare/v1.44.0...v1.45.0) (2019-05-17)
+
+
+### Features
+
+* **rating:** add rating component ([bf231a4](https://github.com/WeTrustPlatform/paramount/commit/bf231a4))
+* **textinput:** replace textarea with textinput ([e290d4f](https://github.com/WeTrustPlatform/paramount/commit/e290d4f))
+
 # [1.44.0](https://github.com/WeTrustPlatform/paramount/compare/v1.43.0...v1.44.0) (2019-05-17)
 
 
