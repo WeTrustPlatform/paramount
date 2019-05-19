@@ -1,3 +1,10 @@
+## [1.45.1](https://github.com/WeTrustPlatform/paramount/compare/v1.45.0...v1.45.1) (2019-05-19)
+
+
+### Bug Fixes
+
+* **view:** fix viewmeasure ([18ca241](https://github.com/WeTrustPlatform/paramount/commit/18ca241))
+
 # [1.45.0](https://github.com/WeTrustPlatform/paramount/compare/v1.44.0...v1.45.0) (2019-05-17)
 
 
