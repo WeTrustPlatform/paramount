@@ -1,3 +1,10 @@
+## [1.45.2](https://github.com/WeTrustPlatform/paramount/compare/v1.45.1...v1.45.2) (2019-05-20)
+
+
+### Bug Fixes
+
+* **svg:** port implementation of react-native-svg ([e0f19ba](https://github.com/WeTrustPlatform/paramount/commit/e0f19ba))
+
 ## [1.45.1](https://github.com/WeTrustPlatform/paramount/compare/v1.45.0...v1.45.1) (2019-05-19)
 
 
