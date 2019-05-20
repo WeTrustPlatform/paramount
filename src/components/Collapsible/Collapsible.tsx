@@ -5,10 +5,10 @@ import { DeepPartial } from 'ts-essentials';
 
 import { springDefaultConfig } from '../../constants/Animation';
 import { initialMeasurements } from '../../hooks';
-import { Icon } from '../../icons';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { ViewMeasure } from '../Helpers';
+import { Icon } from '../Icon';
 import { Text } from '../Typography';
 import {
   CollapsibleStyles,

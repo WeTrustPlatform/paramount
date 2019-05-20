@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { View } from 'react-native';
 
-import { Icon } from '../../icons';
 import { useTheme } from '../../theme';
 import { mergeStyles } from '../../utils/mergeStyles';
+import { Icon } from '../Icon';
 import { GetPickerButtonStylesProp } from './PickerButton';
 import { getPickerButtonStyles, PickerButtonSize } from './PickerButton.styles';
 

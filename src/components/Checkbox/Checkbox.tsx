@@ -7,9 +7,9 @@ import {
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { Icon } from '../../icons';
 import { ControlSize, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { Icon } from '../Icon';
 import { Text } from '../Typography';
 import {
   CheckboxStyles,

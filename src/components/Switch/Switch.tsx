@@ -9,9 +9,9 @@ import { animated, useSpring } from 'react-spring/native.cjs';
 import { DeepPartial } from 'ts-essentials';
 
 import { springDefaultConfig } from '../../constants/Animation';
-import { Icon } from '../../icons';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { Icon } from '../Icon';
 import {
   GetSwitchStyles,
   getSwitchStyles,

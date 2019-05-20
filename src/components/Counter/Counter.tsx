@@ -2,10 +2,10 @@ import * as React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { Icon } from '../../icons';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Box } from '../Box';
+import { Icon } from '../Icon';
 import { Text } from '../Typography';
 import {
   CounterStyles,

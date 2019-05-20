@@ -12,7 +12,7 @@ function convertToPascal(name: string) {
   return result.charAt(0).toUpperCase() + result.slice(1);
 }
 
-export default ({ name, color, size }: IconProps) => {
+export const Icon = ({ name, color, size }: IconProps) => {
   // @ts-ignore
   const IconTag = Feather[`Fi${convertToPascal(name)}`];
 

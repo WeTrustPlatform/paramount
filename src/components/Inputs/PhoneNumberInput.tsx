@@ -3,10 +3,10 @@ import * as React from 'react';
 import { FlatList, TextInput as RNTextInput, View } from 'react-native';
 import { DeepPartial, Omit } from 'ts-essentials';
 
-import { Icon } from '../../icons';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Button } from '../Button';
+import { Icon } from '../Icon';
 import { ListItem } from '../ListItem';
 import { CloseableModal } from '../Modal';
 import {

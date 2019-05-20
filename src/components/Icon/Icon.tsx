@@ -276,6 +276,6 @@ export type FeatherIconName =
   | 'zoom-in'
   | 'zoom-out';
 
-export default ({ name, color, size }: IconProps) => {
+export const Icon = ({ name, color, size }: IconProps) => {
   return <Feather name={name} color={color} size={size} />;
 };

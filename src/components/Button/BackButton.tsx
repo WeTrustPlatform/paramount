@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { Icon } from '../../icons';
 import { useTheme } from '../../theme';
+import { Icon } from '../Icon';
 import { Button, ButtonProps } from './Button';
 
 export const BackButton = (props: ButtonProps) => {

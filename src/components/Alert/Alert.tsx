@@ -3,10 +3,10 @@ import { TouchableOpacity, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { Intent } from '../../constants/Intent';
-import { Icon } from '../../icons';
 import { Theme, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Box } from '../Box';
+import { Icon } from '../Icon';
 import { Text } from '../Typography';
 import { AlertStyles, GetAlertStyles, getAlertStyles } from './Alert.styles';
 

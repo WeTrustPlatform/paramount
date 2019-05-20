@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { TextInput as RNTextInput, TouchableOpacity } from 'react-native';
 
-import { Icon } from '../../icons';
 import { useTheme } from '../../theme';
+import { Icon } from '../Icon';
 import { IconTextInput, IconTextInputProps } from './IconTextInput';
 
 export interface ClearableTextInputProps extends IconTextInputProps {
