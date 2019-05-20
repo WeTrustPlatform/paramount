@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Polygon, Svg } from 'react-native-svg';
 
 import { useTheme } from '../../theme';
+import { Polygon, Svg } from '../Svg';
 
 export interface StarProps {
   size?: number;

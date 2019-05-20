@@ -7,7 +7,6 @@ module.exports = {
     '^.+\\.jsx?$': 'babel-jest',
     '^.+\\.mdx?$': '<rootDir>/tests/mdxTransformer.js',
   },
-  transformIgnorePatterns: ['/node_modules/(?!react-native-svg).+\\.js$'],
   moduleNameMapper: {
     '^docz$': '<rootDir>/tests/doczMock.js',
   },
