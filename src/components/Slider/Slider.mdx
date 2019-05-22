@@ -20,6 +20,12 @@ import { Slider } from '.';
     onValueChange={value => console.log('onValueChange', value)}
     onSlidingComplete={value => console.log('onSlidingComplete', value)}
     onSlidingStart={value => console.log('onSlidingStart', value)}
+    getStyles={(props, theme) => ({
+      containerStyle: {},
+      selectedTrackStyle: {},
+      thumbStyle: {},
+      unselectedTrackStyle: {},
+    })}
   />
 </Playground>
 
