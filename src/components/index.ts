@@ -22,6 +22,7 @@ export * from './Positioner';
 export * from './ProgressBar';
 export * from './Rating';
 export * from './SelectList';
+export * from './Slider';
 export * from './Switch';
 export * from './Tabs';
 export * from './Toast';

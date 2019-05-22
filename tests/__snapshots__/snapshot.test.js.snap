@@ -19558,6 +19558,243 @@ exports[`SelectList_9 1`] = `
 
 exports[`SelectList_10 1`] = `<div />`;
 
+exports[`Slider_0 1`] = `
+<h3>
+  Usage
+</h3>
+`;
+
+exports[`Slider_1 1`] = `
+<div>
+  <div
+    className="css-view-1dbjc4n"
+    style={
+      Object {
+        "WebkitBoxPack": "center",
+        "WebkitJustifyContent": "center",
+        "height": "40px",
+        "justifyContent": "center",
+        "msFlexPack": "center",
+      }
+    }
+  >
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "backgroundColor": "rgba(238,238,238,1.00)",
+          "borderBottomLeftRadius": "8px",
+          "borderBottomRightRadius": "8px",
+          "borderTopLeftRadius": "8px",
+          "borderTopRightRadius": "8px",
+          "height": "8px",
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    />
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "backgroundColor": "rgba(103,198,187,1.00)",
+          "borderBottomLeftRadius": "8px",
+          "borderBottomRightRadius": "8px",
+          "borderTopLeftRadius": "8px",
+          "borderTopRightRadius": "8px",
+          "height": "8px",
+          "position": "absolute",
+          "width": "0px",
+        }
+      }
+    />
+    <div
+      className="css-view-1dbjc4n"
+      data-focusable={true}
+      onMoveShouldSetResponder={[Function]}
+      onMoveShouldSetResponderCapture={[Function]}
+      onResponderEnd={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderReject={[Function]}
+      onResponderRelease={[Function]}
+      onResponderStart={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      onStartShouldSetResponderCapture={[Function]}
+      style={
+        Object {
+          "backgroundColor": "rgba(255,255,255,1.00)",
+          "borderBottomColor": "rgba(27,135,122,1.00)",
+          "borderBottomLeftRadius": "999px",
+          "borderBottomRightRadius": "999px",
+          "borderBottomWidth": "3px",
+          "borderLeftColor": "rgba(27,135,122,1.00)",
+          "borderLeftWidth": "3px",
+          "borderRightColor": "rgba(27,135,122,1.00)",
+          "borderRightWidth": "3px",
+          "borderTopColor": "rgba(27,135,122,1.00)",
+          "borderTopLeftRadius": "999px",
+          "borderTopRightRadius": "999px",
+          "borderTopWidth": "3px",
+          "cursor": "grab",
+          "height": "40px",
+          "left": "-20px",
+          "position": "absolute",
+          "width": "40px",
+          "zIndex": 1,
+        }
+      }
+      tabIndex="0"
+    />
+  </div>
+</div>
+`;
+
+exports[`Slider_2 1`] = `
+<h3>
+  With Range
+</h3>
+`;
+
+exports[`Slider_3 1`] = `
+<div>
+  <div
+    className="css-view-1dbjc4n"
+    style={
+      Object {
+        "WebkitBoxPack": "center",
+        "WebkitJustifyContent": "center",
+        "height": "40px",
+        "justifyContent": "center",
+        "msFlexPack": "center",
+      }
+    }
+  >
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "backgroundColor": "rgba(238,238,238,1.00)",
+          "borderBottomLeftRadius": "8px",
+          "borderBottomRightRadius": "8px",
+          "borderTopLeftRadius": "8px",
+          "borderTopRightRadius": "8px",
+          "height": "8px",
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    />
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "backgroundColor": "rgba(103,198,187,1.00)",
+          "borderBottomLeftRadius": "8px",
+          "borderBottomRightRadius": "8px",
+          "borderTopLeftRadius": "8px",
+          "borderTopRightRadius": "8px",
+          "height": "8px",
+          "left": "0px",
+          "position": "absolute",
+          "width": "0px",
+        }
+      }
+    />
+    <div
+      className="css-view-1dbjc4n"
+      data-focusable={true}
+      onMoveShouldSetResponder={[Function]}
+      onMoveShouldSetResponderCapture={[Function]}
+      onResponderEnd={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderReject={[Function]}
+      onResponderRelease={[Function]}
+      onResponderStart={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      onStartShouldSetResponderCapture={[Function]}
+      style={
+        Object {
+          "backgroundColor": "rgba(255,255,255,1.00)",
+          "borderBottomColor": "rgba(27,135,122,1.00)",
+          "borderBottomLeftRadius": "999px",
+          "borderBottomRightRadius": "999px",
+          "borderBottomWidth": "3px",
+          "borderLeftColor": "rgba(27,135,122,1.00)",
+          "borderLeftWidth": "3px",
+          "borderRightColor": "rgba(27,135,122,1.00)",
+          "borderRightWidth": "3px",
+          "borderTopColor": "rgba(27,135,122,1.00)",
+          "borderTopLeftRadius": "999px",
+          "borderTopRightRadius": "999px",
+          "borderTopWidth": "3px",
+          "cursor": "grab",
+          "height": "40px",
+          "left": "-20px",
+          "position": "absolute",
+          "width": "40px",
+          "zIndex": 1,
+        }
+      }
+      tabIndex="0"
+    />
+    <div
+      className="css-view-1dbjc4n"
+      data-focusable={true}
+      onMoveShouldSetResponder={[Function]}
+      onMoveShouldSetResponderCapture={[Function]}
+      onResponderEnd={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderReject={[Function]}
+      onResponderRelease={[Function]}
+      onResponderStart={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      onStartShouldSetResponderCapture={[Function]}
+      style={
+        Object {
+          "backgroundColor": "rgba(255,255,255,1.00)",
+          "borderBottomColor": "rgba(27,135,122,1.00)",
+          "borderBottomLeftRadius": "999px",
+          "borderBottomRightRadius": "999px",
+          "borderBottomWidth": "3px",
+          "borderLeftColor": "rgba(27,135,122,1.00)",
+          "borderLeftWidth": "3px",
+          "borderRightColor": "rgba(27,135,122,1.00)",
+          "borderRightWidth": "3px",
+          "borderTopColor": "rgba(27,135,122,1.00)",
+          "borderTopLeftRadius": "999px",
+          "borderTopRightRadius": "999px",
+          "borderTopWidth": "3px",
+          "cursor": "grab",
+          "height": "40px",
+          "left": "-20px",
+          "position": "absolute",
+          "width": "40px",
+          "zIndex": 1,
+        }
+      }
+      tabIndex="0"
+    />
+  </div>
+</div>
+`;
+
+exports[`Slider_4 1`] = `
+<h3>
+  Props
+</h3>
+`;
+
+exports[`Slider_5 1`] = `<div />`;
+
 exports[`Switch_0 1`] = `
 <h3>
   Usage
