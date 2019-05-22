@@ -1,23 +1,19 @@
-import { TextStyle, ViewStyle } from 'react-native';
+import { ViewStyle } from 'react-native';
 
 import { ControlSize, Theme } from '../../theme/ThemeInterface';
-import { CheckboxLabelPosition, CheckboxShape } from './Checkbox';
+import { CheckboxShape } from './Checkbox';
 
 export interface CheckboxStylesProps {
   isChecked: boolean;
   isDisabled: boolean;
   shape: CheckboxShape;
-  labelPosition: CheckboxLabelPosition;
-  hasLabel: boolean;
   checkColor: string;
   size: ControlSize;
 }
 
 export interface CheckboxStyles {
   touchableStyle: ViewStyle;
-  outerWrapperStyle: ViewStyle;
   checkboxStyle: ViewStyle;
-  textStyle: TextStyle;
   iconColor: string;
   checkboxFocusBackgroundColor: string;
 }
@@ -28,7 +24,7 @@ export type GetCheckboxStyles = (
 ) => CheckboxStyles;
 
 export const getCheckboxStyles: GetCheckboxStyles = (
-  { isChecked, isDisabled, shape, hasLabel, labelPosition, checkColor, size },
+  { isChecked, isDisabled, shape, checkColor, size },
   theme,
 ) => {
   const sizeValue = theme.controlHeights[size] - 16;
@@ -46,11 +42,6 @@ export const getCheckboxStyles: GetCheckboxStyles = (
       height: sizeValue,
       justifyContent: 'center',
       width: sizeValue,
-      ...(hasLabel
-        ? labelPosition === 'right'
-          ? { marginRight: 8 }
-          : { marginLeft: 8 }
-        : {}),
       ...(isChecked
         ? {
             backgroundColor: theme.colors.background.primaryDefault,
@@ -74,11 +65,6 @@ export const getCheckboxStyles: GetCheckboxStyles = (
     },
     iconColor: checkColor || theme.colors.text.white,
 
-    outerWrapperStyle: {
-      alignItems: 'center',
-      flexDirection: 'row',
-    },
-    textStyle: {},
     touchableStyle: {},
   };
 };

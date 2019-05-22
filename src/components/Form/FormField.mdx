@@ -1,0 +1,39 @@
+---
+name: FormField
+menu: Components
+---
+
+import { Text } from 'react-native';
+import { Toggle } from 'react-powerplug';
+
+import { FormField } from '.';
+import { Playground, Props } from 'docz';
+import { TextInput } from '../Inputs';
+
+# FormField
+
+### Usage
+
+<Playground>
+  <FormField
+    labelPosition="top"
+    label="Email"
+    description="Description for the field"
+    error="Error message"
+    getStyles={(props, theme) => ({
+      containerStyles: {},
+      descriptionTextStyle: {},
+      errorTextStyle: {},
+      errorWrapperStyle: {},
+      labelTextStyle: {},
+      labelWrapperStyle: {},
+      wrapperStyle: {},
+    })}
+  >
+    <TextInput />
+  </FormField>
+</Playground>
+
+### Props
+
+<Props of={FormField} />

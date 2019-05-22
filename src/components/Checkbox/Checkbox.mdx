@@ -5,7 +5,9 @@ menu: Components
 
 import { Toggle } from 'react-powerplug';
 import { Playground, Props } from 'docz';
+import { Text } from 'react-native';
 import { Checkbox } from '.';
+import { FormField } from '../Form';
 
 # Checkbox
 
@@ -14,20 +16,22 @@ import { Checkbox } from '.';
 <Playground>
   <Toggle initial={false}>
     {({ on, toggle }) => (
-      <Checkbox
-        shape="square" // or "circle"
-        isChecked={on}
-        isDisabled={false}
-        isInteractive={true}
-        onChange={toggle}
-        size="medium"
-        getStyles={(props, theme) => ({
-          checkboxStyle: {},
-          checkboxFocusBackgroundColor: '',
-        })}
-        labelPosition="right" // or left
-        label="Label"
-      />
+      <FormField label="Checkbox" labelPosition="right">
+        <Checkbox
+          shape="square" // or "circle"
+          isChecked={on}
+          isDisabled={false}
+          isInteractive={true}
+          onChange={toggle}
+          size="medium"
+          getStyles={(props, theme) => ({
+            touchableStyle: {},
+            checkboxStyle: {},
+            iconColor: 'white',
+            checkboxFocusBackgroundColor: '',
+          })}
+        />
+      </FormField>
     )}
   </Toggle>
 </Playground>

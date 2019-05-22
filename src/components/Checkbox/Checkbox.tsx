@@ -10,7 +10,6 @@ import { DeepPartial } from 'ts-essentials';
 import { ControlSize, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Icon } from '../Icon';
-import { Text } from '../Typography';
 import {
   CheckboxStyles,
   GetCheckboxStyles,
@@ -18,7 +17,6 @@ import {
 } from './Checkbox.styles';
 
 export type CheckboxShape = 'circle' | 'square';
-export type CheckboxLabelPosition = 'left' | 'right';
 
 export interface CheckboxProps extends AccessibilityProps {
   isChecked?: boolean;
@@ -31,9 +29,7 @@ export interface CheckboxProps extends AccessibilityProps {
   getStyles?: ReplaceReturnType<GetCheckboxStyles, DeepPartial<CheckboxStyles>>;
   testID?: string;
   checkColor?: string;
-  label?: string;
   size?: ControlSize;
-  labelPosition?: 'left' | 'right';
 }
 
 export const Checkbox = (props: CheckboxProps) => {
@@ -43,9 +39,7 @@ export const Checkbox = (props: CheckboxProps) => {
     isInteractive = true,
     onChange = () => null,
     shape = 'square',
-    labelPosition = 'right',
     size = 'medium',
-    label,
     checkColor,
     getStyles,
     testID,
@@ -56,18 +50,14 @@ export const Checkbox = (props: CheckboxProps) => {
 
   const {
     touchableStyle,
-    outerWrapperStyle,
     checkboxStyle,
-    textStyle,
     iconColor,
     checkboxFocusBackgroundColor,
   } = mergeStyles(getCheckboxStyles, getStyles)(
     {
       checkColor,
-      hasLabel: !!label,
       isChecked,
       isDisabled,
-      labelPosition,
       shape,
       size,
     },
@@ -90,22 +80,8 @@ export const Checkbox = (props: CheckboxProps) => {
       testID={testID}
       {...accessibilityProps}
     >
-      <View style={outerWrapperStyle}>
-        {labelPosition === 'left' && (
-          <Text size={size} getStyles={() => ({ textStyle })}>
-            {label}
-          </Text>
-        )}
-
-        <View style={checkboxStyle}>
-          {isChecked ? <Icon name="check" size={20} color={iconColor} /> : null}
-        </View>
-
-        {labelPosition === 'right' && (
-          <Text size={size} getStyles={() => ({ textStyle })}>
-            {label}
-          </Text>
-        )}
+      <View style={checkboxStyle}>
+        {isChecked ? <Icon name="check" size={20} color={iconColor} /> : null}
       </View>
     </TouchableHighlight>
   );
