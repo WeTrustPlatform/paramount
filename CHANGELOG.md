@@ -1,3 +1,10 @@
+# [1.46.0](https://github.com/WeTrustPlatform/paramount/compare/v1.45.2...v1.46.0) (2019-05-22)
+
+
+### Features
+
+* **slider:** add slider component ([52f7f0e](https://github.com/WeTrustPlatform/paramount/commit/52f7f0e))
+
 ## [1.45.2](https://github.com/WeTrustPlatform/paramount/compare/v1.45.1...v1.45.2) (2019-05-20)
 
 
