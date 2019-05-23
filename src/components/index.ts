@@ -11,6 +11,7 @@ export * from './Divider';
 export * from './Form';
 export * from './Grid';
 export * from './Helpers';
+export * from './Icon';
 export * from './Inputs';
 export * from './ListItem';
 export * from './Loading';
