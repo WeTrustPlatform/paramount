@@ -1,3 +1,11 @@
+# [1.47.0](https://github.com/WeTrustPlatform/paramount/compare/v1.46.0...v1.47.0) (2019-05-23)
+
+
+### Features
+
+* remove unused features ([7100f48](https://github.com/WeTrustPlatform/paramount/commit/7100f48))
+* **formfield:** expose formfield ([fcfefae](https://github.com/WeTrustPlatform/paramount/commit/fcfefae))
+
 # [1.46.0](https://github.com/WeTrustPlatform/paramount/compare/v1.45.2...v1.46.0) (2019-05-22)
 
 
