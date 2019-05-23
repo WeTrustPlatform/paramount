@@ -35,7 +35,7 @@ export interface SliderProps {
    * *This is not a controlled component*; you don't need to update the
    * value during dragging.
    */
-  value?: SliderValue;
+  initialValue?: SliderValue;
 
   /**
    * Step value of the slider. The value should be
@@ -136,7 +136,7 @@ const setRightValue = (
 
 export const Slider = (props: SliderProps) => {
   const {
-    value: defaultValue = 0,
+    initialValue = 0,
     onSlidingStart = () => undefined,
     onSlidingComplete = () => undefined,
     onValueChange = () => undefined,
@@ -147,7 +147,7 @@ export const Slider = (props: SliderProps) => {
     getStyles,
   } = props;
 
-  const [value, setValue] = React.useState(defaultValue);
+  const [value, setValue] = React.useState(initialValue);
   const [isSliding, setIsSliding] = React.useState(false);
   const [trackMeasurements, setTrackMeasurements] = React.useState(
     initialMeasurements,

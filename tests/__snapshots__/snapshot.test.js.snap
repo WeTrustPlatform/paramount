@@ -9037,134 +9037,192 @@ exports[`Modal_7 1`] = `<div />`;
 
 exports[`NativePicker_0 1`] = `
 <div>
-  <select
-    data-focusable={true}
-    onChange={[Function]}
+  <div
+    className="css-view-1dbjc4n"
     style={
       Object {
-        "backgroundColor": "rgba(0,0,0,0.00)",
-        "borderBottomColor": "rgba(238,238,238,1.00)",
-        "borderBottomLeftRadius": "4px",
-        "borderBottomRightRadius": "4px",
-        "borderBottomWidth": "1px",
-        "borderLeftColor": "rgba(238,238,238,1.00)",
-        "borderLeftWidth": "1px",
-        "borderRightColor": "rgba(238,238,238,1.00)",
-        "borderRightWidth": "1px",
-        "borderTopColor": "rgba(238,238,238,1.00)",
-        "borderTopLeftRadius": "4px",
-        "borderTopRightRadius": "4px",
-        "borderTopWidth": "1px",
-        "fontFamily": "system-ui,-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Ubuntu,\\"Helvetica Neue\\",sans-serif",
-        "fontSize": "inherit",
-        "height": "56px",
-        "marginBottom": "0px",
-        "marginLeft": "0px",
-        "marginRight": "0px",
-        "marginTop": "0px",
-        "paddingLeft": "24px",
-        "paddingRight": "40px",
-        "width": "100%",
+        "backgroundColor": "rgba(255,255,255,1.00)",
+        "position": "relative",
       }
     }
-    value="js"
   >
-    <option
-      value="c"
-    >
-      C
-    </option>
-    <option
-      value="c#"
-    >
-      C#
-    </option>
-    <option
-      value="c++"
-    >
-      C++
-    </option>
-    <option
-      value="css"
-    >
-      CSS
-    </option>
-    <option
-      value="elixir"
-    >
-      Elixir
-    </option>
-    <option
-      value="elm"
-    >
-      Elm
-    </option>
-    <option
-      value="erlang"
-    >
-      Erlang
-    </option>
-    <option
-      value="go"
-    >
-      Go
-    </option>
-    <option
-      value="haskell"
-    >
-      Haskell
-    </option>
-    <option
-      value="html"
-    >
-      HTML
-    </option>
-    <option
-      value="java"
-    >
-      Java
-    </option>
-    <option
+    <select
+      data-focusable={true}
+      onChange={[Function]}
+      style={
+        Object {
+          "MozAppearance": "none",
+          "WebkitAppearance": "none",
+          "appearance": "none",
+          "backgroundColor": "rgba(0,0,0,0.00)",
+          "borderBottomColor": "rgba(238,238,238,1.00)",
+          "borderBottomLeftRadius": "4px",
+          "borderBottomRightRadius": "4px",
+          "borderBottomWidth": "1px",
+          "borderLeftColor": "rgba(238,238,238,1.00)",
+          "borderLeftWidth": "1px",
+          "borderRightColor": "rgba(238,238,238,1.00)",
+          "borderRightWidth": "1px",
+          "borderTopColor": "rgba(238,238,238,1.00)",
+          "borderTopLeftRadius": "4px",
+          "borderTopRightRadius": "4px",
+          "borderTopWidth": "1px",
+          "fontFamily": "system-ui,-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Ubuntu,\\"Helvetica Neue\\",sans-serif",
+          "fontSize": "inherit",
+          "height": "56px",
+          "marginBottom": "0px",
+          "marginLeft": "0px",
+          "marginRight": "0px",
+          "marginTop": "0px",
+          "paddingLeft": "24px",
+          "paddingRight": "40px",
+          "width": "100%",
+        }
+      }
       value="js"
     >
-      JavaScript
-    </option>
-    <option
-      value="lua"
+      <option
+        value="c"
+      >
+        C
+      </option>
+      <option
+        value="c#"
+      >
+        C#
+      </option>
+      <option
+        value="c++"
+      >
+        C++
+      </option>
+      <option
+        value="css"
+      >
+        CSS
+      </option>
+      <option
+        value="elixir"
+      >
+        Elixir
+      </option>
+      <option
+        value="elm"
+      >
+        Elm
+      </option>
+      <option
+        value="erlang"
+      >
+        Erlang
+      </option>
+      <option
+        value="go"
+      >
+        Go
+      </option>
+      <option
+        value="haskell"
+      >
+        Haskell
+      </option>
+      <option
+        value="html"
+      >
+        HTML
+      </option>
+      <option
+        value="java"
+      >
+        Java
+      </option>
+      <option
+        value="js"
+      >
+        JavaScript
+      </option>
+      <option
+        value="lua"
+      >
+        Lua
+      </option>
+      <option
+        value="python"
+      >
+        Python
+      </option>
+      <option
+        value="r"
+      >
+        R
+      </option>
+      <option
+        value="ruby"
+      >
+        Ruby
+      </option>
+      <option
+        value="rust"
+      >
+        Rust
+      </option>
+      <option
+        value="swift"
+      >
+        Switft
+      </option>
+      <option
+        value="typescript"
+      >
+        Typescript
+      </option>
+    </select>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "WebkitAlignItems": "center",
+          "WebkitBoxAlign": "center",
+          "WebkitBoxPack": "center",
+          "WebkitJustifyContent": "center",
+          "alignItems": "center",
+          "display": "flex",
+          "height": "100%",
+          "justifyContent": "center",
+          "msFlexAlign": "center",
+          "msFlexPack": "center",
+          "paddingLeft": "8px",
+          "paddingRight": "8px",
+          "position": "absolute",
+          "right": "0px",
+          "zIndex": -1,
+        }
+      }
     >
-      Lua
-    </option>
-    <option
-      value="python"
-    >
-      Python
-    </option>
-    <option
-      value="r"
-    >
-      R
-    </option>
-    <option
-      value="ruby"
-    >
-      Ruby
-    </option>
-    <option
-      value="rust"
-    >
-      Rust
-    </option>
-    <option
-      value="swift"
-    >
-      Switft
-    </option>
-    <option
-      value="typescript"
-    >
-      Typescript
-    </option>
-  </select>
+      <svg
+        color="#7e7e7e"
+        fill="none"
+        height={32}
+        size={32}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        style={
+          Object {
+            "color": "#7e7e7e",
+          }
+        }
+        viewBox="0 0 24 24"
+        width={32}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polyline
+          points="6 9 12 15 18 9"
+        />
+      </svg>
+    </div>
+  </div>
 </div>
 `;
 

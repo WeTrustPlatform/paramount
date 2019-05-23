@@ -1,7 +1,6 @@
 export * from './Code';
 export * from './Heading';
 export * from './Label';
-export * from './Link';
 export * from './NumberedList';
 export * from './Paragraph';
 export * from './BulletItem';

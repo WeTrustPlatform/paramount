@@ -5,6 +5,7 @@ import { useTheme } from '../../theme';
 import { mergeStyles } from '../../utils/mergeStyles';
 import { GetPickerButtonStylesProp } from './PickerButton';
 import { getPickerButtonStyles, PickerButtonSize } from './PickerButton.styles';
+import { PickerButtonWrapper } from './PickerButtonWrapper';
 
 export interface NativePickerProps extends RNPickerProps {
   size?: PickerButtonSize;
@@ -25,12 +26,14 @@ const NativePickerBase = (props: NativePickerProps) => {
   )({ size }, theme);
 
   return (
-    <RNPicker
-      ref={innerRef}
-      itemStyle={itemStyle}
-      style={pickerStyle}
-      {...pickerProps}
-    />
+    <PickerButtonWrapper>
+      <RNPicker
+        ref={innerRef}
+        itemStyle={itemStyle}
+        style={pickerStyle}
+        {...pickerProps}
+      />
+    </PickerButtonWrapper>
   );
 };
 
