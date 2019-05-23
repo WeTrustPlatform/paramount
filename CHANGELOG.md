@@ -1,3 +1,10 @@
+## [1.47.1](https://github.com/WeTrustPlatform/paramount/compare/v1.47.0...v1.47.1) (2019-05-23)
+
+
+### Bug Fixes
+
+* **icon:** export icons ([0fca130](https://github.com/WeTrustPlatform/paramount/commit/0fca130))
+
 # [1.47.0](https://github.com/WeTrustPlatform/paramount/compare/v1.46.0...v1.47.0) (2019-05-23)
 
 
