@@ -1,8 +1,8 @@
-import { countries as countryList } from 'countries-list';
 import * as React from 'react';
 import { FlatList, TextInput as RNTextInput, View } from 'react-native';
 import { DeepPartial, Omit } from 'ts-essentials';
 
+import { TextInput, TextInputProps } from '.';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Button } from '../Button';
@@ -13,7 +13,6 @@ import {
   getPhoneNumberInputStyles,
   PhoneNumberInputStyles,
 } from './PhoneNumberInput.styles';
-import { TextInput, TextInputProps } from './TextInput';
 import { GetTextInputStyles, TextInputStyles } from './TextInput.styles';
 
 export interface PhoneNumberInputProps
@@ -30,19 +29,21 @@ export interface PhoneNumberInputProps
     GetTextInputStyles,
     DeepPartial<TextInputStyles & PhoneNumberInputStyles>
   >;
+  countryCodes?: CountryCode[];
+  getCountryCodeTitle?: (countryCode: string) => string;
 }
 
-const countries = (() => {
-  return Object.keys(countryList).map(countryCode => ({
-    countryCode,
-    key: countryCode,
-    ...countryList[countryCode],
-  }));
-})();
+export interface CountryCode {
+  /** The value for countryCode */
+  value: string;
+  /** Labels used in the list of countries to select the country code from */
+  label: string;
+}
 
 const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
   const {
-    countryCode = 'US',
+    countryCode = '1',
+    countryCodes = [],
     phoneNumber,
     onChangeCountryCode,
     onChangePhoneNumber,
@@ -50,6 +51,7 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
     getStyles,
     innerRef,
     useHistory = false,
+    getCountryCodeTitle = (code: string) => code,
     ...textInputProps
   } = props;
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -80,44 +82,15 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
             name="chevron-down"
           />
         }
-        title={`+${countryList[countryCode].phone}`}
+        title={getCountryCodeTitle(countryCode)}
       />
-      <CloseableModal
-        visible={isModalOpen}
-        useHistory={useHistory}
-        onRequestClose={() => setIsModalOpen(false)}
-        onClose={() => setIsModalOpen(false)}
-      >
-        <FlatList
-          ListHeaderComponent={header}
-          keyExtractor={item => item.key}
-          getItemLayout={(data, index) => ({
-            index,
-            length: theme.controlHeights.medium,
-            offset: theme.controlHeights.medium * index,
-          })}
-          data={countries}
-          renderItem={({ item: country }) => {
-            return (
-              <ListItem
-                key={country.countryCode}
-                label={country.name}
-                onPress={event => {
-                  event.preventDefault();
-                  if (onChangeCountryCode) {
-                    onChangeCountryCode(country.countryCode);
-                  }
-                  setIsModalOpen(false);
-                }}
-              />
-            );
-          }}
-        />
-      </CloseableModal>
       <TextInput
         ref={innerRef}
         name="phone"
         getStyles={() => ({
+          containerStyle: {
+            flex: 1,
+          },
           inputStyle: {
             borderBottomLeftRadius: 0,
             borderTopLeftRadius: 0,
@@ -128,10 +101,43 @@ const PhoneNumberInputBase = (props: PhoneNumberInputProps) => {
         onChangeText={onChangePhoneNumber}
         {...textInputProps}
       />
+      <CloseableModal
+        visible={isModalOpen}
+        useHistory={useHistory}
+        onRequestClose={() => setIsModalOpen(false)}
+        onClose={() => setIsModalOpen(false)}
+      >
+        <FlatList
+          ListHeaderComponent={header}
+          keyExtractor={item => item.label}
+          getItemLayout={(data, index) => ({
+            index,
+            length: theme.controlHeights.medium,
+            offset: theme.controlHeights.medium * index,
+          })}
+          data={countryCodes}
+          renderItem={({ item }) => {
+            return (
+              <ListItem
+                key={item.label}
+                label={item.label}
+                onPress={event => {
+                  event.preventDefault();
+                  if (onChangeCountryCode) {
+                    onChangeCountryCode(item.value);
+                  }
+                  setIsModalOpen(false);
+                }}
+              />
+            );
+          }}
+        />
+      </CloseableModal>
     </View>
   );
 };
 
-export const PhoneNumberInput = React.forwardRef<RNTextInput, TextInputProps>(
-  (props, ref) => <PhoneNumberInputBase {...props} innerRef={ref} />,
-);
+export const PhoneNumberInput = React.forwardRef<
+  RNTextInput,
+  PhoneNumberInputProps
+>((props, ref) => <PhoneNumberInputBase {...props} innerRef={ref} />);

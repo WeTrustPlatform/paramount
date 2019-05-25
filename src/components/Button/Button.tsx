@@ -10,7 +10,6 @@ import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { Box } from '../Box';
 import { LoadingDots } from '../Loading';
 import { Text } from '../Typography';
 import {
@@ -130,13 +129,18 @@ export const Button = (props: ButtonProps) => {
 
   const theme = useTheme();
 
-  const { buttonStyle, textStyle, focusColor } = mergeStyles(
-    getButtonStyles,
-    getStyles,
-  )(
+  const {
+    buttonStyle,
+    textStyle,
+    focusColor,
+    innerButtonWrapperStyle,
+    buttonContentWrapperStyle,
+  } = mergeStyles(getButtonStyles, getStyles)(
     {
       appearance,
       color,
+      iconAfter,
+      iconBefore,
       isDisabled,
       isInline,
       isLoading,
@@ -156,20 +160,13 @@ export const Button = (props: ButtonProps) => {
       testID={testID}
       {...accessibilityProps}
     >
-      <View
-        style={{
-          alignItems: 'center',
-          flexDirection: 'row',
-          height: '100%',
-          justifyContent: 'center',
-        }}
-      >
+      <View style={innerButtonWrapperStyle}>
         {iconBefore}
-        <Box paddingLeft={iconBefore ? 8 : 0} paddingRight={iconAfter ? 8 : 0}>
+        <View style={buttonContentWrapperStyle}>
           {/*
         // @ts-ignore */}
           <ButtonContent {...props} textStyle={textStyle} />
-        </Box>
+        </View>
         {iconAfter}
       </View>
     </TouchableHighlight>

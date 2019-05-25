@@ -22,3 +22,7 @@ const defaultToastContext: ToastContext = {
 };
 
 export const ToastContext = React.createContext(defaultToastContext);
+
+export const useToast = () => {
+  return React.useContext(ToastContext);
+};

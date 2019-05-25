@@ -15,6 +15,7 @@ export const ModalContent = (props: ModalContentProps) => {
         marginLeft: 'auto',
         marginRight: 'auto',
         maxWidth: 960,
+        width: '100%',
       }}
     >
       {children}

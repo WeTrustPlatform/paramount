@@ -195,6 +195,8 @@ export interface ButtonStyles {
   buttonStyle: ViewStyle;
   textStyle: TextStyle;
   focusColor: string;
+  innerButtonWrapperStyle: ViewStyle;
+  buttonContentWrapperStyle: ViewStyle;
 }
 
 export interface ButtonStylesProps {
@@ -204,6 +206,8 @@ export interface ButtonStylesProps {
   isDisabled: boolean;
   isLoading: boolean;
   isInline: boolean;
+  iconBefore?: any;
+  iconAfter?: any;
 }
 export type GetButtonStyles = (
   buttonStylesProps: ButtonStylesProps,
@@ -218,6 +222,8 @@ export const getButtonStyles: GetButtonStyles = (buttonStyleProps, theme) => {
     isDisabled,
     isLoading,
     isInline,
+    iconBefore,
+    iconAfter,
   } = buttonStyleProps;
 
   const { appearances, sizes, disabled, ...baseStyles } = getButtonVariables(
@@ -264,6 +270,18 @@ export const getButtonStyles: GetButtonStyles = (buttonStyleProps, theme) => {
       fontWeight: '600',
       justifyContent: 'center',
       textAlign: 'center',
+    },
+
+    innerButtonWrapperStyle: {
+      alignItems: 'center',
+      flexDirection: 'row',
+      height: '100%',
+      justifyContent: 'center',
+    },
+
+    buttonContentWrapperStyle: {
+      paddingLeft: iconBefore ? 8 : 0,
+      paddingRight: iconAfter ? 8 : 0,
     },
   };
 };

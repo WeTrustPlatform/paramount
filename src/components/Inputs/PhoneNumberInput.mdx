@@ -4,6 +4,7 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
+import { countries } from 'countries-list';
 import { State } from 'react-powerplug';
 
 import { Heading } from '../Typography';
@@ -18,7 +19,7 @@ Appends a button to select country code
 ### Usage
 
 <Playground>
-  <State initial={{ countryCode: 'US', phoneNumber: '' }}>
+  <State initial={{ countryCode: '1', phoneNumber: '' }}>
     {({ state, setState }) => (
       <PhoneNumberInput
         header={
@@ -30,7 +31,12 @@ Appends a button to select country code
         onChangePhoneNumber={phoneNumber => setState({ phoneNumber })}
         phoneNumber={state.phoneNumber}
         countryCode={state.countryCode}
+        countryCodes={Object.keys(countries).map(countryCode => ({
+          value: countries[countryCode].phone,
+          label: countries[countryCode].name,
+        }))}
         placeholder="Enter your phone number"
+        getCountryCodeTitle={countryCode => `+${countryCode}`}
       />
     )}
   </State>
