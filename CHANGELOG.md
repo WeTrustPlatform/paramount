@@ -1,3 +1,10 @@
+## [1.47.2](https://github.com/WeTrustPlatform/paramount/compare/v1.47.1...v1.47.2) (2019-05-25)
+
+
+### Bug Fixes
+
+* **form:** fix phone input and button ([b481a4f](https://github.com/WeTrustPlatform/paramount/commit/b481a4f))
+
 ## [1.47.1](https://github.com/WeTrustPlatform/paramount/compare/v1.47.0...v1.47.1) (2019-05-23)
 
 
