@@ -1,3 +1,16 @@
+# [1.48.0](https://github.com/WeTrustPlatform/paramount/compare/v1.47.2...v1.48.0) (2019-05-27)
+
+
+### Bug Fixes
+
+* **test:** update snapshot and remove component ([e424d99](https://github.com/WeTrustPlatform/paramount/commit/e424d99))
+
+
+### Features
+
+* **inputs:** remove components ([20c6fc3](https://github.com/WeTrustPlatform/paramount/commit/20c6fc3))
+* **Modal:** rename modal prop ([6518f29](https://github.com/WeTrustPlatform/paramount/commit/6518f29))
+
 ## [1.47.2](https://github.com/WeTrustPlatform/paramount/compare/v1.47.1...v1.47.2) (2019-05-25)
 
 
