@@ -446,7 +446,7 @@ export class PositionerBase extends React.Component<
           visible={isAdjustingContent || isVisible}
           transparent
           onRequestClose={onClose}
-          isBackgroundScrollable
+          shouldLockBodyScroll={false}
         >
           <View style={modalContainerStyle}>
             <ViewMeasure

@@ -21,7 +21,7 @@ export interface DialogProps {
   /** To show dialog or not */
   isVisible?: boolean;
   /** WWhether body can scroll while dialog is opened */
-  isBackgroundScrollable?: boolean;
+  shouldLockBodyScroll?: boolean;
   /** Called when clicking on overlay or pressing Esc, or using back button (requires useHistory to be true) */
   onRequestClose?: () => void;
   /** In ConfirmDialog, you can pass null to render nothing. If it is undefined, it will use default value */
@@ -39,7 +39,7 @@ export const Dialog = (props: DialogProps) => {
     children,
     footer,
     header,
-    isBackgroundScrollable = false,
+    shouldLockBodyScroll = true,
     isVisible,
     onRequestClose = () => null,
     getStyles,
@@ -59,7 +59,7 @@ export const Dialog = (props: DialogProps) => {
       transparent
       animationType="fade"
       onRequestClose={onRequestClose}
-      isBackgroundScrollable={isBackgroundScrollable}
+      shouldLockBodyScroll={shouldLockBodyScroll}
     >
       <View style={modalContainerStyle}>
         <View style={containerStyle}>

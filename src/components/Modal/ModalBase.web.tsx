@@ -15,7 +15,7 @@ export const ModalBase = (props: ModalBaseProps): React.ReactPortal | null => {
     children,
     transparent,
     visible,
-    isBackgroundScrollable = false,
+    shouldLockBodyScroll = true,
     onRequestClose,
     animationType = 'none',
   } = props;
@@ -30,7 +30,7 @@ export const ModalBase = (props: ModalBaseProps): React.ReactPortal | null => {
   const elementRef = React.useRef<HTMLDivElement>(null);
   const focusTrapRef = React.useRef<FocusTrap>(null);
 
-  useLockBodyScroll({ isLocked: !!(!isBackgroundScrollable && visible) });
+  useLockBodyScroll({ isLocked: !!(shouldLockBodyScroll && visible) });
 
   React.useEffect(() => {
     const deactivateFocus = () => {
@@ -93,7 +93,7 @@ export const ModalBase = (props: ModalBaseProps): React.ReactPortal | null => {
         flexDirection: 'column',
         left: 0,
         opacity,
-        position: isBackgroundScrollable ? 'absolute' : 'fixed',
+        position: shouldLockBodyScroll ? 'fixed' : 'absolute',
         right: 0,
         top: 0,
         transform: y.interpolate(v => `translateY(${v}%)`),
