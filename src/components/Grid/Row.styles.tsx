@@ -13,6 +13,7 @@ export const getRowStyles: GetRowStyles = theme => {
     rowStyle: {
       flexDirection: 'row',
       flexWrap: 'wrap',
+      height: '100%',
     },
   };
 };

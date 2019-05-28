@@ -28,6 +28,7 @@ export const getColumnStyles: GetColumnStyles = (
       paddingRight: hasGutter ? gutterWidth : 0,
     },
     outerWrapperStyle: {
+      height: '100%',
       minHeight: 0,
     },
   };
