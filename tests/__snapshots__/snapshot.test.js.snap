@@ -19654,400 +19654,111 @@ exports[`Tabs_1 1`] = `
         </div>
       </div>
     </div>
-  </div>
-</div>
-`;
-
-exports[`Tabs_2 1`] = `
-<h3>
-  Controlled
-</h3>
-`;
-
-exports[`Tabs_3 1`] = `
-<div>
-  <div
-    className="css-view-1dbjc4n"
-    onResponderGrant={[Function]}
-    onResponderReject={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onScroll={[Function]}
-    onScrollShouldSetResponder={[Function]}
-    onStartShouldSetResponder={[Function]}
-    onStartShouldSetResponderCapture={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
-    onWheel={[Function]}
-    style={
-      Object {
-        "WebkitBoxDirection": "normal",
-        "WebkitBoxFlex": 1,
-        "WebkitBoxOrient": "horizontal",
-        "WebkitFlexDirection": "row",
-        "WebkitFlexGrow": 1,
-        "WebkitFlexShrink": 1,
-        "WebkitOverflowScrolling": "touch",
-        "WebkitTransform": "translateZ(0px)",
-        "flexDirection": "row",
-        "flexGrow": 1,
-        "flexShrink": 1,
-        "msFlexDirection": "row",
-        "msFlexNegative": 1,
-        "msFlexPositive": 1,
-        "overflowX": "auto",
-        "overflowY": "hidden",
-        "transform": "translateZ(0px)",
-      }
-    }
-  >
     <div
       className="css-view-1dbjc4n"
       style={
         Object {
-          "WebkitBoxDirection": "normal",
-          "WebkitBoxOrient": "horizontal",
-          "WebkitFlexDirection": "row",
-          "flexDirection": "row",
-          "msFlexDirection": "row",
+          "WebkitBoxFlex": 1,
+          "WebkitFlexBasis": "0%",
+          "WebkitFlexGrow": 1,
+          "WebkitFlexShrink": 1,
+          "flexBasis": "0%",
+          "flexGrow": 1,
+          "flexShrink": 1,
+          "msFlexNegative": 1,
+          "msFlexPositive": 1,
+          "msFlexPreferredSize": "0%",
         }
       }
     >
       <div
-        className="css-view-1dbjc4n"
+        className="css-cursor-18t94o4 css-view-1dbjc4n"
+        data-focusable={true}
+        disabled={false}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        role="button"
         style={
           Object {
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitFlexDirection": "row",
-            "flexDirection": "row",
-            "msFlexDirection": "row",
+            "MozUserSelect": "none",
+            "WebkitUserSelect": "none",
+            "backgroundColor": "rgba(255,255,255,1.00)",
+            "borderBottomLeftRadius": "0px",
+            "borderBottomRightRadius": "0px",
+            "borderTopLeftRadius": "0px",
+            "borderTopRightRadius": "0px",
+            "cursor": "pointer",
+            "height": "48px",
+            "msTouchAction": "manipulation",
+            "msUserSelect": "none",
+            "paddingLeft": "32px",
+            "paddingRight": "32px",
+            "touchAction": "manipulation",
+            "userSelect": "none",
           }
         }
+        tabIndex="0"
       >
         <div
           className="css-view-1dbjc4n"
-        >
-          <div
-            className="css-cursor-18t94o4 css-view-1dbjc4n"
-            data-focusable={true}
-            disabled={false}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            onKeyUp={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            role="button"
-            style={
-              Object {
-                "MozUserSelect": "none",
-                "WebkitUserSelect": "none",
-                "backgroundColor": "rgba(255,255,255,1.00)",
-                "borderBottomLeftRadius": "0px",
-                "borderBottomRightRadius": "0px",
-                "borderTopLeftRadius": "0px",
-                "borderTopRightRadius": "0px",
-                "cursor": "pointer",
-                "height": "48px",
-                "msTouchAction": "manipulation",
-                "msUserSelect": "none",
-                "paddingLeft": "32px",
-                "paddingRight": "32px",
-                "touchAction": "manipulation",
-                "userSelect": "none",
-              }
+          style={
+            Object {
+              "WebkitAlignItems": "center",
+              "WebkitBoxAlign": "center",
+              "WebkitBoxDirection": "normal",
+              "WebkitBoxOrient": "horizontal",
+              "WebkitBoxPack": "center",
+              "WebkitFlexDirection": "row",
+              "WebkitJustifyContent": "center",
+              "alignItems": "center",
+              "flexDirection": "row",
+              "height": "100%",
+              "justifyContent": "center",
+              "msFlexAlign": "center",
+              "msFlexDirection": "row",
+              "msFlexPack": "center",
             }
-            tabIndex="0"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitBoxPack": "center",
-                  "WebkitFlexDirection": "row",
-                  "WebkitJustifyContent": "center",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "height": "100%",
-                  "justifyContent": "center",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                  "msFlexPack": "center",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "0px",
-                    "paddingRight": "0px",
-                  }
-                }
-              >
-                <svg
-                  color="#1b877a"
-                  fill="none"
-                  height={24}
-                  size={24}
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  style={
-                    Object {
-                      "color": "#1b877a",
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                  width={24}
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-                  />
-                  <polyline
-                    points="9 22 9 12 15 12 15 22"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
+          }
+        >
           <div
             className="css-view-1dbjc4n"
             style={
               Object {
-                "backgroundColor": "rgba(27,135,122,1.00)",
-                "borderBottomLeftRadius": "0px",
-                "borderBottomRightRadius": "0px",
-                "borderTopLeftRadius": "0px",
-                "borderTopRightRadius": "0px",
-                "bottom": "0px",
-                "height": "4px",
-                "position": "absolute",
-                "width": "100%",
-              }
-            }
-          />
-        </div>
-      </div>
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitFlexDirection": "row",
-            "flexDirection": "row",
-            "msFlexDirection": "row",
-          }
-        }
-      >
-        <div
-          className="css-view-1dbjc4n"
-        >
-          <div
-            className="css-cursor-18t94o4 css-view-1dbjc4n"
-            data-focusable={true}
-            disabled={false}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            onKeyUp={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            role="button"
-            style={
-              Object {
-                "MozUserSelect": "none",
-                "WebkitUserSelect": "none",
-                "backgroundColor": "rgba(255,255,255,1.00)",
-                "borderBottomLeftRadius": "0px",
-                "borderBottomRightRadius": "0px",
-                "borderTopLeftRadius": "0px",
-                "borderTopRightRadius": "0px",
-                "cursor": "pointer",
-                "height": "48px",
-                "msTouchAction": "manipulation",
-                "msUserSelect": "none",
-                "paddingLeft": "32px",
-                "paddingRight": "32px",
-                "touchAction": "manipulation",
-                "userSelect": "none",
-              }
-            }
-            tabIndex="0"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitBoxPack": "center",
-                  "WebkitFlexDirection": "row",
-                  "WebkitJustifyContent": "center",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "height": "100%",
-                  "justifyContent": "center",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                  "msFlexPack": "center",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "0px",
-                    "paddingRight": "0px",
-                  }
-                }
-              >
-                <div
-                  className="css-text-76zvg2"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "color": "rgba(126,126,126,1.00)",
-                      "display": "flex",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "fontWeight": "600",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "textAlign": "center",
-                    }
-                  }
-                >
-                  Tab 2
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitFlexDirection": "row",
-            "flexDirection": "row",
-            "msFlexDirection": "row",
-          }
-        }
-      >
-        <div
-          className="css-view-1dbjc4n"
-        >
-          <div
-            aria-disabled={true}
-            className="css-view-1dbjc4n"
-            disabled={true}
-            onKeyDown={[Function]}
-            onKeyUp={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            role="button"
-            style={
-              Object {
-                "MozUserSelect": "none",
-                "WebkitUserSelect": "none",
-                "backgroundColor": "rgba(238,238,238,1.00)",
-                "borderBottomLeftRadius": "0px",
-                "borderBottomRightRadius": "0px",
-                "borderTopLeftRadius": "0px",
-                "borderTopRightRadius": "0px",
-                "height": "48px",
-                "msUserSelect": "none",
-                "paddingLeft": "32px",
-                "paddingRight": "32px",
-                "userSelect": "none",
+                "paddingLeft": "0px",
+                "paddingRight": "0px",
               }
             }
           >
             <div
-              className="css-view-1dbjc4n"
+              className="css-text-76zvg2"
+              dir="auto"
               style={
                 Object {
                   "WebkitAlignItems": "center",
                   "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
                   "WebkitBoxPack": "center",
-                  "WebkitFlexDirection": "row",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "flexDirection": "row",
-                  "height": "100%",
+                  "color": "rgba(126,126,126,1.00)",
+                  "display": "flex",
+                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                  "fontSize": "16px",
+                  "fontWeight": "600",
                   "justifyContent": "center",
                   "msFlexAlign": "center",
-                  "msFlexDirection": "row",
                   "msFlexPack": "center",
+                  "textAlign": "center",
                 }
               }
             >
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "0px",
-                    "paddingRight": "0px",
-                  }
-                }
-              >
-                <div
-                  className="css-text-76zvg2"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "color": "rgba(167,167,167,1.00)",
-                      "display": "flex",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "fontWeight": "600",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "textAlign": "center",
-                    }
-                  }
-                >
-                  Tab 3
-                </div>
-              </div>
+              Tab 4
             </div>
           </div>
         </div>
@@ -20057,13 +19768,13 @@ exports[`Tabs_3 1`] = `
 </div>
 `;
 
-exports[`Tabs_4 1`] = `
+exports[`Tabs_2 1`] = `
 <h3>
   Scrollable
 </h3>
 `;
 
-exports[`Tabs_5 1`] = `
+exports[`Tabs_3 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -20215,7 +19926,7 @@ exports[`Tabs_5 1`] = `
                     }
                   }
                 >
-                  Unnamed Tab
+                  Tab 1
                 </div>
               </div>
             </div>
@@ -20340,7 +20051,7 @@ exports[`Tabs_5 1`] = `
                     }
                   }
                 >
-                  Unnamed Tab
+                  Tab 2
                 </div>
               </div>
             </div>
@@ -20449,7 +20160,7 @@ exports[`Tabs_5 1`] = `
                     }
                   }
                 >
-                  Unnamed Tab
+                  Tab 3
                 </div>
               </div>
             </div>
@@ -20558,7 +20269,7 @@ exports[`Tabs_5 1`] = `
                     }
                   }
                 >
-                  Unnamed Tab
+                  Tab 4
                 </div>
               </div>
             </div>
@@ -20667,7 +20378,7 @@ exports[`Tabs_5 1`] = `
                     }
                   }
                 >
-                  Unnamed Tab
+                  Tab 5
                 </div>
               </div>
             </div>
@@ -20776,7 +20487,7 @@ exports[`Tabs_5 1`] = `
                     }
                   }
                 >
-                  Unnamed Tab
+                  Tab 6
                 </div>
               </div>
             </div>
@@ -20885,7 +20596,7 @@ exports[`Tabs_5 1`] = `
                     }
                   }
                 >
-                  Unnamed Tab
+                  Tab 7
                 </div>
               </div>
             </div>
@@ -20994,7 +20705,7 @@ exports[`Tabs_5 1`] = `
                     }
                   }
                 >
-                  Unnamed Tab
+                  Tab 8
                 </div>
               </div>
             </div>
@@ -21103,7 +20814,7 @@ exports[`Tabs_5 1`] = `
                     }
                   }
                 >
-                  Unnamed Tab
+                  Tab 9
                 </div>
               </div>
             </div>
@@ -21212,7 +20923,7 @@ exports[`Tabs_5 1`] = `
                     }
                   }
                 >
-                  Unnamed Tab
+                  Tab 10
                 </div>
               </div>
             </div>
@@ -21224,13 +20935,13 @@ exports[`Tabs_5 1`] = `
 </div>
 `;
 
-exports[`Tabs_6 1`] = `
+exports[`Tabs_4 1`] = `
 <h3>
   Props
 </h3>
 `;
 
-exports[`Tabs_7 1`] = `<div />`;
+exports[`Tabs_5 1`] = `<div />`;
 
 exports[`Text_0 1`] = `
 <h3>

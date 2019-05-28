@@ -12,12 +12,15 @@ import { Tabs, Tab } from '.';
 
 # Tabs
 
+Passing `activeTabIndex` and `onPress` will alternate to controlled usage (manually set tab)
+
+You can use a custom `Tab` component as long as it accepts `isActive`, `onPress` props
+
 ### Usage
 
 <Playground>
   <Tabs
     defaultActiveTabIndex={1}
-    onSetActiveTabIndex={index => console.log('Clicked', index)}
     activeTabIndex={undefined}
     onPress={undefined}
     distribution="fit" // or 'scrollable'
@@ -29,55 +32,21 @@ import { Tabs, Tab } from '.';
       dividerStyle: {},
     })}
   >
-    <Tab title="Tab 1" />
-    <Tab title="Tab 2" />
-    <Tab title="Tab 3" />
+    {new Array(4).fill(0).map((v, i) => (
+      <Tab key={i} title={`Tab ${i + 1}`} />
+    ))}
   </Tabs>
-</Playground>
-
-### Controlled
-
-<Playground>
-  <State initial={{ activeTabIndex: 0 }}>
-    {({ state, setState }) => (
-      <Tabs
-        distribution="scrollable"
-        activeTabIndex={state.activeTabIndex}
-        onPress={index => setState({ activeTabIndex: index })}
-      >
-        <Tab
-          icon={
-            <Icon
-              name="home"
-              size={24}
-              color={state.activeTabIndex === 0 ? '#1b877a' : '#7e7e7e'}
-            />
-          }
-        />
-        <Tab title="Tab 2" />
-        <Tab isDisabled title="Tab 3" />
-      </Tabs>
-    )}
-  </State>
 </Playground>
 
 ### Scrollable
 
+Scrollable Tabs will also inline `Tab`
+
 <Playground>
   <Tabs distribution="scrollable">
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
+    {new Array(20).fill(0).map((v, i) => (
+      <Tab key={i} title={`Tab ${i + 1}`} />
+    ))}
   </Tabs>
 </Playground>
 

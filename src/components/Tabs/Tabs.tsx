@@ -17,7 +17,6 @@ export interface TabsProps {
   distribution?: TabsDistribution;
 
   onPress: (index: number) => void;
-  onSetActiveTabIndex?: (index: number) => void;
 }
 
 export interface WrapperProps {
@@ -30,7 +29,6 @@ export const Tabs = (props: TabsProps) => {
     activeTabIndex,
     defaultActiveTabIndex = 0,
     onPress,
-    onSetActiveTabIndex,
     getStyles,
     distribution = 'fit',
   } = props;
@@ -39,6 +37,24 @@ export const Tabs = (props: TabsProps) => {
   );
   const theme = useTheme();
   const isControlled = !!(activeTabIndex || onPress);
+  const listRef = React.useRef<FlatList<TabProps>>(null);
+
+  React.useEffect(() => {
+    if (listRef.current && distribution === 'scrollable') {
+      if (isControlled && activeTabIndex) {
+        listRef.current.scrollToIndex({
+          animated: true,
+          index: Math.max(activeTabIndex - 1, 0),
+        });
+      } else if (localActiveTabIndex) {
+        listRef.current.scrollToIndex({
+          animated: true,
+          index: Math.max(localActiveTabIndex - 1, 0),
+        });
+      }
+    }
+  });
+
   const {
     containerStyle,
     tabContainerStyle,
@@ -57,21 +73,19 @@ export const Tabs = (props: TabsProps) => {
         dividerStyle,
         textStyle,
       }),
+      index,
     };
 
     return isControlled
       ? {
           ...tabCommonProps,
           isActive: index === activeTabIndex,
-          onPress: () => onPress(index),
+          onPress: i => onPress(i),
         }
       : {
           ...tabCommonProps,
           isActive: index === localActiveTabIndex,
-          onPress: () => {
-            setLocalActiveTabIndex(index);
-            if (onSetActiveTabIndex) onSetActiveTabIndex(index);
-          },
+          onPress: i => setLocalActiveTabIndex(i),
         };
   }) as TabProps[];
 
@@ -80,16 +94,20 @@ export const Tabs = (props: TabsProps) => {
   if (distribution === 'fit') {
     return (
       <View style={containerStyle}>
-        {data.map((item, index) => React.cloneElement(tabs[index], item))}
+        {data.map((tabProps, index) =>
+          React.cloneElement(tabs[index], tabProps),
+        )}
       </View>
     );
   }
 
   return (
     <FlatList
+      ref={listRef}
       horizontal
       data={data}
       renderItem={({ item, index }) => React.cloneElement(tabs[index], item)}
+      showsHorizontalScrollIndicator={false}
     />
   );
 };

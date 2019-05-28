@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
+import { DeepPartial, Omit } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
@@ -9,16 +9,18 @@ import { ButtonStyles, GetButtonStyles } from '../Button/Button.styles';
 import { Divider } from '../Divider';
 import { getTabStyles, TabStyles } from './Tab.styles';
 
-export interface TabProps extends ButtonProps {
+export interface TabProps extends Omit<ButtonProps, 'onPress'> {
+  index: number;
   isActive?: boolean;
   getStyles?: ReplaceReturnType<
     GetButtonStyles,
     DeepPartial<ButtonStyles & TabStyles>
   >;
+  onPress: (index: number) => void;
 }
 
 export const Tab = (props: TabProps) => {
-  const { isActive = false, getStyles, ...buttonProps } = props;
+  const { isActive = false, getStyles, index, onPress, ...buttonProps } = props;
   const theme = useTheme();
   const { containerStyle, dividerStyle, buttonStyle, textStyle } = mergeStyles(
     getTabStyles,
@@ -31,6 +33,7 @@ export const Tab = (props: TabProps) => {
         color={isActive ? 'primary' : 'default'}
         appearance="minimal"
         getStyles={() => ({ buttonStyle, textStyle })}
+        onPress={() => onPress(index)}
         {...buttonProps}
       />
       {isActive && (
