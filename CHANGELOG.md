@@ -1,3 +1,10 @@
+## [1.48.1](https://github.com/WeTrustPlatform/paramount/compare/v1.48.0...v1.48.1) (2019-05-28)
+
+
+### Bug Fixes
+
+* **modal:** to work during rerenders ([e310d01](https://github.com/WeTrustPlatform/paramount/commit/e310d01))
+
 # [1.48.0](https://github.com/WeTrustPlatform/paramount/compare/v1.47.2...v1.48.0) (2019-05-27)
 
 
