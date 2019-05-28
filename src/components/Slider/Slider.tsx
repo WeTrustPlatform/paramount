@@ -24,6 +24,9 @@ export type RangeValue = [number, number];
 export type SliderValue = number | RangeValue;
 
 export interface SliderProps {
+  /** Set whether it should slide a range. However, if initialValue is set, it will take precedence over this prop */
+  isRange?: boolean;
+
   /** Size of the thumb, and thus the whole slider */
   size?: number;
 
@@ -107,16 +110,16 @@ const getBoundedValueBase = ({
     ? minimumValue
     : value;
 
-const isRange = (value: SliderValue): value is [number, number] =>
+const isRangeValue = (value: SliderValue): value is [number, number] =>
   Array.isArray(value);
 
 const getLeftValue = (value: SliderValue): number => {
-  if (isRange(value)) return value[0];
+  if (isRangeValue(value)) return value[0];
   return value;
 };
 
 const getRightValue = (value: SliderValue): number => {
-  if (isRange(value)) return value[1];
+  if (isRangeValue(value)) return value[1];
   return value;
 };
 
@@ -124,14 +127,18 @@ const setLeftValue = (
   previousValue: SliderValue,
   leftValue: number,
 ): SliderValue => {
-  return isRange(previousValue) ? [leftValue, previousValue[1]] : leftValue;
+  return isRangeValue(previousValue)
+    ? [leftValue, previousValue[1]]
+    : leftValue;
 };
 
 const setRightValue = (
   previousValue: SliderValue,
   rightValue: number,
 ): SliderValue => {
-  return isRange(previousValue) ? [previousValue[0], rightValue] : rightValue;
+  return isRangeValue(previousValue)
+    ? [previousValue[0], rightValue]
+    : rightValue;
 };
 
 export const Slider = (props: SliderProps) => {
@@ -145,9 +152,22 @@ export const Slider = (props: SliderProps) => {
     size = 40,
     step = 0,
     getStyles,
+    isRange = false,
   } = props;
 
-  const [value, setValue] = React.useState(initialValue);
+  const finalInitialValue =
+    initialValue || (isRange ? [minimumValue, maximumValue] : minimumValue);
+
+  if (
+    (isRangeValue(initialValue) && !isRange) ||
+    (!isRangeValue(initialValue) && isRange)
+  ) {
+    console.warn(
+      `Slider: initialValue and isRange do not match in type. You can use initialValue to be either number for standard slider or [number, number] for range slider. isRange is useful only for default usage without initialValue`,
+    );
+  }
+
+  const [value, setValue] = React.useState(finalInitialValue);
   const [isSliding, setIsSliding] = React.useState(false);
   const [trackMeasurements, setTrackMeasurements] = React.useState(
     initialMeasurements,
@@ -155,7 +175,7 @@ export const Slider = (props: SliderProps) => {
   const prevIsSliding = usePrevious(isSliding);
   const valuePerPixel = (maximumValue - minimumValue) / trackMeasurements.width;
   const pixelPerValue = trackMeasurements.width / (maximumValue - minimumValue);
-  const isRangeSlider = isRange(value);
+  const isRangeSlider = isRangeValue(value);
 
   const handleLeftSlide = (dx: number) => {
     const leftValue = getLeftValue(value) + dx * valuePerPixel;
