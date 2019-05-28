@@ -1,3 +1,15 @@
+# [1.49.0](https://github.com/WeTrustPlatform/paramount/compare/v1.48.1...v1.49.0) (2019-05-28)
+
+
+### Bug Fixes
+
+* **grid:** make heights always fill ([3945b01](https://github.com/WeTrustPlatform/paramount/commit/3945b01))
+
+
+### Features
+
+* **slider:** add isRange prop to slider ([b9470c5](https://github.com/WeTrustPlatform/paramount/commit/b9470c5))
+
 ## [1.48.1](https://github.com/WeTrustPlatform/paramount/compare/v1.48.0...v1.48.1) (2019-05-28)
 
 
