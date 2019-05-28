@@ -1,3 +1,10 @@
+## [1.49.1](https://github.com/WeTrustPlatform/paramount/compare/v1.49.0...v1.49.1) (2019-05-28)
+
+
+### Bug Fixes
+
+* **dialog:** overflowing window ([09e1957](https://github.com/WeTrustPlatform/paramount/commit/09e1957))
+
 # [1.49.0](https://github.com/WeTrustPlatform/paramount/compare/v1.48.1...v1.49.0) (2019-05-28)
 
 
