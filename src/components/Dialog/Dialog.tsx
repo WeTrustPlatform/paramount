@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
@@ -47,10 +47,13 @@ export const Dialog = (props: DialogProps) => {
   } = props;
   const theme = useTheme();
 
-  const { modalContainerStyle, containerStyle, bodyStyle } = mergeStyles(
-    getDialogStyles,
-    getStyles,
-  )(theme);
+  const {
+    modalContainerStyle,
+    containerStyle,
+    bodyStyle,
+    contentContainerStyle,
+    overlayStyle,
+  } = mergeStyles(getDialogStyles, getStyles)(theme);
 
   return (
     <Modal
@@ -64,10 +67,18 @@ export const Dialog = (props: DialogProps) => {
       <View style={modalContainerStyle}>
         <View style={containerStyle}>
           {header}
-          <View style={bodyStyle}>{children}</View>
+          <ScrollView
+            contentContainerStyle={contentContainerStyle}
+            style={bodyStyle}
+          >
+            {children}
+          </ScrollView>
           {footer}
         </View>
-        <Overlay onPress={onRequestClose} />
+        <Overlay
+          getStyles={() => ({ overlayStyle })}
+          onPress={onRequestClose}
+        />
       </View>
     </Modal>
   );
