@@ -28,7 +28,6 @@ export interface CheckboxProps extends AccessibilityProps {
   onChange?: (e: GestureResponderEvent) => void | undefined;
   getStyles?: ReplaceReturnType<GetCheckboxStyles, DeepPartial<CheckboxStyles>>;
   testID?: string;
-  checkColor?: string;
   size?: ControlSize;
 }
 
@@ -40,7 +39,6 @@ export const Checkbox = (props: CheckboxProps) => {
     onChange = () => null,
     shape = 'square',
     size = 'medium',
-    checkColor,
     getStyles,
     testID,
     ...accessibilityProps
@@ -51,11 +49,10 @@ export const Checkbox = (props: CheckboxProps) => {
   const {
     touchableStyle,
     checkboxStyle,
-    iconColor,
+    checkColor,
     checkboxFocusBackgroundColor,
   } = mergeStyles(getCheckboxStyles, getStyles)(
     {
-      checkColor,
       isChecked,
       isDisabled,
       shape,
@@ -81,7 +78,7 @@ export const Checkbox = (props: CheckboxProps) => {
       {...accessibilityProps}
     >
       <View style={checkboxStyle}>
-        {isChecked ? <Icon name="check" size={20} color={iconColor} /> : null}
+        {isChecked ? <Icon name="check" size={20} color={checkColor} /> : null}
       </View>
     </TouchableHighlight>
   );

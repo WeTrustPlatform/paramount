@@ -7,14 +7,13 @@ export interface CheckboxStylesProps {
   isChecked: boolean;
   isDisabled: boolean;
   shape: CheckboxShape;
-  checkColor: string;
   size: ControlSize;
 }
 
 export interface CheckboxStyles {
   touchableStyle: ViewStyle;
   checkboxStyle: ViewStyle;
-  iconColor: string;
+  checkColor: string;
   checkboxFocusBackgroundColor: string;
 }
 
@@ -24,12 +23,13 @@ export type GetCheckboxStyles = (
 ) => CheckboxStyles;
 
 export const getCheckboxStyles: GetCheckboxStyles = (
-  { isChecked, isDisabled, shape, checkColor, size },
+  { isChecked, isDisabled, shape, size },
   theme,
 ) => {
   const sizeValue = theme.controlHeights[size] - 16;
 
   return {
+    checkColor: theme.colors.text.white,
     checkboxFocusBackgroundColor: isChecked
       ? theme.colors.background.primaryDark
       : theme.colors.background.greyLight,
@@ -63,7 +63,6 @@ export const getCheckboxStyles: GetCheckboxStyles = (
         },
       }[shape],
     },
-    iconColor: checkColor || theme.colors.text.white,
 
     touchableStyle: {},
   };

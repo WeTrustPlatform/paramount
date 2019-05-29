@@ -105,7 +105,9 @@ export const getPickerButtonStyles: GetPickerButtonStyles = (
     pickerStyle: {
       appearance: 'none',
       backgroundColor: 'transparent',
+      color: theme.colors.text.default,
       width: '100%',
+      ...textSizeStyles,
       ...base,
       ...controlSizeStyles,
     },
