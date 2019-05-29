@@ -1,3 +1,11 @@
+# [1.50.0](https://github.com/WeTrustPlatform/paramount/compare/v1.49.1...v1.50.0) (2019-05-29)
+
+
+### Features
+
+* **checkbox:** reduce checkbox api ([ca4ba5e](https://github.com/WeTrustPlatform/paramount/commit/ca4ba5e))
+* **tabs:** improve api ([febb0f8](https://github.com/WeTrustPlatform/paramount/commit/febb0f8))
+
 ## [1.49.1](https://github.com/WeTrustPlatform/paramount/compare/v1.49.0...v1.49.1) (2019-05-28)
 
 
