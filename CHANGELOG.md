@@ -1,3 +1,10 @@
+# [1.51.0](https://github.com/WeTrustPlatform/paramount/compare/v1.50.0...v1.51.0) (2019-05-30)
+
+
+### Features
+
+* **tabs:** add tab indicator ([6430c77](https://github.com/WeTrustPlatform/paramount/commit/6430c77))
+
 # [1.50.0](https://github.com/WeTrustPlatform/paramount/compare/v1.49.1...v1.50.0) (2019-05-29)
 
 
