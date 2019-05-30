@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { View } from 'react-native';
 import { DeepPartial, Omit } from 'ts-essentials';
 
+import { initialMeasurements, Measurements } from '../../hooks';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Button, ButtonProps } from '../Button';
 import { ButtonStyles, GetButtonStyles } from '../Button/Button.styles';
-import { Divider } from '../Divider';
+import { ViewMeasure } from '../Helpers';
 import { getTabStyles, TabStyles } from './Tab.styles';
 
 export interface TabProps extends Omit<ButtonProps, 'onPress'> {
@@ -17,18 +17,33 @@ export interface TabProps extends Omit<ButtonProps, 'onPress'> {
     DeepPartial<ButtonStyles & TabStyles>
   >;
   onPress: (index: number) => void;
+  onActive?: (index: number, measurements: Measurements) => void;
 }
 
 export const Tab = (props: TabProps) => {
-  const { isActive = false, getStyles, index, onPress, ...buttonProps } = props;
+  const {
+    isActive = false,
+    getStyles,
+    index,
+    onPress,
+    onActive = () => {
+      return;
+    },
+    ...buttonProps
+  } = props;
+  const [measurements, setMeasurements] = React.useState(initialMeasurements);
   const theme = useTheme();
-  const { containerStyle, dividerStyle, buttonStyle, textStyle } = mergeStyles(
+  const { containerStyle, buttonStyle, textStyle } = mergeStyles(
     getTabStyles,
     getStyles,
   )(theme);
 
+  React.useEffect(() => {
+    if (isActive) onActive(index, measurements);
+  }, [isActive, measurements]);
+
   return (
-    <View style={containerStyle}>
+    <ViewMeasure onMeasure={setMeasurements} style={containerStyle}>
       <Button
         color={isActive ? 'primary' : 'default'}
         appearance="minimal"
@@ -36,13 +51,6 @@ export const Tab = (props: TabProps) => {
         onPress={() => onPress(index)}
         {...buttonProps}
       />
-      {isActive && (
-        <Divider
-          size={4}
-          color={isActive ? 'primary' : 'default'}
-          getStyles={() => ({ dividerStyle })}
-        />
-      )}
-    </View>
+    </ViewMeasure>
   );
 };

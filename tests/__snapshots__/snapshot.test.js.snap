@@ -19528,22 +19528,6 @@ exports[`Tabs_1 1`] = `
           </div>
         </div>
       </div>
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "backgroundColor": "rgba(27,135,122,1.00)",
-            "borderBottomLeftRadius": "0px",
-            "borderBottomRightRadius": "0px",
-            "borderTopLeftRadius": "0px",
-            "borderTopRightRadius": "0px",
-            "bottom": "0px",
-            "height": "4px",
-            "position": "absolute",
-            "width": "100%",
-          }
-        }
-      />
     </div>
     <div
       className="css-view-1dbjc4n"
@@ -19765,6 +19749,19 @@ exports[`Tabs_1 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "backgroundColor": "rgba(103,198,187,1.00)",
+          "height": "3px",
+          "left": "0px",
+          "position": "absolute",
+          "top": "0px",
+          "width": "0px",
+        }
+      }
+    />
   </div>
 </div>
 `;
@@ -19932,22 +19929,6 @@ exports[`Tabs_3 1`] = `
               </div>
             </div>
           </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(27,135,122,1.00)",
-                "borderBottomLeftRadius": "0px",
-                "borderBottomRightRadius": "0px",
-                "borderTopLeftRadius": "0px",
-                "borderTopRightRadius": "0px",
-                "bottom": "0px",
-                "height": "4px",
-                "position": "absolute",
-                "width": "100%",
-              }
-            }
-          />
         </div>
       </div>
       <div
@@ -20930,6 +20911,19 @@ exports[`Tabs_3 1`] = `
             </div>
           </div>
         </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n"
+      >
+        <div
+          className="css-view-1dbjc4n"
+          data-testid="zxcv"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        />
       </div>
     </div>
   </div>
