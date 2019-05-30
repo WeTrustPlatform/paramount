@@ -1,3 +1,10 @@
+# [1.52.0](https://github.com/WeTrustPlatform/paramount/compare/v1.51.0...v1.52.0) (2019-05-30)
+
+
+### Features
+
+* **icon:** replace expo icons with rn icons ([e4aa865](https://github.com/WeTrustPlatform/paramount/commit/e4aa865))
+
 # [1.51.0](https://github.com/WeTrustPlatform/paramount/compare/v1.50.0...v1.51.0) (2019-05-30)
 
 
