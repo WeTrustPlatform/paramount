@@ -7,21 +7,21 @@ import {
 } from './LayoutContext';
 
 export interface VisibleConfig {
-  xsmallUp: boolean;
-  xsmall: boolean;
-  xsmallDown: boolean;
-  smallUp: boolean;
-  small: boolean;
-  smallDown: boolean;
-  mediumUp: boolean;
-  medium: boolean;
-  mediumDown: boolean;
-  largeUp: boolean;
-  large: boolean;
-  largeDown: boolean;
-  xlargeUp: boolean;
-  xlarge: boolean;
-  xlargeDown: boolean;
+  xsmallUp?: boolean;
+  xsmall?: boolean;
+  xsmallDown?: boolean;
+  smallUp?: boolean;
+  small?: boolean;
+  smallDown?: boolean;
+  mediumUp?: boolean;
+  medium?: boolean;
+  mediumDown?: boolean;
+  largeUp?: boolean;
+  large?: boolean;
+  largeDown?: boolean;
+  xlargeUp?: boolean;
+  xlarge?: boolean;
+  xlargeDown?: boolean;
 }
 
 export interface VisibleProps extends VisibleConfig {
