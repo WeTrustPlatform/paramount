@@ -1,3 +1,10 @@
+## [1.52.1](https://github.com/WeTrustPlatform/paramount/compare/v1.52.0...v1.52.1) (2019-06-01)
+
+
+### Bug Fixes
+
+* **visible:** optional props ([e9a914e](https://github.com/WeTrustPlatform/paramount/commit/e9a914e))
+
 # [1.52.0](https://github.com/WeTrustPlatform/paramount/compare/v1.51.0...v1.52.0) (2019-05-30)
 
 
