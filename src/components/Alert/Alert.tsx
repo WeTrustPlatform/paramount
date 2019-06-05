@@ -3,7 +3,7 @@ import { TouchableOpacity, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { Intent } from '../../constants/Intent';
-import { Theme, useTheme } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
@@ -24,26 +24,16 @@ export interface AlertProps {
   getStyles?: ReplaceReturnType<GetAlertStyles, DeepPartial<AlertStyles>>;
 }
 
-const resolveIcon = (intent: Intent, theme: Theme) => {
+const resolveIcon = (intent: Intent) => {
   switch (intent) {
     case 'success':
-      return (
-        <Icon name="check-circle" size={24} color={theme.colors.text.success} />
-      );
+      return <Icon name="check-circle" size={24} color="success" />;
     case 'warning':
-      return (
-        <Icon
-          name="alert-triangle"
-          size={24}
-          color={theme.colors.text.warning}
-        />
-      );
+      return <Icon name="alert-triangle" size={24} color="warning" />;
     case 'danger':
-      return (
-        <Icon name="alert-circle" size={24} color={theme.colors.text.danger} />
-      );
+      return <Icon name="alert-circle" size={24} color="danger" />;
     default:
-      return <Icon name="info" size={24} color={theme.colors.text.info} />;
+      return <Icon name="info" size={24} color="info" />;
   }
 };
 
@@ -71,7 +61,7 @@ export const Alert = (props: AlertProps) => {
     <View style={containerStyle} testID={testID}>
       {icon || (
         <Box paddingRight={16} justifyContent="center">
-          {resolveIcon(intent, theme)}
+          {resolveIcon(intent)}
         </Box>
       )}
       {component || (

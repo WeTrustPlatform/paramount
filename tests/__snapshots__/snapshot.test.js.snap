@@ -2758,11 +2758,12 @@ exports[`Box_1 1`] = `
     style={
       Object {
         "backgroundColor": "rgba(103,198,187,1.00)",
+        "borderBottomLeftRadius": "4px",
+        "borderBottomRightRadius": "4px",
+        "borderTopLeftRadius": "4px",
+        "borderTopRightRadius": "4px",
+        "boxShadow": "5px 5px 8px rgba(167,167,167,0.35)",
         "height": "200px",
-        "paddingBottom": "40px",
-        "paddingLeft": "40px",
-        "paddingRight": "40px",
-        "paddingTop": "40px",
         "width": "200px",
       }
     }

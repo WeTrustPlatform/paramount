@@ -15,10 +15,11 @@ Box is a primitive component for convenient layout of components. All style prop
 
 <Playground>
   <Box
-    paddingVertical={40}
-    paddingHorizontal={40}
+    // ...ViewStyle
     height={200}
     width={200}
-    backgroundColor="#67c6bb"
+    shape="rounded" // pill, circle or square (default)
+    elevation={5}
+    backgroundColor="primaryDefault" // background colors or any custom color "#67c6bb"
   />
 </Playground>

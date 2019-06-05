@@ -1,6 +1,8 @@
 import * as React from 'react';
 import * as Feather from 'react-icons/fi';
 
+import { useTheme } from '../../theme';
+import { getTextColor } from '../Typography/Text.styles';
 import { IconProps } from './Icon';
 
 function convertToPascal(name: string) {
@@ -13,8 +15,14 @@ function convertToPascal(name: string) {
 }
 
 export const Icon = ({ name, color, size }: IconProps) => {
+  const theme = useTheme();
   // @ts-ignore
   const IconTag = Feather[`Fi${convertToPascal(name)}`];
 
-  return <IconTag color={color} size={size} />;
+  return (
+    <IconTag
+      color={color ? getTextColor(theme.colors.text)(color) : color}
+      size={size}
+    />
+  );
 };

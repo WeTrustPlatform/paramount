@@ -1,8 +1,11 @@
 import * as React from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 
+import { TextColor, useTheme } from '../../theme';
+import { getTextColor } from '../Typography/Text.styles';
+
 export interface IconProps {
-  color?: string;
+  color?: TextColor;
   name: FeatherIconName;
   size?: number;
 }
@@ -277,5 +280,13 @@ export type FeatherIconName =
   | 'zoom-out';
 
 export const Icon = ({ name, color, size }: IconProps) => {
-  return <Feather name={name} color={color} size={size} />;
+  const theme = useTheme();
+
+  return (
+    <Feather
+      name={name}
+      color={color ? getTextColor(theme.colors.text)(color) : color}
+      size={size}
+    />
+  );
 };

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, ViewStyle } from 'react-native';
 
-import { Theme, useTheme } from '../../theme';
+import { BackgroundColor, Theme, useTheme } from '../../theme';
 
 export const BASE_BORDER_RADII = 4;
 
@@ -58,6 +58,16 @@ export const shapeMapping: {
 };
 
 const propToFn = {
+  backgroundColor: (color: BackgroundColor, theme: Theme) => {
+    // @ts-ignore
+    if (theme.colors.background[color]) {
+      // @ts-ignore
+      return { backgroundColor: theme.colors.background[color] };
+    }
+    return {
+      backgroundColor: color,
+    };
+  },
   elevation: (elevation: 0 | 1 | 2 | 3 | 4, theme: Theme) => {
     return theme.elevations[elevation];
   },
