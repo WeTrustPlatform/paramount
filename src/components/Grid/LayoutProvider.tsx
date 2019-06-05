@@ -3,48 +3,43 @@ import * as React from 'react';
 import { Dimensions } from 'react-native';
 
 import {
-  Breakpoint,
-  DESC_ORDER_BREAKPOINTS,
+  DESC_ORDER_LAYOUT_SIZES,
   LayoutContext,
   LayoutInterface,
 } from './LayoutContext';
 
 export interface LayoutProviderProps {
   children: React.ReactNode;
-  layout?: Partial<LayoutInterface>;
+  value?: Partial<LayoutInterface>;
 }
 
-export const getCurrentBreakpoint = (layout: LayoutInterface) => {
+export const getCurrentSize = (layout: LayoutInterface) => {
   const { breakpoints } = layout;
   const windowScaledSize = Dimensions.get('window');
 
-  const currentBreakpoint = DESC_ORDER_BREAKPOINTS.find(breakpoint => {
-    if (breakpoint === 'xsmall' && windowScaledSize.width < breakpoints.small) {
-      return true;
+  const currentSize = DESC_ORDER_LAYOUT_SIZES.find(layoutSize => {
+    if (layoutSize === 'xsmall') {
+      return windowScaledSize.width < breakpoints.small;
     }
 
-    const width = breakpoints[breakpoint as Breakpoint];
+    const width = breakpoints[layoutSize];
     if (windowScaledSize.width >= width) return true;
 
     return false;
   });
 
-  return currentBreakpoint || 'xsmall';
+  return currentSize || 'xsmall';
 };
 
 export const LayoutProvider = (props: LayoutProviderProps) => {
-  const { children, layout: layoutProps } = props;
+  const { children, value } = props;
   const layoutContext = React.useContext(LayoutContext);
-  const layout = layoutProps
-    ? deepmerge(layoutContext, layoutProps)
-    : layoutContext;
+  const layout = value ? deepmerge(layoutContext, value) : layoutContext;
 
-  const [currentBreakpoint, setCurrentBreakPoint] = React.useState(
-    getCurrentBreakpoint(layout),
-  );
+  const [currentSize, setCurrentSize] = React.useState(getCurrentSize(layout));
 
   const handleDimensionsChange = React.useCallback(() => {
-    setCurrentBreakPoint(getCurrentBreakpoint(layout));
+    setCurrentSize(getCurrentSize(layout));
   }, []);
 
   React.useLayoutEffect(() => {
@@ -55,7 +50,7 @@ export const LayoutProvider = (props: LayoutProviderProps) => {
   }, []);
 
   return (
-    <LayoutContext.Provider value={{ ...layout, currentBreakpoint }}>
+    <LayoutContext.Provider value={{ ...layout, currentSize }}>
       {children}
     </LayoutContext.Provider>
   );

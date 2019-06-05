@@ -22,13 +22,11 @@ export const getContainerStyles: GetContainerStyles = (
 ) => {
   return {
     innerWrapperStyle: {
-      height: '100%',
       maxWidth: maxWidth || containerWidth,
       width: '100%',
     },
     outerWrapperStyle: {
       flexDirection: 'row',
-      height: '100%',
       justifyContent: 'center',
       width: '100%',
     },

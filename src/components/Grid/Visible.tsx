@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 import {
-  ASC_ORDER_BREAKPOINTS,
-  FullBreakpoint,
+  ASC_ORDER_LAYOUT_SIZES,
   LayoutContext,
+  LayoutSize,
 } from './LayoutContext';
 
 export interface VisibleConfig {
@@ -48,32 +48,24 @@ export const splitConfig = (config: VisibleConfig) => {
   } = config;
 
   return {
-    visibleDowns: [xsmallDown, smallDown, mediumDown, largeDown, xlargeDown],
-    visibleExacts: [xsmall, small, medium, large, xlarge],
-    visibleUps: [xsmallUp, smallUp, mediumUp, largeUp, xlargeUp],
+    downs: [xsmallDown, smallDown, mediumDown, largeDown, xlargeDown],
+    exacts: [xsmall, small, medium, large, xlarge],
+    ups: [xsmallUp, smallUp, mediumUp, largeUp, xlargeUp],
   };
 };
 
-const isVisible = (
-  config: VisibleConfig,
-  currentBreakpoint: FullBreakpoint,
-) => {
-  const { visibleDowns, visibleUps, visibleExacts } = splitConfig(config);
+const isVisible = (config: VisibleConfig, currentSize: LayoutSize) => {
+  const { downs, ups, exacts } = splitConfig(config);
 
-  const currentBreakpointIndex = ASC_ORDER_BREAKPOINTS.indexOf(
-    currentBreakpoint,
-  );
+  const currentSizeIndex = ASC_ORDER_LAYOUT_SIZES.indexOf(currentSize);
   const isVisibleDown =
-    visibleDowns.filter(
-      (val, index) => index >= currentBreakpointIndex && !!val,
-    ).length > 0;
+    downs.filter((val, index) => index >= currentSizeIndex && !!val).length > 0;
 
   const isVisibleUp =
-    visibleUps.filter((val, index) => index <= currentBreakpointIndex && !!val)
-      .length > 0;
+    ups.filter((val, index) => index <= currentSizeIndex && !!val).length > 0;
 
-  const isVisibleExact = !!visibleExacts.find(
-    (val, index) => index === currentBreakpointIndex && !!val,
+  const isVisibleExact = !!exacts.find(
+    (val, index) => index === currentSizeIndex && !!val,
   );
 
   return isVisibleDown || isVisibleUp || isVisibleExact;
@@ -81,9 +73,9 @@ const isVisible = (
 
 export const Visible = (props: VisibleProps) => {
   const { children, ...config } = props;
-  const { currentBreakpoint } = React.useContext(LayoutContext);
+  const { currentSize } = React.useContext(LayoutContext);
 
-  if (isVisible(config, currentBreakpoint)) return children;
+  if (isVisible(config, currentSize)) return children;
 
   return null;
 };

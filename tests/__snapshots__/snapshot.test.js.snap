@@ -5820,7 +5820,6 @@ exports[`Container_1 1`] = `
           "WebkitFlexDirection": "row",
           "WebkitJustifyContent": "center",
           "flexDirection": "row",
-          "height": "100%",
           "justifyContent": "center",
           "msFlexDirection": "row",
           "msFlexPack": "center",
@@ -5832,7 +5831,6 @@ exports[`Container_1 1`] = `
         className="css-view-1dbjc4n"
         style={
           Object {
-            "height": "100%",
             "maxWidth": "300px",
             "width": "100%",
           }
@@ -6963,7 +6961,8 @@ exports[`Grid_1 1`] = `
           "WebkitFlexWrap": "wrap",
           "flexDirection": "row",
           "flexWrap": "wrap",
-          "height": "100%",
+          "marginLeft": "0px",
+          "marginRight": "0px",
           "msFlexDirection": "row",
           "msFlexWrap": "wrap",
         }
@@ -6975,10 +6974,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "8.333333333333334%",
             "flexBasis": "8.333333333333334%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "8.333333333333334%",
             "msFlexPreferredSize": "8.333333333333334%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -6986,26 +6986,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -7013,10 +7002,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "8.333333333333334%",
             "flexBasis": "8.333333333333334%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "8.333333333333334%",
             "msFlexPreferredSize": "8.333333333333334%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7024,26 +7014,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -7051,10 +7030,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "8.333333333333334%",
             "flexBasis": "8.333333333333334%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "8.333333333333334%",
             "msFlexPreferredSize": "8.333333333333334%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7062,26 +7042,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -7089,10 +7058,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "8.333333333333334%",
             "flexBasis": "8.333333333333334%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "8.333333333333334%",
             "msFlexPreferredSize": "8.333333333333334%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7100,26 +7070,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -7127,10 +7086,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "8.333333333333334%",
             "flexBasis": "8.333333333333334%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "8.333333333333334%",
             "msFlexPreferredSize": "8.333333333333334%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7138,26 +7098,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -7165,10 +7114,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "8.333333333333334%",
             "flexBasis": "8.333333333333334%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "8.333333333333334%",
             "msFlexPreferredSize": "8.333333333333334%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7176,26 +7126,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -7203,10 +7142,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "8.333333333333334%",
             "flexBasis": "8.333333333333334%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "8.333333333333334%",
             "msFlexPreferredSize": "8.333333333333334%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7214,26 +7154,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -7241,10 +7170,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "8.333333333333334%",
             "flexBasis": "8.333333333333334%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "8.333333333333334%",
             "msFlexPreferredSize": "8.333333333333334%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7252,26 +7182,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -7279,10 +7198,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "8.333333333333334%",
             "flexBasis": "8.333333333333334%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "8.333333333333334%",
             "msFlexPreferredSize": "8.333333333333334%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7290,26 +7210,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -7317,10 +7226,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "8.333333333333334%",
             "flexBasis": "8.333333333333334%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "8.333333333333334%",
             "msFlexPreferredSize": "8.333333333333334%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7328,26 +7238,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -7355,10 +7254,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "8.333333333333334%",
             "flexBasis": "8.333333333333334%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "8.333333333333334%",
             "msFlexPreferredSize": "8.333333333333334%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7366,26 +7266,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -7393,10 +7282,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "8.333333333333334%",
             "flexBasis": "8.333333333333334%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "8.333333333333334%",
             "msFlexPreferredSize": "8.333333333333334%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7404,26 +7294,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
     </div>
   </div>
@@ -7447,7 +7326,8 @@ exports[`Grid_1 1`] = `
           "WebkitFlexWrap": "wrap",
           "flexDirection": "row",
           "flexWrap": "wrap",
-          "height": "100%",
+          "marginLeft": "0px",
+          "marginRight": "0px",
           "msFlexDirection": "row",
           "msFlexWrap": "wrap",
         }
@@ -7459,10 +7339,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "66.66666666666667%",
             "flexBasis": "66.66666666666667%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "66.66666666666667%",
             "msFlexPreferredSize": "66.66666666666667%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7470,26 +7351,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -7497,10 +7367,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "33.333333333333336%",
             "flexBasis": "33.333333333333336%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "33.333333333333336%",
             "msFlexPreferredSize": "33.333333333333336%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7508,26 +7379,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
     </div>
   </div>
@@ -7551,7 +7411,8 @@ exports[`Grid_1 1`] = `
           "WebkitFlexWrap": "wrap",
           "flexDirection": "row",
           "flexWrap": "wrap",
-          "height": "100%",
+          "marginLeft": "0px",
+          "marginRight": "0px",
           "msFlexDirection": "row",
           "msFlexWrap": "wrap",
         }
@@ -7563,10 +7424,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "33.333333333333336%",
             "flexBasis": "33.333333333333336%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "33.333333333333336%",
             "msFlexPreferredSize": "33.333333333333336%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7574,26 +7436,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -7601,10 +7452,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "33.333333333333336%",
             "flexBasis": "33.333333333333336%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "33.333333333333336%",
             "msFlexPreferredSize": "33.333333333333336%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7612,26 +7464,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -7639,10 +7480,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "33.333333333333336%",
             "flexBasis": "33.333333333333336%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "33.333333333333336%",
             "msFlexPreferredSize": "33.333333333333336%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7650,26 +7492,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
     </div>
   </div>
@@ -7693,7 +7524,8 @@ exports[`Grid_1 1`] = `
           "WebkitFlexWrap": "wrap",
           "flexDirection": "row",
           "flexWrap": "wrap",
-          "height": "100%",
+          "marginLeft": "0px",
+          "marginRight": "0px",
           "msFlexDirection": "row",
           "msFlexWrap": "wrap",
         }
@@ -7705,10 +7537,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "50%",
             "flexBasis": "50%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "50%",
             "msFlexPreferredSize": "50%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7716,26 +7549,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -7743,10 +7565,11 @@ exports[`Grid_1 1`] = `
           Object {
             "WebkitFlexBasis": "50%",
             "flexBasis": "50%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "50%",
             "msFlexPreferredSize": "50%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7754,26 +7577,15 @@ exports[`Grid_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
     </div>
   </div>
@@ -7808,7 +7620,8 @@ exports[`Grid_3 1`] = `
           "WebkitFlexWrap": "wrap",
           "flexDirection": "row",
           "flexWrap": "wrap",
-          "height": "100%",
+          "marginLeft": "0px",
+          "marginRight": "0px",
           "msFlexDirection": "row",
           "msFlexWrap": "wrap",
         }
@@ -7820,10 +7633,11 @@ exports[`Grid_3 1`] = `
           Object {
             "WebkitFlexBasis": "75%",
             "flexBasis": "75%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "75%",
             "msFlexPreferredSize": "75%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7831,26 +7645,15 @@ exports[`Grid_3 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -7858,10 +7661,11 @@ exports[`Grid_3 1`] = `
           Object {
             "WebkitFlexBasis": "33.333333333333336%",
             "flexBasis": "33.333333333333336%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "33.333333333333336%",
             "msFlexPreferredSize": "33.333333333333336%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7869,26 +7673,15 @@ exports[`Grid_3 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -7896,10 +7689,11 @@ exports[`Grid_3 1`] = `
           Object {
             "WebkitFlexBasis": "50%",
             "flexBasis": "50%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "50%",
             "msFlexPreferredSize": "50%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7907,26 +7701,15 @@ exports[`Grid_3 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
     </div>
   </div>
@@ -7961,7 +7744,8 @@ exports[`Grid_5 1`] = `
           "WebkitFlexWrap": "wrap",
           "flexDirection": "row",
           "flexWrap": "wrap",
-          "height": "100%",
+          "marginLeft": "0px",
+          "marginRight": "0px",
           "msFlexDirection": "row",
           "msFlexWrap": "wrap",
         }
@@ -7973,10 +7757,11 @@ exports[`Grid_5 1`] = `
           Object {
             "WebkitFlexBasis": "50%",
             "flexBasis": "50%",
-            "height": "100%",
             "marginLeft": "16.666666666666668%",
-            "minHeight": "0px",
+            "maxWidth": "50%",
             "msFlexPreferredSize": "50%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -7984,26 +7769,15 @@ exports[`Grid_5 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
     </div>
     <div
@@ -8017,7 +7791,8 @@ exports[`Grid_5 1`] = `
           "WebkitFlexWrap": "wrap",
           "flexDirection": "row",
           "flexWrap": "wrap",
-          "height": "100%",
+          "marginLeft": "0px",
+          "marginRight": "0px",
           "msFlexDirection": "row",
           "msFlexWrap": "wrap",
         }
@@ -8029,10 +7804,11 @@ exports[`Grid_5 1`] = `
           Object {
             "WebkitFlexBasis": "50%",
             "flexBasis": "50%",
-            "height": "100%",
             "marginLeft": "33.333333333333336%",
-            "minHeight": "0px",
+            "maxWidth": "50%",
             "msFlexPreferredSize": "50%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -8040,26 +7816,15 @@ exports[`Grid_5 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
     </div>
     <div
@@ -8073,7 +7838,8 @@ exports[`Grid_5 1`] = `
           "WebkitFlexWrap": "wrap",
           "flexDirection": "row",
           "flexWrap": "wrap",
-          "height": "100%",
+          "marginLeft": "0px",
+          "marginRight": "0px",
           "msFlexDirection": "row",
           "msFlexWrap": "wrap",
         }
@@ -8085,10 +7851,11 @@ exports[`Grid_5 1`] = `
           Object {
             "WebkitFlexBasis": "50%",
             "flexBasis": "50%",
-            "height": "100%",
             "marginLeft": "50%",
-            "minHeight": "0px",
+            "maxWidth": "50%",
             "msFlexPreferredSize": "50%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
           }
         }
       >
@@ -8096,26 +7863,15 @@ exports[`Grid_5 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "15px",
-              "paddingRight": "15px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
     </div>
   </div>
@@ -8150,7 +7906,8 @@ exports[`Grid_7 1`] = `
           "WebkitFlexWrap": "wrap",
           "flexDirection": "row",
           "flexWrap": "wrap",
-          "height": "100%",
+          "marginLeft": "15px",
+          "marginRight": "15px",
           "msFlexDirection": "row",
           "msFlexWrap": "wrap",
         }
@@ -8162,10 +7919,11 @@ exports[`Grid_7 1`] = `
           Object {
             "WebkitFlexBasis": "50%",
             "flexBasis": "50%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "50%",
             "msFlexPreferredSize": "50%",
+            "paddingLeft": "0px",
+            "paddingRight": "0px",
           }
         }
       >
@@ -8173,26 +7931,15 @@ exports[`Grid_7 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "0px",
-              "paddingRight": "0px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
-            }
-          />
-        </div>
+        />
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -8200,10 +7947,11 @@ exports[`Grid_7 1`] = `
           Object {
             "WebkitFlexBasis": "50%",
             "flexBasis": "50%",
-            "height": "100%",
             "marginLeft": "0%",
-            "minHeight": "0px",
+            "maxWidth": "50%",
             "msFlexPreferredSize": "50%",
+            "paddingLeft": "0px",
+            "paddingRight": "0px",
           }
         }
       >
@@ -8211,26 +7959,111 @@ exports[`Grid_7 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
-              "paddingLeft": "0px",
-              "paddingRight": "0px",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
           }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomWidth": "1px",
-                "borderLeftWidth": "1px",
-                "borderRightWidth": "1px",
-                "borderTopWidth": "1px",
-                "height": "48px",
-              }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Grid_8 1`] = `
+<h3>
+  Without margin
+</h3>
+`;
+
+exports[`Grid_9 1`] = `
+<div>
+  <div
+    className="css-view-1dbjc4n"
+    style={
+      Object {
+        "paddingBottom": "16px",
+        "paddingTop": "16px",
+      }
+    }
+  >
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxLines": "multiple",
+          "WebkitBoxOrient": "horizontal",
+          "WebkitFlexDirection": "row",
+          "WebkitFlexWrap": "wrap",
+          "flexDirection": "row",
+          "flexWrap": "wrap",
+          "marginLeft": "-15px",
+          "marginRight": "-15px",
+          "msFlexDirection": "row",
+          "msFlexWrap": "wrap",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitFlexBasis": "50%",
+            "flexBasis": "50%",
+            "marginLeft": "0%",
+            "maxWidth": "50%",
+            "msFlexPreferredSize": "50%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
+          }
+        }
+      >
+        <div
+          className="css-view-1dbjc4n"
+          style={
+            Object {
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
             }
-          />
-        </div>
+          }
+        />
+      </div>
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitFlexBasis": "50%",
+            "flexBasis": "50%",
+            "marginLeft": "0%",
+            "maxWidth": "50%",
+            "msFlexPreferredSize": "50%",
+            "paddingLeft": "15px",
+            "paddingRight": "15px",
+          }
+        }
+      >
+        <div
+          className="css-view-1dbjc4n"
+          style={
+            Object {
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomWidth": "1px",
+              "borderLeftWidth": "1px",
+              "borderRightWidth": "1px",
+              "borderTopWidth": "1px",
+              "height": "48px",
+            }
+          }
+        />
       </div>
     </div>
   </div>

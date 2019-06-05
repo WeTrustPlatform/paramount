@@ -1,21 +1,16 @@
 import * as React from 'react';
-import { View, ViewStyle } from 'react-native';
+import { View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { GetColumnStyles, getColumnStyles } from './Column.styles';
 import {
-  ColumnCount,
-  DESC_ORDER_BREAKPOINTS,
-  FullBreakpoint,
-  LayoutContext,
-} from './LayoutContext';
-
-interface ColumnStyles {
-  outerWrapperStyle: ViewStyle;
-  innerWrapperStyle: ViewStyle;
-}
+  ColumnStyles,
+  GetColumnStyles,
+  getColumnStyles,
+} from './Column.styles';
+import { ColumnCount, useLayout } from './LayoutContext';
+import { GutterWidthContext } from './Row';
 
 export interface ColumnConfigBase {
   xsmall?: ColumnCount;
@@ -35,48 +30,8 @@ export interface ColumnConfig extends ColumnConfigBase {
 
 export interface ColumnProps extends ColumnConfig {
   children?: React.ReactNode;
-  hasGutter?: boolean;
   getStyles?: ReplaceReturnType<GetColumnStyles, DeepPartial<ColumnStyles>>;
 }
-
-// Find nearest matching column count
-// when currentBreakpoint = xlarge and columns = { medium: 6 }, it should use medium column count
-// when currentBreakpoint = small and columns = { medium: 6 }, it should return null
-const getNearestColumn = (
-  columns: ColumnConfigBase,
-  currentBreakpoint: FullBreakpoint,
-) => {
-  const currentBreakpointIndex = DESC_ORDER_BREAKPOINTS.indexOf(
-    currentBreakpoint,
-  );
-
-  const nearestBreakpoint = DESC_ORDER_BREAKPOINTS.find((breakpoint, index) => {
-    if (currentBreakpointIndex >= index) return false;
-
-    return !!columns[breakpoint];
-  });
-
-  return nearestBreakpoint ? columns[nearestBreakpoint] : null;
-};
-
-const getColumnCount = (
-  columns: ColumnConfigBase,
-  currentBreakpoint: FullBreakpoint,
-) => {
-  const matchedColumn = columns[currentBreakpoint];
-  if (matchedColumn) return matchedColumn;
-
-  const nearestColumn = getNearestColumn(columns, currentBreakpoint);
-  if (nearestColumn) return nearestColumn;
-
-  return null;
-};
-
-export const getProportion = (columnCount: number, gridColumnCount: number) => {
-  const percentPerColumn = 100 / gridColumnCount;
-
-  return `${columnCount * percentPerColumn}%`;
-};
 
 export const splitColumnConfig = (config: ColumnConfig) => {
   const {
@@ -104,31 +59,16 @@ export const splitColumnConfig = (config: ColumnConfig) => {
 };
 
 export const Column = (props: ColumnProps) => {
-  const { children, hasGutter = true, getStyles, ...config } = props;
-  const { currentBreakpoint, gutterWidth, gridColumnCount } = React.useContext(
-    LayoutContext,
-  );
+  const { children, getStyles, ...config } = props;
+  const { currentSize, gridColumnCount } = useLayout();
   const theme = useTheme();
+  const gutterWidth = React.useContext(GutterWidthContext);
+
   const { columns, offsetColumns } = splitColumnConfig(config);
-  const { outerWrapperStyle, innerWrapperStyle } = mergeStyles(
-    getColumnStyles,
-    getStyles,
-  )({ hasGutter, gutterWidth }, theme);
-
-  const columnCount = getColumnCount(columns, currentBreakpoint);
-  const flexBasis = getProportion(columnCount || 12, gridColumnCount);
-  const offsetColumnCount = getColumnCount(offsetColumns, currentBreakpoint);
-  const marginLeft = getProportion(offsetColumnCount || 0, gridColumnCount);
-
-  return (
-    <View
-      style={{
-        flexBasis,
-        marginLeft,
-        ...outerWrapperStyle,
-      }}
-    >
-      <View style={innerWrapperStyle}>{children}</View>
-    </View>
+  const { columnStyle } = mergeStyles(getColumnStyles, getStyles)(
+    { gutterWidth, currentSize, gridColumnCount, columns, offsetColumns },
+    theme,
   );
+
+  return <View style={columnStyle}>{children}</View>;
 };

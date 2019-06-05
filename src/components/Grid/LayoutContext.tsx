@@ -7,7 +7,7 @@ export interface Breakpoints {
   xlarge: number;
 }
 
-export interface FullBreakpoints extends Breakpoints {
+export interface LayoutSizes extends Breakpoints {
   xsmall: number;
 }
 
@@ -39,13 +39,13 @@ export type ColumnCount =
   | 24;
 
 export type Breakpoint = keyof Breakpoints;
-export type FullBreakpoint = keyof FullBreakpoints;
+export type LayoutSize = keyof LayoutSizes;
 
 export interface LayoutInterface {
   breakpoints: Breakpoints;
   maxWidth: number;
-  currentBreakpoint: FullBreakpoint;
-  gridColumnCount: number;
+  currentSize: LayoutSize;
+  gridColumnCount: ColumnCount;
   gutterWidth: number;
 }
 
@@ -59,13 +59,13 @@ export const defaultLayout: LayoutInterface = {
 
     xlarge: 1280,
   },
-  currentBreakpoint: 'small',
+  currentSize: 'small',
   gridColumnCount: 12,
-  gutterWidth: 15,
+  gutterWidth: 30,
   maxWidth: 1440,
 };
 
-export const ASC_ORDER_BREAKPOINTS: Array<keyof FullBreakpoints> = [
+export const ASC_ORDER_LAYOUT_SIZES: Array<keyof LayoutSizes> = [
   'xsmall',
   'small',
   'medium',
@@ -73,8 +73,12 @@ export const ASC_ORDER_BREAKPOINTS: Array<keyof FullBreakpoints> = [
   'xlarge',
 ];
 
-export const DESC_ORDER_BREAKPOINTS: Array<
-  keyof FullBreakpoints
-> = ASC_ORDER_BREAKPOINTS.slice(0).reverse();
+export const DESC_ORDER_LAYOUT_SIZES: Array<
+  keyof LayoutSizes
+> = ASC_ORDER_LAYOUT_SIZES.slice(0).reverse();
 
 export const LayoutContext = React.createContext(defaultLayout);
+
+export const useLayout = () => {
+  return React.useContext(LayoutContext);
+};

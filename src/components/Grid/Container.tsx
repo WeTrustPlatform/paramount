@@ -9,7 +9,7 @@ import {
   GetContainerStyles,
   getContainerStyles,
 } from './Container.styles';
-import { LayoutContext } from './LayoutContext';
+import { useLayout } from './LayoutContext';
 
 export interface ContainerProps {
   children: React.ReactNode;
@@ -25,7 +25,7 @@ export interface ContainerProps {
  */
 export const Container = (props: ContainerProps) => {
   const { children, getStyles, maxWidth } = props;
-  const { maxWidth: containerWidth } = React.useContext(LayoutContext);
+  const { maxWidth: containerWidth } = useLayout();
   const theme = useTheme();
 
   const { outerWrapperStyle, innerWrapperStyle } = mergeStyles(
