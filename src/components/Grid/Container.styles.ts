@@ -3,7 +3,7 @@ import { ViewStyle } from 'react-native';
 import { Theme } from '../../theme/ThemeInterface';
 
 export interface ContainerStylesProps {
-  maxWidth: number;
+  maxWidth?: number;
   containerWidth: number;
 }
 export type GetContainerStyles = (

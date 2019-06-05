@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { Theme, withTheme } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Toast, ToastId, ToastInstance, ToastSettings } from './Toast';
 import { GetToastStyles, getToastStyles, ToastStyles } from './Toast.styles';
@@ -10,109 +10,109 @@ import { ToastContext } from './ToastContext';
 
 export interface ToastProviderProps {
   children?: React.ReactNode;
-  theme: Theme;
   getStyles?: ReplaceReturnType<GetToastStyles, DeepPartial<ToastStyles>>;
-}
-
-export interface ToastProviderState {
-  toasts: ToastInstance[];
 }
 
 const hasCustomId = (toastSettings: ToastSettings) => !!toastSettings.id;
 
-class ToastProviderBase extends React.Component<
-  ToastProviderProps,
-  ToastProviderState
-> {
-  public static idCounter: number = 0;
+interface ToastProviderState {
+  toasts: ToastInstance[];
+}
 
-  constructor(props: ToastProviderProps) {
-    super(props);
+const initialState: ToastProviderState = {
+  toasts: [],
+};
 
-    this.state = {
-      toasts: [],
-    };
+enum ActionType {
+  ADD_TOAST = 'ADD_TOAST',
+  REMOVE_TOAST = 'REMOVE_TOAST',
+}
+
+type Action =
+  | { type: ActionType.ADD_TOAST; payload: { toast: ToastInstance } }
+  | { type: ActionType.REMOVE_TOAST; payload: { id: ToastId } };
+
+const reducer = (state: ToastProviderState, action: Action) => {
+  switch (action.type) {
+    case ActionType.ADD_TOAST:
+      return { toasts: [...state.toasts.slice(1), action.payload.toast] };
+    case ActionType.REMOVE_TOAST:
+      return {
+        toasts: state.toasts.filter(toast => toast.id !== action.payload.id),
+      };
+    default:
+      throw new Error();
   }
+};
 
-  public removeToast = (id: ToastId) => {
-    this.setState(previousState => {
-      return {
-        toasts: previousState.toasts.filter(toast => toast.id !== id),
-      };
-    });
-  };
+export const ToastProvider = (props: ToastProviderProps) => {
+  const { children, getStyles } = props;
+  const idCounterRef = React.useRef(0);
+  // Use reducer because we want access previous value of state
+  const [state, dispatch] = React.useReducer(reducer, initialState);
+  const [currentToast] = state.toasts;
 
-  public notify = (toastSettings: ToastSettings) => {
-    const toastInstance = this.createToastInstance(toastSettings);
+  const theme = useTheme();
 
-    // If there's a custom toast D passed, close existing toasts with the same custom D
-    if (hasCustomId(toastSettings)) {
-      for (const toast of this.state.toasts) {
-        // Since unique D is still appended to a custom D, skip the unique D and check only prefix
-        if (String(toast.id).startsWith(String(toastSettings.id))) {
-          this.removeToast(toast.id);
-        }
-      }
-    }
+  const { containerStyle } = mergeStyles(getToastStyles, getStyles)(
+    { intent: 'info' },
+    theme,
+  );
 
-    this.setState(previousState => {
-      return {
-        // Immediately remove the current toast
-        toasts: [...previousState.toasts.slice(1), toastInstance],
-      };
-    });
-
-    return toastInstance;
-  };
-
-  public createToastInstance = (
-    toastSettings: ToastSettings,
-  ): ToastInstance => {
-    const uniqueId = ++ToastProviderBase.idCounter;
+  const createToastInstance = (toastSettings: ToastSettings): ToastInstance => {
+    const uniqueId = ++idCounterRef.current;
     const id = hasCustomId(toastSettings)
       ? `${toastSettings.id}-${uniqueId}`
       : `${uniqueId}`;
 
     return {
       id,
-      onRemove: () => this.removeToast(id),
+      onRemove: () =>
+        dispatch({ type: ActionType.REMOVE_TOAST, payload: { id } }),
       ...toastSettings,
     };
   };
 
-  public render() {
-    const { children, theme, getStyles } = this.props;
-    const { toasts } = this.state;
-    const [currentToast] = toasts;
+  const notify = React.useCallback((toastSettings: ToastSettings) => {
+    const toastInstance = createToastInstance(toastSettings);
 
-    // Intent does not matter here
-    // Consider using a different style getter for toast provider
-    const { containerStyle } = mergeStyles(getToastStyles, getStyles)(
-      { intent: 'info' },
-      theme,
-    );
+    // If there's a custom toast ID passed, close existing toasts with the same custom ID
+    if (hasCustomId(toastSettings)) {
+      for (const toast of state.toasts) {
+        // Since unique ID is still appended to a custom ID, skip the unique ID and check only prefix
+        if (String(toast.id).startsWith(String(toastSettings.id))) {
+          dispatch({
+            payload: { id: toast.id },
+            type: ActionType.REMOVE_TOAST,
+          });
+        }
+      }
+    }
 
-    return (
-      <ToastContext.Provider
-        value={{
-          danger: (toastSettings: ToastSettings) =>
-            this.notify({ ...toastSettings, intent: 'danger' }),
-          notify: (toastSettings: ToastSettings) =>
-            this.notify({ ...toastSettings }),
-          removeToast: (id: ToastId) => this.removeToast(id),
-          success: (toastSettings: ToastSettings) =>
-            this.notify({ ...toastSettings, intent: 'success' }),
-          warning: (toastSettings: ToastSettings) =>
-            this.notify({ ...toastSettings, intent: 'warning' }),
-        }}
-      >
-        {children}
-        <View style={containerStyle}>
-          {currentToast && <Toast key={currentToast.id} {...currentToast} />}
-        </View>
-      </ToastContext.Provider>
-    );
-  }
-}
+    dispatch({ type: ActionType.ADD_TOAST, payload: { toast: toastInstance } });
 
-export const ToastProvider = withTheme(ToastProviderBase);
+    return toastInstance;
+  }, []);
+
+  return (
+    <ToastContext.Provider
+      value={{
+        danger: (toastSettings: ToastSettings) =>
+          notify({ ...toastSettings, intent: 'danger' }),
+        notify: (toastSettings: ToastSettings) => notify({ ...toastSettings }),
+        success: (toastSettings: ToastSettings) =>
+          notify({ ...toastSettings, intent: 'success' }),
+        warning: (toastSettings: ToastSettings) =>
+          notify({ ...toastSettings, intent: 'warning' }),
+
+        removeToast: (id: ToastId) =>
+          dispatch({ type: ActionType.REMOVE_TOAST, payload: { id } }),
+      }}
+    >
+      {children}
+      <View style={containerStyle}>
+        {currentToast && <Toast key={currentToast.id} {...currentToast} />}
+      </View>
+    </ToastContext.Provider>
+  );
+};

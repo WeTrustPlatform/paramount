@@ -20,9 +20,9 @@ export interface PopoverStyles {
   popoverStyle: TextStyle;
 }
 
-export type GetPopoverStyles = (theme: Theme) => PopoverStyles;
+export type GetPopoverStyles = (props: {}, theme: Theme) => PopoverStyles;
 
-export const getPopoverStyles: GetPopoverStyles = theme => {
+export const getPopoverStyles: GetPopoverStyles = (props, theme) => {
   const popoverVariables = getPopoverVariables(theme);
 
   return {

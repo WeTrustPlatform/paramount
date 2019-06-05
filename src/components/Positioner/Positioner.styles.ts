@@ -28,9 +28,9 @@ export interface PositionerStyles {
   modalContainerStyle: ViewStyle;
 }
 
-export type GetPositionerStyles = (theme: Theme) => PositionerStyles;
+export type GetPositionerStyles = (props: {}, theme: Theme) => PositionerStyles;
 
-export const getPositionerStyles: GetPositionerStyles = theme => {
+export const getPositionerStyles: GetPositionerStyles = (props, theme) => {
   const positionerVariables = getPositionerVariables(theme);
 
   return {

@@ -65,7 +65,6 @@ export interface TextInputStyles {
 export interface TextInputStylesProps {
   size: ControlSize;
   isDisabled: boolean;
-  isClearable: boolean;
   isInvalid: boolean;
   numberOfLines?: number;
 }

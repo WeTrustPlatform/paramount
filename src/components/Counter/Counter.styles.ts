@@ -42,9 +42,9 @@ export interface CounterStyles {
   textStyle: TextStyle;
 }
 
-export type GetCounterStyles = (theme: Theme) => CounterStyles;
+export type GetCounterStyles = (props: {}, theme: Theme) => CounterStyles;
 
-export const getCounterStyles: GetCounterStyles = theme => {
+export const getCounterStyles: GetCounterStyles = (props, theme) => {
   const counterVariables = getCounterVariables(theme);
   const { container, counter, count, disabled } = counterVariables;
 

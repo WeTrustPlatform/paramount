@@ -9,9 +9,9 @@ export interface TabStyles {
   dividerStyle: ViewStyle;
 }
 
-export type GetTabStyles = (theme: Theme) => TabStyles;
+export type GetTabStyles = (props: {}, theme: Theme) => TabStyles;
 
-export const getTabStyles: GetTabStyles = theme => {
+export const getTabStyles: GetTabStyles = (props, theme) => {
   return {
     buttonStyle: {
       borderRadius: 0,

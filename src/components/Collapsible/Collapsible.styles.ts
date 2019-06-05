@@ -11,7 +11,7 @@ export interface CollapsibleStyles {
 }
 
 export type GetCollapsibleStyles = (
-  checkboxStylesProps: object,
+  checkboxStylesProps: {},
   theme: Theme,
 ) => CollapsibleStyles;
 

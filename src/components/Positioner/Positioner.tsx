@@ -4,7 +4,7 @@ import { DeepPartial } from 'ts-essentials';
 
 import { POSITION, Position } from '../../constants';
 import { Measurements } from '../../hooks';
-import { Theme, withTheme } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { ViewMeasure } from '../Helpers';
 import { Modal } from '../Modal';
@@ -22,7 +22,6 @@ export interface ContentProps {
 }
 
 export interface PositionerProps {
-  theme: Theme;
   onClose?: () => void;
   /** For dynamic size content of positioners we have to render all the items first so it precalculates positioner position and layout, so that when user opens positioner there is no flash of adjusting positioner but immediately shows it. This is not `true` by default because it may causes small delay for the Positioner to be properly available. @default false */
   isDynamicContent?: boolean;
@@ -354,144 +353,122 @@ const initialMeasurements = {
   y: 0,
 };
 
-export class PositionerBase extends React.Component<
-  PositionerProps,
-  PositionerState
-> {
-  /** Hack to get correct position of dynamic content */
-  private hasOverflowedCounter: number = 0;
+export const Positioner = (props: PositionerProps) => {
+  let hasOverflowedCounter = 0;
+  const {
+    getStyles,
+    children,
+    content,
+    parentHeight,
+    isVisible,
+    isFullWidth = defaultProps.isFullWidth,
+    onClose = () => null,
+    position = defaultProps.position,
+    targetMeasurements,
+    isDynamicContent = defaultProps.isDynamicContent,
+  } = props;
+  const [positionerMeasurements, setPositionerMeasurements] = React.useState(
+    initialMeasurements,
+  );
+  const [childrenMeasurements, setChildrenMeasurements] = React.useState(
+    initialMeasurements,
+  );
+  const [isAdjustingContent, setIsAdjustingContent] = React.useState(
+    isDynamicContent,
+  );
 
-  constructor(props: PositionerProps) {
-    super(props);
-    const { isDynamicContent = defaultProps.isDynamicContent } = props;
+  const theme = useTheme();
 
-    this.state = {
-      childrenMeasurements: initialMeasurements,
-      isAdjustingContent: isDynamicContent,
-      positionerMeasurements: initialMeasurements,
-    };
-  }
-
-  public componentDidMount() {
-    const { isDynamicContent = defaultProps.isDynamicContent } = this.props;
-
+  React.useEffect(() => {
     if (isDynamicContent) {
       setTimeout(() => {
-        this.setState({ isAdjustingContent: false });
+        setIsAdjustingContent(false);
       }, RENDER_CALCULATION_DURATION);
     }
-  }
+  });
 
-  public render() {
-    const {
-      theme,
-      getStyles,
-      children,
-      content,
-      parentHeight,
-      isVisible,
-      isFullWidth = defaultProps.isFullWidth,
-      onClose = () => null,
-      position = defaultProps.position,
-      targetMeasurements,
-    } = this.props;
-    const {
-      positionerMeasurements,
-      childrenMeasurements,
-      isAdjustingContent,
-    } = this.state;
+  const { positionerStyle, modalContainerStyle } = mergeStyles(
+    getPositionerStyles,
+    getStyles,
+  )({}, theme);
 
-    const { positionerStyle, modalContainerStyle } = mergeStyles(
-      getPositionerStyles,
-      getStyles,
-    )(theme);
+  const screenLayout = Dimensions.get('window');
 
-    const screenLayout = Dimensions.get('window');
+  const finalTargetMeasurements = targetMeasurements || childrenMeasurements;
+  const hasPositionerMeasurementsMeasured =
+    positionerMeasurements.width !== 0 && positionerMeasurements.height !== 0;
+  const getPositionerPositionParams = {
+    offset: DEFAULT_OFFSET,
+    position,
+    positionerMeasurements,
+    screenLayout: {
+      ...screenLayout,
+      height: parentHeight || screenLayout.height,
+    },
+    targetMeasurements: finalTargetMeasurements,
+  };
 
-    const finalTargetMeasurements = targetMeasurements || childrenMeasurements;
-    const hasPositionerMeasurementsMeasured =
-      positionerMeasurements.width !== 0 && positionerMeasurements.height !== 0;
-    const getPositionerPositionParams = {
-      offset: DEFAULT_OFFSET,
-      position,
-      positionerMeasurements,
-      screenLayout: {
-        ...screenLayout,
-        height: parentHeight || screenLayout.height,
-      },
-      targetMeasurements: finalTargetMeasurements,
-    };
+  const {
+    position: correctedPosition,
+    ...positionerPositionStyle
+  } = isFullWidth
+    ? getPositionerFullWidthPosition(getPositionerPositionParams)
+    : getPositionerPosition(getPositionerPositionParams);
 
-    const {
-      position: correctedPosition,
-      ...positionerPositionStyle
-    } = isFullWidth
-      ? getPositionerFullWidthPosition(getPositionerPositionParams)
-      : getPositionerPosition(getPositionerPositionParams);
-
-    return (
-      <>
-        {targetMeasurements ? (
-          children
-        ) : (
+  return (
+    <>
+      {targetMeasurements ? (
+        children
+      ) : (
+        <ViewMeasure onMeasure={setChildrenMeasurements}>
+          {children}
+        </ViewMeasure>
+      )}
+      <Modal
+        visible={isAdjustingContent || isVisible}
+        transparent
+        onRequestClose={onClose}
+        shouldLockBodyScroll={false}
+      >
+        <View style={modalContainerStyle}>
           <ViewMeasure
+            style={{
+              ...positionerStyle,
+              ...positionerPositionStyle,
+              // Hide flash mis-positioned content
+              opacity:
+                hasPositionerMeasurementsMeasured && !isAdjustingContent
+                  ? 1
+                  : 0,
+            }}
             onMeasure={measurements => {
-              this.setState({ childrenMeasurements: measurements });
+              const isOverflowing = getIsOverflowing({
+                position,
+                positionerMeasurements,
+                screenLayout,
+              });
+              /**
+               * Positioner usually gets expected positioning after it has overflowed once.
+               */
+
+              if (hasOverflowedCounter === 0 || !isOverflowing) {
+                setPositionerMeasurements(measurements);
+              }
+
+              if (isOverflowing) {
+                hasOverflowedCounter++;
+              }
             }}
           >
-            {children}
+            {content({
+              position: correctedPosition,
+              positionerMeasurements,
+              targetMeasurements: finalTargetMeasurements,
+            })}
           </ViewMeasure>
-        )}
-        <Modal
-          visible={isAdjustingContent || isVisible}
-          transparent
-          onRequestClose={onClose}
-          shouldLockBodyScroll={false}
-        >
-          <View style={modalContainerStyle}>
-            <ViewMeasure
-              style={{
-                ...positionerStyle,
-                ...positionerPositionStyle,
-                // Hide flash mis-positioned content
-                opacity:
-                  hasPositionerMeasurementsMeasured && !isAdjustingContent
-                    ? 1
-                    : 0,
-              }}
-              onMeasure={measurements => {
-                const isOverflowing = getIsOverflowing({
-                  position,
-                  positionerMeasurements,
-                  screenLayout,
-                });
-                /**
-                 * Positioner usually gets expected positioning after it has overflowed once.
-                 */
-
-                if (this.hasOverflowedCounter === 0) {
-                  this.setState({ positionerMeasurements: measurements });
-                } else if (!isOverflowing) {
-                  this.setState({ positionerMeasurements: measurements });
-                }
-
-                if (isOverflowing) {
-                  this.hasOverflowedCounter++;
-                }
-              }}
-            >
-              {content({
-                position: correctedPosition,
-                positionerMeasurements,
-                targetMeasurements: finalTargetMeasurements,
-              })}
-            </ViewMeasure>
-            <Overlay transparent onPress={onClose} />
-          </View>
-        </Modal>
-      </>
-    );
-  }
-}
-
-export const Positioner = withTheme(PositionerBase);
+          <Overlay transparent onPress={onClose} />
+        </View>
+      </Modal>
+    </>
+  );
+};

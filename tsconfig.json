@@ -4,6 +4,7 @@
     "skipLibCheck": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
+    "esModuleInterop": true,
     "noImplicitAny": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,

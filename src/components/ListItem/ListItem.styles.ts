@@ -24,7 +24,6 @@ export interface ListItemVariables {
   wrapper: ViewStyle;
   base: ViewStyle;
   disabled: ViewStyle;
-  selected: ViewStyle;
   focusBackgroundColor: string;
   sizes: ListItemSizes;
 }
@@ -41,7 +40,6 @@ export const getListItemVariables = (theme: Theme): ListItemVariables => {
       backgroundColor: theme.colors.background.greyDark,
     },
     focusBackgroundColor: theme.colors.background.greyLight,
-    selected: {},
     sizes: {
       small: {
         fontSize: theme.textSizes.small.fontSize || 14,
@@ -85,7 +83,6 @@ export interface ListItemStyles {
 export interface ListItemStylesProps {
   size: ListItemSize;
   isDisabled: boolean;
-  isSelected: boolean;
 }
 
 export type GetListItemStyles = (
@@ -94,17 +91,11 @@ export type GetListItemStyles = (
 ) => ListItemStyles;
 
 export const getListItemStyles: GetListItemStyles = (
-  { size, isDisabled, isSelected },
+  { size, isDisabled },
   theme,
 ) => {
   const selectListVariables = getListItemVariables(theme);
-  const {
-    base,
-    disabled,
-    selected,
-    focusBackgroundColor,
-    sizes,
-  } = selectListVariables;
+  const { base, disabled, focusBackgroundColor, sizes } = selectListVariables;
 
   const { fontSize, ...sizeStyles } = sizes[size];
 
@@ -112,7 +103,6 @@ export const getListItemStyles: GetListItemStyles = (
     containerStyle: {
       ...base,
       ...sizeStyles,
-      ...(isSelected ? selected : {}),
       ...(isDisabled ? disabled : {}),
     },
     focusBackgroundColor,

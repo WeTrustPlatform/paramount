@@ -28,9 +28,9 @@ export interface DrawerStyles {
   containerStyle: ViewStyle;
   modalContainerStyle: ViewStyle;
 }
-export type GetDrawerStyles = (theme: Theme) => DrawerStyles;
+export type GetDrawerStyles = (props: {}, theme: Theme) => DrawerStyles;
 
-export const getDrawerStyles: GetDrawerStyles = theme => {
+export const getDrawerStyles: GetDrawerStyles = (props, theme) => {
   const drawerVariables = getDrawerVariables(theme);
 
   return {

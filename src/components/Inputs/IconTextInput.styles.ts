@@ -1,6 +1,7 @@
 import { ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/ThemeInterface';
+import { TextInputStylesProps } from './TextInput.styles';
 
 export interface IconTextInputStyles {
   inputStyle: ViewStyle;
@@ -9,7 +10,8 @@ export interface IconTextInputStyles {
   rightContainerStyle: ViewStyle;
 }
 
-export interface GetIconTextInputStylesProps {
+export interface GetIconTextInputStylesProps
+  extends Partial<TextInputStylesProps> {
   hasLeftIcon: boolean;
   hasRightIcon: boolean;
 }

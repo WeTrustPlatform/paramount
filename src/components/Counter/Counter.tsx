@@ -46,7 +46,7 @@ export const Counter = (props: CounterProps) => {
     countStyle,
     textStyle,
     disabledStyle,
-  } = mergeStyles(getCounterStyles, getStyles)(theme);
+  } = mergeStyles(getCounterStyles, getStyles)({}, theme);
 
   const isDecrementDisabled = min === count;
   const isIncrementDisabled = max === count;

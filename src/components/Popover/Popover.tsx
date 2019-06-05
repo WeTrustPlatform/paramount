@@ -22,6 +22,7 @@ export const Popover = (props: PopoverProps) => {
   const { content, getContentStyles } = props;
   const theme = useTheme();
   const { popoverStyle } = mergeStyles(getPopoverStyles, getContentStyles)(
+    {},
     theme,
   );
 

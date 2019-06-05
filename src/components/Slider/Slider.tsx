@@ -158,15 +158,6 @@ export const Slider = (props: SliderProps) => {
   const finalInitialValue =
     initialValue || (isRange ? [minimumValue, maximumValue] : minimumValue);
 
-  if (
-    (isRangeValue(initialValue) && !isRange) ||
-    (!isRangeValue(initialValue) && isRange)
-  ) {
-    console.warn(
-      `Slider: initialValue and isRange do not match in type. You can use initialValue to be either number for standard slider or [number, number] for range slider. isRange is useful only for default usage without initialValue`,
-    );
-  }
-
   const [value, setValue] = React.useState(finalInitialValue);
   const [isSliding, setIsSliding] = React.useState(false);
   const [trackMeasurements, setTrackMeasurements] = React.useState(

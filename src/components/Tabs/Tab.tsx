@@ -5,17 +5,14 @@ import { initialMeasurements, Measurements } from '../../hooks';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Button, ButtonProps } from '../Button';
-import { ButtonStyles, GetButtonStyles } from '../Button/Button.styles';
 import { ViewMeasure } from '../Helpers';
-import { getTabStyles, TabStyles } from './Tab.styles';
+import { GetTabStyles, getTabStyles, TabStyles } from './Tab.styles';
 
-export interface TabProps extends Omit<ButtonProps, 'onPress'> {
+export interface TabProps
+  extends Omit<Omit<ButtonProps, 'onPress'>, 'getStyles'> {
   index: number;
   isActive?: boolean;
-  getStyles?: ReplaceReturnType<
-    GetButtonStyles,
-    DeepPartial<ButtonStyles & TabStyles>
-  >;
+  getStyles?: ReplaceReturnType<GetTabStyles, DeepPartial<TabStyles>>;
   onPress: (index: number) => void;
   onActive?: (index: number, measurements: Measurements) => void;
 }
@@ -36,7 +33,7 @@ export const Tab = (props: TabProps) => {
   const { containerStyle, buttonStyle, textStyle } = mergeStyles(
     getTabStyles,
     getStyles,
-  )(theme);
+  )({}, theme);
 
   React.useEffect(() => {
     if (isActive) onActive(index, measurements);

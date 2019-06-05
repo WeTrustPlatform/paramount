@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { View } from 'react-native';
 
-import { useTheme } from '../../theme';
+import { ControlSize, useTheme } from '../../theme';
 import { mergeStyles } from '../../utils/mergeStyles';
 import { Icon } from '../Icon';
-import { GetPickerButtonStylesProp } from './PickerButton';
-import { getPickerButtonStyles, PickerButtonSize } from './PickerButton.styles';
+import { PickerButtonGetStylesProp } from './PickerButton';
+import { getPickerButtonStyles } from './PickerButton.styles';
 
 export interface PickerButtonWrapperProps {
-  getStyles?: GetPickerButtonStylesProp;
-  size?: PickerButtonSize;
+  getStyles?: PickerButtonGetStylesProp;
+  size?: ControlSize;
   children: React.ReactNode;
 }
 

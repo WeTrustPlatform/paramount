@@ -1,19 +1,19 @@
 import * as React from 'react';
 import { Picker as RNPicker, PickerProps as RNPickerProps } from 'react-native';
 
-import { useTheme } from '../../theme';
+import { ControlSize, useTheme } from '../../theme';
 import { mergeStyles } from '../../utils/mergeStyles';
-import { GetPickerButtonStylesProp } from './PickerButton';
-import { getPickerButtonStyles, PickerButtonSize } from './PickerButton.styles';
+import { PickerButtonGetStylesProp } from './PickerButton';
+import { getPickerButtonStyles } from './PickerButton.styles';
 import { PickerButtonWrapper } from './PickerButtonWrapper';
 
 export interface NativePickerProps extends RNPickerProps {
-  size?: PickerButtonSize;
+  size?: ControlSize;
   innerRef?: React.Ref<RNPicker>;
   /**
    * Inline styles for components
    */
-  getStyles?: GetPickerButtonStylesProp;
+  getStyles?: PickerButtonGetStylesProp;
 }
 
 const NativePickerBase = (props: NativePickerProps) => {

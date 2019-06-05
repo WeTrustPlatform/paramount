@@ -15,7 +15,7 @@ export const Row = (props: RowProps) => {
   const { children, getStyles } = props;
   const theme = useTheme();
 
-  const { rowStyle } = mergeStyles(getRowStyles, getStyles)(theme);
+  const { rowStyle } = mergeStyles(getRowStyles, getStyles)({}, theme);
 
   return <View style={rowStyle}>{children}</View>;
 };

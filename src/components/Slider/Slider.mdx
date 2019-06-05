@@ -13,9 +13,9 @@ import { Slider } from '.';
 <Playground>
   <Slider
     size={40}
-    initialValue={0.3} // either number for standard slider or [number, number] for range slider
+    initialValue={0.3} // either number for single thumb slider or [number, number] for range slider
     step={0}
-    isRange={false} // Only useful if you are not passing initialValue
+    isRange={false} // Only used if you are not passing initialValue
     minimumValue={0}
     maximumValue={1}
     onValueChange={value => console.log('onValueChange', value)}

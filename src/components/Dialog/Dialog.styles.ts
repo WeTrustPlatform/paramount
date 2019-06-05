@@ -10,9 +10,9 @@ export interface DialogStyles {
   overlayStyle: ViewStyle;
 }
 
-export type GetDialogStyles = (theme: Theme) => DialogStyles;
+export type GetDialogStyles = (props: {}, theme: Theme) => DialogStyles;
 
-export const getDialogStyles: GetDialogStyles = theme => {
+export const getDialogStyles: GetDialogStyles = (props, theme) => {
   return {
     bodyStyle: {
       maxHeight: 400,

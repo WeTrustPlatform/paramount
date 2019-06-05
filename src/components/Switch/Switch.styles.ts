@@ -55,9 +55,9 @@ export interface SwitchStyles {
   circleColorOff: string;
   circleColorOn: string;
 }
-export type GetSwitchStyles = (theme: Theme) => SwitchStyles;
+export type GetSwitchStyles = (props: {}, theme: Theme) => SwitchStyles;
 
-export const getSwitchStyles: GetSwitchStyles = (theme: Theme) => {
+export const getSwitchStyles: GetSwitchStyles = (props, theme) => {
   const switchVariables = getSwitchVariables(theme);
 
   return {

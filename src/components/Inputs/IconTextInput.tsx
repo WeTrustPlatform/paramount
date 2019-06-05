@@ -5,18 +5,18 @@ import { DeepPartial, Omit } from 'ts-essentials';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
+  GetIconTextInputStyles,
   getIconTextInputStyles,
   IconTextInputStyles,
 } from './IconTextInput.styles';
 import { TextInput, TextInputProps } from './TextInput';
-import { GetTextInputStyles, TextInputStyles } from './TextInput.styles';
 
 export interface IconTextInputProps extends Omit<TextInputProps, 'getStyles'> {
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
   getStyles?: ReplaceReturnType<
-    GetTextInputStyles,
-    DeepPartial<TextInputStyles & IconTextInputStyles>
+    GetIconTextInputStyles,
+    DeepPartial<IconTextInputStyles>
   >;
 }
 

@@ -1,4 +1,4 @@
-import * as merge from 'deepmerge';
+import deepmerge from 'deepmerge';
 import * as React from 'react';
 import { Dimensions } from 'react-native';
 
@@ -36,7 +36,7 @@ export const LayoutProvider = (props: LayoutProviderProps) => {
   const { children, layout: layoutProps } = props;
   const layoutContext = React.useContext(LayoutContext);
   const layout = layoutProps
-    ? merge(layoutContext, layoutProps)
+    ? deepmerge(layoutContext, layoutProps)
     : layoutContext;
 
   const [currentBreakpoint, setCurrentBreakPoint] = React.useState(
