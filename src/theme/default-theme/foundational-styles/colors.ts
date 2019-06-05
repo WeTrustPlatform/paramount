@@ -50,6 +50,23 @@ const colors: Colors = {
     warning: palette.orange.darkest,
   },
 
+  button: {
+    disabled: palette.neutral.light,
+    disabledText: palette.neutral.darkest,
+
+    default: palette.neutral.lightest,
+    defaultText: palette.neutral.darkest,
+
+    primary: palette.teal.base,
+    primaryText: 'white',
+
+    secondary: palette.orange.base,
+    secondaryText: 'white',
+
+    danger: palette.red.base,
+    dangerText: 'white',
+  },
+
   text: {
     link: palette.neutral.darkest,
     default: palette.neutral.darkest,

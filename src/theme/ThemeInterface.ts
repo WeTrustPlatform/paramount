@@ -77,14 +77,30 @@ export interface TextColors {
 
 export type TextColor = keyof TextColors | string;
 
-export interface BorderColors {
+export interface ButtonColors {
+  danger: string;
   default: string;
-
+  disabled: string;
   primary: string;
   secondary: string;
+}
 
+export interface ButtonColorsWithText extends ButtonColors {
+  dangerText: string;
+  defaultText: string;
+  disabledText: string;
+  primaryText: string;
+  secondaryText: string;
+}
+
+export type ButtonColor = keyof ButtonColors | string;
+
+export interface BorderColors {
   danger: string;
+  default: string;
   info: string;
+  primary: string;
+  secondary: string;
   success: string;
   warning: string;
 }
@@ -130,6 +146,7 @@ export type BackgroundColor = keyof BackgroundColors | string;
 export interface Colors {
   background: BackgroundColors;
   border: BorderColors;
+  button: ButtonColorsWithText;
   text: TextColors;
 }
 

@@ -1,26 +1,18 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
+import { ButtonColor, Theme } from '../../theme/ThemeInterface';
+import { darken } from './changeColor';
 
 export type ButtonColorProps = ViewStyle & {
+  backgroundColor: string;
   color: string;
-  focusColor: string;
   loadingBackgroundColor?: string;
 };
 
-export interface ButtonColors {
-  default: ButtonColorProps;
-  danger: ButtonColorProps;
-  primary: ButtonColorProps;
-  secondary: ButtonColorProps;
-}
-
-export type ButtonColor = keyof ButtonColors;
-
 export interface ButtonAppearances {
-  minimal: ButtonColors;
-  primary: ButtonColors;
-  outline: ButtonColors;
+  minimal: { [size in ButtonColor]: ButtonColorProps };
+  primary: { [size in ButtonColor]: ButtonColorProps };
+  outline: { [size in ButtonColor]: ButtonColorProps };
 }
 
 export type ButtonAppearance = keyof ButtonAppearances;
@@ -57,65 +49,47 @@ export const getButtonVariables = (theme: Theme): ButtonVariables => {
         default: {
           backgroundColor: theme.colors.background.content,
           color: theme.colors.text.default,
-
-          focusColor: theme.colors.background.greyDefault,
         },
 
         danger: {
           backgroundColor: theme.colors.background.content,
           color: theme.colors.text.danger,
-
-          focusColor: theme.colors.background.greyDefault,
         },
         primary: {
           backgroundColor: theme.colors.background.content,
           color: theme.colors.text.primary,
-
-          focusColor: theme.colors.background.greyDefault,
         },
         secondary: {
           backgroundColor: theme.colors.background.content,
-          color: theme.colors.text.secondary
-            ? theme.colors.text.secondary
-            : theme.colors.text.default,
-
-          focusColor: theme.colors.background.greyDefault,
+          color: theme.colors.text.secondary,
         },
       },
       primary: {
         default: {
-          backgroundColor: theme.colors.background.greyLight,
-          borderColor: theme.colors.border.default,
-          color: theme.colors.text.default,
+          backgroundColor: theme.colors.button.default,
+          color: theme.colors.button.defaultText,
 
-          focusColor: theme.colors.background.greyDefault,
           loadingBackgroundColor: theme.colors.background.overlay,
         },
 
         danger: {
-          backgroundColor: theme.colors.background.dangerDefault,
-          borderColor: theme.colors.border.danger,
-          color: theme.colors.text.white,
+          backgroundColor: theme.colors.button.danger,
+          color: theme.colors.button.dangerText,
 
-          focusColor: theme.colors.background.dangerDark,
           loadingBackgroundColor: theme.colors.background.dangerLight,
         },
 
         primary: {
-          backgroundColor: theme.colors.background.primaryDefault,
-          borderColor: theme.colors.border.primary,
-          color: theme.colors.text.white,
+          backgroundColor: theme.colors.button.primary,
+          color: theme.colors.button.primaryText,
 
-          focusColor: theme.colors.background.primaryDark,
           loadingBackgroundColor: theme.colors.background.primaryLight,
         },
 
         secondary: {
-          backgroundColor: theme.colors.background.secondaryDefault,
-          borderColor: theme.colors.border.secondary,
-          color: theme.colors.text.white,
+          backgroundColor: theme.colors.button.secondary,
+          color: theme.colors.button.secondaryText,
 
-          focusColor: theme.colors.background.secondaryDark,
           loadingBackgroundColor: theme.colors.background.secondaryLight,
         },
       },
@@ -126,8 +100,6 @@ export const getButtonVariables = (theme: Theme): ButtonVariables => {
           borderColor: theme.colors.text.default,
           borderWidth: 3,
           color: theme.colors.text.default,
-
-          focusColor: theme.colors.background.greyDefault,
         },
 
         danger: {
@@ -135,8 +107,6 @@ export const getButtonVariables = (theme: Theme): ButtonVariables => {
           borderColor: theme.colors.border.danger,
           borderWidth: 3,
           color: theme.colors.text.danger,
-
-          focusColor: theme.colors.background.dangerLight,
         },
 
         primary: {
@@ -144,8 +114,6 @@ export const getButtonVariables = (theme: Theme): ButtonVariables => {
           borderColor: theme.colors.border.primary,
           borderWidth: 3,
           color: theme.colors.text.primary,
-
-          focusColor: theme.colors.background.primaryLight,
         },
 
         secondary: {
@@ -153,13 +121,11 @@ export const getButtonVariables = (theme: Theme): ButtonVariables => {
           borderColor: theme.colors.border.secondary,
           borderWidth: 3,
           color: theme.colors.text.secondary,
-
-          focusColor: theme.colors.background.secondaryLight,
         },
       },
     },
     disabled: {
-      backgroundColor: theme.colors.background.greyDark,
+      backgroundColor: theme.colors.button.disabled,
 
       color: theme.colors.text.muted,
     },
@@ -232,7 +198,6 @@ export const getButtonStyles: GetButtonStyles = (buttonStyleProps, theme) => {
 
   const {
     color: textColor,
-    focusColor,
     loadingBackgroundColor,
     ...buttonStyle
   } = appearances[appearance][color];
@@ -261,7 +226,10 @@ export const getButtonStyles: GetButtonStyles = (buttonStyleProps, theme) => {
           }
         : {}),
     },
-    focusColor,
+    focusColor:
+      appearance === 'minimal' || appearance === 'outline'
+        ? theme.colors.button.default
+        : darken(buttonStyle.backgroundColor, 0.05),
     textStyle: {
       alignItems: 'center',
       color: isDisabled ? disabledButtonTextColor : textColor,

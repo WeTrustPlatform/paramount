@@ -8,13 +8,12 @@ import {
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { useTheme } from '../../theme';
+import { ButtonColor, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { LoadingDots } from '../Loading';
 import { Text } from '../Typography';
 import {
   ButtonAppearance,
-  ButtonColor,
   ButtonSize,
   ButtonStyles,
   GetButtonStyles,
@@ -32,7 +31,7 @@ export interface ButtonProps extends AccessibilityProps {
 
   /**
    * The intent of the button.
-   * @default "default"
+   * @default "primary"
    */
   color?: ButtonColor;
 
@@ -108,7 +107,7 @@ export const Button = (props: ButtonProps) => {
   const {
     appearance = 'primary',
     title,
-    color = 'default',
+    color = 'primary',
     getStyles,
     icon,
     iconAfter,
