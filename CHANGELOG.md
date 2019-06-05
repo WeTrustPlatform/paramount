@@ -1,3 +1,13 @@
+# [1.53.0](https://github.com/WeTrustPlatform/paramount/compare/v1.52.1...v1.53.0) (2019-06-05)
+
+
+### Features
+
+* **button:** add button colors in theme ([1d044d2](https://github.com/WeTrustPlatform/paramount/commit/1d044d2))
+* **color:** use box and icon color from theme ([9eca920](https://github.com/WeTrustPlatform/paramount/commit/9eca920))
+* **grid:** correct implementation of layout ([dfbe79a](https://github.com/WeTrustPlatform/paramount/commit/dfbe79a))
+* **theme:** export ThemeProvider and remove theme HOC ([ada6cda](https://github.com/WeTrustPlatform/paramount/commit/ada6cda))
+
 ## [1.52.1](https://github.com/WeTrustPlatform/paramount/compare/v1.52.0...v1.52.1) (2019-06-01)
 
 
