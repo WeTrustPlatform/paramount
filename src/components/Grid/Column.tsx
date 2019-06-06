@@ -60,13 +60,13 @@ export const splitColumnConfig = (config: ColumnConfig) => {
 
 export const Column = (props: ColumnProps) => {
   const { children, getStyles, ...config } = props;
-  const { currentSize, gridColumnCount } = useLayout();
+  const { currentScreenSize, gridColumnCount } = useLayout();
   const theme = useTheme();
   const gutterWidth = React.useContext(GutterWidthContext);
 
   const { columns, offsetColumns } = splitColumnConfig(config);
   const { columnStyle } = mergeStyles(getColumnStyles, getStyles)(
-    { gutterWidth, currentSize, gridColumnCount, columns, offsetColumns },
+    { gutterWidth, currentScreenSize, gridColumnCount, columns, offsetColumns },
     theme,
   );
 

@@ -4,13 +4,13 @@ import { Theme } from '../../theme/ThemeInterface';
 import { ColumnConfigBase } from './Column';
 import {
   ColumnCount,
-  DESC_ORDER_LAYOUT_SIZES,
-  LayoutSize,
+  DESC_ORDER_SCREEN_SIZES,
+  ScreenSize,
 } from './LayoutContext';
 
 export interface ColumnStylesProps {
   gutterWidth: number;
-  currentSize: LayoutSize;
+  currentScreenSize: ScreenSize;
   gridColumnCount: ColumnCount;
   columns: ColumnConfigBase;
   offsetColumns: ColumnConfigBase;
@@ -26,28 +26,33 @@ export interface ColumnStyles {
 }
 
 // Find nearest matching column count
-// when currentSize = xlarge and columns = { medium: 6 }, it should use medium column count
-// when currentSize = small and columns = { medium: 6 }, it should return null
+// when currentScreenSize = xlarge and columns = { medium: 6 }, it should use medium column count
+// when currentScreenSize = small and columns = { medium: 6 }, it should return null
 const getNearestColumn = (
   columns: ColumnConfigBase,
-  currentSize: LayoutSize,
+  currentScreenSize: ScreenSize,
 ) => {
-  const currentSizeIndex = DESC_ORDER_LAYOUT_SIZES.indexOf(currentSize);
+  const currentScreenSizeIndex = DESC_ORDER_SCREEN_SIZES.indexOf(
+    currentScreenSize,
+  );
 
-  const nearestSize = DESC_ORDER_LAYOUT_SIZES.find((breakpoint, index) => {
-    if (currentSizeIndex >= index) return false;
+  const nearestSize = DESC_ORDER_SCREEN_SIZES.find((screenSize, index) => {
+    if (currentScreenSizeIndex >= index) return false;
 
-    return !!columns[breakpoint];
+    return !!columns[screenSize];
   });
 
   return nearestSize ? columns[nearestSize] : null;
 };
 
-const getColumnCount = (columns: ColumnConfigBase, currentSize: LayoutSize) => {
-  const matchedColumn = columns[currentSize];
+const getColumnCount = (
+  columns: ColumnConfigBase,
+  currentScreenSize: ScreenSize,
+) => {
+  const matchedColumn = columns[currentScreenSize];
   if (matchedColumn) return matchedColumn;
 
-  const nearestColumn = getNearestColumn(columns, currentSize);
+  const nearestColumn = getNearestColumn(columns, currentScreenSize);
   if (nearestColumn) return nearestColumn;
 
   return null;
@@ -60,12 +65,12 @@ export const getProportion = (columnCount: number, gridColumnCount: number) => {
 };
 
 export const getColumnStyles: GetColumnStyles = (
-  { gutterWidth, currentSize, gridColumnCount, columns, offsetColumns },
+  { gutterWidth, currentScreenSize, gridColumnCount, columns, offsetColumns },
   theme,
 ) => {
-  const columnCount = getColumnCount(columns, currentSize);
+  const columnCount = getColumnCount(columns, currentScreenSize);
   const flexBasis = getProportion(columnCount || 12, gridColumnCount);
-  const offsetColumnCount = getColumnCount(offsetColumns, currentSize);
+  const offsetColumnCount = getColumnCount(offsetColumns, currentScreenSize);
   const marginLeft = getProportion(offsetColumnCount || 0, gridColumnCount);
 
   return {

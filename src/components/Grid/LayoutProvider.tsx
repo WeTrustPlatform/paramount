@@ -3,9 +3,11 @@ import * as React from 'react';
 import { Dimensions } from 'react-native';
 
 import {
-  DESC_ORDER_LAYOUT_SIZES,
+  DESC_ORDER_SCREEN_SIZES,
+  GetResponsiveValueParam,
   LayoutContext,
   LayoutInterface,
+  ScreenSize,
 } from './LayoutContext';
 
 export interface LayoutProviderProps {
@@ -13,22 +15,39 @@ export interface LayoutProviderProps {
   value?: Partial<LayoutInterface>;
 }
 
-export const getCurrentSize = (layout: LayoutInterface) => {
+export const getCurrentScreenSize = (layout: LayoutInterface) => {
   const { breakpoints } = layout;
   const windowScaledSize = Dimensions.get('window');
 
-  const currentSize = DESC_ORDER_LAYOUT_SIZES.find(layoutSize => {
-    if (layoutSize === 'xsmall') {
+  const currentScreenSize = DESC_ORDER_SCREEN_SIZES.find(screenSize => {
+    if (screenSize === 'xsmall') {
       return windowScaledSize.width < breakpoints.small;
     }
 
-    const width = breakpoints[layoutSize];
+    const width = breakpoints[screenSize];
     if (windowScaledSize.width >= width) return true;
 
     return false;
   });
 
-  return currentSize || 'xsmall';
+  return currentScreenSize || 'xsmall';
+};
+
+const deriveResponsiveValue = (
+  values: GetResponsiveValueParam,
+  currentScreenSize: ScreenSize,
+) => {
+  const currentScreenSizeIndex = DESC_ORDER_SCREEN_SIZES.indexOf(
+    currentScreenSize,
+  );
+
+  const nearestSize = DESC_ORDER_SCREEN_SIZES.find((screenSize, index) => {
+    if (currentScreenSizeIndex >= index) return false;
+
+    return !!values[screenSize];
+  });
+
+  return nearestSize ? values[nearestSize] : null;
 };
 
 export const LayoutProvider = (props: LayoutProviderProps) => {
@@ -36,10 +55,12 @@ export const LayoutProvider = (props: LayoutProviderProps) => {
   const layoutContext = React.useContext(LayoutContext);
   const layout = value ? deepmerge(layoutContext, value) : layoutContext;
 
-  const [currentSize, setCurrentSize] = React.useState(getCurrentSize(layout));
+  const [currentScreenSize, setCurrentScreenSize] = React.useState(
+    getCurrentScreenSize(layout),
+  );
 
   const handleDimensionsChange = React.useCallback(() => {
-    setCurrentSize(getCurrentSize(layout));
+    setCurrentScreenSize(getCurrentScreenSize(layout));
   }, []);
 
   React.useLayoutEffect(() => {
@@ -50,7 +71,14 @@ export const LayoutProvider = (props: LayoutProviderProps) => {
   }, []);
 
   return (
-    <LayoutContext.Provider value={{ ...layout, currentSize }}>
+    <LayoutContext.Provider
+      value={{
+        ...layout,
+        currentScreenSize,
+        getResponsiveValue: values =>
+          deriveResponsiveValue(values, currentScreenSize),
+      }}
+    >
       {children}
     </LayoutContext.Provider>
   );
