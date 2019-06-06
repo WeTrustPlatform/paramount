@@ -1,3 +1,17 @@
+# [1.54.0](https://github.com/WeTrustPlatform/paramount/compare/v1.53.1...v1.54.0) (2019-06-06)
+
+
+### Bug Fixes
+
+* **test:** update snapshots ([c311d28](https://github.com/WeTrustPlatform/paramount/commit/c311d28))
+
+
+### Features
+
+* **grid:** make grid work like bootstrap grid ([a5ed041](https://github.com/WeTrustPlatform/paramount/commit/a5ed041))
+* **layout:** add and redo features ([647986b](https://github.com/WeTrustPlatform/paramount/commit/647986b))
+* **tabs:** simplify tabs ([4ecc9d2](https://github.com/WeTrustPlatform/paramount/commit/4ecc9d2))
+
 ## [1.53.1](https://github.com/WeTrustPlatform/paramount/compare/v1.53.0...v1.53.1) (2019-06-06)
 
 
