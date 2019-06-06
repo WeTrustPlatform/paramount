@@ -20,32 +20,15 @@ You can use a custom `Tab` component as long as it accepts `isActive`, `onPress`
 
 <Playground>
   <Tabs
-    ActiveBar={undefined} // The indicator of active tab. Currently works only when distribution="fit"
     defaultActiveTabIndex={1}
     activeTabIndex={undefined}
     onPress={undefined}
-    distribution="fit" // or 'scrollable'
+    shouldFit
     getStyles={(props, theme) => ({
-      containerStyle: {}, // Only applied when distribution="fit"
-      tabContainerStyle: {},
-      buttonStyle: {},
-      textStyle: {},
-      dividerStyle: {},
+      containerStyle: {},
     })}
   >
     {new Array(4).fill(0).map((v, i) => (
-      <Tab key={i} title={`Tab ${i + 1}`} />
-    ))}
-  </Tabs>
-</Playground>
-
-### Scrollable
-
-Scrollable Tabs will also inline `Tab`
-
-<Playground>
-  <Tabs distribution="scrollable">
-    {new Array(20).fill(0).map((v, i) => (
       <Tab key={i} title={`Tab ${i + 1}`} />
     ))}
   </Tabs>

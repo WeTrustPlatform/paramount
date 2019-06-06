@@ -1,40 +1,21 @@
-import { TextStyle, ViewStyle } from 'react-native';
+import { ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/ThemeInterface';
-import { TabsDistribution } from './Tabs';
 
 export interface TabsStyles {
   containerStyle: ViewStyle;
-  tabContainerStyle: ViewStyle;
-  buttonStyle: ViewStyle;
-  textStyle: TextStyle;
-  dividerStyle: ViewStyle;
 }
+export type GetTabsStyles = (props: {}, theme: Theme) => TabsStyles;
 
-export interface GetTabsStylesProps {
-  distribution: TabsDistribution;
-}
-
-export type GetTabsStyles = (
-  props: GetTabsStylesProps,
-  theme: Theme,
-) => TabsStyles;
-
-export const getTabsStyles: GetTabsStyles = ({ distribution }, theme) => {
+export const getTabsStyles: GetTabsStyles = (props, theme) => {
   return {
-    buttonStyle: {},
     containerStyle: {
+      backgroundColor: theme.colors.background.greyDefault,
+      borderRadius: theme.controlBorderRadius.medium,
       flex: 1,
       flexDirection: 'row',
       justifyContent: 'flex-start',
+      padding: 2,
     },
-    dividerStyle: {},
-    tabContainerStyle:
-      distribution === 'fit'
-        ? {
-            flex: 1,
-          }
-        : {},
-    textStyle: {},
   };
 };

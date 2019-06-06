@@ -3,25 +3,31 @@ import { TextStyle, ViewStyle } from 'react-native';
 import { Theme } from '../../theme/ThemeInterface';
 
 export interface TabStyles {
-  containerStyle: ViewStyle;
   buttonStyle: ViewStyle;
   textStyle: TextStyle;
-  dividerStyle: ViewStyle;
+  focusColor: string;
 }
 
-export type GetTabStyles = (props: {}, theme: Theme) => TabStyles;
+export interface GetTabStyleProps {
+  shouldFit: boolean;
+  isActive: boolean;
+}
 
-export const getTabStyles: GetTabStyles = (props, theme) => {
+export type GetTabStyles = (props: GetTabStyleProps, theme: Theme) => TabStyles;
+
+export const getTabStyles: GetTabStyles = ({ shouldFit, isActive }, theme) => {
   return {
     buttonStyle: {
-      borderRadius: 0,
+      backgroundColor: isActive ? 'white' : 'transparent',
+      ...(shouldFit
+        ? {
+            flex: 1,
+          }
+        : {}),
     },
-    containerStyle: {},
-    dividerStyle: {
-      borderRadius: 0,
-      bottom: 0,
-      position: 'absolute',
+    focusColor: theme.colors.background.greyLight,
+    textStyle: {
+      color: isActive ? theme.colors.text.primary : theme.colors.text.muted,
     },
-    textStyle: {},
   };
 };

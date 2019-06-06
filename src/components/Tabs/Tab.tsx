@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { DeepPartial, Omit } from 'ts-essentials';
 
-import { initialMeasurements, Measurements } from '../../hooks';
+import { Measurements } from '../../hooks';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Button, ButtonProps } from '../Button';
-import { ViewMeasure } from '../Helpers';
 import { GetTabStyles, getTabStyles, TabStyles } from './Tab.styles';
 
 export interface TabProps
   extends Omit<Omit<ButtonProps, 'onPress'>, 'getStyles'> {
   index: number;
   isActive?: boolean;
+  shouldFit?: boolean;
   getStyles?: ReplaceReturnType<GetTabStyles, DeepPartial<TabStyles>>;
   onPress: (index: number) => void;
   onActive?: (index: number, measurements: Measurements) => void;
@@ -26,28 +26,21 @@ export const Tab = (props: TabProps) => {
     onActive = () => {
       return;
     },
+    shouldFit = true,
     ...buttonProps
   } = props;
-  const [measurements, setMeasurements] = React.useState(initialMeasurements);
   const theme = useTheme();
-  const { containerStyle, buttonStyle, textStyle } = mergeStyles(
+  const { buttonStyle, textStyle, focusColor } = mergeStyles(
     getTabStyles,
     getStyles,
-  )({}, theme);
-
-  React.useEffect(() => {
-    if (isActive) onActive(index, measurements);
-  }, [isActive, measurements]);
+  )({ isActive, shouldFit }, theme);
 
   return (
-    <ViewMeasure onMeasure={setMeasurements} style={containerStyle}>
-      <Button
-        color={isActive ? 'primary' : 'default'}
-        appearance="minimal"
-        getStyles={() => ({ buttonStyle, textStyle })}
-        onPress={() => onPress(index)}
-        {...buttonProps}
-      />
-    </ViewMeasure>
+    <Button
+      color={isActive ? 'primary' : 'default'}
+      getStyles={() => ({ buttonStyle, focusColor, textStyle })}
+      onPress={() => onPress(index)}
+      {...buttonProps}
+    />
   );
 };
