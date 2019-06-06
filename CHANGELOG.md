@@ -1,3 +1,10 @@
+## [1.53.1](https://github.com/WeTrustPlatform/paramount/compare/v1.53.0...v1.53.1) (2019-06-06)
+
+
+### Bug Fixes
+
+* **toast:** fix toast transitions ([0f7643b](https://github.com/WeTrustPlatform/paramount/commit/0f7643b))
+
 # [1.53.0](https://github.com/WeTrustPlatform/paramount/compare/v1.52.1...v1.53.0) (2019-06-05)
 
 
