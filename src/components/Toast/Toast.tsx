@@ -1,12 +1,7 @@
 import * as React from 'react';
-import { View } from 'react-native';
-import { animated, useSpring } from 'react-spring/native.cjs';
 import { Omit } from 'ts-essentials';
 
-import { springDefaultConfig } from '../../constants/Animation';
 import { Alert, AlertProps } from '../Alert';
-
-const AnimatedView = animated(View);
 
 export type ToastId = string;
 
@@ -37,23 +32,10 @@ export const Toast = (props: ToastProps) => {
     ...toastSettings
   } = props;
 
-  const style = useSpring({
-    config: springDefaultConfig,
+  React.useEffect(() => {
+    const timer = setTimeout(() => onRemove(), duration);
+    return () => clearTimeout(timer);
+  }, []);
 
-    from: { translateY: -500 },
-    onRest: () => onRemove(),
-    to: async next => {
-      // tslint:disable-next-line
-      await next({ translateY: 10 });
-      // tslint:disable-next-line
-      await next({ translateY: -500, delay: duration });
-    },
-  });
-
-  return (
-    // @ts-ignore
-    <AnimatedView style={{ transform: [{ translateY: style.translateY }] }}>
-      {component || <Alert {...toastSettings} onClose={onRemove} />}
-    </AnimatedView>
-  );
+  return <>{component || <Alert {...toastSettings} onClose={onRemove} />}</>;
 };

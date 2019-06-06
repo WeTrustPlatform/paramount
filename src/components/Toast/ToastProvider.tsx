@@ -1,12 +1,16 @@
 import * as React from 'react';
 import { View } from 'react-native';
+import { animated, useTransition } from 'react-spring/native.cjs';
 import { DeepPartial } from 'ts-essentials';
 
+import { springDefaultConfig } from '../../constants/Animation';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Toast, ToastId, ToastInstance, ToastSettings } from './Toast';
 import { GetToastStyles, getToastStyles, ToastStyles } from './Toast.styles';
 import { ToastContext } from './ToastContext';
+
+const AnimatedView = animated(View);
 
 export interface ToastProviderProps {
   children?: React.ReactNode;
@@ -35,7 +39,7 @@ type Action =
 const reducer = (state: ToastProviderState, action: Action) => {
   switch (action.type) {
     case ActionType.ADD_TOAST:
-      return { toasts: [...state.toasts.slice(1), action.payload.toast] };
+      return { toasts: [...state.toasts, action.payload.toast] };
     case ActionType.REMOVE_TOAST:
       return {
         toasts: state.toasts.filter(toast => toast.id !== action.payload.id),
@@ -50,14 +54,13 @@ export const ToastProvider = (props: ToastProviderProps) => {
   const idCounterRef = React.useRef(0);
   // Use reducer because we want access previous value of state
   const [state, dispatch] = React.useReducer(reducer, initialState);
-  const [currentToast] = state.toasts;
 
   const theme = useTheme();
 
-  const { containerStyle } = mergeStyles(getToastStyles, getStyles)(
-    { intent: 'info' },
-    theme,
-  );
+  const { containerStyle, wrapperStyle } = mergeStyles(
+    getToastStyles,
+    getStyles,
+  )({ intent: 'info' }, theme);
 
   const createToastInstance = (toastSettings: ToastSettings): ToastInstance => {
     const uniqueId = ++idCounterRef.current;
@@ -94,6 +97,14 @@ export const ToastProvider = (props: ToastProviderProps) => {
     return toastInstance;
   }, []);
 
+  const transitions = useTransition(state.toasts, toast => toast.id, {
+    config: springDefaultConfig,
+
+    enter: { translateY: 10 },
+    from: { translateY: -500 },
+    leave: { translateY: -500 },
+  });
+
   return (
     <ToastContext.Provider
       value={{
@@ -111,7 +122,18 @@ export const ToastProvider = (props: ToastProviderProps) => {
     >
       {children}
       <View style={containerStyle}>
-        {currentToast && <Toast key={currentToast.id} {...currentToast} />}
+        {transitions.map(({ item, props: transitionStyle, key }) => (
+          <AnimatedView
+            key={key}
+            // @ts-ignore
+            style={{
+              ...wrapperStyle,
+              transform: [{ translateY: transitionStyle.translateY }],
+            }}
+          >
+            <Toast {...item} />
+          </AnimatedView>
+        ))}
       </View>
     </ToastContext.Provider>
   );
