@@ -5,6 +5,7 @@ import { Theme } from '../../theme/ThemeInterface';
 export interface ContainerStylesProps {
   maxWidth?: number;
   containerWidth: number;
+  gutterWidth: number;
 }
 export type GetContainerStyles = (
   progressStylesProps: ContainerStylesProps,
@@ -12,22 +13,20 @@ export type GetContainerStyles = (
 ) => ContainerStyles;
 
 export interface ContainerStyles {
-  outerWrapperStyle: ViewStyle;
-  innerWrapperStyle: ViewStyle;
+  containerStyle: ViewStyle;
 }
 
 export const getContainerStyles: GetContainerStyles = (
-  { maxWidth, containerWidth },
+  { maxWidth, containerWidth, gutterWidth },
   theme,
 ) => {
   return {
-    innerWrapperStyle: {
+    containerStyle: {
+      marginLeft: 'auto',
+      marginRight: 'auto',
       maxWidth: maxWidth || containerWidth,
-      width: '100%',
-    },
-    outerWrapperStyle: {
-      flexDirection: 'row',
-      justifyContent: 'center',
+      paddingLeft: `${gutterWidth / 2}px`,
+      paddingRight: `${gutterWidth / 2}px`,
       width: '100%',
     },
   };

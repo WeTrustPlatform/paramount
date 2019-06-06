@@ -5,7 +5,7 @@ menu: Components
 
 import { Counter as CounterContainer } from 'react-powerplug';
 import { Playground, Props } from 'docz';
-import { Column, Row, LayoutProvider } from '.';
+import { Container, Column, Row, LayoutProvider } from '.';
 import { Box } from '../Box';
 import { Text } from '../Typography';
 
@@ -16,77 +16,85 @@ import { Text } from '../Typography';
 <Playground>
   <LayoutProvider>
     <Box paddingVertical={16}>
-      <Row>
-        <Column medium={1}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column medium={1}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column medium={1}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column medium={1}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column medium={1}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column medium={1}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column medium={1}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column medium={1}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column medium={1}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column medium={1}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column medium={1}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column medium={1}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-      </Row>
+      <Container>
+        <Row>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+      </Container>
     </Box>
     <Box paddingVertical={16}>
-      <Row>
-        <Column medium={8}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column medium={4}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-      </Row>
+      <Container>
+        <Row>
+          <Column medium={8}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={4}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+      </Container>
     </Box>
     <Box paddingVertical={16}>
-      <Row>
-        <Column medium={4}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column medium={4}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column medium={4}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-      </Row>
+      <Container>
+        <Row>
+          <Column medium={4}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={4}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={4}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+      </Container>
     </Box>
     <Box paddingVertical={16}>
-      <Row>
-        <Column medium={6}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column medium={6}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-      </Row>
+      <Container>
+        <Row>
+          <Column medium={6}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={6}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+      </Container>
     </Box>
   </LayoutProvider>
 </Playground>
@@ -96,17 +104,19 @@ import { Text } from '../Typography';
 <Playground>
   <LayoutProvider>
     <Box paddingVertical={16}>
-      <Row>
-        <Column xsmall={9}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column xsmall={4}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column xsmall={6}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-      </Row>
+      <Container>
+        <Row>
+          <Column xsmall={9}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column xsmall={4}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column xsmall={6}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+      </Container>
     </Box>
   </LayoutProvider>
 </Playground>
@@ -116,21 +126,23 @@ import { Text } from '../Typography';
 <Playground>
   <LayoutProvider>
     <Box paddingVertical={16}>
-      <Row>
-        <Column offsetXsmall={2} xsmall={6}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-      </Row>
-      <Row>
-        <Column offsetXsmall={4} xsmall={6}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-      </Row>
-      <Row>
-        <Column offsetXsmall={6} xsmall={6}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-      </Row>
+      <Container>
+        <Row>
+          <Column offsetXsmall={2} xsmall={6}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+        <Row>
+          <Column offsetXsmall={4} xsmall={6}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+        <Row>
+          <Column offsetXsmall={6} xsmall={6}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+      </Container>
     </Box>
   </LayoutProvider>
 </Playground>
@@ -140,31 +152,16 @@ import { Text } from '../Typography';
 <Playground>
   <LayoutProvider>
     <Box paddingVertical={16}>
-      <Row hasGutter={false}>
-        <Column xsmall={6}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column xsmall={6}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-      </Row>
-    </Box>
-  </LayoutProvider>
-</Playground>
-
-### Without margin
-
-<Playground>
-  <LayoutProvider>
-    <Box paddingVertical={16}>
-      <Row hasMargin={false}>
-        <Column xsmall={6}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-        <Column xsmall={6}>
-          <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-        </Column>
-      </Row>
+      <Container>
+        <Row hasGutter={false}>
+          <Column xsmall={6}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column xsmall={6}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+      </Container>
     </Box>
   </LayoutProvider>
 </Playground>

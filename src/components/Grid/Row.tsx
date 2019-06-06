@@ -10,7 +10,6 @@ import { GetRowStyles, getRowStyles, RowStyles } from './Row.styles';
 export interface RowProps {
   children: React.ReactNode;
   hasGutter?: boolean;
-  hasMargin?: boolean;
   getStyles?: ReplaceReturnType<GetRowStyles, DeepPartial<RowStyles>>;
 }
 
@@ -19,12 +18,12 @@ export const GutterWidthContext = React.createContext(
 );
 
 export const Row = (props: RowProps) => {
-  const { children, hasMargin = true, hasGutter = true, getStyles } = props;
+  const { children, hasGutter = true, getStyles } = props;
   const { gutterWidth } = useLayout();
   const theme = useTheme();
 
   const { rowStyle } = mergeStyles(getRowStyles, getStyles)(
-    { gutterWidth, hasMargin, hasGutter },
+    { gutterWidth, hasGutter },
     theme,
   );
 

@@ -25,17 +25,13 @@ export interface ContainerProps {
  */
 export const Container = (props: ContainerProps) => {
   const { children, getStyles, maxWidth } = props;
-  const { maxWidth: containerWidth } = useLayout();
+  const { maxWidth: containerWidth, gutterWidth } = useLayout();
   const theme = useTheme();
 
-  const { outerWrapperStyle, innerWrapperStyle } = mergeStyles(
-    getContainerStyles,
-    getStyles,
-  )({ maxWidth, containerWidth }, theme);
-
-  return (
-    <View style={outerWrapperStyle}>
-      <View style={innerWrapperStyle}>{children}</View>
-    </View>
+  const { containerStyle } = mergeStyles(getContainerStyles, getStyles)(
+    { maxWidth, containerWidth, gutterWidth },
+    theme,
   );
+
+  return <View style={containerStyle}>{children}</View>;
 };
