@@ -9458,14 +9458,7 @@ exports[`Popover_0 1`] = `
     Popover
   </removeme>
   <removeme>
-    <code>
-      Popover
-    </code>
-     composes 
-    <code>
-      Popover
-    </code>
-     and adds only a white box wrapping. Content that can be anything. Popover just applies some styles for the content. For more low-level usage, use 
+    Composes 
     <code>
       Positioner
     </code>
