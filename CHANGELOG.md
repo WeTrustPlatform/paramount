@@ -1,3 +1,15 @@
+# [1.55.0](https://github.com/WeTrustPlatform/paramount/compare/v1.54.1...v1.55.0) (2019-06-07)
+
+
+### Bug Fixes
+
+* **tests:** update snapshot ([9154224](https://github.com/WeTrustPlatform/paramount/commit/9154224))
+
+
+### Features
+
+* **popover:** shave positioner api ([645f22b](https://github.com/WeTrustPlatform/paramount/commit/645f22b))
+
 ## [1.54.1](https://github.com/WeTrustPlatform/paramount/compare/v1.54.0...v1.54.1) (2019-06-07)
 
 
