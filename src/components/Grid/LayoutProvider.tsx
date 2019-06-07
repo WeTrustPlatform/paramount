@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Dimensions } from 'react-native';
 
 import {
+  defaultLayout,
   DESC_ORDER_SCREEN_SIZES,
   GetResponsiveValueParam,
   LayoutContext,
@@ -52,8 +53,8 @@ const deriveResponsiveValue = (
 
 export const LayoutProvider = (props: LayoutProviderProps) => {
   const { children, value } = props;
-  const layoutContext = React.useContext(LayoutContext);
-  const layout = value ? deepmerge(layoutContext, value) : layoutContext;
+
+  const layout = value ? deepmerge(defaultLayout, value) : defaultLayout;
 
   const [currentScreenSize, setCurrentScreenSize] = React.useState(
     getCurrentScreenSize(layout),
