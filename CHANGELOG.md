@@ -1,3 +1,12 @@
+## [1.54.1](https://github.com/WeTrustPlatform/paramount/compare/v1.54.0...v1.54.1) (2019-06-07)
+
+
+### Bug Fixes
+
+* **positioner:** fix case for scroll restoration ([1936f74](https://github.com/WeTrustPlatform/paramount/commit/1936f74))
+* **positioner:** respond to window resizes ([a25cb2d](https://github.com/WeTrustPlatform/paramount/commit/a25cb2d))
+* **tests:** update snapshot ([3a7bb9b](https://github.com/WeTrustPlatform/paramount/commit/3a7bb9b))
+
 # [1.54.0](https://github.com/WeTrustPlatform/paramount/compare/v1.53.1...v1.54.0) (2019-06-06)
 
 
