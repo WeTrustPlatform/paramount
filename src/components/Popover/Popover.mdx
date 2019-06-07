@@ -4,11 +4,12 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
+import { Toggle } from 'react-powerplug';
+import { ScrollView } from 'react-native';
 import { Popover } from '.';
 import { Button } from '../Button';
 import { Box } from '../Box';
 import { Text } from '../Typography';
-import { Toggle } from 'react-powerplug';
 
 export default ({ children }) => {
   document.body.style.height = 'initial';
@@ -18,7 +19,7 @@ export default ({ children }) => {
 
 # Popover
 
-Composes `Positioner`
+This component requires more polish. Composes `Positioner`
 
 ### Usage
 
@@ -28,27 +29,36 @@ Composes `Positioner`
       <Popover
         isVisible={on}
         onClose={toggle}
-        isDynamicContent={false}
-        position="top"
+        position="bottom"
         content={props => (
-          <Box width={200} height={200}>
+          <Box>
             <Text>
-              Content that can be anything. By default it has no styling at all.
-              You can use `Popover` that comes with predefined styles. Popover
-              is used as a base for `Popovers`, `Tooltips`, `DropdownMenus`
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
             </Text>
           </Box>
         )}
         isFullWidth={false}
-        parentHeight={1000}
-        // Use this prop to specify the position of a component u want to wrap with the positioner
-        // targetMeasurements={{}}
+        // Use this prop to specify the position of the popover
+        targetMeasurements={{
+          height: 200,
+          pageX: window.innerWidth - 224,
+          pageY: -200,
+          width: 200,
+          x: 0,
+          y: 0,
+        }}
         getStyles={(props, theme) => ({
           positionerStyle: {},
           modalContainerStyle: {},
         })}
       >
-        <Button onPress={toggle} title="Usage" />
+        <Button onPress={toggle} title="Pop at right corner" />
       </Popover>
     )}
   </Toggle>
@@ -65,13 +75,7 @@ Composes `Positioner`
             isVisible={on}
             onClose={toggle}
             position="top-right"
-            content={() =>
-              <Box  width={200} height={200}>
-                <Text>
-                  Content that can be anything. By default it has no styling at all. You can use `Popover` that comes with predefined styles. Popover is used as a base for `Popovers`, `Tooltips`, `DropdownMenus`
-                </Text>
-              </Box>
-            }
+            content={() => <Box width={200} height={200}/>}
           >
             <Button onPress={toggle} isInline title="Top right" />
           </Popover>
@@ -83,13 +87,7 @@ Composes `Positioner`
             isVisible={on}
             onClose={toggle}
             position="top"
-            content={() =>
-              <Box  width={200} height={200}>
-                <Text>
-                  Content that can be anything. By default it has no styling at all. You can use `Popover` that comes with predefined styles. Popover is used as a base for `Popovers`, `Tooltips`, `DropdownMenus`
-                </Text>
-              </Box>
-            }
+            content={() => <Box width={200} height={200}/>}
           >
             <Button onPress={toggle} isInline title="Top" />
           </Popover>
@@ -101,19 +99,14 @@ Composes `Positioner`
             isVisible={on}
             onClose={toggle}
             position="top-left"
-            content={() =>
-              <Box  width={200} height={200}>
-                <Text>
-                  Content that can be anything. By default it has no styling at all. You can use `Popover` that comes with predefined styles. Popover is used as a base for `Popovers`, `Tooltips`, `DropdownMenus`
-                </Text>
-              </Box>
-            }
+            content={() => <Box width={200} height={200}/>}
           >
             <Button onPress={toggle} isInline title="Top left" />
           </Popover>
         )}
       </Toggle>
     </Box>
+
   </Box>
 
 <Box paddingVertical={64} zIndex={2}>
@@ -124,16 +117,7 @@ Composes `Positioner`
           isVisible={on}
           onClose={toggle}
           position="left"
-          content={() => (
-            <Box width={200} height={200}>
-              <Text>
-                Content that can be anything. By default it has no styling at
-                all. You can use `Popover` that comes with predefined styles.
-                Popover is used as a base for `Popovers`, `Tooltips`,
-                `DropdownMenus`
-              </Text>
-            </Box>
-          )}
+          content={() => <Box width={200} height={200} />}
         >
           <Button onPress={toggle} isInline title="Left" />
         </Popover>
@@ -145,16 +129,7 @@ Composes `Positioner`
           isVisible={on}
           onClose={toggle}
           position="right"
-          content={() => (
-            <Box width={200} height={200}>
-              <Text>
-                Content that can be anything. By default it has no styling at
-                all. You can use `Popover` that comes with predefined styles.
-                Popover is used as a base for `Popovers`, `Tooltips`,
-                `DropdownMenus`
-              </Text>
-            </Box>
-          )}
+          content={() => <Box width={200} height={200} />}
         >
           <Button onPress={toggle} isInline title="Right" />
         </Popover>
@@ -171,13 +146,7 @@ Composes `Positioner`
             isVisible={on}
             onClose={toggle}
             position="bottom-right"
-            content={() =>
-              <Box  width={200} height={200}>
-                <Text>
-                  Content that can be anything. By default it has no styling at all. You can use `Popover` that comes with predefined styles. Popover is used as a base for `Popovers`, `Tooltips`, `DropdownMenus`
-                </Text>
-              </Box>
-            }
+            content={() => <Box width={200} height={200}/>}
           >
             <Button onPress={toggle} isInline title="Bottom right" />
           </Popover>
@@ -189,12 +158,7 @@ Composes `Positioner`
             isVisible={on}
             onClose={toggle}
             position="bottom"
-            parentHeight={2480}
-            content={() =>
-              <Box  width={200} height={200}>
-                <Text>This has parent height set to 2480</Text>
-              </Box>
-            }
+            content={() => <Box width={200} height={200} />}
           >
             <Button onPress={toggle} isInline title="Bottom" />
           </Popover>
@@ -206,254 +170,66 @@ Composes `Positioner`
             isVisible={on}
             onClose={toggle}
             position="bottom-left"
-            content={() =>
-              <Box  width={200} height={200}>
-                <Text>
-                  Content that can be anything. By default it has no styling at all. You can use `Popover` that comes with predefined styles. Popover is used as a base for `Popovers`, `Tooltips`, `DropdownMenus`
-                </Text>
-              </Box>
-            }
+            content={() => <Box width={200} height={200}/>}
           >
             <Button onPress={toggle} isInline title="Bottom left" />
           </Popover>
         )}
       </Toggle>
     </Box>
+
   </Box>
 </Playground>
 
-### Dynamically sized content
-
-Add `isDynamicContent` to props to give time for Popover to calculate its layout of dynamic content prior to displaying it
+### TODO: Popover inside ScrollView
 
 <Playground>
-  <Box paddingBottom={64} zIndex={1}>
-    <Box flexDirection="row" justifyContent="space-between">
-      <Toggle>
-        {({ on, toggle }) => (
-          <Popover
-            isVisible={on}
-            isDynamicContent
-            onClose={toggle}
-            position="top-right"
-            content={() =>
-              <Box >
-                <Text>
-                  Content that can be anything. By default it has no styling at all. You can use `Popover` that comes with predefined styles. Popover is used as a base for `Popovers`, `Tooltips`, `DropdownMenus`
-                </Text>
-              </Box>
-            }
-          >
-            <Button onPress={toggle} isInline title="Top right" />
-          </Popover>
-        )}
-      </Toggle>
-      <Toggle>
-        {({ on, toggle }) => (
-          <Popover
-            isVisible={on}
-            isDynamicContent
-            onClose={toggle}
-            position="top"
-            content={() =>
-              <Box >
-                <Text>
-                  Content that can be anything. By default it has no styling at all. You can use `Popover` that comes with predefined styles. Popover is used as a base for `Popovers`, `Tooltips`, `DropdownMenus`
-                </Text>
-              </Box>
-            }
-          >
-            <Button onPress={toggle} isInline title="Top" />
-          </Popover>
-        )}
-      </Toggle>
-      <Toggle>
-        {({ on, toggle }) => (
-          <Popover
-            isVisible={on}
-            isDynamicContent
-            onClose={toggle}
-            position="top-left"
-            content={() =>
-              <Box >
-                <Text>
-                  Content that can be anything. By default it has no styling at all. You can use `Popover` that comes with predefined styles. Popover is used as a base for `Popovers`, `Tooltips`, `DropdownMenus`
-                </Text>
-              </Box>
-            }
-          >
-            <Button onPress={toggle} isInline title="Top left" />
-          </Popover>
-        )}
-      </Toggle>
-    </Box>
-  </Box>
-
-<Box paddingVertical={64} zIndex={2}>
-  <Box flexDirection="row" justifyContent="space-between">
-    <Toggle>
-      {({ on, toggle }) => (
-        <Popover
-          isVisible={on}
-          isDynamicContent
-          onClose={toggle}
-          position="left"
-          content={() => (
-            <Box>
-              <Text>
-                Content that can be anything. By default it has no styling at
-                all. You can use `Popover` that comes with predefined styles.
-                Popover is used as a base for `Popovers`, `Tooltips`,
-                `DropdownMenus`
-              </Text>
-            </Box>
+  <Box height={400}>
+    <ScrollView>
+      <Text align="center">Scroll down to button</Text>
+      <Box height={400} />
+      <Box>
+        <Toggle>
+          {({ on, toggle }) => (
+            <Popover
+              isVisible={on}
+              onClose={toggle}
+              position="top"
+              content={() => <Box width={200} height={200} />}
+            >
+              <Button onPress={toggle} title="Pop" />
+            </Popover>
           )}
-        >
-          <Button onPress={toggle} isInline title="Left" />
-        </Popover>
-      )}
-    </Toggle>
-    <Toggle>
-      {({ on, toggle }) => (
-        <Popover
-          isVisible={on}
-          isDynamicContent
-          onClose={toggle}
-          position="right"
-          content={() => (
-            <Box>
-              <Text>
-                Content that can be anything. By default it has no styling at
-                all. You can use `Popover` that comes with predefined styles.
-                Popover is used as a base for `Popovers`, `Tooltips`,
-                `DropdownMenus`
-              </Text>
-            </Box>
-          )}
-        >
-          <Button onPress={toggle} isInline title="Right" />
-        </Popover>
-      )}
-    </Toggle>
-  </Box>
-</Box>
-
-  <Box paddingTop={64} zIndex={3}>
-    <Box flexDirection="row" justifyContent="space-between">
-      <Toggle>
-        {({ on, toggle }) => (
-          <Popover
-            isVisible={on}
-            isDynamicContent
-            onClose={toggle}
-            position="bottom-right"
-            content={() =>
-              <Box >
-                <Text>
-                  Content that can be anything. By default it has no styling at all. You can use `Popover` that comes with predefined styles. Popover is used as a base for `Popovers`, `Tooltips`, `DropdownMenus`
-                </Text>
-              </Box>
-            }
-          >
-            <Button onPress={toggle} isInline title="Bottom right" />
-          </Popover>
-        )}
-      </Toggle>
-      <Toggle>
-        {({ on, toggle }) => (
-          <Popover
-            isVisible={on}
-            isDynamicContent
-            onClose={toggle}
-            position="bottom"
-            parentHeight={2480}
-            content={() =>
-              <Box >
-                <Text>This has parent height set to 2480</Text>
-              </Box>
-            }
-          >
-            <Button onPress={toggle} isInline title="Bottom" />
-          </Popover>
-        )}
-      </Toggle>
-      <Toggle>
-        {({ on, toggle }) => (
-          <Popover
-            isVisible={on}
-            isDynamicContent
-            onClose={toggle}
-            position="bottom-left"
-            content={() =>
-              <Box >
-                <Text>
-                  Content that can be anything. By default it has no styling at all. You can use `Popover` that comes with predefined styles. Popover is used as a base for `Popovers`, `Tooltips`, `DropdownMenus`
-                </Text>
-              </Box>
-            }
-          >
-            <Button onPress={toggle} isInline title="Bottom left" />
-          </Popover>
-        )}
-      </Toggle>
-    </Box>
+        </Toggle>
+      </Box>
+      <Box height={400} />
+    </ScrollView>
   </Box>
 </Playground>
+
+### TODO: Fixed Popover
 
 ### Popover with full width
 
 On Mobile sometimes we want the content to stretch full width of the window. There is the prop `isFullWidth` for that
 
 <Playground>
-  <Box flexDirection="row">
-    <Box flex={1}>
-      <Toggle>
-        {({ on, toggle }) => (
-          <Popover
-            isVisible={on}
-            isFullWidth
-            onClose={toggle}
-            position="top-left"
-            content={() => (
-              <Box>
-                <Text>
-                  Content that can be anything. By default it has no styling at
-                  all. You can use `Popover` that comes with predefined styles.
-                  Popover is used as a base for `Popovers`, `Tooltips`,
-                  `DropdownMenus`
-                </Text>
-              </Box>
-            )}
-          >
-            <Button onPress={toggle} title="Bottom" />
-          </Popover>
-        )}
-      </Toggle>
-    </Box>
-    <Box flex={1}>
-      <Toggle>
-        {({ on, toggle }) => (
-          <Popover
-            isVisible={on}
-            isFullWidth
-            onClose={toggle}
-            position="bottom-right"
-            content={() => (
-              <Box>
-                <Text>
-                  Content that can be anything. By default it has no styling at
-                  all. You can use `Popover` that comes with predefined styles.
-                  Popover is used as a base for `Popovers`, `Tooltips`,
-                  `DropdownMenus`
-                </Text>
-              </Box>
-            )}
-          >
-            <Button onPress={toggle} title="Bottom" />
-          </Popover>
-        )}
-      </Toggle>
-    </Box>
+  <Box flex={1}>
+    <Toggle>
+      {({ on, toggle }) => (
+        <Popover
+          isVisible={on}
+          isFullWidth
+          onClose={toggle}
+          position="top-left"
+          content={() => (
+            <Box width={200} height={200} backgroundColor="#67c6bb" />
+          )}
+        >
+          <Button onPress={toggle} title="Pop" />
+        </Popover>
+      )}
+    </Toggle>
   </Box>
 </Playground>
 
