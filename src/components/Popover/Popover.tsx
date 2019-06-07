@@ -12,23 +12,21 @@ import {
 } from './Popover.styles';
 
 export interface PopoverProps extends PositionerProps {
-  getContentStyles?: ReplaceReturnType<
-    GetPopoverStyles,
-    DeepPartial<PopoverStyles>
-  >;
+  getStyles?: ReplaceReturnType<GetPopoverStyles, DeepPartial<PopoverStyles>>;
 }
 
 export const Popover = (props: PopoverProps) => {
-  const { content, getContentStyles } = props;
+  const { content, getStyles, ...restProps } = props;
   const theme = useTheme();
-  const { popoverStyle } = mergeStyles(getPopoverStyles, getContentStyles)(
-    {},
-    theme,
-  );
+  const { popoverStyle, modalContainerStyle, positionerStyle } = mergeStyles(
+    getPopoverStyles,
+    getStyles,
+  )({}, theme);
 
   return (
     <Positioner
-      {...props}
+      {...restProps}
+      getStyles={() => ({ modalContainerStyle, positionerStyle })}
       content={params => <View style={popoverStyle}>{content(params)}</View>}
     />
   );

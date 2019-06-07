@@ -4,6 +4,7 @@ import {
   findNodeHandle,
   LayoutChangeEvent,
   LayoutRectangle,
+  Platform,
   UIManager,
 } from 'react-native';
 
@@ -29,6 +30,12 @@ export const initialMeasurements = {
   y: 0,
 };
 
+const adjustPageY = (pageY: number) => {
+  // On the web, when scroll position is restored (e.g. User is scrolled down and refreshes the page)
+  // We need to adjust pageY accordingly. Required to correct behavior of positioner
+  return Platform.OS === 'web' ? pageY + window.scrollY : pageY;
+};
+
 /**
  * A render prop to measure given node by passing `onLayout` and `ref` handlers. This differs from `ViewMeasure` in that it does not create any node in the tree
  */
@@ -47,7 +54,7 @@ export const useMeasure = (props: UseMeasureProps) => {
             ...prevMeasurements,
             ...layout,
             pageX,
-            pageY,
+            pageY: adjustPageY(pageY),
           };
 
           setMeasurements(newMeasurements);

@@ -2,27 +2,6 @@ import { ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/ThemeInterface';
 
-export interface PositionerVariables {
-  positioner: ViewStyle;
-  modalContainer: ViewStyle;
-}
-
-export const getPositionerVariables = (theme: Theme): PositionerVariables => {
-  return {
-    modalContainer: {
-      alignItems: 'center',
-      display: 'flex',
-      height: '100%',
-      justifyContent: 'center',
-      width: '100%',
-    },
-    positioner: {
-      position: 'absolute',
-      zIndex: 1,
-    },
-  };
-};
-
 export interface PositionerStyles {
   positionerStyle: ViewStyle;
   modalContainerStyle: ViewStyle;
@@ -31,10 +10,17 @@ export interface PositionerStyles {
 export type GetPositionerStyles = (props: {}, theme: Theme) => PositionerStyles;
 
 export const getPositionerStyles: GetPositionerStyles = (props, theme) => {
-  const positionerVariables = getPositionerVariables(theme);
-
   return {
-    modalContainerStyle: positionerVariables.modalContainer,
-    positionerStyle: positionerVariables.positioner,
+    modalContainerStyle: {
+      alignItems: 'center',
+      display: 'flex',
+      height: '100%',
+      justifyContent: 'center',
+      width: '100%',
+    },
+    positionerStyle: {
+      position: 'absolute',
+      zIndex: 1,
+    },
   };
 };
