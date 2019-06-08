@@ -70,12 +70,12 @@ export type GetResponsiveValue = <
     TXlargeValue
   >,
 ) =>
-  | TXsmallValue
-  | TSmallValue
-  | TMediumValue
-  | TLargeValue
   | TXlargeValue
-  | null;
+  | TLargeValue
+  | TMediumValue
+  | TSmallValue
+  | TXsmallValue
+  | undefined;
 
 export interface LayoutInterface {
   breakpoints: Breakpoints;
@@ -103,7 +103,7 @@ export const defaultLayout: LayoutInterface = {
     values.medium ||
     values.large ||
     values.xlarge ||
-    null,
+    undefined,
   gridColumnCount: 12,
   gutterWidth: 30,
   maxWidth: 1440,

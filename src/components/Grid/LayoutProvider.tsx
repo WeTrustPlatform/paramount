@@ -48,7 +48,7 @@ const deriveResponsiveValue = (
     return !!values[screenSize];
   });
 
-  return nearestSize ? values[nearestSize] : null;
+  return nearestSize ? values[nearestSize] : undefined;
 };
 
 export const LayoutProvider = (props: LayoutProviderProps) => {
