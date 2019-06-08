@@ -1,3 +1,10 @@
+## [1.55.2](https://github.com/WeTrustPlatform/paramount/compare/v1.55.1...v1.55.2) (2019-06-08)
+
+
+### Bug Fixes
+
+* **layout:** fix return type of util fn ([395d6e1](https://github.com/WeTrustPlatform/paramount/commit/395d6e1))
+
 ## [1.55.1](https://github.com/WeTrustPlatform/paramount/compare/v1.55.0...v1.55.1) (2019-06-08)
 
 
