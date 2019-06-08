@@ -1,3 +1,10 @@
+## [1.55.1](https://github.com/WeTrustPlatform/paramount/compare/v1.55.0...v1.55.1) (2019-06-08)
+
+
+### Bug Fixes
+
+* **layout:** get corrent responsive value ([24f11d5](https://github.com/WeTrustPlatform/paramount/commit/24f11d5))
+
 # [1.55.0](https://github.com/WeTrustPlatform/paramount/compare/v1.54.1...v1.55.0) (2019-06-07)
 
 
