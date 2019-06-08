@@ -43,7 +43,7 @@ const deriveResponsiveValue = (
   );
 
   const nearestSize = DESC_ORDER_SCREEN_SIZES.find((screenSize, index) => {
-    if (currentScreenSizeIndex >= index) return false;
+    if (currentScreenSizeIndex > index) return false;
 
     return !!values[screenSize];
   });
