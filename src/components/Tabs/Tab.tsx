@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { View } from 'react-native';
 import { DeepPartial, Omit } from 'ts-essentials';
 
-import { Measurements } from '../../hooks';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Button, ButtonProps } from '../Button';
@@ -11,10 +11,9 @@ export interface TabProps
   extends Omit<Omit<ButtonProps, 'onPress'>, 'getStyles'> {
   index: number;
   isActive?: boolean;
-  shouldFit?: boolean;
+  shouldStretch?: boolean;
   getStyles?: ReplaceReturnType<GetTabStyles, DeepPartial<TabStyles>>;
   onPress: (index: number) => void;
-  onActive?: (index: number, measurements: Measurements) => void;
 }
 
 export const Tab = (props: TabProps) => {
@@ -23,24 +22,23 @@ export const Tab = (props: TabProps) => {
     getStyles,
     index,
     onPress,
-    onActive = () => {
-      return;
-    },
-    shouldFit = true,
+    shouldStretch = true,
     ...buttonProps
   } = props;
   const theme = useTheme();
-  const { buttonStyle, textStyle, focusColor } = mergeStyles(
+  const { containerStyle, buttonStyle, textStyle, focusColor } = mergeStyles(
     getTabStyles,
     getStyles,
-  )({ isActive, shouldFit }, theme);
+  )({ isActive, shouldStretch }, theme);
 
   return (
-    <Button
-      color={isActive ? 'primary' : 'default'}
-      getStyles={() => ({ buttonStyle, focusColor, textStyle })}
-      onPress={() => onPress(index)}
-      {...buttonProps}
-    />
+    <View style={containerStyle}>
+      <Button
+        color={isActive ? 'primary' : 'default'}
+        getStyles={() => ({ buttonStyle, focusColor, textStyle })}
+        onPress={() => onPress(index)}
+        {...buttonProps}
+      />
+    </View>
   );
 };

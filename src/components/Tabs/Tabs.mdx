@@ -12,26 +12,41 @@ import { Tabs, Tab } from '.';
 
 # Tabs
 
-Passing `activeTabIndex` and `onPress` will alternate to controlled usage (manually set tab)
-
-You can use a custom `Tab` component as long as it accepts `isActive`, `onPress` props
+You can use a custom component in place of `Tab` component, though keep in mind you need to manage `isActive` and `onPress` by yourself
 
 ### Usage
 
 <Playground>
-  <Tabs
-    defaultActiveTabIndex={1}
-    activeTabIndex={undefined}
-    onPress={undefined}
-    shouldFit
-    getStyles={(props, theme) => ({
-      containerStyle: {},
-    })}
-  >
-    {new Array(4).fill(0).map((v, i) => (
-      <Tab key={i} title={`Tab ${i + 1}`} />
-    ))}
-  </Tabs>
+  <State initial={{ activeTabIndex: 0 }}>
+    {({ state, setState }) => (
+      <Tabs
+        activeTabIndex={state.activeTabIndex}
+        onChange={index => setState({ activeTabIndex: index })}
+        getStyles={(props, theme) => ({
+          containerStyle: {},
+        })}
+      >
+        {new Array(4).fill(0).map((v, i) => {
+          if (i === 0) {
+            return (
+              <Tab
+                key={0}
+                title="Custom"
+                onPress={() => setState({ activeTabIndex: 0 })}
+                getStyles={() => ({
+                  containerStyle: {},
+                  buttonStyle: {},
+                  textStyle: {},
+                  focusColor: {},
+                })}
+              />
+            );
+          }
+          return <Tab key={i} title={`Tab ${i + 1}`} />;
+        })}
+      </Tabs>
+    )}
+  </State>
 </Playground>
 
 ### Props

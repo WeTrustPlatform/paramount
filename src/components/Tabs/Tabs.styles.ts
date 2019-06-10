@@ -10,12 +10,10 @@ export type GetTabsStyles = (props: {}, theme: Theme) => TabsStyles;
 export const getTabsStyles: GetTabsStyles = (props, theme) => {
   return {
     containerStyle: {
-      backgroundColor: theme.colors.background.greyDefault,
       borderRadius: theme.controlBorderRadius.medium,
       flex: 1,
       flexDirection: 'row',
       justifyContent: 'flex-start',
-      padding: 2,
     },
   };
 };
