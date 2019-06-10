@@ -1,3 +1,10 @@
+# [1.56.0](https://github.com/WeTrustPlatform/paramount/compare/v1.55.2...v1.56.0) (2019-06-10)
+
+
+### Features
+
+* **tabs:** reimplement and keep tabs lean ([241da61](https://github.com/WeTrustPlatform/paramount/commit/241da61))
+
 ## [1.55.2](https://github.com/WeTrustPlatform/paramount/compare/v1.55.1...v1.55.2) (2019-06-08)
 
 
