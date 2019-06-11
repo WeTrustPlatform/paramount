@@ -20,6 +20,7 @@ export const PickerButtonWrapper = (props: PickerButtonWrapperProps) => {
   const { containerStyle, rightContainerStyle } = mergeStyles(
     getPickerButtonStyles,
     getStyles,
+    theme.components.getPickerButtonStyles,
   )({ size }, theme);
 
   return (

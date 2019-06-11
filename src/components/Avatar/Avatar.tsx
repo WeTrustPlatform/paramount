@@ -110,6 +110,7 @@ export const Avatar = (props: AvatarProps) => {
   const { containerStyle, textStyle, imageStyle } = mergeStyles(
     getAvatarStyles,
     getStyles,
+    theme.components.getAvatarStyles,
   )(
     {
       color,

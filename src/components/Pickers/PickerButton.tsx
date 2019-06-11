@@ -41,6 +41,7 @@ export const PickerButton = (props: PickerButtonProps) => {
   const { pickerStyle, itemStyle } = mergeStyles(
     getPickerButtonStyles,
     getStyles,
+    theme.components.getPickerButtonStyles,
   )({ size }, theme);
 
   return (

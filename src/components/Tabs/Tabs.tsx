@@ -21,7 +21,11 @@ export const Tabs = (props: TabsProps) => {
   const { children, activeTabIndex, onChange, getStyles } = props;
   const theme = useTheme();
 
-  const { containerStyle } = mergeStyles(getTabsStyles, getStyles)({}, theme);
+  const { containerStyle } = mergeStyles(
+    getTabsStyles,
+    getStyles,
+    theme.components.getTabsStyles,
+  )({}, theme);
 
   const data = React.Children.map(children, (child, index) => {
     if (!child) return null;

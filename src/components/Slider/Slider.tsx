@@ -239,7 +239,10 @@ export const Slider = (props: SliderProps) => {
     selectedTrackStyle,
     thumbStyle,
     unselectedTrackStyle,
-  } = mergeStyles(getSliderStyles, getStyles)({ size }, theme);
+  } = mergeStyles(getSliderStyles, getStyles, theme.components.getSliderStyles)(
+    { size },
+    theme,
+  );
 
   const left = getLeftValue(value) * pixelPerValue;
   const right = getRightValue(value) * pixelPerValue;
@@ -256,12 +259,14 @@ export const Slider = (props: SliderProps) => {
       />
       <View
         accessible
+        // @ts-ignore
         style={{ ...thumbStyle, left: left - size / 2, cursor }}
         {...leftThumbRef.current.panHandlers}
       />
       {isRangeSlider && (
         <View
           accessible
+          // @ts-ignore
           style={{ ...thumbStyle, left: right - size / 2, cursor }}
           {...rightThumbRef.current.panHandlers}
         />

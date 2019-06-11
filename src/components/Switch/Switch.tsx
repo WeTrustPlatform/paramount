@@ -51,7 +51,10 @@ export const Switch = (props: SwitchProps) => {
     backgroundColorOn,
     circleColorOff,
     circleColorOn,
-  } = mergeStyles(getSwitchStyles, getStyles)({}, theme);
+  } = mergeStyles(getSwitchStyles, getStyles, theme.components.getSwitchStyles)(
+    {},
+    theme,
+  );
 
   const { backgroundColor, circleColor, circlePosition } = useSpring({
     config: springDefaultConfig,

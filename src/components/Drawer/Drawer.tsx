@@ -48,6 +48,7 @@ export const Drawer = (props: DrawerProps) => {
   const { modalContainerStyle, containerStyle } = mergeStyles(
     getDrawerStyles,
     getStyles,
+    theme.components.getDrawerStyles,
   )({}, theme);
 
   const animation = useSpring({

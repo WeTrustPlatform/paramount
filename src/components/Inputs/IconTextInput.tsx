@@ -36,10 +36,11 @@ const IconTextInputBase = (props: IconTextInputProps) => {
     leftContainerStyle,
     rightContainerStyle,
     inputStyle,
-  } = mergeStyles(getIconTextInputStyles, getStyles)(
-    { hasLeftIcon: !!leftIcon, hasRightIcon: !!rightIcon },
-    theme,
-  );
+  } = mergeStyles(
+    getIconTextInputStyles,
+    getStyles,
+    theme.components.getTextInputStyles,
+  )({ hasLeftIcon: !!leftIcon, hasRightIcon: !!rightIcon }, theme);
 
   return (
     <View style={containerStyle}>

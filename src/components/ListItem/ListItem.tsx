@@ -53,7 +53,11 @@ export const ListItem = (props: ListItemProps) => {
     textStyle,
     focusBackgroundColor,
     wrapperStyle,
-  } = mergeStyles(getListItemStyles, getStyles)({ size, isDisabled }, theme);
+  } = mergeStyles(
+    getListItemStyles,
+    getStyles,
+    theme.components.getListItemStyles,
+  )({ size, isDisabled }, theme);
 
   return (
     <TouchableHighlight

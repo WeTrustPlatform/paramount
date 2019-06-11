@@ -22,10 +22,11 @@ export const Divider = (props: DividerProps) => {
   const { size, color, position = 'horizontal', getStyles } = props;
   const theme = useTheme();
 
-  const { dividerStyle } = mergeStyles(getDividerStyles, getStyles)(
-    { size, color, position },
-    theme,
-  );
+  const { dividerStyle } = mergeStyles(
+    getDividerStyles,
+    getStyles,
+    theme.components.getDividerStyles,
+  )({ size, color, position }, theme);
 
   return <View style={dividerStyle} />;
 };

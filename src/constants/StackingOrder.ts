@@ -2,7 +2,7 @@
  * Stacking order contains z-index values that are used through.
  * Note that the Stack component might increase the z-index for certain components.
  */
-export default {
+export const StackingOrder = {
   /**
    * Used for focused buttons and controls.
    */

@@ -52,10 +52,11 @@ export const Alert = (props: AlertProps) => {
 
   const theme = useTheme();
 
-  const { containerStyle, bodyStyle } = mergeStyles(getAlertStyles, getStyles)(
-    { intent },
-    theme,
-  );
+  const { containerStyle, bodyStyle } = mergeStyles(
+    getAlertStyles,
+    getStyles,
+    theme.components.getAlertStyles,
+  )({ intent }, theme);
 
   return (
     <View style={containerStyle} testID={testID}>

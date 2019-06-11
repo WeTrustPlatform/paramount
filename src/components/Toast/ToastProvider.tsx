@@ -60,6 +60,7 @@ export const ToastProvider = (props: ToastProviderProps) => {
   const { containerStyle, wrapperStyle } = mergeStyles(
     getToastStyles,
     getStyles,
+    theme.components.getToastStyles,
   )({ intent: 'info' }, theme);
 
   const createToastInstance = (toastSettings: ToastSettings): ToastInstance => {

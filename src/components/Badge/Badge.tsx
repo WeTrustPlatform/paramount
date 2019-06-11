@@ -32,10 +32,11 @@ export const Badge = (props: BadgeProps) => {
 
   const theme = useTheme();
 
-  const { containerStyle, textStyle } = mergeStyles(getBadgeStyles, getStyles)(
-    { size, color, isSolid, shape },
-    theme,
-  );
+  const { containerStyle, textStyle } = mergeStyles(
+    getBadgeStyles,
+    getStyles,
+    theme.components.getBadgeStyles,
+  )({ size, color, isSolid, shape }, theme);
 
   return (
     <View style={containerStyle} testID={testID}>

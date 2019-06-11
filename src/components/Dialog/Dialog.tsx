@@ -53,7 +53,10 @@ export const Dialog = (props: DialogProps) => {
     bodyStyle,
     contentContainerStyle,
     overlayStyle,
-  } = mergeStyles(getDialogStyles, getStyles)({}, theme);
+  } = mergeStyles(getDialogStyles, getStyles, theme.components.getDialogStyles)(
+    {},
+    theme,
+  );
 
   return (
     <Modal

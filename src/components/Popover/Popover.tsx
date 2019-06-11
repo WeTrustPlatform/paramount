@@ -21,6 +21,7 @@ export const Popover = (props: PopoverProps) => {
   const { popoverStyle, modalContainerStyle, positionerStyle } = mergeStyles(
     getPopoverStyles,
     getStyles,
+    theme.components.getPopoverStyles,
   )({}, theme);
 
   return (

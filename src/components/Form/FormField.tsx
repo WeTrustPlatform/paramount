@@ -44,7 +44,11 @@ export const FormField = (props: FormFieldProps) => {
     labelTextStyle,
     labelWrapperStyle,
     wrapperStyle,
-  } = mergeStyles(getFormFieldStyles, getStyles)(
+  } = mergeStyles(
+    getFormFieldStyles,
+    getStyles,
+    theme.components.getFormFieldStyles,
+  )(
     {
       labelPosition,
     },

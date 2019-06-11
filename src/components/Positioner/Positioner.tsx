@@ -221,6 +221,7 @@ export const Positioner = (props: PositionerProps) => {
   const { positionerStyle, modalContainerStyle } = mergeStyles(
     getPositionerStyles,
     getStyles,
+    theme.components.getPositionerStyles,
   )({}, theme);
 
   const screenLayout = Dimensions.get('window');

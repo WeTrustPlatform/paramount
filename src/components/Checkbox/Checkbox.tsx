@@ -51,7 +51,11 @@ export const Checkbox = (props: CheckboxProps) => {
     checkboxStyle,
     checkColor,
     checkboxFocusBackgroundColor,
-  } = mergeStyles(getCheckboxStyles, getStyles)(
+  } = mergeStyles(
+    getCheckboxStyles,
+    getStyles,
+    theme.components.getCheckboxStyles,
+  )(
     {
       isChecked,
       isDisabled,

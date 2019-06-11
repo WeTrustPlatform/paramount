@@ -28,10 +28,11 @@ export const Container = (props: ContainerProps) => {
   const { maxWidth: containerWidth, gutterWidth } = useLayout();
   const theme = useTheme();
 
-  const { containerStyle } = mergeStyles(getContainerStyles, getStyles)(
-    { maxWidth, containerWidth, gutterWidth },
-    theme,
-  );
+  const { containerStyle } = mergeStyles(
+    getContainerStyles,
+    getStyles,
+    theme.components.getContainerStyles,
+  )({ maxWidth, containerWidth, gutterWidth }, theme);
 
   return <View style={containerStyle}>{children}</View>;
 };

@@ -65,7 +65,11 @@ export const Column = (props: ColumnProps) => {
   const gutterWidth = React.useContext(GutterWidthContext);
 
   const { columns, offsetColumns } = splitColumnConfig(config);
-  const { columnStyle } = mergeStyles(getColumnStyles, getStyles)(
+  const { columnStyle } = mergeStyles(
+    getColumnStyles,
+    getStyles,
+    theme.components.getColumnStyles,
+  )(
     { gutterWidth, currentScreenSize, gridColumnCount, columns, offsetColumns },
     theme,
   );

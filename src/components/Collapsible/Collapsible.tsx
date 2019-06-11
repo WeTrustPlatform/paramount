@@ -69,7 +69,11 @@ export const Collapsible = (props: CollapsibleProps) => {
     contentWrapperStyle,
     textStyle,
     iconWrapperStyle,
-  } = mergeStyles(getCollapsibleStyles, getStyles)({}, theme);
+  } = mergeStyles(
+    getCollapsibleStyles,
+    getStyles,
+    theme.components.getCollapsibleStyles,
+  )({}, theme);
 
   const handlePress = React.useCallback(() => {
     if (isControlledUsage) {

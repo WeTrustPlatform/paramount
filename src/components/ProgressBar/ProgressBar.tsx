@@ -31,6 +31,7 @@ export const ProgressBar = (props: ProgressBarProps) => {
   const { containerStyle, progressStyle } = mergeStyles(
     getProgressBarStyles,
     getStyles,
+    theme.components.getProgressBarStyles,
   )({ size }, theme);
 
   const boundPercent = Math.max(Math.min(percent, 100), 0);

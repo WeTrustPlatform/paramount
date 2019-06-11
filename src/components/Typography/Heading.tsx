@@ -35,10 +35,11 @@ export const Heading = (props: HeadingProps) => {
   } = props;
   const theme = useTheme();
 
-  const { headingStyle } = mergeStyles(getHeadingStyles, getStyles)(
-    { size, align, color, weight },
-    theme,
-  );
+  const { headingStyle } = mergeStyles(
+    getHeadingStyles,
+    getStyles,
+    theme.components.getHeadingStyles,
+  )({ size, align, color, weight }, theme);
 
   return (
     <Text

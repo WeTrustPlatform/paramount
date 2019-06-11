@@ -3,6 +3,36 @@ import React from 'react';
 import { TextStyle, ViewStyle } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
+import { GetAlertStyles } from '../components/Alert/Alert.styles';
+import { GetAvatarStyles } from '../components/Avatar/Avatar.styles';
+import { GetBadgeStyles } from '../components/Badge/Badge.styles';
+import { GetButtonStyles } from '../components/Button/Button.styles';
+import { GetCheckboxStyles } from '../components/Checkbox/Checkbox.styles';
+import { GetCollapsibleStyles } from '../components/Collapsible/Collapsible.styles';
+import { GetCounterStyles } from '../components/Counter/Counter.styles';
+import { GetDialogStyles } from '../components/Dialog/Dialog.styles';
+import { GetDividerStyles } from '../components/Divider/Divider.styles';
+import { GetDrawerStyles } from '../components/Drawer/Drawer.styles';
+import { GetFormFieldStyles } from '../components/Form/FormField.styles';
+import { GetColumnStyles } from '../components/Grid/Column.styles';
+import { GetContainerStyles } from '../components/Grid/Container.styles';
+import { GetRowStyles } from '../components/Grid/Row.styles';
+import { GetIconTextInputStyles } from '../components/Inputs/IconTextInput.styles';
+import { GetListItemStyles } from '../components/ListItem/ListItem.styles';
+import { GetOverlayStyles } from '../components/Overlay/Overlay.styles';
+import { GetPickerButtonStyles } from '../components/Pickers/PickerButton.styles';
+import { GetPopoverStyles } from '../components/Popover/Popover.styles';
+import { GetPositionerStyles } from '../components/Positioner/Positioner.styles';
+import { GetProgressBarStyles } from '../components/ProgressBar/ProgressBar.styles';
+import { GetRatingStyles } from '../components/Rating/Rating.styles';
+import { GetSliderStyles } from '../components/Slider/Slider.styles';
+import { GetSwitchStyles } from '../components/Switch/Switch.styles';
+import { GetTabStyles } from '../components/Tabs/Tab.styles';
+import { GetTabsStyles } from '../components/Tabs/Tabs.styles';
+import { GetToastStyles } from '../components/Toast/Toast.styles';
+import { GetHeadingStyles } from '../components/Typography/Heading.styles';
+import { GetParagraphStyles } from '../components/Typography/Paragraph.styles';
+import { GetTextStyles } from '../components/Typography/Text.styles';
 import { defaultTheme } from './defaultTheme';
 
 export interface TextSizes {
@@ -190,6 +220,7 @@ export interface Fills {
 }
 
 export interface Theme {
+  // Colors
   colors: Colors;
   fills: Fills;
 
@@ -208,6 +239,39 @@ export interface Theme {
   controlPaddings: ControlSizes;
   controlHeights: ControlSizes;
   controlBorderRadius: ControlSizes;
+
+  components: {
+    getAlertStyles?: GetAlertStyles;
+    getAvatarStyles?: GetAvatarStyles;
+    getBadgeStyles?: GetBadgeStyles;
+    getButtonStyles?: GetButtonStyles;
+    getCheckboxStyles?: GetCheckboxStyles;
+    getCollapsibleStyles?: GetCollapsibleStyles;
+    getCounterStyles?: GetCounterStyles;
+    getDialogStyles?: GetDialogStyles;
+    getDividerStyles?: GetDividerStyles;
+    getDrawerStyles?: GetDrawerStyles;
+    getFormFieldStyles?: GetFormFieldStyles;
+    getColumnStyles?: GetColumnStyles;
+    getContainerStyles?: GetContainerStyles;
+    getRowStyles?: GetRowStyles;
+    getTextInputStyles?: GetIconTextInputStyles;
+    getListItemStyles?: GetListItemStyles;
+    getOverlayStyles?: GetOverlayStyles;
+    getPickerButtonStyles?: GetPickerButtonStyles;
+    getPopoverStyles?: GetPopoverStyles;
+    getPositionerStyles?: GetPositionerStyles;
+    getProgressBarStyles?: GetProgressBarStyles;
+    getRatingStyles?: GetRatingStyles;
+    getSliderStyles?: GetSliderStyles;
+    getSwitchStyles?: GetSwitchStyles;
+    getTabStyles?: GetTabStyles;
+    getTabsStyles?: GetTabsStyles;
+    getToastStyles?: GetToastStyles;
+    getHeadingStyles?: GetHeadingStyles;
+    getTextStyles?: GetTextStyles;
+    getParagraphStyles?: GetParagraphStyles;
+  };
 }
 
 export const ThemeContext = React.createContext(defaultTheme);

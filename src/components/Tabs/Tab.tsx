@@ -29,6 +29,7 @@ export const Tab = (props: TabProps) => {
   const { containerStyle, buttonStyle, textStyle, focusColor } = mergeStyles(
     getTabStyles,
     getStyles,
+    theme.components.getTabStyles,
   )({ isActive, shouldStretch }, theme);
 
   return (

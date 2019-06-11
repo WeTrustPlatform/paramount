@@ -356,4 +356,6 @@ export const defaultTheme: Theme = {
   controlBorderRadius,
   controlHeights,
   controlPaddings,
+
+  components: {},
 };

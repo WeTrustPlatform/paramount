@@ -133,7 +133,7 @@ export const Button = (props: ButtonProps) => {
     focusColor,
     innerButtonWrapperStyle,
     buttonContentWrapperStyle,
-  } = mergeStyles(getButtonStyles, getStyles)(
+  } = mergeStyles(getButtonStyles, getStyles, theme.components.getButtonStyles)(
     {
       appearance,
       color,

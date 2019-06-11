@@ -45,10 +45,11 @@ export const Paragraph = (props: ParagraphProps) => {
   } = props;
   const theme = useTheme();
 
-  const { paragraphStyle } = mergeStyles(getParagraphStyles, getStyles)(
-    { align, size, color, fontFamily, weight },
-    theme,
-  );
+  const { paragraphStyle } = mergeStyles(
+    getParagraphStyles,
+    getStyles,
+    theme.components.getParagraphStyles,
+  )({ align, size, color, fontFamily, weight }, theme);
 
   return (
     <Text

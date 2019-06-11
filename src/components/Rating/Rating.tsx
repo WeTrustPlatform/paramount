@@ -34,6 +34,7 @@ export const Rating = (props: RatingProps) => {
   const { containerStyle, starColor, starSize, touchableStyle } = mergeStyles(
     getRatingStyles,
     getStyles,
+    theme.components.getRatingStyles,
   )({ size, color }, theme);
 
   return (

@@ -22,10 +22,11 @@ export const Row = (props: RowProps) => {
   const { gutterWidth } = useLayout();
   const theme = useTheme();
 
-  const { rowStyle } = mergeStyles(getRowStyles, getStyles)(
-    { gutterWidth, hasGutter },
-    theme,
-  );
+  const { rowStyle } = mergeStyles(
+    getRowStyles,
+    getStyles,
+    theme.components.getRowStyles,
+  )({ gutterWidth, hasGutter }, theme);
 
   return (
     <View style={rowStyle}>

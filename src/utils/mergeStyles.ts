@@ -1,4 +1,4 @@
-import deepMerge from 'deepmerge';
+import merge from 'deepmerge';
 import { DeepPartial } from 'ts-essentials';
 
 import { Theme } from '../theme';
@@ -18,13 +18,19 @@ export type ReplaceReturnType<T, TNewReturn> = (
 export const mergeStyles = <TStyles = any, TStyleProps = any>(
   getDefaultStyles: GetStyles<TStyles, TStyleProps>,
   getOverridingStyles?: GetStyles<DeepPartial<TStyles>, TStyleProps>,
+  getThemeStyles?: GetStyles<DeepPartial<TStyles>, TStyleProps>,
 ) => (props: TStyleProps, theme: Theme): TStyles => {
   const defaultStyles = getDefaultStyles(props, theme);
 
-  return getOverridingStyles
-    ? deepMerge<TStyles>(defaultStyles, getOverridingStyles(
-        props,
-        theme,
-      ) as Partial<TStyles>)
-    : defaultStyles;
+  const styles: Array<Partial<TStyles>> = [defaultStyles];
+
+  if (getThemeStyles) {
+    styles.push(getThemeStyles(props, theme) as Partial<TStyles>);
+  }
+
+  if (getOverridingStyles) {
+    styles.push(getOverridingStyles(props, theme) as Partial<TStyles>);
+  }
+
+  return merge.all<TStyles>(styles);
 };

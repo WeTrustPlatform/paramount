@@ -42,7 +42,11 @@ export const Text = (props: TextProps) => {
   } = props;
   const theme = useTheme();
 
-  const { textStyle } = mergeStyles(getTextStyles, getStyles)(
+  const { textStyle } = mergeStyles(
+    getTextStyles,
+    getStyles,
+    theme.components.getTextStyles,
+  )(
     {
       align,
       color,
