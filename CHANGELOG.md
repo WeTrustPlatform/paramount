@@ -1,3 +1,11 @@
+## [1.57.2](https://github.com/WeTrustPlatform/paramount/compare/v1.57.1...v1.57.2) (2019-06-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-native-vector-icons to v6.5.0 ([#233](https://github.com/WeTrustPlatform/paramount/issues/233)) ([08e4941](https://github.com/WeTrustPlatform/paramount/commit/08e4941))
+* **deps:** update dependency ts-essentials to v2.0.8 ([#237](https://github.com/WeTrustPlatform/paramount/issues/237)) ([ec7080c](https://github.com/WeTrustPlatform/paramount/commit/ec7080c)), closes [#224](https://github.com/WeTrustPlatform/paramount/issues/224) [#236](https://github.com/WeTrustPlatform/paramount/issues/236)
+
 ## [1.57.1](https://github.com/WeTrustPlatform/paramount/compare/v1.57.0...v1.57.1) (2019-06-11)
 
 
