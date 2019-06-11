@@ -3,12 +3,7 @@ import { Text as RNText, TextProps as RNTextProps } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import {
-  FontFamily,
-  FontWeight,
-  TextColor,
-  TextSize,
-} from '../../theme/ThemeInterface';
+import { FontFamily, FontWeight, TextColor, TextSize } from '../../theme/Theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { GetTextStyles, getTextStyles, TextStyles } from './Text.styles';
 import { TextAlign, TextTransform } from './types';

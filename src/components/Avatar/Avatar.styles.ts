@@ -1,6 +1,6 @@
 import { ImageStyle, TextStyle, ViewStyle } from 'react-native';
 
-import { FillColors, Fills, Theme } from '../../theme/ThemeInterface';
+import { FillColors, Fills, Theme } from '../../theme/Theme';
 
 export const hashCode = (s?: string) => {
   const str = String(s);

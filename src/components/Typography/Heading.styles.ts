@@ -6,7 +6,7 @@ import {
   HeadingSizes,
   TextColor,
   Theme,
-} from '../../theme/ThemeInterface';
+} from '../../theme/Theme';
 import { getFontWeight, getTextColor } from './Text.styles';
 import { TextAlign } from './types';
 

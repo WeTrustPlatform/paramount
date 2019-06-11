@@ -3,7 +3,7 @@ import { Image, ImageSourcePropType, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { FillColors } from '../../theme/ThemeInterface';
+import { FillColors } from '../../theme/Theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Text } from '../Typography';
 import {

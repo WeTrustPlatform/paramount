@@ -1,6 +1,6 @@
 import { Platform, ViewStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
+import { Theme } from '../../theme/Theme';
 
 export interface ToastStyles {
   containerStyle: ViewStyle;

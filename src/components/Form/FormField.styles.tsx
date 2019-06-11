@@ -1,6 +1,6 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
+import { Theme } from '../../theme/Theme';
 import { FormFieldLabelPosition } from './FormField';
 
 export interface FormFieldStylesProps {

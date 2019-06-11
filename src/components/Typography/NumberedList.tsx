@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { TextSize } from '../../theme/ThemeInterface';
+import { TextSize } from '../../theme/Theme';
 import { List } from './List';
 import { ListItemProps } from './ListItem';
 

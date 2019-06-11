@@ -1,4 +1,9 @@
+import deepMerge from 'deepmerge';
+import React from 'react';
 import { TextStyle, ViewStyle } from 'react-native';
+import { DeepPartial } from 'ts-essentials';
+
+import { defaultTheme } from './defaultTheme';
 
 export interface TextSizes {
   small: TextStyle;
@@ -204,3 +209,30 @@ export interface Theme {
   controlHeights: ControlSizes;
   controlBorderRadius: ControlSizes;
 }
+
+export const ThemeContext = React.createContext(defaultTheme);
+
+export interface ThemeProviderProps {
+  children?: React.ReactNode;
+  value?: DeepPartial<Theme>;
+}
+
+export const createTheme = (theme?: DeepPartial<Theme>): Theme => {
+  return theme
+    ? deepMerge<Theme>(defaultTheme, theme as Partial<Theme>)
+    : defaultTheme;
+};
+
+export const ThemeProvider = (props: ThemeProviderProps) => {
+  const { children, value = defaultTheme } = props;
+
+  const theme = createTheme(value);
+
+  return (
+    <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
+  );
+};
+
+export const useTheme = () => {
+  return React.useContext(ThemeContext);
+};

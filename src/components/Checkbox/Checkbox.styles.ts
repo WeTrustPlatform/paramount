@@ -1,6 +1,6 @@
 import { ViewStyle } from 'react-native';
 
-import { ControlSize, Theme } from '../../theme/ThemeInterface';
+import { ControlSize, Theme } from '../../theme/Theme';
 import { CheckboxShape } from './Checkbox';
 
 export interface CheckboxStylesProps {

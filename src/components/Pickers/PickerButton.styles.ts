@@ -1,6 +1,6 @@
 import { ViewStyle } from 'react-native';
 
-import { ControlSize, Theme } from '../../theme/ThemeInterface';
+import { ControlSize, Theme } from '../../theme/Theme';
 
 export interface PickerButtonStyles {
   containerStyle: ViewStyle;

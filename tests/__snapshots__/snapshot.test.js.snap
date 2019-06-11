@@ -2850,7 +2850,6 @@ exports[`BulletedList_0 1`] = `
             <div
               className="css-text-76zvg2"
               dir="auto"
-              index={null}
               style={
                 Object {
                   "WebkitAlignSelf": "flex-start",
@@ -2931,7 +2930,6 @@ exports[`BulletedList_0 1`] = `
             <div
               className="css-text-76zvg2"
               dir="auto"
-              index={null}
               style={
                 Object {
                   "WebkitAlignSelf": "flex-start",
@@ -3012,7 +3010,6 @@ exports[`BulletedList_0 1`] = `
             <div
               className="css-text-76zvg2"
               dir="auto"
-              index={null}
               style={
                 Object {
                   "WebkitAlignSelf": "flex-start",
@@ -3093,7 +3090,6 @@ exports[`BulletedList_0 1`] = `
             <div
               className="css-text-76zvg2"
               dir="auto"
-              index={null}
               style={
                 Object {
                   "WebkitAlignSelf": "flex-start",

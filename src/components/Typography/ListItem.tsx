@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Platform, View } from 'react-native';
 
-import { TextSize } from '../../theme/ThemeInterface';
+import { TextSize } from '../../theme/Theme';
 import { Box } from '../Box';
 import { Text, TextProps } from './Text';
 

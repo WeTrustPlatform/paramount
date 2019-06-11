@@ -7,7 +7,7 @@ import {
   ParagraphSizes,
   TextColor,
   Theme,
-} from '../../theme/ThemeInterface';
+} from '../../theme/Theme';
 import { getFontFamily, getFontWeight, getTextColor } from './Text.styles';
 import { TextAlign } from './types';
 

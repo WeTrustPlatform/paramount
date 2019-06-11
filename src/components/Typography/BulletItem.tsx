@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { TextColor } from '../../theme/ThemeInterface';
+import { TextColor } from '../../theme/Theme';
 import { ListItem, ListItemProps } from './ListItem';
 
 export interface BulletItemProps extends ListItemProps {

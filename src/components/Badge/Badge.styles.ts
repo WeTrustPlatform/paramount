@@ -1,6 +1,6 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { ControlSize, FillColor, Theme } from '../../theme/ThemeInterface';
+import { ControlSize, FillColor, Theme } from '../../theme/Theme';
 import { Shape, shapeMapping } from '../Box';
 
 export interface BadgeStylesProps {

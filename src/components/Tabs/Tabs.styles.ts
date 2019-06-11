@@ -1,6 +1,6 @@
 import { ViewStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
+import { Theme } from '../../theme/Theme';
 
 export interface TabsStyles {
   containerStyle: ViewStyle;

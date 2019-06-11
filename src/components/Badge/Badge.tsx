@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { ControlSize, FillColor } from '../../theme/ThemeInterface';
+import { ControlSize, FillColor } from '../../theme/Theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Shape } from '../Box';
 import { Text } from '../Typography';

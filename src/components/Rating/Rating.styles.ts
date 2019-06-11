@@ -1,6 +1,6 @@
 import { ViewStyle } from 'react-native';
 
-import { ControlSize, TextColor, Theme } from '../../theme/ThemeInterface';
+import { ControlSize, TextColor, Theme } from '../../theme/Theme';
 import { getTextColor } from '../Typography/Text.styles';
 
 export interface RatingStylesProps {

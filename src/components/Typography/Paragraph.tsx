@@ -8,7 +8,7 @@ import {
   FontWeight,
   ParagraphSize,
   TextColor,
-} from '../../theme/ThemeInterface';
+} from '../../theme/Theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
   GetParagraphStyles,

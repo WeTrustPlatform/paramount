@@ -1,6 +1,6 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { ButtonColor, ControlSize, Theme } from '../../theme/ThemeInterface';
+import { ButtonColor, ControlSize, Theme } from '../../theme/Theme';
 import { darken } from './changeColor';
 
 export interface ButtonColorProps {

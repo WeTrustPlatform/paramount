@@ -11,7 +11,7 @@ import {
   TextSize,
   TextSizes,
   Theme,
-} from '../../theme/ThemeInterface';
+} from '../../theme/Theme';
 import { TextAlign, TextTransform } from './types';
 
 export interface TextStylesProps {

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Platform, View } from 'react-native';
 
-import { TextSize } from '../../theme/ThemeInterface';
+import { TextSize } from '../../theme/Theme';
 import { Box } from '../Box';
 import { BulletItemProps } from './BulletItem';
 import { NumberedItemProps } from './NumberedItem';
@@ -25,7 +25,7 @@ export const List = (props: ListProps) => {
       // Prefer more granularly defined icon if present
       // @ts-ignore
       icon: listItem.props.icon || icon,
-      index: listType === 'ol' ? index + 1 : null,
+      index: listType === 'ol' ? index + 1 : undefined,
       size: listItem.props.size || size,
     });
   });

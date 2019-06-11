@@ -1,6 +1,6 @@
 import { TextStyle } from 'react-native';
 
-import { BorderColor, BorderColors, Theme } from '../../theme/ThemeInterface';
+import { BorderColor, BorderColors, Theme } from '../../theme/Theme';
 
 export interface DividerStyles {
   dividerStyle: TextStyle;

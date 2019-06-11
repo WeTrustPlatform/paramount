@@ -3,7 +3,7 @@ import { Platform, Text, TextProps } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { FontWeight, HeadingSize, TextColor } from '../../theme/ThemeInterface';
+import { FontWeight, HeadingSize, TextColor } from '../../theme/Theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
   GetHeadingStyles,
