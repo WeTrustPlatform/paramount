@@ -30,19 +30,6 @@ This component requires more polish. Composes `Positioner`
         isVisible={on}
         onClose={toggle}
         position="bottom"
-        content={props => (
-          <Box>
-            <Text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </Text>
-          </Box>
-        )}
         isFullWidth={false}
         // Use this prop to specify the position of the popover
         targetMeasurements={{
@@ -56,7 +43,21 @@ This component requires more polish. Composes `Positioner`
         getStyles={(props, theme) => ({
           positionerStyle: {},
           modalContainerStyle: {},
+          popoverStyle: {},
         })}
+        content={props => (
+          <Box>
+            <Text>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </Text>
+          </Box>
+        )}
       >
         <Button onPress={toggle} title="Pop at right corner" />
       </Popover>
