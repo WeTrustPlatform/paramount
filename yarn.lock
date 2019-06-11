@@ -13051,10 +13051,10 @@ tryer@^1.0.0:
   resolved "https://registry.yarnpkg.com/tryer/-/tryer-1.0.1.tgz#f2c85406800b9b0f74c9f7465b81eaad241252f8"
   integrity sha512-c3zayb8/kWWpycWYg87P71E1S1ZL6b6IJxfb5fvsUgsf0S2MVGaDhDXXjDMpdCpfWXqptc+4mXwmiy1ypXqRAA==
 
-ts-essentials@2.0.7:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/ts-essentials/-/ts-essentials-2.0.7.tgz#f2bcc9d747289ffa8076727a7067f673f4e6d0f2"
-  integrity sha512-ptWcvcbgD7geud/+OVNPklmhpdsSZa7diUJk3ly/wJH2975h1ozzbGAyxH/kj3wjyZre08QE9lSfbLOZpngjaw==
+ts-essentials@2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/ts-essentials/-/ts-essentials-2.0.8.tgz#52955ef759901276c48e90e05aae7710155694b2"
+  integrity sha512-GCs7d/LHQvvgvWaHs2Wv/tDq4WwSZDlkYw9iE6orXaVFqL65P4oi5BE+7hYP0bByqoVwk8BJevmyzFwuGXAfKQ==
 
 ts-jest@24.0.2:
   version "24.0.2"
