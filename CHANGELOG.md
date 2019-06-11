@@ -1,3 +1,10 @@
+# [1.57.0](https://github.com/WeTrustPlatform/paramount/compare/v1.56.0...v1.57.0) (2019-06-11)
+
+
+### Features
+
+* **theme:** style components from theme ([082bfae](https://github.com/WeTrustPlatform/paramount/commit/082bfae))
+
 # [1.56.0](https://github.com/WeTrustPlatform/paramount/compare/v1.55.2...v1.56.0) (2019-06-10)
 
 
