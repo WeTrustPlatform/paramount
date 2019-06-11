@@ -14,11 +14,6 @@ import {
 } from '../../theme/ThemeInterface';
 import { TextAlign, TextTransform } from './types';
 
-export interface TextVariables {
-  size: TextSizes;
-  fontFamily: FontFamilies;
-}
-
 export interface TextStylesProps {
   isItalic: boolean;
   size: TextSize;

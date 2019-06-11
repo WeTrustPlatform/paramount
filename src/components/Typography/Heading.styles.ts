@@ -10,10 +10,6 @@ import {
 import { getFontWeight, getTextColor } from './Text.styles';
 import { TextAlign } from './types';
 
-export interface HeadingVariables {
-  size: HeadingSizes;
-}
-
 export interface HeadingStyles {
   headingStyle: TextStyle;
 }

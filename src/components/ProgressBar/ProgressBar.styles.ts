@@ -2,11 +2,6 @@ import { ViewStyle } from 'react-native';
 
 import { ControlSize, Theme } from '../../theme/ThemeInterface';
 
-export interface ProgressBarVariables {
-  container: ViewStyle;
-  progress: ViewStyle;
-}
-
 export interface ProgressBarStylesProps {
   size: ControlSize;
 }

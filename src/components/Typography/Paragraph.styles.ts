@@ -1,23 +1,15 @@
 import { TextStyle } from 'react-native';
 
 import {
-  FontFamilies,
   FontFamily,
   FontWeight,
   ParagraphSize,
   ParagraphSizes,
   TextColor,
-  TextColors,
   Theme,
 } from '../../theme/ThemeInterface';
 import { getFontFamily, getFontWeight, getTextColor } from './Text.styles';
 import { TextAlign } from './types';
-
-export interface ParagraphVariables {
-  color: TextColors;
-  size: ParagraphSizes;
-  fontFamily: FontFamilies;
-}
 
 export interface ParagraphStylesProps {
   align: TextAlign;

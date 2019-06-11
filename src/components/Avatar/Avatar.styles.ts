@@ -2,35 +2,6 @@ import { ImageStyle, TextStyle, ViewStyle } from 'react-native';
 
 import { FillColors, Fills, Theme } from '../../theme/ThemeInterface';
 
-export interface AvatarVariables {
-  fills: Fills;
-  box: ViewStyle;
-  text: TextStyle;
-  image: ImageStyle;
-}
-
-export const getAvatarVariables = (theme: Theme): AvatarVariables => {
-  return {
-    box: {
-      alignItems: 'center',
-      borderRadius: 9999,
-      display: 'flex',
-      justifyContent: 'center',
-      overflow: 'hidden',
-      position: 'relative',
-    },
-
-    image: {
-      height: '100%',
-      width: '100%',
-    },
-
-    text: {},
-
-    fills: theme.fills,
-  };
-};
-
 export const hashCode = (s?: string) => {
   const str = String(s);
   let hash = 0;
@@ -59,7 +30,7 @@ export interface AvatarStylesProps {
 }
 
 export interface AvatarStyles {
-  boxStyle: ViewStyle;
+  containerStyle: ViewStyle;
   textStyle: TextStyle;
   imageStyle: ImageStyle;
 }
@@ -106,12 +77,11 @@ export const getAvatarStyles: GetAvatarStyles = (
   { name, color, hashValue, isSolid, size = 24, sizeLimitOneCharacter = 20 },
   theme,
 ) => {
-  const avatarVariables = getAvatarVariables(theme);
   let colorProps;
-  const fills = avatarVariables.fills;
+  const fills = theme.fills;
   if (color === 'automatic') {
     const newHashValue = hashCode(hashValue || name);
-    colorProps = getAvatarProps(avatarVariables.fills, {
+    colorProps = getAvatarProps(theme.fills, {
       color,
       hashValue: newHashValue,
       isSolid,
@@ -126,20 +96,27 @@ export const getAvatarStyles: GetAvatarStyles = (
   );
 
   return {
-    boxStyle: {
-      ...avatarVariables.box,
+    containerStyle: {
+      alignItems: 'center',
       backgroundColor: colorProps.backgroundColor,
+      borderRadius: 9999,
+      display: 'flex',
       height: size,
+      justifyContent: 'center',
+      overflow: 'hidden',
+      position: 'relative',
       width: size,
     },
 
     textStyle: {
-      ...avatarVariables.text,
       color: colorProps.color,
       fontSize: initialsFontSize,
       lineHeight: initialsFontSize,
     },
 
-    imageStyle: avatarVariables.image,
+    imageStyle: {
+      height: '100%',
+      width: '100%',
+    },
   };
 };

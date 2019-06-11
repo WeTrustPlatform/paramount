@@ -107,7 +107,7 @@ export const Avatar = (props: AvatarProps) => {
     initials = initials.substring(0, 1);
   }
 
-  const { boxStyle, textStyle, imageStyle } = mergeStyles(
+  const { containerStyle, textStyle, imageStyle } = mergeStyles(
     getAvatarStyles,
     getStyles,
   )(
@@ -123,7 +123,7 @@ export const Avatar = (props: AvatarProps) => {
   );
 
   return (
-    <View style={boxStyle} testID={testID}>
+    <View style={containerStyle} testID={testID}>
       {(imageUnavailable || forceShowInitials) && (
         <Text
           getStyles={() => ({

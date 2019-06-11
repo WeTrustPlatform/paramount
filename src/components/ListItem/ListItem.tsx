@@ -7,19 +7,18 @@ import {
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { useTheme } from '../../theme';
+import { ControlSize, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { AvatarProps } from '../Avatar';
 import { Text } from '../Typography';
 import {
   GetListItemStyles,
   getListItemStyles,
-  ListItemSize,
   ListItemStyles,
 } from './ListItem.styles';
 
 export interface ListItemProps extends AccessibilityProps {
-  size?: ListItemSize;
+  size?: ControlSize;
   isDisabled?: boolean;
   label: string;
   description?: string;

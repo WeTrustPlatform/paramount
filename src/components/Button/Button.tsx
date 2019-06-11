@@ -8,13 +8,12 @@ import {
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { ButtonColor, useTheme } from '../../theme';
+import { ButtonColor, ControlSize, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { LoadingDots } from '../Loading';
 import { Text } from '../Typography';
 import {
   ButtonAppearance,
-  ButtonSize,
   ButtonStyles,
   GetButtonStyles,
   getButtonStyles,
@@ -45,7 +44,7 @@ export interface ButtonProps extends AccessibilityProps {
    * The size of the button.
    * @default "medium"
    */
-  size?: ButtonSize;
+  size?: ControlSize;
 
   /**
    * When true, show a loading spinner before the title. This also disables the button.
@@ -177,11 +176,17 @@ export interface ButtonContentProps extends ButtonProps {
 }
 
 const ButtonContent = (props: ButtonContentProps) => {
-  const { isLoading, iconLoading, icon, title, textStyle } = props;
+  const { isLoading, iconLoading, icon, title, textStyle, size } = props;
 
   if (isLoading) return iconLoading || <LoadingDots color={textStyle.color} />;
   if (icon) return icon;
-  if (title) return <Text getStyles={() => ({ textStyle })}>{title}</Text>;
+  if (title) {
+    return (
+      <Text size={size} getStyles={() => ({ textStyle })}>
+        {title}
+      </Text>
+    );
+  }
 
   return null;
 };
