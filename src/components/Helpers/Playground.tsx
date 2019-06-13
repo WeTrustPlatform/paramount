@@ -9,5 +9,5 @@ export interface PlaygroundProps {
 export const Playground = (props: PlaygroundProps) => {
   const { children } = props;
 
-  return <Box>{children}</Box>;
+  return <Box paddingVertical={32}>{children}</Box>;
 };

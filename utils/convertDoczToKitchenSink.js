@@ -1,7 +1,7 @@
 const prettier = require('prettier');
 const visit = require('unist-util-visit');
 const toString = require('mdast-util-to-string');
-const { read, write } = require('to-vfile');
+const { read } = require('to-vfile');
 const remark = require('remark');
 const remove = require('unist-util-remove');
 
@@ -10,23 +10,21 @@ const fs = require('fs');
 const glob = require('glob');
 const path = require('path');
 
+// TODO: Refactor this file
+
 const getMdxFiles = async () => {
-  return glob.sync('src/**/*.mdx').map(filename => path.resolve(filename));
+  return glob
+    .sync('src/**/*.mdx')
+    .map(filename => path.resolve(filename))
+    .filter(f => !f.includes('KitchenSink'));
 };
 
 function transformHeadings() {
-  const depthMap = {
-    1: 'xxlarge',
-    3: 'large',
-  };
-
   function transformer(tree) {
     const toJsx = node => {
-      let { depth } = node;
-
       let text = toString(node);
 
-      const html = `<Heading size="${depthMap[depth]}">${text}</Heading>`;
+      const html = `<Box paddingTop={96}><Heading size="xxxlarge" weight="bold">${text}</Heading></Box>`;
 
       node.type = 'jsx';
       node.children = undefined;
@@ -58,12 +56,12 @@ function collectImports(imports) {
   return function() {
     function transformer(tree) {
       const addToImports = node => {
-        const removedDocz = node.value.replace(
+        const importWithoutDocz = node.value.replace(
           `import { Playground, Props } from 'docz';`,
           '',
         );
 
-        imports.push(removedDocz);
+        imports.push(importWithoutDocz);
       };
 
       visit(tree, 'import', addToImports);
@@ -75,31 +73,60 @@ function collectImports(imports) {
 
 const wrapContent = content => {
   return `export const KitchenSink = () => {
-  <View>
-    ${content}
-  </View>
+  return (
+    <Box>
+      ${content}
+    </Box>
+  )
 }`;
 };
 
-const combine = (content, imports) => {
-  const data = imports.join('\n') + '\n\n' + wrapContent(content);
+const dedupImports = imports => {
+  const BLACKLIST_IMPORT = ['Toast'];
+  const regex = /{ (.*?) }/;
+  const components = [];
 
-  return prettier.format(data, { parser: 'typescript' });
+  imports.map(i => {
+    const result = regex.exec(i);
+
+    if (result) {
+      components.push(...result[1].split(', '));
+    }
+  });
+
+  const dedupedComponents = Array.from(new Set(components));
+
+  return dedupedComponents.filter(c => !BLACKLIST_IMPORT.includes(c));
+};
+
+const combine = (content, imports) => {
+  const defaultImports = [`// tslint:disable`, `import React from 'react';`];
+
+  const data =
+    defaultImports.join('\n') +
+    `import { Playground, ${dedupImports(imports).join(', ')} } from '..';` +
+    '\n\n' +
+    wrapContent(content);
+
+  return prettier.format(data, {
+    parser: 'typescript',
+    singleQuote: true,
+    trailingComma: 'all',
+  });
 };
 
 const convertDoczToKitchenSink = async () => {
-  const path = './example.tsx';
+  const path = './src/components/KitchenSink/KitchenSink.tsx';
   const mdxFilePaths = await getMdxFiles();
 
   let content = '';
   let imports = [];
-  let relativeImports = [];
 
   for (const mdxFilePath of mdxFilePaths) {
     const file = await read(mdxFilePath);
 
     const result = await remark()
-      .use(collectImports(imports, relativeImports))
+      .use(collectImports(imports))
       .use(mdx)
       .use(removeUnused)
       .use(transformHeadings)
