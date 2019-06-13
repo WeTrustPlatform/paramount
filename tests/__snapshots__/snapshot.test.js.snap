@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Alert_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Alert
+</h1>
 `;
 
 exports[`Alert_1 1`] = `
@@ -193,12 +193,6 @@ exports[`Alert_1 1`] = `
 `;
 
 exports[`Alert_2 1`] = `
-<h3>
-  Variants
-</h3>
-`;
-
-exports[`Alert_3 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -718,18 +712,12 @@ exports[`Alert_3 1`] = `
 </div>
 `;
 
-exports[`Alert_4 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`Alert_5 1`] = `<div />`;
+exports[`Alert_3 1`] = `<div />`;
 
 exports[`Avatar_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Avatar
+</h1>
 `;
 
 exports[`Avatar_1 1`] = `
@@ -807,12 +795,6 @@ exports[`Avatar_1 1`] = `
 `;
 
 exports[`Avatar_2 1`] = `
-<h3>
-  Automatic name usage
-</h3>
-`;
-
-exports[`Avatar_3 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -859,18 +841,12 @@ exports[`Avatar_3 1`] = `
 </div>
 `;
 
-exports[`Avatar_4 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`Avatar_5 1`] = `<div />`;
+exports[`Avatar_3 1`] = `<div />`;
 
 exports[`Badge_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Badge
+</h1>
 `;
 
 exports[`Badge_1 1`] = `
@@ -932,9 +908,900 @@ exports[`Badge_1 1`] = `
 `;
 
 exports[`Badge_2 1`] = `
-<h3>
-  Default
-</h3>
+<div>
+  <div
+    className="css-view-1dbjc4n"
+  >
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxOrient": "horizontal",
+          "WebkitFlexDirection": "row",
+          "flexDirection": "row",
+          "msFlexDirection": "row",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitAlignSelf": "flex-start",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "center",
+            "WebkitFlexDirection": "row",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "alignSelf": "flex-start",
+            "backgroundColor": "rgba(238,238,238,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "48px",
+            "justifyContent": "center",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexItemAlign": "start",
+            "msFlexPack": "center",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(126,126,126,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontWeight": "bold",
+              "textAlign": "left",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          neutral
+        </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitAlignSelf": "flex-start",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "center",
+            "WebkitFlexDirection": "row",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "alignSelf": "flex-start",
+            "backgroundColor": "rgba(204,204,204,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "48px",
+            "justifyContent": "center",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexItemAlign": "start",
+            "msFlexPack": "center",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(255,255,255,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontWeight": "bold",
+              "textAlign": "left",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          neutral
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxOrient": "horizontal",
+          "WebkitFlexDirection": "row",
+          "flexDirection": "row",
+          "msFlexDirection": "row",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitAlignSelf": "flex-start",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "center",
+            "WebkitFlexDirection": "row",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "alignSelf": "flex-start",
+            "backgroundColor": "rgba(206,236,255,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "48px",
+            "justifyContent": "center",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexItemAlign": "start",
+            "msFlexPack": "center",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(51,73,95,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontWeight": "bold",
+              "textAlign": "left",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          blue
+        </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitAlignSelf": "flex-start",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "center",
+            "WebkitFlexDirection": "row",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "alignSelf": "flex-start",
+            "backgroundColor": "rgba(28,165,247,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "48px",
+            "justifyContent": "center",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexItemAlign": "start",
+            "msFlexPack": "center",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(255,255,255,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontWeight": "bold",
+              "textAlign": "left",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          blue
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxOrient": "horizontal",
+          "WebkitFlexDirection": "row",
+          "flexDirection": "row",
+          "msFlexDirection": "row",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitAlignSelf": "flex-start",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "center",
+            "WebkitFlexDirection": "row",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "alignSelf": "flex-start",
+            "backgroundColor": "rgba(249,170,159,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "48px",
+            "justifyContent": "center",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexItemAlign": "start",
+            "msFlexPack": "center",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(183,64,51,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontWeight": "bold",
+              "textAlign": "left",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          red
+        </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitAlignSelf": "flex-start",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "center",
+            "WebkitFlexDirection": "row",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "alignSelf": "flex-start",
+            "backgroundColor": "rgba(210,101,87,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "48px",
+            "justifyContent": "center",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexItemAlign": "start",
+            "msFlexPack": "center",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(255,255,255,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontWeight": "bold",
+              "textAlign": "left",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          red
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxOrient": "horizontal",
+          "WebkitFlexDirection": "row",
+          "flexDirection": "row",
+          "msFlexDirection": "row",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitAlignSelf": "flex-start",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "center",
+            "WebkitFlexDirection": "row",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "alignSelf": "flex-start",
+            "backgroundColor": "rgba(242,197,138,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "48px",
+            "justifyContent": "center",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexItemAlign": "start",
+            "msFlexPack": "center",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(178,101,0,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontWeight": "bold",
+              "textAlign": "left",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          orange
+        </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitAlignSelf": "flex-start",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "center",
+            "WebkitFlexDirection": "row",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "alignSelf": "flex-start",
+            "backgroundColor": "rgba(243,176,88,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "48px",
+            "justifyContent": "center",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexItemAlign": "start",
+            "msFlexPack": "center",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(255,255,255,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontWeight": "bold",
+              "textAlign": "left",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          orange
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxOrient": "horizontal",
+          "WebkitFlexDirection": "row",
+          "flexDirection": "row",
+          "msFlexDirection": "row",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitAlignSelf": "flex-start",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "center",
+            "WebkitFlexDirection": "row",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "alignSelf": "flex-start",
+            "backgroundColor": "rgba(251,230,162,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "48px",
+            "justifyContent": "center",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexItemAlign": "start",
+            "msFlexPack": "center",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(126,101,20,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontWeight": "bold",
+              "textAlign": "left",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          yellow
+        </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitAlignSelf": "flex-start",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "center",
+            "WebkitFlexDirection": "row",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "alignSelf": "flex-start",
+            "backgroundColor": "rgba(247,209,84,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "48px",
+            "justifyContent": "center",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexItemAlign": "start",
+            "msFlexPack": "center",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(126,101,20,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontWeight": "bold",
+              "textAlign": "left",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          yellow
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxOrient": "horizontal",
+          "WebkitFlexDirection": "row",
+          "flexDirection": "row",
+          "msFlexDirection": "row",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitAlignSelf": "flex-start",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "center",
+            "WebkitFlexDirection": "row",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "alignSelf": "flex-start",
+            "backgroundColor": "rgba(194,237,213,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "48px",
+            "justifyContent": "center",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexItemAlign": "start",
+            "msFlexPack": "center",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(22,160,84,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontWeight": "bold",
+              "textAlign": "left",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          green
+        </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitAlignSelf": "flex-start",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "center",
+            "WebkitFlexDirection": "row",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "alignSelf": "flex-start",
+            "backgroundColor": "rgba(84,191,132,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "48px",
+            "justifyContent": "center",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexItemAlign": "start",
+            "msFlexPack": "center",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(255,255,255,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontWeight": "bold",
+              "textAlign": "left",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          green
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxOrient": "horizontal",
+          "WebkitFlexDirection": "row",
+          "flexDirection": "row",
+          "msFlexDirection": "row",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitAlignSelf": "flex-start",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "center",
+            "WebkitFlexDirection": "row",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "alignSelf": "flex-start",
+            "backgroundColor": "rgba(192,249,242,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "48px",
+            "justifyContent": "center",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexItemAlign": "start",
+            "msFlexPack": "center",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(27,135,122,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontWeight": "bold",
+              "textAlign": "left",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          teal
+        </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitAlignSelf": "flex-start",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "center",
+            "WebkitFlexDirection": "row",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "alignSelf": "flex-start",
+            "backgroundColor": "rgba(103,198,187,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "48px",
+            "justifyContent": "center",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexItemAlign": "start",
+            "msFlexPack": "center",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(255,255,255,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontWeight": "bold",
+              "textAlign": "left",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          teal
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxOrient": "horizontal",
+          "WebkitFlexDirection": "row",
+          "flexDirection": "row",
+          "msFlexDirection": "row",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitAlignSelf": "flex-start",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "center",
+            "WebkitFlexDirection": "row",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "alignSelf": "flex-start",
+            "backgroundColor": "rgba(234,231,248,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "48px",
+            "justifyContent": "center",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexItemAlign": "start",
+            "msFlexPack": "center",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(55,36,143,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontWeight": "bold",
+              "textAlign": "left",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          purple
+        </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitAlignSelf": "flex-start",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "center",
+            "WebkitFlexDirection": "row",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "alignSelf": "flex-start",
+            "backgroundColor": "rgba(115,93,208,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "display": "flex",
+            "flexDirection": "row",
+            "height": "48px",
+            "justifyContent": "center",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexItemAlign": "start",
+            "msFlexPack": "center",
+            "paddingLeft": "16px",
+            "paddingRight": "16px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(255,255,255,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontWeight": "bold",
+              "textAlign": "left",
+              "textTransform": "uppercase",
+            }
+          }
+        >
+          purple
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Badge_3 1`] = `
@@ -969,909 +1836,6 @@ exports[`Badge_3 1`] = `
             "alignItems": "center",
             "alignSelf": "flex-start",
             "backgroundColor": "rgba(238,238,238,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "display": "flex",
-            "flexDirection": "row",
-            "height": "48px",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexItemAlign": "start",
-            "msFlexPack": "center",
-            "paddingLeft": "16px",
-            "paddingRight": "16px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(126,126,126,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "bold",
-              "textAlign": "left",
-              "textTransform": "uppercase",
-            }
-          }
-        >
-          neutral
-        </div>
-      </div>
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitAlignSelf": "flex-start",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "alignSelf": "flex-start",
-            "backgroundColor": "rgba(204,204,204,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "display": "flex",
-            "flexDirection": "row",
-            "height": "48px",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexItemAlign": "start",
-            "msFlexPack": "center",
-            "paddingLeft": "16px",
-            "paddingRight": "16px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(255,255,255,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "bold",
-              "textAlign": "left",
-              "textTransform": "uppercase",
-            }
-          }
-        >
-          neutral
-        </div>
-      </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "WebkitBoxDirection": "normal",
-          "WebkitBoxOrient": "horizontal",
-          "WebkitFlexDirection": "row",
-          "flexDirection": "row",
-          "msFlexDirection": "row",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitAlignSelf": "flex-start",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "alignSelf": "flex-start",
-            "backgroundColor": "rgba(206,236,255,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "display": "flex",
-            "flexDirection": "row",
-            "height": "48px",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexItemAlign": "start",
-            "msFlexPack": "center",
-            "paddingLeft": "16px",
-            "paddingRight": "16px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(51,73,95,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "bold",
-              "textAlign": "left",
-              "textTransform": "uppercase",
-            }
-          }
-        >
-          blue
-        </div>
-      </div>
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitAlignSelf": "flex-start",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "alignSelf": "flex-start",
-            "backgroundColor": "rgba(28,165,247,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "display": "flex",
-            "flexDirection": "row",
-            "height": "48px",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexItemAlign": "start",
-            "msFlexPack": "center",
-            "paddingLeft": "16px",
-            "paddingRight": "16px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(255,255,255,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "bold",
-              "textAlign": "left",
-              "textTransform": "uppercase",
-            }
-          }
-        >
-          blue
-        </div>
-      </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "WebkitBoxDirection": "normal",
-          "WebkitBoxOrient": "horizontal",
-          "WebkitFlexDirection": "row",
-          "flexDirection": "row",
-          "msFlexDirection": "row",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitAlignSelf": "flex-start",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "alignSelf": "flex-start",
-            "backgroundColor": "rgba(249,170,159,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "display": "flex",
-            "flexDirection": "row",
-            "height": "48px",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexItemAlign": "start",
-            "msFlexPack": "center",
-            "paddingLeft": "16px",
-            "paddingRight": "16px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(183,64,51,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "bold",
-              "textAlign": "left",
-              "textTransform": "uppercase",
-            }
-          }
-        >
-          red
-        </div>
-      </div>
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitAlignSelf": "flex-start",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "alignSelf": "flex-start",
-            "backgroundColor": "rgba(210,101,87,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "display": "flex",
-            "flexDirection": "row",
-            "height": "48px",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexItemAlign": "start",
-            "msFlexPack": "center",
-            "paddingLeft": "16px",
-            "paddingRight": "16px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(255,255,255,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "bold",
-              "textAlign": "left",
-              "textTransform": "uppercase",
-            }
-          }
-        >
-          red
-        </div>
-      </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "WebkitBoxDirection": "normal",
-          "WebkitBoxOrient": "horizontal",
-          "WebkitFlexDirection": "row",
-          "flexDirection": "row",
-          "msFlexDirection": "row",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitAlignSelf": "flex-start",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "alignSelf": "flex-start",
-            "backgroundColor": "rgba(242,197,138,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "display": "flex",
-            "flexDirection": "row",
-            "height": "48px",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexItemAlign": "start",
-            "msFlexPack": "center",
-            "paddingLeft": "16px",
-            "paddingRight": "16px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(178,101,0,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "bold",
-              "textAlign": "left",
-              "textTransform": "uppercase",
-            }
-          }
-        >
-          orange
-        </div>
-      </div>
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitAlignSelf": "flex-start",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "alignSelf": "flex-start",
-            "backgroundColor": "rgba(243,176,88,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "display": "flex",
-            "flexDirection": "row",
-            "height": "48px",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexItemAlign": "start",
-            "msFlexPack": "center",
-            "paddingLeft": "16px",
-            "paddingRight": "16px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(255,255,255,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "bold",
-              "textAlign": "left",
-              "textTransform": "uppercase",
-            }
-          }
-        >
-          orange
-        </div>
-      </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "WebkitBoxDirection": "normal",
-          "WebkitBoxOrient": "horizontal",
-          "WebkitFlexDirection": "row",
-          "flexDirection": "row",
-          "msFlexDirection": "row",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitAlignSelf": "flex-start",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "alignSelf": "flex-start",
-            "backgroundColor": "rgba(251,230,162,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "display": "flex",
-            "flexDirection": "row",
-            "height": "48px",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexItemAlign": "start",
-            "msFlexPack": "center",
-            "paddingLeft": "16px",
-            "paddingRight": "16px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(126,101,20,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "bold",
-              "textAlign": "left",
-              "textTransform": "uppercase",
-            }
-          }
-        >
-          yellow
-        </div>
-      </div>
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitAlignSelf": "flex-start",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "alignSelf": "flex-start",
-            "backgroundColor": "rgba(247,209,84,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "display": "flex",
-            "flexDirection": "row",
-            "height": "48px",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexItemAlign": "start",
-            "msFlexPack": "center",
-            "paddingLeft": "16px",
-            "paddingRight": "16px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(126,101,20,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "bold",
-              "textAlign": "left",
-              "textTransform": "uppercase",
-            }
-          }
-        >
-          yellow
-        </div>
-      </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "WebkitBoxDirection": "normal",
-          "WebkitBoxOrient": "horizontal",
-          "WebkitFlexDirection": "row",
-          "flexDirection": "row",
-          "msFlexDirection": "row",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitAlignSelf": "flex-start",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "alignSelf": "flex-start",
-            "backgroundColor": "rgba(194,237,213,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "display": "flex",
-            "flexDirection": "row",
-            "height": "48px",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexItemAlign": "start",
-            "msFlexPack": "center",
-            "paddingLeft": "16px",
-            "paddingRight": "16px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(22,160,84,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "bold",
-              "textAlign": "left",
-              "textTransform": "uppercase",
-            }
-          }
-        >
-          green
-        </div>
-      </div>
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitAlignSelf": "flex-start",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "alignSelf": "flex-start",
-            "backgroundColor": "rgba(84,191,132,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "display": "flex",
-            "flexDirection": "row",
-            "height": "48px",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexItemAlign": "start",
-            "msFlexPack": "center",
-            "paddingLeft": "16px",
-            "paddingRight": "16px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(255,255,255,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "bold",
-              "textAlign": "left",
-              "textTransform": "uppercase",
-            }
-          }
-        >
-          green
-        </div>
-      </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "WebkitBoxDirection": "normal",
-          "WebkitBoxOrient": "horizontal",
-          "WebkitFlexDirection": "row",
-          "flexDirection": "row",
-          "msFlexDirection": "row",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitAlignSelf": "flex-start",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "alignSelf": "flex-start",
-            "backgroundColor": "rgba(192,249,242,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "display": "flex",
-            "flexDirection": "row",
-            "height": "48px",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexItemAlign": "start",
-            "msFlexPack": "center",
-            "paddingLeft": "16px",
-            "paddingRight": "16px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(27,135,122,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "bold",
-              "textAlign": "left",
-              "textTransform": "uppercase",
-            }
-          }
-        >
-          teal
-        </div>
-      </div>
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitAlignSelf": "flex-start",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "alignSelf": "flex-start",
-            "backgroundColor": "rgba(103,198,187,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "display": "flex",
-            "flexDirection": "row",
-            "height": "48px",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexItemAlign": "start",
-            "msFlexPack": "center",
-            "paddingLeft": "16px",
-            "paddingRight": "16px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(255,255,255,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "bold",
-              "textAlign": "left",
-              "textTransform": "uppercase",
-            }
-          }
-        >
-          teal
-        </div>
-      </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "WebkitBoxDirection": "normal",
-          "WebkitBoxOrient": "horizontal",
-          "WebkitFlexDirection": "row",
-          "flexDirection": "row",
-          "msFlexDirection": "row",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitAlignSelf": "flex-start",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "alignSelf": "flex-start",
-            "backgroundColor": "rgba(234,231,248,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "display": "flex",
-            "flexDirection": "row",
-            "height": "48px",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexItemAlign": "start",
-            "msFlexPack": "center",
-            "paddingLeft": "16px",
-            "paddingRight": "16px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(55,36,143,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "bold",
-              "textAlign": "left",
-              "textTransform": "uppercase",
-            }
-          }
-        >
-          purple
-        </div>
-      </div>
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitAlignSelf": "flex-start",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "alignSelf": "flex-start",
-            "backgroundColor": "rgba(115,93,208,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "display": "flex",
-            "flexDirection": "row",
-            "height": "48px",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexItemAlign": "start",
-            "msFlexPack": "center",
-            "paddingLeft": "16px",
-            "paddingRight": "16px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(255,255,255,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "bold",
-              "textAlign": "left",
-              "textTransform": "uppercase",
-            }
-          }
-        >
-          purple
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Badge_4 1`] = `
-<h3>
-  Pills
-</h3>
-`;
-
-exports[`Badge_5 1`] = `
-<div>
-  <div
-    className="css-view-1dbjc4n"
-  >
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "WebkitBoxDirection": "normal",
-          "WebkitBoxOrient": "horizontal",
-          "WebkitFlexDirection": "row",
-          "flexDirection": "row",
-          "msFlexDirection": "row",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitAlignSelf": "flex-start",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "alignSelf": "flex-start",
-            "backgroundColor": "rgba(238,238,238,1.00)",
             "borderBottomLeftRadius": "999px",
             "borderBottomRightRadius": "999px",
             "borderTopLeftRadius": "999px",
@@ -2737,18 +2701,12 @@ exports[`Badge_5 1`] = `
 </div>
 `;
 
-exports[`Badge_6 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`Badge_7 1`] = `<div />`;
+exports[`Badge_4 1`] = `<div />`;
 
 exports[`Box_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Box
+</h1>
 `;
 
 exports[`Box_1 1`] = `
@@ -2772,6 +2730,12 @@ exports[`Box_1 1`] = `
 `;
 
 exports[`BulletedList_0 1`] = `
+<h1>
+  BulletedList
+</h1>
+`;
+
+exports[`BulletedList_1 1`] = `
 <div>
   <ul
     className="css-reset-4rbku5 css-view-1dbjc4n"
@@ -3118,9 +3082,9 @@ exports[`BulletedList_0 1`] = `
 `;
 
 exports[`Button_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Button
+</h1>
 `;
 
 exports[`Button_1 1`] = `
@@ -3221,12 +3185,6 @@ exports[`Button_1 1`] = `
 `;
 
 exports[`Button_2 1`] = `
-<h3>
-  Variants
-</h3>
-`;
-
-exports[`Button_3 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -4972,13 +4930,7 @@ exports[`Button_3 1`] = `
 </div>
 `;
 
-exports[`Button_4 1`] = `
-<h3>
-  Positioning inline button with different sizes
-</h3>
-`;
-
-exports[`Button_5 1`] = `
+exports[`Button_3 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -5346,18 +5298,12 @@ exports[`Button_5 1`] = `
 </div>
 `;
 
-exports[`Button_6 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`Button_7 1`] = `<div />`;
+exports[`Button_4 1`] = `<div />`;
 
 exports[`Checkbox_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Checkbox
+</h1>
 `;
 
 exports[`Checkbox_1 1`] = `
@@ -5466,18 +5412,12 @@ exports[`Checkbox_1 1`] = `
 </div>
 `;
 
-exports[`Checkbox_2 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`Checkbox_3 1`] = `<div />`;
+exports[`Checkbox_2 1`] = `<div />`;
 
 exports[`Collapsible_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Collapsible
+</h1>
 `;
 
 exports[`Collapsible_1 1`] = `
@@ -5778,18 +5718,12 @@ exports[`Collapsible_1 1`] = `
 </div>
 `;
 
-exports[`Collapsible_2 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`Collapsible_3 1`] = `<div />`;
+exports[`Collapsible_2 1`] = `<div />`;
 
 exports[`Container_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Container
+</h1>
 `;
 
 exports[`Container_1 1`] = `
@@ -5852,9 +5786,9 @@ exports[`Container_1 1`] = `
 `;
 
 exports[`Counter_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Counter
+</h1>
 `;
 
 exports[`Counter_1 1`] = `
@@ -6080,18 +6014,12 @@ exports[`Counter_1 1`] = `
 </div>
 `;
 
-exports[`Counter_2 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`Counter_3 1`] = `<div />`;
+exports[`Counter_2 1`] = `<div />`;
 
 exports[`Dialog_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Dialog
+</h1>
 `;
 
 exports[`Dialog_1 1`] = `
@@ -6195,18 +6123,12 @@ exports[`Dialog_1 1`] = `
 </div>
 `;
 
-exports[`Dialog_2 1`] = `
-<h3>
-  Dialog Props
-</h3>
-`;
-
-exports[`Dialog_3 1`] = `<div />`;
+exports[`Dialog_2 1`] = `<div />`;
 
 exports[`Divider_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Divider
+</h1>
 `;
 
 exports[`Divider_1 1`] = `
@@ -6234,18 +6156,12 @@ exports[`Divider_1 1`] = `
 </div>
 `;
 
-exports[`Divider_2 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`Divider_3 1`] = `<div />`;
+exports[`Divider_2 1`] = `<div />`;
 
 exports[`Drawer_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Drawer
+</h1>
 `;
 
 exports[`Drawer_1 1`] = `
@@ -6358,12 +6274,6 @@ exports[`Drawer_1 1`] = `
 `;
 
 exports[`Drawer_2 1`] = `
-<h3>
-  Variants
-</h3>
-`;
-
-exports[`Drawer_3 1`] = `
 <div>
   <div
     className="css-cursor-18t94o4 css-view-1dbjc4n"
@@ -6737,9 +6647,9 @@ exports[`Drawer_3 1`] = `
 `;
 
 exports[`FormField_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  FormField
+</h1>
 `;
 
 exports[`FormField_1 1`] = `
@@ -6907,18 +6817,12 @@ exports[`FormField_1 1`] = `
 </div>
 `;
 
-exports[`FormField_2 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`FormField_3 1`] = `<div />`;
+exports[`FormField_2 1`] = `<div />`;
 
 exports[`Grid_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Grid
+</h1>
 `;
 
 exports[`Grid_1 1`] = `
@@ -7631,12 +7535,6 @@ exports[`Grid_1 1`] = `
 `;
 
 exports[`Grid_2 1`] = `
-<h3>
-  Column wrapping
-</h3>
-`;
-
-exports[`Grid_3 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -7768,13 +7666,7 @@ exports[`Grid_3 1`] = `
 </div>
 `;
 
-exports[`Grid_4 1`] = `
-<h3>
-  Offsets
-</h3>
-`;
-
-exports[`Grid_5 1`] = `
+exports[`Grid_3 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -7944,13 +7836,7 @@ exports[`Grid_5 1`] = `
 </div>
 `;
 
-exports[`Grid_6 1`] = `
-<h3>
-  Without gutter
-</h3>
-`;
-
-exports[`Grid_7 1`] = `
+exports[`Grid_4 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -8055,9 +7941,9 @@ exports[`Grid_7 1`] = `
 `;
 
 exports[`Heading_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Heading
+</h1>
 `;
 
 exports[`Heading_1 1`] = `
@@ -8208,18 +8094,12 @@ exports[`Heading_2 1`] = `
 </div>
 `;
 
-exports[`Heading_3 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`Heading_4 1`] = `<div />`;
+exports[`Heading_3 1`] = `<div />`;
 
 exports[`Label_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Label
+</h1>
 `;
 
 exports[`Label_1 1`] = `
@@ -8246,9 +8126,9 @@ exports[`Label_1 1`] = `
 `;
 
 exports[`ListItem_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  ListItem
+</h1>
 `;
 
 exports[`ListItem_1 1`] = `
@@ -8470,18 +8350,12 @@ exports[`ListItem_1 1`] = `
 </div>
 `;
 
-exports[`ListItem_2 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`ListItem_3 1`] = `<div />`;
+exports[`ListItem_2 1`] = `<div />`;
 
 exports[`Modal_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Modal
+</h1>
 `;
 
 exports[`Modal_1 1`] = `
@@ -8586,9 +8460,104 @@ exports[`Modal_1 1`] = `
 `;
 
 exports[`Modal_2 1`] = `
-<h3>
-  Nested
-</h3>
+<div>
+  <div
+    className="css-view-1dbjc4n"
+  >
+    <div
+      className="css-cursor-18t94o4 css-view-1dbjc4n"
+      data-focusable={true}
+      disabled={false}
+      onKeyDown={[Function]}
+      onKeyPress={[Function]}
+      onKeyUp={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      role="button"
+      style={
+        Object {
+          "MozUserSelect": "none",
+          "WebkitUserSelect": "none",
+          "backgroundColor": "rgba(103,198,187,1.00)",
+          "borderBottomLeftRadius": "4px",
+          "borderBottomRightRadius": "4px",
+          "borderTopLeftRadius": "4px",
+          "borderTopRightRadius": "4px",
+          "cursor": "pointer",
+          "height": "48px",
+          "msTouchAction": "manipulation",
+          "msUserSelect": "none",
+          "paddingLeft": "32px",
+          "paddingRight": "32px",
+          "touchAction": "manipulation",
+          "userSelect": "none",
+        }
+      }
+      tabIndex="0"
+    >
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitAlignItems": "center",
+            "WebkitBoxAlign": "center",
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "horizontal",
+            "WebkitBoxPack": "center",
+            "WebkitFlexDirection": "row",
+            "WebkitJustifyContent": "center",
+            "alignItems": "center",
+            "flexDirection": "row",
+            "height": "100%",
+            "justifyContent": "center",
+            "msFlexAlign": "center",
+            "msFlexDirection": "row",
+            "msFlexPack": "center",
+          }
+        }
+      >
+        <div
+          className="css-view-1dbjc4n"
+          style={
+            Object {
+              "paddingLeft": "0px",
+              "paddingRight": "0px",
+            }
+          }
+        >
+          <div
+            className="css-text-901oao"
+            dir="auto"
+            style={
+              Object {
+                "WebkitAlignItems": "center",
+                "WebkitBoxAlign": "center",
+                "WebkitBoxPack": "center",
+                "WebkitJustifyContent": "center",
+                "alignItems": "center",
+                "color": "rgba(255,255,255,1.00)",
+                "display": "flex",
+                "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                "fontSize": "16px",
+                "fontWeight": "600",
+                "justifyContent": "center",
+                "msFlexAlign": "center",
+                "msFlexPack": "center",
+                "textAlign": "center",
+              }
+            }
+          >
+            Open outer modal
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Modal_3 1`] = `
@@ -8692,122 +8661,15 @@ exports[`Modal_3 1`] = `
 </div>
 `;
 
-exports[`Modal_4 1`] = `
-<h3>
-  Using browser history
-</h3>
-`;
-
-exports[`Modal_5 1`] = `
-<div>
-  <div
-    className="css-view-1dbjc4n"
-  >
-    <div
-      className="css-cursor-18t94o4 css-view-1dbjc4n"
-      data-focusable={true}
-      disabled={false}
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      onKeyUp={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      role="button"
-      style={
-        Object {
-          "MozUserSelect": "none",
-          "WebkitUserSelect": "none",
-          "backgroundColor": "rgba(103,198,187,1.00)",
-          "borderBottomLeftRadius": "4px",
-          "borderBottomRightRadius": "4px",
-          "borderTopLeftRadius": "4px",
-          "borderTopRightRadius": "4px",
-          "cursor": "pointer",
-          "height": "48px",
-          "msTouchAction": "manipulation",
-          "msUserSelect": "none",
-          "paddingLeft": "32px",
-          "paddingRight": "32px",
-          "touchAction": "manipulation",
-          "userSelect": "none",
-        }
-      }
-      tabIndex="0"
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": "100%",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexPack": "center",
-          }
-        }
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "paddingLeft": "0px",
-              "paddingRight": "0px",
-            }
-          }
-        >
-          <div
-            className="css-text-901oao"
-            dir="auto"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxPack": "center",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "color": "rgba(255,255,255,1.00)",
-                "display": "flex",
-                "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                "fontSize": "16px",
-                "fontWeight": "600",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexPack": "center",
-                "textAlign": "center",
-              }
-            }
-          >
-            Open outer modal
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Modal_6 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`Modal_7 1`] = `<div />`;
+exports[`Modal_4 1`] = `<div />`;
 
 exports[`NativePicker_0 1`] = `
+<h1>
+  NativePicker
+</h1>
+`;
+
+exports[`NativePicker_1 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -9000,6 +8862,12 @@ exports[`NativePicker_0 1`] = `
 `;
 
 exports[`NumberedList_0 1`] = `
+<h1>
+  NumberedList
+</h1>
+`;
+
+exports[`NumberedList_1 1`] = `
 <div>
   <ul
     className="css-reset-4rbku5 css-view-1dbjc4n"
@@ -9322,9 +9190,9 @@ exports[`NumberedList_0 1`] = `
 `;
 
 exports[`Paragraph_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Paragraph
+</h1>
 `;
 
 exports[`Paragraph_1 1`] = `
@@ -9356,12 +9224,6 @@ exports[`Paragraph_1 1`] = `
 `;
 
 exports[`Paragraph_2 1`] = `
-<h3>
-  Sizes
-</h3>
-`;
-
-exports[`Paragraph_3 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -9433,1290 +9295,135 @@ exports[`Paragraph_3 1`] = `
 </div>
 `;
 
-exports[`Paragraph_4 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`Paragraph_5 1`] = `<div />`;
+exports[`Paragraph_3 1`] = `<div />`;
 
 exports[`Popover_0 1`] = `
+<h1>
+  Popover
+</h1>
+`;
+
+exports[`Popover_1 1`] = `
 <div>
-  <removeme />
-  <removeme>
-    name: Popover
-  </removeme>
-  <removeme>
-    menu: Components
-  </removeme>
-  <removeme>
-    Popover
-  </removeme>
-  <removeme>
-    This component requires more polish. Composes 
-    <code>
-      Positioner
-    </code>
-  </removeme>
-  <h3>
-    Usage
-  </h3>
-  <div>
+  <div
+    className="css-cursor-18t94o4 css-view-1dbjc4n"
+    data-focusable={true}
+    disabled={false}
+    onKeyDown={[Function]}
+    onKeyPress={[Function]}
+    onKeyUp={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    role="button"
+    style={
+      Object {
+        "MozUserSelect": "none",
+        "WebkitUserSelect": "none",
+        "backgroundColor": "rgba(103,198,187,1.00)",
+        "borderBottomLeftRadius": "4px",
+        "borderBottomRightRadius": "4px",
+        "borderTopLeftRadius": "4px",
+        "borderTopRightRadius": "4px",
+        "cursor": "pointer",
+        "height": "48px",
+        "msTouchAction": "manipulation",
+        "msUserSelect": "none",
+        "paddingLeft": "32px",
+        "paddingRight": "32px",
+        "touchAction": "manipulation",
+        "userSelect": "none",
+      }
+    }
+    tabIndex="0"
+  >
     <div
-      className="css-cursor-18t94o4 css-view-1dbjc4n"
-      data-focusable={true}
-      disabled={false}
-      onKeyDown={[Function]}
-      onKeyPress={[Function]}
-      onKeyUp={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      role="button"
+      className="css-view-1dbjc4n"
       style={
         Object {
-          "MozUserSelect": "none",
-          "WebkitUserSelect": "none",
-          "backgroundColor": "rgba(103,198,187,1.00)",
-          "borderBottomLeftRadius": "4px",
-          "borderBottomRightRadius": "4px",
-          "borderTopLeftRadius": "4px",
-          "borderTopRightRadius": "4px",
-          "cursor": "pointer",
-          "height": "48px",
-          "msTouchAction": "manipulation",
-          "msUserSelect": "none",
-          "paddingLeft": "32px",
-          "paddingRight": "32px",
-          "touchAction": "manipulation",
-          "userSelect": "none",
+          "WebkitAlignItems": "center",
+          "WebkitBoxAlign": "center",
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxOrient": "horizontal",
+          "WebkitBoxPack": "center",
+          "WebkitFlexDirection": "row",
+          "WebkitJustifyContent": "center",
+          "alignItems": "center",
+          "flexDirection": "row",
+          "height": "100%",
+          "justifyContent": "center",
+          "msFlexAlign": "center",
+          "msFlexDirection": "row",
+          "msFlexPack": "center",
         }
       }
-      tabIndex="0"
     >
       <div
         className="css-view-1dbjc4n"
         style={
           Object {
-            "WebkitAlignItems": "center",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "center",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "flexDirection": "row",
-            "height": "100%",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexDirection": "row",
-            "msFlexPack": "center",
+            "paddingLeft": "0px",
+            "paddingRight": "0px",
           }
         }
       >
         <div
-          className="css-view-1dbjc4n"
+          className="css-text-901oao"
+          dir="auto"
           style={
             Object {
-              "paddingLeft": "0px",
-              "paddingRight": "0px",
+              "WebkitAlignItems": "center",
+              "WebkitBoxAlign": "center",
+              "WebkitBoxPack": "center",
+              "WebkitJustifyContent": "center",
+              "alignItems": "center",
+              "color": "rgba(255,255,255,1.00)",
+              "display": "flex",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontWeight": "600",
+              "justifyContent": "center",
+              "msFlexAlign": "center",
+              "msFlexPack": "center",
+              "textAlign": "center",
             }
           }
         >
-          <div
-            className="css-text-901oao"
-            dir="auto"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxPack": "center",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "color": "rgba(255,255,255,1.00)",
-                "display": "flex",
-                "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                "fontSize": "16px",
-                "fontWeight": "600",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexPack": "center",
-                "textAlign": "center",
-              }
-            }
-          >
-            Pop at right corner
-          </div>
+          Pop at right corner
         </div>
       </div>
     </div>
   </div>
-  <h3>
-    Variants
-  </h3>
-  <div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingBottom": "64px",
-          "zIndex": 1,
-        }
+</div>
+`;
+
+exports[`Popover_2 1`] = `
+<div>
+  <div
+    className="css-view-1dbjc4n"
+    style={
+      Object {
+        "paddingBottom": "64px",
+        "zIndex": 1,
       }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "justify",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "space-between",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "msFlexDirection": "row",
-            "msFlexPack": "justify",
-          }
-        }
-      >
-        <div
-          className="css-view-1dbjc4n"
-        >
-          <div
-            className="css-cursor-18t94o4 css-view-1dbjc4n"
-            data-focusable={true}
-            disabled={false}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            onKeyUp={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            role="button"
-            style={
-              Object {
-                "MozUserSelect": "none",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxLines": "multiple",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitFlexDirection": "row",
-                "WebkitFlexWrap": "wrap",
-                "WebkitUserSelect": "none",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomLeftRadius": "4px",
-                "borderBottomRightRadius": "4px",
-                "borderTopLeftRadius": "4px",
-                "borderTopRightRadius": "4px",
-                "cursor": "pointer",
-                "flexDirection": "row",
-                "flexWrap": "wrap",
-                "height": "48px",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexWrap": "wrap",
-                "msTouchAction": "manipulation",
-                "msUserSelect": "none",
-                "paddingLeft": "32px",
-                "paddingRight": "32px",
-                "touchAction": "manipulation",
-                "userSelect": "none",
-              }
-            }
-            tabIndex="0"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitBoxPack": "center",
-                  "WebkitFlexDirection": "row",
-                  "WebkitJustifyContent": "center",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "height": "100%",
-                  "justifyContent": "center",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                  "msFlexPack": "center",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "0px",
-                    "paddingRight": "0px",
-                  }
-                }
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "color": "rgba(255,255,255,1.00)",
-                      "display": "flex",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "fontWeight": "600",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "textAlign": "center",
-                    }
-                  }
-                >
-                  Top right
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="css-view-1dbjc4n"
-        >
-          <div
-            className="css-cursor-18t94o4 css-view-1dbjc4n"
-            data-focusable={true}
-            disabled={false}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            onKeyUp={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            role="button"
-            style={
-              Object {
-                "MozUserSelect": "none",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxLines": "multiple",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitFlexDirection": "row",
-                "WebkitFlexWrap": "wrap",
-                "WebkitUserSelect": "none",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomLeftRadius": "4px",
-                "borderBottomRightRadius": "4px",
-                "borderTopLeftRadius": "4px",
-                "borderTopRightRadius": "4px",
-                "cursor": "pointer",
-                "flexDirection": "row",
-                "flexWrap": "wrap",
-                "height": "48px",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexWrap": "wrap",
-                "msTouchAction": "manipulation",
-                "msUserSelect": "none",
-                "paddingLeft": "32px",
-                "paddingRight": "32px",
-                "touchAction": "manipulation",
-                "userSelect": "none",
-              }
-            }
-            tabIndex="0"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitBoxPack": "center",
-                  "WebkitFlexDirection": "row",
-                  "WebkitJustifyContent": "center",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "height": "100%",
-                  "justifyContent": "center",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                  "msFlexPack": "center",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "0px",
-                    "paddingRight": "0px",
-                  }
-                }
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "color": "rgba(255,255,255,1.00)",
-                      "display": "flex",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "fontWeight": "600",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "textAlign": "center",
-                    }
-                  }
-                >
-                  Top
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="css-view-1dbjc4n"
-        >
-          <div
-            className="css-cursor-18t94o4 css-view-1dbjc4n"
-            data-focusable={true}
-            disabled={false}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            onKeyUp={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            role="button"
-            style={
-              Object {
-                "MozUserSelect": "none",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxLines": "multiple",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitFlexDirection": "row",
-                "WebkitFlexWrap": "wrap",
-                "WebkitUserSelect": "none",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomLeftRadius": "4px",
-                "borderBottomRightRadius": "4px",
-                "borderTopLeftRadius": "4px",
-                "borderTopRightRadius": "4px",
-                "cursor": "pointer",
-                "flexDirection": "row",
-                "flexWrap": "wrap",
-                "height": "48px",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexWrap": "wrap",
-                "msTouchAction": "manipulation",
-                "msUserSelect": "none",
-                "paddingLeft": "32px",
-                "paddingRight": "32px",
-                "touchAction": "manipulation",
-                "userSelect": "none",
-              }
-            }
-            tabIndex="0"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitBoxPack": "center",
-                  "WebkitFlexDirection": "row",
-                  "WebkitJustifyContent": "center",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "height": "100%",
-                  "justifyContent": "center",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                  "msFlexPack": "center",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "0px",
-                    "paddingRight": "0px",
-                  }
-                }
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "color": "rgba(255,255,255,1.00)",
-                      "display": "flex",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "fontWeight": "600",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "textAlign": "center",
-                    }
-                  }
-                >
-                  Top left
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    }
+  >
     <div
       className="css-view-1dbjc4n"
       style={
         Object {
-          "paddingBottom": "64px",
-          "paddingTop": "64px",
-          "zIndex": 2,
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "justify",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "space-between",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "msFlexDirection": "row",
-            "msFlexPack": "justify",
-          }
-        }
-      >
-        <div
-          className="css-view-1dbjc4n"
-        >
-          <div
-            className="css-cursor-18t94o4 css-view-1dbjc4n"
-            data-focusable={true}
-            disabled={false}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            onKeyUp={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            role="button"
-            style={
-              Object {
-                "MozUserSelect": "none",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxLines": "multiple",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitFlexDirection": "row",
-                "WebkitFlexWrap": "wrap",
-                "WebkitUserSelect": "none",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomLeftRadius": "4px",
-                "borderBottomRightRadius": "4px",
-                "borderTopLeftRadius": "4px",
-                "borderTopRightRadius": "4px",
-                "cursor": "pointer",
-                "flexDirection": "row",
-                "flexWrap": "wrap",
-                "height": "48px",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexWrap": "wrap",
-                "msTouchAction": "manipulation",
-                "msUserSelect": "none",
-                "paddingLeft": "32px",
-                "paddingRight": "32px",
-                "touchAction": "manipulation",
-                "userSelect": "none",
-              }
-            }
-            tabIndex="0"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitBoxPack": "center",
-                  "WebkitFlexDirection": "row",
-                  "WebkitJustifyContent": "center",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "height": "100%",
-                  "justifyContent": "center",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                  "msFlexPack": "center",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "0px",
-                    "paddingRight": "0px",
-                  }
-                }
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "color": "rgba(255,255,255,1.00)",
-                      "display": "flex",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "fontWeight": "600",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "textAlign": "center",
-                    }
-                  }
-                >
-                  Left
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="css-view-1dbjc4n"
-        >
-          <div
-            className="css-cursor-18t94o4 css-view-1dbjc4n"
-            data-focusable={true}
-            disabled={false}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            onKeyUp={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            role="button"
-            style={
-              Object {
-                "MozUserSelect": "none",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxLines": "multiple",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitFlexDirection": "row",
-                "WebkitFlexWrap": "wrap",
-                "WebkitUserSelect": "none",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomLeftRadius": "4px",
-                "borderBottomRightRadius": "4px",
-                "borderTopLeftRadius": "4px",
-                "borderTopRightRadius": "4px",
-                "cursor": "pointer",
-                "flexDirection": "row",
-                "flexWrap": "wrap",
-                "height": "48px",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexWrap": "wrap",
-                "msTouchAction": "manipulation",
-                "msUserSelect": "none",
-                "paddingLeft": "32px",
-                "paddingRight": "32px",
-                "touchAction": "manipulation",
-                "userSelect": "none",
-              }
-            }
-            tabIndex="0"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitBoxPack": "center",
-                  "WebkitFlexDirection": "row",
-                  "WebkitJustifyContent": "center",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "height": "100%",
-                  "justifyContent": "center",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                  "msFlexPack": "center",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "0px",
-                    "paddingRight": "0px",
-                  }
-                }
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "color": "rgba(255,255,255,1.00)",
-                      "display": "flex",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "fontWeight": "600",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "textAlign": "center",
-                    }
-                  }
-                >
-                  Right
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingTop": "64px",
-          "zIndex": 3,
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitBoxPack": "justify",
-            "WebkitFlexDirection": "row",
-            "WebkitJustifyContent": "space-between",
-            "flexDirection": "row",
-            "justifyContent": "space-between",
-            "msFlexDirection": "row",
-            "msFlexPack": "justify",
-          }
-        }
-      >
-        <div
-          className="css-view-1dbjc4n"
-        >
-          <div
-            className="css-cursor-18t94o4 css-view-1dbjc4n"
-            data-focusable={true}
-            disabled={false}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            onKeyUp={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            role="button"
-            style={
-              Object {
-                "MozUserSelect": "none",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxLines": "multiple",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitFlexDirection": "row",
-                "WebkitFlexWrap": "wrap",
-                "WebkitUserSelect": "none",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomLeftRadius": "4px",
-                "borderBottomRightRadius": "4px",
-                "borderTopLeftRadius": "4px",
-                "borderTopRightRadius": "4px",
-                "cursor": "pointer",
-                "flexDirection": "row",
-                "flexWrap": "wrap",
-                "height": "48px",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexWrap": "wrap",
-                "msTouchAction": "manipulation",
-                "msUserSelect": "none",
-                "paddingLeft": "32px",
-                "paddingRight": "32px",
-                "touchAction": "manipulation",
-                "userSelect": "none",
-              }
-            }
-            tabIndex="0"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitBoxPack": "center",
-                  "WebkitFlexDirection": "row",
-                  "WebkitJustifyContent": "center",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "height": "100%",
-                  "justifyContent": "center",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                  "msFlexPack": "center",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "0px",
-                    "paddingRight": "0px",
-                  }
-                }
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "color": "rgba(255,255,255,1.00)",
-                      "display": "flex",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "fontWeight": "600",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "textAlign": "center",
-                    }
-                  }
-                >
-                  Bottom right
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="css-view-1dbjc4n"
-        >
-          <div
-            className="css-cursor-18t94o4 css-view-1dbjc4n"
-            data-focusable={true}
-            disabled={false}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            onKeyUp={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            role="button"
-            style={
-              Object {
-                "MozUserSelect": "none",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxLines": "multiple",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitFlexDirection": "row",
-                "WebkitFlexWrap": "wrap",
-                "WebkitUserSelect": "none",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomLeftRadius": "4px",
-                "borderBottomRightRadius": "4px",
-                "borderTopLeftRadius": "4px",
-                "borderTopRightRadius": "4px",
-                "cursor": "pointer",
-                "flexDirection": "row",
-                "flexWrap": "wrap",
-                "height": "48px",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexWrap": "wrap",
-                "msTouchAction": "manipulation",
-                "msUserSelect": "none",
-                "paddingLeft": "32px",
-                "paddingRight": "32px",
-                "touchAction": "manipulation",
-                "userSelect": "none",
-              }
-            }
-            tabIndex="0"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitBoxPack": "center",
-                  "WebkitFlexDirection": "row",
-                  "WebkitJustifyContent": "center",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "height": "100%",
-                  "justifyContent": "center",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                  "msFlexPack": "center",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "0px",
-                    "paddingRight": "0px",
-                  }
-                }
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "color": "rgba(255,255,255,1.00)",
-                      "display": "flex",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "fontWeight": "600",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "textAlign": "center",
-                    }
-                  }
-                >
-                  Bottom
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          className="css-view-1dbjc4n"
-        >
-          <div
-            className="css-cursor-18t94o4 css-view-1dbjc4n"
-            data-focusable={true}
-            disabled={false}
-            onKeyDown={[Function]}
-            onKeyPress={[Function]}
-            onKeyUp={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            role="button"
-            style={
-              Object {
-                "MozUserSelect": "none",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxLines": "multiple",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitFlexDirection": "row",
-                "WebkitFlexWrap": "wrap",
-                "WebkitUserSelect": "none",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomLeftRadius": "4px",
-                "borderBottomRightRadius": "4px",
-                "borderTopLeftRadius": "4px",
-                "borderTopRightRadius": "4px",
-                "cursor": "pointer",
-                "flexDirection": "row",
-                "flexWrap": "wrap",
-                "height": "48px",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexWrap": "wrap",
-                "msTouchAction": "manipulation",
-                "msUserSelect": "none",
-                "paddingLeft": "32px",
-                "paddingRight": "32px",
-                "touchAction": "manipulation",
-                "userSelect": "none",
-              }
-            }
-            tabIndex="0"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitBoxPack": "center",
-                  "WebkitFlexDirection": "row",
-                  "WebkitJustifyContent": "center",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "height": "100%",
-                  "justifyContent": "center",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                  "msFlexPack": "center",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "0px",
-                    "paddingRight": "0px",
-                  }
-                }
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "color": "rgba(255,255,255,1.00)",
-                      "display": "flex",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "fontWeight": "600",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "textAlign": "center",
-                    }
-                  }
-                >
-                  Bottom left
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <h3>
-    TODO: Popover inside ScrollView
-  </h3>
-  <div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "height": "400px",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        onResponderGrant={[Function]}
-        onResponderReject={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onScroll={[Function]}
-        onScrollShouldSetResponder={[Function]}
-        onStartShouldSetResponder={[Function]}
-        onStartShouldSetResponderCapture={[Function]}
-        onTouchEnd={[Function]}
-        onTouchMove={[Function]}
-        onTouchStart={[Function]}
-        onWheel={[Function]}
-        style={
-          Object {
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxFlex": 1,
-            "WebkitBoxOrient": "vertical",
-            "WebkitFlexDirection": "column",
-            "WebkitFlexGrow": 1,
-            "WebkitFlexShrink": 1,
-            "WebkitOverflowScrolling": "touch",
-            "WebkitTransform": "translateZ(0px)",
-            "flexDirection": "column",
-            "flexGrow": 1,
-            "flexShrink": 1,
-            "msFlexDirection": "column",
-            "msFlexNegative": 1,
-            "msFlexPositive": 1,
-            "overflowX": "hidden",
-            "overflowY": "auto",
-            "transform": "translateZ(0px)",
-          }
-        }
-      >
-        <div
-          className="css-view-1dbjc4n"
-        >
-          <div
-            className="css-text-901oao"
-            dir="auto"
-            style={
-              Object {
-                "color": "rgba(126,126,126,1.00)",
-                "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                "fontSize": "16px",
-                "textAlign": "center",
-              }
-            }
-          >
-            Scroll down to button
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "height": "400px",
-              }
-            }
-          />
-          <div
-            className="css-view-1dbjc4n"
-          >
-            <div
-              className="css-view-1dbjc4n"
-            >
-              <div
-                className="css-cursor-18t94o4 css-view-1dbjc4n"
-                data-focusable={true}
-                disabled={false}
-                onKeyDown={[Function]}
-                onKeyPress={[Function]}
-                onKeyUp={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
-                role="button"
-                style={
-                  Object {
-                    "MozUserSelect": "none",
-                    "WebkitUserSelect": "none",
-                    "backgroundColor": "rgba(103,198,187,1.00)",
-                    "borderBottomLeftRadius": "4px",
-                    "borderBottomRightRadius": "4px",
-                    "borderTopLeftRadius": "4px",
-                    "borderTopRightRadius": "4px",
-                    "cursor": "pointer",
-                    "height": "48px",
-                    "msTouchAction": "manipulation",
-                    "msUserSelect": "none",
-                    "paddingLeft": "32px",
-                    "paddingRight": "32px",
-                    "touchAction": "manipulation",
-                    "userSelect": "none",
-                  }
-                }
-                tabIndex="0"
-              >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxDirection": "normal",
-                      "WebkitBoxOrient": "horizontal",
-                      "WebkitBoxPack": "center",
-                      "WebkitFlexDirection": "row",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "flexDirection": "row",
-                      "height": "100%",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexDirection": "row",
-                      "msFlexPack": "center",
-                    }
-                  }
-                >
-                  <div
-                    className="css-view-1dbjc4n"
-                    style={
-                      Object {
-                        "paddingLeft": "0px",
-                        "paddingRight": "0px",
-                      }
-                    }
-                  >
-                    <div
-                      className="css-text-901oao"
-                      dir="auto"
-                      style={
-                        Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "color": "rgba(255,255,255,1.00)",
-                          "display": "flex",
-                          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "16px",
-                          "fontWeight": "600",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "textAlign": "center",
-                        }
-                      }
-                    >
-                      Pop
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "height": "400px",
-              }
-            }
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-  <h3>
-    Popover with full width
-  </h3>
-  <removeme>
-    On Mobile sometimes we want the content to stretch full width of the window. There is the prop 
-    <code>
-      isFullWidth
-    </code>
-     for that
-  </removeme>
-  <div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "WebkitBoxFlex": 1,
-          "WebkitFlexBasis": "0%",
-          "WebkitFlexGrow": 1,
-          "WebkitFlexShrink": 1,
-          "flexBasis": "0%",
-          "flexGrow": 1,
-          "flexShrink": 1,
-          "msFlexNegative": 1,
-          "msFlexPositive": 1,
-          "msFlexPreferredSize": "0%",
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxOrient": "horizontal",
+          "WebkitBoxPack": "justify",
+          "WebkitFlexDirection": "row",
+          "WebkitJustifyContent": "space-between",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "msFlexDirection": "row",
+          "msFlexPack": "justify",
         }
       }
     >
@@ -10740,14 +9447,26 @@ exports[`Popover_0 1`] = `
           style={
             Object {
               "MozUserSelect": "none",
+              "WebkitAlignSelf": "flex-start",
+              "WebkitBoxDirection": "normal",
+              "WebkitBoxLines": "multiple",
+              "WebkitBoxOrient": "horizontal",
+              "WebkitFlexDirection": "row",
+              "WebkitFlexWrap": "wrap",
               "WebkitUserSelect": "none",
+              "alignSelf": "flex-start",
               "backgroundColor": "rgba(103,198,187,1.00)",
               "borderBottomLeftRadius": "4px",
               "borderBottomRightRadius": "4px",
               "borderTopLeftRadius": "4px",
               "borderTopRightRadius": "4px",
               "cursor": "pointer",
+              "flexDirection": "row",
+              "flexWrap": "wrap",
               "height": "48px",
+              "msFlexDirection": "row",
+              "msFlexItemAlign": "start",
+              "msFlexWrap": "wrap",
               "msTouchAction": "manipulation",
               "msUserSelect": "none",
               "paddingLeft": "32px",
@@ -10810,7 +9529,223 @@ exports[`Popover_0 1`] = `
                   }
                 }
               >
-                Pop
+                Top right
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitAlignSelf": "flex-start",
+              "WebkitBoxDirection": "normal",
+              "WebkitBoxLines": "multiple",
+              "WebkitBoxOrient": "horizontal",
+              "WebkitFlexDirection": "row",
+              "WebkitFlexWrap": "wrap",
+              "WebkitUserSelect": "none",
+              "alignSelf": "flex-start",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomLeftRadius": "4px",
+              "borderBottomRightRadius": "4px",
+              "borderTopLeftRadius": "4px",
+              "borderTopRightRadius": "4px",
+              "cursor": "pointer",
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+              "height": "48px",
+              "msFlexDirection": "row",
+              "msFlexItemAlign": "start",
+              "msFlexWrap": "wrap",
+              "msTouchAction": "manipulation",
+              "msUserSelect": "none",
+              "paddingLeft": "32px",
+              "paddingRight": "32px",
+              "touchAction": "manipulation",
+              "userSelect": "none",
+            }
+          }
+          tabIndex="0"
+        >
+          <div
+            className="css-view-1dbjc4n"
+            style={
+              Object {
+                "WebkitAlignItems": "center",
+                "WebkitBoxAlign": "center",
+                "WebkitBoxDirection": "normal",
+                "WebkitBoxOrient": "horizontal",
+                "WebkitBoxPack": "center",
+                "WebkitFlexDirection": "row",
+                "WebkitJustifyContent": "center",
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "msFlexAlign": "center",
+                "msFlexDirection": "row",
+                "msFlexPack": "center",
+              }
+            }
+          >
+            <div
+              className="css-view-1dbjc4n"
+              style={
+                Object {
+                  "paddingLeft": "0px",
+                  "paddingRight": "0px",
+                }
+              }
+            >
+              <div
+                className="css-text-901oao"
+                dir="auto"
+                style={
+                  Object {
+                    "WebkitAlignItems": "center",
+                    "WebkitBoxAlign": "center",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "alignItems": "center",
+                    "color": "rgba(255,255,255,1.00)",
+                    "display": "flex",
+                    "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                    "fontSize": "16px",
+                    "fontWeight": "600",
+                    "justifyContent": "center",
+                    "msFlexAlign": "center",
+                    "msFlexPack": "center",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Top
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitAlignSelf": "flex-start",
+              "WebkitBoxDirection": "normal",
+              "WebkitBoxLines": "multiple",
+              "WebkitBoxOrient": "horizontal",
+              "WebkitFlexDirection": "row",
+              "WebkitFlexWrap": "wrap",
+              "WebkitUserSelect": "none",
+              "alignSelf": "flex-start",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomLeftRadius": "4px",
+              "borderBottomRightRadius": "4px",
+              "borderTopLeftRadius": "4px",
+              "borderTopRightRadius": "4px",
+              "cursor": "pointer",
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+              "height": "48px",
+              "msFlexDirection": "row",
+              "msFlexItemAlign": "start",
+              "msFlexWrap": "wrap",
+              "msTouchAction": "manipulation",
+              "msUserSelect": "none",
+              "paddingLeft": "32px",
+              "paddingRight": "32px",
+              "touchAction": "manipulation",
+              "userSelect": "none",
+            }
+          }
+          tabIndex="0"
+        >
+          <div
+            className="css-view-1dbjc4n"
+            style={
+              Object {
+                "WebkitAlignItems": "center",
+                "WebkitBoxAlign": "center",
+                "WebkitBoxDirection": "normal",
+                "WebkitBoxOrient": "horizontal",
+                "WebkitBoxPack": "center",
+                "WebkitFlexDirection": "row",
+                "WebkitJustifyContent": "center",
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "msFlexAlign": "center",
+                "msFlexDirection": "row",
+                "msFlexPack": "center",
+              }
+            }
+          >
+            <div
+              className="css-view-1dbjc4n"
+              style={
+                Object {
+                  "paddingLeft": "0px",
+                  "paddingRight": "0px",
+                }
+              }
+            >
+              <div
+                className="css-text-901oao"
+                dir="auto"
+                style={
+                  Object {
+                    "WebkitAlignItems": "center",
+                    "WebkitBoxAlign": "center",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "alignItems": "center",
+                    "color": "rgba(255,255,255,1.00)",
+                    "display": "flex",
+                    "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                    "fontSize": "16px",
+                    "fontWeight": "600",
+                    "justifyContent": "center",
+                    "msFlexAlign": "center",
+                    "msFlexPack": "center",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Top left
               </div>
             </div>
           </div>
@@ -10818,17 +9753,729 @@ exports[`Popover_0 1`] = `
       </div>
     </div>
   </div>
-  <h3>
-    Props
-  </h3>
-  <div />
+  <div
+    className="css-view-1dbjc4n"
+    style={
+      Object {
+        "paddingBottom": "64px",
+        "paddingTop": "64px",
+        "zIndex": 2,
+      }
+    }
+  >
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxOrient": "horizontal",
+          "WebkitBoxPack": "justify",
+          "WebkitFlexDirection": "row",
+          "WebkitJustifyContent": "space-between",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "msFlexDirection": "row",
+          "msFlexPack": "justify",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitAlignSelf": "flex-start",
+              "WebkitBoxDirection": "normal",
+              "WebkitBoxLines": "multiple",
+              "WebkitBoxOrient": "horizontal",
+              "WebkitFlexDirection": "row",
+              "WebkitFlexWrap": "wrap",
+              "WebkitUserSelect": "none",
+              "alignSelf": "flex-start",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomLeftRadius": "4px",
+              "borderBottomRightRadius": "4px",
+              "borderTopLeftRadius": "4px",
+              "borderTopRightRadius": "4px",
+              "cursor": "pointer",
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+              "height": "48px",
+              "msFlexDirection": "row",
+              "msFlexItemAlign": "start",
+              "msFlexWrap": "wrap",
+              "msTouchAction": "manipulation",
+              "msUserSelect": "none",
+              "paddingLeft": "32px",
+              "paddingRight": "32px",
+              "touchAction": "manipulation",
+              "userSelect": "none",
+            }
+          }
+          tabIndex="0"
+        >
+          <div
+            className="css-view-1dbjc4n"
+            style={
+              Object {
+                "WebkitAlignItems": "center",
+                "WebkitBoxAlign": "center",
+                "WebkitBoxDirection": "normal",
+                "WebkitBoxOrient": "horizontal",
+                "WebkitBoxPack": "center",
+                "WebkitFlexDirection": "row",
+                "WebkitJustifyContent": "center",
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "msFlexAlign": "center",
+                "msFlexDirection": "row",
+                "msFlexPack": "center",
+              }
+            }
+          >
+            <div
+              className="css-view-1dbjc4n"
+              style={
+                Object {
+                  "paddingLeft": "0px",
+                  "paddingRight": "0px",
+                }
+              }
+            >
+              <div
+                className="css-text-901oao"
+                dir="auto"
+                style={
+                  Object {
+                    "WebkitAlignItems": "center",
+                    "WebkitBoxAlign": "center",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "alignItems": "center",
+                    "color": "rgba(255,255,255,1.00)",
+                    "display": "flex",
+                    "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                    "fontSize": "16px",
+                    "fontWeight": "600",
+                    "justifyContent": "center",
+                    "msFlexAlign": "center",
+                    "msFlexPack": "center",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Left
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitAlignSelf": "flex-start",
+              "WebkitBoxDirection": "normal",
+              "WebkitBoxLines": "multiple",
+              "WebkitBoxOrient": "horizontal",
+              "WebkitFlexDirection": "row",
+              "WebkitFlexWrap": "wrap",
+              "WebkitUserSelect": "none",
+              "alignSelf": "flex-start",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomLeftRadius": "4px",
+              "borderBottomRightRadius": "4px",
+              "borderTopLeftRadius": "4px",
+              "borderTopRightRadius": "4px",
+              "cursor": "pointer",
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+              "height": "48px",
+              "msFlexDirection": "row",
+              "msFlexItemAlign": "start",
+              "msFlexWrap": "wrap",
+              "msTouchAction": "manipulation",
+              "msUserSelect": "none",
+              "paddingLeft": "32px",
+              "paddingRight": "32px",
+              "touchAction": "manipulation",
+              "userSelect": "none",
+            }
+          }
+          tabIndex="0"
+        >
+          <div
+            className="css-view-1dbjc4n"
+            style={
+              Object {
+                "WebkitAlignItems": "center",
+                "WebkitBoxAlign": "center",
+                "WebkitBoxDirection": "normal",
+                "WebkitBoxOrient": "horizontal",
+                "WebkitBoxPack": "center",
+                "WebkitFlexDirection": "row",
+                "WebkitJustifyContent": "center",
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "msFlexAlign": "center",
+                "msFlexDirection": "row",
+                "msFlexPack": "center",
+              }
+            }
+          >
+            <div
+              className="css-view-1dbjc4n"
+              style={
+                Object {
+                  "paddingLeft": "0px",
+                  "paddingRight": "0px",
+                }
+              }
+            >
+              <div
+                className="css-text-901oao"
+                dir="auto"
+                style={
+                  Object {
+                    "WebkitAlignItems": "center",
+                    "WebkitBoxAlign": "center",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "alignItems": "center",
+                    "color": "rgba(255,255,255,1.00)",
+                    "display": "flex",
+                    "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                    "fontSize": "16px",
+                    "fontWeight": "600",
+                    "justifyContent": "center",
+                    "msFlexAlign": "center",
+                    "msFlexPack": "center",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Right
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="css-view-1dbjc4n"
+    style={
+      Object {
+        "paddingTop": "64px",
+        "zIndex": 3,
+      }
+    }
+  >
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "WebkitBoxDirection": "normal",
+          "WebkitBoxOrient": "horizontal",
+          "WebkitBoxPack": "justify",
+          "WebkitFlexDirection": "row",
+          "WebkitJustifyContent": "space-between",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "msFlexDirection": "row",
+          "msFlexPack": "justify",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitAlignSelf": "flex-start",
+              "WebkitBoxDirection": "normal",
+              "WebkitBoxLines": "multiple",
+              "WebkitBoxOrient": "horizontal",
+              "WebkitFlexDirection": "row",
+              "WebkitFlexWrap": "wrap",
+              "WebkitUserSelect": "none",
+              "alignSelf": "flex-start",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomLeftRadius": "4px",
+              "borderBottomRightRadius": "4px",
+              "borderTopLeftRadius": "4px",
+              "borderTopRightRadius": "4px",
+              "cursor": "pointer",
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+              "height": "48px",
+              "msFlexDirection": "row",
+              "msFlexItemAlign": "start",
+              "msFlexWrap": "wrap",
+              "msTouchAction": "manipulation",
+              "msUserSelect": "none",
+              "paddingLeft": "32px",
+              "paddingRight": "32px",
+              "touchAction": "manipulation",
+              "userSelect": "none",
+            }
+          }
+          tabIndex="0"
+        >
+          <div
+            className="css-view-1dbjc4n"
+            style={
+              Object {
+                "WebkitAlignItems": "center",
+                "WebkitBoxAlign": "center",
+                "WebkitBoxDirection": "normal",
+                "WebkitBoxOrient": "horizontal",
+                "WebkitBoxPack": "center",
+                "WebkitFlexDirection": "row",
+                "WebkitJustifyContent": "center",
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "msFlexAlign": "center",
+                "msFlexDirection": "row",
+                "msFlexPack": "center",
+              }
+            }
+          >
+            <div
+              className="css-view-1dbjc4n"
+              style={
+                Object {
+                  "paddingLeft": "0px",
+                  "paddingRight": "0px",
+                }
+              }
+            >
+              <div
+                className="css-text-901oao"
+                dir="auto"
+                style={
+                  Object {
+                    "WebkitAlignItems": "center",
+                    "WebkitBoxAlign": "center",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "alignItems": "center",
+                    "color": "rgba(255,255,255,1.00)",
+                    "display": "flex",
+                    "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                    "fontSize": "16px",
+                    "fontWeight": "600",
+                    "justifyContent": "center",
+                    "msFlexAlign": "center",
+                    "msFlexPack": "center",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Bottom right
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitAlignSelf": "flex-start",
+              "WebkitBoxDirection": "normal",
+              "WebkitBoxLines": "multiple",
+              "WebkitBoxOrient": "horizontal",
+              "WebkitFlexDirection": "row",
+              "WebkitFlexWrap": "wrap",
+              "WebkitUserSelect": "none",
+              "alignSelf": "flex-start",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomLeftRadius": "4px",
+              "borderBottomRightRadius": "4px",
+              "borderTopLeftRadius": "4px",
+              "borderTopRightRadius": "4px",
+              "cursor": "pointer",
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+              "height": "48px",
+              "msFlexDirection": "row",
+              "msFlexItemAlign": "start",
+              "msFlexWrap": "wrap",
+              "msTouchAction": "manipulation",
+              "msUserSelect": "none",
+              "paddingLeft": "32px",
+              "paddingRight": "32px",
+              "touchAction": "manipulation",
+              "userSelect": "none",
+            }
+          }
+          tabIndex="0"
+        >
+          <div
+            className="css-view-1dbjc4n"
+            style={
+              Object {
+                "WebkitAlignItems": "center",
+                "WebkitBoxAlign": "center",
+                "WebkitBoxDirection": "normal",
+                "WebkitBoxOrient": "horizontal",
+                "WebkitBoxPack": "center",
+                "WebkitFlexDirection": "row",
+                "WebkitJustifyContent": "center",
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "msFlexAlign": "center",
+                "msFlexDirection": "row",
+                "msFlexPack": "center",
+              }
+            }
+          >
+            <div
+              className="css-view-1dbjc4n"
+              style={
+                Object {
+                  "paddingLeft": "0px",
+                  "paddingRight": "0px",
+                }
+              }
+            >
+              <div
+                className="css-text-901oao"
+                dir="auto"
+                style={
+                  Object {
+                    "WebkitAlignItems": "center",
+                    "WebkitBoxAlign": "center",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "alignItems": "center",
+                    "color": "rgba(255,255,255,1.00)",
+                    "display": "flex",
+                    "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                    "fontSize": "16px",
+                    "fontWeight": "600",
+                    "justifyContent": "center",
+                    "msFlexAlign": "center",
+                    "msFlexPack": "center",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Bottom
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n"
+      >
+        <div
+          className="css-cursor-18t94o4 css-view-1dbjc4n"
+          data-focusable={true}
+          disabled={false}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onKeyUp={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          role="button"
+          style={
+            Object {
+              "MozUserSelect": "none",
+              "WebkitAlignSelf": "flex-start",
+              "WebkitBoxDirection": "normal",
+              "WebkitBoxLines": "multiple",
+              "WebkitBoxOrient": "horizontal",
+              "WebkitFlexDirection": "row",
+              "WebkitFlexWrap": "wrap",
+              "WebkitUserSelect": "none",
+              "alignSelf": "flex-start",
+              "backgroundColor": "rgba(103,198,187,1.00)",
+              "borderBottomLeftRadius": "4px",
+              "borderBottomRightRadius": "4px",
+              "borderTopLeftRadius": "4px",
+              "borderTopRightRadius": "4px",
+              "cursor": "pointer",
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+              "height": "48px",
+              "msFlexDirection": "row",
+              "msFlexItemAlign": "start",
+              "msFlexWrap": "wrap",
+              "msTouchAction": "manipulation",
+              "msUserSelect": "none",
+              "paddingLeft": "32px",
+              "paddingRight": "32px",
+              "touchAction": "manipulation",
+              "userSelect": "none",
+            }
+          }
+          tabIndex="0"
+        >
+          <div
+            className="css-view-1dbjc4n"
+            style={
+              Object {
+                "WebkitAlignItems": "center",
+                "WebkitBoxAlign": "center",
+                "WebkitBoxDirection": "normal",
+                "WebkitBoxOrient": "horizontal",
+                "WebkitBoxPack": "center",
+                "WebkitFlexDirection": "row",
+                "WebkitJustifyContent": "center",
+                "alignItems": "center",
+                "flexDirection": "row",
+                "height": "100%",
+                "justifyContent": "center",
+                "msFlexAlign": "center",
+                "msFlexDirection": "row",
+                "msFlexPack": "center",
+              }
+            }
+          >
+            <div
+              className="css-view-1dbjc4n"
+              style={
+                Object {
+                  "paddingLeft": "0px",
+                  "paddingRight": "0px",
+                }
+              }
+            >
+              <div
+                className="css-text-901oao"
+                dir="auto"
+                style={
+                  Object {
+                    "WebkitAlignItems": "center",
+                    "WebkitBoxAlign": "center",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "alignItems": "center",
+                    "color": "rgba(255,255,255,1.00)",
+                    "display": "flex",
+                    "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                    "fontSize": "16px",
+                    "fontWeight": "600",
+                    "justifyContent": "center",
+                    "msFlexAlign": "center",
+                    "msFlexPack": "center",
+                    "textAlign": "center",
+                  }
+                }
+              >
+                Bottom left
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
+exports[`Popover_3 1`] = `
+<div>
+  <div
+    className="css-view-1dbjc4n"
+    style={
+      Object {
+        "WebkitBoxFlex": 1,
+        "WebkitFlexBasis": "0%",
+        "WebkitFlexGrow": 1,
+        "WebkitFlexShrink": 1,
+        "flexBasis": "0%",
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "msFlexNegative": 1,
+        "msFlexPositive": 1,
+        "msFlexPreferredSize": "0%",
+      }
+    }
+  >
+    <div
+      className="css-view-1dbjc4n"
+    >
+      <div
+        className="css-cursor-18t94o4 css-view-1dbjc4n"
+        data-focusable={true}
+        disabled={false}
+        onKeyDown={[Function]}
+        onKeyPress={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        role="button"
+        style={
+          Object {
+            "MozUserSelect": "none",
+            "WebkitUserSelect": "none",
+            "backgroundColor": "rgba(103,198,187,1.00)",
+            "borderBottomLeftRadius": "4px",
+            "borderBottomRightRadius": "4px",
+            "borderTopLeftRadius": "4px",
+            "borderTopRightRadius": "4px",
+            "cursor": "pointer",
+            "height": "48px",
+            "msTouchAction": "manipulation",
+            "msUserSelect": "none",
+            "paddingLeft": "32px",
+            "paddingRight": "32px",
+            "touchAction": "manipulation",
+            "userSelect": "none",
+          }
+        }
+        tabIndex="0"
+      >
+        <div
+          className="css-view-1dbjc4n"
+          style={
+            Object {
+              "WebkitAlignItems": "center",
+              "WebkitBoxAlign": "center",
+              "WebkitBoxDirection": "normal",
+              "WebkitBoxOrient": "horizontal",
+              "WebkitBoxPack": "center",
+              "WebkitFlexDirection": "row",
+              "WebkitJustifyContent": "center",
+              "alignItems": "center",
+              "flexDirection": "row",
+              "height": "100%",
+              "justifyContent": "center",
+              "msFlexAlign": "center",
+              "msFlexDirection": "row",
+              "msFlexPack": "center",
+            }
+          }
+        >
+          <div
+            className="css-view-1dbjc4n"
+            style={
+              Object {
+                "paddingLeft": "0px",
+                "paddingRight": "0px",
+              }
+            }
+          >
+            <div
+              className="css-text-901oao"
+              dir="auto"
+              style={
+                Object {
+                  "WebkitAlignItems": "center",
+                  "WebkitBoxAlign": "center",
+                  "WebkitBoxPack": "center",
+                  "WebkitJustifyContent": "center",
+                  "alignItems": "center",
+                  "color": "rgba(255,255,255,1.00)",
+                  "display": "flex",
+                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                  "fontSize": "16px",
+                  "fontWeight": "600",
+                  "justifyContent": "center",
+                  "msFlexAlign": "center",
+                  "msFlexPack": "center",
+                  "textAlign": "center",
+                }
+              }
+            >
+              Pop
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Popover_4 1`] = `<div />`;
+
 exports[`ProgressBar_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  ProgressBar
+</h1>
 `;
 
 exports[`ProgressBar_1 1`] = `
@@ -11089,18 +10736,12 @@ exports[`ProgressBar_1 1`] = `
 </div>
 `;
 
-exports[`ProgressBar_2 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`ProgressBar_3 1`] = `<div />`;
+exports[`ProgressBar_2 1`] = `<div />`;
 
 exports[`Rating_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Rating
+</h1>
 `;
 
 exports[`Rating_1 1`] = `
@@ -11346,18 +10987,12 @@ exports[`Rating_1 1`] = `
 </div>
 `;
 
-exports[`Rating_2 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`Rating_3 1`] = `<div />`;
+exports[`Rating_2 1`] = `<div />`;
 
 exports[`SelectList_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  SelectList
+</h1>
 `;
 
 exports[`SelectList_1 1`] = `
@@ -11607,12 +11242,6 @@ exports[`SelectList_1 1`] = `
 `;
 
 exports[`SelectList_2 1`] = `
-<h3>
-  Multi select
-</h3>
-`;
-
-exports[`SelectList_3 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -13451,13 +13080,7 @@ exports[`SelectList_3 1`] = `
 </div>
 `;
 
-exports[`SelectList_4 1`] = `
-<h3>
-  Large SelectList
-</h3>
-`;
-
-exports[`SelectList_5 1`] = `
+exports[`SelectList_3 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -15282,13 +14905,7 @@ exports[`SelectList_5 1`] = `
 </div>
 `;
 
-exports[`SelectList_6 1`] = `
-<h3>
-  Single select
-</h3>
-`;
-
-exports[`SelectList_7 1`] = `
+exports[`SelectList_4 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -17127,24 +16744,12 @@ exports[`SelectList_7 1`] = `
 </div>
 `;
 
-exports[`SelectList_8 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`SelectList_9 1`] = `
-<h3>
-  Select List
-</h3>
-`;
-
-exports[`SelectList_10 1`] = `<div />`;
+exports[`SelectList_5 1`] = `<div />`;
 
 exports[`Slider_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Slider
+</h1>
 `;
 
 exports[`Slider_1 1`] = `
@@ -17236,12 +16841,6 @@ exports[`Slider_1 1`] = `
 `;
 
 exports[`Slider_2 1`] = `
-<h3>
-  With Range
-</h3>
-`;
-
-exports[`Slider_3 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -17370,18 +16969,12 @@ exports[`Slider_3 1`] = `
 </div>
 `;
 
-exports[`Slider_4 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`Slider_5 1`] = `<div />`;
+exports[`Slider_3 1`] = `<div />`;
 
 exports[`Switch_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Switch
+</h1>
 `;
 
 exports[`Switch_1 1`] = `
@@ -17516,18 +17109,12 @@ exports[`Switch_1 1`] = `
 </div>
 `;
 
-exports[`Switch_2 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`Switch_3 1`] = `<div />`;
+exports[`Switch_2 1`] = `<div />`;
 
 exports[`Tabs_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Tabs
+</h1>
 `;
 
 exports[`Tabs_1 1`] = `
@@ -18026,18 +17613,12 @@ exports[`Tabs_1 1`] = `
 </div>
 `;
 
-exports[`Tabs_2 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`Tabs_3 1`] = `<div />`;
+exports[`Tabs_2 1`] = `<div />`;
 
 exports[`Text_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Text
+</h1>
 `;
 
 exports[`Text_1 1`] = `
@@ -18075,12 +17656,6 @@ exports[`Text_1 1`] = `
 `;
 
 exports[`Text_2 1`] = `
-<h3>
-  Sizes
-</h3>
-`;
-
-exports[`Text_3 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -18140,13 +17715,7 @@ exports[`Text_3 1`] = `
 </div>
 `;
 
-exports[`Text_4 1`] = `
-<h3>
-  Colors
-</h3>
-`;
-
-exports[`Text_5 1`] = `
+exports[`Text_3 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -18332,13 +17901,7 @@ exports[`Text_5 1`] = `
 </div>
 `;
 
-exports[`Text_6 1`] = `
-<h3>
-  Font Families
-</h3>
-`;
-
-exports[`Text_7 1`] = `
+exports[`Text_4 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -18398,13 +17961,7 @@ exports[`Text_7 1`] = `
 </div>
 `;
 
-exports[`Text_8 1`] = `
-<h3>
-  Font Weights
-</h3>
-`;
-
-exports[`Text_9 1`] = `
+exports[`Text_5 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -18497,13 +18054,7 @@ exports[`Text_9 1`] = `
 </div>
 `;
 
-exports[`Text_10 1`] = `
-<h3>
-  Variations
-</h3>
-`;
-
-exports[`Text_11 1`] = `
+exports[`Text_6 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -18623,18 +18174,12 @@ exports[`Text_11 1`] = `
 </div>
 `;
 
-exports[`Text_12 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`Text_13 1`] = `<div />`;
+exports[`Text_7 1`] = `<div />`;
 
 exports[`TextInput_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  TextInput
+</h1>
 `;
 
 exports[`TextInput_1 1`] = `
@@ -18778,9 +18323,9 @@ exports[`TextInput_1 1`] = `
 `;
 
 exports[`Toast_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Toast
+</h1>
 `;
 
 exports[`Toast_1 1`] = `
@@ -18898,12 +18443,6 @@ exports[`Toast_1 1`] = `
 `;
 
 exports[`Toast_2 1`] = `
-<h3>
-  Variants
-</h3>
-`;
-
-exports[`Toast_3 1`] = `
 <div>
   <div
     className="css-cursor-18t94o4 css-view-1dbjc4n"
@@ -19293,18 +18832,12 @@ exports[`Toast_3 1`] = `
 </div>
 `;
 
-exports[`Toast_4 1`] = `
-<h3>
-  Props
-</h3>
-`;
-
-exports[`Toast_5 1`] = `<div />`;
+exports[`Toast_3 1`] = `<div />`;
 
 exports[`Visible_0 1`] = `
-<h3>
-  Usage
-</h3>
+<h1>
+  Visible
+</h1>
 `;
 
 exports[`Visible_1 1`] = `

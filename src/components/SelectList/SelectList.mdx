@@ -6,9 +6,9 @@ menu: Components
 import { countries as countryList } from 'countries-list';
 import { Playground, Props } from 'docz';
 import { Box } from '../Box';
+import { State } from '../Helpers';
 import { SelectList } from './SelectList';
 import { SelectListItem } from './SelectListItem';
-import { State } from 'react-powerplug';
 
 # SelectList
 
@@ -74,7 +74,7 @@ SelectList that supports single value or multiple values selected at the same it
 
 ### Large SelectList
 
-`SelectList` composes `FlatList` from `react-native`
+`SelectList` composes `FlatList`
 
 <Playground>
   <State initial={{ selectedValue: ['js', 'go'] }}>

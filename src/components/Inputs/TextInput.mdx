@@ -4,8 +4,8 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { State } from 'react-powerplug';
-import { View } from 'react-native';
+import { State } from '../Helpers';
+import { Box } from '../Box';
 
 import { Icon } from '../Icon';
 import { TextInput } from '.';
@@ -30,9 +30,9 @@ Composes of React Native's `TextInput` component (i.e. you can pass its props). 
         onChangeText={text => setState({ value: text })}
         onSubmitEditing={e => console.log('Submit on enter')}
         leftIcon={
-          <View>
+          <Box>
             <Icon name="menu" size={24} />
-          </View>
+          </Box>
         }
         rightIcon={undefined}
         isClearable={true} // Mutually exclusive with rightIcon

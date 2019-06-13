@@ -3,19 +3,19 @@ name: ProgressBar
 menu: Components
 ---
 
-import { Counter as CounterContainer } from 'react-powerplug';
 import { Playground, Props } from 'docz';
 import { ProgressBar } from '.';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Counter } from '../Counter';
+import { CounterState } from '../Helpers';
 
 # ProgressBar
 
 ### Usage
 
 <Playground>
-  <CounterContainer initial={0}>
+  <CounterState initial={0}>
     {({ count, incBy, decBy }) => (
       <Box>
         <ProgressBar
@@ -35,7 +35,7 @@ import { Counter } from '../Counter';
         />
       </Box>
     )}
-  </CounterContainer>
+  </CounterState>
 </Playground>
 
 ### Props

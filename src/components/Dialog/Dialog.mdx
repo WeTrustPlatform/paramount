@@ -3,8 +3,7 @@ name: Dialog
 menu: Components
 ---
 
-import { Toggle } from 'react-powerplug';
-import { TouchableOpacity } from 'react-native';
+import { Toggle } from '../Helpers';
 import { Playground, Props } from 'docz';
 
 import { Icon } from '../Icon';
@@ -32,9 +31,9 @@ Dialog has no predefined styling and handlers. The content, header and footer is
               alignItems="center"
             >
               <Heading>Title</Heading>
-              <TouchableOpacity onPress={toggle}>
+              <Button onPress={toggle}>
                 <Icon name="x" size={24} />
-              </TouchableOpacity>
+              </Button>
             </Box>
           }
           footer={
