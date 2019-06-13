@@ -50,8 +50,8 @@ export const getParagraphStyles: GetParagraphStyles = (
       fontFamily: getFontFamily(theme.fontFamilies)(fontFamily),
       fontWeight:
         getFontWeight(theme.fontWeights)(weight) || sizeStyle.fontWeight,
-      marginBottom: '1em',
-      marginTop: '1em',
+      marginBottom: theme.textSizes.medium.fontSize,
+      marginTop: theme.textSizes.medium.fontSize,
       textAlign: align,
     },
   };
