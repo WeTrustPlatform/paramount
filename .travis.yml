@@ -4,10 +4,11 @@ node_js:
   - '10'
 script:
   - yarn test
+  - yarn lint
   - yarn build
 after_success:
   - yarn travis-deploy-once "npm run semantic-release"
-  - yarn build:docs
+  - yarn docs
 deploy:
   provider: pages
   skip_cleanup: true
