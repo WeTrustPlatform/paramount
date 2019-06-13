@@ -2682,10 +2682,10 @@ exports[`Button_2 1`] = `
                 style={
                   Object {
                     "backgroundColor": "rgba(126,126,126,1.00)",
-                    "borderBottomLeftRadius": "50%",
-                    "borderBottomRightRadius": "50%",
-                    "borderTopLeftRadius": "50%",
-                    "borderTopRightRadius": "50%",
+                    "borderBottomLeftRadius": "999px",
+                    "borderBottomRightRadius": "999px",
+                    "borderTopLeftRadius": "999px",
+                    "borderTopRightRadius": "999px",
                     "height": "10px",
                     "marginLeft": "3px",
                     "marginRight": "3px",
@@ -2699,10 +2699,10 @@ exports[`Button_2 1`] = `
                 style={
                   Object {
                     "backgroundColor": "rgba(126,126,126,1.00)",
-                    "borderBottomLeftRadius": "50%",
-                    "borderBottomRightRadius": "50%",
-                    "borderTopLeftRadius": "50%",
-                    "borderTopRightRadius": "50%",
+                    "borderBottomLeftRadius": "999px",
+                    "borderBottomRightRadius": "999px",
+                    "borderTopLeftRadius": "999px",
+                    "borderTopRightRadius": "999px",
                     "height": "10px",
                     "marginLeft": "3px",
                     "marginRight": "3px",
@@ -2716,10 +2716,10 @@ exports[`Button_2 1`] = `
                 style={
                   Object {
                     "backgroundColor": "rgba(126,126,126,1.00)",
-                    "borderBottomLeftRadius": "50%",
-                    "borderBottomRightRadius": "50%",
-                    "borderTopLeftRadius": "50%",
-                    "borderTopRightRadius": "50%",
+                    "borderBottomLeftRadius": "999px",
+                    "borderBottomRightRadius": "999px",
+                    "borderTopLeftRadius": "999px",
+                    "borderTopRightRadius": "999px",
                     "height": "10px",
                     "marginLeft": "3px",
                     "marginRight": "3px",
@@ -3114,10 +3114,10 @@ exports[`Button_2 1`] = `
                 style={
                   Object {
                     "backgroundColor": "rgba(255,255,255,1.00)",
-                    "borderBottomLeftRadius": "50%",
-                    "borderBottomRightRadius": "50%",
-                    "borderTopLeftRadius": "50%",
-                    "borderTopRightRadius": "50%",
+                    "borderBottomLeftRadius": "999px",
+                    "borderBottomRightRadius": "999px",
+                    "borderTopLeftRadius": "999px",
+                    "borderTopRightRadius": "999px",
                     "height": "10px",
                     "marginLeft": "3px",
                     "marginRight": "3px",
@@ -3131,10 +3131,10 @@ exports[`Button_2 1`] = `
                 style={
                   Object {
                     "backgroundColor": "rgba(255,255,255,1.00)",
-                    "borderBottomLeftRadius": "50%",
-                    "borderBottomRightRadius": "50%",
-                    "borderTopLeftRadius": "50%",
-                    "borderTopRightRadius": "50%",
+                    "borderBottomLeftRadius": "999px",
+                    "borderBottomRightRadius": "999px",
+                    "borderTopLeftRadius": "999px",
+                    "borderTopRightRadius": "999px",
                     "height": "10px",
                     "marginLeft": "3px",
                     "marginRight": "3px",
@@ -3148,10 +3148,10 @@ exports[`Button_2 1`] = `
                 style={
                   Object {
                     "backgroundColor": "rgba(255,255,255,1.00)",
-                    "borderBottomLeftRadius": "50%",
-                    "borderBottomRightRadius": "50%",
-                    "borderTopLeftRadius": "50%",
-                    "borderTopRightRadius": "50%",
+                    "borderBottomLeftRadius": "999px",
+                    "borderBottomRightRadius": "999px",
+                    "borderTopLeftRadius": "999px",
+                    "borderTopRightRadius": "999px",
                     "height": "10px",
                     "marginLeft": "3px",
                     "marginRight": "3px",
@@ -3546,10 +3546,10 @@ exports[`Button_2 1`] = `
                 style={
                   Object {
                     "backgroundColor": "rgba(255,255,255,1.00)",
-                    "borderBottomLeftRadius": "50%",
-                    "borderBottomRightRadius": "50%",
-                    "borderTopLeftRadius": "50%",
-                    "borderTopRightRadius": "50%",
+                    "borderBottomLeftRadius": "999px",
+                    "borderBottomRightRadius": "999px",
+                    "borderTopLeftRadius": "999px",
+                    "borderTopRightRadius": "999px",
                     "height": "10px",
                     "marginLeft": "3px",
                     "marginRight": "3px",
@@ -3563,10 +3563,10 @@ exports[`Button_2 1`] = `
                 style={
                   Object {
                     "backgroundColor": "rgba(255,255,255,1.00)",
-                    "borderBottomLeftRadius": "50%",
-                    "borderBottomRightRadius": "50%",
-                    "borderTopLeftRadius": "50%",
-                    "borderTopRightRadius": "50%",
+                    "borderBottomLeftRadius": "999px",
+                    "borderBottomRightRadius": "999px",
+                    "borderTopLeftRadius": "999px",
+                    "borderTopRightRadius": "999px",
                     "height": "10px",
                     "marginLeft": "3px",
                     "marginRight": "3px",
@@ -3580,10 +3580,10 @@ exports[`Button_2 1`] = `
                 style={
                   Object {
                     "backgroundColor": "rgba(255,255,255,1.00)",
-                    "borderBottomLeftRadius": "50%",
-                    "borderBottomRightRadius": "50%",
-                    "borderTopLeftRadius": "50%",
-                    "borderTopRightRadius": "50%",
+                    "borderBottomLeftRadius": "999px",
+                    "borderBottomRightRadius": "999px",
+                    "borderTopLeftRadius": "999px",
+                    "borderTopRightRadius": "999px",
                     "height": "10px",
                     "marginLeft": "3px",
                     "marginRight": "3px",
@@ -3978,10 +3978,10 @@ exports[`Button_2 1`] = `
                 style={
                   Object {
                     "backgroundColor": "rgba(255,255,255,1.00)",
-                    "borderBottomLeftRadius": "50%",
-                    "borderBottomRightRadius": "50%",
-                    "borderTopLeftRadius": "50%",
-                    "borderTopRightRadius": "50%",
+                    "borderBottomLeftRadius": "999px",
+                    "borderBottomRightRadius": "999px",
+                    "borderTopLeftRadius": "999px",
+                    "borderTopRightRadius": "999px",
                     "height": "10px",
                     "marginLeft": "3px",
                     "marginRight": "3px",
@@ -3995,10 +3995,10 @@ exports[`Button_2 1`] = `
                 style={
                   Object {
                     "backgroundColor": "rgba(255,255,255,1.00)",
-                    "borderBottomLeftRadius": "50%",
-                    "borderBottomRightRadius": "50%",
-                    "borderTopLeftRadius": "50%",
-                    "borderTopRightRadius": "50%",
+                    "borderBottomLeftRadius": "999px",
+                    "borderBottomRightRadius": "999px",
+                    "borderTopLeftRadius": "999px",
+                    "borderTopRightRadius": "999px",
                     "height": "10px",
                     "marginLeft": "3px",
                     "marginRight": "3px",
@@ -4012,10 +4012,10 @@ exports[`Button_2 1`] = `
                 style={
                   Object {
                     "backgroundColor": "rgba(255,255,255,1.00)",
-                    "borderBottomLeftRadius": "50%",
-                    "borderBottomRightRadius": "50%",
-                    "borderTopLeftRadius": "50%",
-                    "borderTopRightRadius": "50%",
+                    "borderBottomLeftRadius": "999px",
+                    "borderBottomRightRadius": "999px",
+                    "borderTopLeftRadius": "999px",
+                    "borderTopRightRadius": "999px",
                     "height": "10px",
                     "marginLeft": "3px",
                     "marginRight": "3px",
@@ -9686,10 +9686,10 @@ exports[`KitchenSink_1 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgba(126,126,126,1.00)",
-                        "borderBottomLeftRadius": "50%",
-                        "borderBottomRightRadius": "50%",
-                        "borderTopLeftRadius": "50%",
-                        "borderTopRightRadius": "50%",
+                        "borderBottomLeftRadius": "999px",
+                        "borderBottomRightRadius": "999px",
+                        "borderTopLeftRadius": "999px",
+                        "borderTopRightRadius": "999px",
                         "height": "10px",
                         "marginLeft": "3px",
                         "marginRight": "3px",
@@ -9703,10 +9703,10 @@ exports[`KitchenSink_1 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgba(126,126,126,1.00)",
-                        "borderBottomLeftRadius": "50%",
-                        "borderBottomRightRadius": "50%",
-                        "borderTopLeftRadius": "50%",
-                        "borderTopRightRadius": "50%",
+                        "borderBottomLeftRadius": "999px",
+                        "borderBottomRightRadius": "999px",
+                        "borderTopLeftRadius": "999px",
+                        "borderTopRightRadius": "999px",
                         "height": "10px",
                         "marginLeft": "3px",
                         "marginRight": "3px",
@@ -9720,10 +9720,10 @@ exports[`KitchenSink_1 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgba(126,126,126,1.00)",
-                        "borderBottomLeftRadius": "50%",
-                        "borderBottomRightRadius": "50%",
-                        "borderTopLeftRadius": "50%",
-                        "borderTopRightRadius": "50%",
+                        "borderBottomLeftRadius": "999px",
+                        "borderBottomRightRadius": "999px",
+                        "borderTopLeftRadius": "999px",
+                        "borderTopRightRadius": "999px",
                         "height": "10px",
                         "marginLeft": "3px",
                         "marginRight": "3px",
@@ -10118,10 +10118,10 @@ exports[`KitchenSink_1 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgba(255,255,255,1.00)",
-                        "borderBottomLeftRadius": "50%",
-                        "borderBottomRightRadius": "50%",
-                        "borderTopLeftRadius": "50%",
-                        "borderTopRightRadius": "50%",
+                        "borderBottomLeftRadius": "999px",
+                        "borderBottomRightRadius": "999px",
+                        "borderTopLeftRadius": "999px",
+                        "borderTopRightRadius": "999px",
                         "height": "10px",
                         "marginLeft": "3px",
                         "marginRight": "3px",
@@ -10135,10 +10135,10 @@ exports[`KitchenSink_1 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgba(255,255,255,1.00)",
-                        "borderBottomLeftRadius": "50%",
-                        "borderBottomRightRadius": "50%",
-                        "borderTopLeftRadius": "50%",
-                        "borderTopRightRadius": "50%",
+                        "borderBottomLeftRadius": "999px",
+                        "borderBottomRightRadius": "999px",
+                        "borderTopLeftRadius": "999px",
+                        "borderTopRightRadius": "999px",
                         "height": "10px",
                         "marginLeft": "3px",
                         "marginRight": "3px",
@@ -10152,10 +10152,10 @@ exports[`KitchenSink_1 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgba(255,255,255,1.00)",
-                        "borderBottomLeftRadius": "50%",
-                        "borderBottomRightRadius": "50%",
-                        "borderTopLeftRadius": "50%",
-                        "borderTopRightRadius": "50%",
+                        "borderBottomLeftRadius": "999px",
+                        "borderBottomRightRadius": "999px",
+                        "borderTopLeftRadius": "999px",
+                        "borderTopRightRadius": "999px",
                         "height": "10px",
                         "marginLeft": "3px",
                         "marginRight": "3px",
@@ -10550,10 +10550,10 @@ exports[`KitchenSink_1 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgba(255,255,255,1.00)",
-                        "borderBottomLeftRadius": "50%",
-                        "borderBottomRightRadius": "50%",
-                        "borderTopLeftRadius": "50%",
-                        "borderTopRightRadius": "50%",
+                        "borderBottomLeftRadius": "999px",
+                        "borderBottomRightRadius": "999px",
+                        "borderTopLeftRadius": "999px",
+                        "borderTopRightRadius": "999px",
                         "height": "10px",
                         "marginLeft": "3px",
                         "marginRight": "3px",
@@ -10567,10 +10567,10 @@ exports[`KitchenSink_1 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgba(255,255,255,1.00)",
-                        "borderBottomLeftRadius": "50%",
-                        "borderBottomRightRadius": "50%",
-                        "borderTopLeftRadius": "50%",
-                        "borderTopRightRadius": "50%",
+                        "borderBottomLeftRadius": "999px",
+                        "borderBottomRightRadius": "999px",
+                        "borderTopLeftRadius": "999px",
+                        "borderTopRightRadius": "999px",
                         "height": "10px",
                         "marginLeft": "3px",
                         "marginRight": "3px",
@@ -10584,10 +10584,10 @@ exports[`KitchenSink_1 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgba(255,255,255,1.00)",
-                        "borderBottomLeftRadius": "50%",
-                        "borderBottomRightRadius": "50%",
-                        "borderTopLeftRadius": "50%",
-                        "borderTopRightRadius": "50%",
+                        "borderBottomLeftRadius": "999px",
+                        "borderBottomRightRadius": "999px",
+                        "borderTopLeftRadius": "999px",
+                        "borderTopRightRadius": "999px",
                         "height": "10px",
                         "marginLeft": "3px",
                         "marginRight": "3px",
@@ -10982,10 +10982,10 @@ exports[`KitchenSink_1 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgba(255,255,255,1.00)",
-                        "borderBottomLeftRadius": "50%",
-                        "borderBottomRightRadius": "50%",
-                        "borderTopLeftRadius": "50%",
-                        "borderTopRightRadius": "50%",
+                        "borderBottomLeftRadius": "999px",
+                        "borderBottomRightRadius": "999px",
+                        "borderTopLeftRadius": "999px",
+                        "borderTopRightRadius": "999px",
                         "height": "10px",
                         "marginLeft": "3px",
                         "marginRight": "3px",
@@ -10999,10 +10999,10 @@ exports[`KitchenSink_1 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgba(255,255,255,1.00)",
-                        "borderBottomLeftRadius": "50%",
-                        "borderBottomRightRadius": "50%",
-                        "borderTopLeftRadius": "50%",
-                        "borderTopRightRadius": "50%",
+                        "borderBottomLeftRadius": "999px",
+                        "borderBottomRightRadius": "999px",
+                        "borderTopLeftRadius": "999px",
+                        "borderTopRightRadius": "999px",
                         "height": "10px",
                         "marginLeft": "3px",
                         "marginRight": "3px",
@@ -11016,10 +11016,10 @@ exports[`KitchenSink_1 1`] = `
                     style={
                       Object {
                         "backgroundColor": "rgba(255,255,255,1.00)",
-                        "borderBottomLeftRadius": "50%",
-                        "borderBottomRightRadius": "50%",
-                        "borderTopLeftRadius": "50%",
-                        "borderTopRightRadius": "50%",
+                        "borderBottomLeftRadius": "999px",
+                        "borderBottomRightRadius": "999px",
+                        "borderTopLeftRadius": "999px",
+                        "borderTopRightRadius": "999px",
                         "height": "10px",
                         "marginLeft": "3px",
                         "marginRight": "3px",
