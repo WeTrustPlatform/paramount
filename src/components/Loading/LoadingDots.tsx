@@ -42,7 +42,7 @@ export const LoadingDots = (props: LoadingDotsProps) => {
           // @ts-ignore
           style={{
             backgroundColor: color,
-            borderRadius: '50%',
+            borderRadius: 999,
             height: size,
             marginLeft: 3,
             marginRight: 3,
