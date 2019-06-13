@@ -1,3 +1,8 @@
+// ===================================================
+// ===================================================
+// THIS IS GENERATED FILE. DO NOT EDIT THIS AND USE SCRIPT 'yarn generate:kitchen-sink' TO UPDATE THIS COMPONENT INSTEAD.
+// ===================================================
+// ===================================================
 // tslint:disable
 import React from 'react';
 import {
