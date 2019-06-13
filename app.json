@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "e2e",
-    "slug": "e2e",
+    "name": "Paramount UI",
+    "slug": "paramount-ui",
     "privacy": "public",
     "sdkVersion": "33.0.0",
     "platforms": ["ios", "android", "web"],
