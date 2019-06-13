@@ -9,11 +9,11 @@ import { GetTabStyles, getTabStyles, TabStyles } from './Tab.styles';
 
 export interface TabProps
   extends Omit<Omit<ButtonProps, 'onPress'>, 'getStyles'> {
-  index: number;
+  index?: number;
   isActive?: boolean;
   shouldStretch?: boolean;
   getStyles?: ReplaceReturnType<GetTabStyles, DeepPartial<TabStyles>>;
-  onPress: (index: number) => void;
+  onPress?: (index: number) => void;
 }
 
 export const Tab = (props: TabProps) => {
@@ -37,7 +37,9 @@ export const Tab = (props: TabProps) => {
       <Button
         color={isActive ? 'primary' : 'default'}
         getStyles={() => ({ buttonStyle, focusColor, textStyle })}
-        onPress={() => onPress(index)}
+        onPress={() => {
+          if (index && onPress) onPress(index);
+        }}
         {...buttonProps}
       />
     </View>

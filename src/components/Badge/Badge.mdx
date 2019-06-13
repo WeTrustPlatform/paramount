@@ -4,9 +4,7 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { Badge } from './Badge';
-import { ThemeContext } from '../../theme';
-import { Box } from '../Box';
+import { Badge, Box } from '..';
 
 # Badge
 
@@ -29,44 +27,75 @@ import { Box } from '../Box';
   </Box>
 </Playground>
 
-### Default
+### Variants
 
 <Playground>
-  <ThemeContext.Consumer>
-    {theme => (
-      <Box>
-        {Object.keys(theme.fills.solid).map(color => (
-          <Box flexDirection="row" key={color}>
-            <Badge color={color}>{color}</Badge>
-            <Badge color={color} isSolid>
-              {color}
-            </Badge>
-          </Box>
-        ))}
-      </Box>
-    )}
-  </ThemeContext.Consumer>
-</Playground>
-
-### Pills
-
-<Playground>
-  <ThemeContext.Consumer>
-    {theme => (
-      <Box>
-        {Object.keys(theme.fills.solid).map(color => (
-          <Box flexDirection="row" key={color}>
-            <Badge shape="pill" color={color}>
-              {color}
-            </Badge>
-            <Badge shape="pill" color={color} isSolid>
-              {color}
-            </Badge>
-          </Box>
-        ))}
-      </Box>
-    )}
-  </ThemeContext.Consumer>
+  <Box>
+    <Box flexDirection="row">
+      <Badge color="neutral" shape="pill">
+        neutral
+      </Badge>
+      <Badge color="neutral" isSolid>
+        neutral
+      </Badge>
+    </Box>
+    <Box flexDirection="row">
+      <Badge color="blue" shape="pill">
+        blue
+      </Badge>
+      <Badge color="blue" isSolid>
+        blue
+      </Badge>
+    </Box>
+    <Box flexDirection="row">
+      <Badge color="red" shape="pill">
+        red
+      </Badge>
+      <Badge color="red" isSolid>
+        red
+      </Badge>
+    </Box>
+    <Box flexDirection="row">
+      <Badge color="orange" shape="pill">
+        orange
+      </Badge>
+      <Badge color="orange" isSolid>
+        orange
+      </Badge>
+    </Box>
+    <Box flexDirection="row">
+      <Badge color="yellow" shape="pill">
+        yellow
+      </Badge>
+      <Badge color="yellow" isSolid>
+        yellow
+      </Badge>
+    </Box>
+    <Box flexDirection="row">
+      <Badge color="green" shape="pill">
+        green
+      </Badge>
+      <Badge color="green" isSolid>
+        green
+      </Badge>
+    </Box>
+    <Box flexDirection="row">
+      <Badge color="teal" shape="pill">
+        teal
+      </Badge>
+      <Badge color="teal" isSolid>
+        teal
+      </Badge>
+    </Box>
+    <Box flexDirection="row">
+      <Badge color="purple" shape="pill">
+        purple
+      </Badge>
+      <Badge color="purple" isSolid>
+        purple
+      </Badge>
+    </Box>
+  </Box>
 </Playground>
 
 ### Props

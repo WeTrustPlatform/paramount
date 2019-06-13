@@ -15,7 +15,7 @@ const paddingLeftMap = {
 export interface ListItemProps extends TextProps {
   children: React.ReactNode;
   size?: TextSize;
-  mark: React.ReactNode;
+  mark?: React.ReactNode;
 }
 
 export const ListItem = (props: ListItemProps) => {

@@ -3,16 +3,16 @@ name: Rating
 menu: Components
 ---
 
-import { Counter as CounterContainer } from 'react-powerplug';
 import { Playground, Props } from 'docz';
-import { Rating } from '.';
+
+import { CounterState, Rating } from '..';
 
 # Rating
 
 ### Usage
 
 <Playground>
-  <CounterContainer initial={3}>
+  <CounterState initial={3}>
     {({ count: rating, set }) => (
       <Rating
         value={rating}
@@ -27,7 +27,7 @@ import { Rating } from '.';
         })}
       />
     )}
-  </CounterContainer>
+  </CounterState>
 </Playground>
 
 ### Props

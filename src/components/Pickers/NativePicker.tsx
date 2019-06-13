@@ -3,11 +3,13 @@ import { Picker as RNPicker, PickerProps as RNPickerProps } from 'react-native';
 
 import { ControlSize, useTheme } from '../../theme';
 import { mergeStyles } from '../../utils/mergeStyles';
+import { NativePickerItemProps } from './NativePickerItem';
 import { PickerButtonGetStylesProp } from './PickerButton';
 import { getPickerButtonStyles } from './PickerButton.styles';
 import { PickerButtonWrapper } from './PickerButtonWrapper';
 
 export interface NativePickerProps extends RNPickerProps {
+  children: Array<React.ReactElement<NativePickerItemProps>>;
   size?: ControlSize;
   innerRef?: React.Ref<RNPicker>;
   /**
@@ -37,7 +39,7 @@ const NativePickerBase = (props: NativePickerProps) => {
   );
 };
 
-export const NativePicker = React.forwardRef<RNPicker, RNPickerProps>(
+export const NativePicker = React.forwardRef<RNPicker, NativePickerProps>(
   (props, ref) => {
     return <NativePickerBase {...props} innerRef={ref} />;
   },

@@ -4,18 +4,8 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { Toggle } from 'react-powerplug';
-import { ScrollView } from 'react-native';
-import { Popover } from '.';
-import { Button } from '../Button';
-import { Box } from '../Box';
-import { Text } from '../Typography';
 
-export default ({ children }) => {
-  document.body.style.height = 'initial';
-  document.body.style.position = 'relative';
-  return <div>{children}</div>;
-};
+import { Box, Button, Popover, Toggle, Text } from '..';
 
 # Popover
 
@@ -179,32 +169,6 @@ This component requires more polish. Composes `Positioner`
       </Toggle>
     </Box>
 
-  </Box>
-</Playground>
-
-### TODO: Popover inside ScrollView
-
-<Playground>
-  <Box height={400}>
-    <ScrollView>
-      <Text align="center">Scroll down to button</Text>
-      <Box height={400} />
-      <Box>
-        <Toggle>
-          {({ on, toggle }) => (
-            <Popover
-              isVisible={on}
-              onClose={toggle}
-              position="top"
-              content={() => <Box width={200} height={200} />}
-            >
-              <Button onPress={toggle} title="Pop" />
-            </Popover>
-          )}
-        </Toggle>
-      </Box>
-      <Box height={400} />
-    </ScrollView>
   </Box>
 </Playground>
 

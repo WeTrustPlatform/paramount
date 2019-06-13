@@ -3,23 +3,20 @@ name: SelectList
 menu: Components
 ---
 
-import { countries as countryList } from 'countries-list';
 import { Playground, Props } from 'docz';
-import { Box } from '../Box';
-import { SelectList } from './SelectList';
-import { SelectListItem } from './SelectListItem';
-import { State } from 'react-powerplug';
+
+import { Box, SelectList, SelectListItem, State } from '..';
 
 # SelectList
 
 SelectList that supports single value or multiple values selected at the same item. `SelectList` is a compound component, which means that its children can be any component, and it will implicitly inject props such as `isSelected` or `onSelect` to them.
-`SelectListItem` composes `ListItem`
+`SelectListItem` composes `ListItem` and `SelectList` composes `FlatList`
 
 ### Usage
 
 <Playground>
   <SelectList
-    isMulti={false}
+    isMulti={false} // Single select
     selectedValue="c"
     onValueChange={(newValue, itemIndex) => {
       console.log(newValue, itemIndex);
@@ -72,78 +69,6 @@ SelectList that supports single value or multiple values selected at the same it
   </State>
 </Playground>
 
-### Large SelectList
-
-`SelectList` composes `FlatList` from `react-native`
-
-<Playground>
-  <State initial={{ selectedValue: ['js', 'go'] }}>
-    {({ state, setState }) => (
-      <Box height={400}>
-        <SelectList
-          isMulti
-          selectedValue={state.selectedValue}
-          onValueChange={(newValue, itemIndex) => {
-            setState({ selectedValue: newValue });
-          }}
-        >
-          {Object.keys(countryList)
-            .map(countryCode => ({
-              countryCode,
-              value: countryCode,
-              label: countryList[countryCode].name,
-              ...countryList[countryCode],
-            }))
-            .map(data => (
-              <SelectListItem
-                key={data.value}
-                label={data.label}
-                value={data.label}
-              />
-            ))}
-        </SelectList>
-      </Box>
-    )}
-  </State>
-</Playground>
-
-### Single select
-
-<Playground>
-  <State initial={{ selectedValue: 'go' }}>
-    {({ state, setState }) => (
-      <SelectList
-        selectedValue={state.selectedValue}
-        onValueChange={(newValue, itemIndex) => {
-          setState({ selectedValue: newValue });
-        }}
-      >
-        <SelectListItem label="C" value="c" />
-        <SelectListItem label="C#" value="c#" />
-        <SelectListItem label="C++" value="c++" />
-        <SelectListItem label="CSS" value="css" />
-        <SelectListItem label="Elixir" value="elixir" />
-        <SelectListItem label="Elm" value="elm" />
-        <SelectListItem label="Erlang" value="erlang" />
-        <SelectListItem label="Go" value="go" />
-        <SelectListItem label="Haskell" value="haskell" />
-        <SelectListItem label="HTML" value="html" />
-        <SelectListItem label="Java" value="java" />
-        <SelectListItem label="JavaScript" value="js" />
-        <SelectListItem label="Lua" value="lua" />
-        <SelectListItem label="Python" value="python" />
-        <SelectListItem label="R" value="r" />
-        <SelectListItem label="Ruby" value="ruby" />
-        <SelectListItem label="Rust" value="rust" />
-        <SelectListItem label="Switft" value="swift" />
-        <SelectListItem label="Typescript" value="typescript" />
-      </SelectList>
-    )}
-  </State>
-</Playground>
-
 ### Props
-
-### Select List
 
 <Props of={SelectList} />

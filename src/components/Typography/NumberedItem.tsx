@@ -4,7 +4,7 @@ import { ListItem, ListItemProps } from './ListItem';
 import { Text } from './Text';
 
 export interface NumberedItemProps extends ListItemProps {
-  index: number;
+  index?: number;
   children: React.ReactNode;
 }
 

@@ -3,21 +3,20 @@ name: Counter
 menu: Components
 ---
 
-import { Counter as CounterContainer } from 'react-powerplug';
 import { Playground, Props } from 'docz';
-import { Counter } from '.';
+import { Counter, CounterState } from '..';
 
 # Counter
 
 ### Usage
 
 <Playground>
-  <CounterContainer initial={0}>
-    {({ count, inc, dec }) => (
+  <CounterState initial={0}>
+    {({ count, increment, decrement }) => (
       <Counter
         count={count}
-        onDecrement={dec}
-        onIncrement={inc}
+        onDecrement={decrement}
+        onIncrement={increment}
         min={0}
         max={10}
         component={null}
@@ -30,7 +29,7 @@ import { Counter } from '.';
         })}
       />
     )}
-  </CounterContainer>
+  </CounterState>
 </Playground>
 
 ### Props

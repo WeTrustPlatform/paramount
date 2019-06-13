@@ -4,25 +4,20 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { Toggle } from 'react-powerplug';
 
-import { Drawer } from '.';
-import { Button } from '../Button';
-import { Box } from '../Box';
-import { Text } from '../Typography';
+import { Box, Button, Drawer, Text, Toggle } from '..';
 
 # Drawer
 
 ### Usage
 
 <Playground>
-  <Drawer />
   <Toggle>
     {({ on, toggle }) => (
       <>
         <Button onPress={toggle} isInline title="Open drawer menu" />
         <Drawer
-          space={null} // px or %, null fits the content
+          space={undefined} // px or %, null fits the content
           offset={0}
           position="bottom"
           isVisible={on}
