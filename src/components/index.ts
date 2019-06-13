@@ -8,6 +8,7 @@ export * from './Collapsible';
 export * from './Counter';
 export * from './Dialog';
 export * from './Divider';
+export * from './Drawer';
 export * from './Form';
 export * from './Grid';
 export * from './Helpers';
