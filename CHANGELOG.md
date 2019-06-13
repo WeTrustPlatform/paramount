@@ -1,3 +1,10 @@
+# [1.58.0](https://github.com/WeTrustPlatform/paramount/compare/v1.57.3...v1.58.0) (2019-06-13)
+
+
+### Features
+
+* **kitchensink:** add kitchen sink component ([#243](https://github.com/WeTrustPlatform/paramount/issues/243)) ([e44a025](https://github.com/WeTrustPlatform/paramount/commit/e44a025))
+
 ## [1.57.3](https://github.com/WeTrustPlatform/paramount/compare/v1.57.2...v1.57.3) (2019-06-12)
 
 
