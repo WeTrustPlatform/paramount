@@ -17,7 +17,9 @@ import { Avatar } from '..';
     size={40}
     isSolid={false}
     color="automatic"
-    getInitials={(name, fallback) => `${name.charAt(0)}${name.charAt(5)}`}
+    getInitials={(name, fallback) =>
+      name ? `${name.charAt(0)}${name.charAt(5)}` : 'A'
+    }
     getStyles={(props, theme) => ({
       boxStyle: {},
       textStyle: {},

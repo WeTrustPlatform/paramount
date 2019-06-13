@@ -12,11 +12,11 @@ import { Counter, CounterState } from '..';
 
 <Playground>
   <CounterState initial={0}>
-    {({ count, inc, dec }) => (
+    {({ count, increment, decrement }) => (
       <Counter
         count={count}
-        onDecrement={dec}
-        onIncrement={inc}
+        onDecrement={decrement}
+        onIncrement={increment}
         min={0}
         max={10}
         component={null}

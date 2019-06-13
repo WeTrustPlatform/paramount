@@ -3,13 +3,11 @@ import { View, ViewProps } from 'react-native';
 
 import { Measurements, useMeasure } from '../../hooks/useMeasure';
 
-export type ViewMeasureRenderPropType = (
-  props: Measurements,
-) => React.ReactNode;
+export type ViewMeasureRenderProp = (props: Measurements) => JSX.Element;
 
 export interface ViewMeasureProps extends ViewProps {
   onMeasure?: (props: Measurements) => void;
-  children: React.ReactNode | ViewMeasureRenderPropType;
+  children: React.ReactNode | ViewMeasureRenderProp;
 }
 
 /**

@@ -12,13 +12,12 @@ import { Box, Button, Drawer, Text, Toggle } from '..';
 ### Usage
 
 <Playground>
-  <Drawer />
   <Toggle>
     {({ on, toggle }) => (
       <>
         <Button onPress={toggle} isInline title="Open drawer menu" />
         <Drawer
-          space={null} // px or %, null fits the content
+          space={undefined} // px or %, null fits the content
           offset={0}
           position="bottom"
           isVisible={on}

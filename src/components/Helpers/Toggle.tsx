@@ -8,7 +8,7 @@ export interface ToggleRenderProps {
 
 export interface ToggleProps {
   initial?: boolean;
-  children: (props: ToggleRenderProps) => React.ReactNode;
+  children: (props: ToggleRenderProps) => JSX.Element;
 }
 
 export const Toggle = (props: ToggleProps) => {

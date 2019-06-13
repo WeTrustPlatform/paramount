@@ -7,7 +7,7 @@ export interface StateRenderProps<TState = any> {
 
 export interface StateProps<TState = any> {
   initial?: TState;
-  children: (props: StateRenderProps) => React.ReactNode;
+  children: (props: StateRenderProps) => JSX.Element;
 }
 
 export const State = (props: StateProps) => {

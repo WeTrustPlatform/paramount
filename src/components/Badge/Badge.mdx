@@ -5,7 +5,6 @@ menu: Components
 
 import { Playground, Props } from 'docz';
 import { Badge, Box } from '..';
-import { ThemeContext } from '../../theme';
 
 # Badge
 
@@ -28,44 +27,30 @@ import { ThemeContext } from '../../theme';
   </Box>
 </Playground>
 
-### Default
+### Variants
 
 <Playground>
-  <ThemeContext.Consumer>
-    {theme => (
-      <Box>
-        {Object.keys(theme.fills.solid).map(color => (
-          <Box flexDirection="row" key={color}>
-            <Badge color={color}>{color}</Badge>
-            <Badge color={color} isSolid>
-              {color}
-            </Badge>
-          </Box>
-        ))}
+  <Box>
+    {[
+      'neutral',
+      'blue',
+      'red',
+      'orange',
+      'yellow',
+      'green',
+      'teal',
+      'purple',
+    ].map(color => (
+      <Box flexDirection="row" key={color}>
+        <Badge color={color} shape="pill">
+          {color}
+        </Badge>
+        <Badge color={color} isSolid>
+          {color}
+        </Badge>
       </Box>
-    )}
-  </ThemeContext.Consumer>
-</Playground>
-
-### Pills
-
-<Playground>
-  <ThemeContext.Consumer>
-    {theme => (
-      <Box>
-        {Object.keys(theme.fills.solid).map(color => (
-          <Box flexDirection="row" key={color}>
-            <Badge shape="pill" color={color}>
-              {color}
-            </Badge>
-            <Badge shape="pill" color={color} isSolid>
-              {color}
-            </Badge>
-          </Box>
-        ))}
-      </Box>
-    )}
-  </ThemeContext.Consumer>
+    ))}
+  </Box>
 </Playground>
 
 ### Props

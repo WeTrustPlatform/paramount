@@ -11,7 +11,7 @@ export interface CounterStateRenderProps {
 
 export interface CounterStateProps {
   initial?: number;
-  children: (props: CounterStateRenderProps) => React.ReactNode;
+  children: (props: CounterStateRenderProps) => JSX.Element;
 }
 
 export const CounterState = (props: CounterStateProps) => {
