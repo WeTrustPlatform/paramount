@@ -344,7 +344,7 @@ export const KitchenSink = () => {
                   touchableStyle: {},
                   checkboxStyle: {},
                   checkColor: 'white',
-                  checkboxFocusBackgroundColor: '',
+                  checkboxFocusBackgroundColor: '#fafafa',
                 })}
               />
             </FormField>

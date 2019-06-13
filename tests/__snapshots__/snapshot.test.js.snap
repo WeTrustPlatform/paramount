@@ -21497,8 +21497,8 @@ exports[`KitchenSink_1 1`] = `
               "fontSize": "18px",
               "fontWeight": "normal",
               "lineHeight": "18px",
-              "marginBottom": "1em",
-              "marginTop": "1em",
+              "marginBottom": "16px",
+              "marginTop": "16px",
               "textAlign": "left",
             }
           }
@@ -21538,8 +21538,8 @@ exports[`KitchenSink_1 1`] = `
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
               "fontSize": "14px",
               "lineHeight": "24px",
-              "marginBottom": "1em",
-              "marginTop": "1em",
+              "marginBottom": "16px",
+              "marginTop": "16px",
               "textAlign": "left",
             }
           }
@@ -21556,8 +21556,8 @@ exports[`KitchenSink_1 1`] = `
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
               "fontSize": "16px",
               "lineHeight": "21px",
-              "marginBottom": "1em",
-              "marginTop": "1em",
+              "marginBottom": "16px",
+              "marginTop": "16px",
               "textAlign": "left",
             }
           }
@@ -21574,8 +21574,8 @@ exports[`KitchenSink_1 1`] = `
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
               "fontSize": "18px",
               "lineHeight": "18px",
-              "marginBottom": "1em",
-              "marginTop": "1em",
+              "marginBottom": "16px",
+              "marginTop": "16px",
               "textAlign": "left",
             }
           }
@@ -23313,8 +23313,8 @@ exports[`Paragraph_1 1`] = `
           "fontSize": "18px",
           "fontWeight": "normal",
           "lineHeight": "18px",
-          "marginBottom": "1em",
-          "marginTop": "1em",
+          "marginBottom": "16px",
+          "marginTop": "16px",
           "textAlign": "left",
         }
       }
@@ -23349,8 +23349,8 @@ exports[`Paragraph_2 1`] = `
           "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
           "fontSize": "14px",
           "lineHeight": "24px",
-          "marginBottom": "1em",
-          "marginTop": "1em",
+          "marginBottom": "16px",
+          "marginTop": "16px",
           "textAlign": "left",
         }
       }
@@ -23367,8 +23367,8 @@ exports[`Paragraph_2 1`] = `
           "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
           "fontSize": "16px",
           "lineHeight": "21px",
-          "marginBottom": "1em",
-          "marginTop": "1em",
+          "marginBottom": "16px",
+          "marginTop": "16px",
           "textAlign": "left",
         }
       }
@@ -23385,8 +23385,8 @@ exports[`Paragraph_2 1`] = `
           "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
           "fontSize": "18px",
           "lineHeight": "18px",
-          "marginBottom": "1em",
-          "marginTop": "1em",
+          "marginBottom": "16px",
+          "marginTop": "16px",
           "textAlign": "left",
         }
       }

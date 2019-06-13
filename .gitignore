@@ -34,3 +34,8 @@ coverage
 mydb.sql
 .cache
 .docz
+
+# Expo
+.expo/*
+web-build/
+web-report/

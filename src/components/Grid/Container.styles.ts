@@ -25,8 +25,8 @@ export const getContainerStyles: GetContainerStyles = (
       marginLeft: 'auto',
       marginRight: 'auto',
       maxWidth: maxWidth || containerWidth,
-      paddingLeft: `${gutterWidth / 2}px`,
-      paddingRight: `${gutterWidth / 2}px`,
+      paddingLeft: gutterWidth / 2,
+      paddingRight: gutterWidth / 2,
       width: '100%',
     },
   };
