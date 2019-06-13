@@ -1,3 +1,11 @@
+## [1.58.1](https://github.com/WeTrustPlatform/paramount/compare/v1.58.0...v1.58.1) (2019-06-13)
+
+
+### Bug Fixes
+
+* **android:** fix borderRadius to be number ([cdf28f4](https://github.com/WeTrustPlatform/paramount/commit/cdf28f4))
+* **tests:** update snapshots ([fdf241b](https://github.com/WeTrustPlatform/paramount/commit/fdf241b))
+
 # [1.58.0](https://github.com/WeTrustPlatform/paramount/compare/v1.57.3...v1.58.0) (2019-06-13)
 
 
