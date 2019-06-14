@@ -307,10 +307,10 @@ export const KitchenSink = () => {
       </Playground>
 
       <Playground>
-        <Box flexDirection="row" justifyContent="flex-start">
+        <Box paddingBottom={16} flexDirection="row" justifyContent="flex-start">
           <Button isInline color="primary" title="Left small" size="small" />
         </Box>
-        <Box flexDirection="row" justifyContent="center">
+        <Box paddingBottom={16} flexDirection="row" justifyContent="center">
           <Button
             isInline
             color="primary"
@@ -318,7 +318,7 @@ export const KitchenSink = () => {
             size="medium"
           />
         </Box>
-        <Box flexDirection="row" justifyContent="flex-end">
+        <Box paddingBottom={16} flexDirection="row" justifyContent="flex-end">
           <Button isInline color="primary" title="Right large" size="large" />
         </Box>
       </Playground>
@@ -362,9 +362,8 @@ export const KitchenSink = () => {
         <Toggle initial={false}>
           {({ on, toggle }) => (
             <Collapsible
-              isAnimated={true}
-              // The header will move to the end of the content when revealing content
-              shouldMoveWithEndOfContent={false}
+              title="Stays at top of content"
+              header={undefined}
               initialIsOpen={false}
               isOpen={on}
               onOpen={toggle}
@@ -376,8 +375,6 @@ export const KitchenSink = () => {
                 textStyle: {},
                 iconWrapperStyle: {},
               })}
-              title="Stays at top of content"
-              header={null}
             >
               <Box
                 marginVertical={16}
@@ -391,31 +388,6 @@ export const KitchenSink = () => {
             </Collapsible>
           )}
         </Toggle>
-
-        <Box paddingTop={24}>
-          <Toggle initial={false}>
-            {({ on, toggle }) => (
-              <Collapsible
-                isAnimated={true}
-                shouldMoveWithEndOfContent
-                isOpen={on}
-                onOpen={toggle}
-                onClose={toggle}
-                title="Moves with end of content"
-              >
-                <Box
-                  marginVertical={16}
-                  justifyContent="center"
-                  alignItems="center"
-                  height={300}
-                  backgroundColor="#67c6bb"
-                >
-                  <Text color="white">Content of the Collapsible</Text>
-                </Box>
-              </Collapsible>
-            )}
-          </Toggle>
-        </Box>
       </Playground>
 
       <Box paddingTop={96}>
@@ -466,6 +438,7 @@ export const KitchenSink = () => {
                   >
                     <Heading>Title</Heading>
                     <Button
+                      appearance="minimal"
                       icon={<Icon name="x" size={24} />}
                       onPress={toggle}
                     />

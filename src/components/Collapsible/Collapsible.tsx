@@ -19,9 +19,9 @@ import {
 const AnimatedView = animated(View);
 
 export interface CollapsibleProps extends AccessibilityProps {
-  /** Adds animation when revealing the content @default true */
+  /** Web: Adds animation when revealing the content @default true */
   isAnimated?: boolean;
-  /** The header will move to the end of the content when revealing content @default false */
+  /** Web: The header will move to the end of the content when revealing content @default false */
   shouldMoveWithEndOfContent?: boolean;
   children?: React.ReactNode;
   /** Uncontrolled usage of the component */
@@ -35,13 +35,14 @@ export interface CollapsibleProps extends AccessibilityProps {
     DeepPartial<CollapsibleStyles>
   >;
   title?: string;
+  /** Override the title and header of the Collapsible */
   header?: React.ReactNode;
   testID?: string;
 }
 
 export const Collapsible = (props: CollapsibleProps) => {
   const {
-    isAnimated = true,
+    isAnimated = false,
     shouldMoveWithEndOfContent = false,
     title,
     children,

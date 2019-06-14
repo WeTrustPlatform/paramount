@@ -71,13 +71,13 @@ import { Box, Button } from '..';
 ### Positioning inline button with different sizes
 
 <Playground>
-  <Box flexDirection="row" justifyContent="flex-start">
+  <Box paddingBottom={16} flexDirection="row" justifyContent="flex-start">
     <Button isInline color="primary" title="Left small" size="small" />
   </Box>
-  <Box flexDirection="row" justifyContent="center">
+  <Box paddingBottom={16} flexDirection="row" justifyContent="center">
     <Button isInline color="primary" title="Center medium" size="medium" />
   </Box>
-  <Box flexDirection="row" justifyContent="flex-end">
+  <Box paddingBottom={16} flexDirection="row" justifyContent="flex-end">
     <Button isInline color="primary" title="Right large" size="large" />
   </Box>
 </Playground>

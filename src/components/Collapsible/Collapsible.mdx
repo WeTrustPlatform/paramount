@@ -14,9 +14,8 @@ import { Box, Collapsible, Text, Toggle } from '..';
   <Toggle initial={false}>
     {({ on, toggle }) => (
       <Collapsible
-        isAnimated={true}
-        // The header will move to the end of the content when revealing content
-        shouldMoveWithEndOfContent={false}
+        title="Stays at top of content"
+        header={undefined}
         initialIsOpen={false}
         isOpen={on}
         onOpen={toggle}
@@ -28,8 +27,6 @@ import { Box, Collapsible, Text, Toggle } from '..';
           textStyle: {},
           iconWrapperStyle: {},
         })}
-        title="Stays at top of content"
-        header={null}
       >
         <Box
           marginVertical={16}
@@ -43,31 +40,6 @@ import { Box, Collapsible, Text, Toggle } from '..';
       </Collapsible>
     )}
   </Toggle>
-
-  <Box paddingTop={24}>
-    <Toggle initial={false}>
-      {({ on, toggle }) => (
-        <Collapsible
-          isAnimated={true}
-          shouldMoveWithEndOfContent
-          isOpen={on}
-          onOpen={toggle}
-          onClose={toggle}
-          title="Moves with end of content"
-        >
-          <Box
-            marginVertical={16}
-            justifyContent="center"
-            alignItems="center"
-            height={300}
-            backgroundColor="#67c6bb"
-          >
-            <Text color="white">Content of the Collapsible</Text>
-          </Box>
-        </Collapsible>
-      )}
-    </Toggle>
-  </Box>
 </Playground>
 
 ### Props
