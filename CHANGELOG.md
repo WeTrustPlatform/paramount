@@ -1,3 +1,15 @@
+# [1.60.0](https://github.com/WeTrustPlatform/paramount/compare/v1.59.0...v1.60.0) (2019-06-14)
+
+
+### Bug Fixes
+
+* **grid:** fix cross-platform grid compat ([6df3b30](https://github.com/WeTrustPlatform/paramount/commit/6df3b30))
+
+
+### Features
+
+* **container:** add fluid and change implementation ([f197251](https://github.com/WeTrustPlatform/paramount/commit/f197251))
+
 # [1.59.0](https://github.com/WeTrustPlatform/paramount/compare/v1.58.1...v1.59.0) (2019-06-14)
 
 
