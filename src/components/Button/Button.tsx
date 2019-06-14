@@ -10,7 +10,7 @@ import { DeepPartial } from 'ts-essentials';
 
 import { ButtonColor, ControlSize, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { LoadingDots } from '../Loading';
+import { Dots } from '../LoadingIndicators';
 import { Text } from '../Typography';
 import {
   ButtonAppearance,
@@ -178,7 +178,7 @@ export interface ButtonContentProps extends ButtonProps {
 const ButtonContent = (props: ButtonContentProps) => {
   const { isLoading, iconLoading, icon, title, textStyle, size } = props;
 
-  if (isLoading) return iconLoading || <LoadingDots color={textStyle.color} />;
+  if (isLoading) return iconLoading || <Dots color={textStyle.color} />;
   if (icon) return icon;
   if (title) {
     return (

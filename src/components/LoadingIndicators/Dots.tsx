@@ -2,29 +2,31 @@ import * as React from 'react';
 import { View } from 'react-native';
 import { animated, useTrail } from 'react-spring/native.cjs';
 
+import { useForceUpdate } from '../../hooks';
+import { useTheme } from '../../theme';
+
 const AnimatedView = animated(View);
 
-export interface LoadingDotsProps {
+export interface DotsProps {
   color?: string;
   size?: number;
 }
 
-const items = ['1', '2', '3'];
+export const Dots = (props: DotsProps) => {
+  const theme = useTheme();
+  const { size = 10, color = theme.colors.text.primary } = props;
+  const forceUpdate = useForceUpdate();
 
-export const LoadingDots = (props: LoadingDotsProps) => {
-  const { size = 10, color = '#aaa' } = props;
-
-  const trail = useTrail(items.length, {
+  const trail = useTrail(3, {
     config: { duration: 800 },
     from: { opacity: 0 },
+    onRest: forceUpdate,
     reset: true,
     to: async next => {
-      while (true) {
-        // tslint:disable-next-line
-        await next({ opacity: 1 });
-        // tslint:disable-next-line
-        await next({ opacity: 0 });
-      }
+      // tslint:disable-next-line
+      await next({ opacity: 1 });
+      // tslint:disable-next-line
+      await next({ opacity: 0 });
     },
   });
 
@@ -38,7 +40,7 @@ export const LoadingDots = (props: LoadingDotsProps) => {
     >
       {trail.map((style, index) => (
         <AnimatedView
-          key={items[index]}
+          key={index}
           // @ts-ignore
           style={{
             backgroundColor: color,

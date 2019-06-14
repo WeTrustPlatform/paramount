@@ -16,7 +16,7 @@ export * from './Icon';
 export * from './Inputs';
 export * from './KitchenSink';
 export * from './ListItem';
-export * from './Loading';
+export * from './LoadingIndicators';
 export * from './Modal';
 export * from './Overlay';
 export * from './Pickers';
