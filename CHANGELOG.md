@@ -1,3 +1,10 @@
+## [1.60.1](https://github.com/WeTrustPlatform/paramount/compare/v1.60.0...v1.60.1) (2019-06-14)
+
+
+### Bug Fixes
+
+* **dots:** fix loading indicator ([36693dd](https://github.com/WeTrustPlatform/paramount/commit/36693dd))
+
 # [1.60.0](https://github.com/WeTrustPlatform/paramount/compare/v1.59.0...v1.60.0) (2019-06-14)
 
 
