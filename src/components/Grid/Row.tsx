@@ -4,11 +4,14 @@ import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { ColumnProps } from './Column';
 import { defaultLayout, useLayout } from './LayoutContext';
 import { GetRowStyles, getRowStyles, RowStyles } from './Row.styles';
 
 export interface RowProps {
-  children: React.ReactNode;
+  children:
+    | Array<React.ReactElement<ColumnProps>>
+    | React.ReactElement<ColumnProps>;
   hasGutter?: boolean;
   getStyles?: ReplaceReturnType<GetRowStyles, DeepPartial<RowStyles>>;
 }

@@ -75,6 +75,7 @@ export const getColumnStyles: GetColumnStyles = (
 
   return {
     columnStyle: {
+      flex: 1,
       flexBasis,
       marginLeft,
       maxWidth: flexBasis,

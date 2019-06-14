@@ -11,7 +11,7 @@ export type TabsDistribution = 'scrollable' | 'fit';
 
 export interface TabsProps {
   activeTabIndex?: number;
-  children: Array<React.ReactElement<TabProps>>;
+  children: Array<React.ReactElement<TabProps>> | React.ReactElement<TabProps>;
   getStyles?: ReplaceReturnType<GetTabsStyles, DeepPartial<TabsStyles>>;
 
   onChange: (index: number) => void;
