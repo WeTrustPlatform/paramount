@@ -9,11 +9,12 @@ import {
   GetContainerStyles,
   getContainerStyles,
 } from './Container.styles';
-import { useLayout } from './LayoutContext';
+import { ContainerSize, useLayout } from './LayoutContext';
 
 export interface ContainerProps {
   children: React.ReactNode;
-  maxWidth?: number;
+  fluid?: boolean;
+  size?: ContainerSize;
   getStyles?: ReplaceReturnType<
     GetContainerStyles,
     DeepPartial<ContainerStyles>
@@ -24,15 +25,15 @@ export interface ContainerProps {
  * On screens with size lg and above, caps maximum width of the content
  */
 export const Container = (props: ContainerProps) => {
-  const { children, getStyles, maxWidth } = props;
-  const { maxWidth: containerWidth, gutterWidth } = useLayout();
+  const { children, getStyles, size, fluid = false } = props;
+  const { gutterWidth, containerSizes, currentScreenSize } = useLayout();
   const theme = useTheme();
 
   const { containerStyle } = mergeStyles(
     getContainerStyles,
     getStyles,
     theme.components.getContainerStyles,
-  )({ maxWidth, containerWidth, gutterWidth }, theme);
+  )({ size, gutterWidth, currentScreenSize, containerSizes, fluid }, theme);
 
   return <View style={containerStyle}>{children}</View>;
 };

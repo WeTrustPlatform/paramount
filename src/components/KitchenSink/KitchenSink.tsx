@@ -660,7 +660,10 @@ export const KitchenSink = () => {
       <Playground>
         <LayoutProvider>
           <Box backgroundColor="#67c6bb" padding={3}>
-            <Container maxWidth={300}>
+            <Container
+              fluid={false} // Should not contain width
+              size={undefined} // Override default container size
+            >
               <Box backgroundColor="white" padding={3}>
                 <Text>Centered content</Text>
               </Box>
@@ -671,7 +674,7 @@ export const KitchenSink = () => {
 
       <Box paddingTop={96}>
         <Heading size="xxxlarge" weight="bold">
-          Grid
+          Row and Column
         </Heading>
       </Box>
 

@@ -4661,7 +4661,6 @@ exports[`Container_1 1`] = `
         Object {
           "marginLeft": "auto",
           "marginRight": "auto",
-          "maxWidth": "300px",
           "paddingLeft": "15px",
           "paddingRight": "15px",
           "width": "100%",
@@ -4699,6 +4698,8 @@ exports[`Container_1 1`] = `
   </div>
 </div>
 `;
+
+exports[`Container_2 1`] = `<div />`;
 
 exports[`Counter_0 1`] = `
 <h1>
@@ -11594,7 +11595,6 @@ exports[`KitchenSink_1 1`] = `
             Object {
               "marginLeft": "auto",
               "marginRight": "auto",
-              "maxWidth": "300px",
               "paddingLeft": "15px",
               "paddingRight": "15px",
               "width": "100%",
@@ -11655,7 +11655,7 @@ exports[`KitchenSink_1 1`] = `
           }
         }
       >
-        Grid
+        Row and Column
       </h1>
     </div>
     <div
@@ -11682,7 +11682,6 @@ exports[`KitchenSink_1 1`] = `
             Object {
               "marginLeft": "auto",
               "marginRight": "auto",
-              "maxWidth": "1440px",
               "paddingLeft": "15px",
               "paddingRight": "15px",
               "width": "100%",
@@ -12145,7 +12144,6 @@ exports[`KitchenSink_1 1`] = `
             Object {
               "marginLeft": "auto",
               "marginRight": "auto",
-              "maxWidth": "1440px",
               "paddingLeft": "15px",
               "paddingRight": "15px",
               "width": "100%",
@@ -12258,7 +12256,6 @@ exports[`KitchenSink_1 1`] = `
             Object {
               "marginLeft": "auto",
               "marginRight": "auto",
-              "maxWidth": "1440px",
               "paddingLeft": "15px",
               "paddingRight": "15px",
               "width": "100%",
@@ -12406,7 +12403,6 @@ exports[`KitchenSink_1 1`] = `
             Object {
               "marginLeft": "auto",
               "marginRight": "auto",
-              "maxWidth": "1440px",
               "paddingLeft": "15px",
               "paddingRight": "15px",
               "width": "100%",
@@ -12529,7 +12525,6 @@ exports[`KitchenSink_1 1`] = `
             Object {
               "marginLeft": "auto",
               "marginRight": "auto",
-              "maxWidth": "1440px",
               "paddingLeft": "15px",
               "paddingRight": "15px",
               "width": "100%",
@@ -12687,7 +12682,6 @@ exports[`KitchenSink_1 1`] = `
             Object {
               "marginLeft": "auto",
               "marginRight": "auto",
-              "maxWidth": "1440px",
               "paddingLeft": "15px",
               "paddingRight": "15px",
               "width": "100%",
@@ -12883,7 +12877,6 @@ exports[`KitchenSink_1 1`] = `
             Object {
               "marginLeft": "auto",
               "marginRight": "auto",
-              "maxWidth": "1440px",
               "paddingLeft": "15px",
               "paddingRight": "15px",
               "width": "100%",
@@ -23806,7 +23799,6 @@ exports[`RowAndColumn_1 1`] = `
         Object {
           "marginLeft": "auto",
           "marginRight": "auto",
-          "maxWidth": "1440px",
           "paddingLeft": "15px",
           "paddingRight": "15px",
           "width": "100%",
@@ -24269,7 +24261,6 @@ exports[`RowAndColumn_1 1`] = `
         Object {
           "marginLeft": "auto",
           "marginRight": "auto",
-          "maxWidth": "1440px",
           "paddingLeft": "15px",
           "paddingRight": "15px",
           "width": "100%",
@@ -24382,7 +24373,6 @@ exports[`RowAndColumn_1 1`] = `
         Object {
           "marginLeft": "auto",
           "marginRight": "auto",
-          "maxWidth": "1440px",
           "paddingLeft": "15px",
           "paddingRight": "15px",
           "width": "100%",
@@ -24530,7 +24520,6 @@ exports[`RowAndColumn_1 1`] = `
         Object {
           "marginLeft": "auto",
           "marginRight": "auto",
-          "maxWidth": "1440px",
           "paddingLeft": "15px",
           "paddingRight": "15px",
           "width": "100%",
@@ -24648,7 +24637,6 @@ exports[`RowAndColumn_2 1`] = `
         Object {
           "marginLeft": "auto",
           "marginRight": "auto",
-          "maxWidth": "1440px",
           "paddingLeft": "15px",
           "paddingRight": "15px",
           "width": "100%",
@@ -24801,7 +24789,6 @@ exports[`RowAndColumn_3 1`] = `
         Object {
           "marginLeft": "auto",
           "marginRight": "auto",
-          "maxWidth": "1440px",
           "paddingLeft": "15px",
           "paddingRight": "15px",
           "width": "100%",
@@ -24992,7 +24979,6 @@ exports[`RowAndColumn_4 1`] = `
         Object {
           "marginLeft": "auto",
           "marginRight": "auto",
-          "maxWidth": "1440px",
           "paddingLeft": "15px",
           "paddingRight": "15px",
           "width": "100%",
@@ -25092,6 +25078,10 @@ exports[`RowAndColumn_4 1`] = `
   </div>
 </div>
 `;
+
+exports[`RowAndColumn_5 1`] = `<div />`;
+
+exports[`RowAndColumn_6 1`] = `<div />`;
 
 exports[`SelectList_0 1`] = `
 <h1>
