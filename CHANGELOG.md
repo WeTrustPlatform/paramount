@@ -1,3 +1,10 @@
+# [1.59.0](https://github.com/WeTrustPlatform/paramount/compare/v1.58.1...v1.59.0) (2019-06-14)
+
+
+### Features
+
+* **collapsible:** lean Collapsible ([ae11b9d](https://github.com/WeTrustPlatform/paramount/commit/ae11b9d))
+
 ## [1.58.1](https://github.com/WeTrustPlatform/paramount/compare/v1.58.0...v1.58.1) (2019-06-13)
 
 
