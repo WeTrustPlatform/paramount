@@ -53,10 +53,10 @@ export const getContainerStyles: GetContainerStyles = (
       marginLeft: 'auto',
       marginRight: 'auto',
       maxWidth: fluid
-        ? size
-          ? containerSizes[size]
-          : getMaxWidth(containerSizes, currentScreenSize)
-        : undefined,
+        ? '100%'
+        : size
+        ? containerSizes[size]
+        : getMaxWidth(containerSizes, currentScreenSize),
       paddingLeft: gutterWidth / 2,
       paddingRight: gutterWidth / 2,
       width: '100%',
