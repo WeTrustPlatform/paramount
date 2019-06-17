@@ -133,19 +133,19 @@ export const Positioner = (props: PositionerProps) => {
 
   return (
     <>
+      {isVisible && (
+        <ViewMeasure
+          style={{
+            ...positionStyle,
+            ...positionerStyle,
+          }}
+          onMeasure={setPositionerMeasurements}
+        >
+          {content}
+        </ViewMeasure>
+      )}
       <ViewMeasure style={containerStyle} onMeasure={setTargetMeasurements}>
         {children}
-        {isVisible && (
-          <ViewMeasure
-            style={{
-              ...positionStyle,
-              ...positionerStyle,
-            }}
-            onMeasure={setPositionerMeasurements}
-          >
-            {content}
-          </ViewMeasure>
-        )}
       </ViewMeasure>
     </>
   );

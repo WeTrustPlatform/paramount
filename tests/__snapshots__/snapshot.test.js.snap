@@ -4813,6 +4813,7 @@ exports[`Counter_1 1`] = `
           "WebkitBoxPack": "center",
           "WebkitJustifyContent": "center",
           "justifyContent": "center",
+          "minWidth": "24px",
           "msFlexPack": "center",
         }
       }
@@ -4825,7 +4826,7 @@ exports[`Counter_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "16px",
-            "textAlign": "left",
+            "textAlign": "center",
           }
         }
       >
@@ -5630,6 +5631,7 @@ exports[`FormField_1 1`] = `
               "paddingLeft": "8px",
               "paddingRight": "8px",
               "position": "absolute",
+              "zIndex": 1,
             }
           }
         />
@@ -5691,6 +5693,7 @@ exports[`FormField_1 1`] = `
               "paddingRight": "8px",
               "position": "absolute",
               "right": "0px",
+              "zIndex": 1,
             }
           }
         />
@@ -5901,6 +5904,14 @@ exports[`KitchenSink_1 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
+    style={
+      Object {
+        "paddingBottom": "16px",
+        "paddingLeft": "16px",
+        "paddingRight": "16px",
+        "paddingTop": "16px",
+      }
+    }
   >
     <div
       className="css-view-1dbjc4n"
@@ -5919,7 +5930,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -6662,7 +6673,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -6820,7 +6831,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -7812,7 +7823,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -7864,7 +7875,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -10120,7 +10131,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -10258,7 +10269,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -10397,7 +10408,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -10520,6 +10531,7 @@ exports[`KitchenSink_1 1`] = `
               "WebkitBoxPack": "center",
               "WebkitJustifyContent": "center",
               "justifyContent": "center",
+              "minWidth": "24px",
               "msFlexPack": "center",
             }
           }
@@ -10532,7 +10544,7 @@ exports[`KitchenSink_1 1`] = `
                 "color": "rgba(126,126,126,1.00)",
                 "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                 "fontSize": "16px",
-                "textAlign": "left",
+                "textAlign": "center",
               }
             }
           >
@@ -10652,7 +10664,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -10785,7 +10797,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -10842,7 +10854,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -11361,7 +11373,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -11440,6 +11452,7 @@ exports[`KitchenSink_1 1`] = `
                   "paddingLeft": "8px",
                   "paddingRight": "8px",
                   "position": "absolute",
+                  "zIndex": 1,
                 }
               }
             />
@@ -11501,6 +11514,7 @@ exports[`KitchenSink_1 1`] = `
                   "paddingRight": "8px",
                   "position": "absolute",
                   "right": "0px",
+                  "zIndex": 1,
                 }
               }
             />
@@ -11558,7 +11572,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -11648,7 +11662,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -12992,7 +13006,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -13053,7 +13067,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -13098,49 +13112,46 @@ exports[`KitchenSink_1 1`] = `
               "paddingLeft": "8px",
               "paddingRight": "8px",
               "position": "absolute",
+              "zIndex": 1,
             }
           }
         >
-          <div
-            className="css-view-1dbjc4n"
-          >
-            <svg
-              fill="none"
-              height={24}
-              size={24}
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              style={
-                Object {
-                  "color": undefined,
-                }
+          <svg
+            fill="none"
+            height={24}
+            size={24}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            style={
+              Object {
+                "color": undefined,
               }
-              viewBox="0 0 24 24"
-              width={24}
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <line
-                x1="3"
-                x2="21"
-                y1="12"
-                y2="12"
-              />
-              <line
-                x1="3"
-                x2="21"
-                y1="6"
-                y2="6"
-              />
-              <line
-                x1="3"
-                x2="21"
-                y1="18"
-                y2="18"
-              />
-            </svg>
-          </div>
+            }
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="3"
+              x2="21"
+              y1="12"
+              y2="12"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="6"
+              y2="6"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="18"
+              y2="18"
+            />
+          </svg>
         </div>
         <input
           autoCapitalize="sentences"
@@ -13149,7 +13160,7 @@ exports[`KitchenSink_1 1`] = `
           className="css-textinput-1cwyjr8 r-placeholderTextColor-15ldjex"
           data-focusable={true}
           dir="auto"
-          name="field"
+          name="emailAddress"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
@@ -13177,8 +13188,8 @@ exports[`KitchenSink_1 1`] = `
               "color": "rgba(126,126,126,1.00)",
               "fontSize": "20px",
               "height": "56px",
-              "paddingLeft": "48px",
-              "paddingRight": "24px",
+              "paddingLeft": "40px",
+              "paddingRight": "40px",
               "width": "100%",
             }
           }
@@ -13203,6 +13214,7 @@ exports[`KitchenSink_1 1`] = `
               "paddingRight": "8px",
               "position": "absolute",
               "right": "0px",
+              "zIndex": 1,
             }
           }
         />
@@ -13225,7 +13237,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -13234,6 +13246,234 @@ exports[`KitchenSink_1 1`] = `
       >
         ListItem
       </h1>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "paddingBottom": "32px",
+          "paddingTop": "32px",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n"
+        data-focusable={true}
+        disabled={false}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "MozUserSelect": "none",
+            "WebkitBoxPack": "center",
+            "WebkitJustifyContent": "center",
+            "WebkitUserSelect": "none",
+            "backgroundColor": "rgba(255,255,255,1.00)",
+            "borderBottomColor": "rgba(238,238,238,1.00)",
+            "borderBottomWidth": "1px",
+            "borderLeftColor": "rgba(238,238,238,1.00)",
+            "borderRightColor": "rgba(238,238,238,1.00)",
+            "borderTopColor": "rgba(238,238,238,1.00)",
+            "cursor": "pointer",
+            "height": "56px",
+            "justifyContent": "center",
+            "msFlexPack": "center",
+            "msTouchAction": "manipulation",
+            "msUserSelect": "none",
+            "paddingLeft": "16px",
+            "paddingRight": "8px",
+            "touchAction": "manipulation",
+            "userSelect": "none",
+          }
+        }
+        tabIndex="0"
+      >
+        <div
+          className="css-view-1dbjc4n"
+          style={
+            Object {
+              "WebkitAlignItems": "center",
+              "WebkitBoxAlign": "center",
+              "WebkitBoxDirection": "normal",
+              "WebkitBoxOrient": "horizontal",
+              "WebkitBoxPack": "justify",
+              "WebkitFlexDirection": "row",
+              "WebkitJustifyContent": "space-between",
+              "alignItems": "center",
+              "flexDirection": "row",
+              "justifyContent": "space-between",
+              "msFlexAlign": "center",
+              "msFlexDirection": "row",
+              "msFlexPack": "justify",
+            }
+          }
+        >
+          <div
+            className="css-view-1dbjc4n"
+            style={
+              Object {
+                "WebkitAlignItems": "center",
+                "WebkitBoxAlign": "center",
+                "WebkitBoxDirection": "normal",
+                "WebkitBoxOrient": "horizontal",
+                "WebkitFlexDirection": "row",
+                "alignItems": "center",
+                "flexDirection": "row",
+                "msFlexAlign": "center",
+                "msFlexDirection": "row",
+              }
+            }
+          >
+            <div
+              className="css-view-1dbjc4n"
+              style={
+                Object {
+                  "marginRight": "8px",
+                }
+              }
+            >
+              <div
+                className="css-view-1dbjc4n"
+                style={
+                  Object {
+                    "WebkitAlignItems": "center",
+                    "WebkitBoxAlign": "center",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "alignItems": "center",
+                    "backgroundColor": "rgba(238,238,238,1.00)",
+                    "borderBottomLeftRadius": "9999px",
+                    "borderBottomRightRadius": "9999px",
+                    "borderTopLeftRadius": "9999px",
+                    "borderTopRightRadius": "9999px",
+                    "display": "flex",
+                    "height": "40px",
+                    "justifyContent": "center",
+                    "msFlexAlign": "center",
+                    "msFlexPack": "center",
+                    "overflowX": "hidden",
+                    "overflowY": "hidden",
+                    "position": "relative",
+                    "width": "40px",
+                  }
+                }
+              >
+                <div
+                  className="css-view-1dbjc4n"
+                  style={
+                    Object {
+                      "WebkitFlexBasis": "auto",
+                      "flexBasis": "auto",
+                      "height": "100%",
+                      "msFlexPreferredSize": "auto",
+                      "overflowX": "hidden",
+                      "overflowY": "hidden",
+                      "width": "100%",
+                      "zIndex": 0,
+                    }
+                  }
+                >
+                  <div
+                    className="css-view-1dbjc4n"
+                    style={
+                      Object {
+                        "backgroundColor": "rgba(0,0,0,0.00)",
+                        "backgroundImage": "url(\\"https://picsum.photos/200/200\\")",
+                        "backgroundPosition": "center",
+                        "backgroundRepeat": "no-repeat",
+                        "backgroundSize": "cover",
+                        "bottom": "0px",
+                        "height": "100%",
+                        "left": "0px",
+                        "position": "absolute",
+                        "right": "0px",
+                        "top": "0px",
+                        "width": "100%",
+                        "zIndex": -1,
+                      }
+                    }
+                  />
+                  <img
+                    alt=""
+                    className="css-accessibilityImage-9pa8cd"
+                    draggable={false}
+                    src="https://picsum.photos/200/200"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="css-view-1dbjc4n"
+              style={
+                Object {
+                  "WebkitBoxPack": "center",
+                  "WebkitJustifyContent": "center",
+                  "justifyContent": "center",
+                  "msFlexPack": "center",
+                }
+              }
+            >
+              <div
+                className="css-text-901oao"
+                dir="auto"
+                style={
+                  Object {
+                    "color": "rgba(126,126,126,1.00)",
+                    "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                    "fontSize": "20px",
+                    "fontWeight": "500",
+                    "textAlign": "left",
+                  }
+                }
+              >
+                Some label
+              </div>
+              <div
+                className="css-text-901oao"
+                dir="auto"
+                style={
+                  Object {
+                    "color": "rgba(167,167,167,1.00)",
+                    "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                    "fontSize": "16px",
+                    "textAlign": "left",
+                  }
+                }
+              >
+                Some description
+              </div>
+            </div>
+          </div>
+          <svg
+            color="#7e7e7e"
+            fill="none"
+            height={32}
+            size={32}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            style={
+              Object {
+                "color": "#7e7e7e",
+              }
+            }
+            viewBox="0 0 24 24"
+            width={32}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline
+              points="9 18 15 12 9 6"
+            />
+          </svg>
+        </div>
+      </div>
     </div>
     <div
       className="css-view-1dbjc4n"
@@ -13252,7 +13492,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -13597,7 +13837,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -13821,7 +14061,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -13963,7 +14203,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -14120,6 +14360,7 @@ exports[`KitchenSink_1 1`] = `
                 "WebkitBoxPack": "center",
                 "WebkitJustifyContent": "center",
                 "justifyContent": "center",
+                "minWidth": "24px",
                 "msFlexPack": "center",
               }
             }
@@ -14132,7 +14373,7 @@ exports[`KitchenSink_1 1`] = `
                   "color": "rgba(126,126,126,1.00)",
                   "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                   "fontSize": "16px",
-                  "textAlign": "left",
+                  "textAlign": "center",
                 }
               }
             >
@@ -14253,7 +14494,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -14528,7 +14769,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -14670,55 +14911,15 @@ exports[`KitchenSink_1 1`] = `
                         "marginRight": "8px",
                       }
                     }
-                  >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "9999px",
-                          "borderBottomRightRadius": "9999px",
-                          "borderTopLeftRadius": "9999px",
-                          "borderTopRightRadius": "9999px",
-                          "display": "flex",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "overflowX": "hidden",
-                          "overflowY": "hidden",
-                          "position": "relative",
-                          "width": "32px",
-                        }
-                      }
-                    >
-                      <div
-                        className="css-text-901oao"
-                        dir="auto"
-                        style={
-                          Object {
-                            "color": "rgba(126,126,126,1.00)",
-                            "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "13px",
-                            "lineHeight": "13px",
-                            "textAlign": "left",
-                          }
-                        }
-                      >
-                        ?
-                      </div>
-                    </div>
-                  </div>
+                  />
                   <div
                     className="css-view-1dbjc4n"
                     style={
                       Object {
-                        "height": "100%",
+                        "WebkitBoxPack": "center",
+                        "WebkitJustifyContent": "center",
+                        "justifyContent": "center",
+                        "msFlexPack": "center",
                       }
                     }
                   >
@@ -14734,19 +14935,252 @@ exports[`KitchenSink_1 1`] = `
                           "textAlign": "left",
                         }
                       }
-                    />
+                    >
+                      Usage
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-disabled={true}
+                  className="css-view-1dbjc4n"
+                  disabled={true}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Object {
+                      "MozUserSelect": "none",
+                      "WebkitUserSelect": "none",
+                      "backgroundColor": "rgba(0,0,0,0.00)",
+                      "msUserSelect": "none",
+                      "userSelect": "none",
+                    }
+                  }
+                >
+                  <div
+                    className="css-view-1dbjc4n"
+                    style={
+                      Object {
+                        "WebkitAlignItems": "center",
+                        "WebkitBoxAlign": "center",
+                        "WebkitBoxPack": "center",
+                        "WebkitJustifyContent": "center",
+                        "alignItems": "center",
+                        "backgroundColor": "rgba(103,198,187,1.00)",
+                        "borderBottomColor": "rgba(0,0,0,0.00)",
+                        "borderBottomLeftRadius": "999px",
+                        "borderBottomRightRadius": "999px",
+                        "borderBottomWidth": "1px",
+                        "borderLeftColor": "rgba(0,0,0,0.00)",
+                        "borderLeftWidth": "1px",
+                        "borderRightColor": "rgba(0,0,0,0.00)",
+                        "borderRightWidth": "1px",
+                        "borderTopColor": "rgba(0,0,0,0.00)",
+                        "borderTopLeftRadius": "999px",
+                        "borderTopRightRadius": "999px",
+                        "borderTopWidth": "1px",
+                        "height": "32px",
+                        "justifyContent": "center",
+                        "msFlexAlign": "center",
+                        "msFlexPack": "center",
+                        "width": "32px",
+                      }
+                    }
+                  >
+                    <svg
+                      color="white"
+                      fill="none"
+                      height={20}
+                      size={20}
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      style={
+                        Object {
+                          "color": "white",
+                        }
+                      }
+                      viewBox="0 0 24 24"
+                      width={20}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <polyline
+                        points="20 6 9 17 4 12"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "paddingBottom": "32px",
+          "paddingTop": "32px",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n"
+        onResponderGrant={[Function]}
+        onResponderReject={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onScroll={[Function]}
+        onScrollShouldSetResponder={[Function]}
+        onStartShouldSetResponder={[Function]}
+        onStartShouldSetResponderCapture={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        onWheel={[Function]}
+        style={
+          Object {
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxFlex": 1,
+            "WebkitBoxOrient": "vertical",
+            "WebkitFlexDirection": "column",
+            "WebkitFlexGrow": 1,
+            "WebkitFlexShrink": 1,
+            "WebkitOverflowScrolling": "touch",
+            "WebkitTransform": "translateZ(0px)",
+            "flexDirection": "column",
+            "flexGrow": 1,
+            "flexShrink": 1,
+            "msFlexDirection": "column",
+            "msFlexNegative": 1,
+            "msFlexPositive": 1,
+            "overflowX": "hidden",
+            "overflowY": "auto",
+            "transform": "translateZ(0px)",
+          }
+        }
+      >
+        <div
+          className="css-view-1dbjc4n"
+        >
+          <div
+            className="css-view-1dbjc4n"
+          >
+            <div
+              className="css-view-1dbjc4n"
+              data-focusable={true}
+              disabled={false}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "MozUserSelect": "none",
+                  "WebkitBoxPack": "center",
+                  "WebkitJustifyContent": "center",
+                  "WebkitUserSelect": "none",
+                  "backgroundColor": "rgba(255,255,255,1.00)",
+                  "borderBottomColor": "rgba(238,238,238,1.00)",
+                  "borderBottomWidth": "1px",
+                  "borderLeftColor": "rgba(238,238,238,1.00)",
+                  "borderRightColor": "rgba(238,238,238,1.00)",
+                  "borderTopColor": "rgba(238,238,238,1.00)",
+                  "cursor": "pointer",
+                  "height": "48px",
+                  "justifyContent": "center",
+                  "msFlexPack": "center",
+                  "msTouchAction": "manipulation",
+                  "msUserSelect": "none",
+                  "paddingLeft": "16px",
+                  "paddingRight": "8px",
+                  "touchAction": "manipulation",
+                  "userSelect": "none",
+                }
+              }
+              tabIndex="0"
+            >
+              <div
+                className="css-view-1dbjc4n"
+                style={
+                  Object {
+                    "WebkitAlignItems": "center",
+                    "WebkitBoxAlign": "center",
+                    "WebkitBoxDirection": "normal",
+                    "WebkitBoxOrient": "horizontal",
+                    "WebkitBoxPack": "justify",
+                    "WebkitFlexDirection": "row",
+                    "WebkitJustifyContent": "space-between",
+                    "alignItems": "center",
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                    "msFlexAlign": "center",
+                    "msFlexDirection": "row",
+                    "msFlexPack": "justify",
+                  }
+                }
+              >
+                <div
+                  className="css-view-1dbjc4n"
+                  style={
+                    Object {
+                      "WebkitAlignItems": "center",
+                      "WebkitBoxAlign": "center",
+                      "WebkitBoxDirection": "normal",
+                      "WebkitBoxOrient": "horizontal",
+                      "WebkitFlexDirection": "row",
+                      "alignItems": "center",
+                      "flexDirection": "row",
+                      "msFlexAlign": "center",
+                      "msFlexDirection": "row",
+                    }
+                  }
+                >
+                  <div
+                    className="css-view-1dbjc4n"
+                    style={
+                      Object {
+                        "marginRight": "8px",
+                      }
+                    }
+                  />
+                  <div
+                    className="css-view-1dbjc4n"
+                    style={
+                      Object {
+                        "WebkitBoxPack": "center",
+                        "WebkitJustifyContent": "center",
+                        "justifyContent": "center",
+                        "msFlexPack": "center",
+                      }
+                    }
+                  >
                     <div
                       className="css-text-901oao"
                       dir="auto"
                       style={
                         Object {
-                          "color": "rgba(167,167,167,1.00)",
+                          "color": "rgba(126,126,126,1.00)",
                           "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "14px",
+                          "fontSize": "16px",
+                          "fontWeight": "500",
                           "textAlign": "left",
                         }
                       }
-                    />
+                    >
+                      C
+                    </div>
                   </div>
                 </div>
                 <div
@@ -14889,55 +15323,15 @@ exports[`KitchenSink_1 1`] = `
                         "marginRight": "8px",
                       }
                     }
-                  >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "9999px",
-                          "borderBottomRightRadius": "9999px",
-                          "borderTopLeftRadius": "9999px",
-                          "borderTopRightRadius": "9999px",
-                          "display": "flex",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "overflowX": "hidden",
-                          "overflowY": "hidden",
-                          "position": "relative",
-                          "width": "32px",
-                        }
-                      }
-                    >
-                      <div
-                        className="css-text-901oao"
-                        dir="auto"
-                        style={
-                          Object {
-                            "color": "rgba(126,126,126,1.00)",
-                            "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "13px",
-                            "lineHeight": "13px",
-                            "textAlign": "left",
-                          }
-                        }
-                      >
-                        ?
-                      </div>
-                    </div>
-                  </div>
+                  />
                   <div
                     className="css-view-1dbjc4n"
                     style={
                       Object {
-                        "height": "100%",
+                        "WebkitBoxPack": "center",
+                        "WebkitJustifyContent": "center",
+                        "justifyContent": "center",
+                        "msFlexPack": "center",
                       }
                     }
                   >
@@ -14953,19 +15347,9 @@ exports[`KitchenSink_1 1`] = `
                           "textAlign": "left",
                         }
                       }
-                    />
-                    <div
-                      className="css-text-901oao"
-                      dir="auto"
-                      style={
-                        Object {
-                          "color": "rgba(167,167,167,1.00)",
-                          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "14px",
-                          "textAlign": "left",
-                        }
-                      }
-                    />
+                    >
+                      C#
+                    </div>
                   </div>
                 </div>
                 <div
@@ -15108,55 +15492,15 @@ exports[`KitchenSink_1 1`] = `
                         "marginRight": "8px",
                       }
                     }
-                  >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "9999px",
-                          "borderBottomRightRadius": "9999px",
-                          "borderTopLeftRadius": "9999px",
-                          "borderTopRightRadius": "9999px",
-                          "display": "flex",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "overflowX": "hidden",
-                          "overflowY": "hidden",
-                          "position": "relative",
-                          "width": "32px",
-                        }
-                      }
-                    >
-                      <div
-                        className="css-text-901oao"
-                        dir="auto"
-                        style={
-                          Object {
-                            "color": "rgba(126,126,126,1.00)",
-                            "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "13px",
-                            "lineHeight": "13px",
-                            "textAlign": "left",
-                          }
-                        }
-                      >
-                        ?
-                      </div>
-                    </div>
-                  </div>
+                  />
                   <div
                     className="css-view-1dbjc4n"
                     style={
                       Object {
-                        "height": "100%",
+                        "WebkitBoxPack": "center",
+                        "WebkitJustifyContent": "center",
+                        "justifyContent": "center",
+                        "msFlexPack": "center",
                       }
                     }
                   >
@@ -15172,19 +15516,9 @@ exports[`KitchenSink_1 1`] = `
                           "textAlign": "left",
                         }
                       }
-                    />
-                    <div
-                      className="css-text-901oao"
-                      dir="auto"
-                      style={
-                        Object {
-                          "color": "rgba(167,167,167,1.00)",
-                          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "14px",
-                          "textAlign": "left",
-                        }
-                      }
-                    />
+                    >
+                      C++
+                    </div>
                   </div>
                 </div>
                 <div
@@ -15327,55 +15661,15 @@ exports[`KitchenSink_1 1`] = `
                         "marginRight": "8px",
                       }
                     }
-                  >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "9999px",
-                          "borderBottomRightRadius": "9999px",
-                          "borderTopLeftRadius": "9999px",
-                          "borderTopRightRadius": "9999px",
-                          "display": "flex",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "overflowX": "hidden",
-                          "overflowY": "hidden",
-                          "position": "relative",
-                          "width": "32px",
-                        }
-                      }
-                    >
-                      <div
-                        className="css-text-901oao"
-                        dir="auto"
-                        style={
-                          Object {
-                            "color": "rgba(126,126,126,1.00)",
-                            "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "13px",
-                            "lineHeight": "13px",
-                            "textAlign": "left",
-                          }
-                        }
-                      >
-                        ?
-                      </div>
-                    </div>
-                  </div>
+                  />
                   <div
                     className="css-view-1dbjc4n"
                     style={
                       Object {
-                        "height": "100%",
+                        "WebkitBoxPack": "center",
+                        "WebkitJustifyContent": "center",
+                        "justifyContent": "center",
+                        "msFlexPack": "center",
                       }
                     }
                   >
@@ -15391,19 +15685,9 @@ exports[`KitchenSink_1 1`] = `
                           "textAlign": "left",
                         }
                       }
-                    />
-                    <div
-                      className="css-text-901oao"
-                      dir="auto"
-                      style={
-                        Object {
-                          "color": "rgba(167,167,167,1.00)",
-                          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "14px",
-                          "textAlign": "left",
-                        }
-                      }
-                    />
+                    >
+                      CSS
+                    </div>
                   </div>
                 </div>
                 <div
@@ -15546,55 +15830,15 @@ exports[`KitchenSink_1 1`] = `
                         "marginRight": "8px",
                       }
                     }
-                  >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "9999px",
-                          "borderBottomRightRadius": "9999px",
-                          "borderTopLeftRadius": "9999px",
-                          "borderTopRightRadius": "9999px",
-                          "display": "flex",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "overflowX": "hidden",
-                          "overflowY": "hidden",
-                          "position": "relative",
-                          "width": "32px",
-                        }
-                      }
-                    >
-                      <div
-                        className="css-text-901oao"
-                        dir="auto"
-                        style={
-                          Object {
-                            "color": "rgba(126,126,126,1.00)",
-                            "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "13px",
-                            "lineHeight": "13px",
-                            "textAlign": "left",
-                          }
-                        }
-                      >
-                        ?
-                      </div>
-                    </div>
-                  </div>
+                  />
                   <div
                     className="css-view-1dbjc4n"
                     style={
                       Object {
-                        "height": "100%",
+                        "WebkitBoxPack": "center",
+                        "WebkitJustifyContent": "center",
+                        "justifyContent": "center",
+                        "msFlexPack": "center",
                       }
                     }
                   >
@@ -15610,19 +15854,9 @@ exports[`KitchenSink_1 1`] = `
                           "textAlign": "left",
                         }
                       }
-                    />
-                    <div
-                      className="css-text-901oao"
-                      dir="auto"
-                      style={
-                        Object {
-                          "color": "rgba(167,167,167,1.00)",
-                          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "14px",
-                          "textAlign": "left",
-                        }
-                      }
-                    />
+                    >
+                      Elixir
+                    </div>
                   </div>
                 </div>
                 <div
@@ -15765,55 +15999,15 @@ exports[`KitchenSink_1 1`] = `
                         "marginRight": "8px",
                       }
                     }
-                  >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "9999px",
-                          "borderBottomRightRadius": "9999px",
-                          "borderTopLeftRadius": "9999px",
-                          "borderTopRightRadius": "9999px",
-                          "display": "flex",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "overflowX": "hidden",
-                          "overflowY": "hidden",
-                          "position": "relative",
-                          "width": "32px",
-                        }
-                      }
-                    >
-                      <div
-                        className="css-text-901oao"
-                        dir="auto"
-                        style={
-                          Object {
-                            "color": "rgba(126,126,126,1.00)",
-                            "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "13px",
-                            "lineHeight": "13px",
-                            "textAlign": "left",
-                          }
-                        }
-                      >
-                        ?
-                      </div>
-                    </div>
-                  </div>
+                  />
                   <div
                     className="css-view-1dbjc4n"
                     style={
                       Object {
-                        "height": "100%",
+                        "WebkitBoxPack": "center",
+                        "WebkitJustifyContent": "center",
+                        "justifyContent": "center",
+                        "msFlexPack": "center",
                       }
                     }
                   >
@@ -15829,19 +16023,9 @@ exports[`KitchenSink_1 1`] = `
                           "textAlign": "left",
                         }
                       }
-                    />
-                    <div
-                      className="css-text-901oao"
-                      dir="auto"
-                      style={
-                        Object {
-                          "color": "rgba(167,167,167,1.00)",
-                          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "14px",
-                          "textAlign": "left",
-                        }
-                      }
-                    />
+                    >
+                      Elm
+                    </div>
                   </div>
                 </div>
                 <div
@@ -15984,55 +16168,15 @@ exports[`KitchenSink_1 1`] = `
                         "marginRight": "8px",
                       }
                     }
-                  >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "9999px",
-                          "borderBottomRightRadius": "9999px",
-                          "borderTopLeftRadius": "9999px",
-                          "borderTopRightRadius": "9999px",
-                          "display": "flex",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "overflowX": "hidden",
-                          "overflowY": "hidden",
-                          "position": "relative",
-                          "width": "32px",
-                        }
-                      }
-                    >
-                      <div
-                        className="css-text-901oao"
-                        dir="auto"
-                        style={
-                          Object {
-                            "color": "rgba(126,126,126,1.00)",
-                            "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "13px",
-                            "lineHeight": "13px",
-                            "textAlign": "left",
-                          }
-                        }
-                      >
-                        ?
-                      </div>
-                    </div>
-                  </div>
+                  />
                   <div
                     className="css-view-1dbjc4n"
                     style={
                       Object {
-                        "height": "100%",
+                        "WebkitBoxPack": "center",
+                        "WebkitJustifyContent": "center",
+                        "justifyContent": "center",
+                        "msFlexPack": "center",
                       }
                     }
                   >
@@ -16048,19 +16192,9 @@ exports[`KitchenSink_1 1`] = `
                           "textAlign": "left",
                         }
                       }
-                    />
-                    <div
-                      className="css-text-901oao"
-                      dir="auto"
-                      style={
-                        Object {
-                          "color": "rgba(167,167,167,1.00)",
-                          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "14px",
-                          "textAlign": "left",
-                        }
-                      }
-                    />
+                    >
+                      Erlang
+                    </div>
                   </div>
                 </div>
                 <div
@@ -16203,55 +16337,15 @@ exports[`KitchenSink_1 1`] = `
                         "marginRight": "8px",
                       }
                     }
-                  >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "9999px",
-                          "borderBottomRightRadius": "9999px",
-                          "borderTopLeftRadius": "9999px",
-                          "borderTopRightRadius": "9999px",
-                          "display": "flex",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "overflowX": "hidden",
-                          "overflowY": "hidden",
-                          "position": "relative",
-                          "width": "32px",
-                        }
-                      }
-                    >
-                      <div
-                        className="css-text-901oao"
-                        dir="auto"
-                        style={
-                          Object {
-                            "color": "rgba(126,126,126,1.00)",
-                            "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "13px",
-                            "lineHeight": "13px",
-                            "textAlign": "left",
-                          }
-                        }
-                      >
-                        ?
-                      </div>
-                    </div>
-                  </div>
+                  />
                   <div
                     className="css-view-1dbjc4n"
                     style={
                       Object {
-                        "height": "100%",
+                        "WebkitBoxPack": "center",
+                        "WebkitJustifyContent": "center",
+                        "justifyContent": "center",
+                        "msFlexPack": "center",
                       }
                     }
                   >
@@ -16267,19 +16361,9 @@ exports[`KitchenSink_1 1`] = `
                           "textAlign": "left",
                         }
                       }
-                    />
-                    <div
-                      className="css-text-901oao"
-                      dir="auto"
-                      style={
-                        Object {
-                          "color": "rgba(167,167,167,1.00)",
-                          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "14px",
-                          "textAlign": "left",
-                        }
-                      }
-                    />
+                    >
+                      Go
+                    </div>
                   </div>
                 </div>
                 <div
@@ -16445,55 +16529,15 @@ exports[`KitchenSink_1 1`] = `
                         "marginRight": "8px",
                       }
                     }
-                  >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "9999px",
-                          "borderBottomRightRadius": "9999px",
-                          "borderTopLeftRadius": "9999px",
-                          "borderTopRightRadius": "9999px",
-                          "display": "flex",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "overflowX": "hidden",
-                          "overflowY": "hidden",
-                          "position": "relative",
-                          "width": "32px",
-                        }
-                      }
-                    >
-                      <div
-                        className="css-text-901oao"
-                        dir="auto"
-                        style={
-                          Object {
-                            "color": "rgba(126,126,126,1.00)",
-                            "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "13px",
-                            "lineHeight": "13px",
-                            "textAlign": "left",
-                          }
-                        }
-                      >
-                        ?
-                      </div>
-                    </div>
-                  </div>
+                  />
                   <div
                     className="css-view-1dbjc4n"
                     style={
                       Object {
-                        "height": "100%",
+                        "WebkitBoxPack": "center",
+                        "WebkitJustifyContent": "center",
+                        "justifyContent": "center",
+                        "msFlexPack": "center",
                       }
                     }
                   >
@@ -16509,19 +16553,9 @@ exports[`KitchenSink_1 1`] = `
                           "textAlign": "left",
                         }
                       }
-                    />
-                    <div
-                      className="css-text-901oao"
-                      dir="auto"
-                      style={
-                        Object {
-                          "color": "rgba(167,167,167,1.00)",
-                          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "14px",
-                          "textAlign": "left",
-                        }
-                      }
-                    />
+                    >
+                      Haskell
+                    </div>
                   </div>
                 </div>
                 <div
@@ -16664,55 +16698,15 @@ exports[`KitchenSink_1 1`] = `
                         "marginRight": "8px",
                       }
                     }
-                  >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "9999px",
-                          "borderBottomRightRadius": "9999px",
-                          "borderTopLeftRadius": "9999px",
-                          "borderTopRightRadius": "9999px",
-                          "display": "flex",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "overflowX": "hidden",
-                          "overflowY": "hidden",
-                          "position": "relative",
-                          "width": "32px",
-                        }
-                      }
-                    >
-                      <div
-                        className="css-text-901oao"
-                        dir="auto"
-                        style={
-                          Object {
-                            "color": "rgba(126,126,126,1.00)",
-                            "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "13px",
-                            "lineHeight": "13px",
-                            "textAlign": "left",
-                          }
-                        }
-                      >
-                        ?
-                      </div>
-                    </div>
-                  </div>
+                  />
                   <div
                     className="css-view-1dbjc4n"
                     style={
                       Object {
-                        "height": "100%",
+                        "WebkitBoxPack": "center",
+                        "WebkitJustifyContent": "center",
+                        "justifyContent": "center",
+                        "msFlexPack": "center",
                       }
                     }
                   >
@@ -16728,19 +16722,9 @@ exports[`KitchenSink_1 1`] = `
                           "textAlign": "left",
                         }
                       }
-                    />
-                    <div
-                      className="css-text-901oao"
-                      dir="auto"
-                      style={
-                        Object {
-                          "color": "rgba(167,167,167,1.00)",
-                          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "14px",
-                          "textAlign": "left",
-                        }
-                      }
-                    />
+                    >
+                      HTML
+                    </div>
                   </div>
                 </div>
                 <div
@@ -16819,7 +16803,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -17073,7 +17057,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -17237,7 +17221,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -17335,8 +17319,8 @@ exports[`KitchenSink_1 1`] = `
                 "height": "48px",
                 "msTouchAction": "manipulation",
                 "msUserSelect": "none",
-                "paddingLeft": "32px",
-                "paddingRight": "32px",
+                "paddingLeft": "0px",
+                "paddingRight": "0px",
                 "touchAction": "manipulation",
                 "userSelect": "none",
               }
@@ -17450,8 +17434,8 @@ exports[`KitchenSink_1 1`] = `
                 "height": "48px",
                 "msTouchAction": "manipulation",
                 "msUserSelect": "none",
-                "paddingLeft": "32px",
-                "paddingRight": "32px",
+                "paddingLeft": "0px",
+                "paddingRight": "0px",
                 "touchAction": "manipulation",
                 "userSelect": "none",
               }
@@ -17565,8 +17549,8 @@ exports[`KitchenSink_1 1`] = `
                 "height": "48px",
                 "msTouchAction": "manipulation",
                 "msUserSelect": "none",
-                "paddingLeft": "32px",
-                "paddingRight": "32px",
+                "paddingLeft": "0px",
+                "paddingRight": "0px",
                 "touchAction": "manipulation",
                 "userSelect": "none",
               }
@@ -17680,8 +17664,8 @@ exports[`KitchenSink_1 1`] = `
                 "height": "48px",
                 "msTouchAction": "manipulation",
                 "msUserSelect": "none",
-                "paddingLeft": "32px",
-                "paddingRight": "32px",
+                "paddingLeft": "0px",
+                "paddingRight": "0px",
                 "touchAction": "manipulation",
                 "userSelect": "none",
               }
@@ -17765,7 +17749,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -18306,7 +18290,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -18684,7 +18668,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -18869,7 +18853,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -18924,7 +18908,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -19278,7 +19262,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -19415,7 +19399,7 @@ exports[`KitchenSink_1 1`] = `
             "color": "rgba(126,126,126,1.00)",
             "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
             "fontSize": "35px",
-            "fontWeight": "bold",
+            "fontWeight": "500",
             "letterSpacing": "-0.2px",
             "lineHeight": "40px",
             "textAlign": "left",
@@ -20219,7 +20203,10 @@ exports[`ListItem_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "height": "100%",
+              "WebkitBoxPack": "center",
+              "WebkitJustifyContent": "center",
+              "justifyContent": "center",
+              "msFlexPack": "center",
             }
           }
         >
@@ -21492,6 +21479,7 @@ exports[`ProgressBar_1 1`] = `
             "WebkitBoxPack": "center",
             "WebkitJustifyContent": "center",
             "justifyContent": "center",
+            "minWidth": "24px",
             "msFlexPack": "center",
           }
         }
@@ -21504,7 +21492,7 @@ exports[`ProgressBar_1 1`] = `
               "color": "rgba(126,126,126,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
               "fontSize": "16px",
-              "textAlign": "left",
+              "textAlign": "center",
             }
           }
         >
@@ -23301,55 +23289,15 @@ exports[`SelectList_1 1`] = `
                     "marginRight": "8px",
                   }
                 }
-              >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "9999px",
-                      "borderBottomRightRadius": "9999px",
-                      "borderTopLeftRadius": "9999px",
-                      "borderTopRightRadius": "9999px",
-                      "display": "flex",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "overflowX": "hidden",
-                      "overflowY": "hidden",
-                      "position": "relative",
-                      "width": "32px",
-                    }
-                  }
-                >
-                  <div
-                    className="css-text-901oao"
-                    dir="auto"
-                    style={
-                      Object {
-                        "color": "rgba(126,126,126,1.00)",
-                        "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "13px",
-                        "lineHeight": "13px",
-                        "textAlign": "left",
-                      }
-                    }
-                  >
-                    ?
-                  </div>
-                </div>
-              </div>
+              />
               <div
                 className="css-view-1dbjc4n"
                 style={
                   Object {
-                    "height": "100%",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "justifyContent": "center",
+                    "msFlexPack": "center",
                   }
                 }
               >
@@ -23365,19 +23313,9 @@ exports[`SelectList_1 1`] = `
                       "textAlign": "left",
                     }
                   }
-                />
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "color": "rgba(167,167,167,1.00)",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "14px",
-                      "textAlign": "left",
-                    }
-                  }
-                />
+                >
+                  Usage
+                </div>
               </div>
             </div>
             <div
@@ -23589,55 +23527,15 @@ exports[`SelectList_2 1`] = `
                     "marginRight": "8px",
                   }
                 }
-              >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "9999px",
-                      "borderBottomRightRadius": "9999px",
-                      "borderTopLeftRadius": "9999px",
-                      "borderTopRightRadius": "9999px",
-                      "display": "flex",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "overflowX": "hidden",
-                      "overflowY": "hidden",
-                      "position": "relative",
-                      "width": "32px",
-                    }
-                  }
-                >
-                  <div
-                    className="css-text-901oao"
-                    dir="auto"
-                    style={
-                      Object {
-                        "color": "rgba(126,126,126,1.00)",
-                        "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "13px",
-                        "lineHeight": "13px",
-                        "textAlign": "left",
-                      }
-                    }
-                  >
-                    ?
-                  </div>
-                </div>
-              </div>
+              />
               <div
                 className="css-view-1dbjc4n"
                 style={
                   Object {
-                    "height": "100%",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "justifyContent": "center",
+                    "msFlexPack": "center",
                   }
                 }
               >
@@ -23653,19 +23551,9 @@ exports[`SelectList_2 1`] = `
                       "textAlign": "left",
                     }
                   }
-                />
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "color": "rgba(167,167,167,1.00)",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "14px",
-                      "textAlign": "left",
-                    }
-                  }
-                />
+                >
+                  C
+                </div>
               </div>
             </div>
             <div
@@ -23808,55 +23696,15 @@ exports[`SelectList_2 1`] = `
                     "marginRight": "8px",
                   }
                 }
-              >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "9999px",
-                      "borderBottomRightRadius": "9999px",
-                      "borderTopLeftRadius": "9999px",
-                      "borderTopRightRadius": "9999px",
-                      "display": "flex",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "overflowX": "hidden",
-                      "overflowY": "hidden",
-                      "position": "relative",
-                      "width": "32px",
-                    }
-                  }
-                >
-                  <div
-                    className="css-text-901oao"
-                    dir="auto"
-                    style={
-                      Object {
-                        "color": "rgba(126,126,126,1.00)",
-                        "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "13px",
-                        "lineHeight": "13px",
-                        "textAlign": "left",
-                      }
-                    }
-                  >
-                    ?
-                  </div>
-                </div>
-              </div>
+              />
               <div
                 className="css-view-1dbjc4n"
                 style={
                   Object {
-                    "height": "100%",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "justifyContent": "center",
+                    "msFlexPack": "center",
                   }
                 }
               >
@@ -23872,19 +23720,9 @@ exports[`SelectList_2 1`] = `
                       "textAlign": "left",
                     }
                   }
-                />
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "color": "rgba(167,167,167,1.00)",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "14px",
-                      "textAlign": "left",
-                    }
-                  }
-                />
+                >
+                  C#
+                </div>
               </div>
             </div>
             <div
@@ -24027,55 +23865,15 @@ exports[`SelectList_2 1`] = `
                     "marginRight": "8px",
                   }
                 }
-              >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "9999px",
-                      "borderBottomRightRadius": "9999px",
-                      "borderTopLeftRadius": "9999px",
-                      "borderTopRightRadius": "9999px",
-                      "display": "flex",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "overflowX": "hidden",
-                      "overflowY": "hidden",
-                      "position": "relative",
-                      "width": "32px",
-                    }
-                  }
-                >
-                  <div
-                    className="css-text-901oao"
-                    dir="auto"
-                    style={
-                      Object {
-                        "color": "rgba(126,126,126,1.00)",
-                        "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "13px",
-                        "lineHeight": "13px",
-                        "textAlign": "left",
-                      }
-                    }
-                  >
-                    ?
-                  </div>
-                </div>
-              </div>
+              />
               <div
                 className="css-view-1dbjc4n"
                 style={
                   Object {
-                    "height": "100%",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "justifyContent": "center",
+                    "msFlexPack": "center",
                   }
                 }
               >
@@ -24091,19 +23889,9 @@ exports[`SelectList_2 1`] = `
                       "textAlign": "left",
                     }
                   }
-                />
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "color": "rgba(167,167,167,1.00)",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "14px",
-                      "textAlign": "left",
-                    }
-                  }
-                />
+                >
+                  C++
+                </div>
               </div>
             </div>
             <div
@@ -24246,55 +24034,15 @@ exports[`SelectList_2 1`] = `
                     "marginRight": "8px",
                   }
                 }
-              >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "9999px",
-                      "borderBottomRightRadius": "9999px",
-                      "borderTopLeftRadius": "9999px",
-                      "borderTopRightRadius": "9999px",
-                      "display": "flex",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "overflowX": "hidden",
-                      "overflowY": "hidden",
-                      "position": "relative",
-                      "width": "32px",
-                    }
-                  }
-                >
-                  <div
-                    className="css-text-901oao"
-                    dir="auto"
-                    style={
-                      Object {
-                        "color": "rgba(126,126,126,1.00)",
-                        "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "13px",
-                        "lineHeight": "13px",
-                        "textAlign": "left",
-                      }
-                    }
-                  >
-                    ?
-                  </div>
-                </div>
-              </div>
+              />
               <div
                 className="css-view-1dbjc4n"
                 style={
                   Object {
-                    "height": "100%",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "justifyContent": "center",
+                    "msFlexPack": "center",
                   }
                 }
               >
@@ -24310,19 +24058,9 @@ exports[`SelectList_2 1`] = `
                       "textAlign": "left",
                     }
                   }
-                />
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "color": "rgba(167,167,167,1.00)",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "14px",
-                      "textAlign": "left",
-                    }
-                  }
-                />
+                >
+                  CSS
+                </div>
               </div>
             </div>
             <div
@@ -24465,55 +24203,15 @@ exports[`SelectList_2 1`] = `
                     "marginRight": "8px",
                   }
                 }
-              >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "9999px",
-                      "borderBottomRightRadius": "9999px",
-                      "borderTopLeftRadius": "9999px",
-                      "borderTopRightRadius": "9999px",
-                      "display": "flex",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "overflowX": "hidden",
-                      "overflowY": "hidden",
-                      "position": "relative",
-                      "width": "32px",
-                    }
-                  }
-                >
-                  <div
-                    className="css-text-901oao"
-                    dir="auto"
-                    style={
-                      Object {
-                        "color": "rgba(126,126,126,1.00)",
-                        "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "13px",
-                        "lineHeight": "13px",
-                        "textAlign": "left",
-                      }
-                    }
-                  >
-                    ?
-                  </div>
-                </div>
-              </div>
+              />
               <div
                 className="css-view-1dbjc4n"
                 style={
                   Object {
-                    "height": "100%",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "justifyContent": "center",
+                    "msFlexPack": "center",
                   }
                 }
               >
@@ -24529,19 +24227,9 @@ exports[`SelectList_2 1`] = `
                       "textAlign": "left",
                     }
                   }
-                />
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "color": "rgba(167,167,167,1.00)",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "14px",
-                      "textAlign": "left",
-                    }
-                  }
-                />
+                >
+                  Elixir
+                </div>
               </div>
             </div>
             <div
@@ -24684,55 +24372,15 @@ exports[`SelectList_2 1`] = `
                     "marginRight": "8px",
                   }
                 }
-              >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "9999px",
-                      "borderBottomRightRadius": "9999px",
-                      "borderTopLeftRadius": "9999px",
-                      "borderTopRightRadius": "9999px",
-                      "display": "flex",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "overflowX": "hidden",
-                      "overflowY": "hidden",
-                      "position": "relative",
-                      "width": "32px",
-                    }
-                  }
-                >
-                  <div
-                    className="css-text-901oao"
-                    dir="auto"
-                    style={
-                      Object {
-                        "color": "rgba(126,126,126,1.00)",
-                        "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "13px",
-                        "lineHeight": "13px",
-                        "textAlign": "left",
-                      }
-                    }
-                  >
-                    ?
-                  </div>
-                </div>
-              </div>
+              />
               <div
                 className="css-view-1dbjc4n"
                 style={
                   Object {
-                    "height": "100%",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "justifyContent": "center",
+                    "msFlexPack": "center",
                   }
                 }
               >
@@ -24748,19 +24396,9 @@ exports[`SelectList_2 1`] = `
                       "textAlign": "left",
                     }
                   }
-                />
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "color": "rgba(167,167,167,1.00)",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "14px",
-                      "textAlign": "left",
-                    }
-                  }
-                />
+                >
+                  Elm
+                </div>
               </div>
             </div>
             <div
@@ -24903,55 +24541,15 @@ exports[`SelectList_2 1`] = `
                     "marginRight": "8px",
                   }
                 }
-              >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "9999px",
-                      "borderBottomRightRadius": "9999px",
-                      "borderTopLeftRadius": "9999px",
-                      "borderTopRightRadius": "9999px",
-                      "display": "flex",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "overflowX": "hidden",
-                      "overflowY": "hidden",
-                      "position": "relative",
-                      "width": "32px",
-                    }
-                  }
-                >
-                  <div
-                    className="css-text-901oao"
-                    dir="auto"
-                    style={
-                      Object {
-                        "color": "rgba(126,126,126,1.00)",
-                        "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "13px",
-                        "lineHeight": "13px",
-                        "textAlign": "left",
-                      }
-                    }
-                  >
-                    ?
-                  </div>
-                </div>
-              </div>
+              />
               <div
                 className="css-view-1dbjc4n"
                 style={
                   Object {
-                    "height": "100%",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "justifyContent": "center",
+                    "msFlexPack": "center",
                   }
                 }
               >
@@ -24967,19 +24565,9 @@ exports[`SelectList_2 1`] = `
                       "textAlign": "left",
                     }
                   }
-                />
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "color": "rgba(167,167,167,1.00)",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "14px",
-                      "textAlign": "left",
-                    }
-                  }
-                />
+                >
+                  Erlang
+                </div>
               </div>
             </div>
             <div
@@ -25122,55 +24710,15 @@ exports[`SelectList_2 1`] = `
                     "marginRight": "8px",
                   }
                 }
-              >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "9999px",
-                      "borderBottomRightRadius": "9999px",
-                      "borderTopLeftRadius": "9999px",
-                      "borderTopRightRadius": "9999px",
-                      "display": "flex",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "overflowX": "hidden",
-                      "overflowY": "hidden",
-                      "position": "relative",
-                      "width": "32px",
-                    }
-                  }
-                >
-                  <div
-                    className="css-text-901oao"
-                    dir="auto"
-                    style={
-                      Object {
-                        "color": "rgba(126,126,126,1.00)",
-                        "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "13px",
-                        "lineHeight": "13px",
-                        "textAlign": "left",
-                      }
-                    }
-                  >
-                    ?
-                  </div>
-                </div>
-              </div>
+              />
               <div
                 className="css-view-1dbjc4n"
                 style={
                   Object {
-                    "height": "100%",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "justifyContent": "center",
+                    "msFlexPack": "center",
                   }
                 }
               >
@@ -25186,19 +24734,9 @@ exports[`SelectList_2 1`] = `
                       "textAlign": "left",
                     }
                   }
-                />
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "color": "rgba(167,167,167,1.00)",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "14px",
-                      "textAlign": "left",
-                    }
-                  }
-                />
+                >
+                  Go
+                </div>
               </div>
             </div>
             <div
@@ -25364,55 +24902,15 @@ exports[`SelectList_2 1`] = `
                     "marginRight": "8px",
                   }
                 }
-              >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "9999px",
-                      "borderBottomRightRadius": "9999px",
-                      "borderTopLeftRadius": "9999px",
-                      "borderTopRightRadius": "9999px",
-                      "display": "flex",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "overflowX": "hidden",
-                      "overflowY": "hidden",
-                      "position": "relative",
-                      "width": "32px",
-                    }
-                  }
-                >
-                  <div
-                    className="css-text-901oao"
-                    dir="auto"
-                    style={
-                      Object {
-                        "color": "rgba(126,126,126,1.00)",
-                        "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "13px",
-                        "lineHeight": "13px",
-                        "textAlign": "left",
-                      }
-                    }
-                  >
-                    ?
-                  </div>
-                </div>
-              </div>
+              />
               <div
                 className="css-view-1dbjc4n"
                 style={
                   Object {
-                    "height": "100%",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "justifyContent": "center",
+                    "msFlexPack": "center",
                   }
                 }
               >
@@ -25428,19 +24926,9 @@ exports[`SelectList_2 1`] = `
                       "textAlign": "left",
                     }
                   }
-                />
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "color": "rgba(167,167,167,1.00)",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "14px",
-                      "textAlign": "left",
-                    }
-                  }
-                />
+                >
+                  Haskell
+                </div>
               </div>
             </div>
             <div
@@ -25583,55 +25071,15 @@ exports[`SelectList_2 1`] = `
                     "marginRight": "8px",
                   }
                 }
-              >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "9999px",
-                      "borderBottomRightRadius": "9999px",
-                      "borderTopLeftRadius": "9999px",
-                      "borderTopRightRadius": "9999px",
-                      "display": "flex",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "overflowX": "hidden",
-                      "overflowY": "hidden",
-                      "position": "relative",
-                      "width": "32px",
-                    }
-                  }
-                >
-                  <div
-                    className="css-text-901oao"
-                    dir="auto"
-                    style={
-                      Object {
-                        "color": "rgba(126,126,126,1.00)",
-                        "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "13px",
-                        "lineHeight": "13px",
-                        "textAlign": "left",
-                      }
-                    }
-                  >
-                    ?
-                  </div>
-                </div>
-              </div>
+              />
               <div
                 className="css-view-1dbjc4n"
                 style={
                   Object {
-                    "height": "100%",
+                    "WebkitBoxPack": "center",
+                    "WebkitJustifyContent": "center",
+                    "justifyContent": "center",
+                    "msFlexPack": "center",
                   }
                 }
               >
@@ -25647,19 +25095,9 @@ exports[`SelectList_2 1`] = `
                       "textAlign": "left",
                     }
                   }
-                />
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "color": "rgba(167,167,167,1.00)",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "14px",
-                      "textAlign": "left",
-                    }
-                  }
-                />
+                >
+                  HTML
+                </div>
               </div>
             </div>
             <div
@@ -26177,8 +25615,8 @@ exports[`Tabs_1 1`] = `
             "height": "48px",
             "msTouchAction": "manipulation",
             "msUserSelect": "none",
-            "paddingLeft": "32px",
-            "paddingRight": "32px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px",
             "touchAction": "manipulation",
             "userSelect": "none",
           }
@@ -26292,8 +25730,8 @@ exports[`Tabs_1 1`] = `
             "height": "48px",
             "msTouchAction": "manipulation",
             "msUserSelect": "none",
-            "paddingLeft": "32px",
-            "paddingRight": "32px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px",
             "touchAction": "manipulation",
             "userSelect": "none",
           }
@@ -26407,8 +25845,8 @@ exports[`Tabs_1 1`] = `
             "height": "48px",
             "msTouchAction": "manipulation",
             "msUserSelect": "none",
-            "paddingLeft": "32px",
-            "paddingRight": "32px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px",
             "touchAction": "manipulation",
             "userSelect": "none",
           }
@@ -26522,8 +25960,8 @@ exports[`Tabs_1 1`] = `
             "height": "48px",
             "msTouchAction": "manipulation",
             "msUserSelect": "none",
-            "paddingLeft": "32px",
-            "paddingRight": "32px",
+            "paddingLeft": "0px",
+            "paddingRight": "0px",
             "touchAction": "manipulation",
             "userSelect": "none",
           }
@@ -27203,49 +26641,46 @@ exports[`TextInput_1 1`] = `
           "paddingLeft": "8px",
           "paddingRight": "8px",
           "position": "absolute",
+          "zIndex": 1,
         }
       }
     >
-      <div
-        className="css-view-1dbjc4n"
-      >
-        <svg
-          fill="none"
-          height={24}
-          size={24}
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          style={
-            Object {
-              "color": undefined,
-            }
+      <svg
+        fill="none"
+        height={24}
+        size={24}
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        style={
+          Object {
+            "color": undefined,
           }
-          viewBox="0 0 24 24"
-          width={24}
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <line
-            x1="3"
-            x2="21"
-            y1="12"
-            y2="12"
-          />
-          <line
-            x1="3"
-            x2="21"
-            y1="6"
-            y2="6"
-          />
-          <line
-            x1="3"
-            x2="21"
-            y1="18"
-            y2="18"
-          />
-        </svg>
-      </div>
+        }
+        viewBox="0 0 24 24"
+        width={24}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="3"
+          x2="21"
+          y1="12"
+          y2="12"
+        />
+        <line
+          x1="3"
+          x2="21"
+          y1="6"
+          y2="6"
+        />
+        <line
+          x1="3"
+          x2="21"
+          y1="18"
+          y2="18"
+        />
+      </svg>
     </div>
     <input
       autoCapitalize="sentences"
@@ -27254,7 +26689,7 @@ exports[`TextInput_1 1`] = `
       className="css-textinput-1cwyjr8 r-placeholderTextColor-15ldjex"
       data-focusable={true}
       dir="auto"
-      name="field"
+      name="emailAddress"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
@@ -27282,8 +26717,8 @@ exports[`TextInput_1 1`] = `
           "color": "rgba(126,126,126,1.00)",
           "fontSize": "20px",
           "height": "56px",
-          "paddingLeft": "48px",
-          "paddingRight": "24px",
+          "paddingLeft": "40px",
+          "paddingRight": "40px",
           "width": "100%",
         }
       }
@@ -27308,6 +26743,7 @@ exports[`TextInput_1 1`] = `
           "paddingRight": "8px",
           "position": "absolute",
           "right": "0px",
+          "zIndex": 1,
         }
       }
     />

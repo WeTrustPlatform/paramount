@@ -20,6 +20,7 @@ export const getCounterStyles: GetCounterStyles = (props, theme) => {
     },
     countStyle: {
       justifyContent: 'center',
+      minWidth: 24,
     },
     counterStyle: {
       alignItems: 'center',

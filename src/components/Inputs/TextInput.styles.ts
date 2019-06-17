@@ -68,6 +68,7 @@ export const getTextInputStyles: GetTextInputStyles = (
       left: 0,
       paddingHorizontal: 8,
       position: 'absolute',
+      zIndex: 1,
     },
     placeholderTextColor: theme.colors.text.muted,
     rightContainerStyle: {
@@ -78,6 +79,7 @@ export const getTextInputStyles: GetTextInputStyles = (
       paddingHorizontal: 8,
       position: 'absolute',
       right: 0,
+      zIndex: 1,
     },
   };
 };

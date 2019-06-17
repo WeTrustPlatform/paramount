@@ -10,7 +10,9 @@ export interface SelectListProps
     Omit<FlatListProps<SelectListItemBaseProps>, 'data'>,
     'renderItem'
   > {
-  children: Array<React.ReactElement<SelectListItemBaseProps>>;
+  children:
+    | Array<React.ReactElement<SelectListItemBaseProps>>
+    | React.ReactElement<SelectListItemBaseProps>;
   selectedValue: string | string[];
   innerRef?: React.Ref<FlatList<SelectListItemBaseProps>>;
   isMulti?: boolean;
