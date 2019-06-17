@@ -338,6 +338,9 @@ const textSizes: TextSizes = {
   small: {
     fontSize: 14,
   },
+  xsmall: {
+    fontSize: 12,
+  },
 };
 
 export const defaultTheme: Theme = {

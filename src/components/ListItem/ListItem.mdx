@@ -16,21 +16,23 @@ For image, it composes `Avatar`, you can pass `avatarProps` provide more specifi
 <Playground>
   <ListItem
     onPress={() => console.log('Press')}
-    rightIcon={<Icon color="#7e7e7e" size={24} name="chevron-right" />}
-    leftIcon={
-      <Avatar size={45} source={{ uri: 'https://picsum.photos/200/200' }} />
-    }
-    label="Some label"
+    avatarProps={{
+      source: { uri: 'https://picsum.photos/200/200' },
+    }}
+    rightIcon={undefined} // Override right-handside icon
+    leftIcon={undefined} // Override Avatar
+    title="Some label"
     description="Some description"
     size="large"
     isDisabled={false}
     getStyles={(props, theme) => ({
+      containerStyle: {},
+      descriptionStyle: {},
+      focusBackgroundColor: '#fafafa',
       imageWrapperStyle: {},
       leftWrapperStyle: {},
       textWrapperStyle: {},
-      containerStyle: {},
-      textStyle: {},
-      focusBackgroundColor: '#fafafa',
+      titleStyle: {},
       wrapperStyle: {},
     })}
   />

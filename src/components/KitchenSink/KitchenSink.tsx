@@ -899,32 +899,6 @@ export const KitchenSink = () => {
         </Heading>
       </Box>
 
-      <Playground>
-        <ListItem
-          onPress={() => console.log('Press')}
-          rightIcon={<Icon color="#7e7e7e" size={24} name="chevron-right" />}
-          leftIcon={
-            <Avatar
-              size={45}
-              source={{ uri: 'https://picsum.photos/200/200' }}
-            />
-          }
-          label="Some label"
-          description="Some description"
-          size="large"
-          isDisabled={false}
-          getStyles={(props, theme) => ({
-            imageWrapperStyle: {},
-            leftWrapperStyle: {},
-            textWrapperStyle: {},
-            containerStyle: {},
-            textStyle: {},
-            focusBackgroundColor: '#fafafa',
-            wrapperStyle: {},
-          })}
-        />
-      </Playground>
-
       <Box paddingTop={96}>
         <Heading size="xxxlarge" weight="bold">
           Modal
@@ -1116,7 +1090,7 @@ export const KitchenSink = () => {
             {({ on, toggle }) => (
               <Popover
                 isVisible={on}
-                position="right"
+                position="bottom"
                 getStyles={(props, theme) => ({
                   positionerStyle: {},
                   modalContainerStyle: {},
@@ -1569,6 +1543,7 @@ export const KitchenSink = () => {
 
       <Playground>
         <Box flexDirection="column">
+          <Text size="xsmall">xsmall</Text>
           <Text size="small">small</Text>
           <Text size="medium">medium</Text>
           <Text size="large">large</Text>

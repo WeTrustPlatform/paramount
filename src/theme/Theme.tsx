@@ -36,6 +36,7 @@ import { GetTextStyles } from '../components/Typography/Text.styles';
 import { defaultTheme } from './defaultTheme';
 
 export interface TextSizes {
+  xsmall: TextStyle;
   small: TextStyle;
   medium: TextStyle;
   large: TextStyle;

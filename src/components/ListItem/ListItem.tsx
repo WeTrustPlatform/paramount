@@ -7,9 +7,10 @@ import {
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { ControlSize, useTheme } from '../../theme';
+import { ControlSize, TextSize, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { AvatarProps } from '../Avatar';
+import { Avatar, AvatarProps } from '../Avatar';
+import { Icon } from '../Icon';
 import { Text } from '../Typography';
 import {
   GetListItemStyles,
@@ -20,7 +21,7 @@ import {
 export interface ListItemProps extends AccessibilityProps {
   size?: ControlSize;
   isDisabled?: boolean;
-  label: string;
+  title?: string;
   description?: string;
   avatarProps?: AvatarProps;
   leftIcon?: React.ReactNode;
@@ -30,11 +31,44 @@ export interface ListItemProps extends AccessibilityProps {
   testID?: string;
 }
 
+const iconSize: {
+  [size in ControlSize]: number;
+} = {
+  large: 32,
+  medium: 24,
+  small: 16,
+};
+
+const avatarSize: {
+  [size in ControlSize]: number;
+} = {
+  large: 40,
+  medium: 32,
+  small: 24,
+};
+
+const titleSize: {
+  [size in ControlSize]: TextSize;
+} = {
+  large: 'large',
+  medium: 'medium',
+  small: 'small',
+};
+
+const descriptionSize: {
+  [size in ControlSize]: TextSize;
+} = {
+  large: 'medium',
+  medium: 'small',
+  small: 'xsmall',
+};
+
 export const ListItem = (props: ListItemProps) => {
   const {
+    avatarProps,
     getStyles,
     isDisabled = false,
-    label,
+    title,
     description,
     size = 'medium',
     onPress,
@@ -50,7 +84,8 @@ export const ListItem = (props: ListItemProps) => {
     leftWrapperStyle,
     textWrapperStyle,
     containerStyle,
-    textStyle,
+    titleStyle,
+    descriptionStyle,
     focusBackgroundColor,
     wrapperStyle,
   } = mergeStyles(
@@ -70,13 +105,29 @@ export const ListItem = (props: ListItemProps) => {
     >
       <View style={wrapperStyle}>
         <View style={leftWrapperStyle}>
-          <View style={imageWrapperStyle}>{leftIcon}</View>
+          <View style={imageWrapperStyle}>
+            {leftIcon || <Avatar size={avatarSize[size]} {...avatarProps} />}
+          </View>
           <View style={textWrapperStyle}>
-            <Text getStyles={() => ({ textStyle })}>{label}</Text>
-            <Text size="small">{description}</Text>
+            <Text
+              getStyles={() => ({ textStyle: titleStyle })}
+              size={titleSize[size]}
+              weight="500"
+            >
+              {title}
+            </Text>
+            <Text
+              getStyles={() => ({ textStyle: descriptionStyle })}
+              size={descriptionSize[size]}
+              color="muted"
+            >
+              {description}
+            </Text>
           </View>
         </View>
-        {rightIcon}
+        {rightIcon || (
+          <Icon color="default" size={iconSize[size]} name="chevron-right" />
+        )}
       </View>
     </TouchableHighlight>
   );

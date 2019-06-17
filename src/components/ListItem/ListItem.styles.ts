@@ -9,7 +9,8 @@ export interface ListItemStyles {
   leftWrapperStyle: ViewStyle;
   textWrapperStyle: ViewStyle;
   focusBackgroundColor: string;
-  textStyle: TextStyle;
+  titleStyle: TextStyle;
+  descriptionStyle: TextStyle;
 }
 
 export interface ListItemStylesProps {
@@ -33,12 +34,13 @@ export const getListItemStyles: GetListItemStyles = (
       borderColor: theme.colors.border.default,
       height: theme.controlHeights[size],
       justifyContent: 'center',
-      paddingLeft: theme.controlPaddings[size],
-      paddingRight: theme.controlPaddings[size],
+      paddingLeft: 16,
+      paddingRight: 8,
       ...(isDisabled
         ? { backgroundColor: theme.colors.background.greyDark }
         : {}),
     },
+    descriptionStyle: {},
     focusBackgroundColor: theme.colors.background.greyLight,
     imageWrapperStyle: {
       marginRight: 8,
@@ -47,10 +49,10 @@ export const getListItemStyles: GetListItemStyles = (
       alignItems: 'center',
       flexDirection: 'row',
     },
-    textStyle: theme.textSizes[size],
     textWrapperStyle: {
       height: '100%',
     },
+    titleStyle: {},
     wrapperStyle: {
       alignItems: 'center',
       flexDirection: 'row',
