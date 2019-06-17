@@ -1,3 +1,10 @@
+# [1.61.0](https://github.com/WeTrustPlatform/paramount/compare/v1.60.1...v1.61.0) (2019-06-17)
+
+
+### Features
+
+* **popover:** lean popover ([cc6565c](https://github.com/WeTrustPlatform/paramount/commit/cc6565c))
+
 ## [1.60.1](https://github.com/WeTrustPlatform/paramount/compare/v1.60.0...v1.60.1) (2019-06-14)
 
 
