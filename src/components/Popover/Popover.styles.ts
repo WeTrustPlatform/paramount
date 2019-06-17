@@ -1,16 +1,20 @@
-import { TextStyle } from 'react-native';
+import { ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
 import {
   getPositionerStyles,
+  PositionerStyleProps,
   PositionerStyles,
 } from '../Positioner/Positioner.styles';
 
 export interface PopoverStyles extends PositionerStyles {
-  popoverStyle: TextStyle;
+  popoverStyle: ViewStyle;
 }
 
-export type GetPopoverStyles = (props: {}, theme: Theme) => PopoverStyles;
+export type GetPopoverStyles = (
+  props: PositionerStyleProps,
+  theme: Theme,
+) => PopoverStyles;
 
 export const getPopoverStyles: GetPopoverStyles = (props, theme) => {
   return {
@@ -19,6 +23,6 @@ export const getPopoverStyles: GetPopoverStyles = (props, theme) => {
       padding: 16,
       ...theme.elevations[2],
     },
-    ...getPositionerStyles({}, theme),
+    ...getPositionerStyles(props, theme),
   };
 };

@@ -1111,175 +1111,34 @@ export const KitchenSink = () => {
       </Box>
 
       <Playground>
-        <Toggle>
-          {({ on, toggle }) => (
-            <Popover
-              isVisible={on}
-              onClose={toggle}
-              position="bottom"
-              isFullWidth={false}
-              // Use this prop to specify the position of the popover
-              targetMeasurements={{
-                height: 200,
-                pageX: window.innerWidth - 224,
-                pageY: -200,
-                width: 200,
-                x: 0,
-                y: 0,
-              }}
-              getStyles={(props, theme) => ({
-                positionerStyle: {},
-                modalContainerStyle: {},
-                popoverStyle: {},
-              })}
-              content={props => (
-                <Box>
-                  <Text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
-                  </Text>
-                </Box>
-              )}
-            >
-              <Button onPress={toggle} title="Pop at right corner" />
-            </Popover>
-          )}
-        </Toggle>
-      </Playground>
-
-      <Playground>
-        <Box paddingBottom={64} zIndex={1}>
-          <Box flexDirection="row" justifyContent="space-between">
-            <Toggle>
-              {({ on, toggle }) => (
-                <Popover
-                  isVisible={on}
-                  onClose={toggle}
-                  position="top-right"
-                  content={() => <Box width={200} height={200} />}
-                >
-                  <Button onPress={toggle} isInline title="Top right" />
-                </Popover>
-              )}
-            </Toggle>
-            <Toggle>
-              {({ on, toggle }) => (
-                <Popover
-                  isVisible={on}
-                  onClose={toggle}
-                  position="top"
-                  content={() => <Box width={200} height={200} />}
-                >
-                  <Button onPress={toggle} isInline title="Top" />
-                </Popover>
-              )}
-            </Toggle>
-            <Toggle>
-              {({ on, toggle }) => (
-                <Popover
-                  isVisible={on}
-                  onClose={toggle}
-                  position="top-left"
-                  content={() => <Box width={200} height={200} />}
-                >
-                  <Button onPress={toggle} isInline title="Top left" />
-                </Popover>
-              )}
-            </Toggle>
-          </Box>
-        </Box>
-
-        <Box paddingVertical={64} zIndex={2}>
-          <Box flexDirection="row" justifyContent="space-between">
-            <Toggle>
-              {({ on, toggle }) => (
-                <Popover
-                  isVisible={on}
-                  onClose={toggle}
-                  position="left"
-                  content={() => <Box width={200} height={200} />}
-                >
-                  <Button onPress={toggle} isInline title="Left" />
-                </Popover>
-              )}
-            </Toggle>
-            <Toggle>
-              {({ on, toggle }) => (
-                <Popover
-                  isVisible={on}
-                  onClose={toggle}
-                  position="right"
-                  content={() => <Box width={200} height={200} />}
-                >
-                  <Button onPress={toggle} isInline title="Right" />
-                </Popover>
-              )}
-            </Toggle>
-          </Box>
-        </Box>
-
-        <Box paddingTop={64} zIndex={3}>
-          <Box flexDirection="row" justifyContent="space-between">
-            <Toggle>
-              {({ on, toggle }) => (
-                <Popover
-                  isVisible={on}
-                  onClose={toggle}
-                  position="bottom-right"
-                  content={() => <Box width={200} height={200} />}
-                >
-                  <Button onPress={toggle} isInline title="Bottom right" />
-                </Popover>
-              )}
-            </Toggle>
-            <Toggle>
-              {({ on, toggle }) => (
-                <Popover
-                  isVisible={on}
-                  onClose={toggle}
-                  position="bottom"
-                  content={() => <Box width={200} height={200} />}
-                >
-                  <Button onPress={toggle} isInline title="Bottom" />
-                </Popover>
-              )}
-            </Toggle>
-            <Toggle>
-              {({ on, toggle }) => (
-                <Popover
-                  isVisible={on}
-                  onClose={toggle}
-                  position="bottom-left"
-                  content={() => <Box width={200} height={200} />}
-                >
-                  <Button onPress={toggle} isInline title="Bottom left" />
-                </Popover>
-              )}
-            </Toggle>
-          </Box>
-        </Box>
-      </Playground>
-
-      <Playground>
-        <Box flex={1}>
+        <Box height={250}>
           <Toggle>
             {({ on, toggle }) => (
               <Popover
                 isVisible={on}
-                isFullWidth
-                onClose={toggle}
-                position="top-left"
-                content={() => (
-                  <Box width={200} height={200} backgroundColor="#67c6bb" />
-                )}
+                position="right"
+                getStyles={(props, theme) => ({
+                  positionerStyle: {},
+                  modalContainerStyle: {},
+                  popoverStyle: {},
+                })}
+                content={
+                  <Box width={200} height={200}>
+                    <Text>
+                      Due to variety and complexity involved in detecting touch
+                      outside of the component on the web and in native, you
+                      have to manage its open and closed state
+                    </Text>
+                    <Button
+                      appearance="outline"
+                      color="danger"
+                      onPress={toggle}
+                      title="Close popover"
+                    />
+                  </Box>
+                }
               >
-                <Button onPress={toggle} title="Pop" />
+                <Button onPress={toggle} title="Open popover" />
               </Popover>
             )}
           </Toggle>

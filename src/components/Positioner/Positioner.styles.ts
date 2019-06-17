@@ -4,21 +4,25 @@ import { Theme } from '../../theme/Theme';
 
 export interface PositionerStyles {
   positionerStyle: ViewStyle;
-  modalContainerStyle: ViewStyle;
+  containerStyle: ViewStyle;
 }
 
-export type GetPositionerStyles = (props: {}, theme: Theme) => PositionerStyles;
+export interface PositionerStyleProps {
+  isPositionerMeasurementsMeasured: boolean;
+}
+
+export type GetPositionerStyles = (
+  props: PositionerStyleProps,
+  theme: Theme,
+) => PositionerStyles;
 
 export const getPositionerStyles: GetPositionerStyles = (props, theme) => {
+  const { isPositionerMeasurementsMeasured } = props;
+
   return {
-    modalContainerStyle: {
-      alignItems: 'center',
-      display: 'flex',
-      height: '100%',
-      justifyContent: 'center',
-      width: '100%',
-    },
+    containerStyle: {},
     positionerStyle: {
+      opacity: isPositionerMeasurementsMeasured ? 1 : 0,
       position: 'absolute',
       zIndex: 1,
     },

@@ -18,17 +18,17 @@ export interface PopoverProps extends PositionerProps {
 export const Popover = (props: PopoverProps) => {
   const { content, getStyles, ...restProps } = props;
   const theme = useTheme();
-  const { popoverStyle, modalContainerStyle, positionerStyle } = mergeStyles(
+  const { popoverStyle } = mergeStyles(
     getPopoverStyles,
     getStyles,
     theme.components.getPopoverStyles,
-  )({}, theme);
+  )({ isPositionerMeasurementsMeasured: false }, theme);
 
   return (
     <Positioner
       {...restProps}
-      getStyles={() => ({ modalContainerStyle, positionerStyle })}
-      content={params => <View style={popoverStyle}>{content(params)}</View>}
+      getStyles={getStyles}
+      content={<View style={popoverStyle}>{content}</View>}
     />
   );
 };
