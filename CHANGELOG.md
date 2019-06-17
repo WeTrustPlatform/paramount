@@ -1,3 +1,10 @@
+## [1.62.2](https://github.com/WeTrustPlatform/paramount/compare/v1.62.1...v1.62.2) (2019-06-17)
+
+
+### Bug Fixes
+
+* **container:** fluid prop ([3c288e1](https://github.com/WeTrustPlatform/paramount/commit/3c288e1))
+
 ## [1.62.1](https://github.com/WeTrustPlatform/paramount/compare/v1.62.0...v1.62.1) (2019-06-17)
 
 
