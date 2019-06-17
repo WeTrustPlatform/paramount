@@ -1,3 +1,10 @@
+## [1.62.1](https://github.com/WeTrustPlatform/paramount/compare/v1.62.0...v1.62.1) (2019-06-17)
+
+
+### Bug Fixes
+
+* **export:** exclude App.tsx ([1d39387](https://github.com/WeTrustPlatform/paramount/commit/1d39387))
+
 # [1.62.0](https://github.com/WeTrustPlatform/paramount/compare/v1.61.0...v1.62.0) (2019-06-17)
 
 
