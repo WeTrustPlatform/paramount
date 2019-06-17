@@ -867,20 +867,16 @@ export const KitchenSink = () => {
         <State initial={{ value: '' }}>
           {({ state, setState }) => (
             <TextInput
-              name="field"
               value={state.value}
               placeholder="Add your own placeholder"
               size="large"
               isDisabled={false}
               isInvalid={false}
+              textContentType="emailAddress" // Enables autofill
               keyboardType="email-address"
               onChangeText={text => setState({ value: text })}
               onSubmitEditing={e => console.log('Submit on enter')}
-              leftIcon={
-                <Box>
-                  <Icon name="menu" size={24} />
-                </Box>
-              }
+              leftIcon={<Icon name="menu" size={24} />}
               rightIcon={undefined}
               isClearable={true} // Mutually exclusive with rightIcon
               onClear={() => console.log('Cleared!')} // Only triggered with `isClearable`

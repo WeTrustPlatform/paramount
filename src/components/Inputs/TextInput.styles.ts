@@ -1,4 +1,4 @@
-import { TextStyle } from 'react-native';
+import { TextStyle, ViewStyle } from 'react-native';
 
 import { ControlSize, Theme } from '../../theme/Theme';
 
@@ -6,6 +6,9 @@ export interface TextInputStyles {
   inputStyle: TextStyle;
   focusedStyle: TextStyle;
   placeholderTextColor: string;
+  containerStyle: ViewStyle;
+  leftContainerStyle: ViewStyle;
+  rightContainerStyle: ViewStyle;
 }
 
 export interface TextInputStylesProps {
@@ -13,6 +16,8 @@ export interface TextInputStylesProps {
   isDisabled: boolean;
   isInvalid: boolean;
   numberOfLines?: number;
+  hasLeftIcon: boolean;
+  hasRightIcon: boolean;
 }
 
 export type GetTextInputStyles = (
@@ -21,12 +26,15 @@ export type GetTextInputStyles = (
 ) => TextInputStyles;
 
 export const getTextInputStyles: GetTextInputStyles = (
-  { size, isDisabled, isInvalid, numberOfLines },
+  { size, isDisabled, isInvalid, numberOfLines, hasLeftIcon, hasRightIcon },
   theme,
 ) => {
   const controlHeight = theme.controlHeights[size];
 
   return {
+    containerStyle: {
+      position: 'relative',
+    },
     focusedStyle: {},
     inputStyle: {
       backgroundColor: theme.colors.background.content,
@@ -49,7 +57,27 @@ export const getTextInputStyles: GetTextInputStyles = (
             paddingVertical: 16,
           }
         : {}),
+      ...(hasLeftIcon && { paddingLeft: 40 }),
+      ...(hasRightIcon && { paddingRight: 40 }),
+    },
+    leftContainerStyle: {
+      alignItems: 'center',
+      display: 'flex',
+      height: '100%',
+      justifyContent: 'center',
+      left: 0,
+      paddingHorizontal: 8,
+      position: 'absolute',
     },
     placeholderTextColor: theme.colors.text.muted,
+    rightContainerStyle: {
+      alignItems: 'center',
+      display: 'flex',
+      height: '100%',
+      justifyContent: 'center',
+      paddingHorizontal: 8,
+      position: 'absolute',
+      right: 0,
+    },
   };
 };

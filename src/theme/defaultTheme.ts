@@ -3,6 +3,7 @@ import { Platform } from 'react-native';
 import palette from './palette';
 import {
   Colors,
+  ContainerShapes,
   ControlSizes,
   Elevations,
   Fills,
@@ -343,6 +344,37 @@ const textSizes: TextSizes = {
   },
 };
 
+const containerShapes: ContainerShapes = {
+  circle: {
+    borderRadius: 999,
+  },
+  pill: {
+    borderRadius: 999,
+  },
+  rounded: {
+    borderRadius: controlBorderRadius.medium,
+  },
+  roundedBottom: {
+    borderBottomLeftRadius: controlBorderRadius.medium,
+    borderBottomRightRadius: controlBorderRadius.medium,
+  },
+  roundedLeft: {
+    borderBottomLeftRadius: controlBorderRadius.medium,
+    borderTopLeftRadius: controlBorderRadius.medium,
+  },
+  roundedRight: {
+    borderBottomRightRadius: controlBorderRadius.medium,
+    borderTopRightRadius: controlBorderRadius.medium,
+  },
+  roundedTop: {
+    borderTopLeftRadius: controlBorderRadius.medium,
+    borderTopRightRadius: controlBorderRadius.medium,
+  },
+  square: {
+    borderRadius: 0,
+  },
+};
+
 export const defaultTheme: Theme = {
   colors,
   fills,
@@ -359,6 +391,8 @@ export const defaultTheme: Theme = {
   controlBorderRadius,
   controlHeights,
   controlPaddings,
+
+  containerShapes,
 
   components: {},
 };

@@ -32,6 +32,9 @@ import { ThemeProvider } from 'paramount-ui'
   controlPaddings: ControlSizes;
   controlHeights: ControlSizes;
   controlBorderRadius: ControlSizes;
+
+  // Container shapes
+  containerShapes: ContainerShapes;
 }}>
   ...
 </ThemeProvider>
@@ -40,7 +43,7 @@ import { ThemeProvider } from 'paramount-ui'
 
 ## Components
 
-In the same `ThemeProvider` as above, use `components` option.
+In the same `ThemeProvider` as above, use `components` option. For available style options for each component, see `getStyles` callback in corresponding component docs
 
 ```
 import { ThemeProvider } from 'paramount-ui'
@@ -101,7 +104,7 @@ const CustomButton = () => {
       getStyles={(buttonProps, theme) => {
         const { color } = buttonProps;
 
-        // Style of each React node
+        // Style of each React Element
         return {
           buttonStyle: { ... },
           textStyle: { ... },
@@ -443,6 +446,37 @@ const textSizes: TextSizes = {
   },
 };
 
+const containerShapes: ContainerShapes = {
+  circle: {
+    borderRadius: 999,
+  },
+  pill: {
+    borderRadius: 999,
+  },
+  rounded: {
+    borderRadius: controlBorderRadius.medium,
+  },
+  roundedBottom: {
+    borderBottomLeftRadius: controlBorderRadius.medium,
+    borderBottomRightRadius: controlBorderRadius.medium,
+  },
+  roundedLeft: {
+    borderBottomLeftRadius: controlBorderRadius.medium,
+    borderTopLeftRadius: controlBorderRadius.medium,
+  },
+  roundedRight: {
+    borderBottomRightRadius: controlBorderRadius.medium,
+    borderTopRightRadius: controlBorderRadius.medium,
+  },
+  roundedTop: {
+    borderTopLeftRadius: controlBorderRadius.medium,
+    borderTopRightRadius: controlBorderRadius.medium,
+  },
+  square: {
+    borderRadius: 0,
+  },
+};
+
 export const defaultTheme: Theme = {
   colors,
   fills,
@@ -459,6 +493,8 @@ export const defaultTheme: Theme = {
   controlBorderRadius,
   controlHeights,
   controlPaddings,
+
+  containerShapes,
 
   components: {},
 };

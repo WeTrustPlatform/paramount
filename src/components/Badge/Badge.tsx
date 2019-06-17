@@ -3,9 +3,8 @@ import { View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { ControlSize, FillColor } from '../../theme/Theme';
+import { ContainerShape, ControlSize, FillColor } from '../../theme/Theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { Shape } from '../Box';
 import { Text } from '../Typography';
 import { BadgeStyles, GetBadgeStyles, getBadgeStyles } from './Badge.styles';
 
@@ -13,7 +12,7 @@ export interface BadgeProps {
   children: React.ReactNode;
   color?: FillColor;
   size?: ControlSize;
-  shape?: Shape;
+  shape?: ContainerShape;
   isSolid?: boolean;
   getStyles?: ReplaceReturnType<GetBadgeStyles, DeepPartial<BadgeStyles>>;
   testID?: string;

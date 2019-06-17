@@ -35,7 +35,7 @@ const SelectListItemBase = (props: SelectListItemProps) => {
         e.preventDefault();
         onSelect(value, index, isSelected);
       }}
-      label={label}
+      title={label}
       rightIcon={
         <Checkbox isInteractive={false} shape="circle" isChecked={isSelected} />
       }
