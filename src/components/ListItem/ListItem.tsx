@@ -106,23 +106,29 @@ export const ListItem = (props: ListItemProps) => {
       <View style={wrapperStyle}>
         <View style={leftWrapperStyle}>
           <View style={imageWrapperStyle}>
-            {leftIcon || <Avatar size={avatarSize[size]} {...avatarProps} />}
+            {leftIcon || avatarProps ? (
+              <Avatar size={avatarSize[size]} {...avatarProps} />
+            ) : null}
           </View>
           <View style={textWrapperStyle}>
-            <Text
-              getStyles={() => ({ textStyle: titleStyle })}
-              size={titleSize[size]}
-              weight="500"
-            >
-              {title}
-            </Text>
-            <Text
-              getStyles={() => ({ textStyle: descriptionStyle })}
-              size={descriptionSize[size]}
-              color="muted"
-            >
-              {description}
-            </Text>
+            {title && (
+              <Text
+                getStyles={() => ({ textStyle: titleStyle })}
+                size={titleSize[size]}
+                weight="500"
+              >
+                {title}
+              </Text>
+            )}
+            {description && (
+              <Text
+                getStyles={() => ({ textStyle: descriptionStyle })}
+                size={descriptionSize[size]}
+                color="muted"
+              >
+                {description}
+              </Text>
+            )}
           </View>
         </View>
         {rightIcon || (

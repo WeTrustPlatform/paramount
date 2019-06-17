@@ -17,7 +17,7 @@ import { GetFormFieldStyles } from '../components/Form/FormField.styles';
 import { GetColumnStyles } from '../components/Grid/Column.styles';
 import { GetContainerStyles } from '../components/Grid/Container.styles';
 import { GetRowStyles } from '../components/Grid/Row.styles';
-import { GetIconTextInputStyles } from '../components/Inputs/IconTextInput.styles';
+import { GetTextInputStyles } from '../components/Inputs/TextInput.styles';
 import { GetListItemStyles } from '../components/ListItem/ListItem.styles';
 import { GetOverlayStyles } from '../components/Overlay/Overlay.styles';
 import { GetPickerButtonStyles } from '../components/Pickers/PickerButton.styles';
@@ -67,9 +67,9 @@ export interface ParagraphSizes {
 export type ParagraphSize = keyof ParagraphSizes | number;
 
 export interface FontFamilies {
-  heading?: string;
-  mono?: string;
-  text?: string;
+  heading: string;
+  mono: string;
+  text: string;
 }
 export type FontFamily = keyof FontFamilies;
 
@@ -220,6 +220,19 @@ export interface Fills {
   solid: FillColors;
 }
 
+export interface ContainerShapes {
+  circle: ViewStyle;
+  pill: ViewStyle;
+  rounded: ViewStyle;
+  roundedBottom: ViewStyle;
+  roundedLeft: ViewStyle;
+  roundedRight: ViewStyle;
+  roundedTop: ViewStyle;
+  square: ViewStyle;
+}
+
+export type ContainerShape = keyof ContainerShapes;
+
 export interface Theme {
   // Colors
   colors: Colors;
@@ -241,6 +254,9 @@ export interface Theme {
   controlHeights: ControlSizes;
   controlBorderRadius: ControlSizes;
 
+  // Containers
+  containerShapes: ContainerShapes;
+
   components: {
     getAlertStyles?: GetAlertStyles;
     getAvatarStyles?: GetAvatarStyles;
@@ -256,7 +272,7 @@ export interface Theme {
     getColumnStyles?: GetColumnStyles;
     getContainerStyles?: GetContainerStyles;
     getRowStyles?: GetRowStyles;
-    getTextInputStyles?: GetIconTextInputStyles;
+    getTextInputStyles?: GetTextInputStyles;
     getListItemStyles?: GetListItemStyles;
     getOverlayStyles?: GetOverlayStyles;
     getPickerButtonStyles?: GetPickerButtonStyles;

@@ -56,9 +56,9 @@ import {
 
 export const KitchenSink = () => {
   return (
-    <Box>
+    <Box padding={16}>
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Alert
         </Heading>
       </Box>
@@ -93,7 +93,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Avatar
         </Heading>
       </Box>
@@ -121,7 +121,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Badge
         </Heading>
       </Box>
@@ -213,7 +213,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Box
         </Heading>
       </Box>
@@ -230,7 +230,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Button
         </Heading>
       </Box>
@@ -324,7 +324,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Checkbox
         </Heading>
       </Box>
@@ -353,7 +353,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Collapsible
         </Heading>
       </Box>
@@ -391,7 +391,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Counter
         </Heading>
       </Box>
@@ -419,7 +419,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Dialog
         </Heading>
       </Box>
@@ -484,7 +484,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Divider
         </Heading>
       </Box>
@@ -503,7 +503,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Drawer
         </Heading>
       </Box>
@@ -626,7 +626,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           FormField
         </Heading>
       </Box>
@@ -652,7 +652,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Container
         </Heading>
       </Box>
@@ -673,7 +673,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Row and Column
         </Heading>
       </Box>
@@ -826,7 +826,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Visible
         </Heading>
       </Box>
@@ -858,7 +858,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           TextInput
         </Heading>
       </Box>
@@ -867,20 +867,16 @@ export const KitchenSink = () => {
         <State initial={{ value: '' }}>
           {({ state, setState }) => (
             <TextInput
-              name="field"
               value={state.value}
               placeholder="Add your own placeholder"
               size="large"
               isDisabled={false}
               isInvalid={false}
+              textContentType="emailAddress" // Enables autofill
               keyboardType="email-address"
               onChangeText={text => setState({ value: text })}
               onSubmitEditing={e => console.log('Submit on enter')}
-              leftIcon={
-                <Box>
-                  <Icon name="menu" size={24} />
-                </Box>
-              }
+              leftIcon={<Icon name="menu" size={24} />}
               rightIcon={undefined}
               isClearable={true} // Mutually exclusive with rightIcon
               onClear={() => console.log('Cleared!')} // Only triggered with `isClearable`
@@ -894,13 +890,38 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           ListItem
         </Heading>
       </Box>
 
+      <Playground>
+        <ListItem
+          onPress={() => console.log('Press')}
+          avatarProps={{
+            source: { uri: 'https://picsum.photos/200/200' },
+          }}
+          rightIcon={undefined} // Override right-handside icon
+          leftIcon={undefined} // Override Avatar
+          title="Some label"
+          description="Some description"
+          size="large"
+          isDisabled={false}
+          getStyles={(props, theme) => ({
+            containerStyle: {},
+            descriptionStyle: {},
+            focusBackgroundColor: '#fafafa',
+            imageWrapperStyle: {},
+            leftWrapperStyle: {},
+            textWrapperStyle: {},
+            titleStyle: {},
+            wrapperStyle: {},
+          })}
+        />
+      </Playground>
+
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Modal
         </Heading>
       </Box>
@@ -1035,7 +1056,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           NativePicker
         </Heading>
       </Box>
@@ -1079,7 +1100,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Popover
         </Heading>
       </Box>
@@ -1120,7 +1141,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           ProgressBar
         </Heading>
       </Box>
@@ -1150,7 +1171,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Rating
         </Heading>
       </Box>
@@ -1175,10 +1196,29 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           SelectList
         </Heading>
       </Box>
+
+      <Playground>
+        <SelectList
+          isMulti={false} // Single select
+          selectedValue="c"
+          onValueChange={(newValue, itemIndex) => {
+            console.log(newValue, itemIndex);
+          }}
+        >
+          <SelectListItem
+            label="Usage"
+            value="c"
+            // Props below are passed from `SelectList`, so it is not necessary to pass them here
+            // isSelected
+            // onSelect
+            // index
+          />
+        </SelectList>
+      </Playground>
 
       <Playground>
         <State initial={{ selectedValue: ['js', 'go'] }}>
@@ -1215,7 +1255,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Slider
         </Heading>
       </Box>
@@ -1253,7 +1293,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Switch
         </Heading>
       </Box>
@@ -1283,7 +1323,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Tabs
         </Heading>
       </Box>
@@ -1322,7 +1362,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Toast
         </Heading>
       </Box>
@@ -1409,7 +1449,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           BulletedList
         </Heading>
       </Box>
@@ -1424,7 +1464,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Heading
         </Heading>
       </Box>
@@ -1458,7 +1498,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Label
         </Heading>
       </Box>
@@ -1470,7 +1510,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           NumberedList
         </Heading>
       </Box>
@@ -1485,7 +1525,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Paragraph
         </Heading>
       </Box>
@@ -1516,7 +1556,7 @@ export const KitchenSink = () => {
       </Playground>
 
       <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="bold">
+        <Heading size="xxxlarge" weight="500">
           Text
         </Heading>
       </Box>

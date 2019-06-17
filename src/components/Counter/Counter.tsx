@@ -80,7 +80,10 @@ export const Counter = (props: CounterProps) => {
       </Box>
       {component || (
         <View style={countStyle}>
-          <Text getStyles={() => ({ textStyle })}>{`${count}`}</Text>
+          <Text
+            align="center"
+            getStyles={() => ({ textStyle })}
+          >{`${count}`}</Text>
         </View>
       )}
       <Box paddingLeft={16}>

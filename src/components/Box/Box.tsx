@@ -1,19 +1,7 @@
 import * as React from 'react';
 import { View, ViewStyle } from 'react-native';
 
-import { BackgroundColor, Theme, useTheme } from '../../theme';
-
-export const BASE_BORDER_RADII = 4;
-
-export type Shape =
-  | 'circle'
-  | 'pill'
-  | 'rounded'
-  | 'roundedBottom'
-  | 'roundedLeft'
-  | 'roundedRight'
-  | 'roundedTop'
-  | 'square';
+import { BackgroundColor, ContainerShape, Theme, useTheme } from '../../theme';
 
 export interface BoxProps extends ViewStyle {
   style?: ViewStyle;
@@ -21,41 +9,8 @@ export interface BoxProps extends ViewStyle {
 
   elevation?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
-  shape?: Shape;
+  shape?: ContainerShape;
 }
-
-export const shapeMapping: {
-  [shape: string]: ViewStyle;
-} = {
-  circle: {
-    borderRadius: 999,
-  },
-  pill: {
-    borderRadius: 999,
-  },
-  rounded: {
-    borderRadius: BASE_BORDER_RADII,
-  },
-  roundedBottom: {
-    borderBottomLeftRadius: BASE_BORDER_RADII,
-    borderBottomRightRadius: BASE_BORDER_RADII,
-  },
-  roundedLeft: {
-    borderBottomLeftRadius: BASE_BORDER_RADII,
-    borderTopLeftRadius: BASE_BORDER_RADII,
-  },
-  roundedRight: {
-    borderBottomRightRadius: BASE_BORDER_RADII,
-    borderTopRightRadius: BASE_BORDER_RADII,
-  },
-  roundedTop: {
-    borderTopLeftRadius: BASE_BORDER_RADII,
-    borderTopRightRadius: BASE_BORDER_RADII,
-  },
-  square: {
-    borderRadius: 0,
-  },
-};
 
 const propToFn = {
   backgroundColor: (color: BackgroundColor, theme: Theme) => {
@@ -68,10 +23,9 @@ const propToFn = {
       backgroundColor: color,
     };
   },
-  elevation: (elevation: 0 | 1 | 2 | 3 | 4, theme: Theme) => {
-    return theme.elevations[elevation];
-  },
-  shape: (shape: Shape) => shapeMapping[shape],
+  elevation: (elevation: 0 | 1 | 2 | 3 | 4, theme: Theme) =>
+    theme.elevations[elevation],
+  shape: (shape: ContainerShape, theme: Theme) => theme.containerShapes[shape],
 };
 
 export const Box = (props: BoxProps) => {

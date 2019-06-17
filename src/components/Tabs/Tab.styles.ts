@@ -23,6 +23,8 @@ export const getTabStyles: GetTabStyles = (
   return {
     buttonStyle: {
       backgroundColor: isActive ? 'white' : 'transparent',
+      paddingLeft: 0,
+      paddingRight: 0,
     },
     containerStyle: {
       backgroundColor: theme.colors.background.greyDefault,

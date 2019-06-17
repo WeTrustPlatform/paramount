@@ -3,6 +3,7 @@ import { Platform } from 'react-native';
 import palette from './palette';
 import {
   Colors,
+  ContainerShapes,
   ControlSizes,
   Elevations,
   Fills,
@@ -252,19 +253,18 @@ const fills: Fills = {
   },
 };
 
+// Use system font on the Web
 const fontFamilies: FontFamilies =
   Platform.OS === 'web'
-    ? // Use system font on the Web
-      {
+    ? {
         heading: `"SF UI Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
         mono: `"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace`,
         text: `"SF UI Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
       }
-    : // Use default font families by React Native by default. Setting it to undefined will use the default font
-      {
-        heading: undefined,
-        mono: undefined,
-        text: undefined,
+    : {
+        heading: 'System',
+        mono: 'System',
+        text: 'System',
       };
 
 const fontWeights: FontWeights = {
@@ -343,6 +343,37 @@ const textSizes: TextSizes = {
   },
 };
 
+const containerShapes: ContainerShapes = {
+  circle: {
+    borderRadius: 999,
+  },
+  pill: {
+    borderRadius: 999,
+  },
+  rounded: {
+    borderRadius: controlBorderRadius.medium,
+  },
+  roundedBottom: {
+    borderBottomLeftRadius: controlBorderRadius.medium,
+    borderBottomRightRadius: controlBorderRadius.medium,
+  },
+  roundedLeft: {
+    borderBottomLeftRadius: controlBorderRadius.medium,
+    borderTopLeftRadius: controlBorderRadius.medium,
+  },
+  roundedRight: {
+    borderBottomRightRadius: controlBorderRadius.medium,
+    borderTopRightRadius: controlBorderRadius.medium,
+  },
+  roundedTop: {
+    borderTopLeftRadius: controlBorderRadius.medium,
+    borderTopRightRadius: controlBorderRadius.medium,
+  },
+  square: {
+    borderRadius: 0,
+  },
+};
+
 export const defaultTheme: Theme = {
   colors,
   fills,
@@ -359,6 +390,8 @@ export const defaultTheme: Theme = {
   controlBorderRadius,
   controlHeights,
   controlPaddings,
+
+  containerShapes,
 
   components: {},
 };

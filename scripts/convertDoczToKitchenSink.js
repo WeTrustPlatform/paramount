@@ -24,7 +24,7 @@ function transformHeadings() {
     const toJsx = node => {
       let text = toString(node);
 
-      const html = `<Box paddingTop={96}><Heading size="xxxlarge" weight="bold">${text}</Heading></Box>`;
+      const html = `<Box paddingTop={96}><Heading size="xxxlarge" weight="500">${text}</Heading></Box>`;
 
       node.type = 'jsx';
       node.children = undefined;
@@ -45,7 +45,7 @@ function removeUnused() {
 
     const isNotH1 = node => node.type === 'heading' && node.depth !== 1;
     const isPropsTable = node =>
-      node.type === 'jsx' && node.value.includes('Props');
+      node.type === 'jsx' && node.value.includes('<Props');
 
     remove(tree, isNotH1);
     remove(tree, isPropsTable);
@@ -74,7 +74,7 @@ function collectImports(imports) {
 const wrapContent = content => {
   return `export const KitchenSink = () => {
   return (
-    <Box>
+    <Box padding={16}>
       ${content}
     </Box>
   )

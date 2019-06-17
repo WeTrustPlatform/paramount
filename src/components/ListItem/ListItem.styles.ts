@@ -50,7 +50,7 @@ export const getListItemStyles: GetListItemStyles = (
       flexDirection: 'row',
     },
     textWrapperStyle: {
-      height: '100%',
+      justifyContent: 'center',
     },
     titleStyle: {},
     wrapperStyle: {
