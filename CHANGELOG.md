@@ -1,3 +1,11 @@
+# [1.62.0](https://github.com/WeTrustPlatform/paramount/compare/v1.61.0...v1.62.0) (2019-06-17)
+
+
+### Features
+
+* **cleanup:** various compatibility issues ([#256](https://github.com/WeTrustPlatform/paramount/issues/256)) ([b312a1a](https://github.com/WeTrustPlatform/paramount/commit/b312a1a))
+* **listitem:** change ListItem ([12cfca4](https://github.com/WeTrustPlatform/paramount/commit/12cfca4))
+
 # [1.61.0](https://github.com/WeTrustPlatform/paramount/compare/v1.60.1...v1.61.0) (2019-06-17)
 
 
