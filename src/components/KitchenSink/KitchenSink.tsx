@@ -25,12 +25,12 @@ import {
   Divider,
   Drawer,
   TextInput,
+  State,
   Container,
   LayoutProvider,
   Column,
   Row,
   Visible,
-  State,
   ListItem,
   Modal,
   NativePicker,
@@ -46,11 +46,7 @@ import {
   Tab,
   ToastContext,
   ToastProvider,
-  BulletedList,
-  BulletItem,
   Label,
-  NumberedList,
-  NumberedItem,
   Paragraph,
 } from '..';
 
@@ -64,30 +60,16 @@ export const KitchenSink = () => {
       </Box>
 
       <Playground>
-        <Alert
-          title="Title"
-          description="Message"
-          isCloseable
-          intent="success"
-          component={null} // Overrides body
-          getStyles={(props, theme) => ({
-            bodyStyle: {},
-            containerStyle: {},
-          })}
-        />
-      </Playground>
-
-      <Playground>
-        <Box paddingVertical={16}>
+        <Box paddingVertical={8}>
           <Alert title="Info" description="Message" />
         </Box>
-        <Box paddingVertical={16}>
+        <Box paddingVertical={8}>
           <Alert intent="success" title="Success" description="Message" />
         </Box>
-        <Box paddingVertical={16}>
+        <Box paddingVertical={8}>
           <Alert intent="warning" title="Warning" description="Message" />
         </Box>
-        <Box paddingVertical={16}>
+        <Box paddingVertical={8}>
           <Alert intent="danger" title="Danger" description="Message" />
         </Box>
       </Playground>
@@ -100,24 +82,14 @@ export const KitchenSink = () => {
 
       <Playground>
         <Avatar
+          source={{
+            uri: 'https://picsum.photos/100/100',
+            width: 100,
+            height: 100,
+          }}
+          // Defaults to name if source is not provided
           name="Bill Gates"
-          source={{ uri: 'https://picsum.photos/200/200' }}
-          size={40}
-          isSolid={false}
-          color="automatic"
-          getInitials={(name, fallback) =>
-            name ? `${name.charAt(0)}${name.charAt(5)}` : 'A'
-          }
-          getStyles={(props, theme) => ({
-            boxStyle: {},
-            textStyle: {},
-            imageStyle: {},
-          })}
         />
-      </Playground>
-
-      <Playground>
-        <Avatar name="Bill Gates" />
       </Playground>
 
       <Box paddingTop={96}>
@@ -128,87 +100,9 @@ export const KitchenSink = () => {
 
       <Playground>
         <Box>
-          <Badge
-            color="blue"
-            size="large"
-            shape="rounded"
-            isSolid={false}
-            getStyles={(props, theme) => ({
-              containerStyle: {},
-              textStyle: {},
-            })}
-          >
+          <Badge color="blue" isSolid size="large" shape="pill">
             Badge
           </Badge>
-        </Box>
-      </Playground>
-
-      <Playground>
-        <Box>
-          <Box flexDirection="row">
-            <Badge color="neutral" shape="pill">
-              neutral
-            </Badge>
-            <Badge color="neutral" isSolid>
-              neutral
-            </Badge>
-          </Box>
-          <Box flexDirection="row">
-            <Badge color="blue" shape="pill">
-              blue
-            </Badge>
-            <Badge color="blue" isSolid>
-              blue
-            </Badge>
-          </Box>
-          <Box flexDirection="row">
-            <Badge color="red" shape="pill">
-              red
-            </Badge>
-            <Badge color="red" isSolid>
-              red
-            </Badge>
-          </Box>
-          <Box flexDirection="row">
-            <Badge color="orange" shape="pill">
-              orange
-            </Badge>
-            <Badge color="orange" isSolid>
-              orange
-            </Badge>
-          </Box>
-          <Box flexDirection="row">
-            <Badge color="yellow" shape="pill">
-              yellow
-            </Badge>
-            <Badge color="yellow" isSolid>
-              yellow
-            </Badge>
-          </Box>
-          <Box flexDirection="row">
-            <Badge color="green" shape="pill">
-              green
-            </Badge>
-            <Badge color="green" isSolid>
-              green
-            </Badge>
-          </Box>
-          <Box flexDirection="row">
-            <Badge color="teal" shape="pill">
-              teal
-            </Badge>
-            <Badge color="teal" isSolid>
-              teal
-            </Badge>
-          </Box>
-          <Box flexDirection="row">
-            <Badge color="purple" shape="pill">
-              purple
-            </Badge>
-            <Badge color="purple" isSolid>
-              purple
-            </Badge>
-          </Box>
         </Box>
       </Playground>
 
@@ -221,11 +115,11 @@ export const KitchenSink = () => {
       <Playground>
         <Box
           // ...ViewStyle
-          height={200}
-          width={200}
-          shape="rounded" // pill, circle or square (default)
+          height={100}
+          width={100}
+          shape="rounded"
           elevation={5}
-          backgroundColor="primaryDefault" // background colors or any custom color "#67c6bb"
+          backgroundColor="primaryDefault"
         />
       </Playground>
 
@@ -653,6 +547,38 @@ export const KitchenSink = () => {
 
       <Box paddingTop={96}>
         <Heading size="xxxlarge" weight="500">
+          TextInput
+        </Heading>
+      </Box>
+
+      <Playground>
+        <State initial={{ value: '' }}>
+          {({ state, setState }) => (
+            <TextInput
+              value={state.value}
+              placeholder="Add your own placeholder"
+              size="large"
+              isDisabled={false}
+              isInvalid={false}
+              textContentType="emailAddress" // Enables autofill
+              keyboardType="email-address"
+              onChangeText={text => setState({ value: text })}
+              onSubmitEditing={e => console.log('Submit on enter')}
+              leftIcon={<Icon name="menu" size={24} />}
+              rightIcon={undefined}
+              isClearable={true} // Mutually exclusive with rightIcon
+              onClear={() => console.log('Cleared!')} // Only triggered with `isClearable`
+              getStyles={(props, theme) => ({
+                inputStyle: {},
+                placeholderTextColor: theme.colors.text.muted,
+              })}
+            />
+          )}
+        </State>
+      </Playground>
+
+      <Box paddingTop={96}>
+        <Heading size="xxxlarge" weight="500">
           Container
         </Heading>
       </Box>
@@ -671,6 +597,12 @@ export const KitchenSink = () => {
           </Box>
         </LayoutProvider>
       </Playground>
+
+      <Box paddingTop={96}>
+        <Heading size="xxxlarge" weight="500">
+          Layout
+        </Heading>
+      </Box>
 
       <Box paddingTop={96}>
         <Heading size="xxxlarge" weight="500">
@@ -855,38 +787,6 @@ export const KitchenSink = () => {
             </Box>
           </Visible>
         </LayoutProvider>
-      </Playground>
-
-      <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="500">
-          TextInput
-        </Heading>
-      </Box>
-
-      <Playground>
-        <State initial={{ value: '' }}>
-          {({ state, setState }) => (
-            <TextInput
-              value={state.value}
-              placeholder="Add your own placeholder"
-              size="large"
-              isDisabled={false}
-              isInvalid={false}
-              textContentType="emailAddress" // Enables autofill
-              keyboardType="email-address"
-              onChangeText={text => setState({ value: text })}
-              onSubmitEditing={e => console.log('Submit on enter')}
-              leftIcon={<Icon name="menu" size={24} />}
-              rightIcon={undefined}
-              isClearable={true} // Mutually exclusive with rightIcon
-              onClear={() => console.log('Cleared!')} // Only triggered with `isClearable`
-              getStyles={(props, theme) => ({
-                inputStyle: {},
-                placeholderTextColor: theme.colors.text.muted,
-              })}
-            />
-          )}
-        </State>
       </Playground>
 
       <Box paddingTop={96}>
@@ -1381,7 +1281,6 @@ export const KitchenSink = () => {
                     title: 'Title',
                     description: 'Description',
                     component: null, // A React Component that overrides title and description
-                    isCloseable: true,
                     offset: 16,
                     duration: 3000,
                     // ...Alert props e.g. getStyles
@@ -1404,7 +1303,6 @@ export const KitchenSink = () => {
                     notify({
                       title: 'Title',
                       description: 'Description',
-                      isCloseable: true,
                     })
                   }
                   title="Open default toast"
@@ -1446,21 +1344,6 @@ export const KitchenSink = () => {
             )}
           </ToastContext.Consumer>
         </ToastProvider>
-      </Playground>
-
-      <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="500">
-          BulletedList
-        </Heading>
-      </Box>
-
-      <Playground>
-        <BulletedList icon={<Icon name="check" />}>
-          <BulletItem>Lorem ipsum dolar set amet</BulletItem>
-          <BulletItem>Lorem ipsum dolar set amet</BulletItem>
-          <BulletItem>Lorem ipsum dolar set amet</BulletItem>
-          <BulletItem>Lorem ipsum dolar set amet</BulletItem>
-        </BulletedList>
       </Playground>
 
       <Box paddingTop={96}>
@@ -1507,21 +1390,6 @@ export const KitchenSink = () => {
         <Box>
           <Label>Lorem ipsum dolar set amet</Label>
         </Box>
-      </Playground>
-
-      <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="500">
-          NumberedList
-        </Heading>
-      </Box>
-
-      <Playground>
-        <NumberedList>
-          <NumberedItem>Lorem ipsum dolar set amet</NumberedItem>
-          <NumberedItem>Lorem ipsum dolar set amet</NumberedItem>
-          <NumberedItem>Lorem ipsum dolar set amet</NumberedItem>
-          <NumberedItem>Lorem ipsum dolar set amet</NumberedItem>
-        </NumberedList>
       </Playground>
 
       <Box paddingTop={96}>

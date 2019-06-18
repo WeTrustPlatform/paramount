@@ -42,6 +42,7 @@ function removeUnused() {
     remove(tree, 'import');
     remove(tree, 'thematicBreak');
     remove(tree, 'paragraph');
+    remove(tree, 'code');
 
     const isNotH1 = node => node.type === 'heading' && node.depth !== 1;
     const isPropsTable = node =>

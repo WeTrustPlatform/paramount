@@ -758,363 +758,11 @@ exports[`Box_1 1`] = `
         "borderTopLeftRadius": "4px",
         "borderTopRightRadius": "4px",
         "boxShadow": "5px 5px 8px rgba(167,167,167,0.35)",
-        "height": "200px",
-        "width": "200px",
+        "height": "100px",
+        "width": "100px",
       }
     }
   />
-</div>
-`;
-
-exports[`BulletedList_0 1`] = `
-<h1>
-  BulletedList
-</h1>
-`;
-
-exports[`BulletedList_1 1`] = `
-<div>
-  <ul
-    className="css-reset-4rbku5 css-view-1dbjc4n"
-    role="list"
-  >
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "marginBottom": "0px",
-          "marginLeft": "8px",
-          "marginRight": "0px",
-          "marginTop": "0px",
-          "paddingBottom": "0px",
-          "paddingLeft": "0px",
-          "paddingRight": "0px",
-          "paddingTop": "0px",
-        }
-      }
-    >
-      <li
-        className="css-reset-4rbku5 css-view-1dbjc4n"
-        role="listitem"
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitFlexDirection": "row",
-              "alignItems": "center",
-              "flexDirection": "row",
-              "marginBottom": "8px",
-              "marginTop": "8px",
-              "msFlexAlign": "center",
-              "msFlexDirection": "row",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-          >
-            <svg
-              fill="none"
-              height="1em"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <polyline
-                points="20 6 9 17 4 12"
-              />
-            </svg>
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "paddingLeft": "16px",
-                "width": "100%",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "WebkitAlignSelf": "flex-start",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitFlexDirection": "row",
-                  "alignSelf": "flex-start",
-                  "color": "rgba(126,126,126,1.00)",
-                  "flexDirection": "row",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "msFlexDirection": "row",
-                  "msFlexItemAlign": "start",
-                  "textAlign": "left",
-                }
-              }
-            >
-              Lorem ipsum dolar set amet
-            </div>
-          </div>
-        </div>
-      </li>
-      <li
-        className="css-reset-4rbku5 css-view-1dbjc4n"
-        role="listitem"
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitFlexDirection": "row",
-              "alignItems": "center",
-              "flexDirection": "row",
-              "marginBottom": "8px",
-              "marginTop": "8px",
-              "msFlexAlign": "center",
-              "msFlexDirection": "row",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-          >
-            <svg
-              fill="none"
-              height="1em"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <polyline
-                points="20 6 9 17 4 12"
-              />
-            </svg>
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "paddingLeft": "16px",
-                "width": "100%",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "WebkitAlignSelf": "flex-start",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitFlexDirection": "row",
-                  "alignSelf": "flex-start",
-                  "color": "rgba(126,126,126,1.00)",
-                  "flexDirection": "row",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "msFlexDirection": "row",
-                  "msFlexItemAlign": "start",
-                  "textAlign": "left",
-                }
-              }
-            >
-              Lorem ipsum dolar set amet
-            </div>
-          </div>
-        </div>
-      </li>
-      <li
-        className="css-reset-4rbku5 css-view-1dbjc4n"
-        role="listitem"
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitFlexDirection": "row",
-              "alignItems": "center",
-              "flexDirection": "row",
-              "marginBottom": "8px",
-              "marginTop": "8px",
-              "msFlexAlign": "center",
-              "msFlexDirection": "row",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-          >
-            <svg
-              fill="none"
-              height="1em"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <polyline
-                points="20 6 9 17 4 12"
-              />
-            </svg>
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "paddingLeft": "16px",
-                "width": "100%",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "WebkitAlignSelf": "flex-start",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitFlexDirection": "row",
-                  "alignSelf": "flex-start",
-                  "color": "rgba(126,126,126,1.00)",
-                  "flexDirection": "row",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "msFlexDirection": "row",
-                  "msFlexItemAlign": "start",
-                  "textAlign": "left",
-                }
-              }
-            >
-              Lorem ipsum dolar set amet
-            </div>
-          </div>
-        </div>
-      </li>
-      <li
-        className="css-reset-4rbku5 css-view-1dbjc4n"
-        role="listitem"
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitFlexDirection": "row",
-              "alignItems": "center",
-              "flexDirection": "row",
-              "marginBottom": "8px",
-              "marginTop": "8px",
-              "msFlexAlign": "center",
-              "msFlexDirection": "row",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-          >
-            <svg
-              fill="none"
-              height="1em"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <polyline
-                points="20 6 9 17 4 12"
-              />
-            </svg>
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "paddingLeft": "16px",
-                "width": "100%",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "WebkitAlignSelf": "flex-start",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitFlexDirection": "row",
-                  "alignSelf": "flex-start",
-                  "color": "rgba(126,126,126,1.00)",
-                  "flexDirection": "row",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "msFlexDirection": "row",
-                  "msFlexItemAlign": "start",
-                  "textAlign": "left",
-                }
-              }
-            >
-              Lorem ipsum dolar set amet
-            </div>
-          </div>
-        </div>
-      </li>
-    </div>
-  </ul>
 </div>
 `;
 
@@ -3577,21 +3225,60 @@ exports[`Container_0 1`] = `
 
 exports[`Container_1 1`] = `
 <div>
-  <pre>
-    <code>
-      &lt;Box backgroundColor="#67c6bb" padding={3}&gt;
-  &lt;Container
-    fluid={false} // Should not contain width
-    size={undefined} // Override default container size
-  &gt;
-    &lt;Box backgroundColor="white" padding={3}&gt;
-      &lt;Text&gt;Centered content&lt;/Text&gt;
-    &lt;/Box&gt;
-  &lt;/Container&gt;
-&lt;/Box&gt;
-
-    </code>
-  </pre>
+  <div
+    className="css-view-1dbjc4n"
+    style={
+      Object {
+        "backgroundColor": "rgba(103,198,187,1.00)",
+        "paddingBottom": "3px",
+        "paddingLeft": "3px",
+        "paddingRight": "3px",
+        "paddingTop": "3px",
+      }
+    }
+  >
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "marginLeft": "auto",
+          "marginRight": "auto",
+          "maxWidth": "960px",
+          "paddingLeft": "15px",
+          "paddingRight": "15px",
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "backgroundColor": "rgba(255,255,255,1.00)",
+            "paddingBottom": "3px",
+            "paddingLeft": "3px",
+            "paddingRight": "3px",
+            "paddingTop": "3px",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(126,126,126,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "textAlign": "left",
+            }
+          }
+        >
+          Centered content
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 
@@ -3858,7 +3545,7 @@ exports[`Dialog_1 1`] = `
         Object {
           "MozUserSelect": "none",
           "WebkitUserSelect": "none",
-          "backgroundColor": "rgba(103,198,187,1.00)",
+          "backgroundColor": "rgba(250,250,250,1.00)",
           "borderBottomLeftRadius": "4px",
           "borderBottomRightRadius": "4px",
           "borderTopLeftRadius": "4px",
@@ -3915,7 +3602,7 @@ exports[`Dialog_1 1`] = `
                 "WebkitBoxPack": "center",
                 "WebkitJustifyContent": "center",
                 "alignItems": "center",
-                "color": "rgba(255,255,255,1.00)",
+                "color": "rgba(126,126,126,1.00)",
                 "display": "flex",
                 "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                 "fontSize": "16px",
@@ -4004,7 +3691,7 @@ exports[`Drawer_1 1`] = `
         "WebkitFlexWrap": "wrap",
         "WebkitUserSelect": "none",
         "alignSelf": "flex-start",
-        "backgroundColor": "rgba(103,198,187,1.00)",
+        "backgroundColor": "rgba(250,250,250,1.00)",
         "borderBottomLeftRadius": "4px",
         "borderBottomRightRadius": "4px",
         "borderTopLeftRadius": "4px",
@@ -4066,7 +3753,7 @@ exports[`Drawer_1 1`] = `
               "WebkitBoxPack": "center",
               "WebkitJustifyContent": "center",
               "alignItems": "center",
-              "color": "rgba(255,255,255,1.00)",
+              "color": "rgba(126,126,126,1.00)",
               "display": "flex",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
               "fontSize": "16px",
@@ -4106,7 +3793,7 @@ exports[`Drawer_2 1`] = `
       Object {
         "MozUserSelect": "none",
         "WebkitUserSelect": "none",
-        "backgroundColor": "rgba(103,198,187,1.00)",
+        "backgroundColor": "rgba(250,250,250,1.00)",
         "borderBottomLeftRadius": "4px",
         "borderBottomRightRadius": "4px",
         "borderTopLeftRadius": "4px",
@@ -4163,7 +3850,7 @@ exports[`Drawer_2 1`] = `
               "WebkitBoxPack": "center",
               "WebkitJustifyContent": "center",
               "alignItems": "center",
-              "color": "rgba(255,255,255,1.00)",
+              "color": "rgba(126,126,126,1.00)",
               "display": "flex",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
               "fontSize": "16px",
@@ -4198,7 +3885,7 @@ exports[`Drawer_2 1`] = `
       Object {
         "MozUserSelect": "none",
         "WebkitUserSelect": "none",
-        "backgroundColor": "rgba(103,198,187,1.00)",
+        "backgroundColor": "rgba(250,250,250,1.00)",
         "borderBottomLeftRadius": "4px",
         "borderBottomRightRadius": "4px",
         "borderTopLeftRadius": "4px",
@@ -4255,7 +3942,7 @@ exports[`Drawer_2 1`] = `
               "WebkitBoxPack": "center",
               "WebkitJustifyContent": "center",
               "alignItems": "center",
-              "color": "rgba(255,255,255,1.00)",
+              "color": "rgba(126,126,126,1.00)",
               "display": "flex",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
               "fontSize": "16px",
@@ -4290,7 +3977,7 @@ exports[`Drawer_2 1`] = `
       Object {
         "MozUserSelect": "none",
         "WebkitUserSelect": "none",
-        "backgroundColor": "rgba(103,198,187,1.00)",
+        "backgroundColor": "rgba(250,250,250,1.00)",
         "borderBottomLeftRadius": "4px",
         "borderBottomRightRadius": "4px",
         "borderTopLeftRadius": "4px",
@@ -4347,7 +4034,7 @@ exports[`Drawer_2 1`] = `
               "WebkitBoxPack": "center",
               "WebkitJustifyContent": "center",
               "alignItems": "center",
-              "color": "rgba(255,255,255,1.00)",
+              "color": "rgba(126,126,126,1.00)",
               "display": "flex",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
               "fontSize": "16px",
@@ -4382,7 +4069,7 @@ exports[`Drawer_2 1`] = `
       Object {
         "MozUserSelect": "none",
         "WebkitUserSelect": "none",
-        "backgroundColor": "rgba(103,198,187,1.00)",
+        "backgroundColor": "rgba(250,250,250,1.00)",
         "borderBottomLeftRadius": "4px",
         "borderBottomRightRadius": "4px",
         "borderTopLeftRadius": "4px",
@@ -4439,7 +4126,7 @@ exports[`Drawer_2 1`] = `
               "WebkitBoxPack": "center",
               "WebkitJustifyContent": "center",
               "alignItems": "center",
-              "color": "rgba(255,255,255,1.00)",
+              "color": "rgba(126,126,126,1.00)",
               "display": "flex",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
               "fontSize": "16px",
@@ -4805,129 +4492,8 @@ exports[`KitchenSink_1 1`] = `
         className="css-view-1dbjc4n"
         style={
           Object {
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitFlexDirection": "row",
-            "backgroundColor": "rgba(255,255,255,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderLeftColor": "rgba(22,160,84,1.00)",
-            "borderLeftWidth": "5px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "boxShadow": "2px 2px 10px rgba(167,167,167,0.20)",
-            "display": "flex",
-            "flexDirection": "row",
-            "msFlexDirection": "row",
-            "paddingBottom": "16px",
-            "paddingLeft": "16px",
-            "paddingRight": "16px",
-            "paddingTop": "16px",
-          }
-        }
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitBoxPack": "center",
-              "WebkitJustifyContent": "center",
-              "justifyContent": "center",
-              "msFlexPack": "center",
-              "paddingRight": "16px",
-            }
-          }
-        >
-          <svg
-            color="#16a054"
-            fill="none"
-            height={24}
-            size={24}
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            style={
-              Object {
-                "color": "#16a054",
-              }
-            }
-            viewBox="0 0 24 24"
-            width={24}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
-            />
-            <polyline
-              points="22 4 12 14.01 9 11.01"
-            />
-          </svg>
-        </div>
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitBoxFlex": 1,
-              "WebkitFlexBasis": "0%",
-              "WebkitFlexGrow": 1,
-              "WebkitFlexShrink": 1,
-              "flexBasis": "0%",
-              "flexGrow": 1,
-              "flexShrink": 1,
-              "msFlexNegative": 1,
-              "msFlexPositive": 1,
-              "msFlexPreferredSize": "0%",
-            }
-          }
-        >
-          <div
-            className="css-text-901oao"
-            dir="auto"
-            style={
-              Object {
-                "color": "rgba(126,126,126,1.00)",
-                "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                "fontSize": "16px",
-                "fontWeight": "bold",
-                "textAlign": "left",
-              }
-            }
-          >
-            Title
-          </div>
-          <div
-            className="css-text-901oao"
-            dir="auto"
-            style={
-              Object {
-                "color": "rgba(126,126,126,1.00)",
-                "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                "fontSize": "16px",
-                "textAlign": "left",
-              }
-            }
-          >
-            Message
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingBottom": "32px",
-          "paddingTop": "32px",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "paddingBottom": "16px",
-            "paddingTop": "16px",
+            "paddingBottom": "8px",
+            "paddingTop": "8px",
           }
         }
       >
@@ -5058,8 +4624,8 @@ exports[`KitchenSink_1 1`] = `
         className="css-view-1dbjc4n"
         style={
           Object {
-            "paddingBottom": "16px",
-            "paddingTop": "16px",
+            "paddingBottom": "8px",
+            "paddingTop": "8px",
           }
         }
       >
@@ -5179,8 +4745,8 @@ exports[`KitchenSink_1 1`] = `
         className="css-view-1dbjc4n"
         style={
           Object {
-            "paddingBottom": "16px",
-            "paddingTop": "16px",
+            "paddingBottom": "8px",
+            "paddingTop": "8px",
           }
         }
       >
@@ -5309,8 +4875,8 @@ exports[`KitchenSink_1 1`] = `
         className="css-view-1dbjc4n"
         style={
           Object {
-            "paddingBottom": "16px",
-            "paddingTop": "16px",
+            "paddingBottom": "8px",
+            "paddingTop": "8px",
           }
         }
       >
@@ -5489,14 +5055,14 @@ exports[`KitchenSink_1 1`] = `
             "borderTopLeftRadius": "9999px",
             "borderTopRightRadius": "9999px",
             "display": "flex",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexPack": "center",
             "overflowX": "hidden",
             "overflowY": "hidden",
             "position": "relative",
-            "width": "40px",
+            "width": "48px",
           }
         }
       >
@@ -5520,7 +5086,7 @@ exports[`KitchenSink_1 1`] = `
             style={
               Object {
                 "backgroundColor": "rgba(0,0,0,0.00)",
-                "backgroundImage": "url(\\"https://picsum.photos/200/200\\")",
+                "backgroundImage": "url(\\"https://picsum.photos/100/100\\")",
                 "backgroundPosition": "center",
                 "backgroundRepeat": "no-repeat",
                 "backgroundSize": "cover",
@@ -5539,60 +5105,8 @@ exports[`KitchenSink_1 1`] = `
             alt=""
             className="css-accessibilityImage-9pa8cd"
             draggable={false}
-            src="https://picsum.photos/200/200"
+            src="https://picsum.photos/100/100"
           />
-        </div>
-      </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingBottom": "32px",
-          "paddingTop": "32px",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitAlignItems": "center",
-            "WebkitBoxAlign": "center",
-            "WebkitBoxPack": "center",
-            "WebkitJustifyContent": "center",
-            "alignItems": "center",
-            "backgroundColor": "rgba(234,231,248,1.00)",
-            "borderBottomLeftRadius": "9999px",
-            "borderBottomRightRadius": "9999px",
-            "borderTopLeftRadius": "9999px",
-            "borderTopRightRadius": "9999px",
-            "display": "flex",
-            "height": "48px",
-            "justifyContent": "center",
-            "msFlexAlign": "center",
-            "msFlexPack": "center",
-            "overflowX": "hidden",
-            "overflowY": "hidden",
-            "position": "relative",
-            "width": "48px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(55,36,143,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "19px",
-              "lineHeight": "19px",
-              "textAlign": "left",
-            }
-          }
-        >
-          BG
         </div>
       </div>
     </div>
@@ -5649,11 +5163,11 @@ exports[`KitchenSink_1 1`] = `
               "WebkitJustifyContent": "center",
               "alignItems": "center",
               "alignSelf": "flex-start",
-              "backgroundColor": "rgba(206,236,255,1.00)",
-              "borderBottomLeftRadius": "4px",
-              "borderBottomRightRadius": "4px",
-              "borderTopLeftRadius": "4px",
-              "borderTopRightRadius": "4px",
+              "backgroundColor": "rgba(28,165,247,1.00)",
+              "borderBottomLeftRadius": "999px",
+              "borderBottomRightRadius": "999px",
+              "borderTopLeftRadius": "999px",
+              "borderTopRightRadius": "999px",
               "display": "flex",
               "flexDirection": "row",
               "height": "56px",
@@ -5672,7 +5186,7 @@ exports[`KitchenSink_1 1`] = `
             dir="auto"
             style={
               Object {
-                "color": "rgba(51,73,95,1.00)",
+                "color": "rgba(255,255,255,1.00)",
                 "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                 "fontSize": "20px",
                 "fontWeight": "bold",
@@ -5682,908 +5196,6 @@ exports[`KitchenSink_1 1`] = `
             }
           >
             Badge
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingBottom": "32px",
-          "paddingTop": "32px",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitFlexDirection": "row",
-              "flexDirection": "row",
-              "msFlexDirection": "row",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitBoxPack": "center",
-                "WebkitFlexDirection": "row",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(238,238,238,1.00)",
-                "borderBottomLeftRadius": "999px",
-                "borderBottomRightRadius": "999px",
-                "borderTopLeftRadius": "999px",
-                "borderTopRightRadius": "999px",
-                "display": "flex",
-                "flexDirection": "row",
-                "height": "48px",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexPack": "center",
-                "paddingLeft": "16px",
-                "paddingRight": "16px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(126,126,126,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "bold",
-                  "textAlign": "left",
-                  "textTransform": "uppercase",
-                }
-              }
-            >
-              neutral
-            </div>
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitBoxPack": "center",
-                "WebkitFlexDirection": "row",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(204,204,204,1.00)",
-                "borderBottomLeftRadius": "4px",
-                "borderBottomRightRadius": "4px",
-                "borderTopLeftRadius": "4px",
-                "borderTopRightRadius": "4px",
-                "display": "flex",
-                "flexDirection": "row",
-                "height": "48px",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexPack": "center",
-                "paddingLeft": "16px",
-                "paddingRight": "16px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(255,255,255,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "bold",
-                  "textAlign": "left",
-                  "textTransform": "uppercase",
-                }
-              }
-            >
-              neutral
-            </div>
-          </div>
-        </div>
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitFlexDirection": "row",
-              "flexDirection": "row",
-              "msFlexDirection": "row",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitBoxPack": "center",
-                "WebkitFlexDirection": "row",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(206,236,255,1.00)",
-                "borderBottomLeftRadius": "999px",
-                "borderBottomRightRadius": "999px",
-                "borderTopLeftRadius": "999px",
-                "borderTopRightRadius": "999px",
-                "display": "flex",
-                "flexDirection": "row",
-                "height": "48px",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexPack": "center",
-                "paddingLeft": "16px",
-                "paddingRight": "16px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(51,73,95,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "bold",
-                  "textAlign": "left",
-                  "textTransform": "uppercase",
-                }
-              }
-            >
-              blue
-            </div>
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitBoxPack": "center",
-                "WebkitFlexDirection": "row",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(28,165,247,1.00)",
-                "borderBottomLeftRadius": "4px",
-                "borderBottomRightRadius": "4px",
-                "borderTopLeftRadius": "4px",
-                "borderTopRightRadius": "4px",
-                "display": "flex",
-                "flexDirection": "row",
-                "height": "48px",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexPack": "center",
-                "paddingLeft": "16px",
-                "paddingRight": "16px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(255,255,255,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "bold",
-                  "textAlign": "left",
-                  "textTransform": "uppercase",
-                }
-              }
-            >
-              blue
-            </div>
-          </div>
-        </div>
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitFlexDirection": "row",
-              "flexDirection": "row",
-              "msFlexDirection": "row",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitBoxPack": "center",
-                "WebkitFlexDirection": "row",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(249,170,159,1.00)",
-                "borderBottomLeftRadius": "999px",
-                "borderBottomRightRadius": "999px",
-                "borderTopLeftRadius": "999px",
-                "borderTopRightRadius": "999px",
-                "display": "flex",
-                "flexDirection": "row",
-                "height": "48px",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexPack": "center",
-                "paddingLeft": "16px",
-                "paddingRight": "16px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(183,64,51,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "bold",
-                  "textAlign": "left",
-                  "textTransform": "uppercase",
-                }
-              }
-            >
-              red
-            </div>
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitBoxPack": "center",
-                "WebkitFlexDirection": "row",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(210,101,87,1.00)",
-                "borderBottomLeftRadius": "4px",
-                "borderBottomRightRadius": "4px",
-                "borderTopLeftRadius": "4px",
-                "borderTopRightRadius": "4px",
-                "display": "flex",
-                "flexDirection": "row",
-                "height": "48px",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexPack": "center",
-                "paddingLeft": "16px",
-                "paddingRight": "16px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(255,255,255,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "bold",
-                  "textAlign": "left",
-                  "textTransform": "uppercase",
-                }
-              }
-            >
-              red
-            </div>
-          </div>
-        </div>
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitFlexDirection": "row",
-              "flexDirection": "row",
-              "msFlexDirection": "row",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitBoxPack": "center",
-                "WebkitFlexDirection": "row",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(242,197,138,1.00)",
-                "borderBottomLeftRadius": "999px",
-                "borderBottomRightRadius": "999px",
-                "borderTopLeftRadius": "999px",
-                "borderTopRightRadius": "999px",
-                "display": "flex",
-                "flexDirection": "row",
-                "height": "48px",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexPack": "center",
-                "paddingLeft": "16px",
-                "paddingRight": "16px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(178,101,0,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "bold",
-                  "textAlign": "left",
-                  "textTransform": "uppercase",
-                }
-              }
-            >
-              orange
-            </div>
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitBoxPack": "center",
-                "WebkitFlexDirection": "row",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(243,176,88,1.00)",
-                "borderBottomLeftRadius": "4px",
-                "borderBottomRightRadius": "4px",
-                "borderTopLeftRadius": "4px",
-                "borderTopRightRadius": "4px",
-                "display": "flex",
-                "flexDirection": "row",
-                "height": "48px",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexPack": "center",
-                "paddingLeft": "16px",
-                "paddingRight": "16px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(255,255,255,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "bold",
-                  "textAlign": "left",
-                  "textTransform": "uppercase",
-                }
-              }
-            >
-              orange
-            </div>
-          </div>
-        </div>
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitFlexDirection": "row",
-              "flexDirection": "row",
-              "msFlexDirection": "row",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitBoxPack": "center",
-                "WebkitFlexDirection": "row",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(251,230,162,1.00)",
-                "borderBottomLeftRadius": "999px",
-                "borderBottomRightRadius": "999px",
-                "borderTopLeftRadius": "999px",
-                "borderTopRightRadius": "999px",
-                "display": "flex",
-                "flexDirection": "row",
-                "height": "48px",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexPack": "center",
-                "paddingLeft": "16px",
-                "paddingRight": "16px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(126,101,20,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "bold",
-                  "textAlign": "left",
-                  "textTransform": "uppercase",
-                }
-              }
-            >
-              yellow
-            </div>
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitBoxPack": "center",
-                "WebkitFlexDirection": "row",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(247,209,84,1.00)",
-                "borderBottomLeftRadius": "4px",
-                "borderBottomRightRadius": "4px",
-                "borderTopLeftRadius": "4px",
-                "borderTopRightRadius": "4px",
-                "display": "flex",
-                "flexDirection": "row",
-                "height": "48px",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexPack": "center",
-                "paddingLeft": "16px",
-                "paddingRight": "16px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(126,101,20,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "bold",
-                  "textAlign": "left",
-                  "textTransform": "uppercase",
-                }
-              }
-            >
-              yellow
-            </div>
-          </div>
-        </div>
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitFlexDirection": "row",
-              "flexDirection": "row",
-              "msFlexDirection": "row",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitBoxPack": "center",
-                "WebkitFlexDirection": "row",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(194,237,213,1.00)",
-                "borderBottomLeftRadius": "999px",
-                "borderBottomRightRadius": "999px",
-                "borderTopLeftRadius": "999px",
-                "borderTopRightRadius": "999px",
-                "display": "flex",
-                "flexDirection": "row",
-                "height": "48px",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexPack": "center",
-                "paddingLeft": "16px",
-                "paddingRight": "16px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(22,160,84,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "bold",
-                  "textAlign": "left",
-                  "textTransform": "uppercase",
-                }
-              }
-            >
-              green
-            </div>
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitBoxPack": "center",
-                "WebkitFlexDirection": "row",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(84,191,132,1.00)",
-                "borderBottomLeftRadius": "4px",
-                "borderBottomRightRadius": "4px",
-                "borderTopLeftRadius": "4px",
-                "borderTopRightRadius": "4px",
-                "display": "flex",
-                "flexDirection": "row",
-                "height": "48px",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexPack": "center",
-                "paddingLeft": "16px",
-                "paddingRight": "16px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(255,255,255,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "bold",
-                  "textAlign": "left",
-                  "textTransform": "uppercase",
-                }
-              }
-            >
-              green
-            </div>
-          </div>
-        </div>
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitFlexDirection": "row",
-              "flexDirection": "row",
-              "msFlexDirection": "row",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitBoxPack": "center",
-                "WebkitFlexDirection": "row",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(192,249,242,1.00)",
-                "borderBottomLeftRadius": "999px",
-                "borderBottomRightRadius": "999px",
-                "borderTopLeftRadius": "999px",
-                "borderTopRightRadius": "999px",
-                "display": "flex",
-                "flexDirection": "row",
-                "height": "48px",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexPack": "center",
-                "paddingLeft": "16px",
-                "paddingRight": "16px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(27,135,122,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "bold",
-                  "textAlign": "left",
-                  "textTransform": "uppercase",
-                }
-              }
-            >
-              teal
-            </div>
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitBoxPack": "center",
-                "WebkitFlexDirection": "row",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(103,198,187,1.00)",
-                "borderBottomLeftRadius": "4px",
-                "borderBottomRightRadius": "4px",
-                "borderTopLeftRadius": "4px",
-                "borderTopRightRadius": "4px",
-                "display": "flex",
-                "flexDirection": "row",
-                "height": "48px",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexPack": "center",
-                "paddingLeft": "16px",
-                "paddingRight": "16px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(255,255,255,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "bold",
-                  "textAlign": "left",
-                  "textTransform": "uppercase",
-                }
-              }
-            >
-              teal
-            </div>
-          </div>
-        </div>
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitFlexDirection": "row",
-              "flexDirection": "row",
-              "msFlexDirection": "row",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitBoxPack": "center",
-                "WebkitFlexDirection": "row",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(234,231,248,1.00)",
-                "borderBottomLeftRadius": "999px",
-                "borderBottomRightRadius": "999px",
-                "borderTopLeftRadius": "999px",
-                "borderTopRightRadius": "999px",
-                "display": "flex",
-                "flexDirection": "row",
-                "height": "48px",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexPack": "center",
-                "paddingLeft": "16px",
-                "paddingRight": "16px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(55,36,143,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "bold",
-                  "textAlign": "left",
-                  "textTransform": "uppercase",
-                }
-              }
-            >
-              purple
-            </div>
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "WebkitAlignItems": "center",
-                "WebkitAlignSelf": "flex-start",
-                "WebkitBoxAlign": "center",
-                "WebkitBoxDirection": "normal",
-                "WebkitBoxOrient": "horizontal",
-                "WebkitBoxPack": "center",
-                "WebkitFlexDirection": "row",
-                "WebkitJustifyContent": "center",
-                "alignItems": "center",
-                "alignSelf": "flex-start",
-                "backgroundColor": "rgba(115,93,208,1.00)",
-                "borderBottomLeftRadius": "4px",
-                "borderBottomRightRadius": "4px",
-                "borderTopLeftRadius": "4px",
-                "borderTopRightRadius": "4px",
-                "display": "flex",
-                "flexDirection": "row",
-                "height": "48px",
-                "justifyContent": "center",
-                "msFlexAlign": "center",
-                "msFlexDirection": "row",
-                "msFlexItemAlign": "start",
-                "msFlexPack": "center",
-                "paddingLeft": "16px",
-                "paddingRight": "16px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(255,255,255,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "bold",
-                  "textAlign": "left",
-                  "textTransform": "uppercase",
-                }
-              }
-            >
-              purple
-            </div>
           </div>
         </div>
       </div>
@@ -6634,8 +5246,8 @@ exports[`KitchenSink_1 1`] = `
             "borderTopLeftRadius": "4px",
             "borderTopRightRadius": "4px",
             "boxShadow": "5px 5px 8px rgba(167,167,167,0.35)",
-            "height": "200px",
-            "width": "200px",
+            "height": "100px",
+            "width": "100px",
           }
         }
       />
@@ -9486,7 +8098,7 @@ exports[`KitchenSink_1 1`] = `
             Object {
               "MozUserSelect": "none",
               "WebkitUserSelect": "none",
-              "backgroundColor": "rgba(103,198,187,1.00)",
+              "backgroundColor": "rgba(250,250,250,1.00)",
               "borderBottomLeftRadius": "4px",
               "borderBottomRightRadius": "4px",
               "borderTopLeftRadius": "4px",
@@ -9543,7 +8155,7 @@ exports[`KitchenSink_1 1`] = `
                     "WebkitBoxPack": "center",
                     "WebkitJustifyContent": "center",
                     "alignItems": "center",
-                    "color": "rgba(255,255,255,1.00)",
+                    "color": "rgba(126,126,126,1.00)",
                     "display": "flex",
                     "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                     "fontSize": "16px",
@@ -9680,7 +8292,7 @@ exports[`KitchenSink_1 1`] = `
             "WebkitFlexWrap": "wrap",
             "WebkitUserSelect": "none",
             "alignSelf": "flex-start",
-            "backgroundColor": "rgba(103,198,187,1.00)",
+            "backgroundColor": "rgba(250,250,250,1.00)",
             "borderBottomLeftRadius": "4px",
             "borderBottomRightRadius": "4px",
             "borderTopLeftRadius": "4px",
@@ -9742,7 +8354,7 @@ exports[`KitchenSink_1 1`] = `
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "color": "rgba(255,255,255,1.00)",
+                  "color": "rgba(126,126,126,1.00)",
                   "display": "flex",
                   "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                   "fontSize": "16px",
@@ -9787,7 +8399,7 @@ exports[`KitchenSink_1 1`] = `
           Object {
             "MozUserSelect": "none",
             "WebkitUserSelect": "none",
-            "backgroundColor": "rgba(103,198,187,1.00)",
+            "backgroundColor": "rgba(250,250,250,1.00)",
             "borderBottomLeftRadius": "4px",
             "borderBottomRightRadius": "4px",
             "borderTopLeftRadius": "4px",
@@ -9844,7 +8456,7 @@ exports[`KitchenSink_1 1`] = `
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "color": "rgba(255,255,255,1.00)",
+                  "color": "rgba(126,126,126,1.00)",
                   "display": "flex",
                   "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                   "fontSize": "16px",
@@ -9879,7 +8491,7 @@ exports[`KitchenSink_1 1`] = `
           Object {
             "MozUserSelect": "none",
             "WebkitUserSelect": "none",
-            "backgroundColor": "rgba(103,198,187,1.00)",
+            "backgroundColor": "rgba(250,250,250,1.00)",
             "borderBottomLeftRadius": "4px",
             "borderBottomRightRadius": "4px",
             "borderTopLeftRadius": "4px",
@@ -9936,7 +8548,7 @@ exports[`KitchenSink_1 1`] = `
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "color": "rgba(255,255,255,1.00)",
+                  "color": "rgba(126,126,126,1.00)",
                   "display": "flex",
                   "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                   "fontSize": "16px",
@@ -9971,7 +8583,7 @@ exports[`KitchenSink_1 1`] = `
           Object {
             "MozUserSelect": "none",
             "WebkitUserSelect": "none",
-            "backgroundColor": "rgba(103,198,187,1.00)",
+            "backgroundColor": "rgba(250,250,250,1.00)",
             "borderBottomLeftRadius": "4px",
             "borderBottomRightRadius": "4px",
             "borderTopLeftRadius": "4px",
@@ -10028,7 +8640,7 @@ exports[`KitchenSink_1 1`] = `
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "color": "rgba(255,255,255,1.00)",
+                  "color": "rgba(126,126,126,1.00)",
                   "display": "flex",
                   "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                   "fontSize": "16px",
@@ -10063,7 +8675,7 @@ exports[`KitchenSink_1 1`] = `
           Object {
             "MozUserSelect": "none",
             "WebkitUserSelect": "none",
-            "backgroundColor": "rgba(103,198,187,1.00)",
+            "backgroundColor": "rgba(250,250,250,1.00)",
             "borderBottomLeftRadius": "4px",
             "borderBottomRightRadius": "4px",
             "borderTopLeftRadius": "4px",
@@ -10120,7 +8732,7 @@ exports[`KitchenSink_1 1`] = `
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "color": "rgba(255,255,255,1.00)",
+                  "color": "rgba(126,126,126,1.00)",
                   "display": "flex",
                   "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                   "fontSize": "16px",
@@ -10317,6 +8929,154 @@ exports[`KitchenSink_1 1`] = `
           }
         }
       >
+        TextInput
+      </h1>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "paddingBottom": "32px",
+          "paddingTop": "32px",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          className="css-view-1dbjc4n"
+          style={
+            Object {
+              "WebkitAlignItems": "center",
+              "WebkitBoxAlign": "center",
+              "WebkitBoxPack": "center",
+              "WebkitJustifyContent": "center",
+              "alignItems": "center",
+              "display": "flex",
+              "height": "100%",
+              "justifyContent": "center",
+              "left": "0px",
+              "msFlexAlign": "center",
+              "msFlexPack": "center",
+              "paddingLeft": "8px",
+              "paddingRight": "8px",
+              "position": "absolute",
+              "zIndex": 1,
+            }
+          }
+        >
+          <svg
+            fill="none"
+            height={24}
+            size={24}
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              x1="3"
+              x2="21"
+              y1="12"
+              y2="12"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="6"
+              y2="6"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="18"
+              y2="18"
+            />
+          </svg>
+        </div>
+        <input
+          autoCapitalize="sentences"
+          autoComplete="on"
+          autoCorrect="on"
+          className="css-textinput-1cwyjr8 r-placeholderTextColor-15ldjex"
+          data-focusable={true}
+          dir="auto"
+          name="emailAddress"
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyPress={[Function]}
+          onSelect={[Function]}
+          placeholder="Add your own placeholder"
+          readOnly={false}
+          spellCheck={true}
+          style={
+            Object {
+              "backgroundColor": "rgba(255,255,255,1.00)",
+              "borderBottomColor": "rgba(238,238,238,1.00)",
+              "borderBottomLeftRadius": "4px",
+              "borderBottomRightRadius": "4px",
+              "borderBottomWidth": "1px",
+              "borderLeftColor": "rgba(238,238,238,1.00)",
+              "borderLeftWidth": "1px",
+              "borderRightColor": "rgba(238,238,238,1.00)",
+              "borderRightWidth": "1px",
+              "borderTopColor": "rgba(238,238,238,1.00)",
+              "borderTopLeftRadius": "4px",
+              "borderTopRightRadius": "4px",
+              "borderTopWidth": "1px",
+              "color": "rgba(126,126,126,1.00)",
+              "fontSize": "20px",
+              "height": "56px",
+              "paddingLeft": "40px",
+              "paddingRight": "40px",
+              "width": "100%",
+            }
+          }
+          type="email"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "paddingTop": "96px",
+        }
+      }
+    >
+      <h1
+        className="css-reset-4rbku5 css-text-901oao"
+        dir="auto"
+        role="heading"
+        style={
+          Object {
+            "color": "rgba(126,126,126,1.00)",
+            "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+            "fontSize": "35px",
+            "fontWeight": "500",
+            "letterSpacing": "-0.2px",
+            "lineHeight": "40px",
+            "textAlign": "left",
+          }
+        }
+      >
         Container
       </h1>
     </div>
@@ -10383,6 +9143,33 @@ exports[`KitchenSink_1 1`] = `
           </div>
         </div>
       </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "paddingTop": "96px",
+        }
+      }
+    >
+      <h1
+        className="css-reset-4rbku5 css-text-901oao"
+        dir="auto"
+        role="heading"
+        style={
+          Object {
+            "color": "rgba(126,126,126,1.00)",
+            "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+            "fontSize": "35px",
+            "fontWeight": "500",
+            "letterSpacing": "-0.2px",
+            "lineHeight": "40px",
+            "textAlign": "left",
+          }
+        }
+      >
+        Layout
+      </h1>
     </div>
     <div
       className="css-view-1dbjc4n"
@@ -11820,154 +10607,6 @@ exports[`KitchenSink_1 1`] = `
           }
         }
       >
-        TextInput
-      </h1>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingBottom": "32px",
-          "paddingTop": "32px",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "position": "relative",
-          }
-        }
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxPack": "center",
-              "WebkitJustifyContent": "center",
-              "alignItems": "center",
-              "display": "flex",
-              "height": "100%",
-              "justifyContent": "center",
-              "left": "0px",
-              "msFlexAlign": "center",
-              "msFlexPack": "center",
-              "paddingLeft": "8px",
-              "paddingRight": "8px",
-              "position": "absolute",
-              "zIndex": 1,
-            }
-          }
-        >
-          <svg
-            fill="none"
-            height={24}
-            size={24}
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            style={
-              Object {
-                "color": undefined,
-              }
-            }
-            viewBox="0 0 24 24"
-            width={24}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <line
-              x1="3"
-              x2="21"
-              y1="12"
-              y2="12"
-            />
-            <line
-              x1="3"
-              x2="21"
-              y1="6"
-              y2="6"
-            />
-            <line
-              x1="3"
-              x2="21"
-              y1="18"
-              y2="18"
-            />
-          </svg>
-        </div>
-        <input
-          autoCapitalize="sentences"
-          autoComplete="on"
-          autoCorrect="on"
-          className="css-textinput-1cwyjr8 r-placeholderTextColor-15ldjex"
-          data-focusable={true}
-          dir="auto"
-          name="emailAddress"
-          onBlur={[Function]}
-          onChange={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyPress={[Function]}
-          onSelect={[Function]}
-          placeholder="Add your own placeholder"
-          readOnly={false}
-          spellCheck={true}
-          style={
-            Object {
-              "backgroundColor": "rgba(255,255,255,1.00)",
-              "borderBottomColor": "rgba(238,238,238,1.00)",
-              "borderBottomLeftRadius": "4px",
-              "borderBottomRightRadius": "4px",
-              "borderBottomWidth": "1px",
-              "borderLeftColor": "rgba(238,238,238,1.00)",
-              "borderLeftWidth": "1px",
-              "borderRightColor": "rgba(238,238,238,1.00)",
-              "borderRightWidth": "1px",
-              "borderTopColor": "rgba(238,238,238,1.00)",
-              "borderTopLeftRadius": "4px",
-              "borderTopRightRadius": "4px",
-              "borderTopWidth": "1px",
-              "color": "rgba(126,126,126,1.00)",
-              "fontSize": "20px",
-              "height": "56px",
-              "paddingLeft": "40px",
-              "paddingRight": "40px",
-              "width": "100%",
-            }
-          }
-          type="email"
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingTop": "96px",
-        }
-      }
-    >
-      <h1
-        className="css-reset-4rbku5 css-text-901oao"
-        dir="auto"
-        role="heading"
-        style={
-          Object {
-            "color": "rgba(126,126,126,1.00)",
-            "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-            "fontSize": "35px",
-            "fontWeight": "500",
-            "letterSpacing": "-0.2px",
-            "lineHeight": "40px",
-            "textAlign": "left",
-          }
-        }
-      >
         ListItem
       </h1>
     </div>
@@ -12256,7 +10895,7 @@ exports[`KitchenSink_1 1`] = `
             Object {
               "MozUserSelect": "none",
               "WebkitUserSelect": "none",
-              "backgroundColor": "rgba(103,198,187,1.00)",
+              "backgroundColor": "rgba(250,250,250,1.00)",
               "borderBottomLeftRadius": "4px",
               "borderBottomRightRadius": "4px",
               "borderTopLeftRadius": "4px",
@@ -12313,7 +10952,7 @@ exports[`KitchenSink_1 1`] = `
                     "WebkitBoxPack": "center",
                     "WebkitJustifyContent": "center",
                     "alignItems": "center",
-                    "color": "rgba(255,255,255,1.00)",
+                    "color": "rgba(126,126,126,1.00)",
                     "display": "flex",
                     "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                     "fontSize": "16px",
@@ -12362,7 +11001,7 @@ exports[`KitchenSink_1 1`] = `
             Object {
               "MozUserSelect": "none",
               "WebkitUserSelect": "none",
-              "backgroundColor": "rgba(103,198,187,1.00)",
+              "backgroundColor": "rgba(250,250,250,1.00)",
               "borderBottomLeftRadius": "4px",
               "borderBottomRightRadius": "4px",
               "borderTopLeftRadius": "4px",
@@ -12419,7 +11058,7 @@ exports[`KitchenSink_1 1`] = `
                     "WebkitBoxPack": "center",
                     "WebkitJustifyContent": "center",
                     "alignItems": "center",
-                    "color": "rgba(255,255,255,1.00)",
+                    "color": "rgba(126,126,126,1.00)",
                     "display": "flex",
                     "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                     "fontSize": "16px",
@@ -12468,7 +11107,7 @@ exports[`KitchenSink_1 1`] = `
             Object {
               "MozUserSelect": "none",
               "WebkitUserSelect": "none",
-              "backgroundColor": "rgba(103,198,187,1.00)",
+              "backgroundColor": "rgba(250,250,250,1.00)",
               "borderBottomLeftRadius": "4px",
               "borderBottomRightRadius": "4px",
               "borderTopLeftRadius": "4px",
@@ -12525,7 +11164,7 @@ exports[`KitchenSink_1 1`] = `
                     "WebkitBoxPack": "center",
                     "WebkitJustifyContent": "center",
                     "alignItems": "center",
-                    "color": "rgba(255,255,255,1.00)",
+                    "color": "rgba(126,126,126,1.00)",
                     "display": "flex",
                     "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                     "fontSize": "16px",
@@ -12833,7 +11472,7 @@ exports[`KitchenSink_1 1`] = `
               Object {
                 "MozUserSelect": "none",
                 "WebkitUserSelect": "none",
-                "backgroundColor": "rgba(103,198,187,1.00)",
+                "backgroundColor": "rgba(250,250,250,1.00)",
                 "borderBottomLeftRadius": "4px",
                 "borderBottomRightRadius": "4px",
                 "borderTopLeftRadius": "4px",
@@ -12890,7 +11529,7 @@ exports[`KitchenSink_1 1`] = `
                       "WebkitBoxPack": "center",
                       "WebkitJustifyContent": "center",
                       "alignItems": "center",
-                      "color": "rgba(255,255,255,1.00)",
+                      "color": "rgba(126,126,126,1.00)",
                       "display": "flex",
                       "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                       "fontSize": "16px",
@@ -16510,7 +15149,7 @@ exports[`KitchenSink_1 1`] = `
           Object {
             "MozUserSelect": "none",
             "WebkitUserSelect": "none",
-            "backgroundColor": "rgba(103,198,187,1.00)",
+            "backgroundColor": "rgba(250,250,250,1.00)",
             "borderBottomLeftRadius": "4px",
             "borderBottomRightRadius": "4px",
             "borderTopLeftRadius": "4px",
@@ -16567,7 +15206,7 @@ exports[`KitchenSink_1 1`] = `
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "color": "rgba(255,255,255,1.00)",
+                  "color": "rgba(126,126,126,1.00)",
                   "display": "flex",
                   "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                   "fontSize": "16px",
@@ -16629,7 +15268,7 @@ exports[`KitchenSink_1 1`] = `
           Object {
             "MozUserSelect": "none",
             "WebkitUserSelect": "none",
-            "backgroundColor": "rgba(103,198,187,1.00)",
+            "backgroundColor": "rgba(250,250,250,1.00)",
             "borderBottomLeftRadius": "4px",
             "borderBottomRightRadius": "4px",
             "borderTopLeftRadius": "4px",
@@ -16686,7 +15325,7 @@ exports[`KitchenSink_1 1`] = `
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "color": "rgba(255,255,255,1.00)",
+                  "color": "rgba(126,126,126,1.00)",
                   "display": "flex",
                   "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                   "fontSize": "16px",
@@ -17021,384 +15660,6 @@ exports[`KitchenSink_1 1`] = `
           }
         }
       >
-        BulletedList
-      </h1>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingBottom": "32px",
-          "paddingTop": "32px",
-        }
-      }
-    >
-      <ul
-        className="css-reset-4rbku5 css-view-1dbjc4n"
-        role="list"
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "marginBottom": "0px",
-              "marginLeft": "8px",
-              "marginRight": "0px",
-              "marginTop": "0px",
-              "paddingBottom": "0px",
-              "paddingLeft": "0px",
-              "paddingRight": "0px",
-              "paddingTop": "0px",
-            }
-          }
-        >
-          <li
-            className="css-reset-4rbku5 css-view-1dbjc4n"
-            role="listitem"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitFlexDirection": "row",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "marginBottom": "8px",
-                  "marginTop": "8px",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-              >
-                <svg
-                  fill="none"
-                  height="1em"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  style={
-                    Object {
-                      "color": undefined,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <polyline
-                    points="20 6 9 17 4 12"
-                  />
-                </svg>
-              </div>
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "16px",
-                    "width": "100%",
-                  }
-                }
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignSelf": "flex-start",
-                      "WebkitBoxDirection": "normal",
-                      "WebkitBoxOrient": "horizontal",
-                      "WebkitFlexDirection": "row",
-                      "alignSelf": "flex-start",
-                      "color": "rgba(126,126,126,1.00)",
-                      "flexDirection": "row",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "msFlexDirection": "row",
-                      "msFlexItemAlign": "start",
-                      "textAlign": "left",
-                    }
-                  }
-                >
-                  Lorem ipsum dolar set amet
-                </div>
-              </div>
-            </div>
-          </li>
-          <li
-            className="css-reset-4rbku5 css-view-1dbjc4n"
-            role="listitem"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitFlexDirection": "row",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "marginBottom": "8px",
-                  "marginTop": "8px",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-              >
-                <svg
-                  fill="none"
-                  height="1em"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  style={
-                    Object {
-                      "color": undefined,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <polyline
-                    points="20 6 9 17 4 12"
-                  />
-                </svg>
-              </div>
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "16px",
-                    "width": "100%",
-                  }
-                }
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignSelf": "flex-start",
-                      "WebkitBoxDirection": "normal",
-                      "WebkitBoxOrient": "horizontal",
-                      "WebkitFlexDirection": "row",
-                      "alignSelf": "flex-start",
-                      "color": "rgba(126,126,126,1.00)",
-                      "flexDirection": "row",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "msFlexDirection": "row",
-                      "msFlexItemAlign": "start",
-                      "textAlign": "left",
-                    }
-                  }
-                >
-                  Lorem ipsum dolar set amet
-                </div>
-              </div>
-            </div>
-          </li>
-          <li
-            className="css-reset-4rbku5 css-view-1dbjc4n"
-            role="listitem"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitFlexDirection": "row",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "marginBottom": "8px",
-                  "marginTop": "8px",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-              >
-                <svg
-                  fill="none"
-                  height="1em"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  style={
-                    Object {
-                      "color": undefined,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <polyline
-                    points="20 6 9 17 4 12"
-                  />
-                </svg>
-              </div>
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "16px",
-                    "width": "100%",
-                  }
-                }
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignSelf": "flex-start",
-                      "WebkitBoxDirection": "normal",
-                      "WebkitBoxOrient": "horizontal",
-                      "WebkitFlexDirection": "row",
-                      "alignSelf": "flex-start",
-                      "color": "rgba(126,126,126,1.00)",
-                      "flexDirection": "row",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "msFlexDirection": "row",
-                      "msFlexItemAlign": "start",
-                      "textAlign": "left",
-                    }
-                  }
-                >
-                  Lorem ipsum dolar set amet
-                </div>
-              </div>
-            </div>
-          </li>
-          <li
-            className="css-reset-4rbku5 css-view-1dbjc4n"
-            role="listitem"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitFlexDirection": "row",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "marginBottom": "8px",
-                  "marginTop": "8px",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-              >
-                <svg
-                  fill="none"
-                  height="1em"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  style={
-                    Object {
-                      "color": undefined,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                  width="1em"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <polyline
-                    points="20 6 9 17 4 12"
-                  />
-                </svg>
-              </div>
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "16px",
-                    "width": "100%",
-                  }
-                }
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignSelf": "flex-start",
-                      "WebkitBoxDirection": "normal",
-                      "WebkitBoxOrient": "horizontal",
-                      "WebkitFlexDirection": "row",
-                      "alignSelf": "flex-start",
-                      "color": "rgba(126,126,126,1.00)",
-                      "flexDirection": "row",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "msFlexDirection": "row",
-                      "msFlexItemAlign": "start",
-                      "textAlign": "left",
-                    }
-                  }
-                >
-                  Lorem ipsum dolar set amet
-                </div>
-              </div>
-            </div>
-          </li>
-        </div>
-      </ul>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingTop": "96px",
-        }
-      }
-    >
-      <h1
-        className="css-reset-4rbku5 css-text-901oao"
-        dir="auto"
-        role="heading"
-        style={
-          Object {
-            "color": "rgba(126,126,126,1.00)",
-            "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-            "fontSize": "35px",
-            "fontWeight": "500",
-            "letterSpacing": "-0.2px",
-            "lineHeight": "40px",
-            "textAlign": "left",
-          }
-        }
-      >
         Heading
       </h1>
     </div>
@@ -17614,360 +15875,6 @@ exports[`KitchenSink_1 1`] = `
           Lorem ipsum dolar set amet
         </label>
       </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingTop": "96px",
-        }
-      }
-    >
-      <h1
-        className="css-reset-4rbku5 css-text-901oao"
-        dir="auto"
-        role="heading"
-        style={
-          Object {
-            "color": "rgba(126,126,126,1.00)",
-            "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-            "fontSize": "35px",
-            "fontWeight": "500",
-            "letterSpacing": "-0.2px",
-            "lineHeight": "40px",
-            "textAlign": "left",
-          }
-        }
-      >
-        NumberedList
-      </h1>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingBottom": "32px",
-          "paddingTop": "32px",
-        }
-      }
-    >
-      <ul
-        className="css-reset-4rbku5 css-view-1dbjc4n"
-        role="list"
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "marginBottom": "0px",
-              "marginLeft": "8px",
-              "marginRight": "0px",
-              "marginTop": "0px",
-              "paddingBottom": "0px",
-              "paddingLeft": "0px",
-              "paddingRight": "0px",
-              "paddingTop": "0px",
-            }
-          }
-        >
-          <li
-            className="css-reset-4rbku5 css-view-1dbjc4n"
-            role="listitem"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitFlexDirection": "row",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "marginBottom": "8px",
-                  "marginTop": "8px",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "color": "rgba(126,126,126,1.00)",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "textAlign": "left",
-                    }
-                  }
-                >
-                  1.
-                </div>
-              </div>
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "16px",
-                    "width": "100%",
-                  }
-                }
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignSelf": "flex-start",
-                      "WebkitBoxDirection": "normal",
-                      "WebkitBoxOrient": "horizontal",
-                      "WebkitFlexDirection": "row",
-                      "alignSelf": "flex-start",
-                      "color": "rgba(126,126,126,1.00)",
-                      "flexDirection": "row",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "msFlexDirection": "row",
-                      "msFlexItemAlign": "start",
-                      "textAlign": "left",
-                    }
-                  }
-                >
-                  Lorem ipsum dolar set amet
-                </div>
-              </div>
-            </div>
-          </li>
-          <li
-            className="css-reset-4rbku5 css-view-1dbjc4n"
-            role="listitem"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitFlexDirection": "row",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "marginBottom": "8px",
-                  "marginTop": "8px",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "color": "rgba(126,126,126,1.00)",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "textAlign": "left",
-                    }
-                  }
-                >
-                  2.
-                </div>
-              </div>
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "16px",
-                    "width": "100%",
-                  }
-                }
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignSelf": "flex-start",
-                      "WebkitBoxDirection": "normal",
-                      "WebkitBoxOrient": "horizontal",
-                      "WebkitFlexDirection": "row",
-                      "alignSelf": "flex-start",
-                      "color": "rgba(126,126,126,1.00)",
-                      "flexDirection": "row",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "msFlexDirection": "row",
-                      "msFlexItemAlign": "start",
-                      "textAlign": "left",
-                    }
-                  }
-                >
-                  Lorem ipsum dolar set amet
-                </div>
-              </div>
-            </div>
-          </li>
-          <li
-            className="css-reset-4rbku5 css-view-1dbjc4n"
-            role="listitem"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitFlexDirection": "row",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "marginBottom": "8px",
-                  "marginTop": "8px",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "color": "rgba(126,126,126,1.00)",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "textAlign": "left",
-                    }
-                  }
-                >
-                  3.
-                </div>
-              </div>
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "16px",
-                    "width": "100%",
-                  }
-                }
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignSelf": "flex-start",
-                      "WebkitBoxDirection": "normal",
-                      "WebkitBoxOrient": "horizontal",
-                      "WebkitFlexDirection": "row",
-                      "alignSelf": "flex-start",
-                      "color": "rgba(126,126,126,1.00)",
-                      "flexDirection": "row",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "msFlexDirection": "row",
-                      "msFlexItemAlign": "start",
-                      "textAlign": "left",
-                    }
-                  }
-                >
-                  Lorem ipsum dolar set amet
-                </div>
-              </div>
-            </div>
-          </li>
-          <li
-            className="css-reset-4rbku5 css-view-1dbjc4n"
-            role="listitem"
-          >
-            <div
-              className="css-view-1dbjc4n"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitFlexDirection": "row",
-                  "alignItems": "center",
-                  "flexDirection": "row",
-                  "marginBottom": "8px",
-                  "marginTop": "8px",
-                  "msFlexAlign": "center",
-                  "msFlexDirection": "row",
-                }
-              }
-            >
-              <div
-                className="css-view-1dbjc4n"
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "color": "rgba(126,126,126,1.00)",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "textAlign": "left",
-                    }
-                  }
-                >
-                  4.
-                </div>
-              </div>
-              <div
-                className="css-view-1dbjc4n"
-                style={
-                  Object {
-                    "paddingLeft": "16px",
-                    "width": "100%",
-                  }
-                }
-              >
-                <div
-                  className="css-text-901oao"
-                  dir="auto"
-                  style={
-                    Object {
-                      "WebkitAlignSelf": "flex-start",
-                      "WebkitBoxDirection": "normal",
-                      "WebkitBoxOrient": "horizontal",
-                      "WebkitFlexDirection": "row",
-                      "alignSelf": "flex-start",
-                      "color": "rgba(126,126,126,1.00)",
-                      "flexDirection": "row",
-                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "16px",
-                      "msFlexDirection": "row",
-                      "msFlexItemAlign": "start",
-                      "textAlign": "left",
-                    }
-                  }
-                >
-                  Lorem ipsum dolar set amet
-                </div>
-              </div>
-            </div>
-          </li>
-        </div>
-      </ul>
     </div>
     <div
       className="css-view-1dbjc4n"
@@ -19124,7 +17031,7 @@ exports[`Modal_1 1`] = `
         Object {
           "MozUserSelect": "none",
           "WebkitUserSelect": "none",
-          "backgroundColor": "rgba(103,198,187,1.00)",
+          "backgroundColor": "rgba(250,250,250,1.00)",
           "borderBottomLeftRadius": "4px",
           "borderBottomRightRadius": "4px",
           "borderTopLeftRadius": "4px",
@@ -19181,7 +17088,7 @@ exports[`Modal_1 1`] = `
                 "WebkitBoxPack": "center",
                 "WebkitJustifyContent": "center",
                 "alignItems": "center",
-                "color": "rgba(255,255,255,1.00)",
+                "color": "rgba(126,126,126,1.00)",
                 "display": "flex",
                 "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                 "fontSize": "16px",
@@ -19225,7 +17132,7 @@ exports[`Modal_2 1`] = `
         Object {
           "MozUserSelect": "none",
           "WebkitUserSelect": "none",
-          "backgroundColor": "rgba(103,198,187,1.00)",
+          "backgroundColor": "rgba(250,250,250,1.00)",
           "borderBottomLeftRadius": "4px",
           "borderBottomRightRadius": "4px",
           "borderTopLeftRadius": "4px",
@@ -19282,7 +17189,7 @@ exports[`Modal_2 1`] = `
                 "WebkitBoxPack": "center",
                 "WebkitJustifyContent": "center",
                 "alignItems": "center",
-                "color": "rgba(255,255,255,1.00)",
+                "color": "rgba(126,126,126,1.00)",
                 "display": "flex",
                 "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                 "fontSize": "16px",
@@ -19326,7 +17233,7 @@ exports[`Modal_3 1`] = `
         Object {
           "MozUserSelect": "none",
           "WebkitUserSelect": "none",
-          "backgroundColor": "rgba(103,198,187,1.00)",
+          "backgroundColor": "rgba(250,250,250,1.00)",
           "borderBottomLeftRadius": "4px",
           "borderBottomRightRadius": "4px",
           "borderTopLeftRadius": "4px",
@@ -19383,7 +17290,7 @@ exports[`Modal_3 1`] = `
                 "WebkitBoxPack": "center",
                 "WebkitJustifyContent": "center",
                 "alignItems": "center",
-                "color": "rgba(255,255,255,1.00)",
+                "color": "rgba(126,126,126,1.00)",
                 "display": "flex",
                 "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                 "fontSize": "16px",
@@ -19604,334 +17511,6 @@ exports[`NativePicker_1 1`] = `
 </div>
 `;
 
-exports[`NumberedList_0 1`] = `
-<h1>
-  NumberedList
-</h1>
-`;
-
-exports[`NumberedList_1 1`] = `
-<div>
-  <ul
-    className="css-reset-4rbku5 css-view-1dbjc4n"
-    role="list"
-  >
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "marginBottom": "0px",
-          "marginLeft": "8px",
-          "marginRight": "0px",
-          "marginTop": "0px",
-          "paddingBottom": "0px",
-          "paddingLeft": "0px",
-          "paddingRight": "0px",
-          "paddingTop": "0px",
-        }
-      }
-    >
-      <li
-        className="css-reset-4rbku5 css-view-1dbjc4n"
-        role="listitem"
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitFlexDirection": "row",
-              "alignItems": "center",
-              "flexDirection": "row",
-              "marginBottom": "8px",
-              "marginTop": "8px",
-              "msFlexAlign": "center",
-              "msFlexDirection": "row",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(126,126,126,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "textAlign": "left",
-                }
-              }
-            >
-              1.
-            </div>
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "paddingLeft": "16px",
-                "width": "100%",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "WebkitAlignSelf": "flex-start",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitFlexDirection": "row",
-                  "alignSelf": "flex-start",
-                  "color": "rgba(126,126,126,1.00)",
-                  "flexDirection": "row",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "msFlexDirection": "row",
-                  "msFlexItemAlign": "start",
-                  "textAlign": "left",
-                }
-              }
-            >
-              Lorem ipsum dolar set amet
-            </div>
-          </div>
-        </div>
-      </li>
-      <li
-        className="css-reset-4rbku5 css-view-1dbjc4n"
-        role="listitem"
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitFlexDirection": "row",
-              "alignItems": "center",
-              "flexDirection": "row",
-              "marginBottom": "8px",
-              "marginTop": "8px",
-              "msFlexAlign": "center",
-              "msFlexDirection": "row",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(126,126,126,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "textAlign": "left",
-                }
-              }
-            >
-              2.
-            </div>
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "paddingLeft": "16px",
-                "width": "100%",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "WebkitAlignSelf": "flex-start",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitFlexDirection": "row",
-                  "alignSelf": "flex-start",
-                  "color": "rgba(126,126,126,1.00)",
-                  "flexDirection": "row",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "msFlexDirection": "row",
-                  "msFlexItemAlign": "start",
-                  "textAlign": "left",
-                }
-              }
-            >
-              Lorem ipsum dolar set amet
-            </div>
-          </div>
-        </div>
-      </li>
-      <li
-        className="css-reset-4rbku5 css-view-1dbjc4n"
-        role="listitem"
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitFlexDirection": "row",
-              "alignItems": "center",
-              "flexDirection": "row",
-              "marginBottom": "8px",
-              "marginTop": "8px",
-              "msFlexAlign": "center",
-              "msFlexDirection": "row",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(126,126,126,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "textAlign": "left",
-                }
-              }
-            >
-              3.
-            </div>
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "paddingLeft": "16px",
-                "width": "100%",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "WebkitAlignSelf": "flex-start",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitFlexDirection": "row",
-                  "alignSelf": "flex-start",
-                  "color": "rgba(126,126,126,1.00)",
-                  "flexDirection": "row",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "msFlexDirection": "row",
-                  "msFlexItemAlign": "start",
-                  "textAlign": "left",
-                }
-              }
-            >
-              Lorem ipsum dolar set amet
-            </div>
-          </div>
-        </div>
-      </li>
-      <li
-        className="css-reset-4rbku5 css-view-1dbjc4n"
-        role="listitem"
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitFlexDirection": "row",
-              "alignItems": "center",
-              "flexDirection": "row",
-              "marginBottom": "8px",
-              "marginTop": "8px",
-              "msFlexAlign": "center",
-              "msFlexDirection": "row",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "color": "rgba(126,126,126,1.00)",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "textAlign": "left",
-                }
-              }
-            >
-              4.
-            </div>
-          </div>
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "paddingLeft": "16px",
-                "width": "100%",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "WebkitAlignSelf": "flex-start",
-                  "WebkitBoxDirection": "normal",
-                  "WebkitBoxOrient": "horizontal",
-                  "WebkitFlexDirection": "row",
-                  "alignSelf": "flex-start",
-                  "color": "rgba(126,126,126,1.00)",
-                  "flexDirection": "row",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "msFlexDirection": "row",
-                  "msFlexItemAlign": "start",
-                  "textAlign": "left",
-                }
-              }
-            >
-              Lorem ipsum dolar set amet
-            </div>
-          </div>
-        </div>
-      </li>
-    </div>
-  </ul>
-</div>
-`;
-
 exports[`Paragraph_0 1`] = `
 <h1>
   Paragraph
@@ -20077,7 +17656,7 @@ exports[`Popover_1 1`] = `
           Object {
             "MozUserSelect": "none",
             "WebkitUserSelect": "none",
-            "backgroundColor": "rgba(103,198,187,1.00)",
+            "backgroundColor": "rgba(250,250,250,1.00)",
             "borderBottomLeftRadius": "4px",
             "borderBottomRightRadius": "4px",
             "borderTopLeftRadius": "4px",
@@ -20134,7 +17713,7 @@ exports[`Popover_1 1`] = `
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "color": "rgba(255,255,255,1.00)",
+                  "color": "rgba(126,126,126,1.00)",
                   "display": "flex",
                   "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                   "fontSize": "16px",
@@ -25587,7 +23166,7 @@ exports[`Toast_1 1`] = `
       Object {
         "MozUserSelect": "none",
         "WebkitUserSelect": "none",
-        "backgroundColor": "rgba(103,198,187,1.00)",
+        "backgroundColor": "rgba(250,250,250,1.00)",
         "borderBottomLeftRadius": "4px",
         "borderBottomRightRadius": "4px",
         "borderTopLeftRadius": "4px",
@@ -25644,7 +23223,7 @@ exports[`Toast_1 1`] = `
               "WebkitBoxPack": "center",
               "WebkitJustifyContent": "center",
               "alignItems": "center",
-              "color": "rgba(255,255,255,1.00)",
+              "color": "rgba(126,126,126,1.00)",
               "display": "flex",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
               "fontSize": "16px",
@@ -25701,7 +23280,7 @@ exports[`Toast_2 1`] = `
       Object {
         "MozUserSelect": "none",
         "WebkitUserSelect": "none",
-        "backgroundColor": "rgba(103,198,187,1.00)",
+        "backgroundColor": "rgba(250,250,250,1.00)",
         "borderBottomLeftRadius": "4px",
         "borderBottomRightRadius": "4px",
         "borderTopLeftRadius": "4px",
@@ -25758,7 +23337,7 @@ exports[`Toast_2 1`] = `
               "WebkitBoxPack": "center",
               "WebkitJustifyContent": "center",
               "alignItems": "center",
-              "color": "rgba(255,255,255,1.00)",
+              "color": "rgba(126,126,126,1.00)",
               "display": "flex",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
               "fontSize": "16px",

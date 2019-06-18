@@ -11,17 +11,17 @@ import { BadgeStyles, GetBadgeStyles, getBadgeStyles } from './Badge.styles';
 export interface BadgeProps {
   children: React.ReactNode;
   /**
-   * Color of badge
+   * Color of the badge
    * @default neutral
    */
   color?: FillColor;
   /**
-   * Size of badge
+   * Size of the badge
    * @default medium
    */
   size?: ControlSize;
   /**
-   * Shape of container
+   * Shape of the container
    * @default rounded
    */
   shape?: ContainerShape;

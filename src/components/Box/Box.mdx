@@ -9,17 +9,27 @@ import { Box } from '..';
 
 # Box
 
-Box is a primitive component for convenient layout of components. All style properties are passed as props and has some convenient props such as `paddingHorizontal`, `marginVertical`, `shape` for styling
+Primitive component for convenient layout of components that accepts all `ViewStyle` properties
 
 ### Usage
 
 <Playground>
   <Box
     // ...ViewStyle
-    height={200}
-    width={200}
-    shape="rounded" // pill, circle or square (default)
+    height={100}
+    width={100}
+    shape="rounded"
     elevation={5}
-    backgroundColor="primaryDefault" // background colors or any custom color "#67c6bb"
+    backgroundColor="primaryDefault"
   />
 </Playground>
+
+### Props
+
+...extends `ViewStyle`
+
+Modified or additional props
+
+`shape` - 'circle' | 'pill' | 'rounded' | 'roundedBottom' | 'roundedLeft' | 'roundedRight' | 'roundedTop' | 'square'
+
+`backgroundColor` - valid color string or from `theme.colors.background`

@@ -4,10 +4,7 @@ import { View, ViewStyle } from 'react-native';
 import { BackgroundColor, ContainerShape, Theme, useTheme } from '../../theme';
 
 export interface BoxProps extends ViewStyle {
-  style?: ViewStyle;
   children?: React.ReactNode;
-
-  elevation?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
   shape?: ContainerShape;
 }
@@ -29,7 +26,7 @@ const propToFn = {
 };
 
 export const Box = (props: BoxProps) => {
-  const { children, style: propStyle, testID, ...viewStyles } = props;
+  const { children, testID, ...viewStyles } = props;
   const theme = useTheme();
   const transformedStyles = [];
   const pureStyles = {};
@@ -52,7 +49,7 @@ export const Box = (props: BoxProps) => {
   }
 
   return (
-    <View testID={testID} style={[pureStyles, transformedStyles, propStyle]}>
+    <View testID={testID} style={[pureStyles, transformedStyles]}>
       {children}
     </View>
   );

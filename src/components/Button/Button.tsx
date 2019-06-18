@@ -29,8 +29,8 @@ export interface ButtonProps extends AccessibilityProps {
   icon?: React.ReactNode;
 
   /**
-   * The intent of the button.
-   * @default "primary"
+   * The color of the button.
+   * @default "default"
    */
   color?: ButtonColor;
 
@@ -106,7 +106,7 @@ export const Button = (props: ButtonProps) => {
   const {
     appearance = 'primary',
     title,
-    color = 'primary',
+    color = 'default',
     getStyles,
     icon,
     iconAfter,
