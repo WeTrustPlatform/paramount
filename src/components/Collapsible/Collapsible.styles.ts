@@ -2,6 +2,10 @@ import { ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
 
+export interface CollapsibleStylesProps {
+  isOpen: boolean;
+}
+
 export interface CollapsibleStyles {
   touchableStyle: ViewStyle;
   outerWrapperStyle: ViewStyle;
@@ -11,7 +15,7 @@ export interface CollapsibleStyles {
 }
 
 export type GetCollapsibleStyles = (
-  checkboxStylesProps: {},
+  checkboxStylesProps: CollapsibleStylesProps,
   theme: Theme,
 ) => CollapsibleStyles;
 

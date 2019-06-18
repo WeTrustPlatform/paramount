@@ -4,9 +4,11 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { Box, Collapsible, Text, Toggle } from '..';
+import { Box, Collapsible, Toggle } from '..';
 
 # Collapsible
+
+Component to reveal and hide content
 
 ### Usage
 
@@ -14,19 +16,10 @@ import { Box, Collapsible, Text, Toggle } from '..';
   <Toggle initial={false}>
     {({ on, toggle }) => (
       <Collapsible
-        title="Stays at top of content"
-        header={undefined}
-        initialIsOpen={false}
+        title={on ? 'Close collapsible' : 'Open collapsible'}
         isOpen={on}
         onOpen={toggle}
         onClose={toggle}
-        getStyles={() => ({
-          touchableStyle: {},
-          outerWrapperStyle: {},
-          contentWrapperStyle: {},
-          textStyle: {},
-          iconWrapperStyle: {},
-        })}
       >
         <Box
           marginVertical={16}
@@ -34,13 +27,31 @@ import { Box, Collapsible, Text, Toggle } from '..';
           alignItems="center"
           height={300}
           backgroundColor="#67c6bb"
-        >
-          <Text color="white">Content of the Collapsible</Text>
-        </Box>
+        />
       </Collapsible>
     )}
   </Toggle>
 </Playground>
+
+### Customization
+
+Using `getStyles` prop
+
+```
+CollapsibleStylesProps {
+  isOpen: boolean;
+}
+
+CollapsibleStyles {
+  touchableStyle: ViewStyle;
+  outerWrapperStyle: ViewStyle;
+  contentWrapperStyle: ViewStyle;
+  textStyle: ViewStyle;
+  iconWrapperStyle: ViewStyle;
+}
+
+getStyles={(CollapsibleStylesProps, Theme) => CollapsibleStyles}
+```
 
 ### Props
 

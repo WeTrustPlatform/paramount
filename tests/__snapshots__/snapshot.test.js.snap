@@ -2837,7 +2837,7 @@ exports[`Collapsible_1 1`] = `
           }
         }
       >
-        Stays at top of content
+        Open collapsible
       </div>
       <div
         className="css-view-1dbjc4n"
@@ -2884,7 +2884,28 @@ exports[`Collapsible_1 1`] = `
 </div>
 `;
 
-exports[`Collapsible_2 1`] = `<div />`;
+exports[`Collapsible_2 1`] = `
+<pre>
+  <code>
+    CollapsibleStylesProps {
+  isOpen: boolean;
+}
+
+CollapsibleStyles {
+  touchableStyle: ViewStyle;
+  outerWrapperStyle: ViewStyle;
+  contentWrapperStyle: ViewStyle;
+  textStyle: ViewStyle;
+  iconWrapperStyle: ViewStyle;
+}
+
+getStyles={(CollapsibleStylesProps, Theme) =&gt; CollapsibleStyles}
+
+  </code>
+</pre>
+`;
+
+exports[`Collapsible_3 1`] = `<div />`;
 
 exports[`Container_0 1`] = `
 <h1>
