@@ -766,6 +766,8 @@ exports[`Box_1 1`] = `
 </div>
 `;
 
+exports[`Box_2 1`] = `<div />`;
+
 exports[`Button_0 1`] = `
 <h1>
   Button
