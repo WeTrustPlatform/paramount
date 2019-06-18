@@ -1,3 +1,13 @@
+# [1.63.0](https://github.com/WeTrustPlatform/paramount/compare/v1.62.3...v1.63.0) (2019-06-18)
+
+
+### Features
+
+* change touchable highlight to opacity ([a4cb38d](https://github.com/WeTrustPlatform/paramount/commit/a4cb38d))
+* improve docs and refactor ([8ae3799](https://github.com/WeTrustPlatform/paramount/commit/8ae3799))
+* **alert:** lean api for alert ([7b8d41e](https://github.com/WeTrustPlatform/paramount/commit/7b8d41e))
+* **list:** remove bullet list item and fixes ([bad40fc](https://github.com/WeTrustPlatform/paramount/commit/bad40fc))
+
 ## [1.62.3](https://github.com/WeTrustPlatform/paramount/compare/v1.62.2...v1.62.3) (2019-06-18)
 
 
