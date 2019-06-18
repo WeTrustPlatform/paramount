@@ -1,3 +1,15 @@
+# [1.64.0](https://github.com/WeTrustPlatform/paramount/compare/v1.63.0...v1.64.0) (2019-06-18)
+
+
+### Bug Fixes
+
+* **docs:** update snapshot ([d6520ad](https://github.com/WeTrustPlatform/paramount/commit/d6520ad))
+
+
+### Features
+
+* **collapsible:** refactor and improve docs ([fd8a1d9](https://github.com/WeTrustPlatform/paramount/commit/fd8a1d9))
+
 # [1.63.0](https://github.com/WeTrustPlatform/paramount/compare/v1.62.3...v1.63.0) (2019-06-18)
 
 
