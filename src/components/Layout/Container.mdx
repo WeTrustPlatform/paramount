@@ -9,12 +9,24 @@ import { Box, Container, LayoutProvider, Text } from '..';
 
 # Container
 
-On small screens, the container is the width of the screen. On large screens, it centers the content with a max-width of defined by Layout (default 1140) and adds padding
+`Container` centers the content with a max-width of defined by Layout (varies depending on screen size)
+
+Recommended usage with `Row and Column` to provide Grid margin
 
 ### Usage
 
 <Playground>
-  <LayoutProvider>
+  <LayoutProvider
+    value={{
+      containerSizes: {
+        small: 540,
+        medium: 720,
+        large: 960,
+        xlarge: 1140
+      }
+    }}
+  >
+
     <Box backgroundColor="#67c6bb" padding={3}>
       <Container
         fluid={false} // Should not contain width
@@ -25,6 +37,7 @@ On small screens, the container is the width of the screen. On large screens, it
         </Box>
       </Container>
     </Box>
+
   </LayoutProvider>
 </Playground>
 

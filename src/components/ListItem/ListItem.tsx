@@ -72,7 +72,7 @@ export const ListItem = (props: ListItemProps) => {
     description,
     size = 'medium',
     onPress,
-    rightIcon = null,
+    rightIcon,
     leftIcon,
     testID,
     ...accessibilityProps
@@ -131,9 +131,15 @@ export const ListItem = (props: ListItemProps) => {
             )}
           </View>
         </View>
-        {rightIcon || (
-          <Icon color="default" size={iconSize[size]} name="chevron-right" />
-        )}
+        {rightIcon === null
+          ? null
+          : rightIcon || (
+              <Icon
+                color="default"
+                size={iconSize[size]}
+                name="chevron-right"
+              />
+            )}
       </View>
     </TouchableHighlight>
   );

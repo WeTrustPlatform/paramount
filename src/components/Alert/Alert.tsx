@@ -10,17 +10,31 @@ import { Icon } from '../Icon';
 import { Text } from '../Typography';
 import { AlertStyles, GetAlertStyles, getAlertStyles } from './Alert.styles';
 
+/**
+ * Alert properties
+ */
 export interface AlertProps {
+  /** Title of the alert */
   title?: string;
+  /** Description of the alert */
   description?: string;
+  /** Used to locate this view in end-to-end tests */
   testID?: string;
   /* custom component, will take precedence over title and description */
   component?: React.ReactNode;
+  /** Callback when close button is pressed */
   onClose?: () => void;
+  /** Determines whether to display close button */
   isCloseable?: boolean;
+  /** Replace the icon of the alert on the left */
   icon?: React.ReactNode | null;
+  /**
+   * Intent of the alert
+   * @default info
+   */
   intent?: Intent;
 
+  /** Callback to get element styles */
   getStyles?: ReplaceReturnType<GetAlertStyles, DeepPartial<AlertStyles>>;
 }
 
@@ -37,6 +51,9 @@ const resolveIcon = (intent: Intent) => {
   }
 };
 
+/**
+ * Alert with intent
+ */
 export const Alert = (props: AlertProps) => {
   const {
     title,

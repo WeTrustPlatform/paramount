@@ -39,18 +39,19 @@ const TextInputBase = (props: TextInputProps) => {
     isClearable,
     isDisabled = false,
     isInvalid = false,
-    leftIcon = null,
+    leftIcon,
     numberOfLines,
     onClear = () => {
       return;
     },
-    rightIcon = null,
+    rightIcon,
     size = 'medium',
     value,
     textContentType,
     onChangeText = () => {
       return;
     },
+    placeholderTextColor: placeholderTextColorProp,
     ...textInputProps
   } = props;
   const theme = useTheme();
@@ -75,14 +76,14 @@ const TextInputBase = (props: TextInputProps) => {
 
   return (
     <View style={containerStyle}>
-      <View style={leftContainerStyle}>{leftIcon}</View>
+      {leftIcon && <View style={leftContainerStyle}>{leftIcon}</View>}
       {/*
       // @ts-ignore: name prop being passed */}
       <RNTextInput
         ref={innerRef}
         style={inputStyle}
         editable={!isDisabled}
-        placeholderTextColor={placeholderTextColor}
+        placeholderTextColor={placeholderTextColorProp || placeholderTextColor}
         name={textContentType}
         numberOfLines={numberOfLines}
         value={value}
@@ -90,20 +91,22 @@ const TextInputBase = (props: TextInputProps) => {
         textContentType={textContentType}
         {...textInputProps}
       />
-      <View style={rightContainerStyle}>
-        {value && isClearable ? (
-          <TouchableOpacity
-            onPress={() => {
-              onChangeText('');
-              onClear();
-            }}
-          >
-            <Icon name="x" size={24} color={theme.colors.text.default} />
-          </TouchableOpacity>
-        ) : (
-          rightIcon || null
-        )}
-      </View>
+      {((value && isClearable) || rightIcon) && (
+        <View style={rightContainerStyle}>
+          {value && isClearable ? (
+            <TouchableOpacity
+              onPress={() => {
+                onChangeText('');
+                onClear();
+              }}
+            >
+              <Icon name="x" size={24} color={theme.colors.text.default} />
+            </TouchableOpacity>
+          ) : (
+            rightIcon
+          )}
+        </View>
+      )}
     </View>
   );
 };
