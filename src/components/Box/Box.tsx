@@ -7,6 +7,7 @@ export interface BoxProps extends ViewStyle {
   children?: React.ReactNode;
 
   shape?: ContainerShape;
+  backgroundColor?: BackgroundColor;
 }
 
 const propToFn = {
