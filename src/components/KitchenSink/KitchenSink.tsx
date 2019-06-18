@@ -100,9 +100,7 @@ export const KitchenSink = () => {
 
       <Playground>
         <Box>
-          <Badge color="blue" isSolid size="large" shape="pill">
-            Badge
-          </Badge>
+          <Badge title="Badge" color="blue" isSolid size="large" shape="pill" />
         </Box>
       </Playground>
 
@@ -128,28 +126,6 @@ export const KitchenSink = () => {
           Button
         </Heading>
       </Box>
-
-      <Playground>
-        <Button
-          color="primary"
-          appearance="primary"
-          size="large"
-          isLoading={false}
-          isActive={false}
-          isDisabled={false}
-          isInline={false}
-          iconBefore={null}
-          iconAfter={null}
-          iconLoading={null}
-          title="Usage"
-          onPress={() => console.log('Pressed!')}
-          getStyles={(props, theme) => ({
-            buttonStyle: {},
-            textStyle: {},
-            focusColor: '#5ab9ae',
-          })}
-        />
-      </Playground>
 
       <Playground>
         <Box flexDirection="row">
@@ -200,23 +176,6 @@ export const KitchenSink = () => {
         </Box>
       </Playground>
 
-      <Playground>
-        <Box paddingBottom={16} flexDirection="row" justifyContent="flex-start">
-          <Button isInline color="primary" title="Left small" size="small" />
-        </Box>
-        <Box paddingBottom={16} flexDirection="row" justifyContent="center">
-          <Button
-            isInline
-            color="primary"
-            title="Center medium"
-            size="medium"
-          />
-        </Box>
-        <Box paddingBottom={16} flexDirection="row" justifyContent="flex-end">
-          <Button isInline color="primary" title="Right large" size="large" />
-        </Box>
-      </Playground>
-
       <Box paddingTop={96}>
         <Heading size="xxxlarge" weight="500">
           Checkbox
@@ -228,18 +187,10 @@ export const KitchenSink = () => {
           {({ on, toggle }) => (
             <FormField label="Checkbox" labelPosition="right">
               <Checkbox
-                shape="square" // or "circle"
+                shape="circle"
                 isChecked={on}
-                isDisabled={false}
-                isInteractive={true}
                 onChange={toggle}
                 size="medium"
-                getStyles={(props, theme) => ({
-                  touchableStyle: {},
-                  checkboxStyle: {},
-                  checkColor: 'white',
-                  checkboxFocusBackgroundColor: '#fafafa',
-                })}
               />
             </FormField>
           )}

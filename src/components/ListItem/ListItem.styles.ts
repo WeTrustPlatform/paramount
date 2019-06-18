@@ -8,7 +8,6 @@ export interface ListItemStyles {
   containerStyle: ViewStyle;
   leftWrapperStyle: ViewStyle;
   textWrapperStyle: ViewStyle;
-  focusBackgroundColor: string;
   titleStyle: TextStyle;
   descriptionStyle: TextStyle;
 }
@@ -41,7 +40,6 @@ export const getListItemStyles: GetListItemStyles = (
         : {}),
     },
     descriptionStyle: {},
-    focusBackgroundColor: theme.colors.background.greyLight,
     imageWrapperStyle: {
       marginRight: 8,
     },

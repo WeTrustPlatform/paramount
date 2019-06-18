@@ -1,7 +1,6 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
 import { ButtonColor, ControlSize, Theme } from '../../theme/Theme';
-import { darken } from './changeColor';
 
 export interface ButtonColorProps {
   backgroundColor: string;
@@ -102,14 +101,6 @@ export const getButtonAppearances = (theme: Theme): ButtonAppearances => {
   };
 };
 
-export interface ButtonStyles {
-  buttonStyle: ViewStyle;
-  textStyle: TextStyle;
-  focusColor: string;
-  innerButtonWrapperStyle: ViewStyle;
-  buttonContentWrapperStyle: ViewStyle;
-}
-
 export interface ButtonStylesProps {
   appearance: ButtonAppearance;
   color: ButtonColor;
@@ -117,9 +108,17 @@ export interface ButtonStylesProps {
   isDisabled: boolean;
   isLoading: boolean;
   isInline: boolean;
-  iconBefore?: any;
-  iconAfter?: any;
+  hasIconAfter?: boolean;
+  hasIconBefore?: boolean;
 }
+
+export interface ButtonStyles {
+  buttonStyle: ViewStyle;
+  textStyle: TextStyle;
+  innerButtonWrapperStyle: ViewStyle;
+  buttonContentWrapperStyle: ViewStyle;
+}
+
 export type GetButtonStyles = (
   buttonStylesProps: ButtonStylesProps,
   theme: Theme,
@@ -133,8 +132,8 @@ export const getButtonStyles: GetButtonStyles = (buttonStyleProps, theme) => {
     isDisabled,
     isLoading,
     isInline,
-    iconBefore,
-    iconAfter,
+    hasIconAfter,
+    hasIconBefore,
   } = buttonStyleProps;
 
   const buttonAppearances = getButtonAppearances(theme);
@@ -167,10 +166,6 @@ export const getButtonStyles: GetButtonStyles = (buttonStyleProps, theme) => {
           }
         : {}),
     },
-    focusColor:
-      appearance === 'minimal' || appearance === 'outline'
-        ? theme.colors.button.default
-        : darken(buttonStyle.backgroundColor, 0.05),
     textStyle: {
       alignItems: 'center',
       color: isDisabled ? theme.colors.text.muted : textColor,
@@ -188,8 +183,8 @@ export const getButtonStyles: GetButtonStyles = (buttonStyleProps, theme) => {
     },
 
     buttonContentWrapperStyle: {
-      paddingLeft: iconBefore ? 8 : 0,
-      paddingRight: iconAfter ? 8 : 0,
+      paddingLeft: hasIconBefore ? 8 : 0,
+      paddingRight: hasIconAfter ? 8 : 0,
     },
   };
 };

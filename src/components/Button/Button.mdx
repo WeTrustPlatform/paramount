@@ -11,30 +11,6 @@ import { Box, Button } from '..';
 ### Usage
 
 <Playground>
-  <Button
-    color="primary"
-    appearance="primary"
-    size="large"
-    isLoading={false}
-    isActive={false}
-    isDisabled={false}
-    isInline={false}
-    iconBefore={null}
-    iconAfter={null}
-    iconLoading={null}
-    title="Usage"
-    onPress={() => console.log('Pressed!')}
-    getStyles={(props, theme) => ({
-      buttonStyle: {},
-      textStyle: {},
-      focusColor: '#5ab9ae',
-    })}
-  />
-</Playground>
-
-### Variants
-
-<Playground>
   <Box flexDirection="row">
     <Box paddingRight={16} height={240} justifyContent="space-between">
       <Button color="default" title="Default" />
@@ -68,21 +44,31 @@ import { Box, Button } from '..';
   </Box>
 </Playground>
 
-### Positioning inline button with different sizes
+### Customization
 
-<Playground>
-  <Box paddingBottom={16} flexDirection="row" justifyContent="flex-start">
-    <Button isInline color="primary" title="Left small" size="small" />
-  </Box>
-  <Box paddingBottom={16} flexDirection="row" justifyContent="center">
-    <Button isInline color="primary" title="Center medium" size="medium" />
-  </Box>
-  <Box paddingBottom={16} flexDirection="row" justifyContent="flex-end">
-    <Button isInline color="primary" title="Right large" size="large" />
-  </Box>
-</Playground>
+Using `getStyles` prop
 
-If `isInline` does not inline the button, try wrapping it with `Box`
+```
+ButtonStylesProps {
+  appearance: ButtonAppearance;
+  color: ButtonColor;
+  size: ControlSize;
+  isDisabled: boolean;
+  isLoading: boolean;
+  isInline: boolean;
+  hasIconAfter?: boolean;
+  hasIconBefore?: boolean;
+}
+
+ButtonStyles {
+  buttonStyle: ViewStyle;
+  textStyle: TextStyle;
+  innerButtonWrapperStyle: ViewStyle;
+  buttonContentWrapperStyle: ViewStyle;
+}
+
+getStyles={(ButtonStylesProps, Theme) => ButtonStyles}
+```
 
 ### Props
 

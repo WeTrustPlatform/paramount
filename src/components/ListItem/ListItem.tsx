@@ -2,7 +2,7 @@ import * as React from 'react';
 import {
   AccessibilityProps,
   GestureResponderEvent,
-  TouchableHighlight,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
@@ -86,7 +86,6 @@ export const ListItem = (props: ListItemProps) => {
     containerStyle,
     titleStyle,
     descriptionStyle,
-    focusBackgroundColor,
     wrapperStyle,
   } = mergeStyles(
     getListItemStyles,
@@ -95,9 +94,8 @@ export const ListItem = (props: ListItemProps) => {
   )({ size, isDisabled }, theme);
 
   return (
-    <TouchableHighlight
+    <TouchableOpacity
       disabled={isDisabled}
-      underlayColor={focusBackgroundColor}
       style={containerStyle}
       testID={testID}
       onPress={onPress}
@@ -141,6 +139,6 @@ export const ListItem = (props: ListItemProps) => {
               />
             )}
       </View>
-    </TouchableHighlight>
+    </TouchableOpacity>
   );
 };

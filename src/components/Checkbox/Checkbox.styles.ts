@@ -1,12 +1,11 @@
 import { ViewStyle } from 'react-native';
 
-import { ControlSize, Theme } from '../../theme/Theme';
-import { CheckboxShape } from './Checkbox';
+import { ContainerShape, ControlSize, Theme } from '../../theme/Theme';
 
 export interface CheckboxStylesProps {
   isChecked: boolean;
   isDisabled: boolean;
-  shape: CheckboxShape;
+  shape: ContainerShape;
   size: ControlSize;
 }
 
@@ -14,7 +13,6 @@ export interface CheckboxStyles {
   touchableStyle: ViewStyle;
   checkboxStyle: ViewStyle;
   checkColor: string;
-  checkboxFocusBackgroundColor: string;
 }
 
 export type GetCheckboxStyles = (
@@ -30,9 +28,6 @@ export const getCheckboxStyles: GetCheckboxStyles = (
 
   return {
     checkColor: theme.colors.text.white,
-    checkboxFocusBackgroundColor: isChecked
-      ? theme.colors.background.primaryDark
-      : theme.colors.background.greyLight,
 
     checkboxStyle: {
       alignItems: 'center',
@@ -54,16 +49,9 @@ export const getCheckboxStyles: GetCheckboxStyles = (
             borderColor: theme.colors.border.default,
           }
         : {}),
-      ...{
-        circle: {
-          borderRadius: 999,
-        },
-        square: {
-          borderRadius: theme.controlBorderRadius.small,
-        },
-      }[shape],
+      ...theme.containerShapes[shape],
     },
 
-    touchableStyle: {},
+    touchableStyle: theme.containerShapes[shape],
   };
 };

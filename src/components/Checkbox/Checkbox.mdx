@@ -15,23 +15,36 @@ import { Checkbox, FormField, Toggle } from '..';
     {({ on, toggle }) => (
       <FormField label="Checkbox" labelPosition="right">
         <Checkbox
-          shape="square" // or "circle"
+          shape="circle"
           isChecked={on}
-          isDisabled={false}
-          isInteractive={true}
           onChange={toggle}
           size="medium"
-          getStyles={(props, theme) => ({
-            touchableStyle: {},
-            checkboxStyle: {},
-            checkColor: 'white',
-            checkboxFocusBackgroundColor: '#fafafa',
-          })}
         />
       </FormField>
     )}
   </Toggle>
 </Playground>
+
+### Customization
+
+Using `getStyles` prop
+
+```
+CheckboxStylesProps {
+  isChecked: boolean;
+  isDisabled: boolean;
+  shape: ContainerShape;
+  size: ControlSize;
+}
+
+CheckboxStyles {
+  touchableStyle: ViewStyle;
+  checkboxStyle: ViewStyle;
+  checkColor: string;
+}
+
+getStyles={(CheckboxStylesProps, Theme) => CheckboxStyles}
+```
 
 ### Props
 

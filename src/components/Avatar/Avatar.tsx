@@ -29,31 +29,38 @@ const getInitials: GetInitialsType = (name, fallback = '?') => {
 export interface AvatarProps {
   /** The source attribute of the image. When it's not available, render initials instead. */
   source?: ImageSourcePropType;
+
   /** The size of the avatar. */
   size?: number;
+
   /**
    * The name used for the initials and title attribute.
    * @default 48
    */
   name?: string;
+
   /**
    * When true, render a solid avatar.
    * @default false
    */
   isSolid?: boolean;
+
   /**
    * The color used for the avatar.
    * When the value is `automatic`, use the hash function to determine the color.
-   * @default automatic
+   * @default "automatic"
    */
   color?: 'automatic' | FillColor;
+
   /**
    * When the size is smaller than this number, use a single initial for the avatar.
    * @default 20
    */
   sizeLimitOneCharacter?: number;
+
   /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetAvatarStyles, DeepPartial<AvatarStyles>>;
+
   /** Used to locate this view in end-to-end tests. */
   testID?: string;
 }
