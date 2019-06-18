@@ -1,3 +1,10 @@
+## [1.62.3](https://github.com/WeTrustPlatform/paramount/compare/v1.62.2...v1.62.3) (2019-06-18)
+
+
+### Bug Fixes
+
+* various fixes and docs ([8b2c27a](https://github.com/WeTrustPlatform/paramount/commit/8b2c27a))
+
 ## [1.62.2](https://github.com/WeTrustPlatform/paramount/compare/v1.62.1...v1.62.2) (2019-06-17)
 
 
