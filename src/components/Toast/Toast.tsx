@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { Omit } from 'ts-essentials';
 
 import { Alert, AlertProps } from '../Alert';
 
 export type ToastId = string;
 
-export interface ToastSettings extends Omit<AlertProps, 'onClose'> {
+export interface ToastSettings extends AlertProps {
   id?: ToastId;
   offset?: number;
   /* duration for how long the toast should stay active */
@@ -37,5 +36,5 @@ export const Toast = (props: ToastProps) => {
     return () => clearTimeout(timer);
   }, []);
 
-  return <>{component || <Alert {...toastSettings} onClose={onRemove} />}</>;
+  return <>{component || <Alert {...toastSettings} />}</>;
 };

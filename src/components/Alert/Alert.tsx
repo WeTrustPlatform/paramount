@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { Intent } from '../../constants/Intent';
@@ -20,14 +20,8 @@ export interface AlertProps {
   description?: string;
   /** Used to locate this view in end-to-end tests */
   testID?: string;
-  /* custom component, will take precedence over title and description */
-  component?: React.ReactNode;
-  /** Callback when close button is pressed */
-  onClose?: () => void;
-  /** Determines whether to display close button */
-  isCloseable?: boolean;
   /** Replace the icon of the alert on the left */
-  icon?: React.ReactNode | null;
+  icon?: React.ReactNode;
   /**
    * Intent of the alert
    * @default info
@@ -58,9 +52,6 @@ export const Alert = (props: AlertProps) => {
   const {
     title,
     description,
-    component,
-    onClose,
-    isCloseable = false,
     icon,
     intent = 'info',
     getStyles,
@@ -82,19 +73,10 @@ export const Alert = (props: AlertProps) => {
           {resolveIcon(intent)}
         </Box>
       )}
-      {component || (
-        <View style={bodyStyle}>
-          <Text weight="bold">{title}</Text>
-          <Text>{description}</Text>
-        </View>
-      )}
-      {isCloseable && (
-        <TouchableOpacity onPress={onClose}>
-          <Box paddingLeft={16}>
-            <Icon name="x" size={24} color={theme.colors.text.default} />
-          </Box>
-        </TouchableOpacity>
-      )}
+      <View style={bodyStyle}>
+        <Text weight="bold">{title}</Text>
+        <Text>{description}</Text>
+      </View>
     </View>
   );
 };
