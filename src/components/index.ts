@@ -10,7 +10,7 @@ export * from './Dialog';
 export * from './Divider';
 export * from './Drawer';
 export * from './Form';
-export * from './Grid';
+export * from './Layout';
 export * from './Helpers';
 export * from './Icon';
 export * from './Inputs';
