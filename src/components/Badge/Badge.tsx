@@ -10,11 +10,29 @@ import { BadgeStyles, GetBadgeStyles, getBadgeStyles } from './Badge.styles';
 
 export interface BadgeProps {
   children: React.ReactNode;
+  /**
+   * Color of badge
+   * @default neutral
+   */
   color?: FillColor;
+  /**
+   * Size of badge
+   * @default medium
+   */
   size?: ControlSize;
+  /**
+   * Shape of container
+   * @default rounded
+   */
   shape?: ContainerShape;
+  /**
+   * When true, display in solid mode
+   * @default false
+   */
   isSolid?: boolean;
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetBadgeStyles, DeepPartial<BadgeStyles>>;
+  /** Used to locate this view in end-to-end tests. */
   testID?: string;
 }
 
@@ -39,13 +57,7 @@ export const Badge = (props: BadgeProps) => {
 
   return (
     <View style={containerStyle} testID={testID}>
-      <Text
-        weight="bold"
-        size={size}
-        getStyles={() => ({
-          textStyle,
-        })}
-      >
+      <Text weight="bold" size={size} getStyles={() => ({ textStyle })}>
         {children}
       </Text>
     </View>

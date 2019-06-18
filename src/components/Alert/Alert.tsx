@@ -14,22 +14,21 @@ import { AlertStyles, GetAlertStyles, getAlertStyles } from './Alert.styles';
  * Alert properties
  */
 export interface AlertProps {
-  /** Title of the alert */
+  /** Title of the alert. */
   title?: string;
-  /** Description of the alert */
+  /** Description of the alert. */
   description?: string;
-  /** Used to locate this view in end-to-end tests */
-  testID?: string;
-  /** Replace the icon of the alert on the left */
+  /** Replace the icon of the alert on the left. Set to null to remove icon */
   icon?: React.ReactNode;
   /**
-   * Intent of the alert
+   * Intent of the alert.
    * @default info
    */
   intent?: Intent;
-
-  /** Callback to get element styles */
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetAlertStyles, DeepPartial<AlertStyles>>;
+  /** Used to locate this view in end-to-end tests. */
+  testID?: string;
 }
 
 const resolveIcon = (intent: Intent) => {
@@ -60,22 +59,32 @@ export const Alert = (props: AlertProps) => {
 
   const theme = useTheme();
 
-  const { containerStyle, bodyStyle } = mergeStyles(
-    getAlertStyles,
-    getStyles,
-    theme.components.getAlertStyles,
-  )({ intent }, theme);
+  const {
+    containerStyle,
+    bodyStyle,
+    descriptionStyle,
+    titleStyle,
+  } = mergeStyles(getAlertStyles, getStyles, theme.components.getAlertStyles)(
+    { intent },
+    theme,
+  );
 
   return (
     <View style={containerStyle} testID={testID}>
-      {icon || (
-        <Box paddingRight={16} justifyContent="center">
-          {resolveIcon(intent)}
-        </Box>
-      )}
+      {icon === null
+        ? null
+        : icon || (
+            <Box paddingRight={16} justifyContent="center">
+              {resolveIcon(intent)}
+            </Box>
+          )}
       <View style={bodyStyle}>
-        <Text weight="bold">{title}</Text>
-        <Text>{description}</Text>
+        <Text getStyles={() => ({ textStyle: titleStyle })} weight="bold">
+          {title}
+        </Text>
+        <Text getStyles={() => ({ textStyle: descriptionStyle })}>
+          {description}
+        </Text>
       </View>
     </View>
   );

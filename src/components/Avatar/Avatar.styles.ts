@@ -23,7 +23,6 @@ export type AvatarColor = 'automatic' | keyof FillColors;
 export interface AvatarStylesProps {
   name?: string;
   color: AvatarColor;
-  hashValue?: string;
   isSolid: boolean;
   size: number;
   sizeLimitOneCharacter: number;
@@ -74,13 +73,13 @@ export type GetAvatarStyles = (
 ) => AvatarStyles;
 
 export const getAvatarStyles: GetAvatarStyles = (
-  { name, color, hashValue, isSolid, size = 24, sizeLimitOneCharacter = 20 },
+  { name, color, isSolid, size = 24, sizeLimitOneCharacter = 20 },
   theme,
 ) => {
   let colorProps;
   const fills = theme.fills;
   if (color === 'automatic') {
-    const newHashValue = hashCode(hashValue || name);
+    const newHashValue = hashCode(name);
     colorProps = getAvatarProps(theme.fills, {
       color,
       hashValue: newHashValue,

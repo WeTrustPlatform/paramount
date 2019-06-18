@@ -7,7 +7,7 @@ export interface AlertStyles {
   containerStyle: ViewStyle;
   bodyStyle: ViewStyle;
   titleStyle: TextStyle;
-  textStyle: TextStyle;
+  descriptionStyle: TextStyle;
 }
 
 export interface AlertStyleProps {
@@ -34,7 +34,7 @@ export const getAlertStyles: GetAlertStyles = ({ intent }, theme) => {
       padding: 16,
       ...theme.elevations[2],
     },
-    textStyle: {},
+    descriptionStyle: {},
     titleStyle: {},
   };
 };

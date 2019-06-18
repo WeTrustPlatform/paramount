@@ -13,33 +13,38 @@ Give feedback to the user about an action or state
 ### Usage
 
 <Playground>
-  <Alert
-    title="Title"
-    description="Message"
-    intent="success"
-    getStyles={(props, theme) => ({
-      bodyStyle: {},
-      containerStyle: {},
-    })}
-  />
-</Playground>
-
-### Variants
-
-<Playground>
-  <Box paddingVertical={16}>
+  <Box paddingVertical={8}>
     <Alert title="Info" description="Message" />
   </Box>
-  <Box paddingVertical={16}>
+  <Box paddingVertical={8}>
     <Alert intent="success" title="Success" description="Message" />
   </Box>
-  <Box paddingVertical={16}>
+  <Box paddingVertical={8}>
     <Alert intent="warning" title="Warning" description="Message" />
   </Box>
-  <Box paddingVertical={16}>
+  <Box paddingVertical={8}>
     <Alert intent="danger" title="Danger" description="Message" />
   </Box>
 </Playground>
+
+### Customization
+
+Use `getStyles` prop
+
+```
+AlertStyleProps {
+  intent: Intent;
+}
+
+AlertStyles {
+  containerStyle: ViewStyle;
+  bodyStyle: ViewStyle;
+  titleStyle: TextStyle;
+  descriptionStyle: TextStyle;
+}
+
+getStyles={(AlertStyleProps, Theme) => AlertStyles}
+```
 
 ### Props
 

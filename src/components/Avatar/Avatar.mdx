@@ -4,35 +4,43 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { Avatar } from '..';
+import { Avatar, Box } from '..';
 
 # Avatar
+
+Display avatar image, with default for name initials
 
 ### Usage
 
 <Playground>
   <Avatar
+    source={{ uri: 'https://picsum.photos/100/100', width: 100, height: 100 }}
+    // Defaults to name if source is not provided
     name="Bill Gates"
-    source={{ uri: 'https://picsum.photos/200/200' }}
-    size={40}
-    isSolid={false}
-    color="automatic"
-    getInitials={(name, fallback) =>
-      name ? `${name.charAt(0)}${name.charAt(5)}` : 'A'
-    }
-    getStyles={(props, theme) => ({
-      boxStyle: {},
-      textStyle: {},
-      imageStyle: {},
-    })}
   />
 </Playground>
 
-### Automatic name usage
+### Customization
 
-<Playground>
-  <Avatar name="Bill Gates" />
-</Playground>
+Using `getStyles` prop
+
+```
+AvatarStylesProps {
+  name?: string;
+  color: AvatarColor;
+  isSolid: boolean;
+  size: number;
+  sizeLimitOneCharacter: number;
+}
+
+AvatarStyles {
+  containerStyle: ViewStyle;
+  textStyle: TextStyle;
+  imageStyle: ImageStyle;
+}
+
+getStyles={(AvatarStylesProps, Theme) => AvatarStyles}
+```
 
 ### Props
 
