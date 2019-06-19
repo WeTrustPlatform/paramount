@@ -1,3 +1,10 @@
+# [1.67.0](https://github.com/WeTrustPlatform/paramount/compare/v1.66.0...v1.67.0) (2019-06-19)
+
+
+### Features
+
+* **label:** separate textstyle props ([48acace](https://github.com/WeTrustPlatform/paramount/commit/48acace))
+
 # [1.66.0](https://github.com/WeTrustPlatform/paramount/compare/v1.65.0...v1.66.0) (2019-06-19)
 
 
