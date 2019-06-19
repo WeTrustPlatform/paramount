@@ -15,7 +15,7 @@ export type GetCheckboxStyles = (
 ) => CheckboxStyles;
 
 export const getCheckboxStyles: GetCheckboxStyles = (
-  { isChecked, isDisabled, shape = 'rounded', size = 'medium' },
+  { value, isDisabled, shape = 'rounded', size = 'medium' },
   theme,
 ) => {
   const sizeValue = theme.controlHeights[size] - 16;
@@ -31,7 +31,7 @@ export const getCheckboxStyles: GetCheckboxStyles = (
       height: sizeValue,
       justifyContent: 'center',
       width: sizeValue,
-      ...(isChecked
+      ...(value
         ? {
             backgroundColor: theme.colors.background.primaryDefault,
             borderColor: 'transparent',

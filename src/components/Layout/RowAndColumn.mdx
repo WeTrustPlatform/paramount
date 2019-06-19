@@ -176,3 +176,39 @@ Refer to `Layout` docs for further configuration
 ### Column Props
 
 <Props of={Column} />
+
+### Row Customization
+
+Using `getStyles` prop
+
+```
+RowStyles {
+  rowStyle: ViewStyle;
+}
+
+getStyles={(RowProps, Theme) => RowStyles}
+```
+
+Markup
+
+```tsx
+<View rowStyle />
+```
+
+### Column Customization
+
+Using `getStyles` prop
+
+```
+ColumnStyles {
+  columnStyle: ViewStyle;
+}
+
+getStyles={(ColumnProps, Theme) => ColumnStyles}
+```
+
+Markup
+
+```tsx
+<View columnStyle />
+```

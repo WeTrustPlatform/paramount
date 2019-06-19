@@ -52,6 +52,12 @@ export interface AvatarProps {
    */
   color?: 'automatic' | FillColor;
 
+  /** Image label for screen readers */
+  imageAccessibilityLabel?: string;
+
+  /** Label for screen readers */
+  accessibilityLabel?: string;
+
   /**
    * When the size is smaller than this number, use a single initial for the avatar.
    * @default 20
@@ -73,6 +79,8 @@ export const Avatar = (props: AvatarProps) => {
     sizeLimitOneCharacter = 20,
     getStyles,
     testID,
+    imageAccessibilityLabel,
+    accessibilityLabel,
   } = props;
 
   const theme = useTheme();
@@ -94,12 +102,17 @@ export const Avatar = (props: AvatarProps) => {
   )(props, theme);
 
   return (
-    <View style={containerStyle} testID={testID}>
+    <View
+      accessibilityLabel={accessibilityLabel}
+      style={containerStyle}
+      testID={testID}
+    >
       {imageUnavailable && (
         <Text getStyles={() => ({ textStyle })}>{initials}</Text>
       )}
       {!imageUnavailable && !!source && (
         <Image
+          accessibilityLabel={imageAccessibilityLabel}
           onError={() => setHasImageFailedLoading(true)}
           source={source}
           style={imageStyle}

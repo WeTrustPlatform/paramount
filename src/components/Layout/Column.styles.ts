@@ -1,23 +1,15 @@
 import { ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
-import { ColumnConfigBase } from './Column';
+import { ColumnConfig, ColumnConfigBase, ColumnProps } from './Column';
 import {
-  ColumnCount,
   DESC_ORDER_SCREEN_SIZES,
+  LayoutInterface,
   ScreenSize,
 } from './LayoutContext';
 
-export interface ColumnStylesProps {
-  gutterWidth: number;
-  currentScreenSize: ScreenSize;
-  gridColumnCount: ColumnCount;
-  columns: ColumnConfigBase;
-  offsetColumns: ColumnConfigBase;
-}
-
 export type GetColumnStyles = (
-  progressStylesProps: ColumnStylesProps,
+  props: ColumnProps & LayoutInterface,
   theme: Theme,
 ) => ColumnStyles;
 
@@ -64,10 +56,39 @@ export const getProportion = (columnCount: number, gridColumnCount: number) => {
   return `${columnCount * percentPerColumn}%`;
 };
 
-export const getColumnStyles: GetColumnStyles = (
-  { gutterWidth, currentScreenSize, gridColumnCount, columns, offsetColumns },
-  theme,
-) => {
+export const splitColumnConfig = (config: ColumnConfig) => {
+  const {
+    xsmall,
+    small,
+    medium,
+    large,
+    xlarge,
+    offsetXsmall,
+    offsetSmall,
+    offsetMedium,
+    offsetLarge,
+    offsetXlarge,
+  } = config;
+  const columns = { xsmall, small, medium, large, xlarge };
+  const offsetColumns = {
+    large: offsetLarge,
+    medium: offsetMedium,
+    small: offsetSmall,
+    xlarge: offsetXlarge,
+    xsmall: offsetXsmall,
+  };
+
+  return { columns, offsetColumns };
+};
+
+export const getColumnStyles: GetColumnStyles = ({
+  gutterWidth,
+  currentScreenSize,
+  gridColumnCount,
+  ...config
+}) => {
+  const { columns, offsetColumns } = splitColumnConfig(config);
+
   const columnCount = getColumnCount(columns, currentScreenSize);
   const flexBasis = getProportion(columnCount || 12, gridColumnCount);
   const offsetColumnCount = getColumnCount(offsetColumns, currentScreenSize);

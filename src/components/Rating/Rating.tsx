@@ -12,22 +12,44 @@ import {
 import { Star } from './Star';
 
 export interface RatingProps {
+  /**
+   * Rating value
+   * @default 0
+   */
   value?: number;
+
+  /**
+   * Maximum rating from 0.
+   * @default 5
+   */
   maxRating?: number;
+
+  /**
+   * The size of the rating star.
+   * @default "medium"
+   */
   size?: ControlSize;
-  getStyles?: ReplaceReturnType<GetRatingStyles, DeepPartial<RatingStyles>>;
+
+  /**
+   * Called when a rating star is pressed
+   */
   onChange?: (value: number) => void;
+
+  /**
+   * Color of the rating stars
+   */
   color?: TextColor;
+
+  /** Callback to get element styles. */
+  getStyles?: ReplaceReturnType<GetRatingStyles, DeepPartial<RatingStyles>>;
 }
 
 export const Rating = (props: RatingProps) => {
   const {
     value = 0,
     maxRating = 5,
-    size = 'medium',
     getStyles,
     onChange = () => undefined,
-    color = 'primary',
   } = props;
   const theme = useTheme();
 
@@ -35,7 +57,7 @@ export const Rating = (props: RatingProps) => {
     getRatingStyles,
     getStyles,
     theme.components.getRatingStyles,
-  )({ size, color }, theme);
+  )(props, theme);
 
   return (
     <View style={containerStyle}>

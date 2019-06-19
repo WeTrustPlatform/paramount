@@ -1,13 +1,10 @@
 import { ViewStyle } from 'react-native';
 
-import { ControlSize, Theme } from '../../theme/Theme';
-
-export interface ProgressBarStylesProps {
-  size: ControlSize;
-}
+import { Theme } from '../../theme/Theme';
+import { ProgressBarProps } from './ProgressBar';
 
 export type GetProgressBarStyles = (
-  progressStylesProps: ProgressBarStylesProps,
+  props: ProgressBarProps,
   theme: Theme,
 ) => ProgressBarStyles;
 
@@ -16,7 +13,10 @@ export interface ProgressBarStyles {
   containerStyle: ViewStyle;
 }
 
-export const getProgressBarStyles: GetProgressBarStyles = ({ size }, theme) => {
+export const getProgressBarStyles: GetProgressBarStyles = (
+  { size = 'medium' },
+  theme,
+) => {
   const height = theme.controlHeights[size] - 16;
 
   return {

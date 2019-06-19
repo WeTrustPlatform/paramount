@@ -9,66 +9,51 @@ import { Box, SelectList, SelectListItem, State } from '..';
 
 # SelectList
 
-SelectList that supports single value or multiple values selected at the same item. `SelectList` is a compound component, which means that its children can be any component, and it will implicitly inject props such as `isSelected` or `onSelect` to them.
-`SelectListItem` composes `ListItem` and `SelectList` composes `FlatList`
+SelectList that supports single value or multiple values selected at the same item.
+
+`SelectListItem` composes `ListItem` and `SelectList` composes `FlatList`. You can use `ref` to trigger `FlatList` methods
 
 ### Usage
 
 <Playground>
-  <SelectList
-    isMulti={false} // Single select
-    selectedValue="c"
-    onValueChange={(newValue, itemIndex) => {
-      console.log(newValue, itemIndex);
-    }}
-  >
-    <SelectListItem
-      label="Usage"
-      value="c"
-      // Props below are passed from `SelectList`, so it is not necessary to pass them here
-      // isSelected
-      // onSelect
-      // index
-    />
-  </SelectList>
-</Playground>
-
-### Multi select
-
-<Playground>
-  <State initial={{ selectedValue: ['js', 'go'] }}>
+  <State initial={{ value: ['c', 'js', 'go'] }}>
     {({ state, setState }) => (
-      <SelectList
-        isMulti
-        selectedValue={state.selectedValue}
-        onValueChange={(newValue, itemIndex) => {
-          setState({ selectedValue: newValue });
-        }}
-      >
-        <SelectListItem label="C" value="c" />
-        <SelectListItem label="C#" value="c#" />
-        <SelectListItem label="C++" value="c++" />
-        <SelectListItem label="CSS" value="css" />
-        <SelectListItem label="Elixir" value="elixir" />
-        <SelectListItem label="Elm" value="elm" />
-        <SelectListItem label="Erlang" value="erlang" />
-        <SelectListItem label="Go" value="go" />
-        <SelectListItem label="Haskell" value="haskell" />
-        <SelectListItem label="HTML" value="html" />
-        <SelectListItem label="Java" value="java" />
-        <SelectListItem label="JavaScript" value="js" />
-        <SelectListItem label="Lua" value="lua" />
-        <SelectListItem label="Python" value="python" />
-        <SelectListItem label="R" value="r" />
-        <SelectListItem label="Ruby" value="ruby" />
-        <SelectListItem label="Rust" value="rust" />
-        <SelectListItem label="Switft" value="swift" />
-        <SelectListItem label="Typescript" value="typescript" />
-      </SelectList>
+      <Box height={300}>
+        <SelectList
+          value={state.value}
+          onValueChange={(newValue, itemIndex) => {
+            setState({ value: newValue });
+          }}
+        >
+          <SelectListItem label="C" value="c" />
+          <SelectListItem label="C#" value="c#" />
+          <SelectListItem label="C++" value="c++" />
+          <SelectListItem label="CSS" value="css" />
+          <SelectListItem label="Elixir" value="elixir" />
+          <SelectListItem label="Elm" value="elm" />
+          <SelectListItem label="Erlang" value="erlang" />
+          <SelectListItem label="Go" value="go" />
+          <SelectListItem label="Haskell" value="haskell" />
+          <SelectListItem label="HTML" value="html" />
+          <SelectListItem label="Java" value="java" />
+          <SelectListItem label="JavaScript" value="js" />
+          <SelectListItem label="Lua" value="lua" />
+          <SelectListItem label="Python" value="python" />
+          <SelectListItem label="R" value="r" />
+          <SelectListItem label="Ruby" value="ruby" />
+          <SelectListItem label="Rust" value="rust" />
+          <SelectListItem label="Switft" value="swift" />
+          <SelectListItem label="Typescript" value="typescript" />
+        </SelectList>
+      </Box>
     )}
   </State>
 </Playground>
 
-### Props
+### SelectList Props
 
 <Props of={SelectList} />
+
+### SelectListItem Props
+
+<Props of={SelectListItem} />

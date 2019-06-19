@@ -1,13 +1,13 @@
 import { ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
+import { LayoutInterface } from './LayoutContext';
+import { RowProps } from './Row';
 
-export interface RowStyleProps {
-  gutterWidth: number;
-  hasGutter: boolean;
-}
-
-export type GetRowStyles = (props: RowStyleProps, theme: Theme) => RowStyles;
+export type GetRowStyles = (
+  props: RowProps & LayoutInterface,
+  theme: Theme,
+) => RowStyles;
 
 export interface RowStyles {
   rowStyle: ViewStyle;

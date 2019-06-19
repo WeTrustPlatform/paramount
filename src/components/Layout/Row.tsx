@@ -9,10 +9,20 @@ import { defaultLayout, useLayout } from './LayoutContext';
 import { GetRowStyles, getRowStyles, RowStyles } from './Row.styles';
 
 export interface RowProps {
+  /**
+   * When true, there will be gutter between columns
+   * @default true
+   */
+  hasGutter?: boolean;
+
+  /**
+   * `Column` components
+   */
   children:
     | Array<React.ReactElement<ColumnProps>>
     | React.ReactElement<ColumnProps>;
-  hasGutter?: boolean;
+
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetRowStyles, DeepPartial<RowStyles>>;
 }
 
@@ -22,18 +32,18 @@ export const GutterWidthContext = React.createContext(
 
 export const Row = (props: RowProps) => {
   const { children, hasGutter = true, getStyles } = props;
-  const { gutterWidth } = useLayout();
+  const layout = useLayout();
   const theme = useTheme();
 
   const { rowStyle } = mergeStyles(
     getRowStyles,
     getStyles,
     theme.components.getRowStyles,
-  )({ gutterWidth, hasGutter }, theme);
+  )({ ...layout, ...props }, theme);
 
   return (
     <View style={rowStyle}>
-      <GutterWidthContext.Provider value={hasGutter ? gutterWidth : 0}>
+      <GutterWidthContext.Provider value={hasGutter ? layout.gutterWidth : 0}>
         {children}
       </GutterWidthContext.Provider>
     </View>

@@ -13,66 +13,78 @@ import { ColumnCount, useLayout } from './LayoutContext';
 import { GutterWidthContext } from './Row';
 
 export interface ColumnConfigBase {
+  /**
+   * Number of columns to span over when screen size is xsmall
+   */
   xsmall?: ColumnCount;
+
+  /**
+   * Number of columns to span over when screen size is small
+   */
   small?: ColumnCount;
+
+  /**
+   * Number of columns to span over when screen size is medium
+   */
   medium?: ColumnCount;
+
+  /**
+   * Number of columns to span over when screen size is large
+   */
   large?: ColumnCount;
+
+  /**
+   * Number of columns to span over when screen size is xlarge
+   */
   xlarge?: ColumnCount;
 }
 
 export interface ColumnConfig extends ColumnConfigBase {
+  /**
+   * Number of columns to offset when screen size is xsmall
+   */
   offsetXsmall?: ColumnCount;
+
+  /**
+   * Number of columns to offset when screen size is small
+   */
   offsetSmall?: ColumnCount;
+
+  /**
+   * Number of columns to offset when screen size is medium
+   */
   offsetMedium?: ColumnCount;
+
+  /**
+   * Number of columns to offset when screen size is large
+   */
   offsetLarge?: ColumnCount;
+
+  /**
+   * Number of columns to offset when screen size is xlarge
+   */
   offsetXlarge?: ColumnCount;
 }
 
 export interface ColumnProps extends ColumnConfig {
+  /** Content of the column. */
   children?: React.ReactNode;
+
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetColumnStyles, DeepPartial<ColumnStyles>>;
 }
 
-export const splitColumnConfig = (config: ColumnConfig) => {
-  const {
-    xsmall,
-    small,
-    medium,
-    large,
-    xlarge,
-    offsetXsmall,
-    offsetSmall,
-    offsetMedium,
-    offsetLarge,
-    offsetXlarge,
-  } = config;
-  const columns = { xsmall, small, medium, large, xlarge };
-  const offsetColumns = {
-    large: offsetLarge,
-    medium: offsetMedium,
-    small: offsetSmall,
-    xlarge: offsetXlarge,
-    xsmall: offsetXsmall,
-  };
-
-  return { columns, offsetColumns };
-};
-
 export const Column = (props: ColumnProps) => {
-  const { children, getStyles, ...config } = props;
-  const { currentScreenSize, gridColumnCount } = useLayout();
+  const { children, getStyles } = props;
+  const layout = useLayout();
   const theme = useTheme();
   const gutterWidth = React.useContext(GutterWidthContext);
 
-  const { columns, offsetColumns } = splitColumnConfig(config);
   const { columnStyle } = mergeStyles(
     getColumnStyles,
     getStyles,
     theme.components.getColumnStyles,
-  )(
-    { gutterWidth, currentScreenSize, gridColumnCount, columns, offsetColumns },
-    theme,
-  );
+  )({ ...layout, ...props, gutterWidth }, theme);
 
   return <View style={columnStyle}>{children}</View>;
 };

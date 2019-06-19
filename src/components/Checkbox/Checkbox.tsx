@@ -22,7 +22,7 @@ export interface CheckboxProps {
    * When true, will display as checked.
    * @default false
    */
-  isChecked?: boolean;
+  value: boolean;
 
   /**
    * When true, the checkbox is disabled.
@@ -46,7 +46,7 @@ export interface CheckboxProps {
   shape?: ContainerShape;
 
   /** Called when checkbox is pressed. */
-  onChange?: (e: GestureResponderEvent) => void | undefined;
+  onPress?: (e: GestureResponderEvent) => void;
 
   /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetCheckboxStyles, DeepPartial<CheckboxStyles>>;
@@ -57,15 +57,13 @@ export interface CheckboxProps {
 
 export const Checkbox = (props: CheckboxProps) => {
   const {
-    isChecked = false,
+    value = false,
     isDisabled = false,
     isInteractive = true,
-    onChange = () => null,
-    shape = 'rounded',
-    size = 'medium',
+    onPress,
     getStyles,
     testID,
-    ...accessibilityProps
+    accessibilityLabel,
   } = props;
 
   const theme = useTheme();
@@ -80,19 +78,13 @@ export const Checkbox = (props: CheckboxProps) => {
     <TouchableOpacity
       accessible={isInteractive}
       style={touchableStyle}
-      {...(isInteractive
-        ? {
-            disabled: isDisabled,
-            onPress: onChange,
-          }
-        : {
-            disabled: true,
-          })}
+      disabled={isDisabled || !isInteractive}
       testID={testID}
-      {...accessibilityProps}
+      onPress={onPress}
+      accessibilityLabel={accessibilityLabel}
     >
       <View style={checkboxStyle}>
-        {isChecked ? <Icon name="check" size={20} color={checkColor} /> : null}
+        {value ? <Icon name="check" size={20} color={checkColor} /> : null}
       </View>
     </TouchableOpacity>
   );

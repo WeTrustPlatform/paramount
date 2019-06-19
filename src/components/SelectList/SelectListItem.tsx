@@ -3,27 +3,43 @@ import * as React from 'react';
 import { Checkbox } from '../Checkbox';
 import { ListItem, ListItemProps } from '../ListItem';
 
-export interface SelectListItemBaseProps {
+export interface SelectListItemProps extends Omit<ListItemProps, 'onPress'> {
+  /**
+   * Injected by SelectList. Index of the item on the list.
+   * @default 0
+   */
   index?: number;
+
+  /**
+   * Injected by SelectList. When true, it will be marked as checked
+   * @default false
+   */
   isSelected?: boolean;
-  onSelect?: (value: string, index: number, isSelected: boolean) => void;
+
+  /**
+   * Injected by SelectList. Called when pressed select list item
+   */
+  onPress?: (value: string, index: number, isSelected: boolean) => void;
+
+  /**
+   * Value of the select list item
+   */
   value: string;
+
+  /**
+   * Label of the select list item
+   */
   label: string;
 }
 
-export interface SelectListItemProps
-  extends SelectListItemBaseProps,
-    ListItemProps {
-  isDisabled?: boolean;
-}
-
-const SelectListItemBase = (props: SelectListItemProps) => {
+export const SelectListItem = (props: SelectListItemProps) => {
   const {
     index = 0,
-    isDisabled = false,
     isSelected = false,
     label,
-    onSelect = () => null,
+    onPress = () => {
+      return;
+    },
     size = 'medium',
     value,
     ...listItemProps
@@ -31,17 +47,14 @@ const SelectListItemBase = (props: SelectListItemProps) => {
 
   return (
     <ListItem
-      onPress={e => {
-        e.preventDefault();
-        onSelect(value, index, isSelected);
+      onPress={() => {
+        onPress(value, index, isSelected);
       }}
       title={label}
       rightIcon={
-        <Checkbox isInteractive={false} shape="circle" isChecked={isSelected} />
+        <Checkbox isInteractive={false} shape="circle" value={isSelected} />
       }
       {...listItemProps}
     />
   );
 };
-
-export const SelectListItem = React.memo(SelectListItemBase);

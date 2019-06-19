@@ -38,3 +38,24 @@ import { Box, Counter, CounterState, ProgressBar } from '..';
 ### Props
 
 <Props of={ProgressBar} />
+
+### Customization
+
+Using `getStyles` prop
+
+```
+ProgressBarStyles {
+  progressStyle: ViewStyle;
+  containerStyle: ViewStyle;
+}
+
+getStyles={(ProgressBarProps, Theme) => ProgressBarStyles}
+```
+
+Markup
+
+```tsx
+<View containerStyle>
+  <View progressStyle />
+</View>
+```
