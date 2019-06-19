@@ -9,31 +9,7 @@ import { Box, Text } from '..';
 
 # Text
 
-Composes React Native's `Text` component (i.e. you can pass its props)
-
-**Note!!!** In web environment sometimes you need to wrap `Text` in a `<Box>` or provide a parent node with `display: flex` and `flex-direction: column` for centering to work properly. In React Native it is non issue because all nodes be default have these properties
-
-### Usage
-
-<Playground>
-  <Box>
-    <Text
-      color="primary" // or custom
-      align="left"
-      size="large" // small - large or number
-      fontFamily="text"
-      weight="normal"
-      isItalic
-      isInline
-      transform="uppercase"
-      getStyles={(props, theme) => ({
-        textStyle: {},
-      })}
-    >
-      Lorem ipsum dolar set amet
-    </Text>
-  </Box>
-</Playground>
+Composes React Native's `Text`
 
 ### Sizes
 
@@ -65,16 +41,6 @@ Composes React Native's `Text` component (i.e. you can pass its props)
   </Box>
 </Playground>
 
-### Font Families
-
-<Playground>
-  <Box flexDirection="column">
-    <Text fontFamily="heading">heading</Text>
-    <Text fontFamily="text">text</Text>
-    <Text fontFamily="mono">mono</Text>
-  </Box>
-</Playground>
-
 ### Font Weights
 
 <Playground>
@@ -87,20 +53,52 @@ Composes React Native's `Text` component (i.e. you can pass its props)
   </Box>
 </Playground>
 
-### Variations
+### Alignments
 
 <Playground>
   <Box flexDirection="column">
-    <Text isItalic>Lorem ipsum dolar set amet</Text>
     <Text align="left">Lorem ipsum dolar set amet</Text>
     <Text align="center">Lorem ipsum dolar set amet</Text>
     <Text align="right">Lorem ipsum dolar set amet</Text>
+  </Box>
+</Playground>
+
+### Transforms
+
+<Playground>
+  <Box flexDirection="column">
     <Text transform="uppercase">Lorem ipsum dolar set amet</Text>
     <Text transform="lowercase">Lorem ipsum dolar set amet</Text>
     <Text transform="capitalize">Lorem ipsum dolar set amet</Text>
   </Box>
 </Playground>
 
+### Italic
+
+<Playground>
+  <Box flexDirection="column">
+    <Text isItalic>Lorem ipsum dolar set amet</Text>
+  </Box>
+</Playground>
+
 ### Props
 
 <Props of={Text} />
+
+### Customization
+
+Using `getStyles` prop
+
+```
+TextStyles {
+  textStyle: TextStyle;
+}
+
+getStyles={(TextProps, Theme) => TextStyles}
+```
+
+Markup
+
+```tsx
+<Text textStyle />
+```

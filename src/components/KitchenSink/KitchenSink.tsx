@@ -16,12 +16,12 @@ import {
   FormField,
   Toggle,
   Collapsible,
-  Text,
   Counter,
   CounterState,
   Dialog,
   Heading,
   Icon,
+  Text,
   Divider,
   Drawer,
   TextInput,
@@ -33,6 +33,7 @@ import {
   Visible,
   ListItem,
   Modal,
+  HistoryModal,
   NativePicker,
   NativePickerItem,
   Popover,
@@ -207,19 +208,10 @@ export const KitchenSink = () => {
         <Toggle initial={false}>
           {({ on, toggle }) => (
             <Collapsible
-              title="Stays at top of content"
-              header={undefined}
-              initialIsOpen={false}
+              title={on ? 'Close collapsible' : 'Open collapsible'}
               isOpen={on}
               onOpen={toggle}
               onClose={toggle}
-              getStyles={() => ({
-                touchableStyle: {},
-                outerWrapperStyle: {},
-                contentWrapperStyle: {},
-                textStyle: {},
-                iconWrapperStyle: {},
-              })}
             >
               <Box
                 marginVertical={16}
@@ -227,9 +219,7 @@ export const KitchenSink = () => {
                 alignItems="center"
                 height={300}
                 backgroundColor="#67c6bb"
-              >
-                <Text color="white">Content of the Collapsible</Text>
-              </Box>
+              />
             </Collapsible>
           )}
         </Toggle>
@@ -248,16 +238,6 @@ export const KitchenSink = () => {
               count={count}
               onDecrement={decrement}
               onIncrement={increment}
-              min={0}
-              max={10}
-              component={null}
-              getStyles={(props, theme) => ({
-                containerStyle: {},
-                counterStyle: {},
-                countStyle: {},
-                disabledStyle: {},
-                ntextStyle: {},
-              })}
             />
           )}
         </CounterState>
@@ -274,49 +254,10 @@ export const KitchenSink = () => {
           {({ on, toggle }) => (
             <Box>
               <Dialog
-                header={
-                  <Box
-                    padding={16}
-                    flexDirection="row"
-                    justifyContent="space-between"
-                    alignItems="center"
-                  >
-                    <Heading>Title</Heading>
-                    <Button
-                      appearance="minimal"
-                      icon={<Icon name="x" size={24} />}
-                      onPress={toggle}
-                    />
-                  </Box>
-                }
-                footer={
-                  <Box
-                    padding={16}
-                    flexDirection="row"
-                    justifyContent="flex-end"
-                  >
-                    <Button
-                      appearance="minimal"
-                      onPress={toggle}
-                      title="Cancel"
-                    />
-                    <Box paddingLeft={16}>
-                      <Button
-                        color="primary"
-                        onPress={() => console.log('Button clicked')}
-                        title="Accept"
-                      />
-                    </Box>
-                  </Box>
-                }
+                header={<Heading>Header</Heading>}
+                footer={<Heading>Footer</Heading>}
                 isVisible={on}
                 onRequestClose={toggle}
-                useHistory={false}
-                getStyles={(props, theme) => ({
-                  modalContainerStyle: {},
-                  containerStyle: {},
-                  bodyStyle: {},
-                })}
               >
                 <Box height={1800}>
                   <Text>Put any content in the dialog</Text>
@@ -336,14 +277,7 @@ export const KitchenSink = () => {
 
       <Playground>
         <Box paddingVertical={40}>
-          <Divider
-            size={3}
-            color="#67c6bb"
-            position="horizontal"
-            getStyles={(props, theme) => ({
-              dividerStyle: {},
-            })}
-          />
+          <Divider />
         </Box>
       </Playground>
 
@@ -357,70 +291,13 @@ export const KitchenSink = () => {
         <Toggle>
           {({ on, toggle }) => (
             <>
-              <Button onPress={toggle} isInline title="Open drawer menu" />
-              <Drawer
-                space={undefined} // px or %, null fits the content
-                offset={0}
-                position="bottom"
-                isVisible={on}
-                onClose={toggle}
-                getStyles={(props, theme) => ({
-                  modalContainerStyle: {},
-                  containerStyle: {},
-                })}
-              >
-                <Box padding={24}>
-                  <Box elevation={1} backgroundColor="white" borderRadius={4}>
-                    {[
-                      {
-                        onPress: toggle,
-                        title: 'Menu Option 1',
-                        color: 'danger',
-                      },
-                      {
-                        onPress: toggle,
-                        title: 'Menu Option 2',
-                        color: 'primary',
-                      },
-                      {
-                        onPress: toggle,
-                        title: 'Menu Option 3',
-                        color: 'secondary',
-                      },
-                      {
-                        onPress: toggle,
-                        title: 'Menu Option 4',
-                      },
-                    ].map(option => (
-                      <Button
-                        key={option.title}
-                        appearance="minimal"
-                        {...option}
-                      />
-                    ))}
-                  </Box>
-                  <Box paddingTop={24}>
-                    <Button onPress={toggle} title="Close" />
-                  </Box>
-                </Box>
-              </Drawer>
-            </>
-          )}
-        </Toggle>
-      </Playground>
-
-      <Playground>
-        <Toggle>
-          {({ on, toggle }) => (
-            <>
               <Button onPress={toggle} title="Open bottom drawer" />
-              <Drawer space="30%" isVisible={on} onClose={toggle}>
+              <Drawer space="30%" isVisible={on} onRequestClose={toggle}>
                 <Box width="100%" height="100%" backgroundColor="white" />
               </Drawer>
             </>
           )}
         </Toggle>
-
         <Toggle>
           {({ on, toggle }) => (
             <>
@@ -429,14 +306,13 @@ export const KitchenSink = () => {
                 space="30%"
                 position="top"
                 isVisible={on}
-                onClose={toggle}
+                onRequestClose={toggle}
               >
                 <Box width="100%" height="100%" backgroundColor="white" />
               </Drawer>
             </>
           )}
         </Toggle>
-
         <Toggle>
           {({ on, toggle }) => (
             <>
@@ -445,14 +321,13 @@ export const KitchenSink = () => {
                 space="30%"
                 position="left"
                 isVisible={on}
-                onClose={toggle}
+                onRequestClose={toggle}
               >
                 <Box width="100%" height="100%" backgroundColor="white" />
               </Drawer>
             </>
           )}
         </Toggle>
-
         <Toggle>
           {({ on, toggle }) => (
             <>
@@ -461,7 +336,7 @@ export const KitchenSink = () => {
                 space="30%"
                 position="right"
                 isVisible={on}
-                onClose={toggle}
+                onRequestClose={toggle}
               >
                 <Box width="100%" height="100%" backgroundColor="white" />
               </Drawer>
@@ -478,19 +353,9 @@ export const KitchenSink = () => {
 
       <Playground>
         <FormField
-          labelPosition="top"
-          label="Email"
+          label="Label"
           description="Description for the field"
           error="Error message"
-          getStyles={(props, theme) => ({
-            containerStyles: {},
-            descriptionTextStyle: {},
-            errorTextStyle: {},
-            errorWrapperStyle: {},
-            labelTextStyle: {},
-            labelWrapperStyle: {},
-            wrapperStyle: {},
-          })}
         >
           <TextInput />
         </FormField>
@@ -752,22 +617,9 @@ export const KitchenSink = () => {
           avatarProps={{
             source: { uri: 'https://picsum.photos/200/200' },
           }}
-          rightIcon={undefined} // Override right-handside icon
-          leftIcon={undefined} // Override Avatar
           title="Some label"
           description="Some description"
           size="large"
-          isDisabled={false}
-          getStyles={(props, theme) => ({
-            containerStyle: {},
-            descriptionStyle: {},
-            focusBackgroundColor: '#fafafa',
-            imageWrapperStyle: {},
-            leftWrapperStyle: {},
-            textWrapperStyle: {},
-            titleStyle: {},
-            wrapperStyle: {},
-          })}
         />
       </Playground>
 
@@ -921,10 +773,6 @@ export const KitchenSink = () => {
                 setState({ value: itemValue })
               }
               size="large"
-              getStyles={(props, theme) => ({
-                pickerStyle: {},
-                itemStyle: {},
-              })}
             >
               <NativePickerItem label="C" value="c" />
               <NativePickerItem label="C#" value="c#" />
@@ -1196,12 +1044,6 @@ export const KitchenSink = () => {
                       key={0}
                       title="Custom"
                       onPress={() => setState({ activeTabIndex: 0 })}
-                      getStyles={() => ({
-                        containerStyle: {},
-                        buttonStyle: {},
-                        textStyle: {},
-                        focusColor: '#fafafa',
-                      })}
                     />
                   );
                 }
@@ -1305,23 +1147,6 @@ export const KitchenSink = () => {
 
       <Playground>
         <Box>
-          <Heading
-            accessibilityLevel={3} // 1-6
-            align="center"
-            size="xxlarge" // small - xxxlarge or number
-            color="primary" // or custom
-            weight="600"
-            getStyles={(props, theme) => ({
-              headingStyle: {},
-            })}
-          >
-            Lorem ipsum dolar set amet
-          </Heading>
-        </Box>
-      </Playground>
-
-      <Playground>
-        <Box flexDirection="column">
           <Heading size="xxxlarge">xxxlarge</Heading>
           <Heading size="xxlarge">xxlarge</Heading>
           <Heading size="xlarge">xlarge</Heading>
@@ -1350,23 +1175,6 @@ export const KitchenSink = () => {
       </Box>
 
       <Playground>
-        <Box>
-          <Paragraph
-            color="primary"
-            align="left"
-            size="large" // small - large or number
-            fontFamily="text"
-            weight="normal"
-            getStyles={(props, theme) => ({
-              paragraphStyle: {},
-            })}
-          >
-            Lorem ipsum dolar set amet
-          </Paragraph>
-        </Box>
-      </Playground>
-
-      <Playground>
         <Box flexDirection="column">
           <Paragraph size="small">Lorem ipsum dolar set amet</Paragraph>
           <Paragraph size="medium">Lorem ipsum dolar set amet</Paragraph>
@@ -1379,26 +1187,6 @@ export const KitchenSink = () => {
           Text
         </Heading>
       </Box>
-
-      <Playground>
-        <Box>
-          <Text
-            color="primary" // or custom
-            align="left"
-            size="large" // small - large or number
-            fontFamily="text"
-            weight="normal"
-            isItalic
-            isInline
-            transform="uppercase"
-            getStyles={(props, theme) => ({
-              textStyle: {},
-            })}
-          >
-            Lorem ipsum dolar set amet
-          </Text>
-        </Box>
-      </Playground>
 
       <Playground>
         <Box flexDirection="column">
@@ -1428,14 +1216,6 @@ export const KitchenSink = () => {
 
       <Playground>
         <Box flexDirection="column">
-          <Text fontFamily="heading">heading</Text>
-          <Text fontFamily="text">text</Text>
-          <Text fontFamily="mono">mono</Text>
-        </Box>
-      </Playground>
-
-      <Playground>
-        <Box flexDirection="column">
           <Text weight="500">500</Text>
           <Text weight="700">700</Text>
           <Text weight="bold">bold</Text>
@@ -1446,13 +1226,23 @@ export const KitchenSink = () => {
 
       <Playground>
         <Box flexDirection="column">
-          <Text isItalic>Lorem ipsum dolar set amet</Text>
           <Text align="left">Lorem ipsum dolar set amet</Text>
           <Text align="center">Lorem ipsum dolar set amet</Text>
           <Text align="right">Lorem ipsum dolar set amet</Text>
+        </Box>
+      </Playground>
+
+      <Playground>
+        <Box flexDirection="column">
           <Text transform="uppercase">Lorem ipsum dolar set amet</Text>
           <Text transform="lowercase">Lorem ipsum dolar set amet</Text>
           <Text transform="capitalize">Lorem ipsum dolar set amet</Text>
+        </Box>
+      </Playground>
+
+      <Playground>
+        <Box flexDirection="column">
+          <Text isItalic>Lorem ipsum dolar set amet</Text>
         </Box>
       </Playground>
     </Box>

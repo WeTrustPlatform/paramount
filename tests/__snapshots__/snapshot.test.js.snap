@@ -7220,7 +7220,7 @@ exports[`KitchenSink_1 1`] = `
               }
             }
           >
-            Stays at top of content
+            Open collapsible
           </div>
           <div
             className="css-view-1dbjc4n"
@@ -7323,9 +7323,9 @@ exports[`KitchenSink_1 1`] = `
           }
         >
           <div
-            aria-disabled={true}
             className="css-view-1dbjc4n"
-            disabled={true}
+            data-focusable={true}
+            disabled={false}
             onKeyDown={[Function]}
             onKeyUp={[Function]}
             onResponderGrant={[Function]}
@@ -7346,33 +7346,37 @@ exports[`KitchenSink_1 1`] = `
                 "WebkitTransitionProperty": "opacity",
                 "WebkitUserSelect": "none",
                 "alignItems": "center",
-                "borderBottomColor": "rgba(238,238,238,1.00)",
+                "borderBottomColor": "rgba(27,135,122,1.00)",
                 "borderBottomLeftRadius": "999px",
                 "borderBottomRightRadius": "999px",
                 "borderBottomWidth": "1px",
-                "borderLeftColor": "rgba(238,238,238,1.00)",
+                "borderLeftColor": "rgba(27,135,122,1.00)",
                 "borderLeftWidth": "1px",
-                "borderRightColor": "rgba(238,238,238,1.00)",
+                "borderRightColor": "rgba(27,135,122,1.00)",
                 "borderRightWidth": "1px",
-                "borderTopColor": "rgba(238,238,238,1.00)",
+                "borderTopColor": "rgba(27,135,122,1.00)",
                 "borderTopLeftRadius": "999px",
                 "borderTopRightRadius": "999px",
                 "borderTopWidth": "1px",
+                "cursor": "pointer",
                 "display": "flex",
                 "height": "40px",
                 "justifyContent": "center",
                 "msFlexAlign": "center",
                 "msFlexPack": "center",
+                "msTouchAction": "manipulation",
                 "msUserSelect": "none",
+                "touchAction": "manipulation",
                 "transitionDuration": "0.15s",
                 "transitionProperty": "opacity",
                 "userSelect": "none",
                 "width": "40px",
               }
             }
+            tabIndex="0"
           >
             <svg
-              color="#a7a7a7"
+              color="#1b877a"
               fill="none"
               height={16}
               size={16}
@@ -7382,7 +7386,7 @@ exports[`KitchenSink_1 1`] = `
               strokeWidth="2"
               style={
                 Object {
-                  "color": "#a7a7a7",
+                  "color": "#1b877a",
                 }
               }
               viewBox="0 0 24 24"
@@ -7708,8 +7712,8 @@ exports[`KitchenSink_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
-              "backgroundColor": "rgba(103,198,187,1.00)",
-              "height": "3px",
+              "backgroundColor": "rgba(238,238,238,1.00)",
+              "height": "1px",
               "width": "100%",
             }
           }
@@ -7742,125 +7746,6 @@ exports[`KitchenSink_1 1`] = `
       >
         Drawer
       </h1>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingBottom": "32px",
-          "paddingTop": "32px",
-        }
-      }
-    >
-      <div
-        className="css-cursor-18t94o4 css-view-1dbjc4n"
-        data-focusable={true}
-        disabled={false}
-        onKeyDown={[Function]}
-        onKeyPress={[Function]}
-        onKeyUp={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        role="button"
-        style={
-          Object {
-            "MozTransitionProperty": "opacity",
-            "MozUserSelect": "none",
-            "WebkitAlignSelf": "flex-start",
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxLines": "multiple",
-            "WebkitBoxOrient": "horizontal",
-            "WebkitFlexDirection": "row",
-            "WebkitFlexWrap": "wrap",
-            "WebkitTransitionDuration": "0.15s",
-            "WebkitTransitionProperty": "opacity",
-            "WebkitUserSelect": "none",
-            "alignSelf": "flex-start",
-            "backgroundColor": "rgba(250,250,250,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "cursor": "pointer",
-            "flexDirection": "row",
-            "flexWrap": "wrap",
-            "height": "48px",
-            "msFlexDirection": "row",
-            "msFlexItemAlign": "start",
-            "msFlexWrap": "wrap",
-            "msTouchAction": "manipulation",
-            "msUserSelect": "none",
-            "paddingLeft": "32px",
-            "paddingRight": "32px",
-            "touchAction": "manipulation",
-            "transitionDuration": "0.15s",
-            "transitionProperty": "opacity",
-            "userSelect": "none",
-          }
-        }
-        tabIndex="0"
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitBoxPack": "center",
-              "WebkitFlexDirection": "row",
-              "WebkitJustifyContent": "center",
-              "alignItems": "center",
-              "flexDirection": "row",
-              "height": "100%",
-              "justifyContent": "center",
-              "msFlexAlign": "center",
-              "msFlexDirection": "row",
-              "msFlexPack": "center",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "paddingLeft": "0px",
-                "paddingRight": "0px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxPack": "center",
-                  "WebkitJustifyContent": "center",
-                  "alignItems": "center",
-                  "color": "rgba(126,126,126,1.00)",
-                  "display": "flex",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "600",
-                  "justifyContent": "center",
-                  "msFlexAlign": "center",
-                  "msFlexPack": "center",
-                  "textAlign": "center",
-                }
-              }
-            >
-              Open drawer menu
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <div
       className="css-view-1dbjc4n"
@@ -8319,7 +8204,7 @@ exports[`KitchenSink_1 1`] = `
               }
             }
           >
-            Email
+            Label
           </label>
         </div>
         <div
@@ -15398,48 +15283,6 @@ exports[`KitchenSink_1 1`] = `
       <div
         className="css-view-1dbjc4n"
       >
-        <h3
-          aria-level={3}
-          className="css-reset-4rbku5 css-text-901oao"
-          dir="auto"
-          role="heading"
-          style={
-            Object {
-              "color": "rgba(27,135,122,1.00)",
-              "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "29px",
-              "fontWeight": "600",
-              "letterSpacing": "-0.2px",
-              "lineHeight": "32px",
-              "textAlign": "center",
-            }
-          }
-        >
-          Lorem ipsum dolar set amet
-        </h3>
-      </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingBottom": "32px",
-          "paddingTop": "32px",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "vertical",
-            "WebkitFlexDirection": "column",
-            "flexDirection": "column",
-            "msFlexDirection": "column",
-          }
-        }
-      >
         <h1
           className="css-reset-4rbku5 css-text-901oao"
           dir="auto"
@@ -15637,39 +15480,6 @@ exports[`KitchenSink_1 1`] = `
     >
       <div
         className="css-view-1dbjc4n"
-      >
-        <div
-          aria-label="p"
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(27,135,122,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "18px",
-              "fontWeight": "normal",
-              "lineHeight": "18px",
-              "marginBottom": "16px",
-              "marginTop": "16px",
-              "textAlign": "left",
-            }
-          }
-        >
-          Lorem ipsum dolar set amet
-        </div>
-      </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingBottom": "32px",
-          "paddingTop": "32px",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
         style={
           Object {
             "WebkitBoxDirection": "normal",
@@ -15762,45 +15572,6 @@ exports[`KitchenSink_1 1`] = `
       >
         Text
       </h1>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingBottom": "32px",
-          "paddingTop": "32px",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "WebkitAlignSelf": "flex-start",
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitFlexDirection": "row",
-              "alignSelf": "flex-start",
-              "color": "rgba(27,135,122,1.00)",
-              "flexDirection": "row",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "20px",
-              "fontStyle": "italic",
-              "fontWeight": "normal",
-              "msFlexDirection": "row",
-              "msFlexItemAlign": "start",
-              "textAlign": "left",
-              "textTransform": "uppercase",
-            }
-          }
-        >
-          Lorem ipsum dolar set amet
-        </div>
-      </div>
     </div>
     <div
       className="css-view-1dbjc4n"
@@ -16099,71 +15870,6 @@ exports[`KitchenSink_1 1`] = `
           style={
             Object {
               "color": "rgba(126,126,126,1.00)",
-              "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "textAlign": "left",
-            }
-          }
-        >
-          heading
-        </div>
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(126,126,126,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "textAlign": "left",
-            }
-          }
-        >
-          text
-        </div>
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(126,126,126,1.00)",
-              "fontFamily": "\\"SF Mono\\", \\"Monaco\\", \\"Inconsolata\\", \\"Fira Mono\\", \\"Droid Sans Mono\\", \\"Source Code Pro\\", monospace",
-              "fontSize": "16px",
-              "textAlign": "left",
-            }
-          }
-        >
-          mono
-        </div>
-      </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingBottom": "32px",
-          "paddingTop": "32px",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "WebkitBoxDirection": "normal",
-            "WebkitBoxOrient": "vertical",
-            "WebkitFlexDirection": "column",
-            "flexDirection": "column",
-            "msFlexDirection": "column",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(126,126,126,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
               "fontSize": "16px",
               "fontWeight": "500",
@@ -16264,21 +15970,6 @@ exports[`KitchenSink_1 1`] = `
               "color": "rgba(126,126,126,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
               "fontSize": "16px",
-              "fontStyle": "italic",
-              "textAlign": "left",
-            }
-          }
-        >
-          Lorem ipsum dolar set amet
-        </div>
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "color": "rgba(126,126,126,1.00)",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
               "textAlign": "left",
             }
           }
@@ -16313,6 +16004,29 @@ exports[`KitchenSink_1 1`] = `
         >
           Lorem ipsum dolar set amet
         </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "paddingBottom": "32px",
+          "paddingTop": "32px",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "vertical",
+            "WebkitFlexDirection": "column",
+            "flexDirection": "column",
+            "msFlexDirection": "column",
+          }
+        }
+      >
         <div
           className="css-text-901oao"
           dir="auto"
@@ -16353,6 +16067,44 @@ exports[`KitchenSink_1 1`] = `
               "fontSize": "16px",
               "textAlign": "left",
               "textTransform": "capitalize",
+            }
+          }
+        >
+          Lorem ipsum dolar set amet
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-view-1dbjc4n"
+      style={
+        Object {
+          "paddingBottom": "32px",
+          "paddingTop": "32px",
+        }
+      }
+    >
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "WebkitBoxDirection": "normal",
+            "WebkitBoxOrient": "vertical",
+            "WebkitFlexDirection": "column",
+            "flexDirection": "column",
+            "msFlexDirection": "column",
+          }
+        }
+      >
+        <div
+          className="css-text-901oao"
+          dir="auto"
+          style={
+            Object {
+              "color": "rgba(126,126,126,1.00)",
+              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+              "fontSize": "16px",
+              "fontStyle": "italic",
+              "textAlign": "left",
             }
           }
         >
@@ -17365,34 +17117,6 @@ exports[`Paragraph_1 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
-  >
-    <div
-      aria-label="p"
-      className="css-text-901oao"
-      dir="auto"
-      style={
-        Object {
-          "color": "rgba(27,135,122,1.00)",
-          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-          "fontSize": "18px",
-          "fontWeight": "normal",
-          "lineHeight": "18px",
-          "marginBottom": "16px",
-          "marginTop": "16px",
-          "textAlign": "left",
-        }
-      }
-    >
-      Lorem ipsum dolar set amet
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Paragraph_2 1`] = `
-<div>
-  <div
-    className="css-view-1dbjc4n"
     style={
       Object {
         "WebkitBoxDirection": "normal",
@@ -17461,7 +17185,31 @@ exports[`Paragraph_2 1`] = `
 </div>
 `;
 
-exports[`Paragraph_3 1`] = `<div />`;
+exports[`Paragraph_2 1`] = `<div />`;
+
+exports[`Paragraph_3 1`] = `
+<pre>
+  <code>
+    ParagraphStyles {
+  textStyle: ParagraphStyle;
+}
+
+getStyles={(ParagraphProps, Theme) =&gt; ParagraphStyles}
+
+  </code>
+</pre>
+`;
+
+exports[`Paragraph_4 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;Paragraph paragraphStyle /&gt;
+
+  </code>
+</pre>
+`;
 
 exports[`Popover_0 1`] = `
 <h1>
@@ -22465,40 +22213,6 @@ exports[`Text_1 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
-  >
-    <div
-      className="css-text-901oao"
-      dir="auto"
-      style={
-        Object {
-          "WebkitAlignSelf": "flex-start",
-          "WebkitBoxDirection": "normal",
-          "WebkitBoxOrient": "horizontal",
-          "WebkitFlexDirection": "row",
-          "alignSelf": "flex-start",
-          "color": "rgba(27,135,122,1.00)",
-          "flexDirection": "row",
-          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-          "fontSize": "20px",
-          "fontStyle": "italic",
-          "fontWeight": "normal",
-          "msFlexDirection": "row",
-          "msFlexItemAlign": "start",
-          "textAlign": "left",
-          "textTransform": "uppercase",
-        }
-      }
-    >
-      Lorem ipsum dolar set amet
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Text_2 1`] = `
-<div>
-  <div
-    className="css-view-1dbjc4n"
     style={
       Object {
         "WebkitBoxDirection": "normal",
@@ -22569,7 +22283,7 @@ exports[`Text_2 1`] = `
 </div>
 `;
 
-exports[`Text_3 1`] = `
+exports[`Text_2 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -22755,67 +22469,7 @@ exports[`Text_3 1`] = `
 </div>
 `;
 
-exports[`Text_4 1`] = `
-<div>
-  <div
-    className="css-view-1dbjc4n"
-    style={
-      Object {
-        "WebkitBoxDirection": "normal",
-        "WebkitBoxOrient": "vertical",
-        "WebkitFlexDirection": "column",
-        "flexDirection": "column",
-        "msFlexDirection": "column",
-      }
-    }
-  >
-    <div
-      className="css-text-901oao"
-      dir="auto"
-      style={
-        Object {
-          "color": "rgba(126,126,126,1.00)",
-          "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-          "fontSize": "16px",
-          "textAlign": "left",
-        }
-      }
-    >
-      heading
-    </div>
-    <div
-      className="css-text-901oao"
-      dir="auto"
-      style={
-        Object {
-          "color": "rgba(126,126,126,1.00)",
-          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-          "fontSize": "16px",
-          "textAlign": "left",
-        }
-      }
-    >
-      text
-    </div>
-    <div
-      className="css-text-901oao"
-      dir="auto"
-      style={
-        Object {
-          "color": "rgba(126,126,126,1.00)",
-          "fontFamily": "\\"SF Mono\\", \\"Monaco\\", \\"Inconsolata\\", \\"Fira Mono\\", \\"Droid Sans Mono\\", \\"Source Code Pro\\", monospace",
-          "fontSize": "16px",
-          "textAlign": "left",
-        }
-      }
-    >
-      mono
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Text_5 1`] = `
+exports[`Text_3 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -22908,7 +22562,7 @@ exports[`Text_5 1`] = `
 </div>
 `;
 
-exports[`Text_6 1`] = `
+exports[`Text_4 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -22922,21 +22576,6 @@ exports[`Text_6 1`] = `
       }
     }
   >
-    <div
-      className="css-text-901oao"
-      dir="auto"
-      style={
-        Object {
-          "color": "rgba(126,126,126,1.00)",
-          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-          "fontSize": "16px",
-          "fontStyle": "italic",
-          "textAlign": "left",
-        }
-      }
-    >
-      Lorem ipsum dolar set amet
-    </div>
     <div
       className="css-text-901oao"
       dir="auto"
@@ -22979,6 +22618,24 @@ exports[`Text_6 1`] = `
     >
       Lorem ipsum dolar set amet
     </div>
+  </div>
+</div>
+`;
+
+exports[`Text_5 1`] = `
+<div>
+  <div
+    className="css-view-1dbjc4n"
+    style={
+      Object {
+        "WebkitBoxDirection": "normal",
+        "WebkitBoxOrient": "vertical",
+        "WebkitFlexDirection": "column",
+        "flexDirection": "column",
+        "msFlexDirection": "column",
+      }
+    }
+  >
     <div
       className="css-text-901oao"
       dir="auto"
@@ -23028,7 +22685,64 @@ exports[`Text_6 1`] = `
 </div>
 `;
 
+exports[`Text_6 1`] = `
+<div>
+  <div
+    className="css-view-1dbjc4n"
+    style={
+      Object {
+        "WebkitBoxDirection": "normal",
+        "WebkitBoxOrient": "vertical",
+        "WebkitFlexDirection": "column",
+        "flexDirection": "column",
+        "msFlexDirection": "column",
+      }
+    }
+  >
+    <div
+      className="css-text-901oao"
+      dir="auto"
+      style={
+        Object {
+          "color": "rgba(126,126,126,1.00)",
+          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+          "fontSize": "16px",
+          "fontStyle": "italic",
+          "textAlign": "left",
+        }
+      }
+    >
+      Lorem ipsum dolar set amet
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Text_7 1`] = `<div />`;
+
+exports[`Text_8 1`] = `
+<pre>
+  <code>
+    TextStyles {
+  textStyle: TextStyle;
+}
+
+getStyles={(TextProps, Theme) =&gt; TextStyles}
+
+  </code>
+</pre>
+`;
+
+exports[`Text_9 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;Text textStyle /&gt;
+
+  </code>
+</pre>
+`;
 
 exports[`TextInput_0 1`] = `
 <h1>
