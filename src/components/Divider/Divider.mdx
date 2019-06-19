@@ -13,17 +13,28 @@ import { Box, Divider } from '..';
 
 <Playground>
   <Box paddingVertical={40}>
-    <Divider
-      size={3}
-      color="#67c6bb"
-      position="horizontal"
-      getStyles={(props, theme) => ({
-        dividerStyle: {},
-      })}
-    />
+    <Divider />
   </Box>
 </Playground>
 
 ### Props
 
 <Props of={Divider} />
+
+### Customization
+
+Using `getStyles` prop
+
+```
+DividerStyles {
+  dividerStyle: TextStyle;
+}
+
+getStyles={(DividerProps, Theme) => DividerStyles}
+```
+
+Markup
+
+```tsx
+<View dividerStyle />
+```

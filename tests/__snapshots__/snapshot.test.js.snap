@@ -3508,8 +3508,8 @@ exports[`Divider_1 1`] = `
       className="css-view-1dbjc4n"
       style={
         Object {
-          "backgroundColor": "rgba(103,198,187,1.00)",
-          "height": "3px",
+          "backgroundColor": "rgba(238,238,238,1.00)",
+          "height": "1px",
           "width": "100%",
         }
       }
@@ -3519,6 +3519,30 @@ exports[`Divider_1 1`] = `
 `;
 
 exports[`Divider_2 1`] = `<div />`;
+
+exports[`Divider_3 1`] = `
+<pre>
+  <code>
+    DividerStyles {
+  dividerStyle: TextStyle;
+}
+
+getStyles={(DividerProps, Theme) =&gt; DividerStyles}
+
+  </code>
+</pre>
+`;
+
+exports[`Divider_4 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;View dividerStyle /&gt;
+
+  </code>
+</pre>
+`;
 
 exports[`Drawer_0 1`] = `
 <h1>

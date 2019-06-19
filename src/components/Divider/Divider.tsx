@@ -12,9 +12,25 @@ import {
 } from './Divider.styles';
 
 export interface DividerProps {
+  /**
+   * Size of the divider.
+   * @default 1
+   */
   size?: number;
+
+  /**
+   * Color of the divider.
+   * @default colors.border.default
+   */
   color?: BorderColor | string;
+
+  /**
+   * Positioning of the divier
+   * @default "horizontal"
+   */
   position?: DividerPosition;
+
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetDividerStyles, DeepPartial<DividerStyles>>;
 }
 
