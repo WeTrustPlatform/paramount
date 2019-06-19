@@ -189,8 +189,8 @@ export const KitchenSink = () => {
             <FormField label="Checkbox" labelPosition="right">
               <Checkbox
                 shape="circle"
-                isChecked={on}
-                onChange={toggle}
+                value={on}
+                onPress={toggle}
                 size="medium"
               />
             </FormField>
@@ -876,14 +876,7 @@ export const KitchenSink = () => {
             <Rating
               value={rating}
               size="small"
-              color="#67c6bb"
               onChange={value => set(value)}
-              getStyles={(props, theme) => ({
-                containerStyle: {},
-                touchableStyle: {},
-                starColor: '#67c6bb', // defined as color prop
-                starSize: 40, // defined as size prop
-              })}
             />
           )}
         </CounterState>
@@ -896,54 +889,36 @@ export const KitchenSink = () => {
       </Box>
 
       <Playground>
-        <SelectList
-          isMulti={false} // Single select
-          selectedValue="c"
-          onValueChange={(newValue, itemIndex) => {
-            console.log(newValue, itemIndex);
-          }}
-        >
-          <SelectListItem
-            label="Usage"
-            value="c"
-            // Props below are passed from `SelectList`, so it is not necessary to pass them here
-            // isSelected
-            // onSelect
-            // index
-          />
-        </SelectList>
-      </Playground>
-
-      <Playground>
-        <State initial={{ selectedValue: ['js', 'go'] }}>
+        <State initial={{ value: ['c', 'js', 'go'] }}>
           {({ state, setState }) => (
-            <SelectList
-              isMulti
-              selectedValue={state.selectedValue}
-              onValueChange={(newValue, itemIndex) => {
-                setState({ selectedValue: newValue });
-              }}
-            >
-              <SelectListItem label="C" value="c" />
-              <SelectListItem label="C#" value="c#" />
-              <SelectListItem label="C++" value="c++" />
-              <SelectListItem label="CSS" value="css" />
-              <SelectListItem label="Elixir" value="elixir" />
-              <SelectListItem label="Elm" value="elm" />
-              <SelectListItem label="Erlang" value="erlang" />
-              <SelectListItem label="Go" value="go" />
-              <SelectListItem label="Haskell" value="haskell" />
-              <SelectListItem label="HTML" value="html" />
-              <SelectListItem label="Java" value="java" />
-              <SelectListItem label="JavaScript" value="js" />
-              <SelectListItem label="Lua" value="lua" />
-              <SelectListItem label="Python" value="python" />
-              <SelectListItem label="R" value="r" />
-              <SelectListItem label="Ruby" value="ruby" />
-              <SelectListItem label="Rust" value="rust" />
-              <SelectListItem label="Switft" value="swift" />
-              <SelectListItem label="Typescript" value="typescript" />
-            </SelectList>
+            <Box height={300}>
+              <SelectList
+                value={state.value}
+                onValueChange={(newValue, itemIndex) => {
+                  setState({ value: newValue });
+                }}
+              >
+                <SelectListItem label="C" value="c" />
+                <SelectListItem label="C#" value="c#" />
+                <SelectListItem label="C++" value="c++" />
+                <SelectListItem label="CSS" value="css" />
+                <SelectListItem label="Elixir" value="elixir" />
+                <SelectListItem label="Elm" value="elm" />
+                <SelectListItem label="Erlang" value="erlang" />
+                <SelectListItem label="Go" value="go" />
+                <SelectListItem label="Haskell" value="haskell" />
+                <SelectListItem label="HTML" value="html" />
+                <SelectListItem label="Java" value="java" />
+                <SelectListItem label="JavaScript" value="js" />
+                <SelectListItem label="Lua" value="lua" />
+                <SelectListItem label="Python" value="python" />
+                <SelectListItem label="R" value="r" />
+                <SelectListItem label="Ruby" value="ruby" />
+                <SelectListItem label="Rust" value="rust" />
+                <SelectListItem label="Switft" value="swift" />
+                <SelectListItem label="Typescript" value="typescript" />
+              </SelectList>
+            </Box>
           )}
         </State>
       </Playground>
