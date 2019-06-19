@@ -20,11 +20,15 @@ Display avatar image, with default for name initials
   />
 </Playground>
 
+### Props
+
+<Props of={Avatar} />
+
 ### Customization
 
 Using `getStyles` prop
 
-```
+```tsx
 AvatarStylesProps {
   name?: string;
   color: AvatarColor;
@@ -42,6 +46,11 @@ AvatarStyles {
 getStyles={(AvatarStylesProps, Theme) => AvatarStyles}
 ```
 
-### Props
+Markup
 
-<Props of={Avatar} />
+```tsx
+<View containerStyle>
+  <Text textStyle>{initials}</Text>
+  <Image imageStyle />
+</View>
+```

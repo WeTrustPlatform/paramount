@@ -2,15 +2,24 @@ import { TextStyle, ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
 
+export interface CounterStylesProps {
+  count: number;
+}
+
 export interface CounterStyles {
   containerStyle: ViewStyle;
-  countStyle: ViewStyle;
   counterStyle: ViewStyle;
+  countStyle: ViewStyle;
+  decrementWrapperStyle: ViewStyle;
   disabledStyle: ViewStyle;
+  incrementWrapperStyle: ViewStyle;
   textStyle: TextStyle;
 }
 
-export type GetCounterStyles = (props: {}, theme: Theme) => CounterStyles;
+export type GetCounterStyles = (
+  props: CounterStylesProps,
+  theme: Theme,
+) => CounterStyles;
 
 export const getCounterStyles: GetCounterStyles = (props, theme) => {
   return {
@@ -32,9 +41,11 @@ export const getCounterStyles: GetCounterStyles = (props, theme) => {
       justifyContent: 'center',
       width: 40,
     },
+    decrementWrapperStyle: { paddingRight: 16 },
     disabledStyle: {
       borderColor: theme.colors.border.default,
     },
+    incrementWrapperStyle: { paddingLeft: 16 },
     textStyle: {},
   };
 };

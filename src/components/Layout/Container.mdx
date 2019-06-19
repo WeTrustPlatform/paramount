@@ -34,3 +34,29 @@ Recommended usage with `Row and Column` to provide Grid margin
 ### Props
 
 <Props of={Container} />
+
+### Customization
+
+Using `getStyles` prop
+
+```
+ContainerStylesProps {
+  currentScreenSize: ScreenSize;
+  size?: ContainerSize;
+  containerSizes: ContainerSizes;
+  gutterWidth: number;
+  fluid: boolean;
+}
+
+ContainerStyles {
+  containerStyle: ViewStyle;
+}
+
+getStyles={(ContainerStylesProps, Theme) => ContainerStyles}
+```
+
+Markup
+
+```tsx
+<View containerStyle>{children}</View>
+```

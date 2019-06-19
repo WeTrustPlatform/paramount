@@ -15,6 +15,7 @@ export interface ContainerStylesProps {
   gutterWidth: number;
   fluid: boolean;
 }
+
 export type GetContainerStyles = (
   progressStylesProps: ContainerStylesProps,
   theme: Theme,

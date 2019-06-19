@@ -27,6 +27,10 @@ Checkbox for boolean values
   </Toggle>
 </Playground>
 
+### Props
+
+<Props of={Checkbox} />
+
 ### Customization
 
 Using `getStyles` prop
@@ -48,6 +52,10 @@ CheckboxStyles {
 getStyles={(CheckboxStylesProps, Theme) => CheckboxStyles}
 ```
 
-### Props
+Markup
 
-<Props of={Checkbox} />
+```tsx
+<TouchableOpacity touchableStyle>
+  <View checkboxStyle>{icon}</View>
+</TouchableOpacity>
+```

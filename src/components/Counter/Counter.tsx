@@ -4,7 +4,6 @@ import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { Text } from '../Typography';
 import {
@@ -14,13 +13,24 @@ import {
 } from './Counter.styles';
 
 export interface CounterProps {
-  count: number;
+  /** Count to be displayed. */
+  count?: number;
+
+  /** Minimum count for the counter. Upon reaching the limit, it will disable decrement button. */
   min?: number;
+
+  /** Maximum count for the counter. Upon reaching the limit, it will disable increment button. */
   max?: number;
-  /* custom component in place of count */
+
+  /** Custom component in place of count */
   component?: React.ReactNode;
+
+  /** Called when increment button is pressed */
   onIncrement?: () => void;
+
+  /** Called when decrement button is pressed */
   onDecrement?: () => void;
+
   /**
    * Inline styles for components
    */
@@ -29,7 +39,7 @@ export interface CounterProps {
 
 export const Counter = (props: CounterProps) => {
   const {
-    count,
+    count = 0,
     component,
     max,
     min,
@@ -44,22 +54,23 @@ export const Counter = (props: CounterProps) => {
     containerStyle,
     counterStyle,
     countStyle,
-    textStyle,
+    decrementWrapperStyle,
     disabledStyle,
+    incrementWrapperStyle,
+    textStyle,
   } = mergeStyles(
     getCounterStyles,
     getStyles,
     theme.components.getCounterStyles,
-  )({}, theme);
+  )({ count }, theme);
 
   const isDecrementDisabled = min === count;
   const isIncrementDisabled = max === count;
 
   return (
     <View style={containerStyle}>
-      <Box paddingRight={16}>
+      <View style={decrementWrapperStyle}>
         <TouchableOpacity
-          activeOpacity={0.7}
           style={{
             ...counterStyle,
             ...(isDecrementDisabled && disabledStyle),
@@ -77,7 +88,7 @@ export const Counter = (props: CounterProps) => {
             }
           />
         </TouchableOpacity>
-      </Box>
+      </View>
       {component || (
         <View style={countStyle}>
           <Text
@@ -86,9 +97,8 @@ export const Counter = (props: CounterProps) => {
           >{`${count}`}</Text>
         </View>
       )}
-      <Box paddingLeft={16}>
+      <View style={incrementWrapperStyle}>
         <TouchableOpacity
-          activeOpacity={0.7}
           style={{
             ...counterStyle,
             ...(isIncrementDisabled && disabledStyle),
@@ -106,7 +116,7 @@ export const Counter = (props: CounterProps) => {
             }
           />
         </TouchableOpacity>
-      </Box>
+      </View>
     </View>
   );
 };

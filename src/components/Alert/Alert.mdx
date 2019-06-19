@@ -27,11 +27,15 @@ Give feedback to the user about an action or state
   </Box>
 </Playground>
 
+### Props
+
+<Props of={Alert} />
+
 ### Customization
 
 Use `getStyles` prop
 
-```
+```tsx
 AlertStyleProps {
   intent: Intent;
 }
@@ -46,6 +50,14 @@ AlertStyles {
 getStyles={(AlertStyleProps, Theme) => AlertStyles}
 ```
 
-### Props
+Markup
 
-<Props of={Alert} />
+```tsx
+<View containerStyle>
+  {icon}
+  <View bodyStyle>
+    <Text titleStyle>{title}</Text>
+    <Text descriptionStyle>{description}</Text>
+  </View>
+</View>
+```

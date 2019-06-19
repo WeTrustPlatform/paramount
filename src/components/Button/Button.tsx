@@ -145,8 +145,6 @@ export const Button = (props: ButtonProps) => {
       <View style={innerButtonWrapperStyle}>
         {iconBefore}
         <View style={buttonContentWrapperStyle}>
-          {/*
-          // @ts-ignore */}
           <ButtonContent {...props} textStyle={textStyle} />
         </View>
         {iconAfter}

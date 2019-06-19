@@ -46,6 +46,10 @@ Button component to trigger an action
   </Box>
 </Playground>
 
+### Props
+
+<Props of={Button} />
+
 ### Customization
 
 Using `getStyles` prop
@@ -72,6 +76,16 @@ ButtonStyles {
 getStyles={(ButtonStylesProps, Theme) => ButtonStyles}
 ```
 
-### Props
+Markup
 
-<Props of={Button} />
+```tsx
+<TouchableOpacity buttonStyle>
+  <View innerButtonWrapperStyle>
+    {iconBefore}
+    <View buttonContentWrapperStyle>
+      <Text textStyle />
+    </View>
+    {iconAfter}
+  </View>
+</TouchableOpacity>
+```

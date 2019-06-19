@@ -526,9 +526,13 @@ exports[`Alert_1 1`] = `
 </div>
 `;
 
-exports[`Alert_2 1`] = `
+exports[`Alert_2 1`] = `<div />`;
+
+exports[`Alert_3 1`] = `
 <pre>
-  <code>
+  <code
+    className="language-tsx"
+  >
     AlertStyleProps {
   intent: Intent;
 }
@@ -546,7 +550,22 @@ getStyles={(AlertStyleProps, Theme) =&gt; AlertStyles}
 </pre>
 `;
 
-exports[`Alert_3 1`] = `<div />`;
+exports[`Alert_4 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;View containerStyle&gt;
+  {icon}
+  &lt;View bodyStyle&gt;
+    &lt;Text titleStyle&gt;{title}&lt;/Text&gt;
+    &lt;Text descriptionStyle&gt;{description}&lt;/Text&gt;
+  &lt;/View&gt;
+&lt;/View&gt;
+
+  </code>
+</pre>
+`;
 
 exports[`Avatar_0 1`] = `
 <h1>
@@ -628,9 +647,13 @@ exports[`Avatar_1 1`] = `
 </div>
 `;
 
-exports[`Avatar_2 1`] = `
+exports[`Avatar_2 1`] = `<div />`;
+
+exports[`Avatar_3 1`] = `
 <pre>
-  <code>
+  <code
+    className="language-tsx"
+  >
     AvatarStylesProps {
   name?: string;
   color: AvatarColor;
@@ -651,7 +674,19 @@ getStyles={(AvatarStylesProps, Theme) =&gt; AvatarStyles}
 </pre>
 `;
 
-exports[`Avatar_3 1`] = `<div />`;
+exports[`Avatar_4 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;View containerStyle&gt;
+  &lt;Text textStyle&gt;{initials}&lt;/Text&gt;
+  &lt;Image imageStyle /&gt;
+&lt;/View&gt;
+
+  </code>
+</pre>
+`;
 
 exports[`Badge_0 1`] = `
 <h1>
@@ -717,9 +752,13 @@ exports[`Badge_1 1`] = `
 </div>
 `;
 
-exports[`Badge_2 1`] = `
+exports[`Badge_2 1`] = `<div />`;
+
+exports[`Badge_3 1`] = `
 <pre>
-  <code>
+  <code
+    className="language-tsx"
+  >
     BadgeStylesProps {
   shape: ContainerShape;
   size: ControlSize;
@@ -738,7 +777,18 @@ getStyles={(BadgeStylesProps, Theme) =&gt; BadgeStyles}
 </pre>
 `;
 
-exports[`Badge_3 1`] = `<div />`;
+exports[`Badge_4 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;View containerStyle&gt;
+  &lt;Text textStyle&gt;{title}&lt;/Text&gt;
+&lt;/View&gt;
+
+  </code>
+</pre>
+`;
 
 exports[`Box_0 1`] = `
 <h1>
@@ -2600,7 +2650,9 @@ exports[`Button_1 1`] = `
 </div>
 `;
 
-exports[`Button_2 1`] = `
+exports[`Button_2 1`] = `<div />`;
+
+exports[`Button_3 1`] = `
 <pre>
   <code>
     ButtonStylesProps {
@@ -2627,7 +2679,24 @@ getStyles={(ButtonStylesProps, Theme) =&gt; ButtonStyles}
 </pre>
 `;
 
-exports[`Button_3 1`] = `<div />`;
+exports[`Button_4 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;TouchableOpacity buttonStyle&gt;
+  &lt;View innerButtonWrapperStyle&gt;
+    {iconBefore}
+    &lt;View buttonContentWrapperStyle&gt;
+      &lt;Text textStyle /&gt;
+    &lt;/View&gt;
+    {iconAfter}
+  &lt;/View&gt;
+&lt;/TouchableOpacity&gt;
+
+  </code>
+</pre>
+`;
 
 exports[`Checkbox_0 1`] = `
 <h1>
@@ -2749,7 +2818,9 @@ exports[`Checkbox_1 1`] = `
 </div>
 `;
 
-exports[`Checkbox_2 1`] = `
+exports[`Checkbox_2 1`] = `<div />`;
+
+exports[`Checkbox_3 1`] = `
 <pre>
   <code>
     CheckboxStylesProps {
@@ -2771,7 +2842,18 @@ getStyles={(CheckboxStylesProps, Theme) =&gt; CheckboxStyles}
 </pre>
 `;
 
-exports[`Checkbox_3 1`] = `<div />`;
+exports[`Checkbox_4 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;TouchableOpacity touchableStyle&gt;
+  &lt;View checkboxStyle&gt;{icon}&lt;/View&gt;
+&lt;/TouchableOpacity&gt;
+
+  </code>
+</pre>
+`;
 
 exports[`Collapsible_0 1`] = `
 <h1>
@@ -2886,7 +2968,9 @@ exports[`Collapsible_1 1`] = `
 </div>
 `;
 
-exports[`Collapsible_2 1`] = `
+exports[`Collapsible_2 1`] = `<div />`;
+
+exports[`Collapsible_3 1`] = `
 <pre>
   <code>
     CollapsibleStylesProps {
@@ -2907,7 +2991,24 @@ getStyles={(CollapsibleStylesProps, Theme) =&gt; CollapsibleStyles}
 </pre>
 `;
 
-exports[`Collapsible_3 1`] = `<div />`;
+exports[`Collapsible_4 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;&gt;
+  &lt;TouchableOpacity touchableStyle&gt;
+    &lt;View outerWrapperStyle&gt;
+      &lt;Text textStyle&gt;{title}&lt;/Text&gt;
+      &lt;View iconWrapperStyle&gt;{icon}&lt;/View&gt;
+    &lt;/View&gt;
+  &lt;/TouchableOpacity&gt;
+  &lt;View contentWrapperStyle&gt;{children}&lt;/View&gt;
+&lt;/&gt;
+
+  </code>
+</pre>
+`;
 
 exports[`Container_0 1`] = `
 <h1>
@@ -2976,6 +3077,38 @@ exports[`Container_1 1`] = `
 
 exports[`Container_2 1`] = `<div />`;
 
+exports[`Container_3 1`] = `
+<pre>
+  <code>
+    ContainerStylesProps {
+  currentScreenSize: ScreenSize;
+  size?: ContainerSize;
+  containerSizes: ContainerSizes;
+  gutterWidth: number;
+  fluid: boolean;
+}
+
+ContainerStyles {
+  containerStyle: ViewStyle;
+}
+
+getStyles={(ContainerStylesProps, Theme) =&gt; ContainerStyles}
+
+  </code>
+</pre>
+`;
+
+exports[`Container_4 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;View containerStyle&gt;{children}&lt;/View&gt;
+
+  </code>
+</pre>
+`;
+
 exports[`Counter_0 1`] = `
 <h1>
   Counter
@@ -3006,9 +3139,9 @@ exports[`Counter_1 1`] = `
       }
     >
       <div
-        aria-disabled={true}
         className="css-view-1dbjc4n"
-        disabled={true}
+        data-focusable={true}
+        disabled={false}
         onKeyDown={[Function]}
         onKeyUp={[Function]}
         onResponderGrant={[Function]}
@@ -3029,33 +3162,37 @@ exports[`Counter_1 1`] = `
             "WebkitTransitionProperty": "opacity",
             "WebkitUserSelect": "none",
             "alignItems": "center",
-            "borderBottomColor": "rgba(238,238,238,1.00)",
+            "borderBottomColor": "rgba(27,135,122,1.00)",
             "borderBottomLeftRadius": "999px",
             "borderBottomRightRadius": "999px",
             "borderBottomWidth": "1px",
-            "borderLeftColor": "rgba(238,238,238,1.00)",
+            "borderLeftColor": "rgba(27,135,122,1.00)",
             "borderLeftWidth": "1px",
-            "borderRightColor": "rgba(238,238,238,1.00)",
+            "borderRightColor": "rgba(27,135,122,1.00)",
             "borderRightWidth": "1px",
-            "borderTopColor": "rgba(238,238,238,1.00)",
+            "borderTopColor": "rgba(27,135,122,1.00)",
             "borderTopLeftRadius": "999px",
             "borderTopRightRadius": "999px",
             "borderTopWidth": "1px",
+            "cursor": "pointer",
             "display": "flex",
             "height": "40px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexPack": "center",
+            "msTouchAction": "manipulation",
             "msUserSelect": "none",
+            "touchAction": "manipulation",
             "transitionDuration": "0.15s",
             "transitionProperty": "opacity",
             "userSelect": "none",
             "width": "40px",
           }
         }
+        tabIndex="0"
       >
         <svg
-          color="#a7a7a7"
+          color="#1b877a"
           fill="none"
           height={16}
           size={16}
@@ -3065,7 +3202,7 @@ exports[`Counter_1 1`] = `
           strokeWidth="2"
           style={
             Object {
-              "color": "#a7a7a7",
+              "color": "#1b877a",
             }
           }
           viewBox="0 0 24 24"
@@ -3207,6 +3344,50 @@ exports[`Counter_1 1`] = `
 `;
 
 exports[`Counter_2 1`] = `<div />`;
+
+exports[`Counter_3 1`] = `
+<pre>
+  <code>
+    CounterStylesProps {
+  count: number;
+}
+
+CounterStyles {
+  containerStyle: ViewStyle;
+  counterStyle: ViewStyle;
+  countStyle: ViewStyle;
+  decrementWrapperStyle: ViewStyle;
+  disabledStyle: ViewStyle;
+  incrementWrapperStyle: ViewStyle;
+  textStyle: TextStyle;
+}
+
+getStyles={(CounterStylesProps, Theme) =&gt; CounterStyles}
+
+  </code>
+</pre>
+`;
+
+exports[`Counter_4 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;View containerStyle&gt;
+  &lt;View decrementWrapperStyle&gt;
+    &lt;TouchableOpacity counterStyle&gt;{icon}&lt;/TouchableOpacity&gt;
+  &lt;/View&gt;
+  &lt;View countStyle&gt;
+    &lt;Text textStyle&gt;{count}&lt;/Text&gt;
+  &lt;/View&gt;
+  &lt;View incrementWrapperStyle&gt;
+    &lt;TouchableOpacity counterStyle&gt;{icon}&lt;/TouchableOpacity&gt;
+  &lt;/View&gt;
+&lt;/View&gt;
+
+  </code>
+</pre>
+`;
 
 exports[`Dialog_0 1`] = `
 <h1>

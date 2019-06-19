@@ -13,21 +13,7 @@ import { Counter, CounterState } from '..';
 <Playground>
   <CounterState initial={0}>
     {({ count, increment, decrement }) => (
-      <Counter
-        count={count}
-        onDecrement={decrement}
-        onIncrement={increment}
-        min={0}
-        max={10}
-        component={null}
-        getStyles={(props, theme) => ({
-          containerStyle: {},
-          counterStyle: {},
-          countStyle: {},
-          disabledStyle: {},
-          ntextStyle: {},
-        })}
-      />
+      <Counter count={count} onDecrement={decrement} onIncrement={increment} />
     )}
   </CounterState>
 </Playground>
@@ -35,3 +21,41 @@ import { Counter, CounterState } from '..';
 ### Props
 
 <Props of={Counter} />
+
+### Customization
+
+Using `getStyles` prop
+
+```
+CounterStylesProps {
+  count: number;
+}
+
+CounterStyles {
+  containerStyle: ViewStyle;
+  counterStyle: ViewStyle;
+  countStyle: ViewStyle;
+  decrementWrapperStyle: ViewStyle;
+  disabledStyle: ViewStyle;
+  incrementWrapperStyle: ViewStyle;
+  textStyle: TextStyle;
+}
+
+getStyles={(CounterStylesProps, Theme) => CounterStyles}
+```
+
+Markup
+
+```tsx
+<View containerStyle>
+  <View decrementWrapperStyle>
+    <TouchableOpacity counterStyle>{icon}</TouchableOpacity>
+  </View>
+  <View countStyle>
+    <Text textStyle>{count}</Text>
+  </View>
+  <View incrementWrapperStyle>
+    <TouchableOpacity counterStyle>{icon}</TouchableOpacity>
+  </View>
+</View>
+```

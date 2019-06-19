@@ -33,6 +33,10 @@ Component to reveal and hide content
   </Toggle>
 </Playground>
 
+### Props
+
+<Props of={Collapsible} />
+
 ### Customization
 
 Using `getStyles` prop
@@ -53,6 +57,16 @@ CollapsibleStyles {
 getStyles={(CollapsibleStylesProps, Theme) => CollapsibleStyles}
 ```
 
-### Props
+Markup
 
-<Props of={Collapsible} />
+```tsx
+<>
+  <TouchableOpacity touchableStyle>
+    <View outerWrapperStyle>
+      <Text textStyle>{title}</Text>
+      <View iconWrapperStyle>{icon}</View>
+    </View>
+  </TouchableOpacity>
+  <View contentWrapperStyle>{children}</View>
+</>
+```

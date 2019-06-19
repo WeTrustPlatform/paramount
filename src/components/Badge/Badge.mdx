@@ -18,11 +18,15 @@ Display to indicate status or feat of service
   </Box>
 </Playground>
 
+### Props
+
+<Props of={Badge} />
+
 ### Customization
 
 Using `getStyles` prop
 
-```
+```tsx
 BadgeStylesProps {
   shape: ContainerShape;
   size: ControlSize;
@@ -38,6 +42,10 @@ BadgeStyles {
 getStyles={(BadgeStylesProps, Theme) => BadgeStyles}
 ```
 
-### Props
+Markup
 
-<Props of={Badge} />
+```tsx
+<View containerStyle>
+  <Text textStyle>{title}</Text>
+</View>
+```
