@@ -1,3 +1,10 @@
+## [1.68.1](https://github.com/WeTrustPlatform/paramount/compare/v1.68.0...v1.68.1) (2019-06-19)
+
+
+### Bug Fixes
+
+* **accessibility:** fix accessibbility issues ([0d491a8](https://github.com/WeTrustPlatform/paramount/commit/0d491a8))
+
 # [1.68.0](https://github.com/WeTrustPlatform/paramount/compare/v1.67.0...v1.68.0) (2019-06-19)
 
 
