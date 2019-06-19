@@ -16150,11 +16150,11 @@ exports[`Label_2 1`] = `<div />`;
 exports[`Label_3 1`] = `
 <pre>
   <code>
-    TextStyles {
-  textStyle: TextStyle;
+    LabelStyles {
+  labelStyle: LabelStyle;
 }
 
-getStyles={(TextProps, Theme) =&gt; TextStyles}
+getStyles={(LabelProps, Theme) =&gt; LabelStyles}
 
   </code>
 </pre>
@@ -16165,7 +16165,7 @@ exports[`Label_4 1`] = `
   <code
     className="language-tsx"
   >
-    &lt;Text textStyle /&gt;
+    &lt;Text labelStyle /&gt;
 
   </code>
 </pre>

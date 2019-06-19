@@ -72,7 +72,7 @@ export const FormField = (props: FormFieldProps) => {
 
   const labelContent = (
     <View style={labelWrapperStyle}>
-      <Label getStyles={() => ({ textStyle: labelTextStyle })}>{label}</Label>
+      <Label getStyles={() => ({ labelStyle: labelTextStyle })}>{label}</Label>
     </View>
   );
 

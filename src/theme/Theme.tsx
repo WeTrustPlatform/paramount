@@ -31,6 +31,7 @@ import { GetTabStyles } from '../components/Tabs/Tab.styles';
 import { GetTabsStyles } from '../components/Tabs/Tabs.styles';
 import { GetToastStyles } from '../components/Toast/Toast.styles';
 import { GetHeadingStyles } from '../components/Typography/Heading.styles';
+import { GetLabelStyles } from '../components/Typography/Label.styles';
 import { GetParagraphStyles } from '../components/Typography/Paragraph.styles';
 import { GetTextStyles } from '../components/Typography/Text.styles';
 import { defaultTheme } from './defaultTheme';
@@ -273,6 +274,7 @@ export interface Theme {
     getContainerStyles?: GetContainerStyles;
     getRowStyles?: GetRowStyles;
     getTextInputStyles?: GetTextInputStyles;
+    getLabelStyles?: GetLabelStyles;
     getListItemStyles?: GetListItemStyles;
     getOverlayStyles?: GetOverlayStyles;
     getPickerButtonStyles?: GetPickerButtonStyles;
