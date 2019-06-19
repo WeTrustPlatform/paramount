@@ -8635,8 +8635,8 @@ exports[`KitchenSink_1 1`] = `
                 "WebkitFlexWrap": "wrap",
                 "flexDirection": "row",
                 "flexWrap": "wrap",
-                "marginLeft": "0px",
-                "marginRight": "0px",
+                "marginLeft": "-15px",
+                "marginRight": "-15px",
                 "msFlexDirection": "row",
                 "msFlexWrap": "wrap",
               }
@@ -9098,8 +9098,8 @@ exports[`KitchenSink_1 1`] = `
                 "WebkitFlexWrap": "wrap",
                 "flexDirection": "row",
                 "flexWrap": "wrap",
-                "marginLeft": "0px",
-                "marginRight": "0px",
+                "marginLeft": "-15px",
+                "marginRight": "-15px",
                 "msFlexDirection": "row",
                 "msFlexWrap": "wrap",
               }
@@ -9211,8 +9211,8 @@ exports[`KitchenSink_1 1`] = `
                 "WebkitFlexWrap": "wrap",
                 "flexDirection": "row",
                 "flexWrap": "wrap",
-                "marginLeft": "0px",
-                "marginRight": "0px",
+                "marginLeft": "-15px",
+                "marginRight": "-15px",
                 "msFlexDirection": "row",
                 "msFlexWrap": "wrap",
               }
@@ -9359,8 +9359,8 @@ exports[`KitchenSink_1 1`] = `
                 "WebkitFlexWrap": "wrap",
                 "flexDirection": "row",
                 "flexWrap": "wrap",
-                "marginLeft": "0px",
-                "marginRight": "0px",
+                "marginLeft": "-15px",
+                "marginRight": "-15px",
                 "msFlexDirection": "row",
                 "msFlexWrap": "wrap",
               }
@@ -9482,8 +9482,8 @@ exports[`KitchenSink_1 1`] = `
                 "WebkitFlexWrap": "wrap",
                 "flexDirection": "row",
                 "flexWrap": "wrap",
-                "marginLeft": "0px",
-                "marginRight": "0px",
+                "marginLeft": "-15px",
+                "marginRight": "-15px",
                 "msFlexDirection": "row",
                 "msFlexWrap": "wrap",
               }
@@ -9640,8 +9640,8 @@ exports[`KitchenSink_1 1`] = `
                 "WebkitFlexWrap": "wrap",
                 "flexDirection": "row",
                 "flexWrap": "wrap",
-                "marginLeft": "0px",
-                "marginRight": "0px",
+                "marginLeft": "-15px",
+                "marginRight": "-15px",
                 "msFlexDirection": "row",
                 "msFlexWrap": "wrap",
               }
@@ -9694,8 +9694,8 @@ exports[`KitchenSink_1 1`] = `
                 "WebkitFlexWrap": "wrap",
                 "flexDirection": "row",
                 "flexWrap": "wrap",
-                "marginLeft": "0px",
-                "marginRight": "0px",
+                "marginLeft": "-15px",
+                "marginRight": "-15px",
                 "msFlexDirection": "row",
                 "msFlexWrap": "wrap",
               }
@@ -9748,8 +9748,8 @@ exports[`KitchenSink_1 1`] = `
                 "WebkitFlexWrap": "wrap",
                 "flexDirection": "row",
                 "flexWrap": "wrap",
-                "marginLeft": "0px",
-                "marginRight": "0px",
+                "marginLeft": "-15px",
+                "marginRight": "-15px",
                 "msFlexDirection": "row",
                 "msFlexWrap": "wrap",
               }
@@ -13782,7 +13782,6 @@ exports[`KitchenSink_1 1`] = `
         className="css-view-1dbjc4n"
       >
         <div
-          aria-label="switch"
           className="css-view-1dbjc4n"
           data-focusable={true}
           onKeyDown={[Function]}
@@ -17761,8 +17760,8 @@ exports[`RowAndColumn_1 1`] = `
             "WebkitFlexWrap": "wrap",
             "flexDirection": "row",
             "flexWrap": "wrap",
-            "marginLeft": "0px",
-            "marginRight": "0px",
+            "marginLeft": "-15px",
+            "marginRight": "-15px",
             "msFlexDirection": "row",
             "msFlexWrap": "wrap",
           }
@@ -18224,8 +18223,8 @@ exports[`RowAndColumn_1 1`] = `
             "WebkitFlexWrap": "wrap",
             "flexDirection": "row",
             "flexWrap": "wrap",
-            "marginLeft": "0px",
-            "marginRight": "0px",
+            "marginLeft": "-15px",
+            "marginRight": "-15px",
             "msFlexDirection": "row",
             "msFlexWrap": "wrap",
           }
@@ -18337,8 +18336,8 @@ exports[`RowAndColumn_1 1`] = `
             "WebkitFlexWrap": "wrap",
             "flexDirection": "row",
             "flexWrap": "wrap",
-            "marginLeft": "0px",
-            "marginRight": "0px",
+            "marginLeft": "-15px",
+            "marginRight": "-15px",
             "msFlexDirection": "row",
             "msFlexWrap": "wrap",
           }
@@ -18485,8 +18484,8 @@ exports[`RowAndColumn_1 1`] = `
             "WebkitFlexWrap": "wrap",
             "flexDirection": "row",
             "flexWrap": "wrap",
-            "marginLeft": "0px",
-            "marginRight": "0px",
+            "marginLeft": "-15px",
+            "marginRight": "-15px",
             "msFlexDirection": "row",
             "msFlexWrap": "wrap",
           }
@@ -18603,8 +18602,8 @@ exports[`RowAndColumn_2 1`] = `
             "WebkitFlexWrap": "wrap",
             "flexDirection": "row",
             "flexWrap": "wrap",
-            "marginLeft": "0px",
-            "marginRight": "0px",
+            "marginLeft": "-15px",
+            "marginRight": "-15px",
             "msFlexDirection": "row",
             "msFlexWrap": "wrap",
           }
@@ -18756,8 +18755,8 @@ exports[`RowAndColumn_3 1`] = `
             "WebkitFlexWrap": "wrap",
             "flexDirection": "row",
             "flexWrap": "wrap",
-            "marginLeft": "0px",
-            "marginRight": "0px",
+            "marginLeft": "-15px",
+            "marginRight": "-15px",
             "msFlexDirection": "row",
             "msFlexWrap": "wrap",
           }
@@ -18810,8 +18809,8 @@ exports[`RowAndColumn_3 1`] = `
             "WebkitFlexWrap": "wrap",
             "flexDirection": "row",
             "flexWrap": "wrap",
-            "marginLeft": "0px",
-            "marginRight": "0px",
+            "marginLeft": "-15px",
+            "marginRight": "-15px",
             "msFlexDirection": "row",
             "msFlexWrap": "wrap",
           }
@@ -18864,8 +18863,8 @@ exports[`RowAndColumn_3 1`] = `
             "WebkitFlexWrap": "wrap",
             "flexDirection": "row",
             "flexWrap": "wrap",
-            "marginLeft": "0px",
-            "marginRight": "0px",
+            "marginLeft": "-15px",
+            "marginRight": "-15px",
             "msFlexDirection": "row",
             "msFlexWrap": "wrap",
           }
@@ -21250,7 +21249,6 @@ exports[`Switch_1 1`] = `
     className="css-view-1dbjc4n"
   >
     <div
-      aria-label="switch"
       className="css-view-1dbjc4n"
       data-focusable={true}
       onKeyDown={[Function]}

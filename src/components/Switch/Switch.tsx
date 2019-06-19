@@ -1,10 +1,5 @@
 import * as React from 'react';
-import {
-  AccessibilityProps,
-  GestureResponderEvent,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { GestureResponderEvent, TouchableOpacity, View } from 'react-native';
 import { animated, useSpring } from 'react-spring/native.cjs';
 import { DeepPartial } from 'ts-essentials';
 
@@ -20,12 +15,25 @@ import {
 
 const AnimatedView = animated(View);
 
-export interface SwitchProps extends AccessibilityProps {
+export interface SwitchProps {
   isSwitchedOn?: boolean;
   isDisabled?: boolean;
   onChange?: (event: GestureResponderEvent) => void;
   onIcon?: React.ReactNode;
   offIcon?: React.ReactNode;
+
+  /** Label for screen readers */
+  accessibilityLabel?: string;
+
+  /** Hint for screen readers */
+  accessibilityHint?: string;
+
+  /**
+   * When true, indicates that the view is an accessibility element.
+   * @default true
+   */
+  accessible?: boolean;
+
   testID?: string;
   /**
    * Inline styles for components
@@ -41,7 +49,9 @@ export const Switch = (props: SwitchProps) => {
     isSwitchedOn,
     getStyles,
     testID,
-    ...accessibilityProps
+    accessibilityHint,
+    accessibilityLabel,
+    accessible = true,
   } = props;
   const theme = useTheme();
   const {
@@ -68,8 +78,6 @@ export const Switch = (props: SwitchProps) => {
 
   return (
     <TouchableOpacity
-      accessible
-      accessibilityLabel="switch"
       onPress={onChange}
       activeOpacity={1}
       style={{
@@ -78,7 +86,9 @@ export const Switch = (props: SwitchProps) => {
         flexWrap: 'wrap',
       }}
       testID={testID}
-      {...accessibilityProps}
+      accessibilityHint={accessibilityHint}
+      accessibilityLabel={accessibilityLabel}
+      accessible={accessible}
     >
       {/*
       // @ts-ignore */}

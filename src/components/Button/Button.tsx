@@ -61,12 +61,6 @@ export interface ButtonProps {
    */
   isDisabled?: boolean;
 
-  /**
-   * When true, the button will not stretch full width
-   * @default false
-   */
-  isInline?: boolean;
-
   /** Called when button is pressed */
   onPress?: (event: GestureResponderEvent) => void;
 
@@ -82,6 +76,15 @@ export interface ButtonProps {
   /** Label for screen readers */
   accessibilityLabel?: string;
 
+  /** Hint for screen readers */
+  accessibilityHint?: string;
+
+  /**
+   * When true, indicates that the view is an accessibility element.
+   * @default true
+   */
+  accessible?: boolean;
+
   /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetButtonStyles, DeepPartial<ButtonStyles>>;
 
@@ -91,25 +94,19 @@ export interface ButtonProps {
 
 export const Button = (props: ButtonProps) => {
   const {
-    appearance = 'primary',
-    title,
-    color = 'default',
     getStyles,
-    icon,
     iconAfter,
     iconBefore,
-    iconLoading,
-    isActive = false,
     isDisabled = false,
-    isInline = false,
     isLoading = false,
     onPress = () => {
       return;
     },
-    size = 'medium',
     testID,
 
-    ...accessibilityProps
+    accessibilityHint,
+    accessibilityLabel,
+    accessible = true,
   } = props;
 
   const theme = useTheme();
@@ -131,7 +128,9 @@ export const Button = (props: ButtonProps) => {
       onPress={onPress}
       style={touchableStyle}
       testID={testID}
-      {...accessibilityProps}
+      accessibilityHint={accessibilityHint}
+      accessibilityLabel={accessibilityLabel}
+      accessible={accessible}
     >
       <View style={innerButtonWrapperStyle}>
         {iconBefore}

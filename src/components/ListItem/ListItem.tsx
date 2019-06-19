@@ -59,6 +59,15 @@ export interface ListItemProps {
   /** Label for screen readers */
   accessibilityLabel?: string;
 
+  /** Hint for screen readers */
+  accessibilityHint?: string;
+
+  /**
+   * When true, indicates that the view is an accessibility element.
+   * @default true
+   */
+  accessible?: boolean;
+
   /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetListItemStyles, DeepPartial<ListItemStyles>>;
 
@@ -110,7 +119,9 @@ export const ListItem = (props: ListItemProps) => {
     rightIcon,
     leftIcon,
     testID,
-    ...accessibilityProps
+    accessibilityHint,
+    accessibilityLabel,
+    accessible = true,
   } = props;
   const theme = useTheme();
 
@@ -134,7 +145,9 @@ export const ListItem = (props: ListItemProps) => {
       style={touchableStyle}
       testID={testID}
       onPress={onPress}
-      {...accessibilityProps}
+      accessibilityHint={accessibilityHint}
+      accessibilityLabel={accessibilityLabel}
+      accessible={accessible}
     >
       <View style={wrapperStyle}>
         <View style={leftWrapperStyle}>

@@ -121,7 +121,6 @@ export const getButtonStyles: GetButtonStyles = (props, theme) => {
     iconAfter,
     iconBefore,
     isDisabled,
-    isInline,
     isLoading,
     size = 'medium',
   } = props;
@@ -168,13 +167,6 @@ export const getButtonStyles: GetButtonStyles = (props, theme) => {
         : {
             ...(isLoading ? { backgroundColor: loadingBackgroundColor } : {}),
           }),
-      ...(isInline
-        ? {
-            alignSelf: 'flex-start',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-          }
-        : {}),
     },
   };
 };

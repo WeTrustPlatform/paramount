@@ -13,7 +13,10 @@ export interface RowStyles {
   rowStyle: ViewStyle;
 }
 
-export const getRowStyles: GetRowStyles = ({ hasGutter, gutterWidth }) => {
+export const getRowStyles: GetRowStyles = ({
+  hasGutter = true,
+  gutterWidth,
+}) => {
   return {
     rowStyle: {
       flexDirection: 'row',

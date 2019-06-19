@@ -43,6 +43,15 @@ export interface CollapsibleProps {
   /** Label for screen readers */
   accessibilityLabel?: string;
 
+  /** Hint for screen readers */
+  accessibilityHint?: string;
+
+  /**
+   * When true, indicates that the view is an accessibility element.
+   * @default true
+   */
+  accessible?: boolean;
+
   /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<
     GetCollapsibleStyles,
@@ -64,7 +73,9 @@ export const Collapsible = (props: CollapsibleProps) => {
     testID,
     onOpen = () => undefined,
     onClose = () => undefined,
-    ...accessibilityProps
+    accessibilityHint,
+    accessibilityLabel,
+    accessible = true,
   } = props;
   const theme = useTheme();
   const [isOpened, setIsOpened] = React.useState(initialIsOpen);
@@ -108,7 +119,9 @@ export const Collapsible = (props: CollapsibleProps) => {
         testID={testID}
         onPress={handlePress}
         style={touchableStyle}
-        {...accessibilityProps}
+        accessibilityHint={accessibilityHint}
+        accessibilityLabel={accessibilityLabel}
+        accessible={accessible}
       >
         <View style={outerWrapperStyle}>
           {header || (
