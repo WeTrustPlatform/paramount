@@ -1,3 +1,12 @@
+# [1.66.0](https://github.com/WeTrustPlatform/paramount/compare/v1.65.0...v1.66.0) (2019-06-19)
+
+
+### Features
+
+* docs and refactoring ([da6703d](https://github.com/WeTrustPlatform/paramount/commit/da6703d))
+* refactor style getters ([56adc10](https://github.com/WeTrustPlatform/paramount/commit/56adc10))
+* **typography:** add docs and refactoring ([e208ed5](https://github.com/WeTrustPlatform/paramount/commit/e208ed5))
+
 # [1.65.0](https://github.com/WeTrustPlatform/paramount/compare/v1.64.0...v1.65.0) (2019-06-19)
 
 
