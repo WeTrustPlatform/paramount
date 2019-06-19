@@ -12,6 +12,7 @@ import {
 } from './Popover.styles';
 
 export interface PopoverProps extends PositionerProps {
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetPopoverStyles, DeepPartial<PopoverStyles>>;
 }
 

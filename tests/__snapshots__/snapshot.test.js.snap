@@ -17334,6 +17334,39 @@ exports[`Popover_1 1`] = `
 
 exports[`Popover_2 1`] = `<div />`;
 
+exports[`Popover_3 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    PopoverStyles {
+  popoverStyle: ViewStyle;
+  positionerStyle: ViewStyle;
+  containerStyle: ViewStyle;
+}
+
+getStyles={(PopoverProps, Theme) =&gt; PopoverStyles}
+
+  </code>
+</pre>
+`;
+
+exports[`Popover_4 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;&gt;
+  &lt;View positionerStyle&gt;
+    &lt;View popoverStyle&gt;{content}&lt;/View&gt;
+  &lt;/View&gt;
+  &lt;View containerStyle&gt;{children}&lt;/View&gt;
+&lt;/&gt;
+
+  </code>
+</pre>
+`;
+
 exports[`ProgressBar_0 1`] = `
 <h1>
   ProgressBar

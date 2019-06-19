@@ -13,10 +13,28 @@ import {
 } from './Positioner.styles';
 
 export interface PositionerProps {
-  children: React.ReactNode;
-  content?: React.ReactNode;
-  isVisible?: boolean;
+  /**
+   * Position of the content.
+   * @default "bottom"
+   */
   position?: Position;
+
+  /**
+   * Wrapped component to open the positioner over.
+   */
+  children?: React.ReactNode;
+
+  /**
+   * Content revealed when positioner is opened.
+   */
+  content?: React.ReactNode;
+
+  /**
+   * When true, displays positioner.
+   */
+  isVisible?: boolean;
+
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<
     GetPositionerStyles,
     DeepPartial<PositionerStyles>

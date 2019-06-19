@@ -20,17 +20,12 @@ Composes `Positioner`
         <Popover
           isVisible={on}
           position="bottom"
-          getStyles={(props, theme) => ({
-            positionerStyle: {},
-            modalContainerStyle: {},
-            popoverStyle: {},
-          })}
           content={
             <Box width={200} height={200}>
               <Text>
                 Due to variety and complexity involved in detecting touch
-                outside of the component on the web and in native, you have to
-                manage its open and closed state
+                outside of the component on the web and in native, managing its
+                open and closed state is in your control
               </Text>
               <Button
                 appearance="outline"
@@ -51,3 +46,28 @@ Composes `Positioner`
 ### Props
 
 <Props of={Popover} />
+
+### Customization
+
+Using `getStyles` prop
+
+```tsx
+PopoverStyles {
+  popoverStyle: ViewStyle;
+  positionerStyle: ViewStyle;
+  containerStyle: ViewStyle;
+}
+
+getStyles={(PopoverProps, Theme) => PopoverStyles}
+```
+
+Markup
+
+```tsx
+<>
+  <View positionerStyle>
+    <View popoverStyle>{content}</View>
+  </View>
+  <View containerStyle>{children}</View>
+</>
+```

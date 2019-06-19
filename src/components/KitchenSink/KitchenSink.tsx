@@ -811,17 +811,12 @@ export const KitchenSink = () => {
               <Popover
                 isVisible={on}
                 position="bottom"
-                getStyles={(props, theme) => ({
-                  positionerStyle: {},
-                  modalContainerStyle: {},
-                  popoverStyle: {},
-                })}
                 content={
                   <Box width={200} height={200}>
                     <Text>
                       Due to variety and complexity involved in detecting touch
-                      outside of the component on the web and in native, you
-                      have to manage its open and closed state
+                      outside of the component on the web and in native,
+                      managing its open and closed state is in your control
                     </Text>
                     <Button
                       appearance="outline"
