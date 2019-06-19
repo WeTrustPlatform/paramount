@@ -1,3 +1,15 @@
+# [1.68.0](https://github.com/WeTrustPlatform/paramount/compare/v1.67.0...v1.68.0) (2019-06-19)
+
+
+### Bug Fixes
+
+* **snapshot:** kitchensink update ([047bc22](https://github.com/WeTrustPlatform/paramount/commit/047bc22))
+
+
+### Features
+
+* refactors and documentation ([6152d97](https://github.com/WeTrustPlatform/paramount/commit/6152d97))
+
 # [1.67.0](https://github.com/WeTrustPlatform/paramount/compare/v1.66.0...v1.67.0) (2019-06-19)
 
 
