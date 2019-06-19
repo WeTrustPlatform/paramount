@@ -1,31 +1,17 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import {
-  ContainerShape,
-  ControlSize,
-  FillColor,
-  Theme,
-} from '../../theme/Theme';
-
-export interface BadgeStylesProps {
-  shape: ContainerShape;
-  size: ControlSize;
-  color: FillColor;
-  isSolid: boolean;
-}
+import { Theme } from '../../theme/Theme';
+import { BadgeProps } from './Badge';
 
 export interface BadgeStyles {
   textStyle: TextStyle;
   containerStyle: ViewStyle;
 }
 
-export type GetBadgeStyles = (
-  props: BadgeStylesProps,
-  theme: Theme,
-) => BadgeStyles;
+export type GetBadgeStyles = (props: BadgeProps, theme: Theme) => BadgeStyles;
 
 export const getBadgeStyles: GetBadgeStyles = (
-  { size, color, isSolid, shape },
+  { size = 'medium', color = 'neutral', isSolid = false, shape = 'rounded' },
   theme,
 ) => {
   const shapeStyles = theme.containerShapes[shape];

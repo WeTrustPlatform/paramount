@@ -82,7 +82,7 @@ export const Collapsible = (props: CollapsibleProps) => {
     getCollapsibleStyles,
     getStyles,
     theme.components.getCollapsibleStyles,
-  )({ isOpen: isFinalOpened }, theme);
+  )({ ...props, isOpen: isFinalOpened }, theme);
 
   const handlePress = React.useCallback(() => {
     if (isControlledUsage) {

@@ -9,7 +9,7 @@ import { Box, Button, Dialog, Heading, Icon, Text, Toggle } from '..';
 
 # Dialog
 
-Dialog has no predefined styling and handlers. The content, header and footer is completely in your control.
+Display centered window on the screen over a dark overlay
 
 ### Usage
 
@@ -18,41 +18,10 @@ Dialog has no predefined styling and handlers. The content, header and footer is
     {({ on, toggle }) => (
       <Box>
         <Dialog
-          header={
-            <Box
-              padding={16}
-              flexDirection="row"
-              justifyContent="space-between"
-              alignItems="center"
-            >
-              <Heading>Title</Heading>
-              <Button
-                appearance="minimal"
-                icon={<Icon name="x" size={24} />}
-                onPress={toggle}
-              />
-            </Box>
-          }
-          footer={
-            <Box padding={16} flexDirection="row" justifyContent="flex-end">
-              <Button appearance="minimal" onPress={toggle} title="Cancel" />
-              <Box paddingLeft={16}>
-                <Button
-                  color="primary"
-                  onPress={() => console.log('Button clicked')}
-                  title="Accept"
-                />
-              </Box>
-            </Box>
-          }
+          header={<Heading>Header</Heading>}
+          footer={<Heading>Footer</Heading>}
           isVisible={on}
           onRequestClose={toggle}
-          useHistory={false}
-          getStyles={(props, theme) => ({
-            modalContainerStyle: {},
-            containerStyle: {},
-            bodyStyle: {},
-          })}
         >
           <Box height={1800}>
             <Text>Put any content in the dialog</Text>
@@ -64,6 +33,37 @@ Dialog has no predefined styling and handlers. The content, header and footer is
   </Toggle>
 </Playground>
 
-### Dialog Props
+### Props
 
 <Props of={Dialog} />
+
+### Customization
+
+Using `getStyles` prop
+
+```
+DialogStyles {
+  bodyStyle: ViewStyle;
+  containerStyle: ViewStyle;
+  modalContainerStyle: ViewStyle;
+  contentContainerStyle: ViewStyle;
+  overlayStyle: ViewStyle;
+}
+
+getStyles={(DialogProps, Theme) => DialogStyles}
+```
+
+Markup
+
+```tsx
+<View modalContainerStyle>
+  <View containerStyle>
+    {header}
+    <ScrollView contentContainerStyle bodyStyle>
+      {children}
+    </ScrollView>
+    {footer}
+  </View>
+  <Overlay overlayStyle />
+</View>
+```

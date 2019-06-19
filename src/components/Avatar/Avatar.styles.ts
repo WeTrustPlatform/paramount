@@ -1,6 +1,7 @@
 import { ImageStyle, TextStyle, ViewStyle } from 'react-native';
 
 import { FillColors, Fills, Theme } from '../../theme/Theme';
+import { AvatarProps } from './Avatar';
 
 export const hashCode = (s?: string) => {
   const str = String(s);
@@ -19,14 +20,6 @@ export const hashCode = (s?: string) => {
 };
 
 export type AvatarColor = 'automatic' | keyof FillColors;
-
-export interface AvatarStylesProps {
-  name?: string;
-  color: AvatarColor;
-  isSolid: boolean;
-  size: number;
-  sizeLimitOneCharacter: number;
-}
 
 export interface AvatarStyles {
   containerStyle: ViewStyle;
@@ -68,12 +61,18 @@ const getAvatarProps = (
 };
 
 export type GetAvatarStyles = (
-  avatarStylesProps: AvatarStylesProps,
+  props: AvatarProps,
   theme: Theme,
 ) => AvatarStyles;
 
 export const getAvatarStyles: GetAvatarStyles = (
-  { name, color, isSolid, size = 24, sizeLimitOneCharacter = 20 },
+  {
+    name,
+    color = 'automatic',
+    isSolid = false,
+    size = 48,
+    sizeLimitOneCharacter = 20,
+  },
   theme,
 ) => {
   let colorProps;

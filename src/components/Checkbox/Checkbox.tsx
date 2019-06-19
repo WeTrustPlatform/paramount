@@ -74,15 +74,7 @@ export const Checkbox = (props: CheckboxProps) => {
     getCheckboxStyles,
     getStyles,
     theme.components.getCheckboxStyles,
-  )(
-    {
-      isChecked,
-      isDisabled,
-      shape,
-      size,
-    },
-    theme,
-  );
+  )(props, theme);
 
   return (
     <TouchableOpacity

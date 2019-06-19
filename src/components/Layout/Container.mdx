@@ -40,19 +40,11 @@ Recommended usage with `Row and Column` to provide Grid margin
 Using `getStyles` prop
 
 ```
-ContainerStylesProps {
-  currentScreenSize: ScreenSize;
-  size?: ContainerSize;
-  containerSizes: ContainerSizes;
-  gutterWidth: number;
-  fluid: boolean;
-}
-
 ContainerStyles {
   containerStyle: ViewStyle;
 }
 
-getStyles={(ContainerStylesProps, Theme) => ContainerStyles}
+getStyles={(ContainerProps && Layout, Theme) => ContainerStyles}
 ```
 
 Markup

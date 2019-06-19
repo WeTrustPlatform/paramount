@@ -44,15 +44,7 @@ export interface BadgeProps {
 }
 
 export const Badge = (props: BadgeProps) => {
-  const {
-    color = 'neutral',
-    getStyles,
-    isSolid = false,
-    shape = 'rounded',
-    size = 'medium',
-    title,
-    testID,
-  } = props;
+  const { getStyles, size = 'medium', title, testID } = props;
 
   const theme = useTheme();
 
@@ -60,7 +52,7 @@ export const Badge = (props: BadgeProps) => {
     getBadgeStyles,
     getStyles,
     theme.components.getBadgeStyles,
-  )({ size, color, isSolid, shape }, theme);
+  )(props, theme);
 
   return (
     <View style={containerStyle} testID={testID}>

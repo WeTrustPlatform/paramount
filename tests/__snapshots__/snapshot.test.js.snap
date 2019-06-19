@@ -533,18 +533,14 @@ exports[`Alert_3 1`] = `
   <code
     className="language-tsx"
   >
-    AlertStyleProps {
-  intent: Intent;
-}
-
-AlertStyles {
+    AlertStyles {
   containerStyle: ViewStyle;
   bodyStyle: ViewStyle;
   titleStyle: TextStyle;
   descriptionStyle: TextStyle;
 }
 
-getStyles={(AlertStyleProps, Theme) =&gt; AlertStyles}
+getStyles={(AlertProps, Theme) =&gt; AlertStyles}
 
   </code>
 </pre>
@@ -654,21 +650,13 @@ exports[`Avatar_3 1`] = `
   <code
     className="language-tsx"
   >
-    AvatarStylesProps {
-  name?: string;
-  color: AvatarColor;
-  isSolid: boolean;
-  size: number;
-  sizeLimitOneCharacter: number;
-}
-
-AvatarStyles {
+    AvatarStyles {
   containerStyle: ViewStyle;
   textStyle: TextStyle;
   imageStyle: ImageStyle;
 }
 
-getStyles={(AvatarStylesProps, Theme) =&gt; AvatarStyles}
+getStyles={(AvatarProps, Theme) =&gt; AvatarStyles}
 
   </code>
 </pre>
@@ -759,19 +747,12 @@ exports[`Badge_3 1`] = `
   <code
     className="language-tsx"
   >
-    BadgeStylesProps {
-  shape: ContainerShape;
-  size: ControlSize;
-  color: FillColor;
-  isSolid: boolean;
-}
-
-BadgeStyles {
+    BadgeStyles {
   textStyle: TextStyle;
   containerStyle: ViewStyle;
 }
 
-getStyles={(BadgeStylesProps, Theme) =&gt; BadgeStyles}
+getStyles={(BadgeProps, Theme) =&gt; BadgeStyles}
 
   </code>
 </pre>
@@ -2655,25 +2636,14 @@ exports[`Button_2 1`] = `<div />`;
 exports[`Button_3 1`] = `
 <pre>
   <code>
-    ButtonStylesProps {
-  appearance: ButtonAppearance;
-  color: ButtonColor;
-  size: ControlSize;
-  isDisabled: boolean;
-  isLoading: boolean;
-  isInline: boolean;
-  hasIconAfter?: boolean;
-  hasIconBefore?: boolean;
-}
-
-ButtonStyles {
+    ButtonStyles {
   buttonStyle: ViewStyle;
   textStyle: TextStyle;
   innerButtonWrapperStyle: ViewStyle;
   buttonContentWrapperStyle: ViewStyle;
 }
 
-getStyles={(ButtonStylesProps, Theme) =&gt; ButtonStyles}
+getStyles={(ButtonProps, Theme) =&gt; ButtonStyles}
 
   </code>
 </pre>
@@ -2823,20 +2793,13 @@ exports[`Checkbox_2 1`] = `<div />`;
 exports[`Checkbox_3 1`] = `
 <pre>
   <code>
-    CheckboxStylesProps {
-  isChecked: boolean;
-  isDisabled: boolean;
-  shape: ContainerShape;
-  size: ControlSize;
-}
-
-CheckboxStyles {
+    CheckboxStyles {
   touchableStyle: ViewStyle;
   checkboxStyle: ViewStyle;
   checkColor: string;
 }
 
-getStyles={(CheckboxStylesProps, Theme) =&gt; CheckboxStyles}
+getStyles={(CheckboxProps, Theme) =&gt; CheckboxStyles}
 
   </code>
 </pre>
@@ -2973,11 +2936,7 @@ exports[`Collapsible_2 1`] = `<div />`;
 exports[`Collapsible_3 1`] = `
 <pre>
   <code>
-    CollapsibleStylesProps {
-  isOpen: boolean;
-}
-
-CollapsibleStyles {
+    CollapsibleStyles {
   touchableStyle: ViewStyle;
   outerWrapperStyle: ViewStyle;
   contentWrapperStyle: ViewStyle;
@@ -2985,7 +2944,7 @@ CollapsibleStyles {
   iconWrapperStyle: ViewStyle;
 }
 
-getStyles={(CollapsibleStylesProps, Theme) =&gt; CollapsibleStyles}
+getStyles={(CollapsibleProps, Theme) =&gt; CollapsibleStyles}
 
   </code>
 </pre>
@@ -3080,19 +3039,11 @@ exports[`Container_2 1`] = `<div />`;
 exports[`Container_3 1`] = `
 <pre>
   <code>
-    ContainerStylesProps {
-  currentScreenSize: ScreenSize;
-  size?: ContainerSize;
-  containerSizes: ContainerSizes;
-  gutterWidth: number;
-  fluid: boolean;
-}
-
-ContainerStyles {
+    ContainerStyles {
   containerStyle: ViewStyle;
 }
 
-getStyles={(ContainerStylesProps, Theme) =&gt; ContainerStyles}
+getStyles={(ContainerProps && Layout, Theme) =&gt; ContainerStyles}
 
   </code>
 </pre>
@@ -3348,11 +3299,7 @@ exports[`Counter_2 1`] = `<div />`;
 exports[`Counter_3 1`] = `
 <pre>
   <code>
-    CounterStylesProps {
-  count: number;
-}
-
-CounterStyles {
+    CounterStyles {
   containerStyle: ViewStyle;
   counterStyle: ViewStyle;
   countStyle: ViewStyle;
@@ -3362,7 +3309,7 @@ CounterStyles {
   textStyle: TextStyle;
 }
 
-getStyles={(CounterStylesProps, Theme) =&gt; CounterStyles}
+getStyles={(CounterProps, Theme) =&gt; CounterStyles}
 
   </code>
 </pre>
@@ -3502,6 +3449,43 @@ exports[`Dialog_1 1`] = `
 `;
 
 exports[`Dialog_2 1`] = `<div />`;
+
+exports[`Dialog_3 1`] = `
+<pre>
+  <code>
+    DialogStyles {
+  bodyStyle: ViewStyle;
+  containerStyle: ViewStyle;
+  modalContainerStyle: ViewStyle;
+  contentContainerStyle: ViewStyle;
+  overlayStyle: ViewStyle;
+}
+
+getStyles={(DialogProps, Theme) =&gt; DialogStyles}
+
+  </code>
+</pre>
+`;
+
+exports[`Dialog_4 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;View modalContainerStyle&gt;
+  &lt;View containerStyle&gt;
+    {header}
+    &lt;ScrollView contentContainerStyle bodyStyle&gt;
+      {children}
+    &lt;/ScrollView&gt;
+    {footer}
+  &lt;/View&gt;
+  &lt;Overlay overlayStyle /&gt;
+&lt;/View&gt;
+
+  </code>
+</pre>
+`;
 
 exports[`Divider_0 1`] = `
 <h1>

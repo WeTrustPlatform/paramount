@@ -1,7 +1,7 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { Intent } from '../../constants/Intent';
 import { Theme } from '../../theme';
+import { AlertProps } from './Alert';
 
 export interface AlertStyles {
   containerStyle: ViewStyle;
@@ -10,16 +10,9 @@ export interface AlertStyles {
   descriptionStyle: TextStyle;
 }
 
-export interface AlertStyleProps {
-  intent: Intent;
-}
+export type GetAlertStyles = (props: AlertProps, theme: Theme) => AlertStyles;
 
-export type GetAlertStyles = (
-  alertStyleProps: AlertStyleProps,
-  theme: Theme,
-) => AlertStyles;
-
-export const getAlertStyles: GetAlertStyles = ({ intent }, theme) => {
+export const getAlertStyles: GetAlertStyles = ({ intent = 'info' }, theme) => {
   return {
     bodyStyle: {
       flex: 1,

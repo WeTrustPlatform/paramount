@@ -36,20 +36,13 @@ Checkbox for boolean values
 Using `getStyles` prop
 
 ```
-CheckboxStylesProps {
-  isChecked: boolean;
-  isDisabled: boolean;
-  shape: ContainerShape;
-  size: ControlSize;
-}
-
 CheckboxStyles {
   touchableStyle: ViewStyle;
   checkboxStyle: ViewStyle;
   checkColor: string;
 }
 
-getStyles={(CheckboxStylesProps, Theme) => CheckboxStyles}
+getStyles={(CheckboxProps, Theme) => CheckboxStyles}
 ```
 
 Markup

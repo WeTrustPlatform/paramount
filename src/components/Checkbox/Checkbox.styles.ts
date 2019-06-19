@@ -1,13 +1,7 @@
 import { ViewStyle } from 'react-native';
 
-import { ContainerShape, ControlSize, Theme } from '../../theme/Theme';
-
-export interface CheckboxStylesProps {
-  isChecked: boolean;
-  isDisabled: boolean;
-  shape: ContainerShape;
-  size: ControlSize;
-}
+import { Theme } from '../../theme/Theme';
+import { CheckboxProps } from './Checkbox';
 
 export interface CheckboxStyles {
   touchableStyle: ViewStyle;
@@ -16,12 +10,12 @@ export interface CheckboxStyles {
 }
 
 export type GetCheckboxStyles = (
-  checkboxStylesProps: CheckboxStylesProps,
+  props: CheckboxProps,
   theme: Theme,
 ) => CheckboxStyles;
 
 export const getCheckboxStyles: GetCheckboxStyles = (
-  { isChecked, isDisabled, shape, size },
+  { isChecked, isDisabled, shape = 'rounded', size = 'medium' },
   theme,
 ) => {
   const sizeValue = theme.controlHeights[size] - 16;

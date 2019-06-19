@@ -1,23 +1,16 @@
 import { ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
+import { ContainerProps } from './Container';
 import {
-  ContainerSize,
   ContainerSizes,
   DESC_ORDER_SCREEN_SIZES,
+  LayoutInterface,
   ScreenSize,
 } from './LayoutContext';
 
-export interface ContainerStylesProps {
-  currentScreenSize: ScreenSize;
-  size?: ContainerSize;
-  containerSizes: ContainerSizes;
-  gutterWidth: number;
-  fluid: boolean;
-}
-
 export type GetContainerStyles = (
-  progressStylesProps: ContainerStylesProps,
+  props: ContainerProps & LayoutInterface,
   theme: Theme,
 ) => ContainerStyles;
 

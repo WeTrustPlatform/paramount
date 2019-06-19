@@ -1,6 +1,7 @@
 import { ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
+import { DialogProps } from './Dialog';
 
 export interface DialogStyles {
   bodyStyle: ViewStyle;
@@ -10,7 +11,10 @@ export interface DialogStyles {
   overlayStyle: ViewStyle;
 }
 
-export type GetDialogStyles = (props: {}, theme: Theme) => DialogStyles;
+export type GetDialogStyles = (
+  props: DialogProps,
+  theme: Theme,
+) => DialogStyles;
 
 export const getDialogStyles: GetDialogStyles = (props, theme) => {
   return {

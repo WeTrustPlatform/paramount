@@ -27,10 +27,6 @@ import { Counter, CounterState } from '..';
 Using `getStyles` prop
 
 ```
-CounterStylesProps {
-  count: number;
-}
-
 CounterStyles {
   containerStyle: ViewStyle;
   counterStyle: ViewStyle;
@@ -41,7 +37,7 @@ CounterStyles {
   textStyle: TextStyle;
 }
 
-getStyles={(CounterStylesProps, Theme) => CounterStyles}
+getStyles={(CounterProps, Theme) => CounterStyles}
 ```
 
 Markup

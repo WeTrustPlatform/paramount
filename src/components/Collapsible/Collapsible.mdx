@@ -42,10 +42,6 @@ Component to reveal and hide content
 Using `getStyles` prop
 
 ```
-CollapsibleStylesProps {
-  isOpen: boolean;
-}
-
 CollapsibleStyles {
   touchableStyle: ViewStyle;
   outerWrapperStyle: ViewStyle;
@@ -54,7 +50,7 @@ CollapsibleStyles {
   iconWrapperStyle: ViewStyle;
 }
 
-getStyles={(CollapsibleStylesProps, Theme) => CollapsibleStyles}
+getStyles={(CollapsibleProps, Theme) => CollapsibleStyles}
 ```
 
 Markup

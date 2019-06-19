@@ -29,21 +29,13 @@ Display avatar image, with default for name initials
 Using `getStyles` prop
 
 ```tsx
-AvatarStylesProps {
-  name?: string;
-  color: AvatarColor;
-  isSolid: boolean;
-  size: number;
-  sizeLimitOneCharacter: number;
-}
-
 AvatarStyles {
   containerStyle: ViewStyle;
   textStyle: TextStyle;
   imageStyle: ImageStyle;
 }
 
-getStyles={(AvatarStylesProps, Theme) => AvatarStyles}
+getStyles={(AvatarProps, Theme) => AvatarStyles}
 ```
 
 Markup

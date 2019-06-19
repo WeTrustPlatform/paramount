@@ -39,14 +39,14 @@ export interface ContainerProps {
  */
 export const Container = (props: ContainerProps) => {
   const { children, getStyles, size, fluid = false } = props;
-  const { gutterWidth, containerSizes, currentScreenSize } = useLayout();
+  const layout = useLayout();
   const theme = useTheme();
 
   const { containerStyle } = mergeStyles(
     getContainerStyles,
     getStyles,
     theme.components.getContainerStyles,
-  )({ size, gutterWidth, currentScreenSize, containerSizes, fluid }, theme);
+  )({ size, fluid, ...layout }, theme);
 
   return <View style={containerStyle}>{children}</View>;
 };

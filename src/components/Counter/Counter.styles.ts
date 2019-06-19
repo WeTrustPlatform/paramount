@@ -1,10 +1,7 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
-
-export interface CounterStylesProps {
-  count: number;
-}
+import { CounterProps } from './Counter';
 
 export interface CounterStyles {
   containerStyle: ViewStyle;
@@ -17,7 +14,7 @@ export interface CounterStyles {
 }
 
 export type GetCounterStyles = (
-  props: CounterStylesProps,
+  props: CounterProps,
   theme: Theme,
 ) => CounterStyles;
 

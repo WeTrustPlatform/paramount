@@ -36,10 +36,6 @@ Give feedback to the user about an action or state
 Use `getStyles` prop
 
 ```tsx
-AlertStyleProps {
-  intent: Intent;
-}
-
 AlertStyles {
   containerStyle: ViewStyle;
   bodyStyle: ViewStyle;
@@ -47,7 +43,7 @@ AlertStyles {
   descriptionStyle: TextStyle;
 }
 
-getStyles={(AlertStyleProps, Theme) => AlertStyles}
+getStyles={(AlertProps, Theme) => AlertStyles}
 ```
 
 Markup

@@ -55,17 +55,6 @@ Button component to trigger an action
 Using `getStyles` prop
 
 ```
-ButtonStylesProps {
-  appearance: ButtonAppearance;
-  color: ButtonColor;
-  size: ControlSize;
-  isDisabled: boolean;
-  isLoading: boolean;
-  isInline: boolean;
-  hasIconAfter?: boolean;
-  hasIconBefore?: boolean;
-}
-
 ButtonStyles {
   buttonStyle: ViewStyle;
   textStyle: TextStyle;
@@ -73,7 +62,7 @@ ButtonStyles {
   buttonContentWrapperStyle: ViewStyle;
 }
 
-getStyles={(ButtonStylesProps, Theme) => ButtonStyles}
+getStyles={(ButtonProps, Theme) => ButtonStyles}
 ```
 
 Markup

@@ -1,6 +1,7 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { ButtonColor, ControlSize, Theme } from '../../theme/Theme';
+import { ButtonColor, Theme } from '../../theme/Theme';
+import { ButtonProps } from './Button';
 
 export interface ButtonColorProps {
   backgroundColor: string;
@@ -101,17 +102,6 @@ export const getButtonAppearances = (theme: Theme): ButtonAppearances => {
   };
 };
 
-export interface ButtonStylesProps {
-  appearance: ButtonAppearance;
-  color: ButtonColor;
-  size: ControlSize;
-  isDisabled: boolean;
-  isLoading: boolean;
-  isInline: boolean;
-  hasIconAfter?: boolean;
-  hasIconBefore?: boolean;
-}
-
 export interface ButtonStyles {
   buttonStyle: ViewStyle;
   textStyle: TextStyle;
@@ -120,21 +110,23 @@ export interface ButtonStyles {
 }
 
 export type GetButtonStyles = (
-  buttonStylesProps: ButtonStylesProps,
+  props: ButtonProps,
   theme: Theme,
 ) => ButtonStyles;
 
-export const getButtonStyles: GetButtonStyles = (buttonStyleProps, theme) => {
+export const getButtonStyles: GetButtonStyles = (props, theme) => {
   const {
-    appearance,
-    color,
-    size,
+    appearance = 'primary',
+    color = 'default',
+    size = 'medium',
     isDisabled,
     isLoading,
+    iconAfter,
+    iconBefore,
     isInline,
-    hasIconAfter,
-    hasIconBefore,
-  } = buttonStyleProps;
+  } = props;
+  const hasIconAfter = !!iconAfter;
+  const hasIconBefore = !!iconBefore;
 
   const buttonAppearances = getButtonAppearances(theme);
 

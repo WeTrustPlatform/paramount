@@ -62,7 +62,7 @@ export const Counter = (props: CounterProps) => {
     getCounterStyles,
     getStyles,
     theme.components.getCounterStyles,
-  )({ count }, theme);
+  )(props, theme);
 
   const isDecrementDisabled = min === count;
   const isIncrementDisabled = max === count;

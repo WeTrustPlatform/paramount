@@ -120,16 +120,7 @@ export const Button = (props: ButtonProps) => {
     innerButtonWrapperStyle,
     buttonContentWrapperStyle,
   } = mergeStyles(getButtonStyles, getStyles, theme.components.getButtonStyles)(
-    {
-      appearance,
-      color,
-      hasIconAfter: !!iconAfter,
-      hasIconBefore: !!iconBefore,
-      isDisabled,
-      isInline,
-      isLoading,
-      size,
-    },
+    props,
     theme,
   );
 

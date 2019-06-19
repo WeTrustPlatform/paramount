@@ -70,8 +70,6 @@ export const Avatar = (props: AvatarProps) => {
     source,
     size = 48,
     name,
-    isSolid = false,
-    color = 'automatic',
     sizeLimitOneCharacter = 20,
     getStyles,
     testID,
@@ -93,16 +91,7 @@ export const Avatar = (props: AvatarProps) => {
     getAvatarStyles,
     getStyles,
     theme.components.getAvatarStyles,
-  )(
-    {
-      color,
-      isSolid,
-      name,
-      size,
-      sizeLimitOneCharacter,
-    },
-    theme,
-  );
+  )(props, theme);
 
   return (
     <View style={containerStyle} testID={testID}>

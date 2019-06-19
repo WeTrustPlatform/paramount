@@ -27,19 +27,12 @@ Display to indicate status or feat of service
 Using `getStyles` prop
 
 ```tsx
-BadgeStylesProps {
-  shape: ContainerShape;
-  size: ControlSize;
-  color: FillColor;
-  isSolid: boolean;
-}
-
 BadgeStyles {
   textStyle: TextStyle;
   containerStyle: ViewStyle;
 }
 
-getStyles={(BadgeStylesProps, Theme) => BadgeStyles}
+getStyles={(BadgeProps, Theme) => BadgeStyles}
 ```
 
 Markup
