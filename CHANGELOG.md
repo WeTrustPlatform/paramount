@@ -1,3 +1,10 @@
+# [1.65.0](https://github.com/WeTrustPlatform/paramount/compare/v1.64.0...v1.65.0) (2019-06-19)
+
+
+### Features
+
+* **counter:** fix styling elements ([2e3da45](https://github.com/WeTrustPlatform/paramount/commit/2e3da45))
+
 # [1.64.0](https://github.com/WeTrustPlatform/paramount/compare/v1.63.0...v1.64.0) (2019-06-18)
 
 
