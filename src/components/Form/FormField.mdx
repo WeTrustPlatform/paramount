@@ -9,23 +9,15 @@ import { FormField, TextInput } from '..';
 
 # FormField
 
+Enriches a field in a form to contain label, description or error messages.
+
 ### Usage
 
 <Playground>
   <FormField
-    labelPosition="top"
-    label="Email"
+    label="Label"
     description="Description for the field"
     error="Error message"
-    getStyles={(props, theme) => ({
-      containerStyles: {},
-      descriptionTextStyle: {},
-      errorTextStyle: {},
-      errorWrapperStyle: {},
-      labelTextStyle: {},
-      labelWrapperStyle: {},
-      wrapperStyle: {},
-    })}
   >
     <TextInput />
   </FormField>
@@ -34,3 +26,48 @@ import { FormField, TextInput } from '..';
 ### Props
 
 <Props of={FormField} />
+
+### Customization
+
+Using `getStyles` prop
+
+```tsx
+FormFieldStyles {
+  containerStyles: ViewStyle;
+  descriptionTextStyle: TextStyle;
+  errorTextStyle: TextStyle;
+  errorWrapperStyle: ViewStyle;
+  labelTextStyle: TextStyle;
+  labelWrapperStyle: ViewStyle;
+  wrapperStyle: ViewStyle;
+}
+
+getStyles={(FormFieldProps, Theme) => FormFieldStyles}
+```
+
+Markup
+
+```tsx
+label = (
+  <View labelWrapperStyle>
+    <Label labelTextStyle>{label}</Label>
+  </View>
+)
+
+<View containerStyles>
+  {labelPosition === 'top' && label}
+  <View wrapperStyle>
+    {labelPosition === 'left' && label}
+    {children}
+    {labelPosition === 'right' && label}
+  </View>
+  <Text descriptionTextStyle>
+    {description}
+  </Text>
+  <View errorWrapperStyle>
+    <Text errorTextStyle>
+      {error}
+    </Text>
+  </View>
+</View>
+```

@@ -1,6 +1,7 @@
 import { ViewStyle } from 'react-native';
 
-import { ControlSize, Theme } from '../../theme/Theme';
+import { Theme } from '../../theme/Theme';
+import { PickerButtonWrapperProps } from './PickerButtonWrapper';
 
 export interface PickerButtonStyles {
   containerStyle: ViewStyle;
@@ -9,21 +10,15 @@ export interface PickerButtonStyles {
   itemStyle: any;
 }
 
-export interface PickerButtonStylesProps {
-  size: ControlSize;
-}
-
 export type GetPickerButtonStyles = (
-  pickerStylesProps: PickerButtonStylesProps,
+  props: PickerButtonWrapperProps,
   theme: Theme,
 ) => PickerButtonStyles;
 
 export const getPickerButtonStyles: GetPickerButtonStyles = (
-  pickerStylesProps,
+  { size = 'medium' },
   theme,
 ) => {
-  const { size } = pickerStylesProps;
-
   const controlSizeStyles = {
     small: {
       borderRadius: theme.controlBorderRadius.small,

@@ -106,7 +106,7 @@ const CustomButton = () => {
 
         // Style of each React Element
         return {
-          buttonStyle: { ... },
+          touchableStyle: { ... },
           textStyle: { ... },
           focusColor: color
         }
@@ -123,7 +123,7 @@ Paramount exposes a convenience hook `useTheme` to import values from the `Theme
 
 ## Theme Interface
 
-These are all the available configuration options, as well as the default styles
+These are all the available configuration options, as well as the default configuration
 
 ```
 const controlPaddings: ControlSizes = {
@@ -372,9 +372,9 @@ const fontFamilies: FontFamilies =
       }
     : // Use default font families by React Native by default. Setting it to undefined will use the default font
       {
-        heading: undefined,
-        mono: undefined,
-        text: undefined,
+        heading: "System",
+        mono: "System",
+        text: "System",
       };
 
 const fontWeights: FontWeights = {

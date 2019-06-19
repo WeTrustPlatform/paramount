@@ -1,44 +1,28 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { ControlSize, Theme } from '../../theme/Theme';
+import { Theme } from '../../theme/Theme';
+import { ListItemProps } from './ListItem';
 
 export interface ListItemStyles {
   imageWrapperStyle: ViewStyle;
   wrapperStyle: ViewStyle;
-  containerStyle: ViewStyle;
+  touchableStyle: ViewStyle;
   leftWrapperStyle: ViewStyle;
   textWrapperStyle: ViewStyle;
   titleStyle: TextStyle;
   descriptionStyle: TextStyle;
 }
 
-export interface ListItemStylesProps {
-  size: ControlSize;
-  isDisabled: boolean;
-}
-
 export type GetListItemStyles = (
-  selectListStylesProps: ListItemStylesProps,
+  props: ListItemProps,
   theme: Theme,
 ) => ListItemStyles;
 
 export const getListItemStyles: GetListItemStyles = (
-  { size, isDisabled },
+  { size = 'medium', isDisabled },
   theme,
 ) => {
   return {
-    containerStyle: {
-      backgroundColor: theme.colors.background.content,
-      borderBottomWidth: 1,
-      borderColor: theme.colors.border.default,
-      height: theme.controlHeights[size],
-      justifyContent: 'center',
-      paddingLeft: 16,
-      paddingRight: 8,
-      ...(isDisabled
-        ? { backgroundColor: theme.colors.background.greyDark }
-        : {}),
-    },
     descriptionStyle: {},
     imageWrapperStyle: {
       marginRight: 8,
@@ -51,6 +35,18 @@ export const getListItemStyles: GetListItemStyles = (
       justifyContent: 'center',
     },
     titleStyle: {},
+    touchableStyle: {
+      backgroundColor: theme.colors.background.content,
+      borderBottomWidth: 1,
+      borderColor: theme.colors.border.default,
+      height: theme.controlHeights[size],
+      justifyContent: 'center',
+      paddingLeft: 16,
+      paddingRight: 8,
+      ...(isDisabled
+        ? { backgroundColor: theme.colors.background.greyDark }
+        : {}),
+    },
     wrapperStyle: {
       alignItems: 'center',
       flexDirection: 'row',

@@ -56,7 +56,7 @@ Using `getStyles` prop
 
 ```
 ButtonStyles {
-  buttonStyle: ViewStyle;
+  touchableStyle: ViewStyle;
   textStyle: TextStyle;
   innerButtonWrapperStyle: ViewStyle;
   buttonContentWrapperStyle: ViewStyle;
@@ -68,7 +68,7 @@ getStyles={(ButtonProps, Theme) => ButtonStyles}
 Markup
 
 ```tsx
-<TouchableOpacity buttonStyle>
+<TouchableOpacity touchableStyle>
   <View innerButtonWrapperStyle>
     {iconBefore}
     <View buttonContentWrapperStyle>

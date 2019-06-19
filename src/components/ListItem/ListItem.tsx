@@ -1,10 +1,5 @@
 import * as React from 'react';
-import {
-  AccessibilityProps,
-  GestureResponderEvent,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { GestureResponderEvent, TouchableOpacity, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { ControlSize, TextSize, useTheme } from '../../theme';
@@ -18,16 +13,56 @@ import {
   ListItemStyles,
 } from './ListItem.styles';
 
-export interface ListItemProps extends AccessibilityProps {
+export interface ListItemProps {
+  /**
+   * Size of the list item.
+   * @default "medium"
+   */
   size?: ControlSize;
+
+  /**
+   * When true, list item will not be able to be pressed.
+   * @default false
+   */
   isDisabled?: boolean;
+
+  /**
+   * Title of the list item
+   */
   title?: string;
+
+  /**
+   * Description of the list item
+   */
   description?: string;
+
+  /**
+   * Props to be passed to `Avatar`
+   */
   avatarProps?: AvatarProps;
+
+  /**
+   * Icon replacing `Avatar` on the left hand-side
+   */
   leftIcon?: React.ReactNode;
+
+  /**
+   * Icon replacing right hand-side icon
+   */
   rightIcon?: React.ReactNode;
+
+  /**
+   * Called when pressing list item
+   */
   onPress?: (event: GestureResponderEvent) => void;
+
+  /** Label for screen readers */
+  accessibilityLabel?: string;
+
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetListItemStyles, DeepPartial<ListItemStyles>>;
+
+  /** Used to locate this view in end-to-end tests. */
   testID?: string;
 }
 
@@ -83,7 +118,7 @@ export const ListItem = (props: ListItemProps) => {
     imageWrapperStyle,
     leftWrapperStyle,
     textWrapperStyle,
-    containerStyle,
+    touchableStyle,
     titleStyle,
     descriptionStyle,
     wrapperStyle,
@@ -91,12 +126,12 @@ export const ListItem = (props: ListItemProps) => {
     getListItemStyles,
     getStyles,
     theme.components.getListItemStyles,
-  )({ size, isDisabled }, theme);
+  )(props, theme);
 
   return (
     <TouchableOpacity
       disabled={isDisabled}
-      style={containerStyle}
+      style={touchableStyle}
       testID={testID}
       onPress={onPress}
       {...accessibilityProps}

@@ -26,7 +26,7 @@ export const Tab = (props: TabProps) => {
     ...buttonProps
   } = props;
   const theme = useTheme();
-  const { containerStyle, buttonStyle, textStyle, focusColor } = mergeStyles(
+  const { containerStyle, touchableStyle, textStyle, focusColor } = mergeStyles(
     getTabStyles,
     getStyles,
     theme.components.getTabStyles,
@@ -36,7 +36,7 @@ export const Tab = (props: TabProps) => {
     <View style={containerStyle}>
       <Button
         color={isActive ? 'primary' : 'default'}
-        getStyles={() => ({ buttonStyle, focusColor, textStyle })}
+        getStyles={() => ({ touchableStyle, focusColor, textStyle })}
         onPress={() => {
           if (index && onPress) onPress(index);
         }}

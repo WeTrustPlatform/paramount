@@ -13,13 +13,39 @@ import {
 import { TextAlign } from './types';
 
 export interface HeadingProps extends TextProps {
-  children: React.ReactNode;
+  /** Text content */
+  children?: React.ReactNode;
+
+  /**
+   * Size of the heading.
+   * @default "medium"
+   */
   size?: HeadingSize;
+
+  /**
+   * Alignment of the heading.
+   * @default "left"
+   */
   align?: TextAlign;
+
+  /**
+   * Color of the heading.
+   * @default "default"
+   */
   color?: TextColor;
+
+  /**
+   * Weight of the heading.
+   * @default headingSize.fontWeight
+   */
   weight?: FontWeight;
+
+  /**
+   * (Web only): Corresponding h1, h2, h3... levels
+   */
   accessibilityLevel?: 1 | 2 | 3 | 4 | 5 | 6;
 
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetHeadingStyles, DeepPartial<HeadingStyles>>;
 }
 
@@ -39,7 +65,7 @@ export const Heading = (props: HeadingProps) => {
     getHeadingStyles,
     getStyles,
     theme.components.getHeadingStyles,
-  )({ size, align, color, weight }, theme);
+  )(props, theme);
 
   return (
     <Text

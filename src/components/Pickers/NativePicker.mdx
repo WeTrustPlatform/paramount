@@ -9,6 +9,8 @@ import { NativePicker, NativePickerItem, State } from '..';
 
 # NativePicker
 
+Composes React Native's `Picker`
+
 <Playground>
   <State initial={{ value: 'js' }}>
     {({ state, setState }) => (
@@ -16,10 +18,6 @@ import { NativePicker, NativePickerItem, State } from '..';
         selectedValue={state.value}
         onValueChange={(itemValue, itemIndex) => setState({ value: itemValue })}
         size="large"
-        getStyles={(props, theme) => ({
-          pickerStyle: {},
-          itemStyle: {},
-        })}
       >
         <NativePickerItem label="C" value="c" />
         <NativePickerItem label="C#" value="c#" />
@@ -44,3 +42,39 @@ import { NativePicker, NativePickerItem, State } from '..';
     )}
   </State>
 </Playground>
+
+### NativePickerItem Props
+
+Extends native `Picker.Item`
+
+<Props of={NativePickerItem} />
+
+### NativePicker Props
+
+Extends native `Picker`
+
+<Props of={NativePicker} />
+
+### Customization
+
+Using `getStyles` prop
+
+```
+NativePickerStyles {
+  containerStyle: ViewStyle;
+  rightContainerStyle: ViewStyle;
+  pickerStyle: ViewStyle;
+  itemStyle: ViewStyle;
+}
+
+getStyles={(NativePickerProps, Theme) => NativePickerStyles}
+```
+
+Markup
+
+```tsx
+<View style={containerStyle}>
+  <Picker itemStyle pickerStyle />
+  <View style={rightContainerStyle}>{icon}</View>
+</View>
+```

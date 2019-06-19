@@ -29,7 +29,7 @@ Put `LayoutProvider` at the top level component to wrap components that make use
 </LayoutProvider>
 ```
 
-### API
+### Utilities
 
 Paramount exposes a convenience hook `useLayout` that you can import to make use of utility functions for layout
 
@@ -51,7 +51,7 @@ Returns arbitrary value that matches nearest defined size that is smaller than o
 ```tsx
 const { getResponsiveValue } = useLayout();
 
-const value = getResponsiveValue({ xsmall: 'blue', large: 'red' }); // Can be strings, numbers, anything
+const value = getResponsiveValue({ xsmall: 'blue', large: 'red' }); // Can be strings, numbers or anything
 
 console.log(value);
 // If currentScreenSize is large, it will return `red`
@@ -59,7 +59,9 @@ console.log(value);
 // If currentScreenSize is xsmall, it will return `blue`
 ```
 
-### Options
+### Configuration Options
+
+These are all the available configuration options, as well as the default layout configuration
 
 ```ts
 export const defaultLayout: LayoutInterface = {

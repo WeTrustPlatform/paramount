@@ -14,11 +14,31 @@ import {
 export type FormFieldLabelPosition = 'top' | 'left' | 'right';
 
 export interface FormFieldProps {
+  /**
+   * Error message of the field
+   */
   error?: string;
+
+  /**
+   * Label of the field.
+   */
   label?: string;
+
+  /**
+   * Position of the field.
+   * @default "top"
+   */
   labelPosition?: FormFieldLabelPosition;
+
+  /**
+   * Description of the field.
+   */
   description?: string;
+
+  /** Content to wrap FormField with. */
   children?: React.ReactNode;
+
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<
     GetFormFieldStyles,
     DeepPartial<FormFieldStyles>
@@ -48,12 +68,7 @@ export const FormField = (props: FormFieldProps) => {
     getFormFieldStyles,
     getStyles,
     theme.components.getFormFieldStyles,
-  )(
-    {
-      labelPosition,
-    },
-    theme,
-  );
+  )(props, theme);
 
   const labelContent = (
     <View style={labelWrapperStyle}>

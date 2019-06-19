@@ -1,12 +1,18 @@
 import { ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
+import { DrawerProps } from './Drawer';
 
 export interface DrawerStyles {
+  overlayStyle: ViewStyle;
   containerStyle: ViewStyle;
   modalContainerStyle: ViewStyle;
 }
-export type GetDrawerStyles = (props: {}, theme: Theme) => DrawerStyles;
+
+export type GetDrawerStyles = (
+  props: DrawerProps,
+  theme: Theme,
+) => DrawerStyles;
 
 export const getDrawerStyles: GetDrawerStyles = (props, theme) => {
   return {
@@ -22,5 +28,6 @@ export const getDrawerStyles: GetDrawerStyles = (props, theme) => {
       justifyContent: 'center',
       width: '100%',
     },
+    overlayStyle: {},
   };
 };

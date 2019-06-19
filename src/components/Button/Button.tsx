@@ -115,7 +115,7 @@ export const Button = (props: ButtonProps) => {
   const theme = useTheme();
 
   const {
-    buttonStyle,
+    touchableStyle,
     textStyle,
     innerButtonWrapperStyle,
     buttonContentWrapperStyle,
@@ -129,7 +129,7 @@ export const Button = (props: ButtonProps) => {
       accessibilityRole="button"
       disabled={!!(isDisabled || isLoading)}
       onPress={onPress}
-      style={buttonStyle}
+      style={touchableStyle}
       testID={testID}
       {...accessibilityProps}
     >

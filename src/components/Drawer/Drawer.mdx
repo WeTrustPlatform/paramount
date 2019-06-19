@@ -9,106 +9,77 @@ import { Box, Button, Drawer, Text, Toggle } from '..';
 
 # Drawer
 
+Slides a panel from defined position
+
 ### Usage
 
 <Playground>
   <Toggle>
     {({ on, toggle }) => (
       <>
-        <Button onPress={toggle} isInline title="Open drawer menu" />
-        <Drawer
-          space={undefined} // px or %, null fits the content
-          offset={0}
-          position="bottom"
-          isVisible={on}
-          onClose={toggle}
-          getStyles={(props, theme) => ({
-            modalContainerStyle: {},
-            containerStyle: {},
-          })}
-        >
-          <Box padding={24}>
-            <Box elevation={1} backgroundColor="white" borderRadius={4}>
-              {[
-                {
-                  onPress: toggle,
-                  title: 'Menu Option 1',
-                  color: 'danger',
-                },
-                {
-                  onPress: toggle,
-                  title: 'Menu Option 2',
-                  color: 'primary',
-                },
-                {
-                  onPress: toggle,
-                  title: 'Menu Option 3',
-                  color: 'secondary',
-                },
-                {
-                  onPress: toggle,
-                  title: 'Menu Option 4',
-                },
-              ].map(option => (
-                <Button key={option.title} appearance="minimal" {...option} />
-              ))}
-            </Box>
-            <Box paddingTop={24}>
-              <Button onPress={toggle} title="Close" />
-            </Box>
-          </Box>
-        </Drawer>
-      </>
-    )}
-  </Toggle>
-</Playground>
-
-### Variants
-
-<Playground>
-  <Toggle>
-    {({ on, toggle }) => (
-      <>
         <Button onPress={toggle} title="Open bottom drawer" />
-        <Drawer space="30%" isVisible={on} onClose={toggle}>
+        <Drawer space="30%" isVisible={on} onRequestClose={toggle}>
           <Box width="100%" height="100%" backgroundColor="white" />
         </Drawer>
       </>
     )}
 
   </Toggle>
-
-<Toggle>
-  {({ on, toggle }) => (
-    <>
-      <Button onPress={toggle} title="Open top drawer" />
-      <Drawer space="30%" position="top" isVisible={on} onClose={toggle}>
-        <Box width="100%" height="100%" backgroundColor="white" />
-      </Drawer>
-    </>
-  )}
-</Toggle>
-
-<Toggle>
-  {({ on, toggle }) => (
-    <>
-      <Button onPress={toggle} title="Open left drawer" />
-      <Drawer space="30%" position="left" isVisible={on} onClose={toggle}>
-        <Box width="100%" height="100%" backgroundColor="white" />
-      </Drawer>
-    </>
-  )}
-</Toggle>
-
-<Toggle>
-  {({ on, toggle }) => (
-    <>
-      <Button onPress={toggle} title="Open right drawer" />
-      <Drawer space="30%" position="right" isVisible={on} onClose={toggle}>
-        <Box width="100%" height="100%" backgroundColor="white" />
-      </Drawer>
-    </>
-  )}
-</Toggle>
-
+  <Toggle>
+    {({ on, toggle }) => (
+      <>
+        <Button onPress={toggle} title="Open top drawer" />
+        <Drawer space="30%" position="top" isVisible={on} onRequestClose={toggle}>
+          <Box width="100%" height="100%" backgroundColor="white" />
+        </Drawer>
+      </>
+    )}
+  </Toggle>
+  <Toggle>
+    {({ on, toggle }) => (
+      <>
+        <Button onPress={toggle} title="Open left drawer" />
+        <Drawer space="30%" position="left" isVisible={on} onRequestClose={toggle}>
+          <Box width="100%" height="100%" backgroundColor="white" />
+        </Drawer>
+      </>
+    )}
+  </Toggle>
+  <Toggle>
+    {({ on, toggle }) => (
+      <>
+        <Button onPress={toggle} title="Open right drawer" />
+        <Drawer space="30%" position="right" isVisible={on} onRequestClose={toggle}>
+          <Box width="100%" height="100%" backgroundColor="white" />
+        </Drawer>
+      </>
+    )}
+  </Toggle>
 </Playground>
+
+### Props
+
+<Props of={Drawer} />
+
+### Customization
+
+Using `getStyles` prop
+
+```tsx
+DrawerStyles {
+  overlayStyle: ViewStyle;
+  containerStyle: ViewStyle;
+  modalContainerStyle: ViewStyle;
+}
+
+getStyles={(DrawerProps, Theme) => DrawerStyles}
+```
+
+Markup
+
+```tsx
+<View modalContainerStyle>
+  <View containerStyle>{children}</View>
+  <Overlay overlayStyle />
+</View>
+```

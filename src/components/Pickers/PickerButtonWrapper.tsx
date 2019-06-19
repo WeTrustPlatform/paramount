@@ -8,20 +8,32 @@ import { PickerButtonGetStylesProp } from './PickerButton';
 import { getPickerButtonStyles } from './PickerButton.styles';
 
 export interface PickerButtonWrapperProps {
-  getStyles?: PickerButtonGetStylesProp;
+  /**
+   * The size of the picker.
+   * @default "medium"
+   */
   size?: ControlSize;
-  children: React.ReactNode;
+
+  /**
+   * Callback to get element styles.
+   */
+  getStyles?: PickerButtonGetStylesProp;
+
+  /**
+   * Content of the wrapper
+   */
+  children?: React.ReactNode;
 }
 
 export const PickerButtonWrapper = (props: PickerButtonWrapperProps) => {
-  const { getStyles, children, size = 'medium' } = props;
+  const { getStyles, children } = props;
   const theme = useTheme();
 
   const { containerStyle, rightContainerStyle } = mergeStyles(
     getPickerButtonStyles,
     getStyles,
     theme.components.getPickerButtonStyles,
-  )({ size }, theme);
+  )(props, theme);
 
   return (
     <View style={containerStyle}>

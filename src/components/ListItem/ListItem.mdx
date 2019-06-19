@@ -19,25 +19,47 @@ For image, it composes `Avatar`, you can pass `avatarProps` provide more specifi
     avatarProps={{
       source: { uri: 'https://picsum.photos/200/200' },
     }}
-    rightIcon={undefined} // Override right-handside icon
-    leftIcon={undefined} // Override Avatar
     title="Some label"
     description="Some description"
     size="large"
-    isDisabled={false}
-    getStyles={(props, theme) => ({
-      containerStyle: {},
-      descriptionStyle: {},
-      focusBackgroundColor: '#fafafa',
-      imageWrapperStyle: {},
-      leftWrapperStyle: {},
-      textWrapperStyle: {},
-      titleStyle: {},
-      wrapperStyle: {},
-    })}
   />
 </Playground>
 
 ### Props
 
 <Props of={ListItem} />
+
+### Customization
+
+Using `getStyles` prop
+
+```
+ListItemStyles {
+  imageWrapperStyle: ViewStyle;
+  wrapperStyle: ViewStyle;
+  touchableStyle: ViewStyle;
+  leftWrapperStyle: ViewStyle;
+  textWrapperStyle: ViewStyle;
+  titleStyle: TextStyle;
+  descriptionStyle: TextStyle;
+}
+
+getStyles={(ListItemProps, Theme) => ListItemStyles}
+```
+
+Markup
+
+```tsx
+<TouchableOpacity touchableStyle>
+  <View wrapperStyle>
+    <View leftWrapperStyle>
+      <View imageWrapperStyle>{leftIcon || <Avatar />}</View>
+      <View textWrapperStyle>
+        {title}
+        {description}
+      </View>
+    </View>
+    {rightIcon}
+  </View>
+</TouchableOpacity>
+```

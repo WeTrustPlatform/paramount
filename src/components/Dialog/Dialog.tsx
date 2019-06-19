@@ -15,11 +15,8 @@ import {
 // TODO: Import from react-native when react-native-web implementation is ready
 
 export interface DialogProps {
-  /** Content of the dialog body */
-  children?: React.ReactNode;
-
   /**
-   * (Web only) When true, upon going back in history/navigation, it will call `onRequestClose`
+   * (Web only) When true, upon going back in history/navigation, it will call `onRequestClose`. On Native, it already does that.
    * @default false
    */
   useHistory?: boolean;
@@ -38,6 +35,9 @@ export interface DialogProps {
 
   /** Called when clicking on overlay or pressing Esc, or using back button (requires useHistory to be true) */
   onRequestClose?: () => void;
+
+  /** Content of the dialog body */
+  children?: React.ReactNode;
 
   /** Component to appear at the top of the dialog */
   header?: React.ReactNode;

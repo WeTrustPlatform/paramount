@@ -103,7 +103,7 @@ export const getButtonAppearances = (theme: Theme): ButtonAppearances => {
 };
 
 export interface ButtonStyles {
-  buttonStyle: ViewStyle;
+  touchableStyle: ViewStyle;
   textStyle: TextStyle;
   innerButtonWrapperStyle: ViewStyle;
   buttonContentWrapperStyle: ViewStyle;
@@ -118,12 +118,12 @@ export const getButtonStyles: GetButtonStyles = (props, theme) => {
   const {
     appearance = 'primary',
     color = 'default',
-    size = 'medium',
-    isDisabled,
-    isLoading,
     iconAfter,
     iconBefore,
+    isDisabled,
     isInline,
+    isLoading,
+    size = 'medium',
   } = props;
   const hasIconAfter = !!iconAfter;
   const hasIconBefore = !!iconBefore;
@@ -133,16 +133,34 @@ export const getButtonStyles: GetButtonStyles = (props, theme) => {
   const {
     color: textColor,
     loadingBackgroundColor,
-    ...buttonStyle
+    ...touchableStyle
   } = buttonAppearances[appearance][color];
 
   return {
-    buttonStyle: {
+    buttonContentWrapperStyle: {
+      paddingLeft: hasIconBefore ? 8 : 0,
+      paddingRight: hasIconAfter ? 8 : 0,
+    },
+    innerButtonWrapperStyle: {
+      alignItems: 'center',
+      flexDirection: 'row',
+      height: '100%',
+      justifyContent: 'center',
+    },
+    textStyle: {
+      alignItems: 'center',
+      color: isDisabled ? theme.colors.text.muted : textColor,
+      display: 'flex',
+      fontWeight: '600',
+      justifyContent: 'center',
+      textAlign: 'center',
+    },
+    touchableStyle: {
       borderRadius: theme.controlBorderRadius[size],
       height: theme.controlHeights[size],
       paddingLeft: theme.controlPaddings[size] * 2,
       paddingRight: theme.controlPaddings[size] * 2,
-      ...buttonStyle,
+      ...touchableStyle,
       ...(isDisabled
         ? {
             backgroundColor: theme.colors.button.disabled,
@@ -157,26 +175,6 @@ export const getButtonStyles: GetButtonStyles = (props, theme) => {
             flexWrap: 'wrap',
           }
         : {}),
-    },
-    textStyle: {
-      alignItems: 'center',
-      color: isDisabled ? theme.colors.text.muted : textColor,
-      display: 'flex',
-      fontWeight: '600',
-      justifyContent: 'center',
-      textAlign: 'center',
-    },
-
-    innerButtonWrapperStyle: {
-      alignItems: 'center',
-      flexDirection: 'row',
-      height: '100%',
-      justifyContent: 'center',
-    },
-
-    buttonContentWrapperStyle: {
-      paddingLeft: hasIconBefore ? 8 : 0,
-      paddingRight: hasIconAfter ? 8 : 0,
     },
   };
 };
