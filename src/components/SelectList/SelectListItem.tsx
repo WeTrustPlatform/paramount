@@ -40,7 +40,6 @@ export const SelectListItem = (props: SelectListItemProps) => {
     onPress = () => {
       return;
     },
-    size = 'medium',
     value,
     ...listItemProps
   } = props;
