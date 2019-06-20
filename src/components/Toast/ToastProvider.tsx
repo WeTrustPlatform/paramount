@@ -61,7 +61,7 @@ export const ToastProvider = (props: ToastProviderProps) => {
     getToastStyles,
     getStyles,
     theme.components.getToastStyles,
-  )({ intent: 'info' }, theme);
+  )({}, theme);
 
   const createToastInstance = (toastSettings: ToastSettings): ToastInstance => {
     const uniqueId = ++idCounterRef.current;

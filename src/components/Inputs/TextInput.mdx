@@ -9,7 +9,7 @@ import { Box, State, Icon, TextInput } from '..';
 
 # TextInput
 
-Composes of React Native's `TextInput` component (i.e. you can pass its props). [See more details](https://facebook.github.io/react-native/docs/textinput)
+Composes React Native's `TextInput`
 
 ### Usage
 
@@ -18,23 +18,44 @@ Composes of React Native's `TextInput` component (i.e. you can pass its props). 
     {({ state, setState }) => (
       <TextInput
         value={state.value}
-        placeholder="Add your own placeholder"
+        placeholder="TextInput"
         size="large"
-        isDisabled={false}
-        isInvalid={false}
-        textContentType="emailAddress" // Enables autofill
-        keyboardType="email-address"
         onChangeText={text => setState({ value: text })}
-        onSubmitEditing={e => console.log('Submit on enter')}
         leftIcon={<Icon name="menu" size={24} />}
-        rightIcon={undefined}
-        isClearable={true} // Mutually exclusive with rightIcon
+        isInvalid={false}
+        isClearable // Mutually exclusive with rightIcon
         onClear={() => console.log('Cleared!')} // Only triggered with `isClearable`
-        getStyles={(props, theme) => ({
-          inputStyle: {},
-          placeholderTextColor: theme.colors.text.muted,
-        })}
       />
     )}
   </State>
 </Playground>
+
+### Props
+
+<Props of={TextInput} />
+
+### Customization
+
+Using `getStyles` prop
+
+```tsx
+TextInputStyles {
+  inputStyle: TextStyle;
+  placeholderTextColor: string;
+  containerStyle: ViewStyle;
+  leftContainerStyle: ViewStyle;
+  rightContainerStyle: ViewStyle;
+}
+
+getStyles={(TextInputProps, Theme) => TextInputStyles}
+```
+
+Markup
+
+```tsx
+<View containerStyle>
+  <View leftContainerStyle>{leftIcon}</View>
+  <RNTextInput inputStyle placeholderTextColor />
+  <View rightContainerStyle>{rightIcon}</View>
+</View>
+```

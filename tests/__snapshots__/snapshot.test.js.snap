@@ -8410,14 +8410,13 @@ exports[`KitchenSink_1 1`] = `
           className="css-textinput-1cwyjr8 r-placeholderTextColor-15ldjex"
           data-focusable={true}
           dir="auto"
-          name="emailAddress"
           onBlur={[Function]}
           onChange={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onSelect={[Function]}
-          placeholder="Add your own placeholder"
+          placeholder="TextInput"
           readOnly={false}
           spellCheck={true}
           style={
@@ -8443,7 +8442,7 @@ exports[`KitchenSink_1 1`] = `
               "width": "100%",
             }
           }
-          type="email"
+          type="text"
           value=""
         />
       </div>
@@ -14086,7 +14085,7 @@ exports[`KitchenSink_1 1`] = `
                     }
                   }
                 >
-                  Custom
+                  Tab 1
                 </div>
               </div>
             </div>
@@ -14582,422 +14581,7 @@ exports[`KitchenSink_1 1`] = `
                 }
               }
             >
-              Use
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "left": "32px",
-            "marginBottom": "0px",
-            "marginLeft": "auto",
-            "marginRight": "auto",
-            "marginTop": "0px",
-            "maxWidth": "560px",
-            "position": "fixed",
-            "right": "32px",
-            "top": "10px",
-            "zIndex": 100,
-          }
-        }
-      />
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingBottom": "32px",
-          "paddingTop": "32px",
-        }
-      }
-    >
-      <div
-        className="css-cursor-18t94o4 css-view-1dbjc4n"
-        data-focusable={true}
-        disabled={false}
-        onKeyDown={[Function]}
-        onKeyPress={[Function]}
-        onKeyUp={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        role="button"
-        style={
-          Object {
-            "MozTransitionProperty": "opacity",
-            "MozUserSelect": "none",
-            "WebkitTransitionDuration": "0.15s",
-            "WebkitTransitionProperty": "opacity",
-            "WebkitUserSelect": "none",
-            "backgroundColor": "rgba(250,250,250,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "cursor": "pointer",
-            "height": "48px",
-            "msTouchAction": "manipulation",
-            "msUserSelect": "none",
-            "paddingLeft": "32px",
-            "paddingRight": "32px",
-            "touchAction": "manipulation",
-            "transitionDuration": "0.15s",
-            "transitionProperty": "opacity",
-            "userSelect": "none",
-          }
-        }
-        tabIndex="0"
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitBoxPack": "center",
-              "WebkitFlexDirection": "row",
-              "WebkitJustifyContent": "center",
-              "alignItems": "center",
-              "flexDirection": "row",
-              "height": "100%",
-              "justifyContent": "center",
-              "msFlexAlign": "center",
-              "msFlexDirection": "row",
-              "msFlexPack": "center",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "paddingLeft": "0px",
-                "paddingRight": "0px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxPack": "center",
-                  "WebkitJustifyContent": "center",
-                  "alignItems": "center",
-                  "color": "rgba(126,126,126,1.00)",
-                  "display": "flex",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "600",
-                  "justifyContent": "center",
-                  "msFlexAlign": "center",
-                  "msFlexPack": "center",
-                  "textAlign": "center",
-                }
-              }
-            >
-              Open default toast
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="css-cursor-18t94o4 css-view-1dbjc4n"
-        data-focusable={true}
-        disabled={false}
-        onKeyDown={[Function]}
-        onKeyPress={[Function]}
-        onKeyUp={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        role="button"
-        style={
-          Object {
-            "MozTransitionProperty": "opacity",
-            "MozUserSelect": "none",
-            "WebkitTransitionDuration": "0.15s",
-            "WebkitTransitionProperty": "opacity",
-            "WebkitUserSelect": "none",
-            "backgroundColor": "rgba(103,198,187,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "cursor": "pointer",
-            "height": "48px",
-            "msTouchAction": "manipulation",
-            "msUserSelect": "none",
-            "paddingLeft": "32px",
-            "paddingRight": "32px",
-            "touchAction": "manipulation",
-            "transitionDuration": "0.15s",
-            "transitionProperty": "opacity",
-            "userSelect": "none",
-          }
-        }
-        tabIndex="0"
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitBoxPack": "center",
-              "WebkitFlexDirection": "row",
-              "WebkitJustifyContent": "center",
-              "alignItems": "center",
-              "flexDirection": "row",
-              "height": "100%",
-              "justifyContent": "center",
-              "msFlexAlign": "center",
-              "msFlexDirection": "row",
-              "msFlexPack": "center",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "paddingLeft": "0px",
-                "paddingRight": "0px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxPack": "center",
-                  "WebkitJustifyContent": "center",
-                  "alignItems": "center",
-                  "color": "rgba(255,255,255,1.00)",
-                  "display": "flex",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "600",
-                  "justifyContent": "center",
-                  "msFlexAlign": "center",
-                  "msFlexPack": "center",
-                  "textAlign": "center",
-                }
-              }
-            >
-              Open success toast
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="css-cursor-18t94o4 css-view-1dbjc4n"
-        data-focusable={true}
-        disabled={false}
-        onKeyDown={[Function]}
-        onKeyPress={[Function]}
-        onKeyUp={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        role="button"
-        style={
-          Object {
-            "MozTransitionProperty": "opacity",
-            "MozUserSelect": "none",
-            "WebkitTransitionDuration": "0.15s",
-            "WebkitTransitionProperty": "opacity",
-            "WebkitUserSelect": "none",
-            "backgroundColor": "rgba(210,101,87,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "cursor": "pointer",
-            "height": "48px",
-            "msTouchAction": "manipulation",
-            "msUserSelect": "none",
-            "paddingLeft": "32px",
-            "paddingRight": "32px",
-            "touchAction": "manipulation",
-            "transitionDuration": "0.15s",
-            "transitionProperty": "opacity",
-            "userSelect": "none",
-          }
-        }
-        tabIndex="0"
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitBoxPack": "center",
-              "WebkitFlexDirection": "row",
-              "WebkitJustifyContent": "center",
-              "alignItems": "center",
-              "flexDirection": "row",
-              "height": "100%",
-              "justifyContent": "center",
-              "msFlexAlign": "center",
-              "msFlexDirection": "row",
-              "msFlexPack": "center",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "paddingLeft": "0px",
-                "paddingRight": "0px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxPack": "center",
-                  "WebkitJustifyContent": "center",
-                  "alignItems": "center",
-                  "color": "rgba(255,255,255,1.00)",
-                  "display": "flex",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "600",
-                  "justifyContent": "center",
-                  "msFlexAlign": "center",
-                  "msFlexPack": "center",
-                  "textAlign": "center",
-                }
-              }
-            >
-              Open danger toast
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        className="css-cursor-18t94o4 css-view-1dbjc4n"
-        data-focusable={true}
-        disabled={false}
-        onKeyDown={[Function]}
-        onKeyPress={[Function]}
-        onKeyUp={[Function]}
-        onResponderGrant={[Function]}
-        onResponderMove={[Function]}
-        onResponderRelease={[Function]}
-        onResponderTerminate={[Function]}
-        onResponderTerminationRequest={[Function]}
-        onStartShouldSetResponder={[Function]}
-        role="button"
-        style={
-          Object {
-            "MozTransitionProperty": "opacity",
-            "MozUserSelect": "none",
-            "WebkitTransitionDuration": "0.15s",
-            "WebkitTransitionProperty": "opacity",
-            "WebkitUserSelect": "none",
-            "backgroundColor": "rgba(243,176,88,1.00)",
-            "borderBottomLeftRadius": "4px",
-            "borderBottomRightRadius": "4px",
-            "borderTopLeftRadius": "4px",
-            "borderTopRightRadius": "4px",
-            "cursor": "pointer",
-            "height": "48px",
-            "msTouchAction": "manipulation",
-            "msUserSelect": "none",
-            "paddingLeft": "32px",
-            "paddingRight": "32px",
-            "touchAction": "manipulation",
-            "transitionDuration": "0.15s",
-            "transitionProperty": "opacity",
-            "userSelect": "none",
-          }
-        }
-        tabIndex="0"
-      >
-        <div
-          className="css-view-1dbjc4n"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxDirection": "normal",
-              "WebkitBoxOrient": "horizontal",
-              "WebkitBoxPack": "center",
-              "WebkitFlexDirection": "row",
-              "WebkitJustifyContent": "center",
-              "alignItems": "center",
-              "flexDirection": "row",
-              "height": "100%",
-              "justifyContent": "center",
-              "msFlexAlign": "center",
-              "msFlexDirection": "row",
-              "msFlexPack": "center",
-            }
-          }
-        >
-          <div
-            className="css-view-1dbjc4n"
-            style={
-              Object {
-                "paddingLeft": "0px",
-                "paddingRight": "0px",
-              }
-            }
-          >
-            <div
-              className="css-text-901oao"
-              dir="auto"
-              style={
-                Object {
-                  "WebkitAlignItems": "center",
-                  "WebkitBoxAlign": "center",
-                  "WebkitBoxPack": "center",
-                  "WebkitJustifyContent": "center",
-                  "alignItems": "center",
-                  "color": "rgba(255,255,255,1.00)",
-                  "display": "flex",
-                  "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "16px",
-                  "fontWeight": "600",
-                  "justifyContent": "center",
-                  "msFlexAlign": "center",
-                  "msFlexPack": "center",
-                  "textAlign": "center",
-                }
-              }
-            >
-              Open warning toast
+              Open toast
             </div>
           </div>
         </div>
@@ -15966,12 +15550,7 @@ exports[`Layout_1 1`] = `
     containerSizes: ContainerSizes,
   }}
 &gt;
-  &lt;Container&gt;
-    &lt;Row&gt;
-      &lt;Column /&gt;
-    &lt;/Row&gt;
-  &lt;/Container&gt;
-  &lt;Visible /&gt;
+  {children}
 &lt;/LayoutProvider&gt;
 
   </code>
@@ -16017,6 +15596,28 @@ console.log(value);
 `;
 
 exports[`Layout_5 1`] = `
+<h4>
+  Components
+</h4>
+`;
+
+exports[`Layout_6 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;Container&gt;
+  &lt;Row&gt;
+    &lt;Column /&gt;
+  &lt;/Row&gt;
+&lt;/Container&gt;
+&lt;Visible /&gt;
+
+  </code>
+</pre>
+`;
+
+exports[`Layout_7 1`] = `
 <pre>
   <code
     className="language-ts"
@@ -21598,7 +21199,7 @@ exports[`Tabs_1 1`] = `
                 }
               }
             >
-              Custom
+              Tab 1
             </div>
           </div>
         </div>
@@ -21969,6 +21570,55 @@ exports[`Tabs_1 1`] = `
 `;
 
 exports[`Tabs_2 1`] = `<div />`;
+
+exports[`Tabs_3 1`] = `<div />`;
+
+exports[`Tabs_4 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    TabsStyles {
+  containerStyle: ViewStyle;
+}
+
+getStyles={(TabsProps, Theme) =&gt; TabsStyles}
+
+TabStyles {
+  containerStyle: ViewStyle;
+  touchableStyle: ViewStyle;
+  textStyle: TextStyle;
+}
+
+getStyles={(TabProps, Theme) =&gt; TabStyles}
+
+  </code>
+</pre>
+`;
+
+exports[`Tabs_5 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;View style={containerStyle}&gt;{tabs}&lt;/View&gt;
+
+  </code>
+</pre>
+`;
+
+exports[`Tabs_6 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;View style={containerStyle}&gt;
+  &lt;Button touchableStyle textStyle&gt;
+&lt;/View&gt;
+
+  </code>
+</pre>
+`;
 
 exports[`Text_0 1`] = `
 <h1>
@@ -22593,14 +22243,13 @@ exports[`TextInput_1 1`] = `
       className="css-textinput-1cwyjr8 r-placeholderTextColor-15ldjex"
       data-focusable={true}
       dir="auto"
-      name="emailAddress"
       onBlur={[Function]}
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
       onKeyPress={[Function]}
       onSelect={[Function]}
-      placeholder="Add your own placeholder"
+      placeholder="TextInput"
       readOnly={false}
       spellCheck={true}
       style={
@@ -22626,11 +22275,47 @@ exports[`TextInput_1 1`] = `
           "width": "100%",
         }
       }
-      type="email"
+      type="text"
       value=""
     />
   </div>
 </div>
+`;
+
+exports[`TextInput_2 1`] = `<div />`;
+
+exports[`TextInput_3 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    TextInputStyles {
+  inputStyle: TextStyle;
+  placeholderTextColor: string;
+  containerStyle: ViewStyle;
+  leftContainerStyle: ViewStyle;
+  rightContainerStyle: ViewStyle;
+}
+
+getStyles={(TextInputProps, Theme) =&gt; TextInputStyles}
+
+  </code>
+</pre>
+`;
+
+exports[`TextInput_4 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;View containerStyle&gt;
+  &lt;View leftContainerStyle&gt;{leftIcon}&lt;/View&gt;
+  &lt;RNTextInput inputStyle placeholderTextColor /&gt;
+  &lt;View rightContainerStyle&gt;{rightIcon}&lt;/View&gt;
+&lt;/View&gt;
+
+  </code>
+</pre>
 `;
 
 exports[`Toast_0 1`] = `
@@ -22640,125 +22325,30 @@ exports[`Toast_0 1`] = `
 `;
 
 exports[`Toast_1 1`] = `
-<div>
-  <div
-    className="css-cursor-18t94o4 css-view-1dbjc4n"
-    data-focusable={true}
-    disabled={false}
-    onKeyDown={[Function]}
-    onKeyPress={[Function]}
-    onKeyUp={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    role="button"
-    style={
-      Object {
-        "MozTransitionProperty": "opacity",
-        "MozUserSelect": "none",
-        "WebkitTransitionDuration": "0.15s",
-        "WebkitTransitionProperty": "opacity",
-        "WebkitUserSelect": "none",
-        "backgroundColor": "rgba(250,250,250,1.00)",
-        "borderBottomLeftRadius": "4px",
-        "borderBottomRightRadius": "4px",
-        "borderTopLeftRadius": "4px",
-        "borderTopRightRadius": "4px",
-        "cursor": "pointer",
-        "height": "48px",
-        "msTouchAction": "manipulation",
-        "msUserSelect": "none",
-        "paddingLeft": "32px",
-        "paddingRight": "32px",
-        "touchAction": "manipulation",
-        "transitionDuration": "0.15s",
-        "transitionProperty": "opacity",
-        "userSelect": "none",
-      }
-    }
-    tabIndex="0"
+<pre>
+  <code
+    className="language-tsx"
   >
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "WebkitAlignItems": "center",
-          "WebkitBoxAlign": "center",
-          "WebkitBoxDirection": "normal",
-          "WebkitBoxOrient": "horizontal",
-          "WebkitBoxPack": "center",
-          "WebkitFlexDirection": "row",
-          "WebkitJustifyContent": "center",
-          "alignItems": "center",
-          "flexDirection": "row",
-          "height": "100%",
-          "justifyContent": "center",
-          "msFlexAlign": "center",
-          "msFlexDirection": "row",
-          "msFlexPack": "center",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "paddingLeft": "0px",
-            "paddingRight": "0px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxPack": "center",
-              "WebkitJustifyContent": "center",
-              "alignItems": "center",
-              "color": "rgba(126,126,126,1.00)",
-              "display": "flex",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "600",
-              "justifyContent": "center",
-              "msFlexAlign": "center",
-              "msFlexPack": "center",
-              "textAlign": "center",
-            }
-          }
-        >
-          Use
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="css-view-1dbjc4n"
-    style={
-      Object {
-        "left": "32px",
-        "marginBottom": "0px",
-        "marginLeft": "auto",
-        "marginRight": "auto",
-        "marginTop": "0px",
-        "maxWidth": "560px",
-        "position": "fixed",
-        "right": "32px",
-        "top": "10px",
-        "zIndex": 100,
-      }
-    }
-  />
-</div>
+    &lt;ToastProvider&gt;{children}&lt;/ToastProvider&gt;
+
+  </code>
+</pre>
 `;
 
 exports[`Toast_2 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    const { notify } = useToast();
+
+notify({ title: 'Title', description: 'Description' });
+
+  </code>
+</pre>
+`;
+
+exports[`Toast_3 1`] = `
 <div>
   <div
     className="css-cursor-18t94o4 css-view-1dbjc4n"
@@ -22852,298 +22442,7 @@ exports[`Toast_2 1`] = `
             }
           }
         >
-          Open default toast
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="css-cursor-18t94o4 css-view-1dbjc4n"
-    data-focusable={true}
-    disabled={false}
-    onKeyDown={[Function]}
-    onKeyPress={[Function]}
-    onKeyUp={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    role="button"
-    style={
-      Object {
-        "MozTransitionProperty": "opacity",
-        "MozUserSelect": "none",
-        "WebkitTransitionDuration": "0.15s",
-        "WebkitTransitionProperty": "opacity",
-        "WebkitUserSelect": "none",
-        "backgroundColor": "rgba(103,198,187,1.00)",
-        "borderBottomLeftRadius": "4px",
-        "borderBottomRightRadius": "4px",
-        "borderTopLeftRadius": "4px",
-        "borderTopRightRadius": "4px",
-        "cursor": "pointer",
-        "height": "48px",
-        "msTouchAction": "manipulation",
-        "msUserSelect": "none",
-        "paddingLeft": "32px",
-        "paddingRight": "32px",
-        "touchAction": "manipulation",
-        "transitionDuration": "0.15s",
-        "transitionProperty": "opacity",
-        "userSelect": "none",
-      }
-    }
-    tabIndex="0"
-  >
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "WebkitAlignItems": "center",
-          "WebkitBoxAlign": "center",
-          "WebkitBoxDirection": "normal",
-          "WebkitBoxOrient": "horizontal",
-          "WebkitBoxPack": "center",
-          "WebkitFlexDirection": "row",
-          "WebkitJustifyContent": "center",
-          "alignItems": "center",
-          "flexDirection": "row",
-          "height": "100%",
-          "justifyContent": "center",
-          "msFlexAlign": "center",
-          "msFlexDirection": "row",
-          "msFlexPack": "center",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "paddingLeft": "0px",
-            "paddingRight": "0px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxPack": "center",
-              "WebkitJustifyContent": "center",
-              "alignItems": "center",
-              "color": "rgba(255,255,255,1.00)",
-              "display": "flex",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "600",
-              "justifyContent": "center",
-              "msFlexAlign": "center",
-              "msFlexPack": "center",
-              "textAlign": "center",
-            }
-          }
-        >
-          Open success toast
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="css-cursor-18t94o4 css-view-1dbjc4n"
-    data-focusable={true}
-    disabled={false}
-    onKeyDown={[Function]}
-    onKeyPress={[Function]}
-    onKeyUp={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    role="button"
-    style={
-      Object {
-        "MozTransitionProperty": "opacity",
-        "MozUserSelect": "none",
-        "WebkitTransitionDuration": "0.15s",
-        "WebkitTransitionProperty": "opacity",
-        "WebkitUserSelect": "none",
-        "backgroundColor": "rgba(210,101,87,1.00)",
-        "borderBottomLeftRadius": "4px",
-        "borderBottomRightRadius": "4px",
-        "borderTopLeftRadius": "4px",
-        "borderTopRightRadius": "4px",
-        "cursor": "pointer",
-        "height": "48px",
-        "msTouchAction": "manipulation",
-        "msUserSelect": "none",
-        "paddingLeft": "32px",
-        "paddingRight": "32px",
-        "touchAction": "manipulation",
-        "transitionDuration": "0.15s",
-        "transitionProperty": "opacity",
-        "userSelect": "none",
-      }
-    }
-    tabIndex="0"
-  >
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "WebkitAlignItems": "center",
-          "WebkitBoxAlign": "center",
-          "WebkitBoxDirection": "normal",
-          "WebkitBoxOrient": "horizontal",
-          "WebkitBoxPack": "center",
-          "WebkitFlexDirection": "row",
-          "WebkitJustifyContent": "center",
-          "alignItems": "center",
-          "flexDirection": "row",
-          "height": "100%",
-          "justifyContent": "center",
-          "msFlexAlign": "center",
-          "msFlexDirection": "row",
-          "msFlexPack": "center",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "paddingLeft": "0px",
-            "paddingRight": "0px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxPack": "center",
-              "WebkitJustifyContent": "center",
-              "alignItems": "center",
-              "color": "rgba(255,255,255,1.00)",
-              "display": "flex",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "600",
-              "justifyContent": "center",
-              "msFlexAlign": "center",
-              "msFlexPack": "center",
-              "textAlign": "center",
-            }
-          }
-        >
-          Open danger toast
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    className="css-cursor-18t94o4 css-view-1dbjc4n"
-    data-focusable={true}
-    disabled={false}
-    onKeyDown={[Function]}
-    onKeyPress={[Function]}
-    onKeyUp={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    role="button"
-    style={
-      Object {
-        "MozTransitionProperty": "opacity",
-        "MozUserSelect": "none",
-        "WebkitTransitionDuration": "0.15s",
-        "WebkitTransitionProperty": "opacity",
-        "WebkitUserSelect": "none",
-        "backgroundColor": "rgba(243,176,88,1.00)",
-        "borderBottomLeftRadius": "4px",
-        "borderBottomRightRadius": "4px",
-        "borderTopLeftRadius": "4px",
-        "borderTopRightRadius": "4px",
-        "cursor": "pointer",
-        "height": "48px",
-        "msTouchAction": "manipulation",
-        "msUserSelect": "none",
-        "paddingLeft": "32px",
-        "paddingRight": "32px",
-        "touchAction": "manipulation",
-        "transitionDuration": "0.15s",
-        "transitionProperty": "opacity",
-        "userSelect": "none",
-      }
-    }
-    tabIndex="0"
-  >
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "WebkitAlignItems": "center",
-          "WebkitBoxAlign": "center",
-          "WebkitBoxDirection": "normal",
-          "WebkitBoxOrient": "horizontal",
-          "WebkitBoxPack": "center",
-          "WebkitFlexDirection": "row",
-          "WebkitJustifyContent": "center",
-          "alignItems": "center",
-          "flexDirection": "row",
-          "height": "100%",
-          "justifyContent": "center",
-          "msFlexAlign": "center",
-          "msFlexDirection": "row",
-          "msFlexPack": "center",
-        }
-      }
-    >
-      <div
-        className="css-view-1dbjc4n"
-        style={
-          Object {
-            "paddingLeft": "0px",
-            "paddingRight": "0px",
-          }
-        }
-      >
-        <div
-          className="css-text-901oao"
-          dir="auto"
-          style={
-            Object {
-              "WebkitAlignItems": "center",
-              "WebkitBoxAlign": "center",
-              "WebkitBoxPack": "center",
-              "WebkitJustifyContent": "center",
-              "alignItems": "center",
-              "color": "rgba(255,255,255,1.00)",
-              "display": "flex",
-              "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "16px",
-              "fontWeight": "600",
-              "justifyContent": "center",
-              "msFlexAlign": "center",
-              "msFlexPack": "center",
-              "textAlign": "center",
-            }
-          }
-        >
-          Open warning toast
+          Open toast
         </div>
       </div>
     </div>
@@ -23168,7 +22467,7 @@ exports[`Toast_2 1`] = `
 </div>
 `;
 
-exports[`Toast_3 1`] = `<div />`;
+exports[`Toast_4 1`] = `<div />`;
 
 exports[`Visible_0 1`] = `
 <h1>

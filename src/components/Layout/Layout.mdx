@@ -7,7 +7,7 @@ menu: Components
 
 Paramount provides building blocks to create responsive layout via components `Visible`, `Row and Column`, `Container` and convenience functions ([see API](#api))
 
-### Setup and usage
+### Setup
 
 Put `LayoutProvider` at the top level component to wrap components that make use of `LayoutContext`. For options, [see configuration options](#options)
 
@@ -20,16 +20,11 @@ Put `LayoutProvider` at the top level component to wrap components that make use
     containerSizes: ContainerSizes,
   }}
 >
-  <Container>
-    <Row>
-      <Column />
-    </Row>
-  </Container>
-  <Visible />
+  {children}
 </LayoutProvider>
 ```
 
-### Utilities
+### Usage
 
 Paramount exposes a convenience hook `useLayout` that you can import to make use of utility functions for layout
 
@@ -57,6 +52,19 @@ console.log(value);
 // If currentScreenSize is large, it will return `red`
 // If currentScreenSize is small, it will return `blue`
 // If currentScreenSize is xsmall, it will return `blue`
+```
+
+#### Components
+
+Within application use following components
+
+```tsx
+<Container>
+  <Row>
+    <Column />
+  </Row>
+</Container>
+<Visible />
 ```
 
 ### Configuration Options

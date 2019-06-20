@@ -7,13 +7,12 @@ export interface TabStyles {
   containerStyle: ViewStyle;
   touchableStyle: ViewStyle;
   textStyle: TextStyle;
-  focusColor: string;
 }
 
 export type GetTabStyles = (props: TabProps, theme: Theme) => TabStyles;
 
 export const getTabStyles: GetTabStyles = (
-  { shouldStretch, isActive },
+  { shouldStretch = true, isActive = false },
   theme,
 ) => {
   return {
@@ -26,7 +25,6 @@ export const getTabStyles: GetTabStyles = (
           }
         : {}),
     },
-    focusColor: theme.colors.background.greyLight,
     textStyle: {
       color: isActive ? theme.colors.text.primary : theme.colors.text.muted,
     },

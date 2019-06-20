@@ -9,91 +9,44 @@ import { Box, Button, ToastContext, ToastProvider, Toast } from '..';
 
 # Toast
 
-Composes `Alert`.
+### Setup
+
+Put `ToastProvider` at the top level component to wrap components that make use of `ToastContext`.
+
+```tsx
+<ToastProvider>{children}</ToastProvider>
+```
 
 ### Usage
 
+Paramount exposes a convenience hook `useToast` you can use to create toasts from anywhere in the application
+
+```tsx
+const { notify } = useToast();
+
+notify({ title: 'Title', description: 'Description' });
+```
+
+Alternatively, use `ToastContext` directly.
+
 <Playground>
-  <ToastProvider
-    getStyles={(props, theme) => ({
-      containerStyle: {},
-    })}
-  >
+  <ToastProvider>
     <ToastContext.Consumer>
       {({ notify }) => (
         <Button
-          onPress={() => {
+          onPress={() =>
             notify({
               title: 'Title',
               description: 'Description',
-              component: null, // A React Component that overrides title and description
-              offset: 16,
-              duration: 3000,
-              // ...Alert props e.g. getStyles
-            });
-          }}
-          title="Use"
+            })
+          }
+          title="Open toast"
         />
       )}
     </ToastContext.Consumer>
   </ToastProvider>
 </Playground>
 
-### Variants
-
-<Playground>
-  <ToastProvider>
-    <ToastContext.Consumer>
-      {({ notify }) => (
-        <>
-          <Button
-            onPress={() =>
-              notify({
-                title: 'Title',
-                description: 'Description',
-              })
-            }
-            title="Open default toast"
-          />
-          <Button
-            onPress={() =>
-              notify({
-                description: 'Description',
-                intent: 'success',
-                title: 'Title',
-              })
-            }
-            color="primary"
-            title="Open success toast"
-          />
-          <Button
-            onPress={() =>
-              notify({
-                description: 'Description',
-                intent: 'danger',
-                title: 'Title',
-              })
-            }
-            color="danger"
-            title="Open danger toast"
-          />
-          <Button
-            onPress={() =>
-              notify({
-                description: 'Description',
-                intent: 'warning',
-                title: 'Title',
-              })
-            }
-            color="secondary"
-            title="Open warning toast"
-          />
-        </>
-      )}
-    </ToastContext.Consumer>
-  </ToastProvider>
-</Playground>
-
-### Props
+### Configuration options
 
 <Props of={Toast} />

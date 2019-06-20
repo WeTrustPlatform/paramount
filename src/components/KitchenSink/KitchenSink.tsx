@@ -88,7 +88,7 @@ export const KitchenSink = () => {
             width: 200,
             height: 200,
           }}
-          // Defaults to name if source is not provided
+          // Fallbacks to name if source is not provided
           name="Bill Gates"
           size="large"
         />
@@ -373,22 +373,13 @@ export const KitchenSink = () => {
           {({ state, setState }) => (
             <TextInput
               value={state.value}
-              placeholder="Add your own placeholder"
+              placeholder="TextInput"
               size="large"
-              isDisabled={false}
-              isInvalid={false}
-              textContentType="emailAddress" // Enables autofill
-              keyboardType="email-address"
               onChangeText={text => setState({ value: text })}
-              onSubmitEditing={e => console.log('Submit on enter')}
               leftIcon={<Icon name="menu" size={24} />}
-              rightIcon={undefined}
-              isClearable={true} // Mutually exclusive with rightIcon
+              isInvalid={false}
+              isClearable // Mutually exclusive with rightIcon
               onClear={() => console.log('Cleared!')} // Only triggered with `isClearable`
-              getStyles={(props, theme) => ({
-                inputStyle: {},
-                placeholderTextColor: theme.colors.text.muted,
-              })}
             />
           )}
         </State>
@@ -977,23 +968,11 @@ export const KitchenSink = () => {
           {({ state, setState }) => (
             <Tabs
               activeTabIndex={state.activeTabIndex}
-              onChange={index => setState({ activeTabIndex: index })}
-              getStyles={(props, theme) => ({
-                containerStyle: {},
-              })}
+              onTabPress={index => setState({ activeTabIndex: index })}
             >
-              {new Array(4).fill(0).map((v, i) => {
-                if (i === 0) {
-                  return (
-                    <Tab
-                      key={0}
-                      title="Custom"
-                      onPress={() => setState({ activeTabIndex: 0 })}
-                    />
-                  );
-                }
-                return <Tab key={i} title={`Tab ${i + 1}`} />;
-              })}
+              {new Array(4).fill(0).map((v, i) => (
+                <Tab key={i} title={`Tab ${i + 1}`} />
+              ))}
             </Tabs>
           )}
         </State>
@@ -1006,79 +985,18 @@ export const KitchenSink = () => {
       </Box>
 
       <Playground>
-        <ToastProvider
-          getStyles={(props, theme) => ({
-            containerStyle: {},
-          })}
-        >
-          <ToastContext.Consumer>
-            {({ notify }) => (
-              <Button
-                onPress={() => {
-                  notify({
-                    title: 'Title',
-                    description: 'Description',
-                    component: null, // A React Component that overrides title and description
-                    offset: 16,
-                    duration: 3000,
-                    // ...Alert props e.g. getStyles
-                  });
-                }}
-                title="Use"
-              />
-            )}
-          </ToastContext.Consumer>
-        </ToastProvider>
-      </Playground>
-
-      <Playground>
         <ToastProvider>
           <ToastContext.Consumer>
             {({ notify }) => (
-              <>
-                <Button
-                  onPress={() =>
-                    notify({
-                      title: 'Title',
-                      description: 'Description',
-                    })
-                  }
-                  title="Open default toast"
-                />
-                <Button
-                  onPress={() =>
-                    notify({
-                      description: 'Description',
-                      intent: 'success',
-                      title: 'Title',
-                    })
-                  }
-                  color="primary"
-                  title="Open success toast"
-                />
-                <Button
-                  onPress={() =>
-                    notify({
-                      description: 'Description',
-                      intent: 'danger',
-                      title: 'Title',
-                    })
-                  }
-                  color="danger"
-                  title="Open danger toast"
-                />
-                <Button
-                  onPress={() =>
-                    notify({
-                      description: 'Description',
-                      intent: 'warning',
-                      title: 'Title',
-                    })
-                  }
-                  color="secondary"
-                  title="Open warning toast"
-                />
-              </>
+              <Button
+                onPress={() =>
+                  notify({
+                    title: 'Title',
+                    description: 'Description',
+                  })
+                }
+                title="Open toast"
+              />
             )}
           </ToastContext.Consumer>
         </ToastProvider>

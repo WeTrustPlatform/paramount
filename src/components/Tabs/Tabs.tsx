@@ -10,22 +10,34 @@ import { GetTabsStyles, getTabsStyles, TabsStyles } from './Tabs.styles';
 export type TabsDistribution = 'scrollable' | 'fit';
 
 export interface TabsProps {
+  /**
+   * Current active tab index.
+   */
   activeTabIndex?: number;
-  children: Array<React.ReactElement<TabProps>> | React.ReactElement<TabProps>;
-  getStyles?: ReplaceReturnType<GetTabsStyles, DeepPartial<TabsStyles>>;
 
-  onChange: (index: number) => void;
+  /**
+   * Called when a Tab is pressed
+   */
+  onTabPress: (index?: number) => void;
+
+  /**
+   * `Tab` components
+   */
+  children: Array<React.ReactElement<TabProps>> | React.ReactElement<TabProps>;
+
+  /** Callback to get element styles. */
+  getStyles?: ReplaceReturnType<GetTabsStyles, DeepPartial<TabsStyles>>;
 }
 
 export const Tabs = (props: TabsProps) => {
-  const { children, activeTabIndex, onChange, getStyles } = props;
+  const { children, activeTabIndex, onTabPress, getStyles } = props;
   const theme = useTheme();
 
   const { containerStyle } = mergeStyles(
     getTabsStyles,
     getStyles,
     theme.components.getTabsStyles,
-  )({}, theme);
+  )(props, theme);
 
   const data = React.Children.map(children, (child, index) => {
     if (!child) return null;
@@ -33,7 +45,7 @@ export const Tabs = (props: TabsProps) => {
     return {
       index,
       isActive: index === activeTabIndex,
-      onPress: i => onChange(i),
+      onPress: i => onTabPress(i),
       ...child.props,
     };
   }) as TabProps[];

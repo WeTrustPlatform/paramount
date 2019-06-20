@@ -5,16 +5,32 @@ import { Alert, AlertProps } from '../Alert';
 export type ToastId = string;
 
 export interface ToastSettings extends AlertProps {
-  id?: ToastId;
-  offset?: number;
-  /* duration for how long the toast should stay active */
+  /**
+   * Duration for how long the toast should stay active.
+   * @default 3000
+   */
   duration?: number;
-  /* custom component, will override every other setting */
+
+  /**
+   * Custom component to override the entire toast.
+   */
   component?: React.ReactNode;
+
+  /**
+   * Assign an id to the toast so you can remove it later.
+   */
+  id?: ToastId;
 }
 
 export interface ToastInstance extends ToastSettings {
+  /**
+   * (Ignore) Assign an id to the toast so you can remove it later.
+   */
   id: ToastId;
+
+  /**
+   * (Ignore) Callback invoked when the duration is up.
+   */
   onRemove: () => void;
 }
 
@@ -22,14 +38,7 @@ export interface ToastInstance extends ToastSettings {
 export interface ToastProps extends ToastInstance {}
 
 export const Toast = (props: ToastProps) => {
-  const {
-    component,
-    id,
-    onRemove,
-    duration = 3000,
-    offset = 16,
-    ...toastSettings
-  } = props;
+  const { component, id, onRemove, duration = 3000, ...toastSettings } = props;
 
   React.useEffect(() => {
     const timer = setTimeout(() => onRemove(), duration);

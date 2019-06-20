@@ -18,28 +18,56 @@ You can use a custom component in place of `Tab` component, though keep in mind 
     {({ state, setState }) => (
       <Tabs
         activeTabIndex={state.activeTabIndex}
-        onChange={index => setState({ activeTabIndex: index })}
-        getStyles={(props, theme) => ({
-          containerStyle: {},
-        })}
+        onTabPress={index => setState({ activeTabIndex: index })}
       >
-        {new Array(4).fill(0).map((v, i) => {
-          if (i === 0) {
-            return (
-              <Tab
-                key={0}
-                title="Custom"
-                onPress={() => setState({ activeTabIndex: 0 })}
-              />
-            );
-          }
-          return <Tab key={i} title={`Tab ${i + 1}`} />;
-        })}
+        {new Array(4).fill(0).map((v, i) => (
+          <Tab key={i} title={`Tab ${i + 1}`} />
+        ))}
       </Tabs>
     )}
   </State>
 </Playground>
 
-### Props
+### Tabs Props
 
 <Props of={Tabs} />
+
+### Tab Props
+
+Extends `ButtonProps`
+
+<Props of={Tab} />
+
+### Customization
+
+Using `getStyles` prop
+
+```tsx
+TabsStyles {
+  containerStyle: ViewStyle;
+}
+
+getStyles={(TabsProps, Theme) => TabsStyles}
+
+TabStyles {
+  containerStyle: ViewStyle;
+  touchableStyle: ViewStyle;
+  textStyle: TextStyle;
+}
+
+getStyles={(TabProps, Theme) => TabStyles}
+```
+
+Tabs Markup
+
+```tsx
+<View style={containerStyle}>{tabs}</View>
+```
+
+Tab Markup
+
+```tsx
+<View style={containerStyle}>
+  <Button touchableStyle textStyle>
+</View>
+```

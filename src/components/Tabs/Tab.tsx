@@ -9,11 +9,32 @@ import { GetTabStyles, getTabStyles, TabStyles } from './Tab.styles';
 
 export interface TabProps
   extends Omit<Omit<ButtonProps, 'onPress'>, 'getStyles'> {
+  /**
+   * Index of the tab.
+   */
   index?: number;
+
+  /**
+   * Called when tab is pressed.
+   */
+  onPress?: (index?: number) => void;
+
+  /**
+   * When true, the tab would be highlighted as active.
+   * @default false
+   */
   isActive?: boolean;
+
+  /**
+   * When true, the tab will fill empty spaces
+   * @default true
+   */
   shouldStretch?: boolean;
+
+  /**
+   * Callback to get element styles.
+   */
   getStyles?: ReplaceReturnType<GetTabStyles, DeepPartial<TabStyles>>;
-  onPress?: (index: number) => void;
 }
 
 export const Tab = (props: TabProps) => {
@@ -26,19 +47,20 @@ export const Tab = (props: TabProps) => {
     ...buttonProps
   } = props;
   const theme = useTheme();
-  const { containerStyle, touchableStyle, textStyle, focusColor } = mergeStyles(
+  const { containerStyle, touchableStyle, textStyle } = mergeStyles(
     getTabStyles,
     getStyles,
     theme.components.getTabStyles,
-  )({ isActive, shouldStretch }, theme);
+  )(props, theme);
 
   return (
     <View style={containerStyle}>
       <Button
         color={isActive ? 'primary' : 'default'}
-        getStyles={() => ({ touchableStyle, focusColor, textStyle })}
+        getStyles={() => ({ touchableStyle, textStyle })}
         onPress={() => {
-          if (index && onPress) onPress(index);
+          if ((index === 0 || index) && onPress) onPress(index);
+          else if (onPress) onPress();
         }}
         {...buttonProps}
       />

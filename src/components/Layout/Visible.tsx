@@ -7,15 +7,34 @@ import {
 } from './LayoutContext';
 
 export interface VisibleConfig {
+  /**
+   * When true, render children only when the screen size is xsmall
+   */
   xsmall?: boolean;
+
+  /**
+   * When true, render children only when the screen size is small
+   */
   small?: boolean;
+
+  /**
+   * When true, render children only when the screen size is medium
+   */
   medium?: boolean;
+
+  /**
+   * When true, render children only when the screen size is large
+   */
   large?: boolean;
+
+  /**
+   * When true, render children only when the screen size is xlarge
+   */
   xlarge?: boolean;
 }
 
 export interface VisibleProps extends VisibleConfig {
-  children: React.ReactElement;
+  children?: React.ReactNode;
 }
 
 const combineConfig = (config: VisibleConfig) => {
@@ -39,7 +58,7 @@ export const Visible = (props: VisibleProps) => {
   const { children, ...config } = props;
   const { currentScreenSize } = React.useContext(LayoutContext);
 
-  if (isVisible(config, currentScreenSize)) return children;
+  if (isVisible(config, currentScreenSize)) return <>{children}</>;
 
-  return null;
+  return <></>;
 };

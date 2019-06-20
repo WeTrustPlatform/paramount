@@ -1,41 +1,41 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { ControlSize, Theme } from '../../theme/Theme';
+import { Theme } from '../../theme/Theme';
+import { TextInputProps } from './TextInput';
 
 export interface TextInputStyles {
   inputStyle: TextStyle;
-  focusedStyle: TextStyle;
   placeholderTextColor: string;
   containerStyle: ViewStyle;
   leftContainerStyle: ViewStyle;
   rightContainerStyle: ViewStyle;
 }
 
-export interface TextInputStylesProps {
-  size: ControlSize;
-  isDisabled: boolean;
-  isInvalid: boolean;
-  numberOfLines?: number;
-  hasLeftIcon: boolean;
-  hasRightIcon: boolean;
-}
-
 export type GetTextInputStyles = (
-  textInputStylesProps: TextInputStylesProps,
+  props: TextInputProps,
   theme: Theme,
 ) => TextInputStyles;
 
 export const getTextInputStyles: GetTextInputStyles = (
-  { size, isDisabled, isInvalid, numberOfLines, hasLeftIcon, hasRightIcon },
+  {
+    size = 'medium',
+    isClearable = false,
+    isDisabled = false,
+    isInvalid = false,
+    numberOfLines,
+    leftIcon,
+    rightIcon,
+  },
   theme,
 ) => {
+  const hasLeftIcon = !!leftIcon;
+  const hasRightIcon = !!(rightIcon || isClearable);
   const controlHeight = theme.controlHeights[size];
 
   return {
     containerStyle: {
       position: 'relative',
     },
-    focusedStyle: {},
     inputStyle: {
       backgroundColor: theme.colors.background.content,
       borderColor: theme.colors.border.default,
