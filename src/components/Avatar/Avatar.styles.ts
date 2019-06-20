@@ -57,8 +57,8 @@ export type GetAvatarStyles = (
 
 const avatarScale: { [size in ControlSize]: number } = {
   large: 2,
-  medium: 1,
-  small: 0.75,
+  medium: 1.5,
+  small: 1,
 };
 
 export const getAvatarStyles: GetAvatarStyles = (

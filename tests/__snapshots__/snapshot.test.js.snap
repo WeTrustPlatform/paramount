@@ -10115,14 +10115,14 @@ exports[`KitchenSink_1 1`] = `
                     "borderTopLeftRadius": "9999px",
                     "borderTopRightRadius": "9999px",
                     "display": "flex",
-                    "height": "NaNpx",
+                    "height": "40px",
                     "justifyContent": "center",
                     "msFlexAlign": "center",
                     "msFlexPack": "center",
                     "overflowX": "hidden",
                     "overflowY": "hidden",
                     "position": "relative",
-                    "width": "NaNpx",
+                    "width": "40px",
                   }
                 }
               >
@@ -10189,7 +10189,6 @@ exports[`KitchenSink_1 1`] = `
                     "color": "rgba(126,126,126,1.00)",
                     "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                     "fontSize": "20px",
-                    "fontWeight": "500",
                     "textAlign": "left",
                   }
                 }
@@ -10215,8 +10214,8 @@ exports[`KitchenSink_1 1`] = `
           <svg
             color="#7e7e7e"
             fill="none"
-            height={32}
-            size={32}
+            height={24}
+            size={24}
             stroke="currentColor"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -10227,7 +10226,7 @@ exports[`KitchenSink_1 1`] = `
               }
             }
             viewBox="0 0 24 24"
-            width={32}
+            width={24}
             xmlns="http://www.w3.org/2000/svg"
           >
             <polyline
@@ -11648,7 +11647,7 @@ exports[`KitchenSink_1 1`] = `
                     "borderRightColor": "rgba(238,238,238,1.00)",
                     "borderTopColor": "rgba(238,238,238,1.00)",
                     "cursor": "pointer",
-                    "height": "48px",
+                    "height": "56px",
                     "justifyContent": "center",
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
@@ -11725,8 +11724,7 @@ exports[`KitchenSink_1 1`] = `
                           Object {
                             "color": "rgba(126,126,126,1.00)",
                             "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "16px",
-                            "fontWeight": "500",
+                            "fontSize": "20px",
                             "textAlign": "left",
                           }
                         }
@@ -11853,7 +11851,7 @@ exports[`KitchenSink_1 1`] = `
                     "borderRightColor": "rgba(238,238,238,1.00)",
                     "borderTopColor": "rgba(238,238,238,1.00)",
                     "cursor": "pointer",
-                    "height": "48px",
+                    "height": "56px",
                     "justifyContent": "center",
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
@@ -11930,8 +11928,7 @@ exports[`KitchenSink_1 1`] = `
                           Object {
                             "color": "rgba(126,126,126,1.00)",
                             "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "16px",
-                            "fontWeight": "500",
+                            "fontSize": "20px",
                             "textAlign": "left",
                           }
                         }
@@ -12035,7 +12032,7 @@ exports[`KitchenSink_1 1`] = `
                     "borderRightColor": "rgba(238,238,238,1.00)",
                     "borderTopColor": "rgba(238,238,238,1.00)",
                     "cursor": "pointer",
-                    "height": "48px",
+                    "height": "56px",
                     "justifyContent": "center",
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
@@ -12112,8 +12109,7 @@ exports[`KitchenSink_1 1`] = `
                           Object {
                             "color": "rgba(126,126,126,1.00)",
                             "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "16px",
-                            "fontWeight": "500",
+                            "fontSize": "20px",
                             "textAlign": "left",
                           }
                         }
@@ -12217,7 +12213,7 @@ exports[`KitchenSink_1 1`] = `
                     "borderRightColor": "rgba(238,238,238,1.00)",
                     "borderTopColor": "rgba(238,238,238,1.00)",
                     "cursor": "pointer",
-                    "height": "48px",
+                    "height": "56px",
                     "justifyContent": "center",
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
@@ -12294,8 +12290,7 @@ exports[`KitchenSink_1 1`] = `
                           Object {
                             "color": "rgba(126,126,126,1.00)",
                             "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "16px",
-                            "fontWeight": "500",
+                            "fontSize": "20px",
                             "textAlign": "left",
                           }
                         }
@@ -12399,7 +12394,7 @@ exports[`KitchenSink_1 1`] = `
                     "borderRightColor": "rgba(238,238,238,1.00)",
                     "borderTopColor": "rgba(238,238,238,1.00)",
                     "cursor": "pointer",
-                    "height": "48px",
+                    "height": "56px",
                     "justifyContent": "center",
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
@@ -12476,8 +12471,7 @@ exports[`KitchenSink_1 1`] = `
                           Object {
                             "color": "rgba(126,126,126,1.00)",
                             "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "16px",
-                            "fontWeight": "500",
+                            "fontSize": "20px",
                             "textAlign": "left",
                           }
                         }
@@ -12581,7 +12575,7 @@ exports[`KitchenSink_1 1`] = `
                     "borderRightColor": "rgba(238,238,238,1.00)",
                     "borderTopColor": "rgba(238,238,238,1.00)",
                     "cursor": "pointer",
-                    "height": "48px",
+                    "height": "56px",
                     "justifyContent": "center",
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
@@ -12658,8 +12652,7 @@ exports[`KitchenSink_1 1`] = `
                           Object {
                             "color": "rgba(126,126,126,1.00)",
                             "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "16px",
-                            "fontWeight": "500",
+                            "fontSize": "20px",
                             "textAlign": "left",
                           }
                         }
@@ -12763,7 +12756,7 @@ exports[`KitchenSink_1 1`] = `
                     "borderRightColor": "rgba(238,238,238,1.00)",
                     "borderTopColor": "rgba(238,238,238,1.00)",
                     "cursor": "pointer",
-                    "height": "48px",
+                    "height": "56px",
                     "justifyContent": "center",
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
@@ -12840,8 +12833,7 @@ exports[`KitchenSink_1 1`] = `
                           Object {
                             "color": "rgba(126,126,126,1.00)",
                             "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "16px",
-                            "fontWeight": "500",
+                            "fontSize": "20px",
                             "textAlign": "left",
                           }
                         }
@@ -12945,7 +12937,7 @@ exports[`KitchenSink_1 1`] = `
                     "borderRightColor": "rgba(238,238,238,1.00)",
                     "borderTopColor": "rgba(238,238,238,1.00)",
                     "cursor": "pointer",
-                    "height": "48px",
+                    "height": "56px",
                     "justifyContent": "center",
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
@@ -13022,8 +13014,7 @@ exports[`KitchenSink_1 1`] = `
                           Object {
                             "color": "rgba(126,126,126,1.00)",
                             "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "16px",
-                            "fontWeight": "500",
+                            "fontSize": "20px",
                             "textAlign": "left",
                           }
                         }
@@ -13150,7 +13141,7 @@ exports[`KitchenSink_1 1`] = `
                     "borderRightColor": "rgba(238,238,238,1.00)",
                     "borderTopColor": "rgba(238,238,238,1.00)",
                     "cursor": "pointer",
-                    "height": "48px",
+                    "height": "56px",
                     "justifyContent": "center",
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
@@ -13227,8 +13218,7 @@ exports[`KitchenSink_1 1`] = `
                           Object {
                             "color": "rgba(126,126,126,1.00)",
                             "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "16px",
-                            "fontWeight": "500",
+                            "fontSize": "20px",
                             "textAlign": "left",
                           }
                         }
@@ -13332,7 +13322,7 @@ exports[`KitchenSink_1 1`] = `
                     "borderRightColor": "rgba(238,238,238,1.00)",
                     "borderTopColor": "rgba(238,238,238,1.00)",
                     "cursor": "pointer",
-                    "height": "48px",
+                    "height": "56px",
                     "justifyContent": "center",
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
@@ -13409,8 +13399,7 @@ exports[`KitchenSink_1 1`] = `
                           Object {
                             "color": "rgba(126,126,126,1.00)",
                             "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                            "fontSize": "16px",
-                            "fontWeight": "500",
+                            "fontSize": "20px",
                             "textAlign": "left",
                           }
                         }
@@ -15735,14 +15724,14 @@ exports[`ListItem_1 1`] = `
                 "borderTopLeftRadius": "9999px",
                 "borderTopRightRadius": "9999px",
                 "display": "flex",
-                "height": "NaNpx",
+                "height": "40px",
                 "justifyContent": "center",
                 "msFlexAlign": "center",
                 "msFlexPack": "center",
                 "overflowX": "hidden",
                 "overflowY": "hidden",
                 "position": "relative",
-                "width": "NaNpx",
+                "width": "40px",
               }
             }
           >
@@ -15809,7 +15798,6 @@ exports[`ListItem_1 1`] = `
                 "color": "rgba(126,126,126,1.00)",
                 "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
                 "fontSize": "20px",
-                "fontWeight": "500",
                 "textAlign": "left",
               }
             }
@@ -15835,8 +15823,8 @@ exports[`ListItem_1 1`] = `
       <svg
         color="#7e7e7e"
         fill="none"
-        height={32}
-        size={32}
+        height={24}
+        size={24}
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -15847,7 +15835,7 @@ exports[`ListItem_1 1`] = `
           }
         }
         viewBox="0 0 24 24"
-        width={32}
+        width={24}
         xmlns="http://www.w3.org/2000/svg"
       >
         <polyline
@@ -18745,7 +18733,7 @@ exports[`SelectList_1 1`] = `
                 "borderRightColor": "rgba(238,238,238,1.00)",
                 "borderTopColor": "rgba(238,238,238,1.00)",
                 "cursor": "pointer",
-                "height": "48px",
+                "height": "56px",
                 "justifyContent": "center",
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
@@ -18822,8 +18810,7 @@ exports[`SelectList_1 1`] = `
                       Object {
                         "color": "rgba(126,126,126,1.00)",
                         "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "16px",
-                        "fontWeight": "500",
+                        "fontSize": "20px",
                         "textAlign": "left",
                       }
                     }
@@ -18950,7 +18937,7 @@ exports[`SelectList_1 1`] = `
                 "borderRightColor": "rgba(238,238,238,1.00)",
                 "borderTopColor": "rgba(238,238,238,1.00)",
                 "cursor": "pointer",
-                "height": "48px",
+                "height": "56px",
                 "justifyContent": "center",
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
@@ -19027,8 +19014,7 @@ exports[`SelectList_1 1`] = `
                       Object {
                         "color": "rgba(126,126,126,1.00)",
                         "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "16px",
-                        "fontWeight": "500",
+                        "fontSize": "20px",
                         "textAlign": "left",
                       }
                     }
@@ -19132,7 +19118,7 @@ exports[`SelectList_1 1`] = `
                 "borderRightColor": "rgba(238,238,238,1.00)",
                 "borderTopColor": "rgba(238,238,238,1.00)",
                 "cursor": "pointer",
-                "height": "48px",
+                "height": "56px",
                 "justifyContent": "center",
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
@@ -19209,8 +19195,7 @@ exports[`SelectList_1 1`] = `
                       Object {
                         "color": "rgba(126,126,126,1.00)",
                         "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "16px",
-                        "fontWeight": "500",
+                        "fontSize": "20px",
                         "textAlign": "left",
                       }
                     }
@@ -19314,7 +19299,7 @@ exports[`SelectList_1 1`] = `
                 "borderRightColor": "rgba(238,238,238,1.00)",
                 "borderTopColor": "rgba(238,238,238,1.00)",
                 "cursor": "pointer",
-                "height": "48px",
+                "height": "56px",
                 "justifyContent": "center",
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
@@ -19391,8 +19376,7 @@ exports[`SelectList_1 1`] = `
                       Object {
                         "color": "rgba(126,126,126,1.00)",
                         "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "16px",
-                        "fontWeight": "500",
+                        "fontSize": "20px",
                         "textAlign": "left",
                       }
                     }
@@ -19496,7 +19480,7 @@ exports[`SelectList_1 1`] = `
                 "borderRightColor": "rgba(238,238,238,1.00)",
                 "borderTopColor": "rgba(238,238,238,1.00)",
                 "cursor": "pointer",
-                "height": "48px",
+                "height": "56px",
                 "justifyContent": "center",
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
@@ -19573,8 +19557,7 @@ exports[`SelectList_1 1`] = `
                       Object {
                         "color": "rgba(126,126,126,1.00)",
                         "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "16px",
-                        "fontWeight": "500",
+                        "fontSize": "20px",
                         "textAlign": "left",
                       }
                     }
@@ -19678,7 +19661,7 @@ exports[`SelectList_1 1`] = `
                 "borderRightColor": "rgba(238,238,238,1.00)",
                 "borderTopColor": "rgba(238,238,238,1.00)",
                 "cursor": "pointer",
-                "height": "48px",
+                "height": "56px",
                 "justifyContent": "center",
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
@@ -19755,8 +19738,7 @@ exports[`SelectList_1 1`] = `
                       Object {
                         "color": "rgba(126,126,126,1.00)",
                         "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "16px",
-                        "fontWeight": "500",
+                        "fontSize": "20px",
                         "textAlign": "left",
                       }
                     }
@@ -19860,7 +19842,7 @@ exports[`SelectList_1 1`] = `
                 "borderRightColor": "rgba(238,238,238,1.00)",
                 "borderTopColor": "rgba(238,238,238,1.00)",
                 "cursor": "pointer",
-                "height": "48px",
+                "height": "56px",
                 "justifyContent": "center",
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
@@ -19937,8 +19919,7 @@ exports[`SelectList_1 1`] = `
                       Object {
                         "color": "rgba(126,126,126,1.00)",
                         "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "16px",
-                        "fontWeight": "500",
+                        "fontSize": "20px",
                         "textAlign": "left",
                       }
                     }
@@ -20042,7 +20023,7 @@ exports[`SelectList_1 1`] = `
                 "borderRightColor": "rgba(238,238,238,1.00)",
                 "borderTopColor": "rgba(238,238,238,1.00)",
                 "cursor": "pointer",
-                "height": "48px",
+                "height": "56px",
                 "justifyContent": "center",
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
@@ -20119,8 +20100,7 @@ exports[`SelectList_1 1`] = `
                       Object {
                         "color": "rgba(126,126,126,1.00)",
                         "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "16px",
-                        "fontWeight": "500",
+                        "fontSize": "20px",
                         "textAlign": "left",
                       }
                     }
@@ -20247,7 +20227,7 @@ exports[`SelectList_1 1`] = `
                 "borderRightColor": "rgba(238,238,238,1.00)",
                 "borderTopColor": "rgba(238,238,238,1.00)",
                 "cursor": "pointer",
-                "height": "48px",
+                "height": "56px",
                 "justifyContent": "center",
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
@@ -20324,8 +20304,7 @@ exports[`SelectList_1 1`] = `
                       Object {
                         "color": "rgba(126,126,126,1.00)",
                         "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "16px",
-                        "fontWeight": "500",
+                        "fontSize": "20px",
                         "textAlign": "left",
                       }
                     }
@@ -20429,7 +20408,7 @@ exports[`SelectList_1 1`] = `
                 "borderRightColor": "rgba(238,238,238,1.00)",
                 "borderTopColor": "rgba(238,238,238,1.00)",
                 "cursor": "pointer",
-                "height": "48px",
+                "height": "56px",
                 "justifyContent": "center",
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
@@ -20506,8 +20485,7 @@ exports[`SelectList_1 1`] = `
                       Object {
                         "color": "rgba(126,126,126,1.00)",
                         "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                        "fontSize": "16px",
-                        "fontWeight": "500",
+                        "fontSize": "20px",
                         "textAlign": "left",
                       }
                     }

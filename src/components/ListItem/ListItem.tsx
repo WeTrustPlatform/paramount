@@ -2,7 +2,7 @@ import * as React from 'react';
 import { GestureResponderEvent, TouchableOpacity, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { ControlSize, TextSize, useTheme } from '../../theme';
+import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Avatar, AvatarProps } from '../Avatar';
 import { Icon } from '../Icon';
@@ -14,18 +14,6 @@ import {
 } from './ListItem.styles';
 
 export interface ListItemProps {
-  /**
-   * Size of the list item.
-   * @default "medium"
-   */
-  size?: ControlSize;
-
-  /**
-   * When true, list item will not be able to be pressed.
-   * @default false
-   */
-  isDisabled?: boolean;
-
   /**
    * Title of the list item
    */
@@ -40,6 +28,12 @@ export interface ListItemProps {
    * Props to be passed to `Avatar`
    */
   avatarProps?: AvatarProps;
+
+  /**
+   * When true, list item will not be able to be pressed.
+   * @default false
+   */
+  isDisabled?: boolean;
 
   /**
    * Icon replacing `Avatar` on the left hand-side
@@ -75,38 +69,6 @@ export interface ListItemProps {
   testID?: string;
 }
 
-const iconSize: {
-  [size in ControlSize]: number;
-} = {
-  large: 32,
-  medium: 24,
-  small: 16,
-};
-
-const avatarSize: {
-  [size in ControlSize]: number;
-} = {
-  large: 40,
-  medium: 32,
-  small: 24,
-};
-
-const titleSize: {
-  [size in ControlSize]: TextSize;
-} = {
-  large: 'large',
-  medium: 'medium',
-  small: 'small',
-};
-
-const descriptionSize: {
-  [size in ControlSize]: TextSize;
-} = {
-  large: 'medium',
-  medium: 'small',
-  small: 'xsmall',
-};
-
 export const ListItem = (props: ListItemProps) => {
   const {
     avatarProps,
@@ -114,7 +76,6 @@ export const ListItem = (props: ListItemProps) => {
     isDisabled = false,
     title,
     description,
-    size = 'medium',
     onPress,
     rightIcon,
     leftIcon,
@@ -153,23 +114,19 @@ export const ListItem = (props: ListItemProps) => {
         <View style={leftWrapperStyle}>
           <View style={imageWrapperStyle}>
             {leftIcon || avatarProps ? (
-              <Avatar size={avatarSize[size]} {...avatarProps} />
+              <Avatar size="small" {...avatarProps} />
             ) : null}
           </View>
           <View style={textWrapperStyle}>
             {title && (
-              <Text
-                getStyles={() => ({ textStyle: titleStyle })}
-                size={titleSize[size]}
-                weight="500"
-              >
+              <Text getStyles={() => ({ textStyle: titleStyle })} size="large">
                 {title}
               </Text>
             )}
             {description && (
               <Text
                 getStyles={() => ({ textStyle: descriptionStyle })}
-                size={descriptionSize[size]}
+                size="medium"
                 color="muted"
               >
                 {description}
@@ -180,11 +137,7 @@ export const ListItem = (props: ListItemProps) => {
         {rightIcon === null
           ? null
           : rightIcon || (
-              <Icon
-                color="default"
-                size={iconSize[size]}
-                name="chevron-right"
-              />
+              <Icon color="default" size={24} name="chevron-right" />
             )}
       </View>
     </TouchableOpacity>

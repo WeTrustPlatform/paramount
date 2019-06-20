@@ -611,7 +611,6 @@ export const KitchenSink = () => {
           }}
           title="Some label"
           description="Some description"
-          size="large"
         />
       </Playground>
 

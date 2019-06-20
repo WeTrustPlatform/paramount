@@ -18,10 +18,7 @@ export type GetListItemStyles = (
   theme: Theme,
 ) => ListItemStyles;
 
-export const getListItemStyles: GetListItemStyles = (
-  { size = 'medium', isDisabled },
-  theme,
-) => {
+export const getListItemStyles: GetListItemStyles = ({ isDisabled }, theme) => {
   return {
     descriptionStyle: {},
     imageWrapperStyle: {
@@ -39,7 +36,7 @@ export const getListItemStyles: GetListItemStyles = (
       backgroundColor: theme.colors.background.content,
       borderBottomWidth: 1,
       borderColor: theme.colors.border.default,
-      height: theme.controlHeights[size],
+      height: theme.controlHeights.large,
       justifyContent: 'center',
       paddingLeft: 16,
       paddingRight: 8,
