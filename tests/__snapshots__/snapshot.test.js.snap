@@ -15542,16 +15542,7 @@ exports[`Layout_1 1`] = `
   <code
     className="language-tsx"
   >
-    &lt;LayoutProvider
-  value={{
-    breakpoints: Breakpoints,
-    gridColumnCount: ColumnCount,
-    gutterWidth: number,
-    containerSizes: ContainerSizes,
-  }}
-&gt;
-  {children}
-&lt;/LayoutProvider&gt;
+    &lt;LayoutProvider value={options}&gt;{children}&lt;/LayoutProvider&gt;
 
   </code>
 </pre>
@@ -15562,10 +15553,13 @@ exports[`Layout_2 1`] = `
   <code
     className="language-tsx"
   >
-    const { currentScreenSize } = useLayout();
+    const MyComponent = () =&gt; {
+  const { currentScreenSize } = useLayout();
 
-console.log(currentScreenSize);
-// either xsmall, small, medium, large, xlarge
+  console.log(currentScreenSize);
+  // either xsmall, small, medium, large, xlarge
+  ...
+}
 
   </code>
 </pre>
@@ -15582,42 +15576,24 @@ exports[`Layout_4 1`] = `
   <code
     className="language-tsx"
   >
-    const { getResponsiveValue } = useLayout();
+    const MyComponent = () =&gt; {
+  const { getResponsiveValue } = useLayout();
 
-const value = getResponsiveValue({ xsmall: 'blue', large: 'red' }); // Can be strings, numbers or anything
+  // Can be strings, numbers or any
+  const value = getResponsiveValue({ xsmall: 'blue', large: 'red' });
 
-console.log(value);
-// If currentScreenSize is large, it will return \`red\`
-// If currentScreenSize is small, it will return \`blue\`
-// If currentScreenSize is xsmall, it will return \`blue\`
+  console.log(value);
+  // If currentScreenSize is large, it will return \`red\`
+  // If currentScreenSize is small, it will return \`blue\`
+  // If currentScreenSize is xsmall, it will return \`blue\`
+  ...
+}
 
   </code>
 </pre>
 `;
 
 exports[`Layout_5 1`] = `
-<h4>
-  Components
-</h4>
-`;
-
-exports[`Layout_6 1`] = `
-<pre>
-  <code
-    className="language-tsx"
-  >
-    &lt;Container&gt;
-  &lt;Row&gt;
-    &lt;Column /&gt;
-  &lt;/Row&gt;
-&lt;/Container&gt;
-&lt;Visible /&gt;
-
-  </code>
-</pre>
-`;
-
-exports[`Layout_7 1`] = `
 <pre>
   <code
     className="language-ts"
@@ -21584,14 +21560,6 @@ exports[`Tabs_4 1`] = `
 
 getStyles={(TabsProps, Theme) =&gt; TabsStyles}
 
-TabStyles {
-  containerStyle: ViewStyle;
-  touchableStyle: ViewStyle;
-  textStyle: TextStyle;
-}
-
-getStyles={(TabProps, Theme) =&gt; TabStyles}
-
   </code>
 </pre>
 `;
@@ -21608,6 +21576,23 @@ exports[`Tabs_5 1`] = `
 `;
 
 exports[`Tabs_6 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    TabStyles {
+  containerStyle: ViewStyle;
+  touchableStyle: ViewStyle;
+  textStyle: TextStyle;
+}
+
+getStyles={(TabProps, Theme) =&gt; TabStyles}
+
+  </code>
+</pre>
+`;
+
+exports[`Tabs_7 1`] = `
 <pre>
   <code
     className="language-tsx"
@@ -22340,9 +22325,15 @@ exports[`Toast_2 1`] = `
   <code
     className="language-tsx"
   >
-    const { notify } = useToast();
+    function MyComponent() {
+  const { notify } = useToast();
 
-notify({ title: 'Title', description: 'Description' });
+  return (
+    &lt;Button
+      onPress={() =&gt; notify({ title: 'Title', description: 'Description' })}
+    /&gt;
+  );
+}
 
   </code>
 </pre>

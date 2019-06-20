@@ -5,23 +5,14 @@ menu: Components
 
 # Layout
 
-Paramount provides building blocks to create responsive layout via components `Visible`, `Row and Column`, `Container` and convenience functions ([see API](#api))
+Paramount provides building blocks to create responsive layout via components `Visible`, `Row and Column`, `Container` and convenience functions ([see Usage](#usage))
 
 ### Setup
 
-Put `LayoutProvider` at the top level component to wrap components that make use of `LayoutContext`. For options, [see configuration options](#options)
+Put `LayoutProvider` at the top level component to wrap components that make use of `LayoutContext`. For options, [see Configuration Options](#configuration-options)
 
 ```tsx
-<LayoutProvider
-  value={{
-    breakpoints: Breakpoints,
-    gridColumnCount: ColumnCount,
-    gutterWidth: number,
-    containerSizes: ContainerSizes,
-  }}
->
-  {children}
-</LayoutProvider>
+<LayoutProvider value={options}>{children}</LayoutProvider>
 ```
 
 ### Usage
@@ -33,10 +24,13 @@ currentScreenSize
 Retrieves the current screen size
 
 ```tsx
-const { currentScreenSize } = useLayout();
+const MyComponent = () => {
+  const { currentScreenSize } = useLayout();
 
-console.log(currentScreenSize);
-// either xsmall, small, medium, large, xlarge
+  console.log(currentScreenSize);
+  // either xsmall, small, medium, large, xlarge
+  ...
+}
 ```
 
 #### getResponsiveValue
@@ -44,27 +38,18 @@ console.log(currentScreenSize);
 Returns arbitrary value that matches nearest defined size that is smaller than or equal to current screen size
 
 ```tsx
-const { getResponsiveValue } = useLayout();
+const MyComponent = () => {
+  const { getResponsiveValue } = useLayout();
 
-const value = getResponsiveValue({ xsmall: 'blue', large: 'red' }); // Can be strings, numbers or anything
+  // Can be strings, numbers or any
+  const value = getResponsiveValue({ xsmall: 'blue', large: 'red' });
 
-console.log(value);
-// If currentScreenSize is large, it will return `red`
-// If currentScreenSize is small, it will return `blue`
-// If currentScreenSize is xsmall, it will return `blue`
-```
-
-#### Components
-
-Within application use following components
-
-```tsx
-<Container>
-  <Row>
-    <Column />
-  </Row>
-</Container>
-<Visible />
+  console.log(value);
+  // If currentScreenSize is large, it will return `red`
+  // If currentScreenSize is small, it will return `blue`
+  // If currentScreenSize is xsmall, it will return `blue`
+  ...
+}
 ```
 
 ### Configuration Options

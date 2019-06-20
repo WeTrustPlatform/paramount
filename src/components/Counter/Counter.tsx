@@ -13,22 +13,34 @@ import {
 } from './Counter.styles';
 
 export interface CounterProps {
-  /** Count to be displayed. */
+  /**
+   * Count to be displayed.
+   */
   count?: number;
 
-  /** Minimum count for the counter. Upon reaching the limit, it will disable decrement button. */
+  /**
+   * Minimum count for the counter. Upon reaching the limit, it will disable decrement button.
+   */
   min?: number;
 
-  /** Maximum count for the counter. Upon reaching the limit, it will disable increment button. */
+  /**
+   * Maximum count for the counter. Upon reaching the limit, it will disable increment button.
+   */
   max?: number;
 
-  /** Custom component in place of count */
+  /**
+   * Custom component in place of count.
+   */
   component?: React.ReactNode;
 
-  /** Called when increment button is pressed */
+  /**
+   * Called when increment button is pressed.
+   */
   onIncrement?: () => void;
 
-  /** Called when decrement button is pressed */
+  /**
+   * Called when decrement button is pressed.
+   */
   onDecrement?: () => void;
 
   /**

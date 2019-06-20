@@ -22,9 +22,15 @@ Put `ToastProvider` at the top level component to wrap components that make use 
 Paramount exposes a convenience hook `useToast` you can use to create toasts from anywhere in the application
 
 ```tsx
-const { notify } = useToast();
+function MyComponent() {
+  const { notify } = useToast();
 
-notify({ title: 'Title', description: 'Description' });
+  return (
+    <Button
+      onPress={() => notify({ title: 'Title', description: 'Description' })}
+    />
+  );
+}
 ```
 
 Alternatively, use `ToastContext` directly.

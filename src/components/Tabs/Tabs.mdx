@@ -38,7 +38,7 @@ Extends `ButtonProps`
 
 <Props of={Tab} />
 
-### Customization
+### Tabs Customization
 
 Using `getStyles` prop
 
@@ -48,7 +48,19 @@ TabsStyles {
 }
 
 getStyles={(TabsProps, Theme) => TabsStyles}
+```
 
+Markup
+
+```tsx
+<View style={containerStyle}>{tabs}</View>
+```
+
+### Tab Customization
+
+Using `getStyles` prop
+
+```tsx
 TabStyles {
   containerStyle: ViewStyle;
   touchableStyle: ViewStyle;
@@ -58,13 +70,7 @@ TabStyles {
 getStyles={(TabProps, Theme) => TabStyles}
 ```
 
-Tabs Markup
-
-```tsx
-<View style={containerStyle}>{tabs}</View>
-```
-
-Tab Markup
+Markup
 
 ```tsx
 <View style={containerStyle}>

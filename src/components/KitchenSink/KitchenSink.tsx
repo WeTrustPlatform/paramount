@@ -836,14 +836,7 @@ export const KitchenSink = () => {
         <CounterState initial={0}>
           {({ count, incrementBy, decrementBy }) => (
             <Box>
-              <ProgressBar
-                percent={count}
-                size="large"
-                getStyles={(props, theme) => ({
-                  containerStyle: {},
-                  progressStyle: {},
-                })}
-              />
+              <ProgressBar percent={count} size="large" />
               <Counter
                 count={count}
                 onDecrement={() => decrementBy(10)}
