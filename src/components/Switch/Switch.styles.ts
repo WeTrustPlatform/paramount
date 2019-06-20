@@ -1,6 +1,7 @@
 import { ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
+import { SwitchProps } from './Switch';
 
 export interface SwitchStylesRequired {
   width: number;
@@ -8,6 +9,7 @@ export interface SwitchStylesRequired {
 }
 
 export interface SwitchStyles {
+  touchableStyle: ViewStyle;
   containerStyle: ViewStyle & SwitchStylesRequired;
   circleStyle: ViewStyle & SwitchStylesRequired;
   backgroundColorOff: string;
@@ -16,12 +18,19 @@ export interface SwitchStyles {
   circleColorOn: string;
 }
 
-export type GetSwitchStyles = (props: {}, theme: Theme) => SwitchStyles;
+export type GetSwitchStyles = (
+  props: SwitchProps,
+  theme: Theme,
+) => SwitchStyles;
 
 export const getSwitchStyles: GetSwitchStyles = (props, theme) => {
+  const { isDisabled = false } = props;
+
   return {
     backgroundColorOff: theme.colors.background.greyDefault,
-    backgroundColorOn: theme.colors.background.primaryDefault,
+    backgroundColorOn: isDisabled
+      ? theme.colors.background.greyDefault
+      : theme.colors.background.primaryDefault,
     circleColorOff: theme.colors.background.content,
     circleColorOn: theme.colors.background.content,
 
@@ -43,6 +52,11 @@ export const getSwitchStyles: GetSwitchStyles = (props, theme) => {
       height: 44,
       padding: 3,
       width: 72,
+    },
+    touchableStyle: {
+      alignSelf: 'flex-start',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
     },
   };
 };

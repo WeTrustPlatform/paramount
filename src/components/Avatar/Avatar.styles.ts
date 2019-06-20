@@ -1,6 +1,6 @@
 import { ImageStyle, TextStyle, ViewStyle } from 'react-native';
 
-import { FillColors, Fills, Theme } from '../../theme/Theme';
+import { ControlSize, FillColors, Fills, Theme } from '../../theme/Theme';
 import { AvatarProps } from './Avatar';
 
 export const hashCode = (s?: string) => {
@@ -26,16 +26,6 @@ export interface AvatarStyles {
   textStyle: TextStyle;
   imageStyle: ImageStyle;
 }
-
-const getAvatarInitialsFontSize = (
-  size: number,
-  sizeLimitOneCharacter: number,
-) => {
-  if (size <= sizeLimitOneCharacter) {
-    return Math.ceil(size / 2.2);
-  }
-  return Math.ceil(size / 2.6);
-};
 
 const getAvatarProps = (
   fills: Fills,
@@ -65,14 +55,14 @@ export type GetAvatarStyles = (
   theme: Theme,
 ) => AvatarStyles;
 
+const avatarScale: { [size in ControlSize]: number } = {
+  large: 2,
+  medium: 1,
+  small: 0.75,
+};
+
 export const getAvatarStyles: GetAvatarStyles = (
-  {
-    name,
-    color = 'automatic',
-    isSolid = false,
-    size = 48,
-    sizeLimitOneCharacter = 20,
-  },
+  { name, color = 'automatic', isSolid = false, size = 'medium' },
   theme,
 ) => {
   let colorProps;
@@ -88,10 +78,7 @@ export const getAvatarStyles: GetAvatarStyles = (
     colorProps = getAvatarProps(fills, { color, isSolid, hashValue: 0 });
   }
 
-  const initialsFontSize = getAvatarInitialsFontSize(
-    size,
-    sizeLimitOneCharacter,
-  );
+  const controlSize = theme.controlHeights[size] * avatarScale[size];
 
   return {
     containerStyle: {
@@ -99,17 +86,17 @@ export const getAvatarStyles: GetAvatarStyles = (
       backgroundColor: colorProps.backgroundColor,
       borderRadius: 9999,
       display: 'flex',
-      height: size,
+      height: controlSize,
       justifyContent: 'center',
       overflow: 'hidden',
       position: 'relative',
-      width: size,
+      width: controlSize,
     },
 
     textStyle: {
       color: colorProps.color,
-      fontSize: initialsFontSize,
-      lineHeight: initialsFontSize,
+      fontSize: controlSize / 2,
+      lineHeight: controlSize,
     },
 
     imageStyle: {

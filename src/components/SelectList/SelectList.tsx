@@ -9,6 +9,8 @@ export interface SelectListProps {
    * Select item or items.
    * For single-select use single string.
    * For multi-select use string array
+   *
+   * *This is a controlled component*; Value will reflect selected items
    */
   value: string | string[];
 

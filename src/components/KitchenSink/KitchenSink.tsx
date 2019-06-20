@@ -84,12 +84,13 @@ export const KitchenSink = () => {
       <Playground>
         <Avatar
           source={{
-            uri: 'https://picsum.photos/100/100',
-            width: 100,
-            height: 100,
+            uri: 'https://picsum.photos/200/200',
+            width: 200,
+            height: 200,
           }}
           // Defaults to name if source is not provided
           name="Bill Gates"
+          size="large"
         />
       </Playground>
 
@@ -931,27 +932,17 @@ export const KitchenSink = () => {
 
       <Playground>
         <Slider
-          size={40}
-          initialValue={0.3} // either number for single thumb slider or [number, number] for range slider
-          step={0}
-          isRange={false} // Only used if you are not passing initialValue
-          minimumValue={0}
-          maximumValue={1}
+          size="small"
+          value={0.3}
           onValueChange={value => console.log('onValueChange', value)}
           onSlidingComplete={value => console.log('onSlidingComplete', value)}
           onSlidingStart={value => console.log('onSlidingStart', value)}
-          getStyles={(props, theme) => ({
-            containerStyle: {},
-            selectedTrackStyle: {},
-            thumbStyle: {},
-            unselectedTrackStyle: {},
-          })}
         />
       </Playground>
 
       <Playground>
         <Slider
-          initialValue={[30, 60]} // This is an [number, number] instead of a number
+          value={[30, 60]}
           step={5}
           minimumValue={0}
           maximumValue={100}
@@ -970,23 +961,7 @@ export const KitchenSink = () => {
       <Playground>
         <Box>
           <Toggle initial={true}>
-            {({ on, toggle }) => (
-              <Switch
-                isSwitchedOn={on}
-                onChange={toggle}
-                isDisabled={false}
-                onIcon={null}
-                offIcon={null}
-                getStyles={(props, theme) => ({
-                  circleStyle: {},
-                  containerStyle: {},
-                  backgroundColorOff: '#F5F6F7',
-                  backgroundColorOn: '#67c6bb',
-                  circleColorOff: 'white',
-                  circleColorOn: 'white',
-                })}
-              />
-            )}
+            {({ on, toggle }) => <Switch value={on} onPress={toggle} />}
           </Toggle>
         </Box>
       </Playground>

@@ -1,6 +1,11 @@
 import { TextStyle } from 'react-native';
 
-import { BorderColor, BorderColors, Theme } from '../../theme/Theme';
+import {
+  BorderColor,
+  BorderColors,
+  ControlSize,
+  Theme,
+} from '../../theme/Theme';
 import { DividerProps } from './Divider';
 
 export interface DividerStyles {
@@ -23,24 +28,32 @@ export const getDividerColor = (borderColors: BorderColors) => (
   return presetColor || borderColor;
 };
 
+const dividerScale: { [size in ControlSize]: number } = {
+  large: 3,
+  medium: 2,
+  small: 1,
+};
+
 export const getDividerStyles: GetDividerStyles = (
-  { size = 1, color, position },
+  { size = 'small', color, position = 'horizontal' },
   theme,
 ) => {
   const backgroundColor = getDividerColor(theme.colors.border)(
     color || theme.colors.border.default,
   );
 
+  const dividerSize = dividerScale[size];
+
   const styleMap = {
     horizontal: {
       backgroundColor,
-      height: size,
+      height: dividerSize,
       width: '100%',
     },
     vertical: {
       backgroundColor,
       height: '100%',
-      width: size,
+      width: dividerSize,
     },
   };
 

@@ -16,10 +16,31 @@ import {
 const AnimatedView = animated(View);
 
 export interface SwitchProps {
-  isSwitchedOn?: boolean;
+  /**
+   * When true, will display as switched on.
+   * @default false
+   */
+  value?: boolean;
+
+  /**
+   * When true, the switch is disabled.
+   * @default false
+   */
   isDisabled?: boolean;
-  onChange?: (event: GestureResponderEvent) => void;
+
+  /**
+   * Called when checkbox is pressed.
+   */
+  onPress?: (event: GestureResponderEvent) => void;
+
+  /**
+   * Replace the icon when switch is on
+   */
   onIcon?: React.ReactNode;
+
+  /**
+   * Replace the icon when switch is off
+   */
   offIcon?: React.ReactNode;
 
   /** Label for screen readers */
@@ -34,10 +55,10 @@ export interface SwitchProps {
    */
   accessible?: boolean;
 
+  /** Used to locate this view in end-to-end tests. */
   testID?: string;
-  /**
-   * Inline styles for components
-   */
+
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetSwitchStyles, DeepPartial<SwitchStyles>>;
 }
 
@@ -45,8 +66,9 @@ export const Switch = (props: SwitchProps) => {
   const {
     onIcon,
     offIcon,
-    onChange,
-    isSwitchedOn,
+    onPress,
+    value = false,
+    isDisabled = false,
     getStyles,
     testID,
     accessibilityHint,
@@ -61,30 +83,28 @@ export const Switch = (props: SwitchProps) => {
     backgroundColorOn,
     circleColorOff,
     circleColorOn,
+    touchableStyle,
   } = mergeStyles(getSwitchStyles, getStyles, theme.components.getSwitchStyles)(
-    {},
+    props,
     theme,
   );
 
   const { backgroundColor, circleColor, circlePosition } = useSpring({
     config: springDefaultConfig,
 
-    backgroundColor: isSwitchedOn ? backgroundColorOn : backgroundColorOff,
-    circleColor: isSwitchedOn ? circleColorOn : circleColorOff,
-    circlePosition: isSwitchedOn
+    backgroundColor: value ? backgroundColorOn : backgroundColorOff,
+    circleColor: value ? circleColorOn : circleColorOff,
+    circlePosition: value
       ? containerStyle.width - (circleStyle.width + containerStyle.padding * 2)
       : 0,
   });
 
   return (
     <TouchableOpacity
-      onPress={onChange}
+      onPress={onPress}
       activeOpacity={1}
-      style={{
-        alignSelf: 'flex-start',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-      }}
+      style={touchableStyle}
+      disabled={isDisabled}
       testID={testID}
       accessibilityHint={accessibilityHint}
       accessibilityLabel={accessibilityLabel}
@@ -101,16 +121,28 @@ export const Switch = (props: SwitchProps) => {
             { transform: [{ translateX: circlePosition }] },
           ]}
         >
-          {isSwitchedOn
+          {value
             ? onIcon || (
                 <Icon
                   name="check"
                   size={20}
-                  color={theme.colors.text.primary}
+                  color={
+                    isDisabled
+                      ? theme.colors.text.white
+                      : theme.colors.text.primary
+                  }
                 />
               )
             : offIcon || (
-                <Icon name="x" size={20} color={theme.colors.text.default} />
+                <Icon
+                  name="x"
+                  size={20}
+                  color={
+                    isDisabled
+                      ? theme.colors.text.white
+                      : theme.colors.text.default
+                  }
+                />
               )}
         </AnimatedView>
       </AnimatedView>

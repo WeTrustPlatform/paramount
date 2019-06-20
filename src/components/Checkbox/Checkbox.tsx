@@ -45,7 +45,9 @@ export interface CheckboxProps {
    */
   shape?: ContainerShape;
 
-  /** Called when checkbox is pressed. */
+  /**
+   * Called when checkbox is pressed.
+   */
   onPress?: (e: GestureResponderEvent) => void;
 
   /** Callback to get element styles. */

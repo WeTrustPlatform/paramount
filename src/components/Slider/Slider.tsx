@@ -4,7 +4,7 @@ import { PanResponder, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { usePrevious } from '../../hooks';
-import { useTheme } from '../../theme';
+import { ControlSize, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { ViewMeasure } from '../Helpers';
 import {
@@ -24,42 +24,51 @@ export type RangeValue = [number, number];
 export type SliderValue = number | RangeValue;
 
 export interface SliderProps {
-  /** Set whether it should slide a range. However, if initialValue is set, it will take precedence over this prop */
+  /**
+   * Set whether it should slide a range.
+   * However, if initialValue is set, it will take precedence over this prop
+   * @default false
+   */
   isRange?: boolean;
 
-  /** Size of the thumb, and thus the whole slider */
-  size?: number;
+  /**
+   * Size of the thumb, and thus the whole slider
+   * @default "medium"
+   */
+  size?: ControlSize;
 
   /**
    * Initial value of the slider. The value should be between minimumValue
    * and maximumValue; which default to 0 and 1 respectively.
-   * Default value is 0.
    *
    * *This is not a controlled component*; you don't need to update the
    * value during dragging.
+   * @default 0
    */
-  initialValue?: SliderValue;
+  value?: SliderValue;
 
   /**
    * Step value of the slider. The value should be
    * between 0 and (maximumValue - minimumValue).
-   * Default value is 0.
+   * @default 0
    */
   step?: number;
 
   /**
-   * Initial minimum value of the slider. Default value is 0.
+   * Initial minimum value of the slider.
+   * @default 0
    */
   minimumValue?: number;
 
   /**
-   * Initial maximum value of the slider. Default value is 1.
+   * Initial maximum value of the slider.
+   * @default 1
    */
   maximumValue?: number;
 
   /**
    * If true the user won't be able to move the slider.
-   * Default value is false.
+   * @default false
    */
   disabled?: boolean;
 
@@ -76,11 +85,26 @@ export interface SliderProps {
   onSlidingComplete?: (value: SliderValue) => void;
 
   /**
-   * Callback called when the user starts changing the value (e.g. when the slider is pressed)
+   * Callback called when the user starts changing the value.
    */
   onSlidingStart?: (value: SliderValue) => void;
 
+  /**
+   * Callback to get element styles.
+   */
   getStyles?: ReplaceReturnType<GetSliderStyles, DeepPartial<SliderStyles>>;
+
+  /** Label for screen readers */
+  leftThumbAccessibilityLabel?: string;
+
+  /** Hint for screen readers */
+  leftThumbAccessibilityHint?: string;
+
+  /** Label for screen readers */
+  rightThumbAccessibilityLabel?: string;
+
+  /** Hint for screen readers */
+  rightThumbAccessibilityHint?: string;
 
   /**
    * Used to locate this view in UI automation tests.
@@ -143,16 +167,19 @@ const setRightValue = (
 
 export const Slider = (props: SliderProps) => {
   const {
-    initialValue = 0,
+    value: initialValue = 0,
     onSlidingStart = () => undefined,
     onSlidingComplete = () => undefined,
     onValueChange = () => undefined,
     minimumValue = 0,
     maximumValue = 1,
-    size = 40,
     step = 0,
     getStyles,
     isRange = false,
+    leftThumbAccessibilityLabel,
+    leftThumbAccessibilityHint,
+    rightThumbAccessibilityHint,
+    rightThumbAccessibilityLabel,
   } = props;
 
   const finalInitialValue =
@@ -240,7 +267,7 @@ export const Slider = (props: SliderProps) => {
     thumbStyle,
     unselectedTrackStyle,
   } = mergeStyles(getSliderStyles, getStyles, theme.components.getSliderStyles)(
-    { size },
+    props,
     theme,
   );
 
@@ -260,14 +287,18 @@ export const Slider = (props: SliderProps) => {
       <View
         accessible
         // @ts-ignore
-        style={{ ...thumbStyle, left: left - size / 2, cursor }}
+        style={{ ...thumbStyle, left: left - thumbStyle.width / 2, cursor }}
+        accessibilityLabel={leftThumbAccessibilityLabel}
+        accessibilityHint={leftThumbAccessibilityHint}
         {...leftThumbRef.current.panHandlers}
       />
       {isRangeSlider && (
         <View
           accessible
           // @ts-ignore
-          style={{ ...thumbStyle, left: right - size / 2, cursor }}
+          style={{ ...thumbStyle, left: right - thumbStyle.width / 2, cursor }}
+          accessibilityLabel={rightThumbAccessibilityLabel}
+          accessibilityHint={rightThumbAccessibilityHint}
           {...rightThumbRef.current.panHandlers}
         />
       )}

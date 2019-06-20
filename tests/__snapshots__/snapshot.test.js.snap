@@ -586,14 +586,14 @@ exports[`Avatar_1 1`] = `
         "borderTopLeftRadius": "9999px",
         "borderTopRightRadius": "9999px",
         "display": "flex",
-        "height": "48px",
+        "height": "112px",
         "justifyContent": "center",
         "msFlexAlign": "center",
         "msFlexPack": "center",
         "overflowX": "hidden",
         "overflowY": "hidden",
         "position": "relative",
-        "width": "48px",
+        "width": "112px",
       }
     }
   >
@@ -617,7 +617,7 @@ exports[`Avatar_1 1`] = `
         style={
           Object {
             "backgroundColor": "rgba(0,0,0,0.00)",
-            "backgroundImage": "url(\\"https://picsum.photos/100/100\\")",
+            "backgroundImage": "url(\\"https://picsum.photos/200/200\\")",
             "backgroundPosition": "center",
             "backgroundRepeat": "no-repeat",
             "backgroundSize": "cover",
@@ -636,7 +636,7 @@ exports[`Avatar_1 1`] = `
         alt=""
         className="css-accessibilityImage-9pa8cd"
         draggable={false}
-        src="https://picsum.photos/100/100"
+        src="https://picsum.photos/200/200"
       />
     </div>
   </div>
@@ -4925,14 +4925,14 @@ exports[`KitchenSink_1 1`] = `
             "borderTopLeftRadius": "9999px",
             "borderTopRightRadius": "9999px",
             "display": "flex",
-            "height": "48px",
+            "height": "112px",
             "justifyContent": "center",
             "msFlexAlign": "center",
             "msFlexPack": "center",
             "overflowX": "hidden",
             "overflowY": "hidden",
             "position": "relative",
-            "width": "48px",
+            "width": "112px",
           }
         }
       >
@@ -4956,7 +4956,7 @@ exports[`KitchenSink_1 1`] = `
             style={
               Object {
                 "backgroundColor": "rgba(0,0,0,0.00)",
-                "backgroundImage": "url(\\"https://picsum.photos/100/100\\")",
+                "backgroundImage": "url(\\"https://picsum.photos/200/200\\")",
                 "backgroundPosition": "center",
                 "backgroundRepeat": "no-repeat",
                 "backgroundSize": "cover",
@@ -4975,7 +4975,7 @@ exports[`KitchenSink_1 1`] = `
             alt=""
             className="css-accessibilityImage-9pa8cd"
             draggable={false}
-            src="https://picsum.photos/100/100"
+            src="https://picsum.photos/200/200"
           />
         </div>
       </div>
@@ -10116,14 +10116,14 @@ exports[`KitchenSink_1 1`] = `
                     "borderTopLeftRadius": "9999px",
                     "borderTopRightRadius": "9999px",
                     "display": "flex",
-                    "height": "40px",
+                    "height": "NaNpx",
                     "justifyContent": "center",
                     "msFlexAlign": "center",
                     "msFlexPack": "center",
                     "overflowX": "hidden",
                     "overflowY": "hidden",
                     "position": "relative",
-                    "width": "40px",
+                    "width": "NaNpx",
                   }
                 }
               >
@@ -13623,7 +13623,7 @@ exports[`KitchenSink_1 1`] = `
           Object {
             "WebkitBoxPack": "center",
             "WebkitJustifyContent": "center",
-            "height": "40px",
+            "height": "48px",
             "justifyContent": "center",
             "msFlexPack": "center",
           }
@@ -13691,10 +13691,10 @@ exports[`KitchenSink_1 1`] = `
               "borderTopRightRadius": "999px",
               "borderTopWidth": "3px",
               "cursor": "grab",
-              "height": "40px",
-              "left": "-20px",
+              "height": "48px",
+              "left": "-24px",
               "position": "absolute",
-              "width": "40px",
+              "width": "48px",
               "zIndex": 1,
             }
           }
@@ -13731,10 +13731,10 @@ exports[`KitchenSink_1 1`] = `
               "borderTopRightRadius": "999px",
               "borderTopWidth": "3px",
               "cursor": "grab",
-              "height": "40px",
-              "left": "-20px",
+              "height": "48px",
+              "left": "-24px",
               "position": "absolute",
-              "width": "40px",
+              "width": "48px",
               "zIndex": 1,
             }
           }
@@ -13784,6 +13784,7 @@ exports[`KitchenSink_1 1`] = `
         <div
           className="css-view-1dbjc4n"
           data-focusable={true}
+          disabled={false}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
           onResponderGrant={[Function]}
@@ -16157,14 +16158,14 @@ exports[`ListItem_1 1`] = `
                 "borderTopLeftRadius": "9999px",
                 "borderTopRightRadius": "9999px",
                 "display": "flex",
-                "height": "40px",
+                "height": "NaNpx",
                 "justifyContent": "center",
                 "msFlexAlign": "center",
                 "msFlexPack": "center",
                 "overflowX": "hidden",
                 "overflowY": "hidden",
                 "position": "relative",
-                "width": "40px",
+                "width": "NaNpx",
               }
             }
           >
@@ -21114,7 +21115,7 @@ exports[`Slider_2 1`] = `
       Object {
         "WebkitBoxPack": "center",
         "WebkitJustifyContent": "center",
-        "height": "40px",
+        "height": "48px",
         "justifyContent": "center",
         "msFlexPack": "center",
       }
@@ -21182,10 +21183,10 @@ exports[`Slider_2 1`] = `
           "borderTopRightRadius": "999px",
           "borderTopWidth": "3px",
           "cursor": "grab",
-          "height": "40px",
-          "left": "-20px",
+          "height": "48px",
+          "left": "-24px",
           "position": "absolute",
-          "width": "40px",
+          "width": "48px",
           "zIndex": 1,
         }
       }
@@ -21222,10 +21223,10 @@ exports[`Slider_2 1`] = `
           "borderTopRightRadius": "999px",
           "borderTopWidth": "3px",
           "cursor": "grab",
-          "height": "40px",
-          "left": "-20px",
+          "height": "48px",
+          "left": "-24px",
           "position": "absolute",
-          "width": "40px",
+          "width": "48px",
           "zIndex": 1,
         }
       }
@@ -21236,6 +21237,40 @@ exports[`Slider_2 1`] = `
 `;
 
 exports[`Slider_3 1`] = `<div />`;
+
+exports[`Slider_4 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    SliderStyles {
+  containerStyle: ViewStyle; // { height: thumbSize }
+  selectedTrackStyle: ViewStyle;
+  thumbStyle: ViewStyle; // { height: thumbSize, width: thumbSize }
+  unselectedTrackStyle: ViewStyle;
+}
+
+getStyles={(SliderProps, Theme) =&gt; SliderStyles}
+
+  </code>
+</pre>
+`;
+
+exports[`Slider_5 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;View containerStyle&gt;
+  &lt;View unselectedTrackStyle /&gt;
+  &lt;View selectedTrackStyle /&gt;
+  &lt;View thumbStyle /&gt;
+  &lt;View thumbStyle /&gt;
+&lt;/View&gt;
+
+  </code>
+</pre>
+`;
 
 exports[`Switch_0 1`] = `
 <h1>
@@ -21251,6 +21286,7 @@ exports[`Switch_1 1`] = `
     <div
       className="css-view-1dbjc4n"
       data-focusable={true}
+      disabled={false}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
       onResponderGrant={[Function]}
@@ -21375,6 +21411,40 @@ exports[`Switch_1 1`] = `
 `;
 
 exports[`Switch_2 1`] = `<div />`;
+
+exports[`Switch_3 1`] = `
+<pre>
+  <code>
+    SwitchStyles {
+  touchableStyle: ViewStyle;
+  containerStyle: ViewStyle & SwitchStylesRequired;
+  circleStyle: ViewStyle & SwitchStylesRequired;
+  backgroundColorOff: string;
+  backgroundColorOn: string;
+  circleColorOff: string;
+  circleColorOn: string;
+}
+
+getStyles={(SwitchProps, Theme) =&gt; SwitchStyles}
+
+  </code>
+</pre>
+`;
+
+exports[`Switch_4 1`] = `
+<pre>
+  <code
+    className="language-tsx"
+  >
+    &lt;TouchableOpacity touchableStyle&gt;
+  &lt;View containerStyle&gt;
+    &lt;View circleStyle&gt;{icon}&lt;/View&gt;
+  &lt;/View&gt;
+&lt;/TouchableOpacity&gt;
+
+  </code>
+</pre>
+`;
 
 exports[`Tabs_0 1`] = `
 <h1>

@@ -14,23 +14,7 @@ import { Box, Switch, Toggle } from '..';
 <Playground>
   <Box>
     <Toggle initial={true}>
-      {({ on, toggle }) => (
-        <Switch
-          isSwitchedOn={on}
-          onChange={toggle}
-          isDisabled={false}
-          onIcon={null}
-          offIcon={null}
-          getStyles={(props, theme) => ({
-            circleStyle: {},
-            containerStyle: {},
-            backgroundColorOff: '#F5F6F7',
-            backgroundColorOn: '#67c6bb',
-            circleColorOff: 'white',
-            circleColorOn: 'white',
-          })}
-        />
-      )}
+      {({ on, toggle }) => <Switch value={on} onPress={toggle} />}
     </Toggle>
   </Box>
 </Playground>
@@ -38,3 +22,31 @@ import { Box, Switch, Toggle } from '..';
 ### Props
 
 <Props of={Switch} />
+
+### Customization
+
+Using `getStyles` prop
+
+```
+SwitchStyles {
+  touchableStyle: ViewStyle;
+  containerStyle: ViewStyle & SwitchStylesRequired;
+  circleStyle: ViewStyle & SwitchStylesRequired;
+  backgroundColorOff: string;
+  backgroundColorOn: string;
+  circleColorOff: string;
+  circleColorOn: string;
+}
+
+getStyles={(SwitchProps, Theme) => SwitchStyles}
+```
+
+Markup
+
+```tsx
+<TouchableOpacity touchableStyle>
+  <View containerStyle>
+    <View circleStyle>{icon}</View>
+  </View>
+</TouchableOpacity>
+```

@@ -3,7 +3,7 @@ import { Image, ImageSourcePropType, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { FillColor } from '../../theme/Theme';
+import { ControlSize, FillColor } from '../../theme/Theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Text } from '../Typography';
 import {
@@ -30,24 +30,25 @@ export interface AvatarProps {
   /** The source attribute of the image. When it's not available, render initials instead. */
   source?: ImageSourcePropType;
 
-  /** The size of the avatar. */
-  size?: number;
+  /**
+   * The size of the avatar.
+   * @default "medium"
+   */
+  size?: ControlSize;
 
   /**
    * The name used for the initials and title attribute.
-   * @default 48
    */
   name?: string;
 
   /**
-   * When true, render a solid avatar.
+   * When true, render a solid background when initials are used.
    * @default false
    */
   isSolid?: boolean;
 
   /**
    * The color used for the avatar.
-   * When the value is `automatic`, use the hash function to determine the color.
    * @default "automatic"
    */
   color?: 'automatic' | FillColor;
@@ -57,12 +58,6 @@ export interface AvatarProps {
 
   /** Label for screen readers */
   accessibilityLabel?: string;
-
-  /**
-   * When the size is smaller than this number, use a single initial for the avatar.
-   * @default 20
-   */
-  sizeLimitOneCharacter?: number;
 
   /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetAvatarStyles, DeepPartial<AvatarStyles>>;
@@ -74,9 +69,7 @@ export interface AvatarProps {
 export const Avatar = (props: AvatarProps) => {
   const {
     source,
-    size = 48,
     name,
-    sizeLimitOneCharacter = 20,
     getStyles,
     testID,
     imageAccessibilityLabel,
@@ -90,10 +83,7 @@ export const Avatar = (props: AvatarProps) => {
   );
   const imageUnavailable = !source || hasImageFailedLoading;
 
-  let initials = getInitials(name);
-  if (size <= sizeLimitOneCharacter) {
-    initials = initials.substring(0, 1);
-  }
+  const initials = getInitials(name);
 
   const { containerStyle, textStyle, imageStyle } = mergeStyles(
     getAvatarStyles,
