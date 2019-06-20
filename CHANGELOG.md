@@ -1,3 +1,17 @@
+# [1.69.0](https://github.com/WeTrustPlatform/paramount/compare/v1.68.1...v1.69.0) (2019-06-20)
+
+
+### Bug Fixes
+
+* **listitem:** remove size prop ([22d3455](https://github.com/WeTrustPlatform/paramount/commit/22d3455))
+* **selectlistitem:** fix size prop ([4b7fa55](https://github.com/WeTrustPlatform/paramount/commit/4b7fa55))
+
+
+### Features
+
+* docs and cleanup ([5ff2ac0](https://github.com/WeTrustPlatform/paramount/commit/5ff2ac0))
+* further refactor and docs ([0b30b48](https://github.com/WeTrustPlatform/paramount/commit/0b30b48))
+
 ## [1.68.1](https://github.com/WeTrustPlatform/paramount/compare/v1.68.0...v1.68.1) (2019-06-19)
 
 
