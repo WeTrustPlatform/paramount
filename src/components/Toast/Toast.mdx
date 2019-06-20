@@ -9,7 +9,7 @@ import { Box, Button, ToastContext, ToastProvider, Toast } from '..';
 
 # Toast
 
-### Setup
+## Setup
 
 Put `ToastProvider` at the top level component to wrap components that make use of `ToastContext`.
 
@@ -17,26 +17,16 @@ Put `ToastProvider` at the top level component to wrap components that make use 
 <ToastProvider>{children}</ToastProvider>
 ```
 
-### Usage
+## Usage
 
-Paramount exposes a convenience hook `useToast` you can use to create toasts from anywhere in the application
-
-```tsx
-function MyComponent() {
-  const { notify } = useToast();
-
-  return (
-    <Button
-      onPress={() => notify({ title: 'Title', description: 'Description' })}
-    />
-  );
-}
-```
-
-Alternatively, use `ToastContext` directly.
+Paramount exposes a convenience hook `useToast` you can use to create toasts from anywhere in the application.
 
 <Playground>
   <ToastProvider>
+    {/*
+      We use `ToastContext.Consumer` here due to limitations in docs
+      Use `const { notify } = useToast()`
+     */}
     <ToastContext.Consumer>
       {({ notify }) => (
         <Button
@@ -53,6 +43,6 @@ Alternatively, use `ToastContext` directly.
   </ToastProvider>
 </Playground>
 
-### Configuration options
+## Options
 
 <Props of={Toast} />

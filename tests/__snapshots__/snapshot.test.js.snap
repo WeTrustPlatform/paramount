@@ -15555,12 +15555,6 @@ exports[`Layout_2 1`] = `
 `;
 
 exports[`Layout_3 1`] = `
-<h4>
-  getResponsiveValue
-</h4>
-`;
-
-exports[`Layout_4 1`] = `
 <pre>
   <code
     className="language-tsx"
@@ -15582,7 +15576,7 @@ exports[`Layout_4 1`] = `
 </pre>
 `;
 
-exports[`Layout_5 1`] = `
+exports[`Layout_4 1`] = `
 <pre>
   <code
     className="language-ts"
@@ -18597,9 +18591,7 @@ exports[`RowAndColumn_4 1`] = `
 
 exports[`RowAndColumn_5 1`] = `<div />`;
 
-exports[`RowAndColumn_6 1`] = `<div />`;
-
-exports[`RowAndColumn_7 1`] = `
+exports[`RowAndColumn_6 1`] = `
 <pre>
   <code>
     RowStyles {
@@ -18612,7 +18604,7 @@ getStyles={(RowProps, Theme) =&gt; RowStyles}
 </pre>
 `;
 
-exports[`RowAndColumn_8 1`] = `
+exports[`RowAndColumn_7 1`] = `
 <pre>
   <code
     className="language-tsx"
@@ -18622,6 +18614,8 @@ exports[`RowAndColumn_8 1`] = `
   </code>
 </pre>
 `;
+
+exports[`RowAndColumn_8 1`] = `<div />`;
 
 exports[`RowAndColumn_9 1`] = `
 <pre>
@@ -21525,9 +21519,7 @@ exports[`Tabs_1 1`] = `
 
 exports[`Tabs_2 1`] = `<div />`;
 
-exports[`Tabs_3 1`] = `<div />`;
-
-exports[`Tabs_4 1`] = `
+exports[`Tabs_3 1`] = `
 <pre>
   <code
     className="language-tsx"
@@ -21542,7 +21534,7 @@ getStyles={(TabsProps, Theme) =&gt; TabsStyles}
 </pre>
 `;
 
-exports[`Tabs_5 1`] = `
+exports[`Tabs_4 1`] = `
 <pre>
   <code
     className="language-tsx"
@@ -21552,6 +21544,8 @@ exports[`Tabs_5 1`] = `
   </code>
 </pre>
 `;
+
+exports[`Tabs_5 1`] = `<div />`;
 
 exports[`Tabs_6 1`] = `
 <pre>
@@ -22299,25 +22293,6 @@ exports[`Toast_1 1`] = `
 `;
 
 exports[`Toast_2 1`] = `
-<pre>
-  <code
-    className="language-tsx"
-  >
-    function MyComponent() {
-  const { notify } = useToast();
-
-  return (
-    &lt;Button
-      onPress={() =&gt; notify({ title: 'Title', description: 'Description' })}
-    /&gt;
-  );
-}
-
-  </code>
-</pre>
-`;
-
-exports[`Toast_3 1`] = `
 <div>
   <div
     className="css-cursor-18t94o4 css-view-1dbjc4n"
@@ -22436,7 +22411,7 @@ exports[`Toast_3 1`] = `
 </div>
 `;
 
-exports[`Toast_4 1`] = `<div />`;
+exports[`Toast_3 1`] = `<div />`;
 
 exports[`Visible_0 1`] = `
 <h1>

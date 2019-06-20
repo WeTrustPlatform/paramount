@@ -11,7 +11,7 @@ import { Icon, State, Tabs, Tab } from '..';
 
 You can use a custom component in place of `Tab` component, though keep in mind you need to manage `isActive` and `onPress` by yourself
 
-### Usage
+## Usage
 
 <Playground>
   <State initial={{ activeTabIndex: 0 }}>
@@ -28,17 +28,11 @@ You can use a custom component in place of `Tab` component, though keep in mind 
   </State>
 </Playground>
 
-### Tabs Props
+## Tabs Props
 
 <Props of={Tabs} />
 
-### Tab Props
-
-Extends `ButtonProps`
-
-<Props of={Tab} />
-
-### Tabs Customization
+## Tabs Customization
 
 Using `getStyles` prop
 
@@ -56,7 +50,13 @@ Markup
 <View style={containerStyle}>{tabs}</View>
 ```
 
-### Tab Customization
+## Tab Props
+
+Extends `ButtonProps`
+
+<Props of={Tab} />
+
+## Tab Customization
 
 Using `getStyles` prop
 

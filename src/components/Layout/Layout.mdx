@@ -7,19 +7,19 @@ menu: Components
 
 Paramount provides building blocks to create responsive layout via components `Visible`, `Row and Column`, `Container` and convenience functions ([see Usage](#usage))
 
-### Setup
+## Setup
 
-Put `LayoutProvider` at the top level component to wrap components that make use of `LayoutContext`. For options, [see Configuration Options](#configuration-options)
+Put `LayoutProvider` at the top level component to wrap components that make use of `LayoutContext`. For options, [see Configuration Options](#options)
 
 ```tsx
 <LayoutProvider value={options}>{children}</LayoutProvider>
 ```
 
-### Usage
+## Usage
 
 Paramount exposes a convenience hook `useLayout` that you can import to make use of utility functions for layout
 
-currentScreenSize
+### currentScreenSize
 
 Retrieves the current screen size
 
@@ -33,7 +33,7 @@ const MyComponent = () => {
 }
 ```
 
-#### getResponsiveValue
+### getResponsiveValue
 
 Returns arbitrary value that matches nearest defined size that is smaller than or equal to current screen size
 
@@ -52,7 +52,11 @@ const MyComponent = () => {
 }
 ```
 
-### Configuration Options
+### Responsive Components
+
+`Visible`, `Row and Column`, `Container`
+
+## Options
 
 These are all the available configuration options, as well as the default layout configuration
 
