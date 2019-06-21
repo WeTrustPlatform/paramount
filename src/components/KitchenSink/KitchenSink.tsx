@@ -978,6 +978,10 @@ export const KitchenSink = () => {
 
       <Playground>
         <ToastProvider>
+          {/*
+      We use `ToastContext.Consumer` here due to limitations in docs
+      Use `const { notify } = useToast()` inside your function component
+     */}
           <ToastContext.Consumer>
             {({ notify }) => (
               <Button

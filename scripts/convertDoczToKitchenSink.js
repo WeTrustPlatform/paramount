@@ -12,11 +12,13 @@ const path = require('path');
 
 // TODO: Refactor this file
 
+const BLACKLIST_MDX = ['KitchenSink', 'Icon'];
+
 const getMdxFiles = async () => {
   return glob
     .sync('src/**/*.mdx')
     .map(filename => path.resolve(filename))
-    .filter(f => !f.includes('KitchenSink'));
+    .filter(f => BLACKLIST_MDX.every(w => !f.includes(w)));
 };
 
 function transformHeadings() {
@@ -83,7 +85,7 @@ const wrapContent = content => {
 };
 
 const dedupImports = imports => {
-  const BLACKLIST_IMPORT = ['Toast'];
+  const BLACKLIST_IMPORT = ['Toast', 'KitchenSink'];
   const regex = /{ (.*?) }/;
   const components = [];
 
