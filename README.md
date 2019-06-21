@@ -9,7 +9,7 @@ Paramount UI is a cross platform React Native and React Web components library. 
 - **Customizable.** The theming and components are highly customizable, so that you can adapt to your branding needs.
 - **35+ components.** Building blocks from buttons to doing responsive layout and icons for your application
 
-![image](https://user-images.githubusercontent.com/9356633/59898604-c2847800-941b-11e9-80e4-9f13f9726eda.png)
+![image](https://user-images.githubusercontent.com/9356633/59901373-38d9a800-9425-11e9-911f-5028adc00b97.png)
 
 More:
 
