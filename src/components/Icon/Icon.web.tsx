@@ -14,7 +14,7 @@ function convertToPascal(name: string) {
   return result.charAt(0).toUpperCase() + result.slice(1);
 }
 
-export const Icon = ({ name, color, size }: IconProps) => {
+export const Icon = ({ name, color, size = 24 }: IconProps) => {
   const theme = useTheme();
   // @ts-ignore
   const IconTag = Feather[`Fi${convertToPascal(name)}`];

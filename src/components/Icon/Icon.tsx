@@ -5,8 +5,21 @@ import { TextColor, useTheme } from '../../theme';
 import { getTextColor } from '../Typography/Text.styles';
 
 export interface IconProps {
-  color?: TextColor;
+  /**
+   * Name if  the icon.
+   */
   name: FeatherIconName;
+
+  /**
+   * Color of the icon.
+   * @default theme.colors.text.default
+   */
+  color?: TextColor;
+
+  /**
+   * Size of the icon.
+   * @default 24
+   */
   size?: number;
 }
 
@@ -279,7 +292,7 @@ export type FeatherIconName =
   | 'zoom-in'
   | 'zoom-out';
 
-export const Icon = ({ name, color, size }: IconProps) => {
+export const Icon = ({ name, color, size = 24 }: IconProps) => {
   const theme = useTheme();
 
   return (
