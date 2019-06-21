@@ -7,7 +7,7 @@ order: 90
 
 ## Look and Feel
 
-Use `ThemeProvider` and pass a `Theme` object. For all available options, [refer to Theme Interface](#theme-interface)
+Use `ThemeProvider` and pass a `Theme` object. For all available options, [refer to Options](#options)
 
 ```
 import { ThemeProvider } from 'paramount-ui'
@@ -43,7 +43,11 @@ import { ThemeProvider } from 'paramount-ui'
 
 ## Components
 
-In the same `ThemeProvider` as above, use `components` option. See `Customization` section in corresponding component docs
+Components can be customized at two levels, [From ThemeProvider](#from-themeprovider) and [Per instance](#per-instance)
+
+### From ThemeProvider
+
+In the same `ThemeProvider` as above, use `components` option. See `Customization` section in corresponding component docs to understand the `get*Sstyles` callback values
 
 ```
 import { ThemeProvider } from 'paramount-ui'
@@ -90,9 +94,9 @@ import { ThemeProvider } from 'paramount-ui'
 
 ```
 
-## Component Instance
+### Per instance
 
-Each component exposes `getStyles` callback, which can be used to override component styles. See `Customization` section in corresponding component docs
+Each component exposes `getStyles` callback, which can be used to override component styles. See `Customization` section in corresponding component docs to understand the `get*Sstyles` callback values
 
 ```
 import { Button } from 'paramount-ui'
@@ -100,16 +104,14 @@ import { Button } from 'paramount-ui'
 const CustomButton = () => {
   return (
     <Button
-      color="primary"
-      title="Example"
-      getStyles={(buttonProps, theme) => {
-        const { color } = buttonProps;
+      isDisabled
+      getStyles={(props, theme) => {
+        const { isDisabled } = props;
 
         // Style of each React Element
         return {
           touchableStyle: { ... },
           textStyle: { ... },
-          focusColor: color
         }
       }}
     >
@@ -118,11 +120,19 @@ const CustomButton = () => {
 
 ```
 
-## In Application
+## Usage
 
 Paramount exposes a convenience hook `useTheme` to import values from the `Theme`
 
-## Theme Interface
+```tsx
+const MyComponent = () => {
+  const { colors, fills, ...restTheme } = useTheme();
+
+  ...
+}
+```
+
+## Options
 
 These are all the available configuration options, as well as the default configuration
 

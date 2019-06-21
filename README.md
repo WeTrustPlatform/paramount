@@ -1,27 +1,28 @@
-# Warning
+# Paramount
 
-Until 2.0, updates in 1.\* will have breaking changes as it is continuously being refined
+[![Build Status](https://travis-ci.org/WeTrustPlatform/paramount.svg?branch=master)](https://travis-ci.org/WeTrustPlatform/paramount.svg?branch=master)
+![npm](https://img.shields.io/npm/v/paramount-ui.svg) ![GitHub](https://img.shields.io/github/license/wetrustplatform/paramount.svg)
 
-# Goals
+Paramount UI is a cross platform React Native and React Web components library. The core features of this library is
 
-Cross platform React Native and React Web UI components library
+- **Cross platform.** Components work and look the same on Web, iOS, Android and Desktop apps
+- **Customizable.** The theming and components are highly customizable, so that you can adapt to your branding needs.
+- **35+ components.** Building blocks from buttons to doing responsive layout and icons for your application
 
-- **Cross platform.** Components work on both React Native And React Web platforms (using [react-native-web](https://github.com/necolas/react-native-web))
-- **Fully customizable.** You can customize 100% of the component styles so that you can adapt to your branding needs any way you want.
-- **Mobile friendly.** All of the components are usable and look good on mobile devices.
+![image](https://user-images.githubusercontent.com/9356633/59898604-c2847800-941b-11e9-80e4-9f13f9726eda.png)
 
 More:
 
-- Built on TypeScript (typings!)
-- Tree-shaking friendly (ESM)
+- Built on TypeScript
+- Tree-shaking friendly
 - Server-side rendering friendly
-- [Styles in JavaScript](https://twitter.com/necolas/status/1058949412284592128)
+- Mobile friendly
+- Free and Open Source
 
-# Documentation
+## Warning
 
-[Getting started](https://github.com/WeTrustPlatform/paramount/blob/master/docs/GettingStarted.mdx)
-[Customize theme](https://github.com/WeTrustPlatform/paramount/blob/master/docs/CustomizeTheme.mdx)
+Paramount UI is considered unstable until version 2.x
 
-# Contributing
+## Documentation
 
-Follow [Contributing guide](CONTRIBUTING.md)
+On getting started, components documentation and guides, [visit full documentation](https://wetrustplatform.github.io/paramount/)

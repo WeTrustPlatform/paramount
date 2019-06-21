@@ -15,20 +15,33 @@ yarn add paramount-ui
 npm install --save paramount-ui
 ```
 
-## Usage on Web
+## Setup on Web
 
-To integrate this library into your web project, follow the guide on [react-native-web library](https://github.com/necolas/react-native-web)
+[Create React App](https://facebook.github.io/create-react-app/) works automatically with `paramount-ui`.
 
-Create React App automatically provides support for `paramount-ui`. You can use directly:
+For alternative setup, follow the guide on [react-native-web](https://github.com/necolas/react-native-web/blob/master/docs/guides/getting-started.md)
 
-```
-import { Button } from 'paramount-ui';
-```
+## Setup on Native
 
-## Usage on Native
+[Expo](https://expo.io/) works automatically with `paramount-ui`
 
-Use directly
+If you do not have `react-native-vector-icons` dependency in your setup, [install it](https://github.com/oblador/react-native-vector-icons)
 
-```
-import { Button } from 'paramount-ui';
+## Usage
+
+On top of your application, include context providers
+
+```tsx
+import React from 'react';
+import { ThemeProvider, ToastProvider, LayoutProvider } from 'paramount-ui';
+
+const App = () => (
+  <ThemeProvider>
+    <ToastProvider>
+      <LayoutProvider>{children}</LayoutProvider>
+    </ToastProvider>
+  </ThemeProvider>
+);
+
+export default App;
 ```

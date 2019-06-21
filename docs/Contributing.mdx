@@ -1,6 +1,10 @@
-# Contributing
+---
+name: Contributing
+order: 100
+route: '/contributing'
+---
 
-<a name="pull-requests"></a>
+# Contributing
 
 ## Pull requests
 
@@ -24,7 +28,7 @@ Follow this process if you'd like your work considered for inclusion in the proj
 3. Install/update dependencies:
 
    ```bash
-   yarn
+   yarn install
    ```
 
 4. Create a new topic branch (off the `master` branch) to
@@ -49,54 +53,57 @@ Follow this process if you'd like your work considered for inclusion in the proj
 7. [Open a Pull Request](https://help.github.com/articles/using-pull-requests/)
    with a clear title and description. If screenshot can be included, please attach one.
 
-<a name="development"></a>
+## Development for React Native
 
-## Development
-
-The development of components also happen on the documentation site
+The development of components on native is done by levaraging [Expo](https://expo.io/)
 
 ```bash
 cd <root>
-yarn dev
+yarn develop:expo
+```
+
+## Development for React Web
+
+The development of components on web happen on the documentation site
+
+```bash
+cd <root>
+yarn develop:docs
 ```
 
 The development/docs will then be available at http://localhost:3000.
 
 The site is created based on `*.mdx` files ([see MDX](https://github.com/mdx-js/mdx)) throughout the codebase which provides:
 
-1. **Component's playground**. Test out usage of the components and their features
+**Component's playground**. Test out usage of the components and their features
 
-   ```
-   <Playground>
-     <Button appearance="minimal" color="default" title="Default" />
-     <Button isDisabled color="primary" title="Disabled" />
-   </Playground>
-   ```
+```
+<Playground>
+  <Button appearance="minimal" color="default" title="Default" />
+  <Button isDisabled color="primary" title="Disabled" />
+</Playground>
+```
 
-2. **Documentation**. Edit markdown for documentation of component features
+**Documentation**. Edit markdown for documentation of component features
 
-   ```
-   ## Section of component documentation
+```
+## Section of component documentation
 
-   You can just write documentation right next to the playground
+You can just write documentation right next to the playground
 
-   <Playground>
-    ...
-   </Playground>
-   ```
+<Playground>
+ ...
+</Playground>
+```
 
-3. **Tests**. Snapshots of components are taken directly from `<Playground />` which provide a good basis for [snapshot testing](https://jestjs.io/docs/en/snapshot-testing) for UI tests
-
-<a name="making-changes"></a>
+**Tests**. Snapshots of components are taken directly from `<Playground />` for [snapshot testing](https://jestjs.io/docs/en/snapshot-testing) for UI tests
 
 ## Making changes
 
 There are two files required to each component. Let's say for `TextInput`
 
 1. `TextInput.tsx` - The actual React Component
-2. `TextInput.styles.ts` - The Component styling
-
-<a name="running-tests"></a>
+2. `TextInput.styles.ts` - The React Component styling logic
 
 ## Running Tests
 
@@ -106,11 +113,8 @@ You can run unit tests with like so:
 yarn test
 ```
 
-Because components are primarily tested against snapshots:
+If you are confident in your changes, update snapshots
 
-1. Make sure that your changes do not have unintended consequences
-2. If you are confident in snapshot changes, update snapshots
-
-   ```bash
-     yarn test -u
-   ```
+```bash
+  yarn test -u
+```

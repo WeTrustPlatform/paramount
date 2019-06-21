@@ -102,7 +102,7 @@ export const KitchenSink = () => {
 
       <Playground>
         <Box>
-          <Badge title="Badge" color="blue" isSolid size="large" shape="pill" />
+          <Badge title="Badge" color="teal" isSolid size="large" shape="pill" />
         </Box>
       </Playground>
 
