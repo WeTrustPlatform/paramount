@@ -1,3 +1,10 @@
+# [1.70.0](https://github.com/WeTrustPlatform/paramount/compare/v1.69.0...v1.70.0) (2019-06-21)
+
+
+### Features
+
+* **icon:** change default size ([ba9085d](https://github.com/WeTrustPlatform/paramount/commit/ba9085d))
+
 # [1.69.0](https://github.com/WeTrustPlatform/paramount/compare/v1.68.1...v1.69.0) (2019-06-20)
 
 
