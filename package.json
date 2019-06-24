@@ -96,7 +96,7 @@
     "ts-loader": "6.0.2",
     "tslint": "5.17.0",
     "tslint-sonarts": "1.9.0",
-    "typescript": "3.5.1",
+    "typescript": "3.5.2",
     "unist-util-is": "3.0.0",
     "unist-util-remove": "1.0.3",
     "unist-util-visit": "1.4.1"
