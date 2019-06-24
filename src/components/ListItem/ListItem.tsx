@@ -17,12 +17,12 @@ export interface ListItemProps {
   /**
    * Title of the list item
    */
-  title?: string;
+  title?: React.ReactNode;
 
   /**
    * Description of the list item
    */
-  description?: string;
+  description?: React.ReactNode;
 
   /**
    * Props to be passed to `Avatar`
@@ -112,26 +112,37 @@ export const ListItem = (props: ListItemProps) => {
     >
       <View style={wrapperStyle}>
         <View style={leftWrapperStyle}>
-          <View style={imageWrapperStyle}>
-            {leftIcon || avatarProps ? (
-              <Avatar size="small" {...avatarProps} />
-            ) : null}
-          </View>
+          {leftIcon || avatarProps ? (
+            <View style={imageWrapperStyle}>
+              {leftIcon || <Avatar size="small" {...avatarProps} />}
+            </View>
+          ) : null}
           <View style={textWrapperStyle}>
-            {title && (
-              <Text getStyles={() => ({ textStyle: titleStyle })} size="large">
-                {title}
-              </Text>
-            )}
-            {description && (
-              <Text
-                getStyles={() => ({ textStyle: descriptionStyle })}
-                size="medium"
-                color="muted"
-              >
-                {description}
-              </Text>
-            )}
+            {title ? (
+              typeof title === 'string' ? (
+                <Text
+                  getStyles={() => ({ textStyle: titleStyle })}
+                  size="large"
+                >
+                  {title}
+                </Text>
+              ) : (
+                title
+              )
+            ) : null}
+            {description ? (
+              typeof description === 'string' ? (
+                <Text
+                  getStyles={() => ({ textStyle: descriptionStyle })}
+                  size="medium"
+                  color="muted"
+                >
+                  {description}
+                </Text>
+              ) : (
+                description
+              )
+            ) : null}
           </View>
         </View>
         {rightIcon === null

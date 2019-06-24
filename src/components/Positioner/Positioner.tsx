@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { DeepPartial } from 'ts-essentials';
 
-import { POSITION, Position } from '../../constants';
 import { Measurements } from '../../hooks';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
@@ -11,6 +10,29 @@ import {
   getPositionerStyles,
   PositionerStyles,
 } from './Positioner.styles';
+
+export const POSITION = {
+  TOP: 'top' as const,
+  TOP_LEFT: 'top-left' as const,
+  TOP_RIGHT: 'top-right' as const,
+
+  BOTTOM: 'bottom' as const,
+  BOTTOM_LEFT: 'bottom-left' as const,
+  BOTTOM_RIGHT: 'bottom-right' as const,
+
+  LEFT: 'left' as const,
+  RIGHT: 'right' as const,
+};
+
+export type Position =
+  | 'top'
+  | 'top-left'
+  | 'top-right'
+  | 'bottom'
+  | 'bottom-left'
+  | 'bottom-right'
+  | 'left'
+  | 'right';
 
 export interface PositionerProps {
   /**

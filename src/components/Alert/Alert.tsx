@@ -2,13 +2,14 @@ import * as React from 'react';
 import { View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { Intent } from '../../constants/Intent';
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { Text } from '../Typography';
 import { AlertStyles, GetAlertStyles, getAlertStyles } from './Alert.styles';
+
+export type Intent = 'danger' | 'info' | 'success' | 'warning';
 
 /**
  * Alert properties

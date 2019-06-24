@@ -8,7 +8,7 @@ export interface IconProps {
   /**
    * Name if  the icon.
    */
-  name: FeatherIconName;
+  name: IconName;
 
   /**
    * Color of the icon.
@@ -23,7 +23,7 @@ export interface IconProps {
   size?: number;
 }
 
-export type FeatherIconName =
+export type IconName =
   | 'activity'
   | 'airplay'
   | 'alert-circle'

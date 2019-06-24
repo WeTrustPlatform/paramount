@@ -651,8 +651,8 @@ exports[`Avatar_3 1`] = `
     className="language-tsx"
   >
     AvatarStyles {
-  containerStyle: ViewStyle;
-  textStyle: TextStyle;
+  containerStyle: ViewStyle; // set height and width for custom avatar size
+  textStyle: TextStyle; // set font size if you want it to match avatar size
   imageStyle: ImageStyle;
 }
 
@@ -27903,8 +27903,6 @@ exports[`KitchenSink_1 1`] = `
             "msFlexPack": "center",
             "msTouchAction": "manipulation",
             "msUserSelect": "none",
-            "paddingLeft": "16px",
-            "paddingRight": "8px",
             "touchAction": "manipulation",
             "transitionDuration": "0.15s",
             "transitionProperty": "opacity",
@@ -29509,8 +29507,6 @@ exports[`KitchenSink_1 1`] = `
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
                     "msUserSelect": "none",
-                    "paddingLeft": "16px",
-                    "paddingRight": "8px",
                     "touchAction": "manipulation",
                     "transitionDuration": "0.15s",
                     "transitionProperty": "opacity",
@@ -29555,14 +29551,6 @@ exports[`KitchenSink_1 1`] = `
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "marginRight": "8px",
-                        }
-                      }
-                    />
                     <div
                       className="css-view-1dbjc4n"
                       style={
@@ -29713,8 +29701,6 @@ exports[`KitchenSink_1 1`] = `
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
                     "msUserSelect": "none",
-                    "paddingLeft": "16px",
-                    "paddingRight": "8px",
                     "touchAction": "manipulation",
                     "transitionDuration": "0.15s",
                     "transitionProperty": "opacity",
@@ -29759,14 +29745,6 @@ exports[`KitchenSink_1 1`] = `
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "marginRight": "8px",
-                        }
-                      }
-                    />
                     <div
                       className="css-view-1dbjc4n"
                       style={
@@ -29894,8 +29872,6 @@ exports[`KitchenSink_1 1`] = `
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
                     "msUserSelect": "none",
-                    "paddingLeft": "16px",
-                    "paddingRight": "8px",
                     "touchAction": "manipulation",
                     "transitionDuration": "0.15s",
                     "transitionProperty": "opacity",
@@ -29940,14 +29916,6 @@ exports[`KitchenSink_1 1`] = `
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "marginRight": "8px",
-                        }
-                      }
-                    />
                     <div
                       className="css-view-1dbjc4n"
                       style={
@@ -30075,8 +30043,6 @@ exports[`KitchenSink_1 1`] = `
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
                     "msUserSelect": "none",
-                    "paddingLeft": "16px",
-                    "paddingRight": "8px",
                     "touchAction": "manipulation",
                     "transitionDuration": "0.15s",
                     "transitionProperty": "opacity",
@@ -30121,14 +30087,6 @@ exports[`KitchenSink_1 1`] = `
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "marginRight": "8px",
-                        }
-                      }
-                    />
                     <div
                       className="css-view-1dbjc4n"
                       style={
@@ -30256,8 +30214,6 @@ exports[`KitchenSink_1 1`] = `
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
                     "msUserSelect": "none",
-                    "paddingLeft": "16px",
-                    "paddingRight": "8px",
                     "touchAction": "manipulation",
                     "transitionDuration": "0.15s",
                     "transitionProperty": "opacity",
@@ -30302,14 +30258,6 @@ exports[`KitchenSink_1 1`] = `
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "marginRight": "8px",
-                        }
-                      }
-                    />
                     <div
                       className="css-view-1dbjc4n"
                       style={
@@ -30437,8 +30385,6 @@ exports[`KitchenSink_1 1`] = `
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
                     "msUserSelect": "none",
-                    "paddingLeft": "16px",
-                    "paddingRight": "8px",
                     "touchAction": "manipulation",
                     "transitionDuration": "0.15s",
                     "transitionProperty": "opacity",
@@ -30483,14 +30429,6 @@ exports[`KitchenSink_1 1`] = `
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "marginRight": "8px",
-                        }
-                      }
-                    />
                     <div
                       className="css-view-1dbjc4n"
                       style={
@@ -30618,8 +30556,6 @@ exports[`KitchenSink_1 1`] = `
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
                     "msUserSelect": "none",
-                    "paddingLeft": "16px",
-                    "paddingRight": "8px",
                     "touchAction": "manipulation",
                     "transitionDuration": "0.15s",
                     "transitionProperty": "opacity",
@@ -30664,14 +30600,6 @@ exports[`KitchenSink_1 1`] = `
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "marginRight": "8px",
-                        }
-                      }
-                    />
                     <div
                       className="css-view-1dbjc4n"
                       style={
@@ -30799,8 +30727,6 @@ exports[`KitchenSink_1 1`] = `
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
                     "msUserSelect": "none",
-                    "paddingLeft": "16px",
-                    "paddingRight": "8px",
                     "touchAction": "manipulation",
                     "transitionDuration": "0.15s",
                     "transitionProperty": "opacity",
@@ -30845,14 +30771,6 @@ exports[`KitchenSink_1 1`] = `
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "marginRight": "8px",
-                        }
-                      }
-                    />
                     <div
                       className="css-view-1dbjc4n"
                       style={
@@ -31003,8 +30921,6 @@ exports[`KitchenSink_1 1`] = `
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
                     "msUserSelect": "none",
-                    "paddingLeft": "16px",
-                    "paddingRight": "8px",
                     "touchAction": "manipulation",
                     "transitionDuration": "0.15s",
                     "transitionProperty": "opacity",
@@ -31049,14 +30965,6 @@ exports[`KitchenSink_1 1`] = `
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "marginRight": "8px",
-                        }
-                      }
-                    />
                     <div
                       className="css-view-1dbjc4n"
                       style={
@@ -31184,8 +31092,6 @@ exports[`KitchenSink_1 1`] = `
                     "msFlexPack": "center",
                     "msTouchAction": "manipulation",
                     "msUserSelect": "none",
-                    "paddingLeft": "16px",
-                    "paddingRight": "8px",
                     "touchAction": "manipulation",
                     "transitionDuration": "0.15s",
                     "transitionProperty": "opacity",
@@ -31230,14 +31136,6 @@ exports[`KitchenSink_1 1`] = `
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
-                      style={
-                        Object {
-                          "marginRight": "8px",
-                        }
-                      }
-                    />
                     <div
                       className="css-view-1dbjc4n"
                       style={
@@ -33506,8 +33404,6 @@ exports[`ListItem_1 1`] = `
         "msFlexPack": "center",
         "msTouchAction": "manipulation",
         "msUserSelect": "none",
-        "paddingLeft": "16px",
-        "paddingRight": "8px",
         "touchAction": "manipulation",
         "transitionDuration": "0.15s",
         "transitionProperty": "opacity",
@@ -36589,8 +36485,6 @@ exports[`SelectList_1 1`] = `
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
                 "msUserSelect": "none",
-                "paddingLeft": "16px",
-                "paddingRight": "8px",
                 "touchAction": "manipulation",
                 "transitionDuration": "0.15s",
                 "transitionProperty": "opacity",
@@ -36635,14 +36529,6 @@ exports[`SelectList_1 1`] = `
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "marginRight": "8px",
-                    }
-                  }
-                />
                 <div
                   className="css-view-1dbjc4n"
                   style={
@@ -36793,8 +36679,6 @@ exports[`SelectList_1 1`] = `
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
                 "msUserSelect": "none",
-                "paddingLeft": "16px",
-                "paddingRight": "8px",
                 "touchAction": "manipulation",
                 "transitionDuration": "0.15s",
                 "transitionProperty": "opacity",
@@ -36839,14 +36723,6 @@ exports[`SelectList_1 1`] = `
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "marginRight": "8px",
-                    }
-                  }
-                />
                 <div
                   className="css-view-1dbjc4n"
                   style={
@@ -36974,8 +36850,6 @@ exports[`SelectList_1 1`] = `
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
                 "msUserSelect": "none",
-                "paddingLeft": "16px",
-                "paddingRight": "8px",
                 "touchAction": "manipulation",
                 "transitionDuration": "0.15s",
                 "transitionProperty": "opacity",
@@ -37020,14 +36894,6 @@ exports[`SelectList_1 1`] = `
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "marginRight": "8px",
-                    }
-                  }
-                />
                 <div
                   className="css-view-1dbjc4n"
                   style={
@@ -37155,8 +37021,6 @@ exports[`SelectList_1 1`] = `
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
                 "msUserSelect": "none",
-                "paddingLeft": "16px",
-                "paddingRight": "8px",
                 "touchAction": "manipulation",
                 "transitionDuration": "0.15s",
                 "transitionProperty": "opacity",
@@ -37201,14 +37065,6 @@ exports[`SelectList_1 1`] = `
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "marginRight": "8px",
-                    }
-                  }
-                />
                 <div
                   className="css-view-1dbjc4n"
                   style={
@@ -37336,8 +37192,6 @@ exports[`SelectList_1 1`] = `
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
                 "msUserSelect": "none",
-                "paddingLeft": "16px",
-                "paddingRight": "8px",
                 "touchAction": "manipulation",
                 "transitionDuration": "0.15s",
                 "transitionProperty": "opacity",
@@ -37382,14 +37236,6 @@ exports[`SelectList_1 1`] = `
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "marginRight": "8px",
-                    }
-                  }
-                />
                 <div
                   className="css-view-1dbjc4n"
                   style={
@@ -37517,8 +37363,6 @@ exports[`SelectList_1 1`] = `
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
                 "msUserSelect": "none",
-                "paddingLeft": "16px",
-                "paddingRight": "8px",
                 "touchAction": "manipulation",
                 "transitionDuration": "0.15s",
                 "transitionProperty": "opacity",
@@ -37563,14 +37407,6 @@ exports[`SelectList_1 1`] = `
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "marginRight": "8px",
-                    }
-                  }
-                />
                 <div
                   className="css-view-1dbjc4n"
                   style={
@@ -37698,8 +37534,6 @@ exports[`SelectList_1 1`] = `
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
                 "msUserSelect": "none",
-                "paddingLeft": "16px",
-                "paddingRight": "8px",
                 "touchAction": "manipulation",
                 "transitionDuration": "0.15s",
                 "transitionProperty": "opacity",
@@ -37744,14 +37578,6 @@ exports[`SelectList_1 1`] = `
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "marginRight": "8px",
-                    }
-                  }
-                />
                 <div
                   className="css-view-1dbjc4n"
                   style={
@@ -37879,8 +37705,6 @@ exports[`SelectList_1 1`] = `
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
                 "msUserSelect": "none",
-                "paddingLeft": "16px",
-                "paddingRight": "8px",
                 "touchAction": "manipulation",
                 "transitionDuration": "0.15s",
                 "transitionProperty": "opacity",
@@ -37925,14 +37749,6 @@ exports[`SelectList_1 1`] = `
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "marginRight": "8px",
-                    }
-                  }
-                />
                 <div
                   className="css-view-1dbjc4n"
                   style={
@@ -38083,8 +37899,6 @@ exports[`SelectList_1 1`] = `
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
                 "msUserSelect": "none",
-                "paddingLeft": "16px",
-                "paddingRight": "8px",
                 "touchAction": "manipulation",
                 "transitionDuration": "0.15s",
                 "transitionProperty": "opacity",
@@ -38129,14 +37943,6 @@ exports[`SelectList_1 1`] = `
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "marginRight": "8px",
-                    }
-                  }
-                />
                 <div
                   className="css-view-1dbjc4n"
                   style={
@@ -38264,8 +38070,6 @@ exports[`SelectList_1 1`] = `
                 "msFlexPack": "center",
                 "msTouchAction": "manipulation",
                 "msUserSelect": "none",
-                "paddingLeft": "16px",
-                "paddingRight": "8px",
                 "touchAction": "manipulation",
                 "transitionDuration": "0.15s",
                 "transitionProperty": "opacity",
@@ -38310,14 +38114,6 @@ exports[`SelectList_1 1`] = `
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
-                  style={
-                    Object {
-                      "marginRight": "8px",
-                    }
-                  }
-                />
                 <div
                   className="css-view-1dbjc4n"
                   style={

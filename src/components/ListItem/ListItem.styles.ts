@@ -38,8 +38,6 @@ export const getListItemStyles: GetListItemStyles = ({ isDisabled }, theme) => {
       borderColor: theme.colors.border.default,
       height: theme.controlHeights.large,
       justifyContent: 'center',
-      paddingLeft: 16,
-      paddingRight: 8,
       ...(isDisabled
         ? { backgroundColor: theme.colors.background.greyDark }
         : {}),

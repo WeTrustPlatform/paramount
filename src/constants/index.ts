@@ -1,2 +1,1 @@
-export { Intent, Intents } from './Intent';
-export * from './Position';
+export * from './Animation';
