@@ -1,3 +1,10 @@
+# [1.71.0](https://github.com/WeTrustPlatform/paramount/compare/v1.70.0...v1.71.0) (2019-06-24)
+
+
+### Features
+
+* cleanup constants and code ([e878454](https://github.com/WeTrustPlatform/paramount/commit/e878454))
+
 # [1.70.0](https://github.com/WeTrustPlatform/paramount/compare/v1.69.0...v1.70.0) (2019-06-21)
 
 
