@@ -74,7 +74,7 @@
     "docz-theme-default": "1.2.0",
     "emotion-theming": "10.0.10",
     "expo": "33.0.0",
-    "husky": "2.4.1",
+    "husky": "2.6.0",
     "jest": "24.8.0",
     "jest-canvas-mock": "2.1.0",
     "lint-staged": "8.2.0",
