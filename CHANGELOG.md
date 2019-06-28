@@ -1,3 +1,15 @@
+# [1.74.0](https://github.com/WeTrustPlatform/paramount/compare/v1.73.0...v1.74.0) (2019-06-28)
+
+
+### Bug Fixes
+
+* list item ([3190e05](https://github.com/WeTrustPlatform/paramount/commit/3190e05))
+
+
+### Features
+
+* rename node props and fix tests ([fa37b8c](https://github.com/WeTrustPlatform/paramount/commit/fa37b8c))
+
 # [1.73.0](https://github.com/WeTrustPlatform/paramount/compare/v1.72.0...v1.73.0) (2019-06-28)
 
 
