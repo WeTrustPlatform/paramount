@@ -12,8 +12,22 @@ import { ToastContext } from './ToastContext';
 
 const AnimatedView = animated(View);
 
+export type ToastPosition = 'top' | 'bottom';
+
 export interface ToastProviderProps {
-  children?: React.ReactNode;
+  /**
+   * Position from which to display the toast from
+   * @default top
+   */
+  position?: ToastPosition;
+
+  /**
+   * Offset toast from the edge of the container (screen).
+   * @default 16
+   */
+  offset?: number;
+
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetToastStyles, DeepPartial<ToastStyles>>;
 }
 
@@ -49,19 +63,43 @@ const reducer = (state: ToastProviderState, action: Action) => {
   }
 };
 
-export const ToastProvider = (props: ToastProviderProps) => {
-  const { children, getStyles } = props;
+const getTransitionConfig = (offset: number, position: ToastPosition) => {
+  if (position === 'top') {
+    return {
+      config: springDefaultConfig,
+
+      enter: { translateY: offset },
+      from: { translateY: -500 },
+      leave: { translateY: -500 },
+    };
+  }
+
+  return {
+    config: springDefaultConfig,
+
+    enter: { translateY: -offset },
+    from: { translateY: 500 },
+    leave: { translateY: 500 },
+  };
+};
+
+export const ToastProvider: React.FunctionComponent<
+  ToastProviderProps
+> = props => {
+  const { children, offset = 16, position = 'top', getStyles } = props;
   const idCounterRef = React.useRef(0);
   // Use reducer because we want access previous value of state
   const [state, dispatch] = React.useReducer(reducer, initialState);
 
   const theme = useTheme();
 
+  console.log(position, 'position');
+
   const { containerStyle, wrapperStyle } = mergeStyles(
     getToastStyles,
     getStyles,
     theme.components.getToastStyles,
-  )({}, theme);
+  )({ offset, position }, theme);
 
   const createToastInstance = (toastSettings: ToastSettings): ToastInstance => {
     const uniqueId = ++idCounterRef.current;
@@ -98,13 +136,11 @@ export const ToastProvider = (props: ToastProviderProps) => {
     return toastInstance;
   }, []);
 
-  const transitions = useTransition(state.toasts, toast => toast.id, {
-    config: springDefaultConfig,
-
-    enter: { translateY: 10 },
-    from: { translateY: -500 },
-    leave: { translateY: -500 },
-  });
+  const transitions = useTransition(
+    state.toasts,
+    toast => toast.id,
+    getTransitionConfig(offset, position),
+  );
 
   return (
     <ToastContext.Provider

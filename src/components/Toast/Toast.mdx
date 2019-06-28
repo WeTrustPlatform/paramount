@@ -34,6 +34,7 @@ Paramount exposes a convenience hook `useToast` you can use to create toasts fro
             notify({
               title: 'Title',
               description: 'Description',
+              duration: 100000,
             })
           }
           title="Open toast"
@@ -43,6 +44,38 @@ Paramount exposes a convenience hook `useToast` you can use to create toasts fro
   </ToastProvider>
 </Playground>
 
-## Options
+## ToastProvider Props
+
+_Note_: In order for the `position="bottom"` prop to match the `offset` exactly, try to keep the title and message short. This is due to derived height of the `Toast` being "hard-coded" when `position="bottom"`
+
+<Props of={ToastProvider} />
+
+## Toast Options
 
 <Props of={Toast} />
+
+## Customization
+
+Use `getStyles` prop on **ToastProvider**
+
+```tsx
+ToastStyles {
+  containerStyle: ViewStyle;
+  wrapperStyle: ViewStyle;
+}
+
+getStyles={(ToastProviderProps, Theme) => ToastProviderStyles}
+```
+
+Markup
+
+```tsx
+<>
+  {children}
+  <View containerStyle>
+    <View wrapperStyle>
+      <Alert />
+    </View>
+  </View>
+</>
+```
