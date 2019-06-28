@@ -1,3 +1,17 @@
+## [1.71.2](https://github.com/WeTrustPlatform/paramount/compare/v1.71.1...v1.71.2) (2019-06-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency deepmerge to v3.3.0 ([#254](https://github.com/WeTrustPlatform/paramount/issues/254)) ([b04ef2d](https://github.com/WeTrustPlatform/paramount/commit/b04ef2d))
+
+## [1.71.1](https://github.com/WeTrustPlatform/paramount/compare/v1.71.0...v1.71.1) (2019-06-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ts-essentials to v2.0.11 ([#255](https://github.com/WeTrustPlatform/paramount/issues/255)) ([91b0af3](https://github.com/WeTrustPlatform/paramount/commit/91b0af3))
+
 # [1.71.0](https://github.com/WeTrustPlatform/paramount/compare/v1.70.0...v1.71.0) (2019-06-24)
 
 
