@@ -31,10 +31,10 @@ export interface AlertProps {
   intent?: Intent;
 
   /**
-   * Component display on the right side of the alert.
+   * Component displayed on the right side of the alert.
    * @default null
    */
-  action?: React.ReactNode;
+  actionNode?: React.ReactNode;
 
   /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetAlertStyles, DeepPartial<AlertStyles>>;
@@ -67,7 +67,7 @@ export const Alert = (props: AlertProps) => {
     intent = 'info',
     getStyles,
     testID,
-    action = null,
+    actionNode = null,
   } = props;
 
   const theme = useTheme();
@@ -102,7 +102,7 @@ export const Alert = (props: AlertProps) => {
           </Text>
         </View>
       </View>
-      {action}
+      {actionNode}
     </View>
   );
 };

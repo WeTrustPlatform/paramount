@@ -93,8 +93,6 @@ export const ToastProvider: React.FunctionComponent<
 
   const theme = useTheme();
 
-  console.log(position, 'position');
-
   const { containerStyle, wrapperStyle } = mergeStyles(
     getToastStyles,
     getStyles,

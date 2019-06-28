@@ -23005,6 +23005,103 @@ exports[`KitchenSink_1 1`] = `
               </div>
             </div>
           </div>
+          <div
+            className="css-cursor-18t94o4 css-view-1dbjc4n"
+            data-focusable={true}
+            disabled={false}
+            onKeyDown={[Function]}
+            onKeyPress={[Function]}
+            onKeyUp={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            role="button"
+            style={
+              Object {
+                "MozTransitionProperty": "opacity",
+                "MozUserSelect": "none",
+                "WebkitTransitionDuration": "0.15s",
+                "WebkitTransitionProperty": "opacity",
+                "WebkitUserSelect": "none",
+                "backgroundColor": "rgba(255,255,255,1.00)",
+                "borderBottomLeftRadius": "4px",
+                "borderBottomRightRadius": "4px",
+                "borderTopLeftRadius": "4px",
+                "borderTopRightRadius": "4px",
+                "cursor": "pointer",
+                "height": "48px",
+                "msTouchAction": "manipulation",
+                "msUserSelect": "none",
+                "paddingLeft": "32px",
+                "paddingRight": "32px",
+                "touchAction": "manipulation",
+                "transitionDuration": "0.15s",
+                "transitionProperty": "opacity",
+                "userSelect": "none",
+              }
+            }
+            tabIndex="0"
+          >
+            <div
+              className="css-view-1dbjc4n"
+              style={
+                Object {
+                  "WebkitAlignItems": "center",
+                  "WebkitBoxAlign": "center",
+                  "WebkitBoxDirection": "normal",
+                  "WebkitBoxOrient": "horizontal",
+                  "WebkitBoxPack": "center",
+                  "WebkitFlexDirection": "row",
+                  "WebkitJustifyContent": "center",
+                  "alignItems": "center",
+                  "flexDirection": "row",
+                  "height": "100%",
+                  "justifyContent": "center",
+                  "msFlexAlign": "center",
+                  "msFlexDirection": "row",
+                  "msFlexPack": "center",
+                }
+              }
+            >
+              <div
+                className="css-view-1dbjc4n"
+                style={
+                  Object {
+                    "paddingLeft": "0px",
+                    "paddingRight": "0px",
+                  }
+                }
+              >
+                <div
+                  className="css-text-901oao"
+                  dir="auto"
+                  style={
+                    Object {
+                      "WebkitAlignItems": "center",
+                      "WebkitBoxAlign": "center",
+                      "WebkitBoxPack": "center",
+                      "WebkitJustifyContent": "center",
+                      "alignItems": "center",
+                      "color": "rgba(27,135,122,1.00)",
+                      "display": "flex",
+                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                      "fontSize": "16px",
+                      "fontWeight": "600",
+                      "justifyContent": "center",
+                      "msFlexAlign": "center",
+                      "msFlexPack": "center",
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  Action
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -28343,28 +28440,39 @@ exports[`KitchenSink_1 1`] = `
               </div>
             </div>
           </div>
-          <svg
-            color="#7e7e7e"
-            fill="none"
-            height={24}
-            size={24}
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
+          <div
+            className="css-view-1dbjc4n"
             style={
               Object {
-                "color": "#7e7e7e",
+                "position": "absolute",
+                "right": "0px",
+                "zIndex": 2,
               }
             }
-            viewBox="0 0 24 24"
-            width={24}
-            xmlns="http://www.w3.org/2000/svg"
           >
-            <polyline
-              points="9 18 15 12 9 6"
-            />
-          </svg>
+            <svg
+              color="#7e7e7e"
+              fill="none"
+              height={24}
+              size={24}
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              style={
+                Object {
+                  "color": "#7e7e7e",
+                }
+              }
+              viewBox="0 0 24 24"
+              width={24}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polyline
+                points="9 18 15 12 9 6"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -29856,88 +29964,37 @@ exports[`KitchenSink_1 1`] = `
                     </div>
                   </div>
                   <div
-                    aria-disabled={true}
                     className="css-view-1dbjc4n"
-                    disabled={true}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "MozTransitionProperty": "opacity",
-                        "MozUserSelect": "none",
-                        "WebkitTransitionDuration": "0.15s",
-                        "WebkitTransitionProperty": "opacity",
-                        "WebkitUserSelect": "none",
-                        "borderBottomLeftRadius": "999px",
-                        "borderBottomRightRadius": "999px",
-                        "borderTopLeftRadius": "999px",
-                        "borderTopRightRadius": "999px",
-                        "msUserSelect": "none",
-                        "transitionDuration": "0.15s",
-                        "transitionProperty": "opacity",
-                        "userSelect": "none",
+                        "position": "absolute",
+                        "right": "0px",
+                        "zIndex": 2,
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
+                    <svg
+                      color="#7e7e7e"
+                      fill="none"
+                      height={24}
+                      size={24}
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       style={
                         Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(103,198,187,1.00)",
-                          "borderBottomColor": "rgba(0,0,0,0.00)",
-                          "borderBottomLeftRadius": "999px",
-                          "borderBottomRightRadius": "999px",
-                          "borderBottomWidth": "1px",
-                          "borderLeftColor": "rgba(0,0,0,0.00)",
-                          "borderLeftWidth": "1px",
-                          "borderRightColor": "rgba(0,0,0,0.00)",
-                          "borderRightWidth": "1px",
-                          "borderTopColor": "rgba(0,0,0,0.00)",
-                          "borderTopLeftRadius": "999px",
-                          "borderTopRightRadius": "999px",
-                          "borderTopWidth": "1px",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "width": "32px",
+                          "color": "#7e7e7e",
                         }
                       }
+                      viewBox="0 0 24 24"
+                      width={24}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        color="white"
-                        fill="none"
-                        height={20}
-                        size={20}
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        style={
-                          Object {
-                            "color": "white",
-                          }
-                        }
-                        viewBox="0 0 24 24"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <polyline
-                          points="20 6 9 17 4 12"
-                        />
-                      </svg>
-                    </div>
+                      <polyline
+                        points="9 18 15 12 9 6"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -30050,65 +30107,37 @@ exports[`KitchenSink_1 1`] = `
                     </div>
                   </div>
                   <div
-                    aria-disabled={true}
                     className="css-view-1dbjc4n"
-                    disabled={true}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "MozTransitionProperty": "opacity",
-                        "MozUserSelect": "none",
-                        "WebkitTransitionDuration": "0.15s",
-                        "WebkitTransitionProperty": "opacity",
-                        "WebkitUserSelect": "none",
-                        "borderBottomLeftRadius": "999px",
-                        "borderBottomRightRadius": "999px",
-                        "borderTopLeftRadius": "999px",
-                        "borderTopRightRadius": "999px",
-                        "msUserSelect": "none",
-                        "transitionDuration": "0.15s",
-                        "transitionProperty": "opacity",
-                        "userSelect": "none",
+                        "position": "absolute",
+                        "right": "0px",
+                        "zIndex": 2,
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
+                    <svg
+                      color="#7e7e7e"
+                      fill="none"
+                      height={24}
+                      size={24}
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       style={
                         Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(255,255,255,1.00)",
-                          "borderBottomColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "999px",
-                          "borderBottomRightRadius": "999px",
-                          "borderBottomWidth": "1px",
-                          "borderLeftColor": "rgba(238,238,238,1.00)",
-                          "borderLeftWidth": "1px",
-                          "borderRightColor": "rgba(238,238,238,1.00)",
-                          "borderRightWidth": "1px",
-                          "borderTopColor": "rgba(238,238,238,1.00)",
-                          "borderTopLeftRadius": "999px",
-                          "borderTopRightRadius": "999px",
-                          "borderTopWidth": "1px",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "width": "32px",
+                          "color": "#7e7e7e",
                         }
                       }
-                    />
+                      viewBox="0 0 24 24"
+                      width={24}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <polyline
+                        points="9 18 15 12 9 6"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -30221,65 +30250,37 @@ exports[`KitchenSink_1 1`] = `
                     </div>
                   </div>
                   <div
-                    aria-disabled={true}
                     className="css-view-1dbjc4n"
-                    disabled={true}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "MozTransitionProperty": "opacity",
-                        "MozUserSelect": "none",
-                        "WebkitTransitionDuration": "0.15s",
-                        "WebkitTransitionProperty": "opacity",
-                        "WebkitUserSelect": "none",
-                        "borderBottomLeftRadius": "999px",
-                        "borderBottomRightRadius": "999px",
-                        "borderTopLeftRadius": "999px",
-                        "borderTopRightRadius": "999px",
-                        "msUserSelect": "none",
-                        "transitionDuration": "0.15s",
-                        "transitionProperty": "opacity",
-                        "userSelect": "none",
+                        "position": "absolute",
+                        "right": "0px",
+                        "zIndex": 2,
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
+                    <svg
+                      color="#7e7e7e"
+                      fill="none"
+                      height={24}
+                      size={24}
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       style={
                         Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(255,255,255,1.00)",
-                          "borderBottomColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "999px",
-                          "borderBottomRightRadius": "999px",
-                          "borderBottomWidth": "1px",
-                          "borderLeftColor": "rgba(238,238,238,1.00)",
-                          "borderLeftWidth": "1px",
-                          "borderRightColor": "rgba(238,238,238,1.00)",
-                          "borderRightWidth": "1px",
-                          "borderTopColor": "rgba(238,238,238,1.00)",
-                          "borderTopLeftRadius": "999px",
-                          "borderTopRightRadius": "999px",
-                          "borderTopWidth": "1px",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "width": "32px",
+                          "color": "#7e7e7e",
                         }
                       }
-                    />
+                      viewBox="0 0 24 24"
+                      width={24}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <polyline
+                        points="9 18 15 12 9 6"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -30392,65 +30393,37 @@ exports[`KitchenSink_1 1`] = `
                     </div>
                   </div>
                   <div
-                    aria-disabled={true}
                     className="css-view-1dbjc4n"
-                    disabled={true}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "MozTransitionProperty": "opacity",
-                        "MozUserSelect": "none",
-                        "WebkitTransitionDuration": "0.15s",
-                        "WebkitTransitionProperty": "opacity",
-                        "WebkitUserSelect": "none",
-                        "borderBottomLeftRadius": "999px",
-                        "borderBottomRightRadius": "999px",
-                        "borderTopLeftRadius": "999px",
-                        "borderTopRightRadius": "999px",
-                        "msUserSelect": "none",
-                        "transitionDuration": "0.15s",
-                        "transitionProperty": "opacity",
-                        "userSelect": "none",
+                        "position": "absolute",
+                        "right": "0px",
+                        "zIndex": 2,
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
+                    <svg
+                      color="#7e7e7e"
+                      fill="none"
+                      height={24}
+                      size={24}
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       style={
                         Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(255,255,255,1.00)",
-                          "borderBottomColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "999px",
-                          "borderBottomRightRadius": "999px",
-                          "borderBottomWidth": "1px",
-                          "borderLeftColor": "rgba(238,238,238,1.00)",
-                          "borderLeftWidth": "1px",
-                          "borderRightColor": "rgba(238,238,238,1.00)",
-                          "borderRightWidth": "1px",
-                          "borderTopColor": "rgba(238,238,238,1.00)",
-                          "borderTopLeftRadius": "999px",
-                          "borderTopRightRadius": "999px",
-                          "borderTopWidth": "1px",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "width": "32px",
+                          "color": "#7e7e7e",
                         }
                       }
-                    />
+                      viewBox="0 0 24 24"
+                      width={24}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <polyline
+                        points="9 18 15 12 9 6"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -30563,65 +30536,37 @@ exports[`KitchenSink_1 1`] = `
                     </div>
                   </div>
                   <div
-                    aria-disabled={true}
                     className="css-view-1dbjc4n"
-                    disabled={true}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "MozTransitionProperty": "opacity",
-                        "MozUserSelect": "none",
-                        "WebkitTransitionDuration": "0.15s",
-                        "WebkitTransitionProperty": "opacity",
-                        "WebkitUserSelect": "none",
-                        "borderBottomLeftRadius": "999px",
-                        "borderBottomRightRadius": "999px",
-                        "borderTopLeftRadius": "999px",
-                        "borderTopRightRadius": "999px",
-                        "msUserSelect": "none",
-                        "transitionDuration": "0.15s",
-                        "transitionProperty": "opacity",
-                        "userSelect": "none",
+                        "position": "absolute",
+                        "right": "0px",
+                        "zIndex": 2,
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
+                    <svg
+                      color="#7e7e7e"
+                      fill="none"
+                      height={24}
+                      size={24}
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       style={
                         Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(255,255,255,1.00)",
-                          "borderBottomColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "999px",
-                          "borderBottomRightRadius": "999px",
-                          "borderBottomWidth": "1px",
-                          "borderLeftColor": "rgba(238,238,238,1.00)",
-                          "borderLeftWidth": "1px",
-                          "borderRightColor": "rgba(238,238,238,1.00)",
-                          "borderRightWidth": "1px",
-                          "borderTopColor": "rgba(238,238,238,1.00)",
-                          "borderTopLeftRadius": "999px",
-                          "borderTopRightRadius": "999px",
-                          "borderTopWidth": "1px",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "width": "32px",
+                          "color": "#7e7e7e",
                         }
                       }
-                    />
+                      viewBox="0 0 24 24"
+                      width={24}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <polyline
+                        points="9 18 15 12 9 6"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -30734,65 +30679,37 @@ exports[`KitchenSink_1 1`] = `
                     </div>
                   </div>
                   <div
-                    aria-disabled={true}
                     className="css-view-1dbjc4n"
-                    disabled={true}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "MozTransitionProperty": "opacity",
-                        "MozUserSelect": "none",
-                        "WebkitTransitionDuration": "0.15s",
-                        "WebkitTransitionProperty": "opacity",
-                        "WebkitUserSelect": "none",
-                        "borderBottomLeftRadius": "999px",
-                        "borderBottomRightRadius": "999px",
-                        "borderTopLeftRadius": "999px",
-                        "borderTopRightRadius": "999px",
-                        "msUserSelect": "none",
-                        "transitionDuration": "0.15s",
-                        "transitionProperty": "opacity",
-                        "userSelect": "none",
+                        "position": "absolute",
+                        "right": "0px",
+                        "zIndex": 2,
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
+                    <svg
+                      color="#7e7e7e"
+                      fill="none"
+                      height={24}
+                      size={24}
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       style={
                         Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(255,255,255,1.00)",
-                          "borderBottomColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "999px",
-                          "borderBottomRightRadius": "999px",
-                          "borderBottomWidth": "1px",
-                          "borderLeftColor": "rgba(238,238,238,1.00)",
-                          "borderLeftWidth": "1px",
-                          "borderRightColor": "rgba(238,238,238,1.00)",
-                          "borderRightWidth": "1px",
-                          "borderTopColor": "rgba(238,238,238,1.00)",
-                          "borderTopLeftRadius": "999px",
-                          "borderTopRightRadius": "999px",
-                          "borderTopWidth": "1px",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "width": "32px",
+                          "color": "#7e7e7e",
                         }
                       }
-                    />
+                      viewBox="0 0 24 24"
+                      width={24}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <polyline
+                        points="9 18 15 12 9 6"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -30905,65 +30822,37 @@ exports[`KitchenSink_1 1`] = `
                     </div>
                   </div>
                   <div
-                    aria-disabled={true}
                     className="css-view-1dbjc4n"
-                    disabled={true}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "MozTransitionProperty": "opacity",
-                        "MozUserSelect": "none",
-                        "WebkitTransitionDuration": "0.15s",
-                        "WebkitTransitionProperty": "opacity",
-                        "WebkitUserSelect": "none",
-                        "borderBottomLeftRadius": "999px",
-                        "borderBottomRightRadius": "999px",
-                        "borderTopLeftRadius": "999px",
-                        "borderTopRightRadius": "999px",
-                        "msUserSelect": "none",
-                        "transitionDuration": "0.15s",
-                        "transitionProperty": "opacity",
-                        "userSelect": "none",
+                        "position": "absolute",
+                        "right": "0px",
+                        "zIndex": 2,
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
+                    <svg
+                      color="#7e7e7e"
+                      fill="none"
+                      height={24}
+                      size={24}
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       style={
                         Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(255,255,255,1.00)",
-                          "borderBottomColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "999px",
-                          "borderBottomRightRadius": "999px",
-                          "borderBottomWidth": "1px",
-                          "borderLeftColor": "rgba(238,238,238,1.00)",
-                          "borderLeftWidth": "1px",
-                          "borderRightColor": "rgba(238,238,238,1.00)",
-                          "borderRightWidth": "1px",
-                          "borderTopColor": "rgba(238,238,238,1.00)",
-                          "borderTopLeftRadius": "999px",
-                          "borderTopRightRadius": "999px",
-                          "borderTopWidth": "1px",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "width": "32px",
+                          "color": "#7e7e7e",
                         }
                       }
-                    />
+                      viewBox="0 0 24 24"
+                      width={24}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <polyline
+                        points="9 18 15 12 9 6"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -31076,88 +30965,37 @@ exports[`KitchenSink_1 1`] = `
                     </div>
                   </div>
                   <div
-                    aria-disabled={true}
                     className="css-view-1dbjc4n"
-                    disabled={true}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "MozTransitionProperty": "opacity",
-                        "MozUserSelect": "none",
-                        "WebkitTransitionDuration": "0.15s",
-                        "WebkitTransitionProperty": "opacity",
-                        "WebkitUserSelect": "none",
-                        "borderBottomLeftRadius": "999px",
-                        "borderBottomRightRadius": "999px",
-                        "borderTopLeftRadius": "999px",
-                        "borderTopRightRadius": "999px",
-                        "msUserSelect": "none",
-                        "transitionDuration": "0.15s",
-                        "transitionProperty": "opacity",
-                        "userSelect": "none",
+                        "position": "absolute",
+                        "right": "0px",
+                        "zIndex": 2,
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
+                    <svg
+                      color="#7e7e7e"
+                      fill="none"
+                      height={24}
+                      size={24}
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       style={
                         Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(103,198,187,1.00)",
-                          "borderBottomColor": "rgba(0,0,0,0.00)",
-                          "borderBottomLeftRadius": "999px",
-                          "borderBottomRightRadius": "999px",
-                          "borderBottomWidth": "1px",
-                          "borderLeftColor": "rgba(0,0,0,0.00)",
-                          "borderLeftWidth": "1px",
-                          "borderRightColor": "rgba(0,0,0,0.00)",
-                          "borderRightWidth": "1px",
-                          "borderTopColor": "rgba(0,0,0,0.00)",
-                          "borderTopLeftRadius": "999px",
-                          "borderTopRightRadius": "999px",
-                          "borderTopWidth": "1px",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "width": "32px",
+                          "color": "#7e7e7e",
                         }
                       }
+                      viewBox="0 0 24 24"
+                      width={24}
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        color="white"
-                        fill="none"
-                        height={20}
-                        size={20}
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        style={
-                          Object {
-                            "color": "white",
-                          }
-                        }
-                        viewBox="0 0 24 24"
-                        width={20}
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <polyline
-                          points="20 6 9 17 4 12"
-                        />
-                      </svg>
-                    </div>
+                      <polyline
+                        points="9 18 15 12 9 6"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -31270,65 +31108,37 @@ exports[`KitchenSink_1 1`] = `
                     </div>
                   </div>
                   <div
-                    aria-disabled={true}
                     className="css-view-1dbjc4n"
-                    disabled={true}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "MozTransitionProperty": "opacity",
-                        "MozUserSelect": "none",
-                        "WebkitTransitionDuration": "0.15s",
-                        "WebkitTransitionProperty": "opacity",
-                        "WebkitUserSelect": "none",
-                        "borderBottomLeftRadius": "999px",
-                        "borderBottomRightRadius": "999px",
-                        "borderTopLeftRadius": "999px",
-                        "borderTopRightRadius": "999px",
-                        "msUserSelect": "none",
-                        "transitionDuration": "0.15s",
-                        "transitionProperty": "opacity",
-                        "userSelect": "none",
+                        "position": "absolute",
+                        "right": "0px",
+                        "zIndex": 2,
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
+                    <svg
+                      color="#7e7e7e"
+                      fill="none"
+                      height={24}
+                      size={24}
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       style={
                         Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(255,255,255,1.00)",
-                          "borderBottomColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "999px",
-                          "borderBottomRightRadius": "999px",
-                          "borderBottomWidth": "1px",
-                          "borderLeftColor": "rgba(238,238,238,1.00)",
-                          "borderLeftWidth": "1px",
-                          "borderRightColor": "rgba(238,238,238,1.00)",
-                          "borderRightWidth": "1px",
-                          "borderTopColor": "rgba(238,238,238,1.00)",
-                          "borderTopLeftRadius": "999px",
-                          "borderTopRightRadius": "999px",
-                          "borderTopWidth": "1px",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "width": "32px",
+                          "color": "#7e7e7e",
                         }
                       }
-                    />
+                      viewBox="0 0 24 24"
+                      width={24}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <polyline
+                        points="9 18 15 12 9 6"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -31441,65 +31251,37 @@ exports[`KitchenSink_1 1`] = `
                     </div>
                   </div>
                   <div
-                    aria-disabled={true}
                     className="css-view-1dbjc4n"
-                    disabled={true}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Object {
-                        "MozTransitionProperty": "opacity",
-                        "MozUserSelect": "none",
-                        "WebkitTransitionDuration": "0.15s",
-                        "WebkitTransitionProperty": "opacity",
-                        "WebkitUserSelect": "none",
-                        "borderBottomLeftRadius": "999px",
-                        "borderBottomRightRadius": "999px",
-                        "borderTopLeftRadius": "999px",
-                        "borderTopRightRadius": "999px",
-                        "msUserSelect": "none",
-                        "transitionDuration": "0.15s",
-                        "transitionProperty": "opacity",
-                        "userSelect": "none",
+                        "position": "absolute",
+                        "right": "0px",
+                        "zIndex": 2,
                       }
                     }
                   >
-                    <div
-                      className="css-view-1dbjc4n"
+                    <svg
+                      color="#7e7e7e"
+                      fill="none"
+                      height={24}
+                      size={24}
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       style={
                         Object {
-                          "WebkitAlignItems": "center",
-                          "WebkitBoxAlign": "center",
-                          "WebkitBoxPack": "center",
-                          "WebkitJustifyContent": "center",
-                          "alignItems": "center",
-                          "backgroundColor": "rgba(255,255,255,1.00)",
-                          "borderBottomColor": "rgba(238,238,238,1.00)",
-                          "borderBottomLeftRadius": "999px",
-                          "borderBottomRightRadius": "999px",
-                          "borderBottomWidth": "1px",
-                          "borderLeftColor": "rgba(238,238,238,1.00)",
-                          "borderLeftWidth": "1px",
-                          "borderRightColor": "rgba(238,238,238,1.00)",
-                          "borderRightWidth": "1px",
-                          "borderTopColor": "rgba(238,238,238,1.00)",
-                          "borderTopLeftRadius": "999px",
-                          "borderTopRightRadius": "999px",
-                          "borderTopWidth": "1px",
-                          "height": "32px",
-                          "justifyContent": "center",
-                          "msFlexAlign": "center",
-                          "msFlexPack": "center",
-                          "width": "32px",
+                          "color": "#7e7e7e",
                         }
                       }
-                    />
+                      viewBox="0 0 24 24"
+                      width={24}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <polyline
+                        points="9 18 15 12 9 6"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -33844,28 +33626,39 @@ exports[`ListItem_1 1`] = `
           </div>
         </div>
       </div>
-      <svg
-        color="#7e7e7e"
-        fill="none"
-        height={24}
-        size={24}
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
+      <div
+        className="css-view-1dbjc4n"
         style={
           Object {
-            "color": "#7e7e7e",
+            "position": "absolute",
+            "right": "0px",
+            "zIndex": 2,
           }
         }
-        viewBox="0 0 24 24"
-        width={24}
-        xmlns="http://www.w3.org/2000/svg"
       >
-        <polyline
-          points="9 18 15 12 9 6"
-        />
-      </svg>
+        <svg
+          color="#7e7e7e"
+          fill="none"
+          height={24}
+          size={24}
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          style={
+            Object {
+              "color": "#7e7e7e",
+            }
+          }
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polyline
+            points="9 18 15 12 9 6"
+          />
+        </svg>
+      </div>
     </div>
   </div>
 </div>
@@ -33900,7 +33693,7 @@ exports[`ListItem_4 1`] = `
     &lt;TouchableOpacity touchableStyle&gt;
   &lt;View wrapperStyle&gt;
     &lt;View leftWrapperStyle&gt;
-      &lt;View imageWrapperStyle&gt;{leftIcon || &lt;Avatar /&gt;}&lt;/View&gt;
+      &lt;View imageWrapperStyle&gt;{leftNode || &lt;Avatar /&gt;}&lt;/View&gt;
       &lt;View textWrapperStyle&gt;
         {title}
         {description}
@@ -36834,88 +36627,37 @@ exports[`SelectList_1 1`] = `
                 </div>
               </div>
               <div
-                aria-disabled={true}
                 className="css-view-1dbjc4n"
-                disabled={true}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
-                    "MozTransitionProperty": "opacity",
-                    "MozUserSelect": "none",
-                    "WebkitTransitionDuration": "0.15s",
-                    "WebkitTransitionProperty": "opacity",
-                    "WebkitUserSelect": "none",
-                    "borderBottomLeftRadius": "999px",
-                    "borderBottomRightRadius": "999px",
-                    "borderTopLeftRadius": "999px",
-                    "borderTopRightRadius": "999px",
-                    "msUserSelect": "none",
-                    "transitionDuration": "0.15s",
-                    "transitionProperty": "opacity",
-                    "userSelect": "none",
+                    "position": "absolute",
+                    "right": "0px",
+                    "zIndex": 2,
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
+                <svg
+                  color="#7e7e7e"
+                  fill="none"
+                  height={24}
+                  size={24}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   style={
                     Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(103,198,187,1.00)",
-                      "borderBottomColor": "rgba(0,0,0,0.00)",
-                      "borderBottomLeftRadius": "999px",
-                      "borderBottomRightRadius": "999px",
-                      "borderBottomWidth": "1px",
-                      "borderLeftColor": "rgba(0,0,0,0.00)",
-                      "borderLeftWidth": "1px",
-                      "borderRightColor": "rgba(0,0,0,0.00)",
-                      "borderRightWidth": "1px",
-                      "borderTopColor": "rgba(0,0,0,0.00)",
-                      "borderTopLeftRadius": "999px",
-                      "borderTopRightRadius": "999px",
-                      "borderTopWidth": "1px",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "width": "32px",
+                      "color": "#7e7e7e",
                     }
                   }
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    color="white"
-                    fill="none"
-                    height={20}
-                    size={20}
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    style={
-                      Object {
-                        "color": "white",
-                      }
-                    }
-                    viewBox="0 0 24 24"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <polyline
-                      points="20 6 9 17 4 12"
-                    />
-                  </svg>
-                </div>
+                  <polyline
+                    points="9 18 15 12 9 6"
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -37028,65 +36770,37 @@ exports[`SelectList_1 1`] = `
                 </div>
               </div>
               <div
-                aria-disabled={true}
                 className="css-view-1dbjc4n"
-                disabled={true}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
-                    "MozTransitionProperty": "opacity",
-                    "MozUserSelect": "none",
-                    "WebkitTransitionDuration": "0.15s",
-                    "WebkitTransitionProperty": "opacity",
-                    "WebkitUserSelect": "none",
-                    "borderBottomLeftRadius": "999px",
-                    "borderBottomRightRadius": "999px",
-                    "borderTopLeftRadius": "999px",
-                    "borderTopRightRadius": "999px",
-                    "msUserSelect": "none",
-                    "transitionDuration": "0.15s",
-                    "transitionProperty": "opacity",
-                    "userSelect": "none",
+                    "position": "absolute",
+                    "right": "0px",
+                    "zIndex": 2,
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
+                <svg
+                  color="#7e7e7e"
+                  fill="none"
+                  height={24}
+                  size={24}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   style={
                     Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(255,255,255,1.00)",
-                      "borderBottomColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "999px",
-                      "borderBottomRightRadius": "999px",
-                      "borderBottomWidth": "1px",
-                      "borderLeftColor": "rgba(238,238,238,1.00)",
-                      "borderLeftWidth": "1px",
-                      "borderRightColor": "rgba(238,238,238,1.00)",
-                      "borderRightWidth": "1px",
-                      "borderTopColor": "rgba(238,238,238,1.00)",
-                      "borderTopLeftRadius": "999px",
-                      "borderTopRightRadius": "999px",
-                      "borderTopWidth": "1px",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "width": "32px",
+                      "color": "#7e7e7e",
                     }
                   }
-                />
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polyline
+                    points="9 18 15 12 9 6"
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -37199,65 +36913,37 @@ exports[`SelectList_1 1`] = `
                 </div>
               </div>
               <div
-                aria-disabled={true}
                 className="css-view-1dbjc4n"
-                disabled={true}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
-                    "MozTransitionProperty": "opacity",
-                    "MozUserSelect": "none",
-                    "WebkitTransitionDuration": "0.15s",
-                    "WebkitTransitionProperty": "opacity",
-                    "WebkitUserSelect": "none",
-                    "borderBottomLeftRadius": "999px",
-                    "borderBottomRightRadius": "999px",
-                    "borderTopLeftRadius": "999px",
-                    "borderTopRightRadius": "999px",
-                    "msUserSelect": "none",
-                    "transitionDuration": "0.15s",
-                    "transitionProperty": "opacity",
-                    "userSelect": "none",
+                    "position": "absolute",
+                    "right": "0px",
+                    "zIndex": 2,
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
+                <svg
+                  color="#7e7e7e"
+                  fill="none"
+                  height={24}
+                  size={24}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   style={
                     Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(255,255,255,1.00)",
-                      "borderBottomColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "999px",
-                      "borderBottomRightRadius": "999px",
-                      "borderBottomWidth": "1px",
-                      "borderLeftColor": "rgba(238,238,238,1.00)",
-                      "borderLeftWidth": "1px",
-                      "borderRightColor": "rgba(238,238,238,1.00)",
-                      "borderRightWidth": "1px",
-                      "borderTopColor": "rgba(238,238,238,1.00)",
-                      "borderTopLeftRadius": "999px",
-                      "borderTopRightRadius": "999px",
-                      "borderTopWidth": "1px",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "width": "32px",
+                      "color": "#7e7e7e",
                     }
                   }
-                />
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polyline
+                    points="9 18 15 12 9 6"
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -37370,65 +37056,37 @@ exports[`SelectList_1 1`] = `
                 </div>
               </div>
               <div
-                aria-disabled={true}
                 className="css-view-1dbjc4n"
-                disabled={true}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
-                    "MozTransitionProperty": "opacity",
-                    "MozUserSelect": "none",
-                    "WebkitTransitionDuration": "0.15s",
-                    "WebkitTransitionProperty": "opacity",
-                    "WebkitUserSelect": "none",
-                    "borderBottomLeftRadius": "999px",
-                    "borderBottomRightRadius": "999px",
-                    "borderTopLeftRadius": "999px",
-                    "borderTopRightRadius": "999px",
-                    "msUserSelect": "none",
-                    "transitionDuration": "0.15s",
-                    "transitionProperty": "opacity",
-                    "userSelect": "none",
+                    "position": "absolute",
+                    "right": "0px",
+                    "zIndex": 2,
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
+                <svg
+                  color="#7e7e7e"
+                  fill="none"
+                  height={24}
+                  size={24}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   style={
                     Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(255,255,255,1.00)",
-                      "borderBottomColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "999px",
-                      "borderBottomRightRadius": "999px",
-                      "borderBottomWidth": "1px",
-                      "borderLeftColor": "rgba(238,238,238,1.00)",
-                      "borderLeftWidth": "1px",
-                      "borderRightColor": "rgba(238,238,238,1.00)",
-                      "borderRightWidth": "1px",
-                      "borderTopColor": "rgba(238,238,238,1.00)",
-                      "borderTopLeftRadius": "999px",
-                      "borderTopRightRadius": "999px",
-                      "borderTopWidth": "1px",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "width": "32px",
+                      "color": "#7e7e7e",
                     }
                   }
-                />
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polyline
+                    points="9 18 15 12 9 6"
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -37541,65 +37199,37 @@ exports[`SelectList_1 1`] = `
                 </div>
               </div>
               <div
-                aria-disabled={true}
                 className="css-view-1dbjc4n"
-                disabled={true}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
-                    "MozTransitionProperty": "opacity",
-                    "MozUserSelect": "none",
-                    "WebkitTransitionDuration": "0.15s",
-                    "WebkitTransitionProperty": "opacity",
-                    "WebkitUserSelect": "none",
-                    "borderBottomLeftRadius": "999px",
-                    "borderBottomRightRadius": "999px",
-                    "borderTopLeftRadius": "999px",
-                    "borderTopRightRadius": "999px",
-                    "msUserSelect": "none",
-                    "transitionDuration": "0.15s",
-                    "transitionProperty": "opacity",
-                    "userSelect": "none",
+                    "position": "absolute",
+                    "right": "0px",
+                    "zIndex": 2,
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
+                <svg
+                  color="#7e7e7e"
+                  fill="none"
+                  height={24}
+                  size={24}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   style={
                     Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(255,255,255,1.00)",
-                      "borderBottomColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "999px",
-                      "borderBottomRightRadius": "999px",
-                      "borderBottomWidth": "1px",
-                      "borderLeftColor": "rgba(238,238,238,1.00)",
-                      "borderLeftWidth": "1px",
-                      "borderRightColor": "rgba(238,238,238,1.00)",
-                      "borderRightWidth": "1px",
-                      "borderTopColor": "rgba(238,238,238,1.00)",
-                      "borderTopLeftRadius": "999px",
-                      "borderTopRightRadius": "999px",
-                      "borderTopWidth": "1px",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "width": "32px",
+                      "color": "#7e7e7e",
                     }
                   }
-                />
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polyline
+                    points="9 18 15 12 9 6"
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -37712,65 +37342,37 @@ exports[`SelectList_1 1`] = `
                 </div>
               </div>
               <div
-                aria-disabled={true}
                 className="css-view-1dbjc4n"
-                disabled={true}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
-                    "MozTransitionProperty": "opacity",
-                    "MozUserSelect": "none",
-                    "WebkitTransitionDuration": "0.15s",
-                    "WebkitTransitionProperty": "opacity",
-                    "WebkitUserSelect": "none",
-                    "borderBottomLeftRadius": "999px",
-                    "borderBottomRightRadius": "999px",
-                    "borderTopLeftRadius": "999px",
-                    "borderTopRightRadius": "999px",
-                    "msUserSelect": "none",
-                    "transitionDuration": "0.15s",
-                    "transitionProperty": "opacity",
-                    "userSelect": "none",
+                    "position": "absolute",
+                    "right": "0px",
+                    "zIndex": 2,
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
+                <svg
+                  color="#7e7e7e"
+                  fill="none"
+                  height={24}
+                  size={24}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   style={
                     Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(255,255,255,1.00)",
-                      "borderBottomColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "999px",
-                      "borderBottomRightRadius": "999px",
-                      "borderBottomWidth": "1px",
-                      "borderLeftColor": "rgba(238,238,238,1.00)",
-                      "borderLeftWidth": "1px",
-                      "borderRightColor": "rgba(238,238,238,1.00)",
-                      "borderRightWidth": "1px",
-                      "borderTopColor": "rgba(238,238,238,1.00)",
-                      "borderTopLeftRadius": "999px",
-                      "borderTopRightRadius": "999px",
-                      "borderTopWidth": "1px",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "width": "32px",
+                      "color": "#7e7e7e",
                     }
                   }
-                />
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polyline
+                    points="9 18 15 12 9 6"
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -37883,65 +37485,37 @@ exports[`SelectList_1 1`] = `
                 </div>
               </div>
               <div
-                aria-disabled={true}
                 className="css-view-1dbjc4n"
-                disabled={true}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
-                    "MozTransitionProperty": "opacity",
-                    "MozUserSelect": "none",
-                    "WebkitTransitionDuration": "0.15s",
-                    "WebkitTransitionProperty": "opacity",
-                    "WebkitUserSelect": "none",
-                    "borderBottomLeftRadius": "999px",
-                    "borderBottomRightRadius": "999px",
-                    "borderTopLeftRadius": "999px",
-                    "borderTopRightRadius": "999px",
-                    "msUserSelect": "none",
-                    "transitionDuration": "0.15s",
-                    "transitionProperty": "opacity",
-                    "userSelect": "none",
+                    "position": "absolute",
+                    "right": "0px",
+                    "zIndex": 2,
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
+                <svg
+                  color="#7e7e7e"
+                  fill="none"
+                  height={24}
+                  size={24}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   style={
                     Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(255,255,255,1.00)",
-                      "borderBottomColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "999px",
-                      "borderBottomRightRadius": "999px",
-                      "borderBottomWidth": "1px",
-                      "borderLeftColor": "rgba(238,238,238,1.00)",
-                      "borderLeftWidth": "1px",
-                      "borderRightColor": "rgba(238,238,238,1.00)",
-                      "borderRightWidth": "1px",
-                      "borderTopColor": "rgba(238,238,238,1.00)",
-                      "borderTopLeftRadius": "999px",
-                      "borderTopRightRadius": "999px",
-                      "borderTopWidth": "1px",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "width": "32px",
+                      "color": "#7e7e7e",
                     }
                   }
-                />
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polyline
+                    points="9 18 15 12 9 6"
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -38054,88 +37628,37 @@ exports[`SelectList_1 1`] = `
                 </div>
               </div>
               <div
-                aria-disabled={true}
                 className="css-view-1dbjc4n"
-                disabled={true}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
-                    "MozTransitionProperty": "opacity",
-                    "MozUserSelect": "none",
-                    "WebkitTransitionDuration": "0.15s",
-                    "WebkitTransitionProperty": "opacity",
-                    "WebkitUserSelect": "none",
-                    "borderBottomLeftRadius": "999px",
-                    "borderBottomRightRadius": "999px",
-                    "borderTopLeftRadius": "999px",
-                    "borderTopRightRadius": "999px",
-                    "msUserSelect": "none",
-                    "transitionDuration": "0.15s",
-                    "transitionProperty": "opacity",
-                    "userSelect": "none",
+                    "position": "absolute",
+                    "right": "0px",
+                    "zIndex": 2,
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
+                <svg
+                  color="#7e7e7e"
+                  fill="none"
+                  height={24}
+                  size={24}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   style={
                     Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(103,198,187,1.00)",
-                      "borderBottomColor": "rgba(0,0,0,0.00)",
-                      "borderBottomLeftRadius": "999px",
-                      "borderBottomRightRadius": "999px",
-                      "borderBottomWidth": "1px",
-                      "borderLeftColor": "rgba(0,0,0,0.00)",
-                      "borderLeftWidth": "1px",
-                      "borderRightColor": "rgba(0,0,0,0.00)",
-                      "borderRightWidth": "1px",
-                      "borderTopColor": "rgba(0,0,0,0.00)",
-                      "borderTopLeftRadius": "999px",
-                      "borderTopRightRadius": "999px",
-                      "borderTopWidth": "1px",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "width": "32px",
+                      "color": "#7e7e7e",
                     }
                   }
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <svg
-                    color="white"
-                    fill="none"
-                    height={20}
-                    size={20}
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    style={
-                      Object {
-                        "color": "white",
-                      }
-                    }
-                    viewBox="0 0 24 24"
-                    width={20}
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <polyline
-                      points="20 6 9 17 4 12"
-                    />
-                  </svg>
-                </div>
+                  <polyline
+                    points="9 18 15 12 9 6"
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -38248,65 +37771,37 @@ exports[`SelectList_1 1`] = `
                 </div>
               </div>
               <div
-                aria-disabled={true}
                 className="css-view-1dbjc4n"
-                disabled={true}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
-                    "MozTransitionProperty": "opacity",
-                    "MozUserSelect": "none",
-                    "WebkitTransitionDuration": "0.15s",
-                    "WebkitTransitionProperty": "opacity",
-                    "WebkitUserSelect": "none",
-                    "borderBottomLeftRadius": "999px",
-                    "borderBottomRightRadius": "999px",
-                    "borderTopLeftRadius": "999px",
-                    "borderTopRightRadius": "999px",
-                    "msUserSelect": "none",
-                    "transitionDuration": "0.15s",
-                    "transitionProperty": "opacity",
-                    "userSelect": "none",
+                    "position": "absolute",
+                    "right": "0px",
+                    "zIndex": 2,
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
+                <svg
+                  color="#7e7e7e"
+                  fill="none"
+                  height={24}
+                  size={24}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   style={
                     Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(255,255,255,1.00)",
-                      "borderBottomColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "999px",
-                      "borderBottomRightRadius": "999px",
-                      "borderBottomWidth": "1px",
-                      "borderLeftColor": "rgba(238,238,238,1.00)",
-                      "borderLeftWidth": "1px",
-                      "borderRightColor": "rgba(238,238,238,1.00)",
-                      "borderRightWidth": "1px",
-                      "borderTopColor": "rgba(238,238,238,1.00)",
-                      "borderTopLeftRadius": "999px",
-                      "borderTopRightRadius": "999px",
-                      "borderTopWidth": "1px",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "width": "32px",
+                      "color": "#7e7e7e",
                     }
                   }
-                />
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polyline
+                    points="9 18 15 12 9 6"
+                  />
+                </svg>
               </div>
             </div>
           </div>
@@ -38419,65 +37914,37 @@ exports[`SelectList_1 1`] = `
                 </div>
               </div>
               <div
-                aria-disabled={true}
                 className="css-view-1dbjc4n"
-                disabled={true}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onResponderGrant={[Function]}
-                onResponderMove={[Function]}
-                onResponderRelease={[Function]}
-                onResponderTerminate={[Function]}
-                onResponderTerminationRequest={[Function]}
-                onStartShouldSetResponder={[Function]}
                 style={
                   Object {
-                    "MozTransitionProperty": "opacity",
-                    "MozUserSelect": "none",
-                    "WebkitTransitionDuration": "0.15s",
-                    "WebkitTransitionProperty": "opacity",
-                    "WebkitUserSelect": "none",
-                    "borderBottomLeftRadius": "999px",
-                    "borderBottomRightRadius": "999px",
-                    "borderTopLeftRadius": "999px",
-                    "borderTopRightRadius": "999px",
-                    "msUserSelect": "none",
-                    "transitionDuration": "0.15s",
-                    "transitionProperty": "opacity",
-                    "userSelect": "none",
+                    "position": "absolute",
+                    "right": "0px",
+                    "zIndex": 2,
                   }
                 }
               >
-                <div
-                  className="css-view-1dbjc4n"
+                <svg
+                  color="#7e7e7e"
+                  fill="none"
+                  height={24}
+                  size={24}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   style={
                     Object {
-                      "WebkitAlignItems": "center",
-                      "WebkitBoxAlign": "center",
-                      "WebkitBoxPack": "center",
-                      "WebkitJustifyContent": "center",
-                      "alignItems": "center",
-                      "backgroundColor": "rgba(255,255,255,1.00)",
-                      "borderBottomColor": "rgba(238,238,238,1.00)",
-                      "borderBottomLeftRadius": "999px",
-                      "borderBottomRightRadius": "999px",
-                      "borderBottomWidth": "1px",
-                      "borderLeftColor": "rgba(238,238,238,1.00)",
-                      "borderLeftWidth": "1px",
-                      "borderRightColor": "rgba(238,238,238,1.00)",
-                      "borderRightWidth": "1px",
-                      "borderTopColor": "rgba(238,238,238,1.00)",
-                      "borderTopLeftRadius": "999px",
-                      "borderTopRightRadius": "999px",
-                      "borderTopWidth": "1px",
-                      "height": "32px",
-                      "justifyContent": "center",
-                      "msFlexAlign": "center",
-                      "msFlexPack": "center",
-                      "width": "32px",
+                      "color": "#7e7e7e",
                     }
                   }
-                />
+                  viewBox="0 0 24 24"
+                  width={24}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <polyline
+                    points="9 18 15 12 9 6"
+                  />
+                </svg>
               </div>
             </div>
           </div>

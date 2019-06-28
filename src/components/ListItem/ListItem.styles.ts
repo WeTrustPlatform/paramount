@@ -9,6 +9,7 @@ export interface ListItemStyles {
   touchableStyle: ViewStyle;
   leftWrapperStyle: ViewStyle;
   textWrapperStyle: ViewStyle;
+  rightWrapperStyle: ViewStyle;
   titleStyle: TextStyle;
   descriptionStyle: TextStyle;
 }
@@ -27,6 +28,11 @@ export const getListItemStyles: GetListItemStyles = ({ isDisabled }, theme) => {
     leftWrapperStyle: {
       alignItems: 'center',
       flexDirection: 'row',
+    },
+    rightWrapperStyle: {
+      position: 'absolute',
+      right: 0,
+      zIndex: 2,
     },
     textWrapperStyle: {
       justifyContent: 'center',

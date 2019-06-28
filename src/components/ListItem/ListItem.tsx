@@ -36,14 +36,14 @@ export interface ListItemProps {
   isDisabled?: boolean;
 
   /**
-   * Icon replacing `Avatar` on the left hand-side
+   * React node replacing `Avatar` on the left hand-side
    */
-  leftIcon?: React.ReactNode;
+  leftNode?: React.ReactNode;
 
   /**
-   * Icon replacing right hand-side icon
+   * React node replacing right hand-side icon
    */
-  rightIcon?: React.ReactNode;
+  rightNode?: React.ReactNode;
 
   /**
    * Called when pressing list item
@@ -77,8 +77,8 @@ export const ListItem = (props: ListItemProps) => {
     title,
     description,
     onPress,
-    rightIcon,
-    leftIcon,
+    rightNode,
+    leftNode,
     testID,
     accessibilityHint,
     accessibilityLabel,
@@ -93,6 +93,7 @@ export const ListItem = (props: ListItemProps) => {
     touchableStyle,
     titleStyle,
     descriptionStyle,
+    rightWrapperStyle,
     wrapperStyle,
   } = mergeStyles(
     getListItemStyles,
@@ -112,9 +113,9 @@ export const ListItem = (props: ListItemProps) => {
     >
       <View style={wrapperStyle}>
         <View style={leftWrapperStyle}>
-          {leftIcon || avatarProps ? (
+          {leftNode || avatarProps ? (
             <View style={imageWrapperStyle}>
-              {leftIcon || <Avatar size="small" {...avatarProps} />}
+              {leftNode || <Avatar size="small" {...avatarProps} />}
             </View>
           ) : null}
           <View style={textWrapperStyle}>
@@ -145,11 +146,13 @@ export const ListItem = (props: ListItemProps) => {
             ) : null}
           </View>
         </View>
-        {rightIcon === null
-          ? null
-          : rightIcon || (
+        {rightNode === null ? null : (
+          <View style={rightWrapperStyle}>
+            {rightNode || (
               <Icon color="default" size={24} name="chevron-right" />
             )}
+          </View>
+        )}
       </View>
     </TouchableOpacity>
   );

@@ -9,9 +9,9 @@ import {
   Playground,
   Alert,
   Box,
+  Button,
   Avatar,
   Badge,
-  Button,
   Checkbox,
   FormField,
   Toggle,
@@ -71,7 +71,14 @@ export const KitchenSink = () => {
           <Alert intent="warning" title="Warning" description="Message" />
         </Box>
         <Box paddingVertical={8}>
-          <Alert intent="danger" title="Danger" description="Message" />
+          <Alert
+            intent="danger"
+            title="Danger"
+            description="Message"
+            actionNode={
+              <Button title="Action" appearance="minimal" color="primary" />
+            }
+          />
         </Box>
       </Playground>
 
@@ -989,6 +996,7 @@ export const KitchenSink = () => {
                   notify({
                     title: 'Title',
                     description: 'Description',
+                    duration: 100000,
                   })
                 }
                 title="Open toast"
