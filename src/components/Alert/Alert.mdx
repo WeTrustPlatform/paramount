@@ -4,7 +4,7 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { Alert, Box } from '..';
+import { Alert, Box, Button } from '..';
 
 # Alert
 
@@ -23,7 +23,12 @@ Give feedback to the user about an action or state
     <Alert intent="warning" title="Warning" description="Message" />
   </Box>
   <Box paddingVertical={8}>
-    <Alert intent="danger" title="Danger" description="Message" />
+    <Alert
+      intent="danger"
+      title="Danger"
+      description="Message"
+      action={<Button title="Action" appearance="minimal" color="primary" />}
+    />
   </Box>
 </Playground>
 
@@ -39,6 +44,7 @@ Use `getStyles` prop
 AlertStyles {
   containerStyle: ViewStyle;
   bodyStyle: ViewStyle;
+  leftWrapperStyle: ViewStyle;
   titleStyle: TextStyle;
   descriptionStyle: TextStyle;
 }
@@ -50,10 +56,13 @@ Markup
 
 ```tsx
 <View containerStyle>
-  {icon}
-  <View bodyStyle>
-    <Text titleStyle>{title}</Text>
-    <Text descriptionStyle>{description}</Text>
+  <View leftWrapperStyle>
+    {icon}
+    <View bodyStyle>
+      <Text titleStyle>{title}</Text>
+      <Text descriptionStyle>{description}</Text>
+    </View>
   </View>
+  {action}
 </View>
 ```

@@ -30,6 +30,12 @@ export interface AlertProps {
    */
   intent?: Intent;
 
+  /**
+   * Component display on the right side of the alert.
+   * @default null
+   */
+  action?: React.ReactNode;
+
   /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetAlertStyles, DeepPartial<AlertStyles>>;
 
@@ -61,11 +67,13 @@ export const Alert = (props: AlertProps) => {
     intent = 'info',
     getStyles,
     testID,
+    action = null,
   } = props;
 
   const theme = useTheme();
 
   const {
+    leftWrapperStyle,
     containerStyle,
     bodyStyle,
     descriptionStyle,
@@ -77,21 +85,24 @@ export const Alert = (props: AlertProps) => {
 
   return (
     <View style={containerStyle} testID={testID}>
-      {icon === null
-        ? null
-        : icon || (
-            <Box paddingRight={16} justifyContent="center">
-              {resolveIcon(intent)}
-            </Box>
-          )}
-      <View style={bodyStyle}>
-        <Text getStyles={() => ({ textStyle: titleStyle })} weight="bold">
-          {title}
-        </Text>
-        <Text getStyles={() => ({ textStyle: descriptionStyle })}>
-          {description}
-        </Text>
+      <View style={leftWrapperStyle}>
+        {icon === null
+          ? null
+          : icon || (
+              <Box paddingRight={16} justifyContent="center">
+                {resolveIcon(intent)}
+              </Box>
+            )}
+        <View style={bodyStyle}>
+          <Text getStyles={() => ({ textStyle: titleStyle })} weight="bold">
+            {title}
+          </Text>
+          <Text getStyles={() => ({ textStyle: descriptionStyle })}>
+            {description}
+          </Text>
+        </View>
       </View>
+      {action}
     </View>
   );
 };
