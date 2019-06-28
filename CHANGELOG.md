@@ -1,3 +1,10 @@
+# [1.73.0](https://github.com/WeTrustPlatform/paramount/compare/v1.72.0...v1.73.0) (2019-06-28)
+
+
+### Features
+
+* toast position and docs ([b644c3d](https://github.com/WeTrustPlatform/paramount/commit/b644c3d))
+
 # [1.72.0](https://github.com/WeTrustPlatform/paramount/compare/v1.71.2...v1.72.0) (2019-06-28)
 
 
