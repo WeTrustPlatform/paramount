@@ -1,3 +1,10 @@
+# [1.72.0](https://github.com/WeTrustPlatform/paramount/compare/v1.71.2...v1.72.0) (2019-06-28)
+
+
+### Features
+
+* add action component in alert ([03cff3b](https://github.com/WeTrustPlatform/paramount/commit/03cff3b))
+
 ## [1.71.2](https://github.com/WeTrustPlatform/paramount/compare/v1.71.1...v1.71.2) (2019-06-28)
 
 
