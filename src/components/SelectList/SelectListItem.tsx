@@ -50,7 +50,7 @@ export const SelectListItem = (props: SelectListItemProps) => {
         onPress(value, index, isSelected);
       }}
       title={label}
-      rightIcon={
+      rightNode={
         <Checkbox isInteractive={false} shape="circle" value={isSelected} />
       }
       {...listItemProps}
