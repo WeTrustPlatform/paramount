@@ -1,112 +1,85 @@
-import { TextStyle } from 'react-native';
+import { TextStyle, ViewStyle } from 'react-native';
 
-import { ControlSize, Theme } from '../../theme/ThemeInterface';
-
-export interface TextInputVariables {
-  base: TextStyle;
-  disabled: TextStyle;
-  focus: TextStyle;
-  invalid: TextStyle;
-  placeholderTextColor: string;
-  sizes: { [size in ControlSize]: TextStyle };
-}
-
-export const getTextInputVariables = (theme: Theme): TextInputVariables => {
-  return {
-    base: {
-      backgroundColor: theme.colors.background.content,
-      borderColor: theme.colors.border.default,
-      borderWidth: 1,
-      color: theme.colors.text.default,
-      width: '100%',
-    },
-    disabled: {
-      backgroundColor: theme.colors.background.greyDark,
-    },
-    focus: {},
-    invalid: {
-      borderColor: theme.colors.border.danger,
-    },
-    placeholderTextColor: theme.colors.text.muted,
-    sizes: {
-      small: {
-        borderRadius: theme.controlBorderRadius.small,
-        fontSize: theme.textSizes.small.fontSize || 14,
-        height: theme.controlHeights.small,
-        paddingLeft: theme.controlPaddings.small,
-        paddingRight: theme.controlPaddings.small,
-      },
-
-      medium: {
-        borderRadius: theme.controlBorderRadius.medium,
-        fontSize: theme.textSizes.medium.fontSize || 16,
-        height: theme.controlHeights.medium,
-        paddingLeft: theme.controlPaddings.medium,
-        paddingRight: theme.controlPaddings.medium,
-      },
-
-      large: {
-        borderRadius: theme.controlBorderRadius.large,
-        fontSize: theme.textSizes.large.fontSize || 18,
-        height: theme.controlHeights.large,
-        paddingLeft: theme.controlPaddings.large,
-        paddingRight: theme.controlPaddings.large,
-      },
-    },
-  };
-};
+import { Theme } from '../../theme/Theme';
+import { TextInputProps } from './TextInput';
 
 export interface TextInputStyles {
   inputStyle: TextStyle;
-  focusedStyle: TextStyle;
   placeholderTextColor: string;
-}
-
-export interface TextInputStylesProps {
-  size: ControlSize;
-  isDisabled: boolean;
-  isClearable: boolean;
-  isInvalid: boolean;
-  numberOfLines?: number;
+  containerStyle: ViewStyle;
+  leftContainerStyle: ViewStyle;
+  rightContainerStyle: ViewStyle;
 }
 
 export type GetTextInputStyles = (
-  textInputStylesProps: TextInputStylesProps,
+  props: TextInputProps,
   theme: Theme,
 ) => TextInputStyles;
 
 export const getTextInputStyles: GetTextInputStyles = (
-  { size, isDisabled, isInvalid, numberOfLines },
+  {
+    size = 'medium',
+    isClearable = false,
+    isDisabled = false,
+    isInvalid = false,
+    numberOfLines,
+    leftIcon,
+    rightIcon,
+  },
   theme,
 ) => {
-  const textInputVariables = getTextInputVariables(theme);
+  const hasLeftIcon = !!leftIcon;
+  const hasRightIcon = !!(rightIcon || isClearable);
   const controlHeight = theme.controlHeights[size];
 
-  const {
-    base,
-    disabled,
-    focus,
-    invalid,
-    placeholderTextColor,
-    sizes,
-  } = textInputVariables;
-
-  const sizeStyles = sizes[size];
-
   return {
-    focusedStyle: focus,
+    containerStyle: {
+      position: 'relative',
+    },
     inputStyle: {
-      ...base,
-      ...sizeStyles,
-      ...(isDisabled ? disabled : {}),
-      ...(isInvalid ? invalid : {}),
+      backgroundColor: theme.colors.background.content,
+      borderColor: theme.colors.border.default,
+      borderRadius: theme.controlBorderRadius[size],
+      borderWidth: 1,
+      color: theme.colors.text.default,
+      height: theme.controlHeights[size],
+      paddingLeft: theme.controlPaddings[size],
+      paddingRight: theme.controlPaddings[size],
+      width: '100%',
+      ...theme.textSizes[size],
+      ...(isDisabled
+        ? { backgroundColor: theme.colors.background.greyDark }
+        : {}),
+      ...(isInvalid ? { borderColor: theme.colors.border.danger } : {}),
       ...(numberOfLines
         ? {
             height: numberOfLines * controlHeight,
             paddingVertical: 16,
           }
         : {}),
+      ...(hasLeftIcon && { paddingLeft: 40 }),
+      ...(hasRightIcon && { paddingRight: 40 }),
     },
-    placeholderTextColor,
+    leftContainerStyle: {
+      alignItems: 'center',
+      display: 'flex',
+      height: '100%',
+      justifyContent: 'center',
+      left: 0,
+      paddingHorizontal: 8,
+      position: 'absolute',
+      zIndex: 1,
+    },
+    placeholderTextColor: theme.colors.text.muted,
+    rightContainerStyle: {
+      alignItems: 'center',
+      display: 'flex',
+      height: '100%',
+      justifyContent: 'center',
+      paddingHorizontal: 8,
+      position: 'absolute',
+      right: 0,
+      zIndex: 1,
+    },
   };
 };

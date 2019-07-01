@@ -4,44 +4,67 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { Alert } from './Alert';
-import { Box } from '../Box';
+import { Alert, Box, Button } from '..';
 
 # Alert
 
-### Usage
+Give feedback to the user about an action or state
+
+## Usage
 
 <Playground>
-  <Alert
-    title="Kitchen sink"
-    description="Message"
-    isCloseable
-    intent="success"
-    component={null} // Overrides body
-    getStyles={(props, theme) => ({
-      bodyStyle: {},
-      containerStyle: {},
-    })}
-  />
-</Playground>
-
-### Variants
-
-<Playground>
-  <Box paddingVertical={16}>
+  <Box paddingVertical={8}>
     <Alert title="Info" description="Message" />
   </Box>
-  <Box paddingVertical={16}>
+  <Box paddingVertical={8}>
     <Alert intent="success" title="Success" description="Message" />
   </Box>
-  <Box paddingVertical={16}>
+  <Box paddingVertical={8}>
     <Alert intent="warning" title="Warning" description="Message" />
   </Box>
-  <Box paddingVertical={16}>
-    <Alert intent="danger" title="Danger" description="Message" />
+  <Box paddingVertical={8}>
+    <Alert
+      intent="danger"
+      title="Danger"
+      description="Message"
+      actionNode={
+        <Button title="Action" appearance="minimal" color="primary" />
+      }
+    />
   </Box>
 </Playground>
 
-### Props
+## Props
 
 <Props of={Alert} />
+
+## Customization
+
+Use `getStyles` prop
+
+```tsx
+AlertStyles {
+  containerStyle: ViewStyle;
+  bodyStyle: ViewStyle;
+  leftWrapperStyle: ViewStyle;
+  titleStyle: TextStyle;
+  descriptionStyle: TextStyle;
+}
+
+getStyles={(AlertProps, Theme) => AlertStyles}
+```
+
+Markup
+
+```tsx
+<View containerStyle>
+  <View leftWrapperStyle>
+    {icon}
+    <View bodyStyle>
+      <Text titleStyle>{title}</Text>
+      <Text descriptionStyle>{description}</Text>
+    </View>
+  </View>
+  {action}
+</View>
+```

@@ -1,0 +1,86 @@
+---
+name: Layout
+menu: Components
+---
+
+# Layout
+
+Paramount provides building blocks to create responsive layout via components `Visible`, `Row and Column`, `Container` and convenience functions ([see Usage](#usage))
+
+## Setup
+
+Put `LayoutProvider` at the top level component to wrap components that make use of `LayoutContext`. For options, [see Configuration Options](#options)
+
+```tsx
+<LayoutProvider value={options}>{children}</LayoutProvider>
+```
+
+## Usage
+
+Paramount exposes a convenience hook `useLayout` that you can import to make use of utility functions for layout
+
+### currentScreenSize
+
+Retrieves the current screen size
+
+```tsx
+const MyComponent = () => {
+  const { currentScreenSize } = useLayout();
+
+  console.log(currentScreenSize);
+  // either xsmall, small, medium, large, xlarge
+  ...
+}
+```
+
+### getResponsiveValue
+
+Returns arbitrary value that matches nearest defined size that is smaller than or equal to current screen size
+
+```tsx
+const MyComponent = () => {
+  const { getResponsiveValue } = useLayout();
+
+  // Can be strings, numbers or any
+  const value = getResponsiveValue({ xsmall: 'blue', large: 'red' });
+
+  console.log(value);
+  // If currentScreenSize is large, it will return `red`
+  // If currentScreenSize is small, it will return `blue`
+  // If currentScreenSize is xsmall, it will return `blue`
+  ...
+}
+```
+
+### Responsive Components
+
+`Visible`, `Row and Column`, `Container`
+
+## Options
+
+These are all the available configuration options, as well as the default layout configuration
+
+```ts
+export const defaultLayout: LayoutInterface = {
+  breakpoints: {
+    small: 480,
+
+    medium: 768,
+
+    large: 992,
+
+    xlarge: 1200,
+  },
+  containerSizes: {
+    small: 540,
+
+    medium: 720,
+
+    large: 960,
+
+    xlarge: 1140,
+  },
+  gridColumnCount: 12,
+  gutterWidth: 30,
+};
+```

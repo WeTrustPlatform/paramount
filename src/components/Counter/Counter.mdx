@@ -3,36 +3,55 @@ name: Counter
 menu: Components
 ---
 
-import { Counter as CounterContainer } from 'react-powerplug';
 import { Playground, Props } from 'docz';
-import { Counter } from '.';
+import { Counter, CounterState } from '..';
 
 # Counter
 
-### Usage
+## Usage
 
 <Playground>
-  <CounterContainer initial={0}>
-    {({ count, inc, dec }) => (
-      <Counter
-        count={count}
-        onDecrement={dec}
-        onIncrement={inc}
-        min={0}
-        max={10}
-        component={null}
-        getStyles={(props, theme) => ({
-          containerStyle: {},
-          counterStyle: {},
-          countStyle: {},
-          disabledStyle: {},
-          ntextStyle: {},
-        })}
-      />
+  <CounterState initial={0}>
+    {({ count, increment, decrement }) => (
+      <Counter count={count} onDecrement={decrement} onIncrement={increment} />
     )}
-  </CounterContainer>
+  </CounterState>
 </Playground>
 
-### Props
+## Props
 
 <Props of={Counter} />
+
+## Customization
+
+Using `getStyles` prop
+
+```
+CounterStyles {
+  containerStyle: ViewStyle;
+  counterStyle: ViewStyle;
+  countStyle: ViewStyle;
+  decrementWrapperStyle: ViewStyle;
+  disabledStyle: ViewStyle;
+  incrementWrapperStyle: ViewStyle;
+  textStyle: TextStyle;
+}
+
+getStyles={(CounterProps, Theme) => CounterStyles}
+```
+
+Markup
+
+```tsx
+<View containerStyle>
+  <View decrementWrapperStyle>
+    <TouchableOpacity counterStyle>{icon}</TouchableOpacity>
+  </View>
+  <View countStyle>
+    <Text textStyle>{count}</Text>
+  </View>
+  <View incrementWrapperStyle>
+    <TouchableOpacity counterStyle>{icon}</TouchableOpacity>
+  </View>
+</View>
+```

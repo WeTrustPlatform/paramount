@@ -1,13 +1,12 @@
+import merge from 'deepmerge';
 import { DeepPartial } from 'ts-essentials';
 
-// tslint:disable-next-line
-const deepMerge = require('deepmerge');
+import { Theme } from '../theme';
 
-export type GetStyles<TStyles = any> = (...args: any[]) => TStyles;
-
-export type GetStylesOptional<TStyles = any> = (
-  ...args: any[]
-) => DeepPartial<TStyles>;
+export type GetStyles<TStyles = any, TStyleProps = any> = (
+  props: TStyleProps,
+  theme: Theme,
+) => TStyles;
 
 export type ArgumentTypes<T> = T extends (...args: infer U) => infer R
   ? U
@@ -16,13 +15,22 @@ export type ReplaceReturnType<T, TNewReturn> = (
   ...a: ArgumentTypes<T>
 ) => TNewReturn;
 
-export const mergeStyles = <TStyles = any, TPartialStyles = any>(
-  getDefaultStyles: GetStyles<TStyles>,
-  getOverridingStyles?: GetStyles<TPartialStyles>,
-) => (...args: any[]): TStyles => {
-  const defaultStyles = getDefaultStyles(...args);
+export const mergeStyles = <TStyles = any, TStyleProps = any>(
+  getDefaultStyles: GetStyles<TStyles, TStyleProps>,
+  getOverridingStyles?: GetStyles<DeepPartial<TStyles>, TStyleProps>,
+  getThemeStyles?: GetStyles<DeepPartial<TStyles>, TStyleProps>,
+) => (props: TStyleProps, theme: Theme): TStyles => {
+  const defaultStyles = getDefaultStyles(props, theme);
 
-  return getOverridingStyles
-    ? deepMerge(defaultStyles, getOverridingStyles(...args))
-    : defaultStyles;
+  const styles: Array<Partial<TStyles>> = [defaultStyles];
+
+  if (getThemeStyles) {
+    styles.push(getThemeStyles(props, theme) as Partial<TStyles>);
+  }
+
+  if (getOverridingStyles) {
+    styles.push(getOverridingStyles(props, theme) as Partial<TStyles>);
+  }
+
+  return merge.all<TStyles>(styles);
 };

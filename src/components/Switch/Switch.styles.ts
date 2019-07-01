@@ -1,25 +1,40 @@
 import { ViewStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
+import { Theme } from '../../theme/Theme';
+import { SwitchProps } from './Switch';
 
-export interface SwitchVariables {
+export interface SwitchStylesRequired {
+  width: number;
+  padding: number;
+}
+
+export interface SwitchStyles {
+  touchableStyle: ViewStyle;
+  containerStyle: ViewStyle & SwitchStylesRequired;
+  circleStyle: ViewStyle & SwitchStylesRequired;
   backgroundColorOff: string;
   backgroundColorOn: string;
   circleColorOff: string;
   circleColorOn: string;
-
-  container: ViewStyle & SwitchStylesRequired;
-  circle: ViewStyle & SwitchStylesRequired;
 }
 
-export const getSwitchVariables = (theme: Theme): SwitchVariables => {
+export type GetSwitchStyles = (
+  props: SwitchProps,
+  theme: Theme,
+) => SwitchStyles;
+
+export const getSwitchStyles: GetSwitchStyles = (props, theme) => {
+  const { isDisabled = false } = props;
+
   return {
     backgroundColorOff: theme.colors.background.greyDefault,
-    backgroundColorOn: theme.colors.background.primaryDefault,
+    backgroundColorOn: isDisabled
+      ? theme.colors.background.greyDefault
+      : theme.colors.background.primaryDefault,
     circleColorOff: theme.colors.background.content,
     circleColorOn: theme.colors.background.content,
 
-    circle: {
+    circleStyle: {
       alignItems: 'center',
       backgroundColor: theme.colors.background.content,
       borderRadius: 24,
@@ -29,8 +44,7 @@ export const getSwitchVariables = (theme: Theme): SwitchVariables => {
       padding: 0,
       width: 38,
     },
-
-    container: {
+    containerStyle: {
       alignItems: 'center',
       backgroundColor: theme.colors.background.greyLight,
       borderRadius: 24,
@@ -39,33 +53,10 @@ export const getSwitchVariables = (theme: Theme): SwitchVariables => {
       padding: 3,
       width: 72,
     },
-  };
-};
-
-export interface SwitchStylesRequired {
-  width: number;
-  padding: number;
-}
-
-export interface SwitchStyles {
-  containerStyle: ViewStyle & SwitchStylesRequired;
-  circleStyle: ViewStyle & SwitchStylesRequired;
-  backgroundColorOff: string;
-  backgroundColorOn: string;
-  circleColorOff: string;
-  circleColorOn: string;
-}
-export type GetSwitchStyles = (theme: Theme) => SwitchStyles;
-
-export const getSwitchStyles: GetSwitchStyles = (theme: Theme) => {
-  const switchVariables = getSwitchVariables(theme);
-
-  return {
-    backgroundColorOff: switchVariables.backgroundColorOff,
-    backgroundColorOn: switchVariables.backgroundColorOn,
-    circleColorOff: switchVariables.circleColorOff,
-    circleColorOn: switchVariables.circleColorOn,
-    circleStyle: switchVariables.circle,
-    containerStyle: switchVariables.container,
+    touchableStyle: {
+      alignSelf: 'flex-start',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+    },
   };
 };

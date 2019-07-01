@@ -1,10 +1,7 @@
 import { ViewStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
-
-export interface SliderStylesProps {
-  size: number;
-}
+import { Theme } from '../../theme/Theme';
+import { SliderProps } from './Slider';
 
 export interface SliderStyles {
   containerStyle: ViewStyle;
@@ -14,15 +11,17 @@ export interface SliderStyles {
 }
 
 export type GetSliderStyles = (
-  props: SliderStylesProps,
+  props: SliderProps,
   theme: Theme,
 ) => SliderStyles;
 
 export const getSliderStyles: GetSliderStyles = (props, theme) => {
-  const { size } = props;
+  const { size = 'medium' } = props;
+
+  const controlSize = theme.controlHeights[size];
 
   return {
-    containerStyle: { height: size, justifyContent: 'center' },
+    containerStyle: { height: controlSize, justifyContent: 'center' },
     selectedTrackStyle: {
       backgroundColor: theme.colors.background.primaryDefault,
       borderRadius: 8,
@@ -35,9 +34,9 @@ export const getSliderStyles: GetSliderStyles = (props, theme) => {
       borderColor: theme.colors.border.primary,
       borderRadius: 999,
       borderWidth: 3,
-      height: size,
+      height: controlSize,
       position: 'absolute',
-      width: size,
+      width: controlSize,
       zIndex: 1,
     },
     unselectedTrackStyle: {

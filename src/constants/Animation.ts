@@ -1,4 +1,4 @@
 export const springDefaultConfig = {
   friction: 40,
-  tension: 400,
+  tension: 450,
 };

@@ -4,6 +4,7 @@
     "skipLibCheck": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
+    "esModuleInterop": true,
     "noImplicitAny": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
@@ -16,5 +17,6 @@
     "sourceMap": true,
     "jsx": "react",
     "declaration": true
-  }
+  },
+  "exclude": ["App.tsx"]
 }

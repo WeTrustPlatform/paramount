@@ -1,8 +1,6 @@
 import { TextStyle } from 'react-native';
 
 import {
-  FontFamilies,
-  FontFamily,
   FontWeight,
   FontWeights,
   RNFontWeight,
@@ -11,37 +9,14 @@ import {
   TextSize,
   TextSizes,
   Theme,
-} from '../../theme/ThemeInterface';
-import { TextAlign, TextTransform } from './types';
-
-export interface TextVariables {
-  size: TextSizes;
-  fontFamily: FontFamilies;
-}
-
-export interface TextStylesProps {
-  isItalic: boolean;
-  size: TextSize;
-  color: TextColor;
-  align: TextAlign;
-  transform?: TextTransform;
-  fontFamily: FontFamily;
-  isInline: boolean;
-  weight?: FontWeight;
-}
+} from '../../theme/Theme';
+import { TextProps } from './Text';
 
 export interface TextStyles {
   textStyle: TextStyle;
 }
 
-export type GetTextStyles = (
-  textStylesProps: TextStylesProps,
-  theme: Theme,
-) => TextStyles;
-
-export const getFontFamily = (fontFamilies: FontFamilies) => (
-  fontFamily: FontFamily,
-) => fontFamilies[fontFamily];
+export type GetTextStyles = (props: TextProps, theme: Theme) => TextStyles;
 
 export const getFontWeight = (fontWeights: FontWeights) => (
   fontWeight?: FontWeight,
@@ -73,7 +48,14 @@ export const getTextSize = (textSizes: TextSizes) => (
 };
 
 export const getTextStyles: GetTextStyles = (
-  { size, color, fontFamily, isInline, isItalic, align, transform, weight },
+  {
+    color = 'default',
+    size = 'medium',
+    align = 'left',
+    weight,
+    isItalic = false,
+    transform,
+  },
   theme,
 ) => {
   const sizeStyle = getTextSize(theme.textSizes)(size);
@@ -82,16 +64,10 @@ export const getTextStyles: GetTextStyles = (
     textStyle: {
       ...sizeStyle,
       color: getTextColor(theme.colors.text)(color),
-      fontFamily: getFontFamily(theme.fontFamilies)(fontFamily),
+      fontFamily: theme.fontFamilies.text,
       fontWeight:
         getFontWeight(theme.fontWeights)(weight) || sizeStyle.fontWeight,
       textAlign: align,
-      ...(isInline
-        ? {
-            alignSelf: 'flex-start',
-            flexDirection: 'row',
-          }
-        : {}),
       ...(isItalic && {
         fontStyle: 'italic',
       }),

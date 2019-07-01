@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
@@ -15,22 +15,37 @@ import {
 // TODO: Import from react-native when react-native-web implementation is ready
 
 export interface DialogProps {
-  children: React.ReactNode;
-  /** Prop to be passed to Modal */
+  /**
+   * (Web only) When true, upon going back in history/navigation, it will call `onRequestClose`. On Native, it already does that.
+   * @default false
+   */
   useHistory?: boolean;
-  /** To show dialog or not */
+
+  /**
+   * When true, it will display the dialog
+   * @default false
+   */
   isVisible?: boolean;
-  /** WWhether body can scroll while dialog is opened */
+
+  /**
+   * (Web only) When true, the body of the document will not scroll when dialog is opened
+   * @default true
+   */
   shouldLockBodyScroll?: boolean;
+
   /** Called when clicking on overlay or pressing Esc, or using back button (requires useHistory to be true) */
   onRequestClose?: () => void;
-  /** In ConfirmDialog, you can pass null to render nothing. If it is undefined, it will use default value */
+
+  /** Content of the dialog body */
+  children?: React.ReactNode;
+
+  /** Component to appear at the top of the dialog */
   header?: React.ReactNode;
-  /** In ConfirmDialog, you can pass null to render nothing. If it is undefined, it will use default value */
+
+  /** Component to appear at the bottom of the dialog */
   footer?: React.ReactNode;
-  /**
-   * Inline styles for components
-   */
+
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetDialogStyles, DeepPartial<DialogStyles>>;
 }
 
@@ -40,17 +55,23 @@ export const Dialog = (props: DialogProps) => {
     footer,
     header,
     shouldLockBodyScroll = true,
-    isVisible,
+    isVisible = false,
     onRequestClose = () => null,
     getStyles,
-    useHistory,
+    useHistory = false,
   } = props;
   const theme = useTheme();
 
-  const { modalContainerStyle, containerStyle, bodyStyle } = mergeStyles(
-    getDialogStyles,
-    getStyles,
-  )(theme);
+  const {
+    modalContainerStyle,
+    containerStyle,
+    bodyStyle,
+    contentContainerStyle,
+    overlayStyle,
+  } = mergeStyles(getDialogStyles, getStyles, theme.components.getDialogStyles)(
+    props,
+    theme,
+  );
 
   return (
     <Modal
@@ -64,10 +85,18 @@ export const Dialog = (props: DialogProps) => {
       <View style={modalContainerStyle}>
         <View style={containerStyle}>
           {header}
-          <View style={bodyStyle}>{children}</View>
+          <ScrollView
+            contentContainerStyle={contentContainerStyle}
+            style={bodyStyle}
+          >
+            {children}
+          </ScrollView>
           {footer}
         </View>
-        <Overlay onPress={onRequestClose} />
+        <Overlay
+          getStyles={() => ({ overlayStyle })}
+          onPress={onRequestClose}
+        />
       </View>
     </Modal>
   );

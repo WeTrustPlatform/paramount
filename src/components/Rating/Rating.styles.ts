@@ -1,15 +1,11 @@
 import { ViewStyle } from 'react-native';
 
-import { ControlSize, TextColor, Theme } from '../../theme/ThemeInterface';
+import { Theme } from '../../theme/Theme';
 import { getTextColor } from '../Typography/Text.styles';
-
-export interface RatingStylesProps {
-  size: ControlSize;
-  color: TextColor;
-}
+import { RatingProps } from './Rating';
 
 export type GetRatingStyles = (
-  progressStylesProps: RatingStylesProps,
+  progressStylesProps: RatingProps,
   theme: Theme,
 ) => RatingStyles;
 
@@ -20,7 +16,10 @@ export interface RatingStyles {
   starSize: number;
 }
 
-export const getRatingStyles: GetRatingStyles = ({ size, color }, theme) => {
+export const getRatingStyles: GetRatingStyles = (
+  { size = 'medium', color = 'primary' },
+  theme,
+) => {
   const starSize = theme.controlHeights[size];
   const padding = theme.controlPaddings[size];
 

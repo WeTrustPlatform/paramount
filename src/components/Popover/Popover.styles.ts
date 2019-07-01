@@ -1,31 +1,28 @@
-import { TextStyle, ViewStyle } from 'react-native';
+import { ViewStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
+import { Theme } from '../../theme/Theme';
+import {
+  getPositionerStyles,
+  PositionerStyleProps,
+  PositionerStyles,
+} from '../Positioner/Positioner.styles';
 
-export interface PopoverVariables {
-  popover: ViewStyle;
+export interface PopoverStyles extends PositionerStyles {
+  popoverStyle: ViewStyle;
 }
 
-export const getPopoverVariables = (theme: Theme): PopoverVariables => {
+export type GetPopoverStyles = (
+  props: PositionerStyleProps,
+  theme: Theme,
+) => PopoverStyles;
+
+export const getPopoverStyles: GetPopoverStyles = (props, theme) => {
   return {
-    popover: {
+    popoverStyle: {
       backgroundColor: theme.colors.background.content,
       padding: 16,
       ...theme.elevations[2],
     },
-  };
-};
-
-export interface PopoverStyles {
-  popoverStyle: TextStyle;
-}
-
-export type GetPopoverStyles = (theme: Theme) => PopoverStyles;
-
-export const getPopoverStyles: GetPopoverStyles = theme => {
-  const popoverVariables = getPopoverVariables(theme);
-
-  return {
-    popoverStyle: popoverVariables.popover,
+    ...getPositionerStyles(props, theme),
   };
 };

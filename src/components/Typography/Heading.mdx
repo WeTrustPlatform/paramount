@@ -4,36 +4,17 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { Heading } from '.';
-import { Box } from '../Box';
+
+import { Box, Heading } from '..';
 
 # Heading
 
-Composes React Native's `Text` component (i.e. you can pass its props)
+Composes React Native's `Text` component
 
-**Note!!!** In web environment sometimes you need to wrap `Heading` in a `<Box>` or provide a parent node with `display: flex` and `flex-direction: column` for centering to work properly. In React Native it is non issue because all nodes be default have these properties
-
-### Usage
+## Usage
 
 <Playground>
   <Box>
-    <Heading
-      accessibilityLevel={3} // 1-6
-      align="center"
-      size="xxlarge" // small - xxxlarge or number
-      color="primary" // or custom
-      weight="600"
-      getStyles={(props, theme) => ({
-        headingStyle: {},
-      })}
-    >
-      Lorem ipsum dolar set amet
-    </Heading>
-  </Box>
-</Playground>
-
-<Playground>
-  <Box flexDirection="column">
     <Heading size="xxxlarge">xxxlarge</Heading>
     <Heading size="xxlarge">xxlarge</Heading>
     <Heading size="xlarge">xlarge</Heading>
@@ -43,6 +24,24 @@ Composes React Native's `Text` component (i.e. you can pass its props)
   </Box>
 </Playground>
 
-### Props
+## Props
 
 <Props of={Heading} />
+
+## Customization
+
+Using `getStyles` prop
+
+```
+HeadingStyles {
+  headingStyle: TextStyle;
+}
+
+getStyles={(HeadingProps, Theme) => HeadingStyles}
+```
+
+Markup
+
+```tsx
+<Text headingStyle />
+```

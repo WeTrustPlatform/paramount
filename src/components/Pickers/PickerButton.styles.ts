@@ -1,72 +1,7 @@
-import { TextStyle, ViewStyle } from 'react-native';
+import { ViewStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
-
-export interface PickerButtonSizes {
-  small: ViewStyle;
-  medium: ViewStyle;
-  large: ViewStyle;
-}
-
-export type PickerButtonSize = keyof PickerButtonSizes;
-
-export interface PickerButtonTextSizes {
-  small: TextStyle;
-  medium: TextStyle;
-  large: TextStyle;
-}
-
-export type PickerButtonTextSize = keyof PickerButtonTextSizes;
-
-export interface PickerButtonVariables {
-  base: ViewStyle;
-  disabled: ViewStyle;
-  focus: ViewStyle;
-  invalid: ViewStyle;
-  placeholderTextColor: string;
-  sizes: PickerButtonSizes;
-}
-
-export const getPickerButtonVariables = (
-  theme: Theme,
-): PickerButtonVariables => {
-  return {
-    base: {
-      borderColor: theme.colors.border.default,
-      borderWidth: 1,
-    },
-    disabled: {
-      backgroundColor: theme.colors.background.greyDark,
-    },
-    focus: {},
-    invalid: {
-      borderColor: theme.colors.border.danger,
-    },
-    placeholderTextColor: theme.colors.text.muted,
-    sizes: {
-      small: {
-        borderRadius: theme.controlBorderRadius.small,
-        height: theme.controlHeights.small,
-        paddingLeft: theme.controlPaddings.small,
-        paddingRight: 40,
-      },
-
-      medium: {
-        borderRadius: theme.controlBorderRadius.medium,
-        height: theme.controlHeights.medium,
-        paddingLeft: theme.controlPaddings.medium,
-        paddingRight: 40,
-      },
-
-      large: {
-        borderRadius: theme.controlBorderRadius.large,
-        height: theme.controlHeights.large,
-        paddingLeft: theme.controlPaddings.large,
-        paddingRight: 40,
-      },
-    },
-  };
-};
+import { Theme } from '../../theme/Theme';
+import { PickerButtonWrapperProps } from './PickerButtonWrapper';
 
 export interface PickerButtonStyles {
   containerStyle: ViewStyle;
@@ -75,23 +10,38 @@ export interface PickerButtonStyles {
   itemStyle: any;
 }
 
-export interface PickerButtonStylesProps {
-  size: PickerButtonSize;
-}
 export type GetPickerButtonStyles = (
-  pickerStylesProps: PickerButtonStylesProps,
+  props: PickerButtonWrapperProps,
   theme: Theme,
 ) => PickerButtonStyles;
 
 export const getPickerButtonStyles: GetPickerButtonStyles = (
-  pickerStylesProps,
+  { size = 'medium' },
   theme,
 ) => {
-  const pickerVariables = getPickerButtonVariables(theme);
-  const { base, sizes } = pickerVariables;
-  const { size } = pickerStylesProps;
+  const controlSizeStyles = {
+    small: {
+      borderRadius: theme.controlBorderRadius.small,
+      height: theme.controlHeights.small,
+      paddingLeft: theme.controlPaddings.small,
+      paddingRight: 40,
+    },
 
-  const controlSizeStyles = sizes[size];
+    medium: {
+      borderRadius: theme.controlBorderRadius.medium,
+      height: theme.controlHeights.medium,
+      paddingLeft: theme.controlPaddings.medium,
+      paddingRight: 40,
+    },
+
+    large: {
+      borderRadius: theme.controlBorderRadius.large,
+      height: theme.controlHeights.large,
+      paddingLeft: theme.controlPaddings.large,
+      paddingRight: 40,
+    },
+  }[size];
+
   const textSizeStyles = theme.textSizes[size];
 
   return {
@@ -105,8 +55,11 @@ export const getPickerButtonStyles: GetPickerButtonStyles = (
     pickerStyle: {
       appearance: 'none',
       backgroundColor: 'transparent',
+      borderColor: theme.colors.border.default,
+      borderWidth: 1,
+      color: theme.colors.text.default,
       width: '100%',
-      ...base,
+      ...textSizeStyles,
       ...controlSizeStyles,
     },
     rightContainerStyle: {

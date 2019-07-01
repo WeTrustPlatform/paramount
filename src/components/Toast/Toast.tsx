@@ -1,26 +1,36 @@
 import * as React from 'react';
-import { View } from 'react-native';
-import { animated, useSpring } from 'react-spring/native.cjs';
-import { Omit } from 'ts-essentials';
 
-import { springDefaultConfig } from '../../constants/Animation';
 import { Alert, AlertProps } from '../Alert';
-
-const AnimatedView = animated(View);
 
 export type ToastId = string;
 
-export interface ToastSettings extends Omit<AlertProps, 'onClose'> {
-  id?: ToastId;
-  offset?: number;
-  /* duration for how long the toast should stay active */
+export interface ToastSettings extends AlertProps {
+  /**
+   * Duration for how long the toast should stay active.
+   * @default 3000
+   */
   duration?: number;
-  /* custom component, will override every other setting */
+
+  /**
+   * Custom component to override the entire toast.
+   */
   component?: React.ReactNode;
+
+  /**
+   * Assign an id to the toast so you can remove it later.
+   */
+  id?: ToastId;
 }
 
 export interface ToastInstance extends ToastSettings {
+  /**
+   * (Ignore) Assign an id to the toast so you can remove it later.
+   */
   id: ToastId;
+
+  /**
+   * (Ignore) Callback invoked when the duration is up.
+   */
   onRemove: () => void;
 }
 
@@ -28,32 +38,12 @@ export interface ToastInstance extends ToastSettings {
 export interface ToastProps extends ToastInstance {}
 
 export const Toast = (props: ToastProps) => {
-  const {
-    component,
-    id,
-    onRemove,
-    duration = 3000,
-    offset = 16,
-    ...toastSettings
-  } = props;
+  const { component, id, onRemove, duration = 3000, ...toastSettings } = props;
 
-  const style = useSpring({
-    config: springDefaultConfig,
+  React.useEffect(() => {
+    const timer = setTimeout(() => onRemove(), duration);
+    return () => clearTimeout(timer);
+  }, []);
 
-    from: { translateY: -500 },
-    onRest: () => onRemove(),
-    to: async next => {
-      // tslint:disable-next-line
-      await next({ translateY: 10 });
-      // tslint:disable-next-line
-      await next({ translateY: -500, delay: duration });
-    },
-  });
-
-  return (
-    // @ts-ignore
-    <AnimatedView style={{ transform: [{ translateY: style.translateY }] }}>
-      {component || <Alert {...toastSettings} onClose={onRemove} />}
-    </AnimatedView>
-  );
+  return <>{component || <Alert {...toastSettings} />}</>;
 };

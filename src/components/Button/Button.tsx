@@ -1,37 +1,32 @@
 import * as React from 'react';
 import {
-  AccessibilityProps,
   GestureResponderEvent,
   TextStyle,
-  TouchableHighlight,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { useTheme } from '../../theme';
+import { ButtonColor, ControlSize, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { LoadingDots } from '../Loading';
+import { Dots } from '../LoadingIndicators';
 import { Text } from '../Typography';
 import {
   ButtonAppearance,
-  ButtonColor,
-  ButtonSize,
   ButtonStyles,
   GetButtonStyles,
   getButtonStyles,
 } from './Button.styles';
 
-export interface ButtonProps extends AccessibilityProps {
+export interface ButtonProps {
+  /** Title of the button */
   title?: string;
 
-  /**
-   * Icon in place of title
-   * @default "null"
-   */
+  /** Icon in place of title */
   icon?: React.ReactNode;
 
   /**
-   * The intent of the button.
+   * The color of the button.
    * @default "default"
    */
   color?: ButtonColor;
@@ -46,7 +41,7 @@ export interface ButtonProps extends AccessibilityProps {
    * The size of the button.
    * @default "medium"
    */
-  size?: ButtonSize;
+  size?: ControlSize;
 
   /**
    * When true, show a loading spinner before the title. This also disables the button.
@@ -66,110 +61,85 @@ export interface ButtonProps extends AccessibilityProps {
    */
   isDisabled?: boolean;
 
-  /**
-   * When true, the button will not stretch full width
-   * @default false
-   */
-  isInline?: boolean;
-
-  /**
-   * Button press handler
-   * @default () => {}
-   */
+  /** Called when button is pressed */
   onPress?: (event: GestureResponderEvent) => void;
 
-  /**
-   * Sets an icon before the text.
-   * @default undefined
-   */
+  /** Sets an icon before the text. */
   iconBefore?: React.ReactNode;
 
-  /**
-   * Sets an icon after the text.
-   * @default undefined
-   */
+  /** Sets an icon after the text. */
   iconAfter?: React.ReactNode;
 
-  /**
-   * Sets an icon at loading state.
-   * @default undefined
-   */
+  /** Sets an icon at loading state. */
   iconLoading?: React.ReactNode;
 
+  /** Label for screen readers */
+  accessibilityLabel?: string;
+
+  /** Hint for screen readers */
+  accessibilityHint?: string;
+
   /**
-   * Inline styles for components
+   * When true, indicates that the view is an accessibility element.
+   * @default true
    */
+  accessible?: boolean;
+
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetButtonStyles, DeepPartial<ButtonStyles>>;
 
+  /** Used to locate this view in end-to-end tests. */
   testID?: string;
 }
 
 export const Button = (props: ButtonProps) => {
   const {
-    appearance = 'primary',
-    title,
-    color = 'default',
     getStyles,
-    icon,
     iconAfter,
     iconBefore,
-    iconLoading,
-    isActive = false,
     isDisabled = false,
-    isInline = false,
     isLoading = false,
     onPress = () => {
       return;
     },
-    size = 'medium',
     testID,
 
-    ...accessibilityProps
+    accessibilityHint,
+    accessibilityLabel,
+    accessible = true,
   } = props;
 
   const theme = useTheme();
 
   const {
-    buttonStyle,
+    touchableStyle,
     textStyle,
-    focusColor,
     innerButtonWrapperStyle,
     buttonContentWrapperStyle,
-  } = mergeStyles(getButtonStyles, getStyles)(
-    {
-      appearance,
-      color,
-      iconAfter,
-      iconBefore,
-      isDisabled,
-      isInline,
-      isLoading,
-      size,
-    },
+  } = mergeStyles(getButtonStyles, getStyles, theme.components.getButtonStyles)(
+    props,
     theme,
   );
 
   return (
-    <TouchableHighlight
-      accessible
+    <TouchableOpacity
       accessibilityRole="button"
-      underlayColor={focusColor}
       disabled={!!(isDisabled || isLoading)}
       onPress={onPress}
-      style={buttonStyle}
+      style={touchableStyle}
       testID={testID}
-      {...accessibilityProps}
+      accessibilityHint={accessibilityHint}
+      accessibilityLabel={accessibilityLabel}
+      accessible={accessible}
     >
       <View style={innerButtonWrapperStyle}>
         {iconBefore}
         <View style={buttonContentWrapperStyle}>
-          {/*
-        // @ts-ignore */}
           <ButtonContent {...props} textStyle={textStyle} />
         </View>
         {iconAfter}
       </View>
-    </TouchableHighlight>
+    </TouchableOpacity>
   );
 };
 
@@ -178,11 +148,19 @@ export interface ButtonContentProps extends ButtonProps {
 }
 
 const ButtonContent = (props: ButtonContentProps) => {
-  const { isLoading, iconLoading, icon, title, textStyle } = props;
+  const { isLoading, iconLoading, icon, title, textStyle, size } = props;
 
-  if (isLoading) return iconLoading || <LoadingDots color={textStyle.color} />;
-  if (icon) return icon;
-  if (title) return <Text getStyles={() => ({ textStyle })}>{title}</Text>;
+  if (isLoading) {
+    return <>{iconLoading || <Dots color={textStyle.color} />}</>;
+  }
+  if (icon) return <>{icon}</>;
+  if (title) {
+    return (
+      <Text size={size} getStyles={() => ({ textStyle })}>
+        {title}
+      </Text>
+    );
+  }
 
-  return null;
+  return <></>;
 };

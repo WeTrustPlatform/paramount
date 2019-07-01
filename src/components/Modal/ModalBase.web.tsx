@@ -71,9 +71,7 @@ export const ModalBase = (props: ModalBaseProps): React.ReactPortal | null => {
   }, [visible]);
 
   const { opacity, y } = useSpring({
-    onRest: () => {
-      if (!visible) setIsInView(false);
-    },
+    onRest: () => !visible && isInView && setIsInView(false),
 
     config: springDefaultConfig,
 

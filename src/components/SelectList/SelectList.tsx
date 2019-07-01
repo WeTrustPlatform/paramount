@@ -1,54 +1,62 @@
 import * as React from 'react';
-import { FlatList, FlatListProps } from 'react-native';
-import { Omit } from 'ts-essentials';
+import { FlatList } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { SelectListItemBaseProps } from './SelectListItem';
+import { SelectListItemProps } from './SelectListItem';
 
-export interface SelectListProps
-  extends Omit<
-    Omit<FlatListProps<SelectListItemBaseProps>, 'data'>,
-    'renderItem'
-  > {
-  children: Array<React.ReactElement<SelectListItemBaseProps>>;
-  selectedValue: string | string[];
-  innerRef?: React.Ref<FlatList<SelectListItemBaseProps>>;
-  isMulti?: boolean;
+export interface SelectListProps {
+  /**
+   * Select item or items.
+   * For single-select use single string.
+   * For multi-select use string array
+   *
+   * *This is a controlled component*; Value will reflect selected items
+   */
+  value: string | string[];
+
+  /**
+   * Called when a select list item is pressed
+   */
   onValueChange: (
     itemValue: string | string[],
     itemIndex: number,
   ) => void | undefined;
+
+  /**
+   * `SelectListItem` components
+   */
+  children:
+    | Array<React.ReactElement<SelectListItemProps>>
+    | React.ReactElement<SelectListItemProps>;
+
+  /**
+   * Use `ref` prop instead for using `FlatList` methods
+   */
+  innerRef?: React.Ref<FlatList<SelectListItemProps>>;
 }
 
-const SelectListBase = (props: SelectListProps): any => {
-  const {
-    selectedValue,
-    onValueChange,
-    isMulti,
-    children,
-    innerRef,
-    ...flatListProps
-  } = props;
-  const theme = useTheme();
+const getIsMulti = (value: string | string[]): value is string[] =>
+  Array.isArray(value);
 
-  const handleOnPress = (
-    itemValue: string,
-    itemIndex: number,
-    isSelected: boolean,
-  ) => {
-    if (isMulti && Array.isArray(selectedValue)) {
-      if (isSelected) {
-        onValueChange(
-          selectedValue.filter(val => val !== itemValue),
-          itemIndex,
-        );
+const SelectListBase = (props: SelectListProps): any => {
+  const { value, onValueChange, children, innerRef } = props;
+  const theme = useTheme();
+  const isMulti = getIsMulti(value);
+
+  const handleOnPress = React.useCallback(
+    (itemValue: string, itemIndex: number, isSelected: boolean) => {
+      if (isMulti && Array.isArray(value)) {
+        if (isSelected) {
+          onValueChange(value.filter(val => val !== itemValue), itemIndex);
+        } else {
+          onValueChange(value.concat(itemValue), itemIndex);
+        }
       } else {
-        onValueChange(selectedValue.concat(itemValue), itemIndex);
+        onValueChange(itemValue, itemIndex);
       }
-    } else {
-      onValueChange(itemValue, itemIndex);
-    }
-  };
+    },
+    [value, onValueChange],
+  );
 
   const childrenArray = React.Children.toArray(children);
   const data = childrenArray.map(child => child.props);
@@ -67,23 +75,22 @@ const SelectListBase = (props: SelectListProps): any => {
         const selectListItem = childrenArray[index];
 
         const isSelected =
-          isMulti && Array.isArray(selectedValue)
-            ? selectedValue.some(selVal => selVal === item.value)
-            : selectedValue === item.value;
+          isMulti && Array.isArray(value)
+            ? value.some(selVal => selVal === item.value)
+            : value === item.value;
 
         return React.cloneElement(selectListItem, {
           index,
           isSelected,
-          onSelect: handleOnPress,
+          onPress: handleOnPress,
         });
       }}
-      {...flatListProps}
     />
   );
 };
 
 export const SelectList = React.forwardRef<
-  FlatList<SelectListItemBaseProps>,
+  FlatList<SelectListItemProps>,
   SelectListProps
 >((props, ref) => {
   return <SelectListBase {...props} innerRef={ref} />;

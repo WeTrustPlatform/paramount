@@ -1,13 +1,8 @@
 import * as React from 'react';
-import {
-  AccessibilityProps,
-  GestureResponderEvent,
-  TouchableHighlight,
-  View,
-} from 'react-native';
+import { GestureResponderEvent, TouchableOpacity, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { ControlSize, useTheme } from '../../theme';
+import { ContainerShape, ControlSize, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Icon } from '../Icon';
 import {
@@ -16,73 +11,83 @@ import {
   getCheckboxStyles,
 } from './Checkbox.styles';
 
-export type CheckboxShape = 'circle' | 'square';
-
-export interface CheckboxProps extends AccessibilityProps {
-  isChecked?: boolean;
-  isDisabled?: boolean;
-  /** Sometimes we just want the display of the checkbox  */
-  isInteractive?: boolean;
-  /** @default square */
-  shape?: CheckboxShape;
-  onChange?: (e: GestureResponderEvent) => void | undefined;
-  getStyles?: ReplaceReturnType<GetCheckboxStyles, DeepPartial<CheckboxStyles>>;
-  testID?: string;
-  checkColor?: string;
+export interface CheckboxProps {
+  /**
+   * The size of the checkbox.
+   * @default "medium"
+   */
   size?: ControlSize;
+
+  /**
+   * When true, will display as checked.
+   * @default false
+   */
+  value: boolean;
+
+  /**
+   * When true, the checkbox is disabled.
+   * @default false
+   */
+  isDisabled?: boolean;
+
+  /**
+   * When true, checkbox will be interactive.
+   * @default true
+   */
+  isInteractive?: boolean;
+
+  /** Label for screen readers */
+  accessibilityLabel?: string;
+
+  /**
+   * Shape of the checkbox.
+   * @default "rounded"
+   */
+  shape?: ContainerShape;
+
+  /**
+   * Called when checkbox is pressed.
+   */
+  onPress?: (e: GestureResponderEvent) => void;
+
+  /** Callback to get element styles. */
+  getStyles?: ReplaceReturnType<GetCheckboxStyles, DeepPartial<CheckboxStyles>>;
+
+  /** Used to locate this view in end-to-end tests. */
+  testID?: string;
 }
 
 export const Checkbox = (props: CheckboxProps) => {
   const {
-    isChecked = false,
+    value = false,
     isDisabled = false,
     isInteractive = true,
-    onChange = () => null,
-    shape = 'square',
-    size = 'medium',
-    checkColor,
+    onPress,
     getStyles,
     testID,
-    ...accessibilityProps
+    accessibilityLabel,
   } = props;
 
   const theme = useTheme();
 
-  const {
-    touchableStyle,
-    checkboxStyle,
-    iconColor,
-    checkboxFocusBackgroundColor,
-  } = mergeStyles(getCheckboxStyles, getStyles)(
-    {
-      checkColor,
-      isChecked,
-      isDisabled,
-      shape,
-      size,
-    },
-    theme,
-  );
+  const { touchableStyle, checkboxStyle, checkColor } = mergeStyles(
+    getCheckboxStyles,
+    getStyles,
+    theme.components.getCheckboxStyles,
+  )(props, theme);
 
   return (
-    <TouchableHighlight
+    <TouchableOpacity
       accessible={isInteractive}
       style={touchableStyle}
-      underlayColor={checkboxFocusBackgroundColor}
-      {...(isInteractive
-        ? {
-            disabled: isDisabled,
-            onPress: onChange,
-          }
-        : {
-            disabled: true,
-          })}
+      disabled={isDisabled || !isInteractive}
       testID={testID}
-      {...accessibilityProps}
+      onPress={onPress}
+      accessibilityLabel={accessibilityLabel}
     >
       <View style={checkboxStyle}>
-        {isChecked ? <Icon name="check" size={20} color={iconColor} /> : null}
+        {value ? <Icon name="check" size={20} color={checkColor} /> : null}
       </View>
-    </TouchableHighlight>
+    </TouchableOpacity>
   );
 };

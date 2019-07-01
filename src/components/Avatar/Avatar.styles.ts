@@ -1,35 +1,7 @@
 import { ImageStyle, TextStyle, ViewStyle } from 'react-native';
 
-import { FillColors, Fills, Theme } from '../../theme/ThemeInterface';
-
-export interface AvatarVariables {
-  fills: Fills;
-  box: ViewStyle;
-  text: TextStyle;
-  image: ImageStyle;
-}
-
-export const getAvatarVariables = (theme: Theme): AvatarVariables => {
-  return {
-    box: {
-      alignItems: 'center',
-      borderRadius: 9999,
-      display: 'flex',
-      justifyContent: 'center',
-      overflow: 'hidden',
-      position: 'relative',
-    },
-
-    image: {
-      height: '100%',
-      width: '100%',
-    },
-
-    text: {},
-
-    fills: theme.fills,
-  };
-};
+import { ControlSize, FillColors, Fills, Theme } from '../../theme/Theme';
+import { AvatarProps } from './Avatar';
 
 export const hashCode = (s?: string) => {
   const str = String(s);
@@ -49,30 +21,11 @@ export const hashCode = (s?: string) => {
 
 export type AvatarColor = 'automatic' | keyof FillColors;
 
-export interface AvatarStylesProps {
-  name?: string;
-  color: AvatarColor;
-  hashValue?: string;
-  isSolid: boolean;
-  size: number;
-  sizeLimitOneCharacter: number;
-}
-
 export interface AvatarStyles {
-  boxStyle: ViewStyle;
+  containerStyle: ViewStyle;
   textStyle: TextStyle;
   imageStyle: ImageStyle;
 }
-
-const getAvatarInitialsFontSize = (
-  size: number,
-  sizeLimitOneCharacter: number,
-) => {
-  if (size <= sizeLimitOneCharacter) {
-    return Math.ceil(size / 2.2);
-  }
-  return Math.ceil(size / 2.6);
-};
 
 const getAvatarProps = (
   fills: Fills,
@@ -98,20 +51,25 @@ const getAvatarProps = (
 };
 
 export type GetAvatarStyles = (
-  avatarStylesProps: AvatarStylesProps,
+  props: AvatarProps,
   theme: Theme,
 ) => AvatarStyles;
 
+const avatarScale: { [size in ControlSize]: number } = {
+  large: 2,
+  medium: 1.5,
+  small: 1,
+};
+
 export const getAvatarStyles: GetAvatarStyles = (
-  { name, color, hashValue, isSolid, size = 24, sizeLimitOneCharacter = 20 },
+  { name, color = 'automatic', isSolid = false, size = 'medium' },
   theme,
 ) => {
-  const avatarVariables = getAvatarVariables(theme);
   let colorProps;
-  const fills = avatarVariables.fills;
+  const fills = theme.fills;
   if (color === 'automatic') {
-    const newHashValue = hashCode(hashValue || name);
-    colorProps = getAvatarProps(avatarVariables.fills, {
+    const newHashValue = hashCode(name);
+    colorProps = getAvatarProps(theme.fills, {
       color,
       hashValue: newHashValue,
       isSolid,
@@ -120,26 +78,30 @@ export const getAvatarStyles: GetAvatarStyles = (
     colorProps = getAvatarProps(fills, { color, isSolid, hashValue: 0 });
   }
 
-  const initialsFontSize = getAvatarInitialsFontSize(
-    size,
-    sizeLimitOneCharacter,
-  );
+  const controlSize = theme.controlHeights[size] * avatarScale[size];
 
   return {
-    boxStyle: {
-      ...avatarVariables.box,
+    containerStyle: {
+      alignItems: 'center',
       backgroundColor: colorProps.backgroundColor,
-      height: size,
-      width: size,
+      borderRadius: 9999,
+      display: 'flex',
+      height: controlSize,
+      justifyContent: 'center',
+      overflow: 'hidden',
+      position: 'relative',
+      width: controlSize,
     },
 
     textStyle: {
-      ...avatarVariables.text,
       color: colorProps.color,
-      fontSize: initialsFontSize,
-      lineHeight: initialsFontSize,
+      fontSize: controlSize / 2,
+      lineHeight: controlSize,
     },
 
-    imageStyle: avatarVariables.image,
+    imageStyle: {
+      height: '100%',
+      width: '100%',
+    },
   };
 };

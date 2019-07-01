@@ -1,27 +1,37 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
+import { Theme } from '../../theme/Theme';
+import { TabProps } from './Tab';
 
 export interface TabStyles {
   containerStyle: ViewStyle;
-  buttonStyle: ViewStyle;
+  touchableStyle: ViewStyle;
   textStyle: TextStyle;
-  dividerStyle: ViewStyle;
 }
 
-export type GetTabStyles = (theme: Theme) => TabStyles;
+export type GetTabStyles = (props: TabProps, theme: Theme) => TabStyles;
 
-export const getTabStyles: GetTabStyles = theme => {
+export const getTabStyles: GetTabStyles = (
+  { shouldStretch = true, isActive = false },
+  theme,
+) => {
   return {
-    buttonStyle: {
-      borderRadius: 0,
+    containerStyle: {
+      backgroundColor: theme.colors.background.greyDefault,
+      padding: 2,
+      ...(shouldStretch
+        ? {
+            flex: 1,
+          }
+        : {}),
     },
-    containerStyle: {},
-    dividerStyle: {
-      borderRadius: 0,
-      bottom: 0,
-      position: 'absolute',
+    textStyle: {
+      color: isActive ? theme.colors.text.primary : theme.colors.text.muted,
     },
-    textStyle: {},
+    touchableStyle: {
+      backgroundColor: isActive ? 'white' : 'transparent',
+      paddingLeft: 0,
+      paddingRight: 0,
+    },
   };
 };

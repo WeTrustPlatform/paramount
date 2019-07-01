@@ -3,39 +3,47 @@ name: Checkbox
 menu: Components
 ---
 
-import { Toggle } from 'react-powerplug';
 import { Playground, Props } from 'docz';
-import { Text } from 'react-native';
-import { Checkbox } from '.';
-import { FormField } from '../Form';
+import { Checkbox, FormField, Toggle } from '..';
 
 # Checkbox
 
-### Usage
+Checkbox for boolean values
+
+## Usage
 
 <Playground>
   <Toggle initial={false}>
     {({ on, toggle }) => (
       <FormField label="Checkbox" labelPosition="right">
-        <Checkbox
-          shape="square" // or "circle"
-          isChecked={on}
-          isDisabled={false}
-          isInteractive={true}
-          onChange={toggle}
-          size="medium"
-          getStyles={(props, theme) => ({
-            touchableStyle: {},
-            checkboxStyle: {},
-            iconColor: 'white',
-            checkboxFocusBackgroundColor: '',
-          })}
-        />
+        <Checkbox shape="circle" value={on} onPress={toggle} size="medium" />
       </FormField>
     )}
   </Toggle>
 </Playground>
 
-### Props
+## Props
 
 <Props of={Checkbox} />
+
+## Customization
+
+Using `getStyles` prop
+
+```
+CheckboxStyles {
+  touchableStyle: ViewStyle;
+  checkboxStyle: ViewStyle;
+  checkColor: string;
+}
+
+getStyles={(CheckboxProps, Theme) => CheckboxStyles}
+```
+
+Markup
+
+```tsx
+<TouchableOpacity touchableStyle>
+  <View checkboxStyle>{icon}</View>
+</TouchableOpacity>
+```

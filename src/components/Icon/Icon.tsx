@@ -1,13 +1,29 @@
-import { Feather } from '@expo/vector-icons';
 import * as React from 'react';
+import Feather from 'react-native-vector-icons/Feather';
+
+import { TextColor, useTheme } from '../../theme';
+import { getTextColor } from '../Typography/Text.styles';
 
 export interface IconProps {
-  color?: string;
-  name: FeatherIconName;
+  /**
+   * Name if  the icon.
+   */
+  name: IconName;
+
+  /**
+   * Color of the icon.
+   * @default theme.colors.text.default
+   */
+  color?: TextColor;
+
+  /**
+   * Size of the icon.
+   * @default 24
+   */
   size?: number;
 }
 
-export type FeatherIconName =
+export type IconName =
   | 'activity'
   | 'airplay'
   | 'alert-circle'
@@ -276,6 +292,14 @@ export type FeatherIconName =
   | 'zoom-in'
   | 'zoom-out';
 
-export const Icon = ({ name, color, size }: IconProps) => {
-  return <Feather name={name} color={color} size={size} />;
+export const Icon = ({ name, color, size = 24 }: IconProps) => {
+  const theme = useTheme();
+
+  return (
+    <Feather
+      name={name}
+      color={color ? getTextColor(theme.colors.text)(color) : color}
+      size={size}
+    />
+  );
 };

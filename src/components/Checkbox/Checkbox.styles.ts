@@ -1,38 +1,27 @@
 import { ViewStyle } from 'react-native';
 
-import { ControlSize, Theme } from '../../theme/ThemeInterface';
-import { CheckboxShape } from './Checkbox';
-
-export interface CheckboxStylesProps {
-  isChecked: boolean;
-  isDisabled: boolean;
-  shape: CheckboxShape;
-  checkColor: string;
-  size: ControlSize;
-}
+import { Theme } from '../../theme/Theme';
+import { CheckboxProps } from './Checkbox';
 
 export interface CheckboxStyles {
   touchableStyle: ViewStyle;
   checkboxStyle: ViewStyle;
-  iconColor: string;
-  checkboxFocusBackgroundColor: string;
+  checkColor: string;
 }
 
 export type GetCheckboxStyles = (
-  checkboxStylesProps: CheckboxStylesProps,
+  props: CheckboxProps,
   theme: Theme,
 ) => CheckboxStyles;
 
 export const getCheckboxStyles: GetCheckboxStyles = (
-  { isChecked, isDisabled, shape, checkColor, size },
+  { value, isDisabled, shape = 'rounded', size = 'medium' },
   theme,
 ) => {
   const sizeValue = theme.controlHeights[size] - 16;
 
   return {
-    checkboxFocusBackgroundColor: isChecked
-      ? theme.colors.background.primaryDark
-      : theme.colors.background.greyLight,
+    checkColor: theme.colors.text.white,
 
     checkboxStyle: {
       alignItems: 'center',
@@ -42,7 +31,7 @@ export const getCheckboxStyles: GetCheckboxStyles = (
       height: sizeValue,
       justifyContent: 'center',
       width: sizeValue,
-      ...(isChecked
+      ...(value
         ? {
             backgroundColor: theme.colors.background.primaryDefault,
             borderColor: 'transparent',
@@ -54,17 +43,9 @@ export const getCheckboxStyles: GetCheckboxStyles = (
             borderColor: theme.colors.border.default,
           }
         : {}),
-      ...{
-        circle: {
-          borderRadius: 999,
-        },
-        square: {
-          borderRadius: theme.controlBorderRadius.small,
-        },
-      }[shape],
+      ...theme.containerShapes[shape],
     },
-    iconColor: checkColor || theme.colors.text.white,
 
-    touchableStyle: {},
+    touchableStyle: theme.containerShapes[shape],
   };
 };

@@ -1,10 +1,5 @@
 import * as React from 'react';
-import {
-  AccessibilityProps,
-  GestureResponderEvent,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { GestureResponderEvent, TouchableOpacity, View } from 'react-native';
 import { animated, useSpring } from 'react-spring/native.cjs';
 import { DeepPartial } from 'ts-essentials';
 
@@ -20,16 +15,50 @@ import {
 
 const AnimatedView = animated(View);
 
-export interface SwitchProps extends AccessibilityProps {
-  isSwitchedOn?: boolean;
-  isDisabled?: boolean;
-  onChange?: (event: GestureResponderEvent) => void;
-  onIcon?: React.ReactNode;
-  offIcon?: React.ReactNode;
-  testID?: string;
+export interface SwitchProps {
   /**
-   * Inline styles for components
+   * When true, will display as switched on.
+   * @default false
    */
+  value?: boolean;
+
+  /**
+   * When true, the switch is disabled.
+   * @default false
+   */
+  isDisabled?: boolean;
+
+  /**
+   * Called when checkbox is pressed.
+   */
+  onPress?: (event: GestureResponderEvent) => void;
+
+  /**
+   * Replace the icon when switch is on
+   */
+  onIcon?: React.ReactNode;
+
+  /**
+   * Replace the icon when switch is off
+   */
+  offIcon?: React.ReactNode;
+
+  /** Label for screen readers */
+  accessibilityLabel?: string;
+
+  /** Hint for screen readers */
+  accessibilityHint?: string;
+
+  /**
+   * When true, indicates that the view is an accessibility element.
+   * @default true
+   */
+  accessible?: boolean;
+
+  /** Used to locate this view in end-to-end tests. */
+  testID?: string;
+
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetSwitchStyles, DeepPartial<SwitchStyles>>;
 }
 
@@ -37,11 +66,14 @@ export const Switch = (props: SwitchProps) => {
   const {
     onIcon,
     offIcon,
-    onChange,
-    isSwitchedOn,
+    onPress,
+    value = false,
+    isDisabled = false,
     getStyles,
     testID,
-    ...accessibilityProps
+    accessibilityHint,
+    accessibilityLabel,
+    accessible = true,
   } = props;
   const theme = useTheme();
   const {
@@ -51,31 +83,32 @@ export const Switch = (props: SwitchProps) => {
     backgroundColorOn,
     circleColorOff,
     circleColorOn,
-  } = mergeStyles(getSwitchStyles, getStyles)(theme);
+    touchableStyle,
+  } = mergeStyles(getSwitchStyles, getStyles, theme.components.getSwitchStyles)(
+    props,
+    theme,
+  );
 
   const { backgroundColor, circleColor, circlePosition } = useSpring({
     config: springDefaultConfig,
 
-    backgroundColor: isSwitchedOn ? backgroundColorOn : backgroundColorOff,
-    circleColor: isSwitchedOn ? circleColorOn : circleColorOff,
-    circlePosition: isSwitchedOn
+    backgroundColor: value ? backgroundColorOn : backgroundColorOff,
+    circleColor: value ? circleColorOn : circleColorOff,
+    circlePosition: value
       ? containerStyle.width - (circleStyle.width + containerStyle.padding * 2)
       : 0,
   });
 
   return (
     <TouchableOpacity
-      accessible
-      accessibilityLabel="switch"
-      onPress={onChange}
+      onPress={onPress}
       activeOpacity={1}
-      style={{
-        alignSelf: 'flex-start',
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-      }}
+      style={touchableStyle}
+      disabled={isDisabled}
       testID={testID}
-      {...accessibilityProps}
+      accessibilityHint={accessibilityHint}
+      accessibilityLabel={accessibilityLabel}
+      accessible={accessible}
     >
       {/*
       // @ts-ignore */}
@@ -88,16 +121,28 @@ export const Switch = (props: SwitchProps) => {
             { transform: [{ translateX: circlePosition }] },
           ]}
         >
-          {isSwitchedOn
+          {value
             ? onIcon || (
                 <Icon
                   name="check"
                   size={20}
-                  color={theme.colors.text.primary}
+                  color={
+                    isDisabled
+                      ? theme.colors.text.white
+                      : theme.colors.text.primary
+                  }
                 />
               )
             : offIcon || (
-                <Icon name="x" size={20} color={theme.colors.text.default} />
+                <Icon
+                  name="x"
+                  size={20}
+                  color={
+                    isDisabled
+                      ? theme.colors.text.white
+                      : theme.colors.text.default
+                  }
+                />
               )}
         </AnimatedView>
       </AnimatedView>

@@ -4,36 +4,13 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { Button } from './Button';
-import { Box } from '../Box';
+import { Box, Button } from '..';
 
 # Button
 
-### Usage
+Button component to trigger an action
 
-<Playground>
-  <Button
-    color="primary"
-    appearance="primary"
-    size="large"
-    isLoading={false}
-    isActive={false}
-    isDisabled={false}
-    isInline={false}
-    iconBefore={null}
-    iconAfter={null}
-    iconLoading={null}
-    title="Usage"
-    onPress={() => console.log('Pressed!')}
-    getStyles={(props, theme) => ({
-      buttonStyle: {},
-      textStyle: {},
-      focusColor: '',
-    })}
-  />
-</Playground>
-
-### Variants
+## Usage
 
 <Playground>
   <Box flexDirection="row">
@@ -69,22 +46,35 @@ import { Box } from '../Box';
   </Box>
 </Playground>
 
-### Positioning inline button with different sizes
-
-<Playground>
-  <Box flexDirection="row" justifyContent="flex-start">
-    <Button isInline color="primary" title="Left small" size="small" />
-  </Box>
-  <Box flexDirection="row" justifyContent="center">
-    <Button isInline color="primary" title="Center medium" size="medium" />
-  </Box>
-  <Box flexDirection="row" justifyContent="flex-end">
-    <Button isInline color="primary" title="Right large" size="large" />
-  </Box>
-</Playground>
-
-If `isInline` does not inline the button, try wrapping it with `Box`
-
-### Props
+## Props
 
 <Props of={Button} />
+
+## Customization
+
+Using `getStyles` prop
+
+```
+ButtonStyles {
+  touchableStyle: ViewStyle;
+  textStyle: TextStyle;
+  innerButtonWrapperStyle: ViewStyle;
+  buttonContentWrapperStyle: ViewStyle;
+}
+
+getStyles={(ButtonProps, Theme) => ButtonStyles}
+```
+
+Markup
+
+```tsx
+<TouchableOpacity touchableStyle>
+  <View innerButtonWrapperStyle>
+    {iconBefore}
+    <View buttonContentWrapperStyle>
+      <Text textStyle />
+    </View>
+    {iconAfter}
+  </View>
+</TouchableOpacity>
+```

@@ -1,0 +1,48 @@
+---
+name: Visible
+menu: Components
+---
+
+import { Playground, Props } from 'docz';
+
+import { Box, Visible, LayoutProvider, Text } from '..';
+
+# Visible
+
+Renders children when the current screen size matches defined sizes
+
+Refer to `Layout` docs for setup
+
+Resize the window to see different blocks appearing responsively
+
+## Usage
+
+<Playground>
+  <LayoutProvider>
+    <Visible large xlarge>
+      <Box backgroundColor="#67c6bb" height={48}>
+        <Text align="center" color="white">
+          Large and greater
+        </Text>
+      </Box>
+    </Visible>
+    <Visible medium>
+      <Box backgroundColor="#1ca5F7" height={48}>
+        <Text align="center" color="white">
+          Medium
+        </Text>
+      </Box>
+    </Visible>
+    <Visible xsmall small>
+      <Box backgroundColor="#d26557" height={48}>
+        <Text align="center" color="white">
+          Small and lower
+        </Text>
+      </Box>
+    </Visible>
+  </LayoutProvider>
+</Playground>
+
+## Props
+
+<Props of={Visible} />

@@ -1,24 +1,34 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
+import { Theme } from '../../theme/Theme';
+import { CounterProps } from './Counter';
 
-export interface CounterVariables {
-  container: ViewStyle;
-  count: ViewStyle;
-  counter: ViewStyle;
-  disabled: ViewStyle;
+export interface CounterStyles {
+  containerStyle: ViewStyle;
+  counterStyle: ViewStyle;
+  countStyle: ViewStyle;
+  decrementWrapperStyle: ViewStyle;
+  disabledStyle: ViewStyle;
+  incrementWrapperStyle: ViewStyle;
+  textStyle: TextStyle;
 }
 
-export const getCounterVariables = (theme: Theme): CounterVariables => {
+export type GetCounterStyles = (
+  props: CounterProps,
+  theme: Theme,
+) => CounterStyles;
+
+export const getCounterStyles: GetCounterStyles = (props, theme) => {
   return {
-    container: {
+    containerStyle: {
       display: 'flex',
       flexDirection: 'row',
     },
-    count: {
+    countStyle: {
       justifyContent: 'center',
+      minWidth: 24,
     },
-    counter: {
+    counterStyle: {
       alignItems: 'center',
       borderColor: theme.colors.border.primary,
       borderRadius: 999,
@@ -28,31 +38,11 @@ export const getCounterVariables = (theme: Theme): CounterVariables => {
       justifyContent: 'center',
       width: 40,
     },
-    disabled: {
+    decrementWrapperStyle: { paddingRight: 16 },
+    disabledStyle: {
       borderColor: theme.colors.border.default,
     },
-  };
-};
-
-export interface CounterStyles {
-  containerStyle: ViewStyle;
-  countStyle: ViewStyle;
-  counterStyle: ViewStyle;
-  disabledStyle: ViewStyle;
-  textStyle: TextStyle;
-}
-
-export type GetCounterStyles = (theme: Theme) => CounterStyles;
-
-export const getCounterStyles: GetCounterStyles = theme => {
-  const counterVariables = getCounterVariables(theme);
-  const { container, counter, count, disabled } = counterVariables;
-
-  return {
-    containerStyle: container,
-    countStyle: count,
-    counterStyle: counter,
-    disabledStyle: disabled,
+    incrementWrapperStyle: { paddingLeft: 16 },
     textStyle: {},
   };
 };

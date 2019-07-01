@@ -5,20 +5,27 @@ menu: Components
 
 import { Playground, Props } from 'docz';
 
-import { Box } from './Box';
+import { Box } from '..';
 
 # Box
 
-Box is a primitive component for convenient layout of components. All style properties are passed as props and has some convenient props such as `paddingHorizontal`, `marginVertical`, `shape` for styling
+Primitive component for convenient layout of components that accepts all `ViewStyle` properties
 
-### Usage
+## Usage
 
 <Playground>
   <Box
-    paddingVertical={40}
-    paddingHorizontal={40}
-    height={200}
-    width={200}
-    backgroundColor="#67c6bb"
+    // ...ViewStyle
+    height={100}
+    width={100}
+    shape="rounded"
+    elevation={5}
+    backgroundColor="primaryDefault"
   />
 </Playground>
+
+## Props
+
+Extends `ViewStyle`
+
+<Props of={Box} />

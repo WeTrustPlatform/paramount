@@ -1,0 +1,214 @@
+---
+name: Row and Column
+menu: Components
+---
+
+import { Playground, Props } from 'docz';
+
+import { Box, Container, Column, Row, LayoutProvider, Text } from '..';
+
+# Row and Column
+
+`Column` renders at the width of defined columns count. It will match nearest defined size that is smaller than or equal to current screen size.
+`Row` wraps `Column`s to keep them horizontal
+
+Refer to `Layout` docs for setup
+
+## Usage
+
+<Playground>
+  <LayoutProvider>
+    <Box paddingVertical={16}>
+      <Container>
+        <Row>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={1}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+      </Container>
+    </Box>
+    <Box paddingVertical={16}>
+      <Container>
+        <Row>
+          <Column medium={8}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={4}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+      </Container>
+    </Box>
+    <Box paddingVertical={16}>
+      <Container>
+        <Row>
+          <Column medium={4}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={4}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={4}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+      </Container>
+    </Box>
+    <Box paddingVertical={16}>
+      <Container>
+        <Row>
+          <Column medium={6}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column medium={6}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+      </Container>
+    </Box>
+  </LayoutProvider>
+</Playground>
+
+### Column wrapping
+
+<Playground>
+  <LayoutProvider>
+    <Box paddingVertical={16}>
+      <Container>
+        <Row>
+          <Column xsmall={9}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column xsmall={4}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column xsmall={6}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+      </Container>
+    </Box>
+  </LayoutProvider>
+</Playground>
+
+### Offsets
+
+<Playground>
+  <LayoutProvider>
+    <Box paddingVertical={16}>
+      <Container>
+        <Row>
+          <Column offsetXsmall={2} xsmall={6}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+        <Row>
+          <Column offsetXsmall={4} xsmall={6}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+        <Row>
+          <Column offsetXsmall={6} xsmall={6}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+      </Container>
+    </Box>
+  </LayoutProvider>
+</Playground>
+
+### Without gutter
+
+<Playground>
+  <LayoutProvider>
+    <Box paddingVertical={16}>
+      <Container>
+        <Row hasGutter={false}>
+          <Column xsmall={6}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+          <Column xsmall={6}>
+            <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
+          </Column>
+        </Row>
+      </Container>
+    </Box>
+  </LayoutProvider>
+</Playground>
+
+## Row Props
+
+<Props of={Row} />
+
+## Row Customization
+
+Using `getStyles` prop
+
+```
+RowStyles {
+  rowStyle: ViewStyle;
+}
+
+getStyles={(RowProps, Theme) => RowStyles}
+```
+
+Markup
+
+```tsx
+<View rowStyle />
+```
+
+## Column Props
+
+<Props of={Column} />
+
+## Column Customization
+
+Using `getStyles` prop
+
+```
+ColumnStyles {
+  columnStyle: ViewStyle;
+}
+
+getStyles={(ColumnProps, Theme) => ColumnStyles}
+```
+
+Markup
+
+```tsx
+<View columnStyle />
+```

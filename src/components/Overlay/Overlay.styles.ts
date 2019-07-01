@@ -1,25 +1,6 @@
 import { ViewStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
-
-export interface OverlayVariables {
-  overlay: ViewStyle & { cursor?: string };
-}
-
-export const getOverlayVariables = (theme: Theme): OverlayVariables => {
-  return {
-    overlay: {
-      bottom: 0,
-      cursor: 'auto',
-      height: '100%',
-      left: 0,
-      position: 'absolute',
-      right: 0,
-      top: 0,
-      width: '100%',
-    },
-  };
-};
+import { Theme } from '../../theme/Theme';
 
 export interface OverlayStyles {
   overlayStyle: ViewStyle;
@@ -35,14 +16,19 @@ export type GetOverlayStyles = (
 ) => OverlayStyles;
 
 export const getOverlayStyles: GetOverlayStyles = ({ transparent }, theme) => {
-  const overlayVariables = getOverlayVariables(theme);
-
   return {
     overlayStyle: {
-      ...overlayVariables.overlay,
       backgroundColor: transparent
         ? 'transparent'
         : theme.colors.background.overlay,
+      bottom: 0,
+      cursor: 'auto',
+      height: '100%',
+      left: 0,
+      position: 'absolute',
+      right: 0,
+      top: 0,
+      width: '100%',
     },
   };
 };

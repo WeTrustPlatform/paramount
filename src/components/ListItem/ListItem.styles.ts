@@ -1,121 +1,27 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
-
-export type SizeStyles = ViewStyle & {
-  fontSize: number;
-};
-
-export interface ListItemSizes {
-  small: SizeStyles;
-  medium: SizeStyles;
-  large: SizeStyles;
-}
-
-export interface TextSizes {
-  small: TextStyle;
-  medium: TextStyle;
-  large: TextStyle;
-}
-
-export type ListItemSize = keyof ListItemSizes;
-
-export interface ListItemVariables {
-  wrapper: ViewStyle;
-  base: ViewStyle;
-  disabled: ViewStyle;
-  selected: ViewStyle;
-  focusBackgroundColor: string;
-  sizes: ListItemSizes;
-}
-
-export const getListItemVariables = (theme: Theme): ListItemVariables => {
-  return {
-    base: {
-      backgroundColor: theme.colors.background.content,
-      borderBottomWidth: 1,
-      borderColor: theme.colors.border.default,
-      justifyContent: 'center',
-    },
-    disabled: {
-      backgroundColor: theme.colors.background.greyDark,
-    },
-    focusBackgroundColor: theme.colors.background.greyLight,
-    selected: {},
-    sizes: {
-      small: {
-        fontSize: theme.textSizes.small.fontSize || 14,
-        height: theme.controlHeights.small,
-        paddingLeft: theme.controlPaddings.small,
-        paddingRight: theme.controlPaddings.small,
-      },
-
-      medium: {
-        fontSize: theme.textSizes.medium.fontSize || 16,
-        height: theme.controlHeights.medium,
-        paddingLeft: theme.controlPaddings.medium,
-        paddingRight: theme.controlPaddings.medium,
-      },
-
-      large: {
-        fontSize: theme.textSizes.large.fontSize || 18,
-        height: theme.controlHeights.large,
-        paddingLeft: theme.controlPaddings.large,
-        paddingRight: theme.controlPaddings.large,
-      },
-    },
-    wrapper: {
-      alignItems: 'center',
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-    },
-  };
-};
+import { Theme } from '../../theme/Theme';
+import { ListItemProps } from './ListItem';
 
 export interface ListItemStyles {
   imageWrapperStyle: ViewStyle;
   wrapperStyle: ViewStyle;
-  containerStyle: ViewStyle;
+  touchableStyle: ViewStyle;
   leftWrapperStyle: ViewStyle;
   textWrapperStyle: ViewStyle;
-  focusBackgroundColor: string;
-  textStyle: TextStyle;
-}
-
-export interface ListItemStylesProps {
-  size: ListItemSize;
-  isDisabled: boolean;
-  isSelected: boolean;
+  rightWrapperStyle: ViewStyle;
+  titleStyle: TextStyle;
+  descriptionStyle: TextStyle;
 }
 
 export type GetListItemStyles = (
-  selectListStylesProps: ListItemStylesProps,
+  props: ListItemProps,
   theme: Theme,
 ) => ListItemStyles;
 
-export const getListItemStyles: GetListItemStyles = (
-  { size, isDisabled, isSelected },
-  theme,
-) => {
-  const selectListVariables = getListItemVariables(theme);
-  const {
-    base,
-    disabled,
-    selected,
-    focusBackgroundColor,
-    sizes,
-  } = selectListVariables;
-
-  const { fontSize, ...sizeStyles } = sizes[size];
-
+export const getListItemStyles: GetListItemStyles = ({ isDisabled }, theme) => {
   return {
-    containerStyle: {
-      ...base,
-      ...sizeStyles,
-      ...(isSelected ? selected : {}),
-      ...(isDisabled ? disabled : {}),
-    },
-    focusBackgroundColor,
+    descriptionStyle: {},
     imageWrapperStyle: {
       marginRight: 8,
     },
@@ -123,10 +29,27 @@ export const getListItemStyles: GetListItemStyles = (
       alignItems: 'center',
       flexDirection: 'row',
     },
-    textStyle: theme.textSizes[size],
-    textWrapperStyle: {
-      height: '100%',
+    rightWrapperStyle: {
+      position: 'absolute',
+      right: 0,
+      zIndex: 2,
     },
-    wrapperStyle: selectListVariables.wrapper,
+    textWrapperStyle: {
+      justifyContent: 'center',
+    },
+    titleStyle: {},
+    touchableStyle: {
+      backgroundColor: theme.colors.background.content,
+      height: 72,
+      justifyContent: 'center',
+      ...(isDisabled
+        ? { backgroundColor: theme.colors.background.greyDark }
+        : {}),
+    },
+    wrapperStyle: {
+      alignItems: 'center',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    },
   };
 };

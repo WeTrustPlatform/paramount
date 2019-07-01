@@ -1,73 +1,42 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import {
-  ControlSize,
-  FillColor,
-  Fills,
-  Theme,
-} from '../../theme/ThemeInterface';
-import { Shape, shapeMapping } from '../Box';
-
-export interface BadgeVariables {
-  fills: Fills;
-  sizes: { [size in ControlSize]: ViewStyle };
-}
-export const getBadgeVariables = (theme: Theme): BadgeVariables => {
-  return {
-    fills: theme.fills,
-
-    sizes: {
-      small: {
-        height: theme.controlHeights.small,
-        paddingLeft: theme.controlPaddings.small,
-        paddingRight: theme.controlPaddings.small,
-      },
-
-      medium: {
-        height: theme.controlHeights.medium,
-        paddingLeft: theme.controlPaddings.medium,
-        paddingRight: theme.controlPaddings.medium,
-      },
-
-      large: {
-        height: theme.controlHeights.large,
-        paddingLeft: theme.controlPaddings.large,
-        paddingRight: theme.controlPaddings.large,
-      },
-    },
-  };
-};
-
-export interface BadgeStylesProps {
-  shape: Shape;
-  size: ControlSize;
-  color: FillColor;
-  isSolid: boolean;
-}
+import { Theme } from '../../theme/Theme';
+import { BadgeProps } from './Badge';
 
 export interface BadgeStyles {
   textStyle: TextStyle;
   containerStyle: ViewStyle;
 }
 
-export type GetBadgeStyles = (
-  props: BadgeStylesProps,
-  theme: Theme,
-) => BadgeStyles;
+export type GetBadgeStyles = (props: BadgeProps, theme: Theme) => BadgeStyles;
 
 export const getBadgeStyles: GetBadgeStyles = (
-  { size, color, isSolid, shape },
+  { size = 'medium', color = 'neutral', isSolid = false, shape = 'rounded' },
   theme,
 ) => {
-  const badgeVariables = getBadgeVariables(theme);
-
-  const shapeStyles = shapeMapping[shape];
-  const fills = isSolid
-    ? badgeVariables.fills.solid
-    : badgeVariables.fills.subtle;
+  const shapeStyles = theme.containerShapes[shape];
+  const fills = isSolid ? theme.fills.solid : theme.fills.subtle;
 
   const colors = fills[color];
-  const { height, paddingLeft, paddingRight } = badgeVariables.sizes[size];
+  const { height, paddingLeft, paddingRight } = {
+    small: {
+      height: theme.controlHeights.small,
+      paddingLeft: theme.controlPaddings.small,
+      paddingRight: theme.controlPaddings.small,
+    },
+
+    medium: {
+      height: theme.controlHeights.medium,
+      paddingLeft: theme.controlPaddings.medium,
+      paddingRight: theme.controlPaddings.medium,
+    },
+
+    large: {
+      height: theme.controlHeights.large,
+      paddingLeft: theme.controlPaddings.large,
+      paddingRight: theme.controlPaddings.large,
+    },
+  }[size];
 
   return {
     containerStyle: {

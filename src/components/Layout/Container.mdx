@@ -1,0 +1,54 @@
+---
+name: Container
+menu: Components
+---
+
+import { Playground, Props } from 'docz';
+
+import { Box, Container, LayoutProvider, Text } from '..';
+
+# Container
+
+`Container` centers the content with a max-width of defined by Layout (varies depending on screen size)
+
+Refer to `Layout` docs for setup
+
+## Usage
+
+<Playground>
+  <LayoutProvider>
+    <Box backgroundColor="#67c6bb" padding={3}>
+      <Container
+        fluid={false} // Should not contain width
+        size={undefined} // Override default container size
+      >
+        <Box backgroundColor="white" padding={3}>
+          <Text>Centered content</Text>
+        </Box>
+      </Container>
+    </Box>
+
+  </LayoutProvider>
+</Playground>
+
+## Props
+
+<Props of={Container} />
+
+## Customization
+
+Using `getStyles` prop
+
+```
+ContainerStyles {
+  containerStyle: ViewStyle;
+}
+
+getStyles={(ContainerProps && Layout, Theme) => ContainerStyles}
+```
+
+Markup
+
+```tsx
+<View containerStyle>{children}</View>
+```

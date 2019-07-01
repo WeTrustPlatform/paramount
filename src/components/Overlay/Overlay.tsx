@@ -20,10 +20,11 @@ export const Overlay = (props: OverlayProps) => {
   const { onPress, transparent = false, getStyles } = props;
   const theme = useTheme();
 
-  const { overlayStyle } = mergeStyles(getOverlayStyles, getStyles)(
-    { transparent },
-    theme,
-  );
+  const { overlayStyle } = mergeStyles(
+    getOverlayStyles,
+    getStyles,
+    theme.components.getOverlayStyles,
+  )({ transparent }, theme);
 
   return (
     <TouchableWithoutFeedback

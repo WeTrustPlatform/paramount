@@ -2,11 +2,14 @@ import * as React from 'react';
 import {
   TextInput as RNTextInput,
   TextInputProps as RNTextInputProps,
+  TouchableOpacity,
+  View,
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { ControlSize, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { Icon } from '../Icon';
 import {
   GetTextInputStyles,
   getTextInputStyles,
@@ -14,12 +17,48 @@ import {
 } from './TextInput.styles';
 
 export interface TextInputProps extends RNTextInputProps {
-  children?: React.ReactNode;
-  name?: string;
-  innerRef?: React.Ref<RNTextInput>;
+  /**
+   * Size of the text input.
+   * @default medium
+   */
   size?: ControlSize;
+
+  /**
+   * When true, text input is disabled
+   */
   isDisabled?: boolean;
+
+  /**
+   * When true, text input will be highlighted as invalid
+   */
   isInvalid?: boolean;
+
+  /**
+   * Icon placed on the left side
+   */
+  leftIcon?: React.ReactNode;
+
+  /**
+   * Icon placed on the left side
+   */
+  rightIcon?: React.ReactNode;
+
+  /**
+   * Called when clear icon is pressed.
+   */
+  onClear?: () => void;
+
+  /**
+   * When true, when value is not empty, a clear icon is displayed
+   */
+  isClearable?: boolean;
+
+  /** Use `ref` instead */
+  innerRef?: React.Ref<RNTextInput>;
+
+  /**
+   * Callback to get element styles.
+   */
   getStyles?: ReplaceReturnType<
     GetTextInputStyles,
     DeepPartial<TextInputStyles>
@@ -28,41 +67,68 @@ export interface TextInputProps extends RNTextInputProps {
 
 const TextInputBase = (props: TextInputProps) => {
   const {
+    getStyles,
+    innerRef,
+    isClearable = false,
     isDisabled = false,
     isInvalid = false,
+    leftIcon,
+    onClear = () => {
+      return;
+    },
+    rightIcon,
     size = 'medium',
-    getStyles,
-    name,
-    innerRef,
-    numberOfLines,
+    value,
+    textContentType,
+    onChangeText = () => {
+      return;
+    },
+    placeholderTextColor: placeholderTextColorProp,
     ...textInputProps
   } = props;
   const theme = useTheme();
 
-  const { inputStyle, placeholderTextColor } = mergeStyles(
-    getTextInputStyles,
-    getStyles,
-  )(
-    {
-      isDisabled,
-      isInvalid,
-      numberOfLines,
-      size,
-    },
-    theme,
-  );
+  const {
+    inputStyle,
+    placeholderTextColor,
+    containerStyle,
+    leftContainerStyle,
+    rightContainerStyle,
+  } = mergeStyles(getTextInputStyles, getStyles)(props, theme);
 
   return (
-    // @ts-ignore: name prop does not exist, but on the web it is useful for browser autofill
-    <RNTextInput
-      ref={innerRef}
-      style={inputStyle}
-      editable={!isDisabled}
-      placeholderTextColor={placeholderTextColor}
-      name={name}
-      numberOfLines={numberOfLines}
-      {...textInputProps}
-    />
+    <View style={containerStyle}>
+      {leftIcon && <View style={leftContainerStyle}>{leftIcon}</View>}
+      {/*
+      // @ts-ignore: name prop being passed for web */}
+      <RNTextInput
+        ref={innerRef}
+        style={inputStyle}
+        editable={!isDisabled}
+        placeholderTextColor={placeholderTextColorProp || placeholderTextColor}
+        name={textContentType}
+        value={value}
+        onChangeText={onChangeText}
+        textContentType={textContentType}
+        {...textInputProps}
+      />
+      {((value && isClearable) || rightIcon) && (
+        <View style={rightContainerStyle}>
+          {value && isClearable ? (
+            <TouchableOpacity
+              onPress={() => {
+                onChangeText('');
+                onClear();
+              }}
+            >
+              <Icon name="x" size={24} color={theme.colors.text.default} />
+            </TouchableOpacity>
+          ) : (
+            rightIcon
+          )}
+        </View>
+      )}
+    </View>
   );
 };
 

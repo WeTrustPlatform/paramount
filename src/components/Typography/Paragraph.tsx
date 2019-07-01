@@ -3,12 +3,7 @@ import { Text, TextProps } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import {
-  FontFamily,
-  FontWeight,
-  ParagraphSize,
-  TextColor,
-} from '../../theme/ThemeInterface';
+import { FontWeight, TextColor, TextSize } from '../../theme/Theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import {
   GetParagraphStyles,
@@ -19,13 +14,34 @@ import { TextAlign } from './types';
 
 // @ts-ignore: need to override for web purposes
 export interface ParagraphProps extends TextProps {
-  children: React.ReactNode;
-  color?: TextColor;
-  size?: ParagraphSize;
-  weight?: FontWeight;
-  align?: TextAlign;
-  fontFamily?: FontFamily;
+  /**
+   * Size of the paragraph.
+   * @default "medium"
+   */
+  size?: TextSize;
 
+  /**
+   * Color of the paragraph.
+   * @default "default"
+   */
+  color?: TextColor;
+
+  /**
+   * Alignment of the paragraph.
+   * @default "left"
+   */
+  align?: TextAlign;
+
+  /**
+   * Weight of the paragraph.
+   * @default paragraphSize.fontWeight
+   */
+  weight?: FontWeight;
+
+  /** Text content */
+  children?: React.ReactNode;
+
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<
     GetParagraphStyles,
     DeepPartial<ParagraphStyles>
@@ -36,7 +52,6 @@ export const Paragraph = (props: ParagraphProps) => {
   const {
     children,
     color = 'default',
-    fontFamily = 'text',
     size = 'medium',
     align = 'left',
     weight,
@@ -45,10 +60,11 @@ export const Paragraph = (props: ParagraphProps) => {
   } = props;
   const theme = useTheme();
 
-  const { paragraphStyle } = mergeStyles(getParagraphStyles, getStyles)(
-    { align, size, color, fontFamily, weight },
-    theme,
-  );
+  const { paragraphStyle } = mergeStyles(
+    getParagraphStyles,
+    getStyles,
+    theme.components.getParagraphStyles,
+  )(props, theme);
 
   return (
     <Text

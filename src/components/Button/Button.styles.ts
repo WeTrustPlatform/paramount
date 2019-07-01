@@ -1,287 +1,172 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
+import { ButtonColor, Theme } from '../../theme/Theme';
+import { ButtonProps } from './Button';
 
-export type ButtonColorProps = ViewStyle & {
+export interface ButtonColorProps {
+  backgroundColor: string;
   color: string;
-  focusColor: string;
+  borderWidth?: number;
+  borderColor?: string;
   loadingBackgroundColor?: string;
-};
-
-export interface ButtonColors {
-  default: ButtonColorProps;
-  danger: ButtonColorProps;
-  primary: ButtonColorProps;
-  secondary: ButtonColorProps;
 }
 
-export type ButtonColor = keyof ButtonColors;
-
 export interface ButtonAppearances {
-  minimal: ButtonColors;
-  primary: ButtonColors;
-  outline: ButtonColors;
+  minimal: { [size in ButtonColor]: ButtonColorProps };
+  primary: { [size in ButtonColor]: ButtonColorProps };
+  outline: { [size in ButtonColor]: ButtonColorProps };
 }
 
 export type ButtonAppearance = keyof ButtonAppearances;
 
-export type SizeStyles = ViewStyle & {
-  borderRadius: number;
-  fontSize: number;
-  height: number;
-  paddingLeft: number;
-  paddingRight: number;
-};
-
-export interface ButtonSizes {
-  small: SizeStyles;
-  medium: SizeStyles;
-  large: SizeStyles;
-}
-
-export type ButtonSize = keyof ButtonSizes;
-
-export interface ButtonVariables {
-  appearances: ButtonAppearances;
-  disabled: {
-    backgroundColor: string;
-    color: string;
-  };
-  sizes: ButtonSizes;
-}
-
-export const getButtonVariables = (theme: Theme): ButtonVariables => {
+export const getButtonAppearances = (theme: Theme): ButtonAppearances => {
   return {
-    appearances: {
-      minimal: {
-        default: {
-          backgroundColor: theme.colors.background.content,
-          color: theme.colors.text.default,
+    minimal: {
+      default: {
+        backgroundColor: theme.colors.background.content,
+        color: theme.colors.text.default,
+      },
 
-          focusColor: theme.colors.background.greyDefault,
-        },
-
-        danger: {
-          backgroundColor: theme.colors.background.content,
-          color: theme.colors.text.danger,
-
-          focusColor: theme.colors.background.greyDefault,
-        },
-        primary: {
-          backgroundColor: theme.colors.background.content,
-          color: theme.colors.text.primary,
-
-          focusColor: theme.colors.background.greyDefault,
-        },
-        secondary: {
-          backgroundColor: theme.colors.background.content,
-          color: theme.colors.text.secondary
-            ? theme.colors.text.secondary
-            : theme.colors.text.default,
-
-          focusColor: theme.colors.background.greyDefault,
-        },
+      danger: {
+        backgroundColor: theme.colors.background.content,
+        color: theme.colors.text.danger,
       },
       primary: {
-        default: {
-          backgroundColor: theme.colors.background.greyLight,
-          borderColor: theme.colors.border.default,
-          color: theme.colors.text.default,
-
-          focusColor: theme.colors.background.greyDefault,
-          loadingBackgroundColor: theme.colors.background.overlay,
-        },
-
-        danger: {
-          backgroundColor: theme.colors.background.dangerDefault,
-          borderColor: theme.colors.border.danger,
-          color: theme.colors.text.white,
-
-          focusColor: theme.colors.background.dangerDark,
-          loadingBackgroundColor: theme.colors.background.dangerLight,
-        },
-
-        primary: {
-          backgroundColor: theme.colors.background.primaryDefault,
-          borderColor: theme.colors.border.primary,
-          color: theme.colors.text.white,
-
-          focusColor: theme.colors.background.primaryDark,
-          loadingBackgroundColor: theme.colors.background.primaryLight,
-        },
-
-        secondary: {
-          backgroundColor: theme.colors.background.secondaryDefault,
-          borderColor: theme.colors.border.secondary,
-          color: theme.colors.text.white,
-
-          focusColor: theme.colors.background.secondaryDark,
-          loadingBackgroundColor: theme.colors.background.secondaryLight,
-        },
+        backgroundColor: theme.colors.background.content,
+        color: theme.colors.text.primary,
       },
-
-      outline: {
-        default: {
-          backgroundColor: theme.colors.background.content,
-          borderColor: theme.colors.text.default,
-          borderWidth: 3,
-          color: theme.colors.text.default,
-
-          focusColor: theme.colors.background.greyDefault,
-        },
-
-        danger: {
-          backgroundColor: theme.colors.background.content,
-          borderColor: theme.colors.border.danger,
-          borderWidth: 3,
-          color: theme.colors.text.danger,
-
-          focusColor: theme.colors.background.dangerLight,
-        },
-
-        primary: {
-          backgroundColor: theme.colors.background.content,
-          borderColor: theme.colors.border.primary,
-          borderWidth: 3,
-          color: theme.colors.text.primary,
-
-          focusColor: theme.colors.background.primaryLight,
-        },
-
-        secondary: {
-          backgroundColor: theme.colors.background.content,
-          borderColor: theme.colors.border.secondary,
-          borderWidth: 3,
-          color: theme.colors.text.secondary,
-
-          focusColor: theme.colors.background.secondaryLight,
-        },
+      secondary: {
+        backgroundColor: theme.colors.background.content,
+        color: theme.colors.text.secondary,
       },
     },
-    disabled: {
-      backgroundColor: theme.colors.background.greyDark,
+    primary: {
+      default: {
+        backgroundColor: theme.colors.button.default,
+        color: theme.colors.button.defaultText,
 
-      color: theme.colors.text.muted,
+        loadingBackgroundColor: theme.colors.background.overlay,
+      },
+
+      danger: {
+        backgroundColor: theme.colors.button.danger,
+        color: theme.colors.button.dangerText,
+
+        loadingBackgroundColor: theme.colors.background.dangerLight,
+      },
+
+      primary: {
+        backgroundColor: theme.colors.button.primary,
+        color: theme.colors.button.primaryText,
+
+        loadingBackgroundColor: theme.colors.background.primaryLight,
+      },
+
+      secondary: {
+        backgroundColor: theme.colors.button.secondary,
+        color: theme.colors.button.secondaryText,
+
+        loadingBackgroundColor: theme.colors.background.secondaryLight,
+      },
     },
-    sizes: {
-      small: {
-        borderRadius: theme.controlBorderRadius.small,
-        fontSize: theme.textSizes.small.fontSize || 14,
-        height: theme.controlHeights.small,
-        paddingLeft: theme.controlPaddings.small * 2,
-        paddingRight: theme.controlPaddings.small * 2,
+
+    outline: {
+      default: {
+        backgroundColor: theme.colors.background.content,
+        borderColor: theme.colors.text.default,
+        borderWidth: 3,
+        color: theme.colors.text.default,
       },
 
-      medium: {
-        borderRadius: theme.controlBorderRadius.medium,
-        fontSize: theme.textSizes.medium.fontSize || 16,
-        height: theme.controlHeights.medium,
-        paddingLeft: theme.controlPaddings.medium * 2,
-        paddingRight: theme.controlPaddings.medium * 2,
+      danger: {
+        backgroundColor: theme.colors.background.content,
+        borderColor: theme.colors.border.danger,
+        borderWidth: 3,
+        color: theme.colors.text.danger,
       },
 
-      large: {
-        borderRadius: theme.controlBorderRadius.large,
-        fontSize: theme.textSizes.large.fontSize || 20,
-        height: theme.controlHeights.large,
-        paddingLeft: theme.controlPaddings.large * 2,
-        paddingRight: theme.controlPaddings.large * 2,
+      primary: {
+        backgroundColor: theme.colors.background.content,
+        borderColor: theme.colors.border.primary,
+        borderWidth: 3,
+        color: theme.colors.text.primary,
+      },
+
+      secondary: {
+        backgroundColor: theme.colors.background.content,
+        borderColor: theme.colors.border.secondary,
+        borderWidth: 3,
+        color: theme.colors.text.secondary,
       },
     },
   };
 };
 
 export interface ButtonStyles {
-  buttonStyle: ViewStyle;
+  touchableStyle: ViewStyle;
   textStyle: TextStyle;
-  focusColor: string;
   innerButtonWrapperStyle: ViewStyle;
   buttonContentWrapperStyle: ViewStyle;
 }
 
-export interface ButtonStylesProps {
-  appearance: ButtonAppearance;
-  color: ButtonColor;
-  size: ButtonSize;
-  isDisabled: boolean;
-  isLoading: boolean;
-  isInline: boolean;
-  iconBefore?: any;
-  iconAfter?: any;
-}
 export type GetButtonStyles = (
-  buttonStylesProps: ButtonStylesProps,
+  props: ButtonProps,
   theme: Theme,
 ) => ButtonStyles;
 
-export const getButtonStyles: GetButtonStyles = (buttonStyleProps, theme) => {
+export const getButtonStyles: GetButtonStyles = (props, theme) => {
   const {
-    appearance,
-    color,
-    size,
+    appearance = 'primary',
+    color = 'default',
+    iconAfter,
+    iconBefore,
     isDisabled,
     isLoading,
-    isInline,
-    iconBefore,
-    iconAfter,
-  } = buttonStyleProps;
+    size = 'medium',
+  } = props;
+  const hasIconAfter = !!iconAfter;
+  const hasIconBefore = !!iconBefore;
 
-  const { appearances, sizes, disabled, ...baseStyles } = getButtonVariables(
-    theme,
-  );
+  const buttonAppearances = getButtonAppearances(theme);
 
   const {
     color: textColor,
-    focusColor,
     loadingBackgroundColor,
-    ...buttonStyle
-  } = appearances[appearance][color];
-
-  const { fontSize, ...shapeStyles } = sizes[size];
-  const { color: disabledButtonTextColor, ...disabledButtonStyles } = disabled;
+    ...touchableStyle
+  } = buttonAppearances[appearance][color];
 
   return {
-    buttonStyle: {
-      ...(isDisabled
-        ? {
-            ...disabledButtonStyles,
-            ...shapeStyles,
-          }
-        : {
-            ...shapeStyles,
-            ...baseStyles,
-            ...buttonStyle,
-            ...(isLoading ? { backgroundColor: loadingBackgroundColor } : {}),
-          }),
-      ...(isInline
-        ? {
-            alignSelf: 'flex-start',
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-          }
-        : {}),
+    buttonContentWrapperStyle: {
+      paddingLeft: hasIconBefore ? 8 : 0,
+      paddingRight: hasIconAfter ? 8 : 0,
     },
-    focusColor,
-    textStyle: {
-      alignItems: 'center',
-      color: isDisabled ? disabledButtonTextColor : textColor,
-      display: 'flex',
-      fontSize,
-      fontWeight: '600',
-      justifyContent: 'center',
-      textAlign: 'center',
-    },
-
     innerButtonWrapperStyle: {
       alignItems: 'center',
       flexDirection: 'row',
       height: '100%',
       justifyContent: 'center',
     },
-
-    buttonContentWrapperStyle: {
-      paddingLeft: iconBefore ? 8 : 0,
-      paddingRight: iconAfter ? 8 : 0,
+    textStyle: {
+      alignItems: 'center',
+      color: isDisabled ? theme.colors.text.muted : textColor,
+      display: 'flex',
+      fontWeight: '600',
+      justifyContent: 'center',
+      textAlign: 'center',
+    },
+    touchableStyle: {
+      borderRadius: theme.controlBorderRadius[size],
+      height: theme.controlHeights[size],
+      paddingLeft: theme.controlPaddings[size] * 2,
+      paddingRight: theme.controlPaddings[size] * 2,
+      ...touchableStyle,
+      ...(isDisabled
+        ? {
+            backgroundColor: theme.colors.button.disabled,
+          }
+        : {
+            ...(isLoading ? { backgroundColor: loadingBackgroundColor } : {}),
+          }),
     },
   };
 };

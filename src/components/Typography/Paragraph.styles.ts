@@ -1,38 +1,15 @@
 import { TextStyle } from 'react-native';
 
-import {
-  FontFamilies,
-  FontFamily,
-  FontWeight,
-  ParagraphSize,
-  ParagraphSizes,
-  TextColor,
-  TextColors,
-  Theme,
-} from '../../theme/ThemeInterface';
-import { getFontFamily, getFontWeight, getTextColor } from './Text.styles';
-import { TextAlign } from './types';
-
-export interface ParagraphVariables {
-  color: TextColors;
-  size: ParagraphSizes;
-  fontFamily: FontFamilies;
-}
-
-export interface ParagraphStylesProps {
-  align: TextAlign;
-  size: ParagraphSize;
-  color: TextColor;
-  fontFamily: FontFamily;
-  weight?: FontWeight;
-}
+import { ParagraphSize, ParagraphSizes, Theme } from '../../theme/Theme';
+import { ParagraphProps } from './Paragraph';
+import { getFontWeight, getTextColor } from './Text.styles';
 
 export interface ParagraphStyles {
   paragraphStyle: TextStyle;
 }
 
 export type GetParagraphStyles = (
-  paragraphStylesProps: ParagraphStylesProps,
+  props: ParagraphProps,
   theme: Theme,
 ) => ParagraphStyles;
 
@@ -46,7 +23,7 @@ export const getParagraphSize = (paragraphSizes: ParagraphSizes) => (
 };
 
 export const getParagraphStyles: GetParagraphStyles = (
-  { size, color, fontFamily, align, weight },
+  { color = 'default', size = 'medium', align = 'left', weight },
   theme,
 ) => {
   const sizeStyle = getParagraphSize(theme.paragraphSizes)(size);
@@ -55,11 +32,11 @@ export const getParagraphStyles: GetParagraphStyles = (
     paragraphStyle: {
       ...sizeStyle,
       color: getTextColor(theme.colors.text)(color),
-      fontFamily: getFontFamily(theme.fontFamilies)(fontFamily),
+      fontFamily: theme.fontFamilies.text,
       fontWeight:
         getFontWeight(theme.fontWeights)(weight) || sizeStyle.fontWeight,
-      marginBottom: '1em',
-      marginTop: '1em',
+      marginBottom: theme.textSizes.medium.fontSize,
+      marginTop: theme.textSizes.medium.fontSize,
       textAlign: align,
     },
   };

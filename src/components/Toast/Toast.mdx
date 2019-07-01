@@ -4,99 +4,78 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { ToastContext, ToastProvider, Toast } from '.';
-import { Button } from '../Button';
-import { Box } from '../Box';
+
+import { Box, Button, ToastContext, ToastProvider, Toast } from '..';
 
 # Toast
 
-Composes `Alert`.
+## Setup
 
-### Usage
+Put `ToastProvider` at the top level component to wrap components that make use of `ToastContext`.
+
+```tsx
+<ToastProvider>{children}</ToastProvider>
+```
+
+## Usage
+
+Paramount exposes a convenience hook `useToast` you can use to create toasts from anywhere in the application.
 
 <Playground>
-  <ToastProvider
-    getStyles={(props, theme) => ({
-      containerStyle: {},
-    })}
-  >
+  <ToastProvider>
+    {/*
+      We use `ToastContext.Consumer` here due to limitations in docs
+      Use `const { notify } = useToast()` inside your function component
+     */}
     <ToastContext.Consumer>
       {({ notify }) => (
         <Button
-          onPress={() => {
+          onPress={() =>
             notify({
               title: 'Title',
               description: 'Description',
-              component: null, // A React Component that overrides title and description
-              isCloseable: true,
-              offset: 16,
-              duration: 3000,
-              // ...Alert props e.g. getStyles
-            });
-          }}
-          title="Use"
+              duration: 100000,
+            })
+          }
+          title="Open toast"
         />
       )}
     </ToastContext.Consumer>
   </ToastProvider>
 </Playground>
 
-### Variants
+## ToastProvider Props
 
-<Playground>
-  <ToastProvider>
-    <ToastContext.Consumer>
-      {({ notify }) => (
-        <>
-          <Button
-            onPress={() =>
-              notify({
-                title: 'Title',
-                description: 'Description',
-                isCloseable: true,
-              })
-            }
-            title="Open default toast"
-          />
-          <Button
-            onPress={() =>
-              notify({
-                description: 'Description',
-                intent: 'success',
-                title: 'Title',
-              })
-            }
-            color="primary"
-            title="Open success toast"
-          />
-          <Button
-            onPress={() =>
-              notify({
-                description: 'Description',
-                intent: 'danger',
-                title: 'Title',
-              })
-            }
-            color="danger"
-            title="Open danger toast"
-          />
-          <Button
-            onPress={() =>
-              notify({
-                description: 'Description',
-                intent: 'warning',
-                title: 'Title',
-              })
-            }
-            color="secondary"
-            title="Open warning toast"
-          />
-        </>
-      )}
-    </ToastContext.Consumer>
-  </ToastProvider>
-</Playground>
+_Note_: In order for the `position="bottom"` prop to match the `offset` exactly, try to keep the title and message short. This is due to derived height of the `Toast` being "hard-coded" when `position="bottom"`
 
-### Props
+<Props of={ToastProvider} />
+
+## Toast Options
 
 <Props of={Toast} />
+
+## Customization
+
+Use `getStyles` prop on **ToastProvider**
+
+```tsx
+ToastStyles {
+  containerStyle: ViewStyle;
+  wrapperStyle: ViewStyle;
+}
+
+getStyles={(ToastProviderProps, Theme) => ToastProviderStyles}
+```
+
+Markup
+
+```tsx
+<>
+  {children}
+  <View containerStyle>
+    <View wrapperStyle>
+      <Alert />
+    </View>
+  </View>
+</>
+```

@@ -3,13 +3,11 @@ import { View, ViewProps } from 'react-native';
 
 import { Measurements, useMeasure } from '../../hooks/useMeasure';
 
-export type ViewMeasureRenderPropType = (
-  props: Measurements,
-) => React.ReactNode;
+export type ViewMeasureRenderProp = (props: Measurements) => JSX.Element;
 
 export interface ViewMeasureProps extends ViewProps {
   onMeasure?: (props: Measurements) => void;
-  children: React.ReactNode | ViewMeasureRenderPropType;
+  children: React.ReactNode | ViewMeasureRenderProp;
 }
 
 /**
@@ -19,11 +17,12 @@ export interface ViewMeasureProps extends ViewProps {
 export const ViewMeasure = (props: ViewMeasureProps) => {
   const { onMeasure, children, ...viewProps } = props;
   const isRenderProp = typeof children === 'function';
-  const { forwardRef, measurements, onLayout } = useMeasure({ onMeasure });
+  const ref = React.useRef<View>(null);
+  const { measurements, onLayout } = useMeasure({ onMeasure, ref });
 
   return (
     <View
-      ref={forwardRef}
+      ref={ref}
       onLayout={onLayout}
       // @ts-ignore
       children={isRenderProp ? children(measurements) : children}

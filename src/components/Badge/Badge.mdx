@@ -4,71 +4,41 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { Badge } from './Badge';
-import { ThemeContext } from '../../theme';
-import { Box } from '../Box';
+import { Badge, Box } from '..';
 
 # Badge
 
-### Usage
+Display to indicate status or feat of service
+
+## Usage
 
 <Playground>
   <Box>
-    <Badge
-      color="blue"
-      size="large"
-      shape="rounded"
-      isSolid={false}
-      getStyles={(props, theme) => ({
-        containerStyle: {},
-        textStyle: {},
-      })}
-    >
-      Badge
-    </Badge>
+    <Badge title="Badge" color="teal" isSolid size="large" shape="pill" />
   </Box>
 </Playground>
 
-### Default
-
-<Playground>
-  <ThemeContext.Consumer>
-    {theme => (
-      <Box>
-        {Object.keys(theme.fills.solid).map(color => (
-          <Box flexDirection="row" key={color}>
-            <Badge color={color}>{color}</Badge>
-            <Badge color={color} isSolid>
-              {color}
-            </Badge>
-          </Box>
-        ))}
-      </Box>
-    )}
-  </ThemeContext.Consumer>
-</Playground>
-
-### Pills
-
-<Playground>
-  <ThemeContext.Consumer>
-    {theme => (
-      <Box>
-        {Object.keys(theme.fills.solid).map(color => (
-          <Box flexDirection="row" key={color}>
-            <Badge shape="pill" color={color}>
-              {color}
-            </Badge>
-            <Badge shape="pill" color={color} isSolid>
-              {color}
-            </Badge>
-          </Box>
-        ))}
-      </Box>
-    )}
-  </ThemeContext.Consumer>
-</Playground>
-
-### Props
+## Props
 
 <Props of={Badge} />
+
+## Customization
+
+Using `getStyles` prop
+
+```tsx
+BadgeStyles {
+  textStyle: TextStyle;
+  containerStyle: ViewStyle;
+}
+
+getStyles={(BadgeProps, Theme) => BadgeStyles}
+```
+
+Markup
+
+```tsx
+<View containerStyle>
+  <Text textStyle>{title}</Text>
+</View>
+```

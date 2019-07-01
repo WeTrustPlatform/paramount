@@ -4,39 +4,61 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { ListItem } from './ListItem';
-import { Avatar } from '../Avatar';
-import { Icon } from '../Icon';
+
+import { Avatar, Icon, ListItem } from '..';
 
 # ListItem
 
-### Usage
-
 For image, it composes `Avatar`, you can pass `avatarProps` provide more specific customizations
+
+## Usage
 
 <Playground>
   <ListItem
     onPress={() => console.log('Press')}
-    rightIcon={<Icon color="#7e7e7e" size={24} name="chevron-right" />}
-    leftIcon={
-      <Avatar size={45} source={{ uri: 'https://picsum.photos/200/200' }} />
-    }
-    label="Some label"
+    avatarProps={{
+      source: { uri: 'https://picsum.photos/200/200' },
+    }}
+    title="Some label"
     description="Some description"
-    size="large"
-    isDisabled={false}
-    getStyles={(props, theme) => ({
-      imageWrapperStyle: {},
-      leftWrapperStyle: {},
-      textWrapperStyle: {},
-      containerStyle: {},
-      textStyle: {},
-      focusBackgroundColor: {},
-      wrapperStyle: {},
-    })}
   />
 </Playground>
 
-### Props
+## Props
 
 <Props of={ListItem} />
+
+## Customization
+
+Using `getStyles` prop
+
+```
+ListItemStyles {
+  imageWrapperStyle: ViewStyle;
+  wrapperStyle: ViewStyle;
+  touchableStyle: ViewStyle;
+  leftWrapperStyle: ViewStyle;
+  textWrapperStyle: ViewStyle;
+  titleStyle: TextStyle;
+  descriptionStyle: TextStyle;
+}
+
+getStyles={(ListItemProps, Theme) => ListItemStyles}
+```
+
+Markup
+
+```tsx
+<TouchableOpacity touchableStyle>
+  <View wrapperStyle>
+    <View leftWrapperStyle>
+      <View imageWrapperStyle>{leftNode || <Avatar />}</View>
+      <View textWrapperStyle>
+        {title}
+        {description}
+      </View>
+    </View>
+    {rightNode}
+  </View>
+</TouchableOpacity>
+```

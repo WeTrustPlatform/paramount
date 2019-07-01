@@ -4,44 +4,58 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { State } from 'react-powerplug';
-import { View } from 'react-native';
 
-import { Icon } from '../Icon';
-import { TextInput } from '.';
+import { Box, State, Icon, TextInput } from '..';
 
 # TextInput
 
-Composes of React Native's `TextInput` component (i.e. you can pass its props). [See more details](https://facebook.github.io/react-native/docs/textinput)
+Composes React Native's `TextInput`
 
-### Usage
+## Usage
 
 <Playground>
   <State initial={{ value: '' }}>
     {({ state, setState }) => (
       <TextInput
-        name="field"
         value={state.value}
-        placeholder="Add your own placeholder"
+        placeholder="TextInput"
         size="large"
-        isDisabled={false}
-        isInvalid={false}
-        keyboardType="email-address"
         onChangeText={text => setState({ value: text })}
-        onSubmitEditing={e => console.log('Submit on enter')}
-        leftIcon={
-          <View>
-            <Icon name="menu" size={24} />
-          </View>
-        }
-        rightIcon={undefined}
-        isClearable={true} // Mutually exclusive with rightIcon
+        leftIcon={<Icon name="menu" size={24} />}
+        isInvalid={false}
+        isClearable // Mutually exclusive with rightIcon
         onClear={() => console.log('Cleared!')} // Only triggered with `isClearable`
-        getStyles={(props, theme) => ({
-          inputStyle: {},
-          placeholderTextColor: theme.colors.text.muted,
-        })}
       />
     )}
   </State>
 </Playground>
+
+## Props
+
+<Props of={TextInput} />
+
+## Customization
+
+Using `getStyles` prop
+
+```tsx
+TextInputStyles {
+  inputStyle: TextStyle;
+  placeholderTextColor: string;
+  containerStyle: ViewStyle;
+  leftContainerStyle: ViewStyle;
+  rightContainerStyle: ViewStyle;
+}
+
+getStyles={(TextInputProps, Theme) => TextInputStyles}
+```
+
+Markup
+
+```tsx
+<View containerStyle>
+  <View leftContainerStyle>{leftIcon}</View>
+  <RNTextInput inputStyle placeholderTextColor />
+  <View rightContainerStyle>{rightIcon}</View>
+</View>
+```

@@ -4,105 +4,70 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { Popover } from '.';
-import { Button } from '../Button';
-import { Box } from '../Box';
-import { Text } from '../Typography';
-import { Toggle } from 'react-powerplug';
 
-export default ({ children }) => {
-  document.body.style.height = 'initial';
-  document.body.style.position = 'relative';
-  return <div>{children}</div>;
-};
+import { Box, Button, Popover, Toggle, Text } from '..';
 
 # Popover
 
-`Popover` composes `Positioner` and adds only a white box wrapping. Content that can be anything. Popover just applies some styles for the content. For more low-level usage, use `Positioner`
+Composes `Positioner`
 
-### Usage
-
-<Playground>
-  <Popover
-    isVisible={false}
-    onClose={() => console.log('Close')}
-    position="top-right"
-    content={() => <Box width={200} height={200} />}
-    getStyles={(props, theme) => ({
-      popoverStyle: {},
-    })}
-    // ...Positioner props
-  >
-    <Button title="Child" />
-  </Popover>
-</Playground>
-
-### Variants
+## Usage
 
 <Playground>
-  <Box paddingBottom={64} zIndex={1}>
-    <Box flexDirection="row" justifyContent="space-between">
-      <Toggle>
-        {({ on, toggle }) => (
-          <Popover
-            isVisible={on}
-            onClose={toggle}
-            position="top-right"
-            content={() => (
-              <Box width={200} height={200}>
-                <Text>
-                  Content that can be anything. Popover just applies some styles
-                  for the content. For more low-level usage, use `Positioner`
-                </Text>
-              </Box>
-            )}
-          >
-            <Button onPress={toggle} isInline title="Top right" />
-          </Popover>
-        )}
-      </Toggle>
-      <Toggle>
-        {({ on, toggle }) => (
-          <Popover
-            isVisible={on}
-            onClose={toggle}
-            position="top"
-            content={() => (
-              <Box width={200} height={200}>
-                <Text>
-                  Content that can be anything. Popover just applies some styles
-                  for the content. For more low-level usage, use `Positioner`
-                </Text>
-              </Box>
-            )}
-          >
-            <Button onPress={toggle} isInline title="Top" />
-          </Popover>
-        )}
-      </Toggle>
-      <Toggle>
-        {({ on, toggle }) => (
-          <Popover
-            isVisible={on}
-            onClose={toggle}
-            position="top-left"
-            content={() => (
-              <Box width={200} height={200}>
-                <Text>
-                  Content that can be anything. Popover just applies some styles
-                  for the content. For more low-level usage, use `Positioner`
-                </Text>
-              </Box>
-            )}
-          >
-            <Button onPress={toggle} isInline title="Top left" />
-          </Popover>
-        )}
-      </Toggle>
-    </Box>
+  <Box height={250}>
+    <Toggle>
+      {({ on, toggle }) => (
+        <Popover
+          isVisible={on}
+          position="bottom"
+          content={
+            <Box width={200} height={200}>
+              <Text>
+                Due to variety and complexity involved in detecting touch
+                outside of the component on the web and in native, managing its
+                open and closed state is in your control
+              </Text>
+              <Button
+                appearance="outline"
+                color="danger"
+                onPress={toggle}
+                title="Close popover"
+              />
+            </Box>
+          }
+        >
+          <Button onPress={toggle} title="Open popover" />
+        </Popover>
+      )}
+    </Toggle>
   </Box>
 </Playground>
 
-### Props
+## Props
 
 <Props of={Popover} />
+
+## Customization
+
+Using `getStyles` prop
+
+```tsx
+PopoverStyles {
+  popoverStyle: ViewStyle;
+  positionerStyle: ViewStyle;
+  containerStyle: ViewStyle;
+}
+
+getStyles={(PopoverProps, Theme) => PopoverStyles}
+```
+
+Markup
+
+```tsx
+<>
+  <View positionerStyle>
+    <View popoverStyle>{content}</View>
+  </View>
+  <View containerStyle>{children}</View>
+</>
+```

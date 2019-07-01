@@ -15,40 +15,77 @@ import {
 } from './Drawer.styles';
 
 type Position = 'bottom' | 'top' | 'right' | 'left';
+
 const AnimatedView = animated(View);
 
 export interface DrawerProps {
-  children: React.ReactNode;
-  /** To show dialog or not */
+  /**
+   * (Web only) When true, upon going back in history/navigation, it will call `onRequestClose`. On Native, it already does that
+   * @default false
+   */
+  useHistory?: boolean;
+
+  /**
+   * (Web only) When true, the body of the document will not scroll when dialog is opened
+   * @default true
+   */
+  shouldLockBodyScroll?: boolean;
+
+  /**
+   * When true, it will display the drawer
+   * @default false
+   */
   isVisible?: boolean;
-  /** Called when clicking on overlay or pressing Esc */
-  onClose?: () => void;
-  /** Amount to offset from the edge of window @default 0 */
+
+  /**
+   * Called when clicking on overlay or pressing Esc
+   */
+  onRequestClose?: () => void;
+
+  /**
+   * Amount to offset from the edge of window.
+   * @default 0
+   */
   offset?: number;
-  /** Amount of % screen to take up. */
+
+  /**
+   * Amount of % screen or px to take up.
+   */
   space?: number | string;
-  /** Which side to draw from @default bottom */
+
+  /**
+   * The position to slide from.
+   * @default bottom
+   */
   position?: Position;
+
+  /** Content of the drawer body */
+  children: React.ReactNode;
+
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<GetDrawerStyles, DeepPartial<DrawerStyles>>;
 }
 
 export const Drawer = (props: DrawerProps) => {
   const {
     children,
-    isVisible,
-    onClose = () => null,
+    isVisible = false,
+    onRequestClose = () => null,
     position = 'bottom',
     offset = 0,
     space,
+    shouldLockBodyScroll = true,
+    useHistory = false,
     getStyles,
   } = props;
 
   const theme = useTheme();
 
-  const { modalContainerStyle, containerStyle } = mergeStyles(
+  const { modalContainerStyle, containerStyle, overlayStyle } = mergeStyles(
     getDrawerStyles,
     getStyles,
-  )(theme);
+    theme.components.getDrawerStyles,
+  )(props, theme);
 
   const animation = useSpring({
     [position]: offset,
@@ -58,7 +95,13 @@ export const Drawer = (props: DrawerProps) => {
   });
 
   return (
-    <Modal visible={isVisible} transparent onRequestClose={onClose}>
+    <Modal
+      visible={isVisible}
+      transparent
+      onRequestClose={onRequestClose}
+      shouldLockBodyScroll={shouldLockBodyScroll}
+      useHistory={useHistory}
+    >
       <View style={modalContainerStyle}>
         {/*
         // @ts-ignore */}
@@ -80,7 +123,10 @@ export const Drawer = (props: DrawerProps) => {
         >
           {children}
         </AnimatedView>
-        <Overlay onPress={onClose} />
+        <Overlay
+          onPress={onRequestClose}
+          getStyles={() => ({ overlayStyle })}
+        />
       </View>
     </Modal>
   );

@@ -4,83 +4,76 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { State } from 'react-powerplug';
-import { View } from 'react-native';
 
-import { Icon } from '../Icon';
-import { Tabs, Tab } from '.';
+import { Icon, State, Tabs, Tab } from '..';
 
 # Tabs
 
-### Usage
+You can use a custom component in place of `Tab` component, though keep in mind you need to manage `isActive` and `onPress` by yourself
 
-<Playground>
-  <Tabs
-    defaultActiveTabIndex={1}
-    onSetActiveTabIndex={index => console.log('Clicked', index)}
-    activeTabIndex={undefined}
-    onPress={undefined}
-    distribution="fit" // or 'scrollable'
-    getStyles={(props, theme) => ({
-      containerStyle: {}, // Only applied when distribution="fit"
-      tabContainerStyle: {},
-      buttonStyle: {},
-      textStyle: {},
-      dividerStyle: {},
-    })}
-  >
-    <Tab title="Tab 1" />
-    <Tab title="Tab 2" />
-    <Tab title="Tab 3" />
-  </Tabs>
-</Playground>
-
-### Controlled
+## Usage
 
 <Playground>
   <State initial={{ activeTabIndex: 0 }}>
     {({ state, setState }) => (
       <Tabs
-        distribution="scrollable"
         activeTabIndex={state.activeTabIndex}
-        onPress={index => setState({ activeTabIndex: index })}
+        onTabPress={index => setState({ activeTabIndex: index })}
       >
-        <Tab
-          icon={
-            <Icon
-              name="home"
-              size={24}
-              color={state.activeTabIndex === 0 ? '#1b877a' : '#7e7e7e'}
-            />
-          }
-        />
-        <Tab title="Tab 2" />
-        <Tab isDisabled title="Tab 3" />
+        {new Array(4).fill(0).map((v, i) => (
+          <Tab key={i} title={`Tab ${i + 1}`} />
+        ))}
       </Tabs>
     )}
   </State>
 </Playground>
 
-### Scrollable
-
-<Playground>
-  <Tabs distribution="scrollable">
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-    <Tab title="Unnamed Tab" />
-  </Tabs>
-</Playground>
-
-### Props
+## Tabs Props
 
 <Props of={Tabs} />
+
+## Tabs Customization
+
+Using `getStyles` prop
+
+```tsx
+TabsStyles {
+  containerStyle: ViewStyle;
+}
+
+getStyles={(TabsProps, Theme) => TabsStyles}
+```
+
+Markup
+
+```tsx
+<View style={containerStyle}>{tabs}</View>
+```
+
+## Tab Props
+
+Extends `ButtonProps`
+
+<Props of={Tab} />
+
+## Tab Customization
+
+Using `getStyles` prop
+
+```tsx
+TabStyles {
+  containerStyle: ViewStyle;
+  touchableStyle: ViewStyle;
+  textStyle: TextStyle;
+}
+
+getStyles={(TabProps, Theme) => TabStyles}
+```
+
+Markup
+
+```tsx
+<View style={containerStyle}>
+  <Button touchableStyle textStyle>
+</View>
+```

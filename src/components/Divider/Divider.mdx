@@ -4,26 +4,37 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { Divider } from './Divider';
-import { Box } from '../Box';
+
+import { Box, Divider } from '..';
 
 # Divider
 
-### Usage
+## Usage
 
 <Playground>
   <Box paddingVertical={40}>
-    <Divider
-      size={3}
-      color="#67c6bb"
-      position="horizontal"
-      getStyles={(props, theme) => ({
-        dividerStyle: {},
-      })}
-    />
+    <Divider />
   </Box>
 </Playground>
 
-### Props
+## Props
 
 <Props of={Divider} />
+
+## Customization
+
+Using `getStyles` prop
+
+```
+DividerStyles {
+  dividerStyle: TextStyle;
+}
+
+getStyles={(DividerProps, Theme) => DividerStyles}
+```
+
+Markup
+
+```tsx
+<View dividerStyle />
+```

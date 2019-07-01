@@ -6,29 +6,29 @@ import {
 } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
-import { useTheme } from '../../theme';
+import { ControlSize, useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Text } from '../Typography';
 import {
   GetPickerButtonStyles,
   getPickerButtonStyles,
-  PickerButtonSize,
+  PickerButtonStyles,
 } from './PickerButton.styles';
 import { PickerButtonWrapper } from './PickerButtonWrapper';
 
-export type GetPickerButtonStylesProp = ReplaceReturnType<
+export type PickerButtonGetStylesProp = ReplaceReturnType<
   GetPickerButtonStyles,
   DeepPartial<PickerButtonStyles>
 >;
 
-export interface PickerButtonStyles extends AccessibilityProps {
+export interface PickerButtonProps extends AccessibilityProps {
   title?: string | null;
   onPress?: (event: GestureResponderEvent) => void;
-  size?: PickerButtonSize;
-  getStyles?: GetPickerButtonStylesProp;
+  size?: ControlSize;
+  getStyles?: PickerButtonGetStylesProp;
 }
 
-export const PickerButton = (props: PickerButtonStyles) => {
+export const PickerButton = (props: PickerButtonProps) => {
   const {
     getStyles,
     onPress,
@@ -41,10 +41,11 @@ export const PickerButton = (props: PickerButtonStyles) => {
   const { pickerStyle, itemStyle } = mergeStyles(
     getPickerButtonStyles,
     getStyles,
+    theme.components.getPickerButtonStyles,
   )({ size }, theme);
 
   return (
-    <PickerButtonWrapper getStyles={getStyles}>
+    <PickerButtonWrapper>
       <TouchableOpacity
         style={[{ justifyContent: 'center' }, pickerStyle]}
         onPress={onPress}

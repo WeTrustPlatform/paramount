@@ -4,11 +4,14 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { State } from 'react-powerplug';
-import { NativePicker } from './NativePicker';
-import { NativePickerItem } from './NativePickerItem';
+
+import { NativePicker, NativePickerItem, State } from '..';
 
 # NativePicker
+
+## Usage
+
+Composes React Native's `Picker`
 
 <Playground>
   <State initial={{ value: 'js' }}>
@@ -17,10 +20,6 @@ import { NativePickerItem } from './NativePickerItem';
         selectedValue={state.value}
         onValueChange={(itemValue, itemIndex) => setState({ value: itemValue })}
         size="large"
-        getStyles={(props, theme) => ({
-          pickerStyle: {},
-          itemStyle: {},
-        })}
       >
         <NativePickerItem label="C" value="c" />
         <NativePickerItem label="C#" value="c#" />
@@ -45,3 +44,39 @@ import { NativePickerItem } from './NativePickerItem';
     )}
   </State>
 </Playground>
+
+## NativePickerItem Props
+
+Extends native `Picker.Item`
+
+<Props of={NativePickerItem} />
+
+## NativePicker Props
+
+Extends native `Picker`
+
+<Props of={NativePicker} />
+
+## Customization
+
+Using `getStyles` prop
+
+```
+NativePickerStyles {
+  containerStyle: ViewStyle;
+  rightContainerStyle: ViewStyle;
+  pickerStyle: ViewStyle;
+  itemStyle: ViewStyle;
+}
+
+getStyles={(NativePickerProps, Theme) => NativePickerStyles}
+```
+
+Markup
+
+```tsx
+<View style={containerStyle}>
+  <Picker itemStyle pickerStyle />
+  <View style={rightContainerStyle}>{icon}</View>
+</View>
+```

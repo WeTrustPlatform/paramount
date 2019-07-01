@@ -15,23 +15,37 @@ import {
 const AnimatedView = animated(View);
 
 export interface ProgressBarProps {
+  /**
+   * Percentage of the progress bar. From 0 to 1
+   * @default 0
+   */
   percent?: number;
+
+  /**
+   * The size of the progress bar.
+   * @default "medium"
+   */
   size?: ControlSize;
+
+  /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<
     GetProgressBarStyles,
     DeepPartial<ProgressBarStyles>
   >;
+
+  /** Used to locate this view in end-to-end tests. */
   testID?: string;
 }
 
 export const ProgressBar = (props: ProgressBarProps) => {
-  const { percent = 0, size = 'medium', getStyles, testID } = props;
+  const { percent = 0, getStyles, testID } = props;
   const theme = useTheme();
 
   const { containerStyle, progressStyle } = mergeStyles(
     getProgressBarStyles,
     getStyles,
-  )({ size }, theme);
+    theme.components.getProgressBarStyles,
+  )(props, theme);
 
   const boundPercent = Math.max(Math.min(percent, 100), 0);
   const { width } = useSpring({

@@ -1,19 +1,30 @@
 import * as React from 'react';
 import { Picker as RNPicker, PickerProps as RNPickerProps } from 'react-native';
 
-import { useTheme } from '../../theme';
+import { ControlSize, useTheme } from '../../theme';
 import { mergeStyles } from '../../utils/mergeStyles';
-import { GetPickerButtonStylesProp } from './PickerButton';
-import { getPickerButtonStyles, PickerButtonSize } from './PickerButton.styles';
+import { NativePickerItemProps } from './NativePickerItem';
+import { PickerButtonGetStylesProp } from './PickerButton';
+import { getPickerButtonStyles } from './PickerButton.styles';
 import { PickerButtonWrapper } from './PickerButtonWrapper';
 
 export interface NativePickerProps extends RNPickerProps {
-  size?: PickerButtonSize;
-  innerRef?: React.Ref<RNPicker>;
   /**
-   * Inline styles for components
+   * The size of the picker.
+   * @default "medium"
    */
-  getStyles?: GetPickerButtonStylesProp;
+  size?: ControlSize;
+  /**
+   * List of NativePickerItem items.
+   */
+  children: Array<React.ReactElement<NativePickerItemProps>>;
+
+  /**
+   * Callback to get element styles.
+   */
+  getStyles?: PickerButtonGetStylesProp;
+
+  innerRef?: React.Ref<RNPicker>;
 }
 
 const NativePickerBase = (props: NativePickerProps) => {
@@ -23,10 +34,10 @@ const NativePickerBase = (props: NativePickerProps) => {
   const { pickerStyle, itemStyle } = mergeStyles(
     getPickerButtonStyles,
     getStyles,
-  )({ size }, theme);
+  )(props, theme);
 
   return (
-    <PickerButtonWrapper>
+    <PickerButtonWrapper getStyles={getStyles}>
       <RNPicker
         ref={innerRef}
         itemStyle={itemStyle}
@@ -37,7 +48,7 @@ const NativePickerBase = (props: NativePickerProps) => {
   );
 };
 
-export const NativePicker = React.forwardRef<RNPicker, RNPickerProps>(
+export const NativePicker = React.forwardRef<RNPicker, NativePickerProps>(
   (props, ref) => {
     return <NativePickerBase {...props} innerRef={ref} />;
   },

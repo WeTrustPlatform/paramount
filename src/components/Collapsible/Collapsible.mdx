@@ -3,36 +3,23 @@ name: Collapsible
 menu: Components
 ---
 
-import { Toggle } from 'react-powerplug';
 import { Playground, Props } from 'docz';
-import { Collapsible } from '.';
-import { Box } from '../Box';
-import { Text } from '../Typography';
+import { Box, Collapsible, Toggle } from '..';
 
 # Collapsible
 
-### Usage
+Component to reveal and hide content
+
+## Usage
 
 <Playground>
   <Toggle initial={false}>
     {({ on, toggle }) => (
       <Collapsible
-        isAnimated={true}
-        // The header will move to the end of the content when revealing content
-        shouldMoveWithEndOfContent={false}
-        initialIsOpen={false}
+        title={on ? 'Close collapsible' : 'Open collapsible'}
         isOpen={on}
         onOpen={toggle}
         onClose={toggle}
-        getStyles={() => ({
-          touchableStyle: {},
-          outerWrapperStyle: {},
-          contentWrapperStyle: {},
-          textStyle: {},
-          iconWrapperStyle: {},
-        })}
-        title="Stays at top of content"
-        header={null}
       >
         <Box
           marginVertical={16}
@@ -40,39 +27,42 @@ import { Text } from '../Typography';
           alignItems="center"
           height={300}
           backgroundColor="#67c6bb"
-        >
-          <Text color="white">Content of the Collapsible</Text>
-        </Box>
+        />
       </Collapsible>
     )}
   </Toggle>
-
-  <Box paddingTop={24}>
-    <Toggle initial={false}>
-      {({ on, toggle }) => (
-        <Collapsible
-          isAnimated={true}
-          shouldMoveWithEndOfContent
-          isOpen={on}
-          onOpen={toggle}
-          onClose={toggle}
-          title="Moves with end of content"
-        >
-          <Box
-            marginVertical={16}
-            justifyContent="center"
-            alignItems="center"
-            height={300}
-            backgroundColor="#67c6bb"
-          >
-            <Text color="white">Content of the Collapsible</Text>
-          </Box>
-        </Collapsible>
-      )}
-    </Toggle>
-  </Box>
 </Playground>
 
-### Props
+## Props
 
 <Props of={Collapsible} />
+
+## Customization
+
+Using `getStyles` prop
+
+```
+CollapsibleStyles {
+  touchableStyle: ViewStyle;
+  outerWrapperStyle: ViewStyle;
+  contentWrapperStyle: ViewStyle;
+  textStyle: ViewStyle;
+  iconWrapperStyle: ViewStyle;
+}
+
+getStyles={(CollapsibleProps, Theme) => CollapsibleStyles}
+```
+
+Markup
+
+```tsx
+<>
+  <TouchableOpacity touchableStyle>
+    <View outerWrapperStyle>
+      <Text textStyle>{title}</Text>
+      <View iconWrapperStyle>{icon}</View>
+    </View>
+  </TouchableOpacity>
+  <View contentWrapperStyle>{children}</View>
+</>
+```

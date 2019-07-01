@@ -1,7 +1,7 @@
-import initDoczPluginSnapshots from 'docz-plugin-snapshots';
+import { convertDoczToSnapshots } from './convertDoczToSnapshots';
 
 jest.mock('../src/components/Modal/Modal');
 jest.mock('../src/components/Modal/HistoryModal');
 jest.mock('../src/components/Modal/ModalBase');
 
-initDoczPluginSnapshots('../src');
+convertDoczToSnapshots('../src');

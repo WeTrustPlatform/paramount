@@ -1,45 +1,69 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
+import { DeepPartial, Omit } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
 import { Button, ButtonProps } from '../Button';
-import { ButtonStyles, GetButtonStyles } from '../Button/Button.styles';
-import { Divider } from '../Divider';
-import { getTabStyles, TabStyles } from './Tab.styles';
+import { GetTabStyles, getTabStyles, TabStyles } from './Tab.styles';
 
-export interface TabProps extends ButtonProps {
+export interface TabProps
+  extends Omit<Omit<ButtonProps, 'onPress'>, 'getStyles'> {
+  /**
+   * Index of the tab.
+   */
+  index?: number;
+
+  /**
+   * Called when tab is pressed.
+   */
+  onPress?: (index?: number) => void;
+
+  /**
+   * When true, the tab would be highlighted as active.
+   * @default false
+   */
   isActive?: boolean;
-  getStyles?: ReplaceReturnType<
-    GetButtonStyles,
-    DeepPartial<ButtonStyles & TabStyles>
-  >;
+
+  /**
+   * When true, the tab will fill empty spaces
+   * @default true
+   */
+  shouldStretch?: boolean;
+
+  /**
+   * Callback to get element styles.
+   */
+  getStyles?: ReplaceReturnType<GetTabStyles, DeepPartial<TabStyles>>;
 }
 
 export const Tab = (props: TabProps) => {
-  const { isActive = false, getStyles, ...buttonProps } = props;
+  const {
+    isActive = false,
+    getStyles,
+    index,
+    onPress,
+    shouldStretch = true,
+    ...buttonProps
+  } = props;
   const theme = useTheme();
-  const { containerStyle, dividerStyle, buttonStyle, textStyle } = mergeStyles(
+  const { containerStyle, touchableStyle, textStyle } = mergeStyles(
     getTabStyles,
     getStyles,
-  )(theme);
+    theme.components.getTabStyles,
+  )(props, theme);
 
   return (
     <View style={containerStyle}>
       <Button
         color={isActive ? 'primary' : 'default'}
-        appearance="minimal"
-        getStyles={() => ({ buttonStyle, textStyle })}
+        getStyles={() => ({ touchableStyle, textStyle })}
+        onPress={() => {
+          if ((index === 0 || index) && onPress) onPress(index);
+          else if (onPress) onPress();
+        }}
         {...buttonProps}
       />
-      {isActive && (
-        <Divider
-          size={4}
-          color={isActive ? 'primary' : 'default'}
-          getStyles={() => ({ dividerStyle })}
-        />
-      )}
     </View>
   );
 };

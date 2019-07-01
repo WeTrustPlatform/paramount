@@ -1,11 +1,7 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
-import { Theme } from '../../theme/ThemeInterface';
-import { FormFieldLabelPosition } from './FormField';
-
-export interface FormFieldStylesProps {
-  labelPosition?: FormFieldLabelPosition;
-}
+import { Theme } from '../../theme/Theme';
+import { FormFieldProps } from './FormField';
 
 export interface FormFieldStyles {
   containerStyles: ViewStyle;
@@ -18,7 +14,7 @@ export interface FormFieldStyles {
 }
 
 export type GetFormFieldStyles = (
-  FormFieldStylesProps: FormFieldStylesProps,
+  props: FormFieldProps,
   theme: Theme,
 ) => FormFieldStyles;
 
