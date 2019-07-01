@@ -19,6 +19,7 @@ export * from './ListItem';
 export * from './LoadingIndicators';
 export * from './Modal';
 export * from './Overlay';
+export * from './ScrollPicker';
 export * from './Pickers';
 export * from './Popover';
 export * from './Positioner';

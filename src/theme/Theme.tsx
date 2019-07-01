@@ -25,6 +25,7 @@ import { GetPopoverStyles } from '../components/Popover/Popover.styles';
 import { GetPositionerStyles } from '../components/Positioner/Positioner.styles';
 import { GetProgressBarStyles } from '../components/ProgressBar/ProgressBar.styles';
 import { GetRatingStyles } from '../components/Rating/Rating.styles';
+import { GetScrollPickerStyles } from '../components/ScrollPicker/ScrollPicker.styles';
 import { GetSliderStyles } from '../components/Slider/Slider.styles';
 import { GetSwitchStyles } from '../components/Switch/Switch.styles';
 import { GetTabStyles } from '../components/Tabs/Tab.styles';
@@ -282,6 +283,7 @@ export interface Theme {
     getPositionerStyles?: GetPositionerStyles;
     getProgressBarStyles?: GetProgressBarStyles;
     getRatingStyles?: GetRatingStyles;
+    getScrollPickerStyles?: GetScrollPickerStyles;
     getSliderStyles?: GetSliderStyles;
     getSwitchStyles?: GetSwitchStyles;
     getTabStyles?: GetTabStyles;

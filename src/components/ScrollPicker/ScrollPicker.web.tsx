@@ -1,8 +1,11 @@
 import * as React from 'react';
+import { View } from 'react-native';
 
 import { useTheme } from '../../theme';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { ScrollPickerProps } from './ScrollPicker';
-import { ITEM_HEIGHT, SCROLL_PICKER_HEIGHT } from './ScrollPicker.constants';
+import { ITEM_HEIGHT } from './ScrollPicker.constants';
+import { getScrollPickerStyles } from './ScrollPicker.styles';
 import {
   getOptionFromOptions,
   makeOptionsWithClones,
@@ -15,7 +18,7 @@ import { ScrollPickerItem } from './ScrollPickerItem';
  * Assumption: Height of the picker is 200
  * Assumption: Height of an item is 40
  *
- *                LIST_HEIGHT:START (0px)
+ *      F         LIST_HEIGHT:START (0px)
  *      G         CLONES
  * ====TOP======
  *      A         ORIGINALS
@@ -29,8 +32,6 @@ import { ScrollPickerItem } from './ScrollPickerItem';
  *      A         CLONES
  *      B
  *      C
- *      D
- *      E
  *
  */
 
@@ -40,6 +41,7 @@ export const ScrollPicker = (props: ScrollPickerProps) => {
     onValueChange = () => {
       return;
     },
+    getStyles,
   } = props;
   const optionsWithClones = makeOptionsWithClones(options);
   const theme = useTheme();
@@ -51,24 +53,22 @@ export const ScrollPicker = (props: ScrollPickerProps) => {
     options,
   ]);
 
+  const {
+    bottomOverlayStyle,
+    containerStyle,
+    listContainerStyle,
+    upperOverlayStyle,
+  } = mergeStyles(
+    getScrollPickerStyles,
+    getStyles,
+    theme.components.getScrollPickerStyles,
+  )(props, theme);
+
   React.useEffect(() => {
     if (listRef.current) {
-      // Scroll to first item
       listRef.current.scrollTo({ top: ITEM_HEIGHT });
     }
   }, [listRef]);
-
-  const styles = {
-    listContainer: {
-      height: SCROLL_PICKER_HEIGHT,
-      overflowY: 'scroll' as const,
-      scrollSnapType: 'y mandatory',
-      width: '100%',
-    },
-    listWrapper: {
-      margin: 0,
-    },
-  };
 
   const handleScrollLoop = React.useCallback(
     (event: React.UIEvent<HTMLDivElement>) => {
@@ -76,11 +76,9 @@ export const ScrollPicker = (props: ScrollPickerProps) => {
 
       const scrollPosition = event.currentTarget.scrollTop;
 
-      if (scrollPosition >= listHeight /* Has scrolled past bottom */) {
-        // Scroll to top
+      if (scrollPosition > listHeight) {
         listRef.current.scrollTo({ top: ITEM_HEIGHT });
-      } else if (scrollPosition < ITEM_HEIGHT /* Has scrolled past top */) {
-        // Scroll to bottom
+      } else if (scrollPosition < ITEM_HEIGHT) {
         listRef.current.scrollTo({ top: listHeight });
       }
 
@@ -92,39 +90,19 @@ export const ScrollPicker = (props: ScrollPickerProps) => {
   );
 
   return (
-    <div
-      style={{
-        height: SCROLL_PICKER_HEIGHT,
-        overflow: 'hidden',
-        position: 'relative',
-      }}
-    >
+    <View style={containerStyle}>
       <div
         ref={listRef}
         onScroll={handleScrollLoop}
-        style={styles.listContainer}
+        style={listContainerStyle}
+        data-testid="container"
       >
         {optionsWithClones.map(option => (
           <ScrollPickerItem key={option.value} option={option} />
         ))}
       </div>
-      <div
-        data-testid="BORDER"
-        style={{
-          borderBottomWidth: 2,
-          borderColor: theme.colors.border.primary,
-          borderLeftWidth: 0,
-          borderRightWidth: 0,
-          borderStyle: 'solid',
-          borderTopWidth: 2,
-          boxShadow: `0px 0px 100px 100px rgba(255, 255, 255, 0.5)`,
-          height: ITEM_HEIGHT,
-          pointerEvents: 'none',
-          position: 'absolute',
-          top: ITEM_HEIGHT,
-          width: '100%',
-        }}
-      />
-    </div>
+      <View pointerEvents="none" style={upperOverlayStyle} />
+      <View pointerEvents="none" style={bottomOverlayStyle} />
+    </View>
   );
 };

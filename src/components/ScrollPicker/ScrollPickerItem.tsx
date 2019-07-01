@@ -24,6 +24,7 @@ const ScrollPickerItemBase = (props: ScrollPickerItemProps) => {
         height: ITEM_HEIGHT,
         justifyContent: 'center',
         paddingHorizontal: 4,
+        // @ts-ignore
         scrollSnapAlign: 'start',
       }}
     >

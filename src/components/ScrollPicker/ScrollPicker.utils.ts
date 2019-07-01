@@ -7,10 +7,11 @@ export const makeOptionsWithClones = (options: ScrollPickerOption[]) => {
   const firstClones = options
     .slice(0, ITEM_COUNT)
     .map(o => ({ ...o, value: cloneValue(o.value) }));
-  const lastOption = options[options.length - 1];
-  const lastClone = { ...lastOption, value: cloneValue(lastOption.value) };
+  const lastClones = options
+    .slice(options.length - 2)
+    .map(o => ({ ...o, value: cloneValue(o.value) }));
 
-  return [lastClone, ...options, ...firstClones];
+  return [...lastClones, ...options, ...firstClones];
 };
 
 export const getOptionFromOptions = (options: ScrollPickerOption[]) => (
