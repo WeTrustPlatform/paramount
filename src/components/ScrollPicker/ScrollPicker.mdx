@@ -1,15 +1,15 @@
 ---
-name: ScrollPicker (Experimental)
+name: ScrollPicker
 menu: Components
 ---
 
 import { Playground, Props } from 'docz';
 import { Box, State, ScrollPicker, Icon, TextInput } from '..';
 
-# ScrollPicker
+# ScrollPicker (Experimental)
 
 <Playground>
-  <State initial={{ value: 'js' }}>
+  <State initial={{ month: 'March', day: '15', year: '2019' }}>
     {({ state, setState }) => (
       <Box flexDirection="row">
         <ScrollPicker
@@ -27,16 +27,19 @@ import { Box, State, ScrollPicker, Icon, TextInput } from '..';
             { label: 'November', value: 'November' },
             { label: 'December', value: 'December' },
           ]}
+          onValueChange={value => console.log(value)}
         />
         <ScrollPicker
           options={new Array(31)
             .fill(0)
-            .map((v, i) => ({ label: `${i + 1}`, value: `${i}` }))}
+            .map((v, i) => ({ label: `${i + 1}`, value: `${i + 1}` }))}
+          onValueChange={value => console.log(value)}
         />
         <ScrollPicker
           options={new Array(50)
             .fill(0)
-            .map((v, i) => ({ label: `${2000 + i}`, value: `${i}` }))}
+            .map((v, i) => ({ label: `${2000 + i}`, value: `${2000 + i}` }))}
+          onValueChange={value => console.log(value)}
         />
       </Box>
     )}

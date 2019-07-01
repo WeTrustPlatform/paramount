@@ -22,6 +22,9 @@ import {
 import { ScrollPickerItem, ScrollPickerOption } from './ScrollPickerItem';
 
 export interface ScrollPickerProps {
+  /**
+   * List of options to show.
+   */
   options: ScrollPickerOption[];
 
   /**

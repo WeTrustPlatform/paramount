@@ -17,7 +17,7 @@ export const makeOptionsWithClones = (options: ScrollPickerOption[]) => {
 export const getOptionFromOptions = (options: ScrollPickerOption[]) => (
   scrollPosition: number,
 ) => {
-  const index = Math.round(scrollPosition / ITEM_HEIGHT);
+  const index = Math.round(scrollPosition / ITEM_HEIGHT) - 1;
 
   const finalIndex = Math.abs(
     index >= options.length ? options.length - index : index,
