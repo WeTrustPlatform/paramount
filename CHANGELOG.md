@@ -1,3 +1,10 @@
+## [1.74.1](https://github.com/WeTrustPlatform/paramount/compare/v1.74.0...v1.74.1) (2019-07-01)
+
+
+### Bug Fixes
+
+* list item style spacing ([3a2109d](https://github.com/WeTrustPlatform/paramount/commit/3a2109d))
+
 # [1.74.0](https://github.com/WeTrustPlatform/paramount/compare/v1.73.0...v1.74.0) (2019-06-28)
 
 
