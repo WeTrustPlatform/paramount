@@ -40,9 +40,7 @@ export const getListItemStyles: GetListItemStyles = ({ isDisabled }, theme) => {
     titleStyle: {},
     touchableStyle: {
       backgroundColor: theme.colors.background.content,
-      borderBottomWidth: 1,
-      borderColor: theme.colors.border.default,
-      height: theme.controlHeights.large,
+      height: 72,
       justifyContent: 'center',
       ...(isDisabled
         ? { backgroundColor: theme.colors.background.greyDark }
