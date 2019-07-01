@@ -1,5 +1,5 @@
 ---
-name: ScrollPicker
+name: ScrollPicker (Experimental)
 menu: Components
 ---
 
@@ -42,3 +42,34 @@ import { Box, State, ScrollPicker, Icon, TextInput } from '..';
     )}
   </State>
 </Playground>
+
+## Props
+
+<Props of={ScrollPicker} />
+
+## Customization
+
+Using `getStyles` prop
+
+```tsx
+ScrollPickerStyles {
+  containerStyle: ViewStyle;
+  listContainerStyle: ViewStyle;
+  upperOverlayStyle: ViewStyle;
+  bottomOverlayStyle: ViewStyle;
+}
+
+getStyles={(ScrollPickerProps, Theme) => ScrollPickerStyles}
+```
+
+Markup
+
+```tsx
+<View containerStyle>
+  <FlatList listContainerStyle>
+    <ScrollPickerItem key={option.value} option={option} />
+  </FlatList>
+  <View upperOverlayStyle />
+  <View bottomOverlayStyle />
+</View>
+```

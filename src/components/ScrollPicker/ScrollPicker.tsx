@@ -62,7 +62,12 @@ export const ScrollPicker = (props: ScrollPickerProps) => {
     options,
   ]);
 
-  const { bottomOverlayStyle, containerStyle, upperOverlayStyle } = mergeStyles(
+  const {
+    bottomOverlayStyle,
+    containerStyle,
+    listContainerStyle,
+    upperOverlayStyle,
+  } = mergeStyles(
     getScrollPickerStyles,
     getStyles,
     theme.components.getScrollPickerStyles,
@@ -110,6 +115,7 @@ export const ScrollPicker = (props: ScrollPickerProps) => {
       <FlatList
         ref={listRef}
         data={optionsWithClones}
+        style={listContainerStyle}
         getItemLayout={(item, index) => ({
           index,
           length: ITEM_HEIGHT,
