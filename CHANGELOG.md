@@ -1,3 +1,10 @@
+## [1.74.2](https://github.com/WeTrustPlatform/paramount/compare/v1.74.1...v1.74.2) (2019-07-01)
+
+
+### Bug Fixes
+
+* update lock ([00c5f8d](https://github.com/WeTrustPlatform/paramount/commit/00c5f8d))
+
 ## [1.74.1](https://github.com/WeTrustPlatform/paramount/compare/v1.74.0...v1.74.1) (2019-07-01)
 
 
