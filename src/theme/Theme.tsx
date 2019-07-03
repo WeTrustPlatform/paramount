@@ -25,7 +25,6 @@ import { GetPopoverStyles } from '../components/Popover/Popover.styles';
 import { GetPositionerStyles } from '../components/Positioner/Positioner.styles';
 import { GetProgressBarStyles } from '../components/ProgressBar/ProgressBar.styles';
 import { GetRatingStyles } from '../components/Rating/Rating.styles';
-import { GetScrollPickerStyles } from '../components/ScrollPicker/ScrollPicker.styles';
 import { GetSliderStyles } from '../components/Slider/Slider.styles';
 import { GetSwitchStyles } from '../components/Switch/Switch.styles';
 import { GetTabStyles } from '../components/Tabs/Tab.styles';
@@ -35,6 +34,7 @@ import { GetHeadingStyles } from '../components/Typography/Heading.styles';
 import { GetLabelStyles } from '../components/Typography/Label.styles';
 import { GetParagraphStyles } from '../components/Typography/Paragraph.styles';
 import { GetTextStyles } from '../components/Typography/Text.styles';
+import { GetWheelPickerStyles } from '../components/WheelPicker/WheelPicker.styles';
 import { defaultTheme } from './defaultTheme';
 
 export interface TextSizes {
@@ -283,7 +283,7 @@ export interface Theme {
     getPositionerStyles?: GetPositionerStyles;
     getProgressBarStyles?: GetProgressBarStyles;
     getRatingStyles?: GetRatingStyles;
-    getScrollPickerStyles?: GetScrollPickerStyles;
+    getWheelPickerStyles?: GetWheelPickerStyles;
     getSliderStyles?: GetSliderStyles;
     getSwitchStyles?: GetSwitchStyles;
     getTabStyles?: GetTabStyles;

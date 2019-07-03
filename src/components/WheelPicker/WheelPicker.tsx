@@ -9,23 +9,20 @@ import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { ITEM_HEIGHT } from './ScrollPicker.constants';
+import { ITEM_HEIGHT } from './WheelPicker.constants';
 import {
-  GetScrollPickerStyles,
-  getScrollPickerStyles,
-  ScrollPickerStyles,
-} from './ScrollPicker.styles';
-import {
-  getOptionFromOptions,
-  makeOptionsWithClones,
-} from './ScrollPicker.utils';
-import { ScrollPickerItem, ScrollPickerOption } from './ScrollPickerItem';
+  GetWheelPickerStyles,
+  getWheelPickerStyles,
+  WheelPickerStyles,
+} from './WheelPicker.styles';
+import { getOptionFromOptions, makePaddedOptions } from './WheelPicker.utils';
+import { WheelPickerItem, WheelPickerOption } from './WheelPickerItem';
 
-export interface ScrollPickerProps {
+export interface WheelPickerProps {
   /**
    * List of options to show.
    */
-  options: ScrollPickerOption[];
+  options: WheelPickerOption[];
 
   /**
    * Initial value of the picker.
@@ -33,7 +30,7 @@ export interface ScrollPickerProps {
    * *This is not a controlled component*; you don't need to update the
    * value during dragging.
    */
-  initialValue?: string;
+  value?: string;
 
   /**
    * Callback continuously called while the user is dragging the slider.
@@ -44,23 +41,23 @@ export interface ScrollPickerProps {
    * Callback to get element styles.
    */
   getStyles?: ReplaceReturnType<
-    GetScrollPickerStyles,
-    DeepPartial<ScrollPickerStyles>
+    GetWheelPickerStyles,
+    DeepPartial<WheelPickerStyles>
   >;
 }
 
-export const ScrollPicker = (props: ScrollPickerProps) => {
+export const WheelPicker = (props: WheelPickerProps) => {
   const {
     options,
     onValueChange = () => {
       return;
     },
+    value,
     getStyles,
   } = props;
-  const optionsWithClones = makeOptionsWithClones(options);
-  const listRef = React.useRef<FlatList<ScrollPickerOption>>(null);
+  const optionsWithClones = makePaddedOptions(options);
+  const listRef = React.useRef<FlatList<WheelPickerOption>>(null);
   const theme = useTheme();
-  const listHeight = options.length * ITEM_HEIGHT + ITEM_HEIGHT;
   const getOption = React.useMemo(() => getOptionFromOptions(options), [
     options,
   ]);
@@ -71,28 +68,20 @@ export const ScrollPicker = (props: ScrollPickerProps) => {
     listContainerStyle,
     upperOverlayStyle,
   } = mergeStyles(
-    getScrollPickerStyles,
+    getWheelPickerStyles,
     getStyles,
-    theme.components.getScrollPickerStyles,
+    theme.components.getWheelPickerStyles,
   )(props, theme);
 
-  const handleScrollLoop = React.useCallback(
-    (event: NativeScrollEvent) => {
-      if (!listRef.current) return;
+  React.useEffect(() => {
+    if (!listRef.current) return;
 
-      const scrollPosition = event.contentOffset.y;
+    const index = optionsWithClones.findIndex(o => o.value === value);
 
-      if (scrollPosition > listHeight) {
-        listRef.current.scrollToOffset({
-          animated: false,
-          offset: ITEM_HEIGHT,
-        });
-      } else if (scrollPosition < ITEM_HEIGHT) {
-        listRef.current.scrollToOffset({ offset: listHeight, animated: false });
-      }
-    },
-    [listHeight],
-  );
+    listRef.current.scrollToOffset({
+      offset: index * ITEM_HEIGHT - ITEM_HEIGHT,
+    });
+  }, [listRef]);
 
   const handleScrollEndDrag = React.useCallback(
     (event: NativeSyntheticEvent<NativeScrollEvent>) => {
@@ -126,9 +115,7 @@ export const ScrollPicker = (props: ScrollPickerProps) => {
         })}
         initialScrollIndex={1}
         keyExtractor={item => item.value}
-        renderItem={({ item }) => <ScrollPickerItem option={item} />}
-        scrollEventThrottle={16}
-        onScroll={({ nativeEvent }) => handleScrollLoop(nativeEvent)}
+        renderItem={({ item }) => <WheelPickerItem option={item} />}
         showsHorizontalScrollIndicator={false}
         onScrollEndDrag={handleScrollEndDrag}
       />

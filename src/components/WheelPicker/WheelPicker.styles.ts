@@ -1,22 +1,22 @@
 import { Platform, ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
-import { ScrollPickerProps } from './ScrollPicker';
-import { ITEM_HEIGHT, SCROLL_PICKER_HEIGHT } from './ScrollPicker.constants';
+import { WheelPickerProps } from './WheelPicker';
+import { ITEM_HEIGHT, SCROLL_PICKER_HEIGHT } from './WheelPicker.constants';
 
-export interface ScrollPickerStyles {
+export interface WheelPickerStyles {
   containerStyle: ViewStyle;
   listContainerStyle: Omit<ViewStyle, 'transform'>;
   upperOverlayStyle: ViewStyle;
   bottomOverlayStyle: ViewStyle;
 }
 
-export type GetScrollPickerStyles = (
-  props: ScrollPickerProps,
+export type GetWheelPickerStyles = (
+  props: WheelPickerProps,
   theme: Theme,
-) => ScrollPickerStyles;
+) => WheelPickerStyles;
 
-export const getScrollPickerStyles: GetScrollPickerStyles = (props, theme) => {
+export const getWheelPickerStyles: GetWheelPickerStyles = (props, theme) => {
   return {
     bottomOverlayStyle: {
       backgroundColor: 'rgba(255, 255, 255, 0.7)',

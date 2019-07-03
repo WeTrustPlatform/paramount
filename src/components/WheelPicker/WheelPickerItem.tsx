@@ -2,18 +2,18 @@ import * as React from 'react';
 import { View } from 'react-native';
 
 import { Text } from '../Typography';
-import { ITEM_HEIGHT } from './ScrollPicker.constants';
+import { ITEM_HEIGHT } from './WheelPicker.constants';
 
-export interface ScrollPickerOption {
+export interface WheelPickerOption {
   label: string;
   value: string;
 }
 
-export interface ScrollPickerItemProps {
-  option: ScrollPickerOption;
+export interface WheelPickerItemProps {
+  option: WheelPickerOption;
 }
 
-const ScrollPickerItemBase = (props: ScrollPickerItemProps) => {
+const WheelPickerItemBase = (props: WheelPickerItemProps) => {
   const { option } = props;
   const { label } = option;
 
@@ -33,4 +33,4 @@ const ScrollPickerItemBase = (props: ScrollPickerItemProps) => {
   );
 };
 
-export const ScrollPickerItem = React.memo(ScrollPickerItemBase);
+export const WheelPickerItem = React.memo(WheelPickerItemBase);

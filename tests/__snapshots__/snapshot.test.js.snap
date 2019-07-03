@@ -29792,7 +29792,7 @@ exports[`KitchenSink_1 1`] = `
           }
         }
       >
-        ScrollPicker
+        WheelPicker
       </h1>
     </div>
     <div
@@ -40784,13 +40784,13 @@ exports[`RowAndColumn_10 1`] = `
 </pre>
 `;
 
-exports[`ScrollPicker_0 1`] = `
+exports[`WheelPicker_0 1`] = `
 <h1>
-  ScrollPicker
+  WheelPicker
 </h1>
 `;
 
-exports[`ScrollPicker_1 1`] = `
+exports[`WheelPicker_1 1`] = `
 <div>
   <div
     className="css-view-1dbjc4n"
@@ -44702,34 +44702,34 @@ exports[`ScrollPicker_1 1`] = `
 </div>
 `;
 
-exports[`ScrollPicker_2 1`] = `<div />`;
+exports[`WheelPicker_2 1`] = `<div />`;
 
-exports[`ScrollPicker_3 1`] = `
+exports[`WheelPicker_3 1`] = `
 <pre>
   <code
     className="language-tsx"
   >
-    ScrollPickerStyles {
+    WheelPickerStyles {
   containerStyle: ViewStyle;
   listContainerStyle: ViewStyle;
   upperOverlayStyle: ViewStyle;
   bottomOverlayStyle: ViewStyle;
 }
 
-getStyles={(ScrollPickerProps, Theme) =&gt; ScrollPickerStyles}
+getStyles={(WheelPickerProps, Theme) =&gt; WheelPickerStyles}
 
   </code>
 </pre>
 `;
 
-exports[`ScrollPicker_4 1`] = `
+exports[`WheelPicker_4 1`] = `
 <pre>
   <code
     className="language-tsx"
   >
     &lt;View containerStyle&gt;
   &lt;FlatList listContainerStyle&gt;
-    &lt;ScrollPickerItem key={option.value} option={option} /&gt;
+    &lt;WheelPickerItem key={option.value} option={option} /&gt;
   &lt;/FlatList&gt;
   &lt;View upperOverlayStyle /&gt;
   &lt;View bottomOverlayStyle /&gt;

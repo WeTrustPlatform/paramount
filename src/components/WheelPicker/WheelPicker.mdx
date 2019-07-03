@@ -1,18 +1,19 @@
 ---
-name: ScrollPicker
+name: WheelPicker
 menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { Box, State, ScrollPicker, Icon, TextInput } from '..';
+import { Box, State, WheelPicker, Icon, TextInput } from '..';
 
-# ScrollPicker (Experimental)
+# WheelPicker (Experimental)
 
 <Playground>
   <State initial={{ month: 'March', day: '15', year: '2019' }}>
     {({ state, setState }) => (
       <Box flexDirection="row">
-        <ScrollPicker
+        <WheelPicker
+          value="May"
           options={[
             { label: 'January', value: 'January' },
             { label: 'February', value: 'February' },
@@ -29,13 +30,13 @@ import { Box, State, ScrollPicker, Icon, TextInput } from '..';
           ]}
           onValueChange={value => console.log(value)}
         />
-        <ScrollPicker
+        <WheelPicker
           options={new Array(31)
             .fill(0)
             .map((v, i) => ({ label: `${i + 1}`, value: `${i + 1}` }))}
           onValueChange={value => console.log(value)}
         />
-        <ScrollPicker
+        <WheelPicker
           options={new Array(50)
             .fill(0)
             .map((v, i) => ({ label: `${2000 + i}`, value: `${2000 + i}` }))}
@@ -48,21 +49,21 @@ import { Box, State, ScrollPicker, Icon, TextInput } from '..';
 
 ## Props
 
-<Props of={ScrollPicker} />
+<Props of={WheelPicker} />
 
 ## Customization
 
 Using `getStyles` prop
 
 ```tsx
-ScrollPickerStyles {
+WheelPickerStyles {
   containerStyle: ViewStyle;
   listContainerStyle: ViewStyle;
   upperOverlayStyle: ViewStyle;
   bottomOverlayStyle: ViewStyle;
 }
 
-getStyles={(ScrollPickerProps, Theme) => ScrollPickerStyles}
+getStyles={(WheelPickerProps, Theme) => WheelPickerStyles}
 ```
 
 Markup
@@ -70,7 +71,7 @@ Markup
 ```tsx
 <View containerStyle>
   <FlatList listContainerStyle>
-    <ScrollPickerItem key={option.value} option={option} />
+    <WheelPickerItem key={option.value} option={option} />
   </FlatList>
   <View upperOverlayStyle />
   <View bottomOverlayStyle />
