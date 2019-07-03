@@ -18,6 +18,10 @@ import {
 import { getOptionFromOptions, makePaddedOptions } from './WheelPicker.utils';
 import { WheelPickerItem, WheelPickerOption } from './WheelPickerItem';
 
+export interface WheelPicker {
+  selectValue: (value: string) => void;
+}
+
 export interface WheelPickerProps {
   /**
    * List of options to show.
@@ -46,13 +50,16 @@ export interface WheelPickerProps {
   >;
 }
 
-export const WheelPicker = (props: WheelPickerProps) => {
+const WheelPickerBase = (
+  props: WheelPickerProps,
+  ref: React.Ref<WheelPicker>,
+) => {
   const {
     options,
     onValueChange = () => {
       return;
     },
-    value,
+    value: initialValue,
     getStyles,
   } = props;
   const optionsWithClones = makePaddedOptions(options);
@@ -73,14 +80,22 @@ export const WheelPicker = (props: WheelPickerProps) => {
     theme.components.getWheelPickerStyles,
   )(props, theme);
 
+  const scrollToValue = React.useCallback(
+    (value: string, smooth = true) => {
+      if (!listRef.current) return;
+
+      const index = optionsWithClones.findIndex(o => o.value === value);
+
+      listRef.current.scrollToOffset({
+        animated: smooth,
+        offset: index * ITEM_HEIGHT - ITEM_HEIGHT,
+      });
+    },
+    [listRef, options],
+  );
+
   React.useEffect(() => {
-    if (!listRef.current) return;
-
-    const index = optionsWithClones.findIndex(o => o.value === value);
-
-    listRef.current.scrollToOffset({
-      offset: index * ITEM_HEIGHT - ITEM_HEIGHT,
-    });
+    if (initialValue) scrollToValue(initialValue, false);
   }, [listRef]);
 
   const handleScrollEndDrag = React.useCallback(
@@ -100,6 +115,14 @@ export const WheelPicker = (props: WheelPickerProps) => {
       onValueChange(option.value);
     },
     [],
+  );
+
+  React.useImperativeHandle(
+    ref,
+    () => ({
+      selectValue: (value: string) => scrollToValue(value),
+    }),
+    [listRef, options],
   );
 
   return (
@@ -124,3 +147,5 @@ export const WheelPicker = (props: WheelPickerProps) => {
     </View>
   );
 };
+
+export const WheelPicker = React.forwardRef(WheelPickerBase);

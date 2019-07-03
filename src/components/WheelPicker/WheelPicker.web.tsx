@@ -3,15 +3,18 @@ import { View } from 'react-native';
 
 import { useTheme } from '../../theme';
 import { mergeStyles } from '../../utils/mergeStyles';
-import { WheelPickerProps } from './WheelPicker';
+import { WheelPicker as WheelPickerRef, WheelPickerProps } from './WheelPicker';
 import { ITEM_HEIGHT } from './WheelPicker.constants';
 import { getWheelPickerStyles } from './WheelPicker.styles';
 import { getOptionFromOptions, makePaddedOptions } from './WheelPicker.utils';
 import { WheelPickerItem } from './WheelPickerItem';
 
-export const WheelPicker = (props: WheelPickerProps) => {
+const WheelPickerBase = (
+  props: WheelPickerProps,
+  ref: React.Ref<WheelPickerRef>,
+) => {
   const {
-    value,
+    value: initialValue,
     options,
     onValueChange = () => {
       return;
@@ -37,13 +40,23 @@ export const WheelPicker = (props: WheelPickerProps) => {
     theme.components.getWheelPickerStyles,
   )(props, theme);
 
+  const scrollToValue = React.useCallback(
+    (value: string, smooth = true) => {
+      if (!listRef.current) return;
+
+      const index = optionsWithClones.findIndex(o => o.value === value);
+
+      listRef.current.scrollTo({
+        behavior: smooth ? 'smooth' : 'auto',
+        top: index * ITEM_HEIGHT - ITEM_HEIGHT,
+      });
+    },
+    [listRef, options],
+  );
+
   React.useEffect(() => {
-    if (!listRef.current) return;
-
-    const index = optionsWithClones.findIndex(o => o.value === value);
-
-    listRef.current.scrollTo({ top: index * ITEM_HEIGHT - ITEM_HEIGHT });
-  }, [listRef]);
+    if (initialValue) scrollToValue(initialValue, false);
+  }, [options]);
 
   const handleScroll = React.useCallback(
     (event: React.UIEvent<HTMLDivElement>) => {
@@ -53,7 +66,15 @@ export const WheelPicker = (props: WheelPickerProps) => {
 
       onValueChange(selectedOption.value);
     },
-    [],
+    [listRef, options],
+  );
+
+  React.useImperativeHandle(
+    ref,
+    () => ({
+      selectValue: (value: string) => scrollToValue(value),
+    }),
+    [listRef, options],
   );
 
   return (
@@ -68,3 +89,5 @@ export const WheelPicker = (props: WheelPickerProps) => {
     </View>
   );
 };
+
+export const WheelPicker = React.forwardRef(WheelPickerBase);
