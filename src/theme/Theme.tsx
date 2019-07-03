@@ -34,6 +34,7 @@ import { GetHeadingStyles } from '../components/Typography/Heading.styles';
 import { GetLabelStyles } from '../components/Typography/Label.styles';
 import { GetParagraphStyles } from '../components/Typography/Paragraph.styles';
 import { GetTextStyles } from '../components/Typography/Text.styles';
+import { GetWheelPickerStyles } from '../components/WheelPicker/WheelPicker.styles';
 import { defaultTheme } from './defaultTheme';
 
 export interface TextSizes {
@@ -282,6 +283,7 @@ export interface Theme {
     getPositionerStyles?: GetPositionerStyles;
     getProgressBarStyles?: GetProgressBarStyles;
     getRatingStyles?: GetRatingStyles;
+    getWheelPickerStyles?: GetWheelPickerStyles;
     getSliderStyles?: GetSliderStyles;
     getSwitchStyles?: GetSwitchStyles;
     getTabStyles?: GetTabStyles;

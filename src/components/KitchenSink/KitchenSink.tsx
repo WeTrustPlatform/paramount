@@ -49,6 +49,7 @@ import {
   ToastProvider,
   Label,
   Paragraph,
+  WheelPicker,
 } from '..';
 
 export const KitchenSink = () => {
@@ -1111,6 +1112,52 @@ export const KitchenSink = () => {
         <Box flexDirection="column">
           <Text isItalic>Lorem ipsum dolar set amet</Text>
         </Box>
+      </Playground>
+
+      <Box paddingTop={96}>
+        <Heading size="xxxlarge" weight="500">
+          WheelPicker (Experimental)
+        </Heading>
+      </Box>
+
+      <Playground>
+        <State initial={{ month: 'March', day: '15', year: '2019' }}>
+          {({ state, setState }) => (
+            <Box flexDirection="row">
+              <WheelPicker
+                value="May"
+                options={[
+                  { label: 'January', value: 'January' },
+                  { label: 'February', value: 'February' },
+                  { label: 'March', value: 'March' },
+                  { label: 'April', value: 'April' },
+                  { label: 'May', value: 'May' },
+                  { label: 'June', value: 'June' },
+                  { label: 'July', value: 'July' },
+                  { label: 'August', value: 'August' },
+                  { label: 'September', value: 'September' },
+                  { label: 'October', value: 'October' },
+                  { label: 'November', value: 'November' },
+                  { label: 'December', value: 'December' },
+                ]}
+                onValueChange={value => console.log(value)}
+              />
+              <WheelPicker
+                options={new Array(31)
+                  .fill(0)
+                  .map((v, i) => ({ label: `${i + 1}`, value: `${i + 1}` }))}
+                onValueChange={value => console.log(value)}
+              />
+              <WheelPicker
+                options={new Array(50).fill(0).map((v, i) => ({
+                  label: `${2000 + i}`,
+                  value: `${2000 + i}`,
+                }))}
+                onValueChange={value => console.log(value)}
+              />
+            </Box>
+          )}
+        </State>
       </Playground>
     </Box>
   );
