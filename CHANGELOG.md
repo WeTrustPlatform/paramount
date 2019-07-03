@@ -1,3 +1,10 @@
+# [1.75.0](https://github.com/WeTrustPlatform/paramount/compare/v1.74.4...v1.75.0) (2019-07-03)
+
+
+### Features
+
+* add new component WheelPicker ([#230](https://github.com/WeTrustPlatform/paramount/issues/230)) ([0529f80](https://github.com/WeTrustPlatform/paramount/commit/0529f80))
+
 ## [1.74.4](https://github.com/WeTrustPlatform/paramount/compare/v1.74.3...v1.74.4) (2019-07-03)
 
 
