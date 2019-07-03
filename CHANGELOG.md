@@ -1,3 +1,10 @@
+## [1.74.3](https://github.com/WeTrustPlatform/paramount/compare/v1.74.2...v1.74.3) (2019-07-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-native-vector-icons to v6.6.0 ([#262](https://github.com/WeTrustPlatform/paramount/issues/262)) ([b270ed2](https://github.com/WeTrustPlatform/paramount/commit/b270ed2))
+
 ## [1.74.2](https://github.com/WeTrustPlatform/paramount/compare/v1.74.1...v1.74.2) (2019-07-01)
 
 
