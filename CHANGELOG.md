@@ -1,3 +1,10 @@
+## [1.74.4](https://github.com/WeTrustPlatform/paramount/compare/v1.74.3...v1.74.4) (2019-07-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-native-web to v0.11.5 ([#267](https://github.com/WeTrustPlatform/paramount/issues/267)) ([f7c41d9](https://github.com/WeTrustPlatform/paramount/commit/f7c41d9))
+
 ## [1.74.3](https://github.com/WeTrustPlatform/paramount/compare/v1.74.2...v1.74.3) (2019-07-03)
 
 
