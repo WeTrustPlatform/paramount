@@ -1,3 +1,10 @@
+## [1.75.2](https://github.com/WeTrustPlatform/paramount/compare/v1.75.1...v1.75.2) (2019-07-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-native-svg to v9.5.3 ([#278](https://github.com/WeTrustPlatform/paramount/issues/278)) ([20367cb](https://github.com/WeTrustPlatform/paramount/commit/20367cb))
+
 ## [1.75.1](https://github.com/WeTrustPlatform/paramount/compare/v1.75.0...v1.75.1) (2019-07-25)
 
 
