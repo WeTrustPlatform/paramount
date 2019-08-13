@@ -1,3 +1,10 @@
+# [1.76.0](https://github.com/WeTrustPlatform/paramount/compare/v1.75.2...v1.76.0) (2019-08-13)
+
+
+### Features
+
+* export picker button ([e3cf736](https://github.com/WeTrustPlatform/paramount/commit/e3cf736))
+
 ## [1.75.2](https://github.com/WeTrustPlatform/paramount/compare/v1.75.1...v1.75.2) (2019-07-25)
 
 
