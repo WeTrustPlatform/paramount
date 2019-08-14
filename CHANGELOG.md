@@ -1,3 +1,10 @@
+## [1.76.1](https://github.com/WeTrustPlatform/paramount/compare/v1.76.0...v1.76.1) (2019-08-14)
+
+
+### Bug Fixes
+
+* allow react nodes in form field ([862e7f4](https://github.com/WeTrustPlatform/paramount/commit/862e7f4))
+
 # [1.76.0](https://github.com/WeTrustPlatform/paramount/compare/v1.75.2...v1.76.0) (2019-08-13)
 
 
