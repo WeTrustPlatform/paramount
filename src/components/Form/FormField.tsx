@@ -17,12 +17,12 @@ export interface FormFieldProps {
   /**
    * Error message of the field
    */
-  error?: string;
+  error?: React.ReactNode;
 
   /**
    * Label of the field.
    */
-  label?: string;
+  label?: React.ReactNode;
 
   /**
    * Position of the field.
@@ -33,7 +33,7 @@ export interface FormFieldProps {
   /**
    * Description of the field.
    */
-  description?: string;
+  description?: React.ReactNode;
 
   /** Content to wrap FormField with. */
   children?: React.ReactNode;
