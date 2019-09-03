@@ -33,6 +33,7 @@ export const getAlertStyles: GetAlertStyles = ({ intent = 'info' }, theme) => {
     descriptionStyle: {},
     leftWrapperStyle: {
       display: 'flex',
+      flex: 1,
       flexDirection: 'row',
     },
     titleStyle: {},

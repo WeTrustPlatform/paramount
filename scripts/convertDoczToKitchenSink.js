@@ -12,7 +12,7 @@ const path = require('path');
 
 // TODO: Refactor this file
 
-const BLACKLIST_MDX = ['KitchenSink', 'Icon'];
+const BLACKLIST_MDX = ['KitchenSink', 'Icon', 'Layout.mdx'];
 
 const getMdxFiles = async () => {
   return glob

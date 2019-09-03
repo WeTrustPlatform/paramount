@@ -3,6 +3,11 @@ name: Layout
 menu: Components
 ---
 
+import { Playground, Props } from 'docz';
+import { LayoutProvider, useLayout, Text } from '..';
+
+export default ({ children }) => <LayoutProvider>{children}</LayoutProvider>;
+
 # Layout
 
 Paramount provides building blocks to create responsive layout via components `Visible`, `Row and Column`, `Container` and convenience functions ([see Usage](#usage))
@@ -23,34 +28,33 @@ Paramount exposes a convenience hook `useLayout` that you can import to make use
 
 Retrieves the current screen size
 
-```tsx
-const MyComponent = () => {
-  const { currentScreenSize } = useLayout();
+<Playground>
+  {() => {
+    const { currentScreenSize } = useLayout();
 
-  console.log(currentScreenSize);
-  // either xsmall, small, medium, large, xlarge
-  ...
-}
-```
+    return (
+      <Text>{`currentScreenSize: ${currentScreenSize}`}</Text>
+    );
+
+}}
+
+</Playground>
 
 ### getResponsiveValue
 
-Returns arbitrary value that matches nearest defined size that is smaller than or equal to current screen size
+<Playground>
+  {() => {
+    const { getResponsiveValue } = useLayout();
+    const value = getResponsiveValue({
+      xsmall: 'red',
+      large: 'blue',
+    });
 
-```tsx
-const MyComponent = () => {
-  const { getResponsiveValue } = useLayout();
+    return <Text>{`currentValue: ${value}`}</Text>;
 
-  // Can be strings, numbers or any
-  const value = getResponsiveValue({ xsmall: 'blue', large: 'red' });
+}}
 
-  console.log(value);
-  // If currentScreenSize is large, it will return `red`
-  // If currentScreenSize is small, it will return `blue`
-  // If currentScreenSize is xsmall, it will return `blue`
-  ...
-}
-```
+</Playground>
 
 ### Responsive Components
 

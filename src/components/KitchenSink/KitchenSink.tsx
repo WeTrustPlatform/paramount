@@ -416,12 +416,6 @@ export const KitchenSink = () => {
 
       <Box paddingTop={96}>
         <Heading size="xxxlarge" weight="500">
-          Layout
-        </Heading>
-      </Box>
-
-      <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="500">
           Row and Column
         </Heading>
       </Box>
