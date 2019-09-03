@@ -45,12 +45,16 @@ Retrieves the current screen size
 <Playground>
   {() => {
     const { getResponsiveValue } = useLayout();
-    const value = getResponsiveValue({
+    const color = getResponsiveValue({
       xsmall: 'red',
       large: 'blue',
     });
+    const number = getResponsiveValue({
+      xsmall: 0,
+      large: 1,
+    });
 
-    return <Text>{`currentValue: ${value}`}</Text>;
+    return <Text>{`color: ${color}, number: ${number}`}</Text>;
 
 }}
 

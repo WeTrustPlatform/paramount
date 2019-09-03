@@ -55,11 +55,21 @@ exports[`Alert_1 1`] = `
         style={
           Object {
             "WebkitBoxDirection": "normal",
+            "WebkitBoxFlex": 1,
             "WebkitBoxOrient": "horizontal",
+            "WebkitFlexBasis": "0%",
             "WebkitFlexDirection": "row",
+            "WebkitFlexGrow": 1,
+            "WebkitFlexShrink": 1,
             "display": "flex",
+            "flexBasis": "0%",
             "flexDirection": "row",
+            "flexGrow": 1,
+            "flexShrink": 1,
             "msFlexDirection": "row",
+            "msFlexNegative": 1,
+            "msFlexPositive": 1,
+            "msFlexPreferredSize": "0%",
           }
         }
       >
@@ -209,11 +219,21 @@ exports[`Alert_1 1`] = `
         style={
           Object {
             "WebkitBoxDirection": "normal",
+            "WebkitBoxFlex": 1,
             "WebkitBoxOrient": "horizontal",
+            "WebkitFlexBasis": "0%",
             "WebkitFlexDirection": "row",
+            "WebkitFlexGrow": 1,
+            "WebkitFlexShrink": 1,
             "display": "flex",
+            "flexBasis": "0%",
             "flexDirection": "row",
+            "flexGrow": 1,
+            "flexShrink": 1,
             "msFlexDirection": "row",
+            "msFlexNegative": 1,
+            "msFlexPositive": 1,
+            "msFlexPreferredSize": "0%",
           }
         }
       >
@@ -352,11 +372,21 @@ exports[`Alert_1 1`] = `
         style={
           Object {
             "WebkitBoxDirection": "normal",
+            "WebkitBoxFlex": 1,
             "WebkitBoxOrient": "horizontal",
+            "WebkitFlexBasis": "0%",
             "WebkitFlexDirection": "row",
+            "WebkitFlexGrow": 1,
+            "WebkitFlexShrink": 1,
             "display": "flex",
+            "flexBasis": "0%",
             "flexDirection": "row",
+            "flexGrow": 1,
+            "flexShrink": 1,
             "msFlexDirection": "row",
+            "msFlexNegative": 1,
+            "msFlexPositive": 1,
+            "msFlexPreferredSize": "0%",
           }
         }
       >
@@ -504,11 +534,21 @@ exports[`Alert_1 1`] = `
         style={
           Object {
             "WebkitBoxDirection": "normal",
+            "WebkitBoxFlex": 1,
             "WebkitBoxOrient": "horizontal",
+            "WebkitFlexBasis": "0%",
             "WebkitFlexDirection": "row",
+            "WebkitFlexGrow": 1,
+            "WebkitFlexShrink": 1,
             "display": "flex",
+            "flexBasis": "0%",
             "flexDirection": "row",
+            "flexGrow": 1,
+            "flexShrink": 1,
             "msFlexDirection": "row",
+            "msFlexNegative": 1,
+            "msFlexPositive": 1,
+            "msFlexPreferredSize": "0%",
           }
         }
       >
@@ -22451,11 +22491,21 @@ exports[`KitchenSink_1 1`] = `
             style={
               Object {
                 "WebkitBoxDirection": "normal",
+                "WebkitBoxFlex": 1,
                 "WebkitBoxOrient": "horizontal",
+                "WebkitFlexBasis": "0%",
                 "WebkitFlexDirection": "row",
+                "WebkitFlexGrow": 1,
+                "WebkitFlexShrink": 1,
                 "display": "flex",
+                "flexBasis": "0%",
                 "flexDirection": "row",
+                "flexGrow": 1,
+                "flexShrink": 1,
                 "msFlexDirection": "row",
+                "msFlexNegative": 1,
+                "msFlexPositive": 1,
+                "msFlexPreferredSize": "0%",
               }
             }
           >
@@ -22605,11 +22655,21 @@ exports[`KitchenSink_1 1`] = `
             style={
               Object {
                 "WebkitBoxDirection": "normal",
+                "WebkitBoxFlex": 1,
                 "WebkitBoxOrient": "horizontal",
+                "WebkitFlexBasis": "0%",
                 "WebkitFlexDirection": "row",
+                "WebkitFlexGrow": 1,
+                "WebkitFlexShrink": 1,
                 "display": "flex",
+                "flexBasis": "0%",
                 "flexDirection": "row",
+                "flexGrow": 1,
+                "flexShrink": 1,
                 "msFlexDirection": "row",
+                "msFlexNegative": 1,
+                "msFlexPositive": 1,
+                "msFlexPreferredSize": "0%",
               }
             }
           >
@@ -22748,11 +22808,21 @@ exports[`KitchenSink_1 1`] = `
             style={
               Object {
                 "WebkitBoxDirection": "normal",
+                "WebkitBoxFlex": 1,
                 "WebkitBoxOrient": "horizontal",
+                "WebkitFlexBasis": "0%",
                 "WebkitFlexDirection": "row",
+                "WebkitFlexGrow": 1,
+                "WebkitFlexShrink": 1,
                 "display": "flex",
+                "flexBasis": "0%",
                 "flexDirection": "row",
+                "flexGrow": 1,
+                "flexShrink": 1,
                 "msFlexDirection": "row",
+                "msFlexNegative": 1,
+                "msFlexPositive": 1,
+                "msFlexPreferredSize": "0%",
               }
             }
           >
@@ -22900,11 +22970,21 @@ exports[`KitchenSink_1 1`] = `
             style={
               Object {
                 "WebkitBoxDirection": "normal",
+                "WebkitBoxFlex": 1,
                 "WebkitBoxOrient": "horizontal",
+                "WebkitFlexBasis": "0%",
                 "WebkitFlexDirection": "row",
+                "WebkitFlexGrow": 1,
+                "WebkitFlexShrink": 1,
                 "display": "flex",
+                "flexBasis": "0%",
                 "flexDirection": "row",
+                "flexGrow": 1,
+                "flexShrink": 1,
                 "msFlexDirection": "row",
+                "msFlexNegative": 1,
+                "msFlexPositive": 1,
+                "msFlexPreferredSize": "0%",
               }
             }
           >
@@ -26768,33 +26848,6 @@ exports[`KitchenSink_1 1`] = `
           </div>
         </div>
       </div>
-    </div>
-    <div
-      className="css-view-1dbjc4n"
-      style={
-        Object {
-          "paddingTop": "96px",
-        }
-      }
-    >
-      <h1
-        className="css-reset-4rbku5 css-text-901oao"
-        dir="auto"
-        role="heading"
-        style={
-          Object {
-            "color": "rgba(126,126,126,1.00)",
-            "fontFamily": "\\"SF UI Display\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-            "fontSize": "35px",
-            "fontWeight": "500",
-            "letterSpacing": "-0.2px",
-            "lineHeight": "40px",
-            "textAlign": "left",
-          }
-        }
-      >
-        Layout
-      </h1>
     </div>
     <div
       className="css-view-1dbjc4n"
@@ -37345,94 +37398,6 @@ exports[`Label_4 1`] = `
     className="language-tsx"
   >
     &lt;Text labelStyle /&gt;
-
-  </code>
-</pre>
-`;
-
-exports[`Layout_0 1`] = `
-<h1>
-  Layout
-</h1>
-`;
-
-exports[`Layout_1 1`] = `
-<pre>
-  <code
-    className="language-tsx"
-  >
-    &lt;LayoutProvider value={options}&gt;{children}&lt;/LayoutProvider&gt;
-
-  </code>
-</pre>
-`;
-
-exports[`Layout_2 1`] = `
-<pre>
-  <code
-    className="language-tsx"
-  >
-    const MyComponent = () =&gt; {
-  const { currentScreenSize } = useLayout();
-
-  console.log(currentScreenSize);
-  // either xsmall, small, medium, large, xlarge
-  ...
-}
-
-  </code>
-</pre>
-`;
-
-exports[`Layout_3 1`] = `
-<pre>
-  <code
-    className="language-tsx"
-  >
-    const MyComponent = () =&gt; {
-  const { getResponsiveValue } = useLayout();
-
-  // Can be strings, numbers or any
-  const value = getResponsiveValue({ xsmall: 'blue', large: 'red' });
-
-  console.log(value);
-  // If currentScreenSize is large, it will return \`red\`
-  // If currentScreenSize is small, it will return \`blue\`
-  // If currentScreenSize is xsmall, it will return \`blue\`
-  ...
-}
-
-  </code>
-</pre>
-`;
-
-exports[`Layout_4 1`] = `
-<pre>
-  <code
-    className="language-ts"
-  >
-    export const defaultLayout: LayoutInterface = {
-  breakpoints: {
-    small: 480,
-
-    medium: 768,
-
-    large: 992,
-
-    xlarge: 1200,
-  },
-  containerSizes: {
-    small: 540,
-
-    medium: 720,
-
-    large: 960,
-
-    xlarge: 1140,
-  },
-  gridColumnCount: 12,
-  gutterWidth: 30,
-};
 
   </code>
 </pre>

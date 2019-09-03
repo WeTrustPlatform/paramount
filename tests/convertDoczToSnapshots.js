@@ -3,6 +3,8 @@ const fs = require('fs');
 const React = require('react');
 const { create } = require('react-test-renderer');
 
+const BLACKLIST_MDX = ['Layout.mdx'];
+
 const removeMarkdownElements = json => {
   if (!json || !json.type) return null;
 
@@ -83,10 +85,13 @@ const requireContext = (
 const convertDoczToSnapshots = src => {
   const docs = requireContext(src, true, /.mdx?$/);
 
-  docs.keys().forEach(filename => {
-    const doc = require(filename).default;
-    defineSnapshots(doc, path.basename(filename, path.extname(filename)));
-  });
+  docs
+    .keys()
+    .filter(f => BLACKLIST_MDX.every(w => !f.includes(w)))
+    .forEach(filename => {
+      const doc = require(filename).default;
+      defineSnapshots(doc, path.basename(filename, path.extname(filename)));
+    });
 };
 
 module.exports.convertDoczToSnapshots = convertDoczToSnapshots;

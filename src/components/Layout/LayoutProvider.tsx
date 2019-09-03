@@ -45,7 +45,7 @@ const deriveResponsiveValue = (
   const nearestSize = DESC_ORDER_SCREEN_SIZES.find((screenSize, index) => {
     if (currentScreenSizeIndex > index) return false;
 
-    return !!values[screenSize];
+    return values[screenSize] !== undefined && values[screenSize] !== null;
   });
 
   return nearestSize ? values[nearestSize] : undefined;
