@@ -1,3 +1,11 @@
+## [1.76.2](https://github.com/WeTrustPlatform/paramount/compare/v1.76.1...v1.76.2) (2019-09-03)
+
+
+### Bug Fixes
+
+* docs and alert styles ([604bff5](https://github.com/WeTrustPlatform/paramount/commit/604bff5))
+* tests and layout ([03cf56f](https://github.com/WeTrustPlatform/paramount/commit/03cf56f))
+
 ## [1.76.1](https://github.com/WeTrustPlatform/paramount/compare/v1.76.0...v1.76.1) (2019-08-14)
 
 
