@@ -25633,7 +25633,109 @@ exports[`KitchenSink_1 1`] = `
               }
             }
           >
-            Open collapsible
+            Open controlled collapsible
+          </div>
+          <div
+            className="css-view-1dbjc4n"
+            style={
+              Object {
+                "paddingLeft": "4px",
+              }
+            }
+          >
+            <svg
+              color="#7e7e7e"
+              fill="none"
+              height={28}
+              size={28}
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              style={
+                Object {
+                  "color": "#7e7e7e",
+                }
+              }
+              viewBox="0 0 24 24"
+              width={28}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polyline
+                points="6 9 12 15 18 9"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-view-1dbjc4n"
+        style={
+          Object {
+            "overflowX": "hidden",
+            "overflowY": "hidden",
+          }
+        }
+      />
+      <div
+        className="css-view-1dbjc4n"
+        data-focusable={true}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "MozTransitionProperty": "opacity",
+            "MozUserSelect": "none",
+            "WebkitTransitionDuration": "0.15s",
+            "WebkitTransitionProperty": "opacity",
+            "WebkitUserSelect": "none",
+            "cursor": "pointer",
+            "msTouchAction": "manipulation",
+            "msUserSelect": "none",
+            "touchAction": "manipulation",
+            "transitionDuration": "0.15s",
+            "transitionProperty": "opacity",
+            "userSelect": "none",
+          }
+        }
+        tabIndex="0"
+      >
+        <div
+          className="css-view-1dbjc4n"
+          style={
+            Object {
+              "WebkitAlignItems": "center",
+              "WebkitBoxAlign": "center",
+              "WebkitBoxDirection": "normal",
+              "WebkitBoxOrient": "horizontal",
+              "WebkitFlexDirection": "row",
+              "alignItems": "center",
+              "display": "flex",
+              "flexDirection": "row",
+              "msFlexAlign": "center",
+              "msFlexDirection": "row",
+            }
+          }
+        >
+          <div
+            className="css-text-901oao"
+            dir="auto"
+            style={
+              Object {
+                "color": "rgba(126,126,126,1.00)",
+                "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                "fontSize": "20px",
+                "textAlign": "left",
+              }
+            }
+          >
+            Uncontrolled collapsible
           </div>
           <div
             className="css-view-1dbjc4n"
@@ -38311,9 +38413,7 @@ exports[`NativePicker_1 1`] = `
 
 exports[`NativePicker_2 1`] = `<div />`;
 
-exports[`NativePicker_3 1`] = `<div />`;
-
-exports[`NativePicker_4 1`] = `
+exports[`NativePicker_3 1`] = `
 <pre>
   <code>
     NativePickerStyles {
@@ -38329,7 +38429,7 @@ getStyles={(NativePickerProps, Theme) =&gt; NativePickerStyles}
 </pre>
 `;
 
-exports[`NativePicker_5 1`] = `
+exports[`NativePicker_4 1`] = `
 <pre>
   <code
     className="language-tsx"
@@ -42420,8 +42520,6 @@ exports[`SelectList_1 1`] = `
 `;
 
 exports[`SelectList_2 1`] = `<div />`;
-
-exports[`SelectList_3 1`] = `<div />`;
 
 exports[`Slider_0 1`] = `
 <h1>

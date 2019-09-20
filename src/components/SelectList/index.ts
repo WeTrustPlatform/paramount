@@ -1,2 +1,1 @@
 export * from './SelectList';
-export * from './SelectListItem';

@@ -5,13 +5,14 @@ menu: Components
 
 import { Playground, Props } from 'docz';
 
-import { Box, SelectList, SelectListItem, State } from '..';
+import { Box, SelectList, State } from '..';
 
 # SelectList
 
 SelectList that supports single value or multiple values selected at the same item.
 
-`SelectListItem` composes `ListItem` and `SelectList` composes `FlatList`. You can use `ref` to trigger `FlatList` methods
+`SelectListItem` composes `ListItem` and `SelectList` composes `FlatList`.
+To use `ref`, import `SelectListWithRef` instead
 
 ## Usage
 
@@ -24,27 +25,28 @@ SelectList that supports single value or multiple values selected at the same it
           onValueChange={(newValue, itemIndex) => {
             setState({ value: newValue });
           }}
-        >
-          <SelectListItem label="C" value="c" />
-          <SelectListItem label="C#" value="c#" />
-          <SelectListItem label="C++" value="c++" />
-          <SelectListItem label="CSS" value="css" />
-          <SelectListItem label="Elixir" value="elixir" />
-          <SelectListItem label="Elm" value="elm" />
-          <SelectListItem label="Erlang" value="erlang" />
-          <SelectListItem label="Go" value="go" />
-          <SelectListItem label="Haskell" value="haskell" />
-          <SelectListItem label="HTML" value="html" />
-          <SelectListItem label="Java" value="java" />
-          <SelectListItem label="JavaScript" value="js" />
-          <SelectListItem label="Lua" value="lua" />
-          <SelectListItem label="Python" value="python" />
-          <SelectListItem label="R" value="r" />
-          <SelectListItem label="Ruby" value="ruby" />
-          <SelectListItem label="Rust" value="rust" />
-          <SelectListItem label="Switft" value="swift" />
-          <SelectListItem label="Typescript" value="typescript" />
-        </SelectList>
+          options={[
+            { label: 'C', value: 'c' },
+            { label: 'C#', value: 'c#' },
+            { label: 'C++', value: 'c++' },
+            { label: 'CSS', value: 'css' },
+            { label: 'Elixir', value: 'elixir' },
+            { label: 'Elm', value: 'elm' },
+            { label: 'Erlang', value: 'erlang' },
+            { label: 'Go', value: 'go' },
+            { label: 'Haskell', value: 'haskell' },
+            { label: 'HTML', value: 'html' },
+            { label: 'Java', value: 'java' },
+            { label: 'JavaScript', value: 'js' },
+            { label: 'Lua', value: 'lua' },
+            { label: 'Python', value: 'python' },
+            { label: 'R', value: 'r' },
+            { label: 'Ruby', value: 'ruby' },
+            { label: 'Rust', value: 'rust' },
+            { label: 'Switft', value: 'swift' },
+            { label: 'Typescript', value: 'typescript' },
+          ]}
+        />
       </Box>
     )}
   </State>
@@ -53,7 +55,3 @@ SelectList that supports single value or multiple values selected at the same it
 ## SelectList Props
 
 <Props of={SelectList} />
-
-## SelectListItem Props
-
-<Props of={SelectListItem} />

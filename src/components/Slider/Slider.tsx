@@ -22,14 +22,17 @@ export interface Rect {
 
 export type RangeValue = [number, number];
 export type SliderValue = number | RangeValue;
+export type Value<TIsRange extends boolean> = TIsRange extends true
+  ? [number, number]
+  : number;
 
-export interface SliderProps {
+export interface SliderProps<TIsRange extends boolean> {
   /**
-   * Set whether it should slide a range.
+   * Set whether it should slide a range. You should specify the value to get proper type-checking.
    * However, if initialValue is set, it will take precedence over this prop
    * @default false
    */
-  isRange?: boolean;
+  isRange?: TIsRange;
 
   /**
    * Size of the thumb, and thus the whole slider
@@ -45,7 +48,7 @@ export interface SliderProps {
    * value during dragging.
    * @default 0
    */
-  value?: SliderValue;
+  value?: Value<TIsRange>;
 
   /**
    * Step value of the slider. The value should be
@@ -75,19 +78,19 @@ export interface SliderProps {
   /**
    * Callback continuously called while the user is dragging the slider.
    */
-  onValueChange?: (value: SliderValue) => void;
+  onValueChange?: (value: Value<TIsRange>) => void;
 
   /**
    * Callback that is called when the user releases the slider;
    * regardless if the value has changed. The current value is passed
    * as an argument to the callback handler.
    */
-  onSlidingComplete?: (value: SliderValue) => void;
+  onSlidingComplete?: (value: Value<TIsRange>) => void;
 
   /**
    * Callback called when the user starts changing the value.
    */
-  onSlidingStart?: (value: SliderValue) => void;
+  onSlidingStart?: (value: Value<TIsRange>) => void;
 
   /**
    * Callback to get element styles.
@@ -165,7 +168,9 @@ const setRightValue = (
     : rightValue;
 };
 
-export const Slider = (props: SliderProps) => {
+export const Slider = <TIsRange extends boolean>(
+  props: SliderProps<TIsRange>,
+) => {
   const {
     value: initialValue = 0,
     onSlidingStart = () => undefined,
@@ -208,7 +213,7 @@ export const Slider = (props: SliderProps) => {
     const updatedValue = setLeftValue(value, finalLeftValue);
 
     setValue(updatedValue);
-    onValueChange(updatedValue);
+    onValueChange(updatedValue as Value<TIsRange>);
   };
 
   const handleRightSlide = (dx: number) => {
@@ -225,13 +230,13 @@ export const Slider = (props: SliderProps) => {
     const updatedValue = setRightValue(value, finalRightValue);
 
     setValue(updatedValue);
-    onValueChange(updatedValue);
+    onValueChange(updatedValue as Value<TIsRange>);
   };
 
   const makeThumbRef = (handler: (dx: number) => void) =>
     PanResponder.create({
       onStartShouldSetPanResponder: () => {
-        onSlidingStart(value);
+        onSlidingStart(value as Value<TIsRange>);
         return true;
       },
 
@@ -255,7 +260,9 @@ export const Slider = (props: SliderProps) => {
     rightThumbRef.current = makeThumbRef(handleRightSlide);
 
     // We need to callback here because we need latest value instead of memoized one
-    if (prevIsSliding && !isSliding) onSlidingComplete(value);
+    if (prevIsSliding && !isSliding) {
+      onSlidingComplete(value as Value<TIsRange>);
+    }
 
     // We diff valuePerPixel because on loading the component it may be NaN as it is calculating the measurements of the track
   }, [isSliding, valuePerPixel]);

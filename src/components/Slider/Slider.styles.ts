@@ -12,7 +12,7 @@ export interface SliderStyles {
 }
 
 export type GetSliderStyles = (
-  props: SliderProps,
+  props: SliderProps<any>,
   theme: Theme,
 ) => SliderStyles;
 

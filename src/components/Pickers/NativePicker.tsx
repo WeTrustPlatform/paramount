@@ -7,6 +7,11 @@ import { PickerButtonGetStylesProp } from './PickerButton';
 import { getPickerButtonStyles } from './PickerButton.styles';
 import { PickerButtonWrapper } from './PickerButtonWrapper';
 
+export interface NativePickerOption {
+  label: string;
+  value: string;
+}
+
 export interface NativePickerProps extends RNPickerProps {
   /**
    * The size of the picker.
@@ -16,7 +21,7 @@ export interface NativePickerProps extends RNPickerProps {
   /**
    * List of NativePickerItem items.
    */
-  children?: React.ReactNode;
+  options: NativePickerOption[];
 
   /**
    * Callback to get element styles.
@@ -27,7 +32,13 @@ export interface NativePickerProps extends RNPickerProps {
 }
 
 const NativePickerBase = (props: NativePickerProps) => {
-  const { size = 'medium', getStyles, innerRef, ...pickerProps } = props;
+  const {
+    size = 'medium',
+    getStyles,
+    innerRef,
+    options,
+    ...pickerProps
+  } = props;
   const theme = useTheme();
 
   const { pickerStyle, itemStyle } = mergeStyles(
@@ -42,7 +53,11 @@ const NativePickerBase = (props: NativePickerProps) => {
         itemStyle={itemStyle}
         style={pickerStyle}
         {...pickerProps}
-      />
+      >
+        {options.map(option => (
+          <RNPicker.Item value={option.value} label={option.label} />
+        ))}
+      </RNPicker>
     </PickerButtonWrapper>
   );
 };

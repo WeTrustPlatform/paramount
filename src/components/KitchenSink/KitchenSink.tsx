@@ -35,12 +35,10 @@ import {
   Modal,
   HistoryModal,
   NativePicker,
-  NativePickerItem,
   Popover,
   ProgressBar,
   Rating,
   SelectList,
-  SelectListItem,
   Slider,
   Switch,
   Tabs,
@@ -217,7 +215,11 @@ export const KitchenSink = () => {
         <Toggle initial={false}>
           {({ on, toggle }) => (
             <Collapsible
-              title={on ? 'Close collapsible' : 'Open collapsible'}
+              title={
+                on
+                  ? 'Close controlled collapsible'
+                  : 'Open controlled collapsible'
+              }
               isOpen={on}
               onOpen={toggle}
               onClose={toggle}
@@ -232,6 +234,15 @@ export const KitchenSink = () => {
             </Collapsible>
           )}
         </Toggle>
+        <Collapsible title="Uncontrolled collapsible">
+          <Box
+            marginVertical={16}
+            justifyContent="center"
+            alignItems="center"
+            height={300}
+            backgroundColor="#67c6bb"
+          />
+        </Collapsible>
       </Playground>
 
       <Box paddingTop={96}>
@@ -766,27 +777,28 @@ export const KitchenSink = () => {
                 setState({ value: itemValue })
               }
               size="large"
-            >
-              <NativePickerItem label="C" value="c" />
-              <NativePickerItem label="C#" value="c#" />
-              <NativePickerItem label="C++" value="c++" />
-              <NativePickerItem label="CSS" value="css" />
-              <NativePickerItem label="Elixir" value="elixir" />
-              <NativePickerItem label="Elm" value="elm" />
-              <NativePickerItem label="Erlang" value="erlang" />
-              <NativePickerItem label="Go" value="go" />
-              <NativePickerItem label="Haskell" value="haskell" />
-              <NativePickerItem label="HTML" value="html" />
-              <NativePickerItem label="Java" value="java" />
-              <NativePickerItem label="JavaScript" value="js" />
-              <NativePickerItem label="Lua" value="lua" />
-              <NativePickerItem label="Python" value="python" />
-              <NativePickerItem label="R" value="r" />
-              <NativePickerItem label="Ruby" value="ruby" />
-              <NativePickerItem label="Rust" value="rust" />
-              <NativePickerItem label="Switft" value="swift" />
-              <NativePickerItem label="Typescript" value="typescript" />
-            </NativePicker>
+              options={[
+                { label: 'C', value: 'c' },
+                { label: 'C#', value: 'c#' },
+                { label: 'C++', value: 'c++' },
+                { label: 'CSS', value: 'css' },
+                { label: 'Elixir', value: 'elixir' },
+                { label: 'Elm', value: 'elm' },
+                { label: 'Erlang', value: 'erlang' },
+                { label: 'Go', value: 'go' },
+                { label: 'Haskell', value: 'haskell' },
+                { label: 'HTML', value: 'html' },
+                { label: 'Java', value: 'java' },
+                { label: 'JavaScript', value: 'js' },
+                { label: 'Lua', value: 'lua' },
+                { label: 'Python', value: 'python' },
+                { label: 'R', value: 'r' },
+                { label: 'Ruby', value: 'ruby' },
+                { label: 'Rust', value: 'rust' },
+                { label: 'Switft', value: 'swift' },
+                { label: 'Typescript', value: 'typescript' },
+              ]}
+            />
           )}
         </State>
       </Playground>
@@ -883,27 +895,28 @@ export const KitchenSink = () => {
                 onValueChange={(newValue, itemIndex) => {
                   setState({ value: newValue });
                 }}
-              >
-                <SelectListItem label="C" value="c" />
-                <SelectListItem label="C#" value="c#" />
-                <SelectListItem label="C++" value="c++" />
-                <SelectListItem label="CSS" value="css" />
-                <SelectListItem label="Elixir" value="elixir" />
-                <SelectListItem label="Elm" value="elm" />
-                <SelectListItem label="Erlang" value="erlang" />
-                <SelectListItem label="Go" value="go" />
-                <SelectListItem label="Haskell" value="haskell" />
-                <SelectListItem label="HTML" value="html" />
-                <SelectListItem label="Java" value="java" />
-                <SelectListItem label="JavaScript" value="js" />
-                <SelectListItem label="Lua" value="lua" />
-                <SelectListItem label="Python" value="python" />
-                <SelectListItem label="R" value="r" />
-                <SelectListItem label="Ruby" value="ruby" />
-                <SelectListItem label="Rust" value="rust" />
-                <SelectListItem label="Switft" value="swift" />
-                <SelectListItem label="Typescript" value="typescript" />
-              </SelectList>
+                options={[
+                  { label: 'C', value: 'c' },
+                  { label: 'C#', value: 'c#' },
+                  { label: 'C++', value: 'c++' },
+                  { label: 'CSS', value: 'css' },
+                  { label: 'Elixir', value: 'elixir' },
+                  { label: 'Elm', value: 'elm' },
+                  { label: 'Erlang', value: 'erlang' },
+                  { label: 'Go', value: 'go' },
+                  { label: 'Haskell', value: 'haskell' },
+                  { label: 'HTML', value: 'html' },
+                  { label: 'Java', value: 'java' },
+                  { label: 'JavaScript', value: 'js' },
+                  { label: 'Lua', value: 'lua' },
+                  { label: 'Python', value: 'python' },
+                  { label: 'R', value: 'r' },
+                  { label: 'Ruby', value: 'ruby' },
+                  { label: 'Rust', value: 'rust' },
+                  { label: 'Switft', value: 'swift' },
+                  { label: 'Typescript', value: 'typescript' },
+                ]}
+              />
             </Box>
           )}
         </State>

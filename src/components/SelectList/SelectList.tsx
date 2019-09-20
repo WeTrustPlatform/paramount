@@ -2,9 +2,23 @@ import * as React from 'react';
 import { FlatList } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { SelectListItemProps } from './SelectListItem';
+import { SelectListItem, SelectListItemProps } from './SelectListItem';
 
-export interface SelectListProps {
+export type Value<TIsMulti extends boolean> = TIsMulti extends true
+  ? string[]
+  : string;
+
+export interface SelectListOption {
+  value: string;
+  label: string;
+}
+
+export interface SelectListProps<TIsMulti extends boolean> {
+  /**
+   * Set whether it should allow multiple selections. You should specify the value to get proper type-checking.
+   * @default false
+   */
+  isMulti?: TIsMulti;
   /**
    * Select item or items.
    * For single-select use single string.
@@ -12,22 +26,20 @@ export interface SelectListProps {
    *
    * *This is a controlled component*; Value will reflect selected items
    */
-  value: string | string[];
+  value: Value<TIsMulti>;
 
   /**
    * Called when a select list item is pressed
    */
   onValueChange: (
-    itemValue: string | string[],
+    itemValue: Value<TIsMulti>,
     itemIndex: number,
   ) => void | undefined;
 
   /**
    * `SelectListItem` components
    */
-  children:
-    | Array<React.ReactElement<SelectListItemProps>>
-    | React.ReactElement<SelectListItemProps>;
+  options: SelectListOption[];
 
   /**
    * Use `ref` prop instead for using `FlatList` methods
@@ -38,8 +50,10 @@ export interface SelectListProps {
 const getIsMulti = (value: string | string[]): value is string[] =>
   Array.isArray(value);
 
-const SelectListBase = (props: SelectListProps): any => {
-  const { value, onValueChange, children, innerRef } = props;
+export const SelectList = <TIsMulti extends boolean>(
+  props: SelectListProps<TIsMulti>,
+) => {
+  const { value, onValueChange, options, innerRef } = props;
   const theme = useTheme();
   const isMulti = getIsMulti(value);
 
@@ -47,19 +61,19 @@ const SelectListBase = (props: SelectListProps): any => {
     (itemValue: string, itemIndex: number, isSelected: boolean) => {
       if (isMulti && Array.isArray(value)) {
         if (isSelected) {
-          onValueChange(value.filter(val => val !== itemValue), itemIndex);
+          onValueChange(
+            value.filter(val => val !== itemValue) as Value<TIsMulti>,
+            itemIndex,
+          );
         } else {
-          onValueChange(value.concat(itemValue), itemIndex);
+          onValueChange(value.concat(itemValue) as Value<TIsMulti>, itemIndex);
         }
       } else {
-        onValueChange(itemValue, itemIndex);
+        onValueChange(itemValue as Value<TIsMulti>, itemIndex);
       }
     },
     [value, onValueChange],
   );
-
-  const childrenArray = React.Children.toArray(children);
-  const data = childrenArray.map(child => child.props);
 
   return (
     <FlatList
@@ -70,28 +84,32 @@ const SelectListBase = (props: SelectListProps): any => {
         length: theme.controlHeights.medium,
         offset: theme.controlHeights.medium * index,
       })}
-      data={data}
+      data={options}
       renderItem={({ item, index }) => {
-        const selectListItem = childrenArray[index];
-
         const isSelected =
           isMulti && Array.isArray(value)
             ? value.some(selVal => selVal === item.value)
             : value === item.value;
 
-        return React.cloneElement(selectListItem, {
-          index,
-          isSelected,
-          onPress: handleOnPress,
-        });
+        return (
+          <SelectListItem
+            value={item.value}
+            label={item.label}
+            index={index}
+            isSelected={isSelected}
+            onPress={handleOnPress}
+          />
+        );
       }}
     />
   );
 };
 
-export const SelectList = React.forwardRef<
-  FlatList<SelectListItemProps>,
-  SelectListProps
->((props, ref) => {
-  return <SelectListBase {...props} innerRef={ref} />;
-});
+export const SelectListWithRef = React.forwardRef(
+  <TIsMulti extends boolean>(
+    props: SelectListProps<TIsMulti>,
+    ref: React.Ref<FlatList<SelectListItemProps>>,
+  ) => {
+    return <SelectList<TIsMulti> {...props} innerRef={ref} />;
+  },
+);
