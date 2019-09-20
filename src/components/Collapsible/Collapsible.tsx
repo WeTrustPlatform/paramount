@@ -68,7 +68,7 @@ export const Collapsible = (props: CollapsibleProps) => {
     children,
     header,
     initialIsOpen = false,
-    isOpen = false,
+    isOpen,
     getStyles,
     testID,
     onOpen = () => undefined,
@@ -111,7 +111,7 @@ export const Collapsible = (props: CollapsibleProps) => {
         onOpen();
       }
     }
-  }, [isOpened, isOpen, isControlledUsage]);
+  }, [isOpened, setIsOpened, isOpen, onClose, isControlledUsage]);
 
   return (
     <>
