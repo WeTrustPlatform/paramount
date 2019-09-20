@@ -1,4 +1,4 @@
-import { ViewStyle } from 'react-native';
+import { TextStyle, ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
 import { CollapsibleProps } from './Collapsible';
@@ -7,7 +7,7 @@ export interface CollapsibleStyles {
   touchableStyle: ViewStyle;
   outerWrapperStyle: ViewStyle;
   contentWrapperStyle: ViewStyle;
-  textStyle: ViewStyle;
+  textStyle: TextStyle;
   iconWrapperStyle: ViewStyle;
 }
 
