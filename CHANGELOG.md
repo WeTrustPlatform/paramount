@@ -1,3 +1,19 @@
+# [1.77.0](https://github.com/WeTrustPlatform/paramount/compare/v1.76.2...v1.77.0) (2019-09-20)
+
+
+### Bug Fixes
+
+* collapsible uncontrolled usage ([08bdebf](https://github.com/WeTrustPlatform/paramount/commit/08bdebf))
+* dont export value ([18689d4](https://github.com/WeTrustPlatform/paramount/commit/18689d4))
+* native picker children types ([df33868](https://github.com/WeTrustPlatform/paramount/commit/df33868))
+* text style type ([65da675](https://github.com/WeTrustPlatform/paramount/commit/65da675))
+
+
+### Features
+
+* add conditional types to selectlist and slider ([e12a572](https://github.com/WeTrustPlatform/paramount/commit/e12a572))
+* enable flexible size ([67b1a81](https://github.com/WeTrustPlatform/paramount/commit/67b1a81))
+
 ## [1.76.2](https://github.com/WeTrustPlatform/paramount/compare/v1.76.1...v1.76.2) (2019-09-03)
 
 
