@@ -28,7 +28,7 @@ export interface RatingProps {
    * The size of the rating star.
    * @default "medium"
    */
-  size?: ControlSize;
+  size?: ControlSize | number;
 
   /**
    * Called when a rating star is pressed

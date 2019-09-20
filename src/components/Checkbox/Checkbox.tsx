@@ -16,7 +16,7 @@ export interface CheckboxProps {
    * The size of the checkbox.
    * @default "medium"
    */
-  size?: ControlSize;
+  size?: ControlSize | number;
 
   /**
    * When true, will display as checked.

@@ -22,7 +22,7 @@ export interface BadgeProps {
    * Size of the badge
    * @default "medium"
    */
-  size?: ControlSize;
+  size?: ControlSize | number;
 
   /**
    * Shape of the container
@@ -44,7 +44,7 @@ export interface BadgeProps {
 }
 
 export const Badge = (props: BadgeProps) => {
-  const { getStyles, size = 'medium', title, testID } = props;
+  const { getStyles, title, testID } = props;
 
   const theme = useTheme();
 
@@ -56,7 +56,7 @@ export const Badge = (props: BadgeProps) => {
 
   return (
     <View style={containerStyle} testID={testID}>
-      <Text weight="bold" size={size} getStyles={() => ({ textStyle })}>
+      <Text weight="bold" getStyles={() => ({ textStyle })}>
         {title}
       </Text>
     </View>

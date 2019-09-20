@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import * as React from 'react';
 import { PanResponder, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
@@ -13,6 +12,7 @@ import {
   SliderStyles,
 } from './Slider.styles';
 
+/* eslint-disable no-underscore-dangle */
 export interface Rect {
   x: number;
   y: number;
@@ -35,7 +35,7 @@ export interface SliderProps {
    * Size of the thumb, and thus the whole slider
    * @default "medium"
    */
-  size?: ControlSize;
+  size?: ControlSize | number;
 
   /**
    * Initial value of the slider. The value should be between minimumValue

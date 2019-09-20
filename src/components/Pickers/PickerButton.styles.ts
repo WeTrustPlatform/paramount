@@ -1,6 +1,7 @@
 import { ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
+import { isControlSize } from '../../utils/isControlSize';
 import { PickerButtonWrapperProps } from './PickerButtonWrapper';
 
 export interface PickerButtonStyles {
@@ -19,30 +20,39 @@ export const getPickerButtonStyles: GetPickerButtonStyles = (
   { size = 'medium' },
   theme,
 ) => {
-  const controlSizeStyles = {
-    small: {
-      borderRadius: theme.controlBorderRadius.small,
-      height: theme.controlHeights.small,
-      paddingLeft: theme.controlPaddings.small,
-      paddingRight: 40,
-    },
+  const controlSizeStyles = isControlSize(size)
+    ? {
+        small: {
+          borderRadius: theme.controlBorderRadius.small,
+          height: theme.controlHeights.small,
+          paddingLeft: theme.controlPaddings.small,
+          paddingRight: 40,
+        },
 
-    medium: {
-      borderRadius: theme.controlBorderRadius.medium,
-      height: theme.controlHeights.medium,
-      paddingLeft: theme.controlPaddings.medium,
-      paddingRight: 40,
-    },
+        medium: {
+          borderRadius: theme.controlBorderRadius.medium,
+          height: theme.controlHeights.medium,
+          paddingLeft: theme.controlPaddings.medium,
+          paddingRight: 40,
+        },
 
-    large: {
-      borderRadius: theme.controlBorderRadius.large,
-      height: theme.controlHeights.large,
-      paddingLeft: theme.controlPaddings.large,
-      paddingRight: 40,
-    },
-  }[size];
+        large: {
+          borderRadius: theme.controlBorderRadius.large,
+          height: theme.controlHeights.large,
+          paddingLeft: theme.controlPaddings.large,
+          paddingRight: 40,
+        },
+      }[size]
+    : {
+        borderRadius: theme.controlBorderRadius.medium,
+        height: size,
+        paddingLeft: theme.controlPaddings.medium,
+        paddingRight: 40,
+      };
 
-  const textSizeStyles = theme.textSizes[size];
+  const textSizeStyles = isControlSize(size)
+    ? theme.textSizes[size]
+    : theme.textSizes.medium;
 
   return {
     containerStyle: {

@@ -16,7 +16,7 @@ export interface DividerProps {
    * Size of the divider.
    * @default small
    */
-  size?: ControlSize;
+  size?: ControlSize | number;
 
   /**
    * Color of the divider.

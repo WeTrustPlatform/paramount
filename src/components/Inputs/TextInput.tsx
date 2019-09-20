@@ -21,7 +21,7 @@ export interface TextInputProps extends RNTextInputProps {
    * Size of the text input.
    * @default medium
    */
-  size?: ControlSize;
+  size?: ControlSize | number;
 
   /**
    * When true, text input is disabled

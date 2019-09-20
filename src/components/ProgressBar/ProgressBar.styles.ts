@@ -1,6 +1,7 @@
 import { ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
+import { isControlSize } from '../../utils/isControlSize';
 import { ProgressBarProps } from './ProgressBar';
 
 export type GetProgressBarStyles = (
@@ -17,7 +18,7 @@ export const getProgressBarStyles: GetProgressBarStyles = (
   { size = 'medium' },
   theme,
 ) => {
-  const height = theme.controlHeights[size] - 16;
+  const height = isControlSize(size) ? theme.controlHeights[size] - 16 : size;
 
   return {
     containerStyle: {

@@ -6,6 +6,7 @@ import {
   ControlSize,
   Theme,
 } from '../../theme/Theme';
+import { isControlSize } from '../../utils/isControlSize';
 import { DividerProps } from './Divider';
 
 export interface DividerStyles {
@@ -42,7 +43,7 @@ export const getDividerStyles: GetDividerStyles = (
     color || theme.colors.border.default,
   );
 
-  const dividerSize = dividerScale[size];
+  const dividerSize = isControlSize(size) ? dividerScale[size] : size;
 
   const styleMap = {
     horizontal: {

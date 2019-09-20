@@ -1,6 +1,7 @@
 import { ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
+import { isControlSize } from '../../utils/isControlSize';
 import { getTextColor } from '../Typography/Text.styles';
 import { RatingProps } from './Rating';
 
@@ -20,8 +21,10 @@ export const getRatingStyles: GetRatingStyles = (
   { size = 'medium', color = 'primary' },
   theme,
 ) => {
-  const starSize = theme.controlHeights[size];
-  const padding = theme.controlPaddings[size];
+  const starSize = isControlSize(size) ? theme.controlHeights[size] : size;
+  const padding = isControlSize(size)
+    ? theme.controlPaddings[size]
+    : theme.controlPaddings.medium;
 
   return {
     containerStyle: {

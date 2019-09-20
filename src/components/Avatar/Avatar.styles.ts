@@ -1,6 +1,7 @@
 import { ImageStyle, TextStyle, ViewStyle } from 'react-native';
 
 import { ControlSize, FillColors, Fills, Theme } from '../../theme/Theme';
+import { isControlSize } from '../../utils/isControlSize';
 import { AvatarProps } from './Avatar';
 
 export const hashCode = (s?: string) => {
@@ -78,7 +79,9 @@ export const getAvatarStyles: GetAvatarStyles = (
     colorProps = getAvatarProps(fills, { color, isSolid, hashValue: 0 });
   }
 
-  const controlSize = theme.controlHeights[size] * avatarScale[size];
+  const controlSize = isControlSize(size)
+    ? theme.controlHeights[size] * avatarScale[size]
+    : size;
 
   return {
     containerStyle: {

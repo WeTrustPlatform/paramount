@@ -1,6 +1,7 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
 import { ButtonColor, Theme } from '../../theme/Theme';
+import { isControlSize } from '../../utils/isControlSize';
 import { ButtonProps } from './Button';
 
 export interface ButtonColorProps {
@@ -134,6 +135,25 @@ export const getButtonStyles: GetButtonStyles = (props, theme) => {
     loadingBackgroundColor,
     ...touchableStyle
   } = buttonAppearances[appearance][color];
+  const { borderRadius, height, paddingLeft, paddingRight } = isControlSize(
+    size,
+  )
+    ? {
+        borderRadius: theme.controlBorderRadius[size],
+        height: theme.controlHeights[size],
+        paddingLeft: theme.controlPaddings[size] * 2,
+        paddingRight: theme.controlPaddings[size] * 2,
+      }
+    : {
+        borderRadius: theme.controlBorderRadius.medium,
+        height: size,
+        paddingLeft: theme.controlPaddings.medium * 2,
+        paddingRight: theme.controlPaddings.medium * 2,
+      };
+
+  const textSize = isControlSize(size)
+    ? theme.textSizes[size]
+    : theme.textSizes.medium;
 
   return {
     buttonContentWrapperStyle: {
@@ -153,12 +173,13 @@ export const getButtonStyles: GetButtonStyles = (props, theme) => {
       fontWeight: '600',
       justifyContent: 'center',
       textAlign: 'center',
+      ...textSize,
     },
     touchableStyle: {
-      borderRadius: theme.controlBorderRadius[size],
-      height: theme.controlHeights[size],
-      paddingLeft: theme.controlPaddings[size] * 2,
-      paddingRight: theme.controlPaddings[size] * 2,
+      borderRadius,
+      height,
+      paddingLeft,
+      paddingRight,
       ...touchableStyle,
       ...(isDisabled
         ? {

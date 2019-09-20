@@ -24,7 +24,7 @@ export type PickerButtonGetStylesProp = ReplaceReturnType<
 export interface PickerButtonProps extends AccessibilityProps {
   title?: string | null;
   onPress?: (event: GestureResponderEvent) => void;
-  size?: ControlSize;
+  size?: ControlSize | number;
   getStyles?: PickerButtonGetStylesProp;
 }
 

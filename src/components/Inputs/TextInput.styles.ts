@@ -1,6 +1,7 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
+import { isControlSize } from '../../utils/isControlSize';
 import { TextInputProps } from './TextInput';
 
 export interface TextInputStyles {
@@ -30,7 +31,28 @@ export const getTextInputStyles: GetTextInputStyles = (
 ) => {
   const hasLeftIcon = !!leftIcon;
   const hasRightIcon = !!(rightIcon || isClearable);
-  const controlHeight = theme.controlHeights[size];
+
+  const {
+    borderRadius,
+    height,
+    paddingLeft,
+    paddingRight,
+    textSize,
+  } = isControlSize(size)
+    ? {
+        borderRadius: theme.controlBorderRadius[size],
+        height: theme.controlHeights[size],
+        paddingLeft: theme.controlPaddings[size],
+        paddingRight: theme.controlPaddings[size],
+        textSize: theme.textSizes[size],
+      }
+    : {
+        borderRadius: theme.controlBorderRadius.medium,
+        height: size,
+        paddingLeft: theme.controlPaddings.medium,
+        paddingRight: theme.controlPaddings.medium,
+        textSize: theme.textSizes.medium,
+      };
 
   return {
     containerStyle: {
@@ -39,21 +61,21 @@ export const getTextInputStyles: GetTextInputStyles = (
     inputStyle: {
       backgroundColor: theme.colors.background.content,
       borderColor: theme.colors.border.default,
-      borderRadius: theme.controlBorderRadius[size],
+      borderRadius,
       borderWidth: 1,
       color: theme.colors.text.default,
-      height: theme.controlHeights[size],
-      paddingLeft: theme.controlPaddings[size],
-      paddingRight: theme.controlPaddings[size],
+      height,
+      paddingLeft,
+      paddingRight,
       width: '100%',
-      ...theme.textSizes[size],
+      ...textSize,
       ...(isDisabled
         ? { backgroundColor: theme.colors.background.greyDark }
         : {}),
       ...(isInvalid ? { borderColor: theme.colors.border.danger } : {}),
       ...(numberOfLines
         ? {
-            height: numberOfLines * controlHeight,
+            height: numberOfLines * height,
             paddingVertical: 16,
           }
         : {}),

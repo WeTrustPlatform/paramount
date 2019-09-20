@@ -12,7 +12,7 @@ export interface NativePickerProps extends RNPickerProps {
    * The size of the picker.
    * @default "medium"
    */
-  size?: ControlSize;
+  size?: ControlSize | number;
   /**
    * List of NativePickerItem items.
    */

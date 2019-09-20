@@ -12,7 +12,7 @@ export interface PickerButtonWrapperProps {
    * The size of the picker.
    * @default "medium"
    */
-  size?: ControlSize;
+  size?: ControlSize | number;
 
   /**
    * Callback to get element styles.

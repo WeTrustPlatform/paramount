@@ -34,7 +34,7 @@ export interface AvatarProps {
    * The size of the avatar.
    * @default "medium"
    */
-  size?: ControlSize;
+  size?: ControlSize | number;
 
   /**
    * The name used for the initials and title attribute.

@@ -25,7 +25,7 @@ export interface ProgressBarProps {
    * The size of the progress bar.
    * @default "medium"
    */
-  size?: ControlSize;
+  size?: ControlSize | number;
 
   /** Callback to get element styles. */
   getStyles?: ReplaceReturnType<

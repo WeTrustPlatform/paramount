@@ -1,6 +1,7 @@
 import { TextStyle, ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
+import { isControlSize } from '../../utils/isControlSize';
 import { BadgeProps } from './Badge';
 
 export interface BadgeStyles {
@@ -18,25 +19,35 @@ export const getBadgeStyles: GetBadgeStyles = (
   const fills = isSolid ? theme.fills.solid : theme.fills.subtle;
 
   const colors = fills[color];
-  const { height, paddingLeft, paddingRight } = {
-    small: {
-      height: theme.controlHeights.small,
-      paddingLeft: theme.controlPaddings.small,
-      paddingRight: theme.controlPaddings.small,
-    },
+  const { height, paddingLeft, paddingRight } = isControlSize(size)
+    ? {
+        small: {
+          height: theme.controlHeights.small,
+          paddingLeft: theme.controlPaddings.small,
+          paddingRight: theme.controlPaddings.small,
+        },
 
-    medium: {
-      height: theme.controlHeights.medium,
-      paddingLeft: theme.controlPaddings.medium,
-      paddingRight: theme.controlPaddings.medium,
-    },
+        medium: {
+          height: theme.controlHeights.medium,
+          paddingLeft: theme.controlPaddings.medium,
+          paddingRight: theme.controlPaddings.medium,
+        },
 
-    large: {
-      height: theme.controlHeights.large,
-      paddingLeft: theme.controlPaddings.large,
-      paddingRight: theme.controlPaddings.large,
-    },
-  }[size];
+        large: {
+          height: theme.controlHeights.large,
+          paddingLeft: theme.controlPaddings.large,
+          paddingRight: theme.controlPaddings.large,
+        },
+      }[size]
+    : {
+        height: size,
+        paddingLeft: theme.controlPaddings.medium,
+        paddingRight: theme.controlPaddings.medium,
+      };
+
+  const textSize = isControlSize(size)
+    ? theme.textSizes[size]
+    : theme.textSizes.medium;
 
   return {
     containerStyle: {
@@ -54,6 +65,7 @@ export const getBadgeStyles: GetBadgeStyles = (
     textStyle: {
       color: colors.color,
       textTransform: 'uppercase',
+      ...textSize,
     },
   };
 };

@@ -41,7 +41,7 @@ export interface ButtonProps {
    * The size of the button.
    * @default "medium"
    */
-  size?: ControlSize;
+  size?: ControlSize | number;
 
   /**
    * When true, show a loading spinner before the title. This also disables the button.
@@ -148,18 +148,14 @@ export interface ButtonContentProps extends ButtonProps {
 }
 
 const ButtonContent = (props: ButtonContentProps) => {
-  const { isLoading, iconLoading, icon, title, textStyle, size } = props;
+  const { isLoading, iconLoading, icon, title, textStyle } = props;
 
   if (isLoading) {
     return <>{iconLoading || <Dots color={textStyle.color} />}</>;
   }
   if (icon) return <>{icon}</>;
   if (title) {
-    return (
-      <Text size={size} getStyles={() => ({ textStyle })}>
-        {title}
-      </Text>
-    );
+    return <Text getStyles={() => ({ textStyle })}>{title}</Text>;
   }
 
   return <></>;
