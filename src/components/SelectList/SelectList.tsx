@@ -4,11 +4,11 @@ import { FlatList } from 'react-native';
 import { useTheme } from '../../theme';
 import { SelectListItem, SelectListItemProps } from './SelectListItem';
 
-export type Value<TIsMulti extends boolean> = TIsMulti extends true
+type Value<TIsMulti extends boolean> = TIsMulti extends true
   ? string[]
   : string;
 
-export interface SelectListOption {
+interface SelectListOption {
   value: string;
   label: string;
 }

@@ -12,17 +12,9 @@ import {
   SliderStyles,
 } from './Slider.styles';
 
-/* eslint-disable no-underscore-dangle */
-export interface Rect {
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-}
-
-export type RangeValue = [number, number];
-export type SliderValue = number | RangeValue;
-export type Value<TIsRange extends boolean> = TIsRange extends true
+type RangeValue = [number, number];
+type SliderValue = number | RangeValue;
+type Value<TIsRange extends boolean> = TIsRange extends true
   ? [number, number]
   : number;
 
