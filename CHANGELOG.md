@@ -1,3 +1,10 @@
+# [1.78.0](https://github.com/WeTrustPlatform/paramount/compare/v1.77.0...v1.78.0) (2019-09-23)
+
+
+### Features
+
+* wheelpicker with arrows ([5f29d8f](https://github.com/WeTrustPlatform/paramount/commit/5f29d8f))
+
 # [1.77.0](https://github.com/WeTrustPlatform/paramount/compare/v1.76.2...v1.77.0) (2019-09-20)
 
 
