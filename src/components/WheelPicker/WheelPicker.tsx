@@ -1,21 +1,17 @@
 import * as React from 'react';
-import {
-  FlatList,
-  NativeScrollEvent,
-  NativeSyntheticEvent,
-  View,
-} from 'react-native';
+import { FlatList, TouchableOpacity, View } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
 import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { Icon } from '../Icon';
+import { useWheelPicker } from './useWheelPicker';
 import { ITEM_HEIGHT } from './WheelPicker.constants';
 import {
   GetWheelPickerStyles,
   getWheelPickerStyles,
   WheelPickerStyles,
 } from './WheelPicker.styles';
-import { getOptionFromOptions, makePaddedOptions } from './WheelPicker.utils';
 import { WheelPickerItem, WheelPickerOption } from './WheelPickerItem';
 
 export interface WheelPicker {
@@ -54,24 +50,33 @@ const WheelPickerBase = (
   props: WheelPickerProps,
   ref: React.Ref<WheelPicker>,
 ) => {
-  const {
-    options,
-    onValueChange = () => {
-      return;
-    },
-    value: initialValue,
-    getStyles,
-  } = props;
-  const optionsWithClones = makePaddedOptions(options);
+  const { options, onValueChange, value, getStyles } = props;
   const listRef = React.useRef<FlatList<WheelPickerOption>>(null);
-  const theme = useTheme();
-  const getOption = React.useMemo(() => getOptionFromOptions(options), [
-    options,
-  ]);
 
   const {
+    optionsWithClones,
+    handlePressDown,
+    handlePressUp,
+    handleEndDrag,
+    initialScrollIndex,
+  } = useWheelPicker({
+    onValueChange,
+    options,
+    ref,
+    scrollContainer: {
+      scrollTo: params =>
+        listRef.current && listRef.current.scrollToOffset(params),
+    },
+    value,
+  });
+
+  const theme = useTheme();
+
+  const {
+    arrowWrapperStyle,
     bottomOverlayStyle,
     containerStyle,
+    wheelContainerStyle,
     listContainerStyle,
     upperOverlayStyle,
   } = mergeStyles(
@@ -80,70 +85,35 @@ const WheelPickerBase = (
     theme.components.getWheelPickerStyles,
   )(props, theme);
 
-  const scrollToValue = React.useCallback(
-    (value: string, smooth = true) => {
-      if (!listRef.current) return;
-
-      const index = optionsWithClones.findIndex(o => o.value === value);
-
-      listRef.current.scrollToOffset({
-        animated: smooth,
-        offset: index * ITEM_HEIGHT - ITEM_HEIGHT,
-      });
-    },
-    [listRef, options],
-  );
-
-  React.useEffect(() => {
-    if (initialValue) scrollToValue(initialValue, false);
-  }, [listRef]);
-
-  const handleScrollEndDrag = React.useCallback(
-    (event: NativeSyntheticEvent<NativeScrollEvent>) => {
-      if (!listRef.current) return;
-
-      const scrollPosition =
-        Math.round(event.nativeEvent.contentOffset.y / ITEM_HEIGHT) *
-        ITEM_HEIGHT;
-
-      listRef.current.scrollToOffset({
-        offset: scrollPosition,
-      });
-
-      const option = getOption(scrollPosition);
-
-      onValueChange(option.value);
-    },
-    [],
-  );
-
-  React.useImperativeHandle(
-    ref,
-    () => ({
-      selectValue: (value: string) => scrollToValue(value),
-    }),
-    [listRef, options],
-  );
-
   return (
     <View style={containerStyle}>
-      <FlatList
-        ref={listRef}
-        data={optionsWithClones}
-        style={listContainerStyle}
-        getItemLayout={(item, index) => ({
-          index,
-          length: ITEM_HEIGHT,
-          offset: ITEM_HEIGHT * index,
-        })}
-        initialScrollIndex={1}
-        keyExtractor={item => item.value}
-        renderItem={({ item }) => <WheelPickerItem option={item} />}
-        showsHorizontalScrollIndicator={false}
-        onScrollEndDrag={handleScrollEndDrag}
-      />
-      <View pointerEvents="none" style={upperOverlayStyle} />
-      <View pointerEvents="none" style={bottomOverlayStyle} />
+      <TouchableOpacity style={arrowWrapperStyle} onPress={handlePressUp}>
+        <Icon color="link" size="large" name="chevron-up" />
+      </TouchableOpacity>
+      <View style={wheelContainerStyle}>
+        <FlatList
+          ref={listRef}
+          data={optionsWithClones}
+          style={listContainerStyle}
+          getItemLayout={(item, index) => ({
+            index,
+            length: ITEM_HEIGHT,
+            offset: ITEM_HEIGHT * index,
+          })}
+          initialScrollIndex={initialScrollIndex}
+          keyExtractor={item => item.value}
+          renderItem={({ item }) => <WheelPickerItem option={item} />}
+          showsHorizontalScrollIndicator={false}
+          onScrollEndDrag={event =>
+            handleEndDrag(event.nativeEvent.contentOffset.y)
+          }
+        />
+        <View pointerEvents="none" style={upperOverlayStyle} />
+        <View pointerEvents="none" style={bottomOverlayStyle} />
+      </View>
+      <TouchableOpacity style={arrowWrapperStyle} onPress={handlePressDown}>
+        <Icon color="link" size="large" name="chevron-down" />
+      </TouchableOpacity>
     </View>
   );
 };

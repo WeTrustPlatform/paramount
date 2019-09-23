@@ -86,7 +86,7 @@ export const Checkbox = (props: CheckboxProps) => {
       accessibilityLabel={accessibilityLabel}
     >
       <View style={checkboxStyle}>
-        {value ? <Icon name="check" size={20} color={checkColor} /> : null}
+        {value ? <Icon name="check" size="xsmall" color={checkColor} /> : null}
       </View>
     </TouchableOpacity>
   );

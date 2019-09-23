@@ -148,9 +148,7 @@ export const ListItem = (props: ListItemProps) => {
         </View>
         {rightNode === null ? null : (
           <View style={rightWrapperStyle}>
-            {rightNode || (
-              <Icon color="default" size={24} name="chevron-right" />
-            )}
+            {rightNode || <Icon name="chevron-right" />}
           </View>
         )}
       </View>

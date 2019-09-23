@@ -131,7 +131,7 @@ export const Collapsible = (props: CollapsibleProps) => {
               </Text>
               <View style={iconWrapperStyle}>
                 <Icon
-                  size={28}
+                  size="large"
                   name={isFinalOpened ? 'chevron-up' : 'chevron-down'}
                   color={theme.colors.text.default}
                 />

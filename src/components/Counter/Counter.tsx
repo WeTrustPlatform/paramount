@@ -92,7 +92,7 @@ export const Counter = (props: CounterProps) => {
         >
           <Icon
             name="minus"
-            size={16}
+            size="xsmall"
             color={
               isDecrementDisabled
                 ? theme.colors.text.muted
@@ -120,7 +120,7 @@ export const Counter = (props: CounterProps) => {
         >
           <Icon
             name="plus"
-            size={16}
+            size="xsmall"
             color={
               isIncrementDisabled
                 ? theme.colors.text.muted

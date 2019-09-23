@@ -39,7 +39,11 @@ export const PickerButtonWrapper = (props: PickerButtonWrapperProps) => {
     <View style={containerStyle}>
       {children}
       <View style={rightContainerStyle}>
-        <Icon name="chevron-down" size={32} color={theme.colors.text.default} />
+        <Icon
+          name="chevron-down"
+          size="large"
+          color={theme.colors.text.default}
+        />
       </View>
     </View>
   );

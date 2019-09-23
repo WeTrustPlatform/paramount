@@ -5,9 +5,11 @@ import { WheelPickerProps } from './WheelPicker';
 import { ITEM_HEIGHT, SCROLL_PICKER_HEIGHT } from './WheelPicker.constants';
 
 export interface WheelPickerStyles {
+  arrowWrapperStyle: ViewStyle;
   containerStyle: ViewStyle;
   listContainerStyle: Omit<ViewStyle, 'transform'>;
   upperOverlayStyle: ViewStyle;
+  wheelContainerStyle: ViewStyle;
   bottomOverlayStyle: ViewStyle;
 }
 
@@ -18,6 +20,12 @@ export type GetWheelPickerStyles = (
 
 export const getWheelPickerStyles: GetWheelPickerStyles = (props, theme) => {
   return {
+    arrowWrapperStyle: {
+      alignItems: 'center',
+      height: 48,
+      justifyContent: 'center',
+      width: 48,
+    },
     bottomOverlayStyle: {
       backgroundColor: 'rgba(255, 255, 255, 0.7)',
       borderColor: theme.colors.border.default,
@@ -29,8 +37,9 @@ export const getWheelPickerStyles: GetWheelPickerStyles = (props, theme) => {
       width: '100%',
     },
     containerStyle: {
+      alignItems: 'center',
       flex: 1,
-      height: SCROLL_PICKER_HEIGHT,
+      width: '100%',
     },
     listContainerStyle:
       Platform.OS === 'web'
@@ -49,6 +58,11 @@ export const getWheelPickerStyles: GetWheelPickerStyles = (props, theme) => {
       height: ITEM_HEIGHT,
       position: 'absolute',
       top: 0,
+      width: '100%',
+    },
+    wheelContainerStyle: {
+      flex: 1,
+      height: SCROLL_PICKER_HEIGHT,
       width: '100%',
     },
   };

@@ -106,7 +106,7 @@ const colors: Colors = {
   },
 
   text: {
-    link: palette.neutral.darkest,
+    link: palette.teal.darkest,
     default: palette.neutral.darkest,
     muted: palette.neutral.dark,
     white: 'white',

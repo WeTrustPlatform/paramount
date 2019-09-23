@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 
-import { TextColor, useTheme } from '../../theme';
-import { getTextColor } from '../Typography/Text.styles';
+import { TextColor, TextSize, useTheme } from '../../theme';
+import { getTextColor, getTextSize } from '../Typography/Text.styles';
 
 export interface IconProps {
   /**
@@ -18,9 +18,9 @@ export interface IconProps {
 
   /**
    * Size of the icon.
-   * @default 24
+   * @default medium
    */
-  size?: number;
+  size?: TextSize;
 }
 
 export type IconName =
@@ -292,14 +292,21 @@ export type IconName =
   | 'zoom-in'
   | 'zoom-out';
 
-export const Icon = ({ name, color, size = 24 }: IconProps) => {
+export const Icon = ({
+  name,
+  color = 'default',
+  size = 'medium',
+}: IconProps) => {
   const theme = useTheme();
+
+  const { fontSize = 16 } = getTextSize(theme.textSizes)(size);
+  const iconSize = typeof size === 'string' ? fontSize + 8 : size;
 
   return (
     <Feather
       name={name}
-      color={color ? getTextColor(theme.colors.text)(color) : color}
-      size={size}
+      color={getTextColor(theme.colors.text)(color)}
+      size={iconSize}
     />
   );
 };

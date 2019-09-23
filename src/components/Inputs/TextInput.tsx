@@ -121,7 +121,7 @@ const TextInputBase = (props: TextInputProps) => {
                 onClear();
               }}
             >
-              <Icon name="x" size={24} color={theme.colors.text.default} />
+              <Icon name="x" color={theme.colors.text.default} />
             </TouchableOpacity>
           ) : (
             rightIcon

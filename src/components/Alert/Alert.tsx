@@ -46,13 +46,13 @@ export interface AlertProps {
 const resolveIcon = (intent: Intent) => {
   switch (intent) {
     case 'success':
-      return <Icon name="check-circle" size={24} color="success" />;
+      return <Icon name="check-circle" color="success" />;
     case 'warning':
-      return <Icon name="alert-triangle" size={24} color="warning" />;
+      return <Icon name="alert-triangle" color="warning" />;
     case 'danger':
-      return <Icon name="alert-circle" size={24} color="danger" />;
+      return <Icon name="alert-circle" color="danger" />;
     default:
-      return <Icon name="info" size={24} color="info" />;
+      return <Icon name="info" color="info" />;
   }
 };
 

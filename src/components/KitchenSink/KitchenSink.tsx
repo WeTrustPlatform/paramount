@@ -395,7 +395,7 @@ export const KitchenSink = () => {
               placeholder="TextInput"
               size="large"
               onChangeText={text => setState({ value: text })}
-              leftIcon={<Icon name="menu" size={24} />}
+              leftIcon={<Icon name="menu" />}
               isInvalid={false}
               isClearable // Mutually exclusive with rightIcon
               onClear={() => console.log('Cleared!')} // Only triggered with `isClearable`

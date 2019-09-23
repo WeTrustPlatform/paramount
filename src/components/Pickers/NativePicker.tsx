@@ -55,7 +55,11 @@ const NativePickerBase = (props: NativePickerProps) => {
         {...pickerProps}
       >
         {options.map(option => (
-          <RNPicker.Item value={option.value} label={option.label} />
+          <RNPicker.Item
+            key={option.value}
+            value={option.value}
+            label={option.label}
+          />
         ))}
       </RNPicker>
     </PickerButtonWrapper>

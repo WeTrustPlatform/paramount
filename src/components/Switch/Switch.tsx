@@ -125,7 +125,7 @@ export const Switch = (props: SwitchProps) => {
             ? onIcon || (
                 <Icon
                   name="check"
-                  size={20}
+                  size="xsmall"
                   color={
                     isDisabled
                       ? theme.colors.text.white
@@ -136,7 +136,7 @@ export const Switch = (props: SwitchProps) => {
             : offIcon || (
                 <Icon
                   name="x"
-                  size={20}
+                  size="xsmall"
                   color={
                     isDisabled
                       ? theme.colors.text.white
