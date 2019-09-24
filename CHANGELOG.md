@@ -1,3 +1,17 @@
+# [1.79.0](https://github.com/WeTrustPlatform/paramount/compare/v1.78.0...v1.79.0) (2019-09-24)
+
+
+### Bug Fixes
+
+* refactor getStyles callbacks ([8074814](https://github.com/WeTrustPlatform/paramount/commit/8074814))
+* theme types build ([f237dbc](https://github.com/WeTrustPlatform/paramount/commit/f237dbc))
+
+
+### Features
+
+* add description to selectlist and expose types ([358c081](https://github.com/WeTrustPlatform/paramount/commit/358c081))
+* merge providers ([0d894cb](https://github.com/WeTrustPlatform/paramount/commit/0d894cb))
+
 # [1.78.0](https://github.com/WeTrustPlatform/paramount/compare/v1.77.0...v1.78.0) (2019-09-23)
 
 
