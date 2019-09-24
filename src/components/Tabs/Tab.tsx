@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { DeepPartial, Omit } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { Button, ButtonProps } from '../Button';
-import { GetTabStyles, getTabStyles, TabStyles } from './Tab.styles';
+import { GetTabStyles, getTabStyles } from './Tab.styles';
 
 export interface TabProps
   extends Omit<Omit<ButtonProps, 'onPress'>, 'getStyles'> {
@@ -34,7 +33,7 @@ export interface TabProps
   /**
    * Callback to get element styles.
    */
-  getStyles?: ReplaceReturnType<GetTabStyles, DeepPartial<TabStyles>>;
+  getStyles?: GetTabStyles;
 }
 
 export const Tab = (props: TabProps) => {

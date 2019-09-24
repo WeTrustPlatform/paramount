@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { ColumnProps } from './Column';
 import { defaultLayout, useLayout } from './LayoutContext';
-import { GetRowStyles, getRowStyles, RowStyles } from './Row.styles';
+import { GetRowStyles, getRowStyles } from './Row.styles';
 
 export interface RowProps {
   /**
@@ -23,7 +22,7 @@ export interface RowProps {
     | React.ReactElement<ColumnProps>;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<GetRowStyles, DeepPartial<RowStyles>>;
+  getStyles?: GetRowStyles;
 }
 
 export const GutterWidthContext = React.createContext(

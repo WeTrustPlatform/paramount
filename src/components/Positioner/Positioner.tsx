@@ -1,15 +1,10 @@
 import * as React from 'react';
-import { DeepPartial } from 'ts-essentials';
 
 import { Measurements } from '../../hooks';
 import { useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { ViewMeasure } from '../Helpers';
-import {
-  GetPositionerStyles,
-  getPositionerStyles,
-  PositionerStyles,
-} from './Positioner.styles';
+import { GetPositionerStyles, getPositionerStyles } from './Positioner.styles';
 
 export const POSITION = {
   TOP: 'top' as const,
@@ -57,10 +52,7 @@ export interface PositionerProps {
   isVisible?: boolean;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<
-    GetPositionerStyles,
-    DeepPartial<PositionerStyles>
-  >;
+  getStyles?: GetPositionerStyles;
 }
 
 interface GetPositionerPositionParams {

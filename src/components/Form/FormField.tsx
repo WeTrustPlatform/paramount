@@ -1,15 +1,10 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { Label, Text } from '../Typography';
-import {
-  FormFieldStyles,
-  GetFormFieldStyles,
-  getFormFieldStyles,
-} from './FormField.styles';
+import { GetFormFieldStyles, getFormFieldStyles } from './FormField.styles';
 
 export type FormFieldLabelPosition = 'top' | 'left' | 'right';
 
@@ -39,10 +34,7 @@ export interface FormFieldProps {
   children?: React.ReactNode;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<
-    GetFormFieldStyles,
-    DeepPartial<FormFieldStyles>
-  >;
+  getStyles?: GetFormFieldStyles;
 }
 
 export const FormField = (props: FormFieldProps) => {

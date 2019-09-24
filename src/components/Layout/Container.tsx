@@ -1,14 +1,9 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import {
-  ContainerStyles,
-  GetContainerStyles,
-  getContainerStyles,
-} from './Container.styles';
+import { mergeStyles } from '../../utils/mergeStyles';
+import { GetContainerStyles, getContainerStyles } from './Container.styles';
 import { ContainerSize, useLayout } from './LayoutContext';
 
 export interface ContainerProps {
@@ -28,10 +23,7 @@ export interface ContainerProps {
   size?: ContainerSize;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<
-    GetContainerStyles,
-    DeepPartial<ContainerStyles>
-  >;
+  getStyles?: GetContainerStyles;
 }
 
 /**

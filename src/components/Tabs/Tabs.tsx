@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { TabProps } from './Tab';
-import { GetTabsStyles, getTabsStyles, TabsStyles } from './Tabs.styles';
+import { GetTabsStyles, getTabsStyles } from './Tabs.styles';
 
 export type TabsDistribution = 'scrollable' | 'fit';
 
@@ -26,7 +25,7 @@ export interface TabsProps {
   children: Array<React.ReactElement<TabProps>> | React.ReactElement<TabProps>;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<GetTabsStyles, DeepPartial<TabsStyles>>;
+  getStyles?: GetTabsStyles;
 }
 
 export const Tabs = (props: TabsProps) => {

@@ -7,7 +7,7 @@ import { RowProps } from './Row';
 export type GetRowStyles = (
   props: RowProps & LayoutInterface,
   theme: Theme,
-) => RowStyles;
+) => Partial<RowStyles>;
 
 export interface RowStyles {
   rowStyle: ViewStyle;

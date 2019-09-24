@@ -1,15 +1,13 @@
 import * as React from 'react';
 import { Platform, View } from 'react-native';
 import { animated, useSpring } from 'react-spring/native.cjs';
-import { DeepPartial } from 'ts-essentials';
 
 import { springDefaultConfig } from '../../constants/Animation';
 import { ControlSize, useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import {
   GetProgressBarStyles,
   getProgressBarStyles,
-  ProgressBarStyles,
 } from './ProgressBar.styles';
 
 const AnimatedView = animated(View);
@@ -28,10 +26,7 @@ export interface ProgressBarProps {
   size?: ControlSize | number;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<
-    GetProgressBarStyles,
-    DeepPartial<ProgressBarStyles>
-  >;
+  getStyles?: GetProgressBarStyles;
 
   /** Used to locate this view in end-to-end tests. */
   testID?: string;

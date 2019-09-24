@@ -11,7 +11,7 @@ export interface ParagraphStyles {
 export type GetParagraphStyles = (
   props: ParagraphProps,
   theme: Theme,
-) => ParagraphStyles;
+) => Partial<ParagraphStyles>;
 
 export const getParagraphSize = (paragraphSizes: ParagraphSizes) => (
   size: ParagraphSize,

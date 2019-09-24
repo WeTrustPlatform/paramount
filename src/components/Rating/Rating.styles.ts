@@ -8,7 +8,7 @@ import { RatingProps } from './Rating';
 export type GetRatingStyles = (
   progressStylesProps: RatingProps,
   theme: Theme,
-) => RatingStyles;
+) => Partial<RatingStyles>;
 
 export interface RatingStyles {
   touchableStyle: ViewStyle;

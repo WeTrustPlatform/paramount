@@ -11,7 +11,7 @@ import {
 export type GetColumnStyles = (
   props: ColumnProps & LayoutInterface,
   theme: Theme,
-) => ColumnStyles;
+) => Partial<ColumnStyles>;
 
 export interface ColumnStyles {
   columnStyle: ViewStyle;

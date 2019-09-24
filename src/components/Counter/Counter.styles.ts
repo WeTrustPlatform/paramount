@@ -16,7 +16,7 @@ export interface CounterStyles {
 export type GetCounterStyles = (
   props: CounterProps,
   theme: Theme,
-) => CounterStyles;
+) => Partial<CounterStyles>;
 
 export const getCounterStyles: GetCounterStyles = (props, theme) => {
   return {

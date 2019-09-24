@@ -1,15 +1,10 @@
 import * as React from 'react';
 import { Text, TextProps } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
 import { FontWeight, TextColor, TextSize } from '../../theme/Theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import {
-  GetParagraphStyles,
-  getParagraphStyles,
-  ParagraphStyles,
-} from './Paragraph.styles';
+import { mergeStyles } from '../../utils/mergeStyles';
+import { GetParagraphStyles, getParagraphStyles } from './Paragraph.styles';
 import { TextAlign } from './types';
 
 // @ts-ignore: need to override for web purposes
@@ -42,10 +37,7 @@ export interface ParagraphProps extends TextProps {
   children?: React.ReactNode;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<
-    GetParagraphStyles,
-    DeepPartial<ParagraphStyles>
-  >;
+  getStyles?: GetParagraphStyles;
 }
 
 export const Paragraph = (props: ParagraphProps) => {

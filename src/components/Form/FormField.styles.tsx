@@ -16,7 +16,7 @@ export interface FormFieldStyles {
 export type GetFormFieldStyles = (
   props: FormFieldProps,
   theme: Theme,
-) => FormFieldStyles;
+) => Partial<FormFieldStyles>;
 
 export const getFormFieldStyles: GetFormFieldStyles = (
   { labelPosition },

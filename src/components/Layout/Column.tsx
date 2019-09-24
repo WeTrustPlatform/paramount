@@ -1,14 +1,9 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import {
-  ColumnStyles,
-  GetColumnStyles,
-  getColumnStyles,
-} from './Column.styles';
+import { mergeStyles } from '../../utils/mergeStyles';
+import { GetColumnStyles, getColumnStyles } from './Column.styles';
 import { ColumnCount, useLayout } from './LayoutContext';
 import { GutterWidthContext } from './Row';
 
@@ -71,7 +66,7 @@ export interface ColumnProps extends ColumnConfig {
   children?: React.ReactNode;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<GetColumnStyles, DeepPartial<ColumnStyles>>;
+  getStyles?: GetColumnStyles;
 }
 
 export const Column = (props: ColumnProps) => {

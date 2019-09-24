@@ -14,7 +14,7 @@ export interface PickerButtonStyles {
 export type GetPickerButtonStyles = (
   props: PickerButtonWrapperProps,
   theme: Theme,
-) => PickerButtonStyles;
+) => Partial<PickerButtonStyles>;
 
 export const getPickerButtonStyles: GetPickerButtonStyles = (
   { size = 'medium' },

@@ -1,19 +1,14 @@
 import * as React from 'react';
 import { TouchableWithoutFeedback, View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import {
-  GetOverlayStyles,
-  getOverlayStyles,
-  OverlayStyles,
-} from './Overlay.styles';
+import { mergeStyles } from '../../utils/mergeStyles';
+import { GetOverlayStyles, getOverlayStyles } from './Overlay.styles';
 
 interface OverlayProps {
   onPress: () => void;
   transparent?: boolean;
-  getStyles?: ReplaceReturnType<GetOverlayStyles, DeepPartial<OverlayStyles>>;
+  getStyles?: GetOverlayStyles;
 }
 
 export const Overlay = (props: OverlayProps) => {

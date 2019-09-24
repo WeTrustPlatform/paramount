@@ -1,16 +1,11 @@
 import * as React from 'react';
 import { TouchableOpacity, View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { Icon } from '../Icon';
 import { Text } from '../Typography';
-import {
-  CounterStyles,
-  GetCounterStyles,
-  getCounterStyles,
-} from './Counter.styles';
+import { GetCounterStyles, getCounterStyles } from './Counter.styles';
 
 export interface CounterProps {
   /**
@@ -46,7 +41,7 @@ export interface CounterProps {
   /**
    * Inline styles for components
    */
-  getStyles?: ReplaceReturnType<GetCounterStyles, DeepPartial<CounterStyles>>;
+  getStyles?: GetCounterStyles;
 }
 
 export const Counter = (props: CounterProps) => {

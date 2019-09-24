@@ -13,7 +13,7 @@ export interface CheckboxStyles {
 export type GetCheckboxStyles = (
   props: CheckboxProps,
   theme: Theme,
-) => CheckboxStyles;
+) => Partial<CheckboxStyles>;
 
 export const getCheckboxStyles: GetCheckboxStyles = (
   { value, isDisabled, shape = 'rounded', size = 'medium' },

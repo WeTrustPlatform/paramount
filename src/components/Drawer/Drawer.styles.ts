@@ -12,7 +12,7 @@ export interface DrawerStyles {
 export type GetDrawerStyles = (
   props: DrawerProps,
   theme: Theme,
-) => DrawerStyles;
+) => Partial<DrawerStyles>;
 
 export const getDrawerStyles: GetDrawerStyles = (props, theme) => {
   return {

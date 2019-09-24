@@ -14,7 +14,7 @@ export interface DialogStyles {
 export type GetDialogStyles = (
   props: DialogProps,
   theme: Theme,
-) => DialogStyles;
+) => Partial<DialogStyles>;
 
 export const getDialogStyles: GetDialogStyles = (props, theme) => {
   return {

@@ -1,16 +1,11 @@
 import * as React from 'react';
 import { ScrollView, View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { Modal } from '../Modal';
 import { Overlay } from '../Overlay';
-import {
-  DialogStyles,
-  GetDialogStyles,
-  getDialogStyles,
-} from './Dialog.styles';
+import { GetDialogStyles, getDialogStyles } from './Dialog.styles';
 
 // TODO: Import from react-native when react-native-web implementation is ready
 
@@ -46,7 +41,7 @@ export interface DialogProps {
   footer?: React.ReactNode;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<GetDialogStyles, DeepPartial<DialogStyles>>;
+  getStyles?: GetDialogStyles;
 }
 
 export const Dialog = (props: DialogProps) => {

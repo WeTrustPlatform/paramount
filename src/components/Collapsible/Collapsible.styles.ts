@@ -14,7 +14,7 @@ export interface CollapsibleStyles {
 export type GetCollapsibleStyles = (
   props: CollapsibleProps,
   theme: Theme,
-) => CollapsibleStyles;
+) => Partial<CollapsibleStyles>;
 
 export const getCollapsibleStyles: GetCollapsibleStyles = (props, theme) => {
   return {

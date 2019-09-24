@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
 import { ContainerShape, ControlSize, FillColor } from '../../theme/Theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { Text } from '../Typography';
-import { BadgeStyles, GetBadgeStyles, getBadgeStyles } from './Badge.styles';
+import { GetBadgeStyles, getBadgeStyles } from './Badge.styles';
 
 export interface BadgeProps {
   /** Title of the badge */
@@ -37,7 +36,7 @@ export interface BadgeProps {
   isSolid?: boolean;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<GetBadgeStyles, DeepPartial<BadgeStyles>>;
+  getStyles?: GetBadgeStyles;
 
   /** Used to locate this view in end-to-end tests. */
   testID?: string;

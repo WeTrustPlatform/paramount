@@ -11,7 +11,7 @@ export interface ToastStyles {
 export type GetToastStyles = (
   props: ToastProviderProps,
   theme: Theme,
-) => ToastStyles;
+) => Partial<ToastStyles>;
 
 // @ts-ignore: Compat with web
 export const getToastStyles: GetToastStyles = (props, theme) => {

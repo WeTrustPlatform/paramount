@@ -4,8 +4,10 @@ import { View } from 'react-native';
 import { ControlSize, useTheme } from '../../theme';
 import { mergeStyles } from '../../utils/mergeStyles';
 import { Icon } from '../Icon';
-import { PickerButtonGetStylesProp } from './PickerButton';
-import { getPickerButtonStyles } from './PickerButton.styles';
+import {
+  GetPickerButtonStyles,
+  getPickerButtonStyles,
+} from './PickerButton.styles';
 
 export interface PickerButtonWrapperProps {
   /**
@@ -17,7 +19,7 @@ export interface PickerButtonWrapperProps {
   /**
    * Callback to get element styles.
    */
-  getStyles?: PickerButtonGetStylesProp;
+  getStyles?: GetPickerButtonStyles;
 
   /**
    * Content of the wrapper

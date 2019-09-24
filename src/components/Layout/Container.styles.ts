@@ -12,7 +12,7 @@ import {
 export type GetContainerStyles = (
   props: ContainerProps & LayoutInterface,
   theme: Theme,
-) => ContainerStyles;
+) => Partial<ContainerStyles>;
 
 export interface ContainerStyles {
   containerStyle: ViewStyle;

@@ -113,7 +113,7 @@ export interface ButtonStyles {
 export type GetButtonStyles = (
   props: ButtonProps,
   theme: Theme,
-) => ButtonStyles;
+) => Partial<ButtonStyles>;
 
 export const getButtonStyles: GetButtonStyles = (props, theme) => {
   const {

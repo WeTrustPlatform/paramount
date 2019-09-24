@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { Box } from '../Box';
 import { Icon } from '../Icon';
 import { Text } from '../Typography';
-import { AlertStyles, GetAlertStyles, getAlertStyles } from './Alert.styles';
+import { GetAlertStyles, getAlertStyles } from './Alert.styles';
 
 export type Intent = 'danger' | 'info' | 'success' | 'warning';
 
@@ -37,7 +36,7 @@ export interface AlertProps {
   actionNode?: React.ReactNode;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<GetAlertStyles, DeepPartial<AlertStyles>>;
+  getStyles?: GetAlertStyles;
 
   /** Used to locate this view in end-to-end tests. */
   testID?: string;

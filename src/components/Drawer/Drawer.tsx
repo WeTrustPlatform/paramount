@@ -1,18 +1,13 @@
 import * as React from 'react';
 import { View } from 'react-native';
 import { animated, useSpring } from 'react-spring/native.cjs';
-import { DeepPartial } from 'ts-essentials';
 
 import { springDefaultConfig } from '../../constants/Animation';
 import { useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { Modal } from '../Modal';
 import { Overlay } from '../Overlay';
-import {
-  DrawerStyles,
-  GetDrawerStyles,
-  getDrawerStyles,
-} from './Drawer.styles';
+import { GetDrawerStyles, getDrawerStyles } from './Drawer.styles';
 
 type Position = 'bottom' | 'top' | 'right' | 'left';
 
@@ -63,7 +58,7 @@ export interface DrawerProps {
   children: React.ReactNode;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<GetDrawerStyles, DeepPartial<DrawerStyles>>;
+  getStyles?: GetDrawerStyles;
 }
 
 export const Drawer = (props: DrawerProps) => {

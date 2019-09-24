@@ -7,7 +7,10 @@ export interface TabsStyles {
   containerStyle: ViewStyle;
 }
 
-export type GetTabsStyles = (props: TabsProps, theme: Theme) => TabsStyles;
+export type GetTabsStyles = (
+  props: TabsProps,
+  theme: Theme,
+) => Partial<TabsStyles>;
 
 export const getTabsStyles: GetTabsStyles = (props, theme) => {
   return {

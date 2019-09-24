@@ -16,7 +16,10 @@ export interface TextStyles {
   textStyle: TextStyle;
 }
 
-export type GetTextStyles = (props: TextProps, theme: Theme) => TextStyles;
+export type GetTextStyles = (
+  props: TextProps,
+  theme: Theme,
+) => Partial<TextStyles>;
 
 export const getFontWeight = (fontWeights: FontWeights) => (
   fontWeight?: FontWeight,

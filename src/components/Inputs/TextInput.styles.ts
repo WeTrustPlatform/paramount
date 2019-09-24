@@ -15,7 +15,7 @@ export interface TextInputStyles {
 export type GetTextInputStyles = (
   props: TextInputProps,
   theme: Theme,
-) => TextInputStyles;
+) => Partial<TextInputStyles>;
 
 export const getTextInputStyles: GetTextInputStyles = (
   {

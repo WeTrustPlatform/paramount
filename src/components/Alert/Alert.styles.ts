@@ -11,7 +11,10 @@ export interface AlertStyles {
   descriptionStyle: TextStyle;
 }
 
-export type GetAlertStyles = (props: AlertProps, theme: Theme) => AlertStyles;
+export type GetAlertStyles = (
+  props: AlertProps,
+  theme: Theme,
+) => Partial<AlertStyles>;
 
 export const getAlertStyles: GetAlertStyles = ({ intent = 'info' }, theme) => {
   return {

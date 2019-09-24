@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { TouchableOpacity, View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { Icon } from '../Icon';
 import { Text } from '../Typography';
 import {
-  CollapsibleStyles,
   GetCollapsibleStyles,
   getCollapsibleStyles,
 } from './Collapsible.styles';
@@ -53,10 +51,7 @@ export interface CollapsibleProps {
   accessible?: boolean;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<
-    GetCollapsibleStyles,
-    DeepPartial<CollapsibleStyles>
-  >;
+  getStyles?: GetCollapsibleStyles;
 
   /** Used to locate this view in end-to-end tests. */
   testID?: string;

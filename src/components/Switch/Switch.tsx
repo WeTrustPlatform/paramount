@@ -1,21 +1,26 @@
 import * as React from 'react';
 import { GestureResponderEvent, TouchableOpacity, View } from 'react-native';
 import { animated, useSpring } from 'react-spring/native.cjs';
-import { DeepPartial } from 'ts-essentials';
 
 import { springDefaultConfig } from '../../constants/Animation';
-import { useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { ControlSize, useTheme } from '../../theme';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { Icon } from '../Icon';
 import {
+  getCircleSize,
+  getContainerSize,
   GetSwitchStyles,
   getSwitchStyles,
-  SwitchStyles,
 } from './Switch.styles';
 
 const AnimatedView = animated(View);
 
 export interface SwitchProps {
+  /**
+   * The size of the switch.
+   */
+  size?: ControlSize | number;
+
   /**
    * When true, will display as switched on.
    * @default false
@@ -59,11 +64,12 @@ export interface SwitchProps {
   testID?: string;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<GetSwitchStyles, DeepPartial<SwitchStyles>>;
+  getStyles?: GetSwitchStyles;
 }
 
 export const Switch = (props: SwitchProps) => {
   const {
+    size = 'medium',
     onIcon,
     offIcon,
     onPress,
@@ -89,14 +95,15 @@ export const Switch = (props: SwitchProps) => {
     theme,
   );
 
+  const circleSize = getCircleSize(size, theme);
+  const containerSize = getContainerSize(size, theme);
+
   const { backgroundColor, circleColor, circlePosition } = useSpring({
     config: springDefaultConfig,
 
     backgroundColor: value ? backgroundColorOn : backgroundColorOff,
     circleColor: value ? circleColorOn : circleColorOff,
-    circlePosition: value
-      ? containerStyle.width - (circleStyle.width + containerStyle.padding * 2)
-      : 0,
+    circlePosition: value ? containerSize - (circleSize + 6) : 0,
   });
 
   return (

@@ -17,7 +17,7 @@ export interface ListItemStyles {
 export type GetListItemStyles = (
   props: ListItemProps,
   theme: Theme,
-) => ListItemStyles;
+) => Partial<ListItemStyles>;
 
 export const getListItemStyles: GetListItemStyles = ({ isDisabled }, theme) => {
   return {

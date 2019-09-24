@@ -18,7 +18,7 @@ export type DividerPosition = 'horizontal' | 'vertical';
 export type GetDividerStyles = (
   props: DividerProps,
   theme: Theme,
-) => DividerStyles;
+) => Partial<DividerStyles>;
 
 export const getDividerColor = (borderColors: BorderColors) => (
   borderColor: BorderColor,

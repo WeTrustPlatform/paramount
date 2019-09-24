@@ -11,7 +11,7 @@ export interface HeadingStyles {
 export type GetHeadingStyles = (
   props: HeadingProps,
   theme: Theme,
-) => HeadingStyles;
+) => Partial<HeadingStyles>;
 
 export const getHeadingSize = (headingSizes: HeadingSizes) => (
   size: HeadingSize,

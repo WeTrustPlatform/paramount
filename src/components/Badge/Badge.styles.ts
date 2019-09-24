@@ -9,7 +9,10 @@ export interface BadgeStyles {
   containerStyle: ViewStyle;
 }
 
-export type GetBadgeStyles = (props: BadgeProps, theme: Theme) => BadgeStyles;
+export type GetBadgeStyles = (
+  props: BadgeProps,
+  theme: Theme,
+) => Partial<BadgeStyles>;
 
 export const getBadgeStyles: GetBadgeStyles = (
   { size = 'medium', color = 'neutral', isSolid = false, shape = 'rounded' },

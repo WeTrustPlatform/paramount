@@ -1,17 +1,12 @@
 import * as React from 'react';
 import { GestureResponderEvent, TouchableOpacity, View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { Avatar, AvatarProps } from '../Avatar';
 import { Icon } from '../Icon';
 import { Text } from '../Typography';
-import {
-  GetListItemStyles,
-  getListItemStyles,
-  ListItemStyles,
-} from './ListItem.styles';
+import { GetListItemStyles, getListItemStyles } from './ListItem.styles';
 
 export interface ListItemProps {
   /**
@@ -63,7 +58,7 @@ export interface ListItemProps {
   accessible?: boolean;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<GetListItemStyles, DeepPartial<ListItemStyles>>;
+  getStyles?: GetListItemStyles;
 
   /** Used to locate this view in end-to-end tests. */
   testID?: string;

@@ -14,7 +14,7 @@ export interface PopoverStyles extends PositionerStyles {
 export type GetPopoverStyles = (
   props: PositionerStyleProps,
   theme: Theme,
-) => PopoverStyles;
+) => Partial<PopoverStyles>;
 
 export const getPopoverStyles: GetPopoverStyles = (props, theme) => {
   return {

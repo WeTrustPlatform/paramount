@@ -13,7 +13,7 @@ export interface OverlayStylesProps {
 export type GetOverlayStyles = (
   { transparent }: OverlayStylesProps,
   theme: Theme,
-) => OverlayStyles;
+) => Partial<OverlayStyles>;
 
 export const getOverlayStyles: GetOverlayStyles = ({ transparent }, theme) => {
   return {

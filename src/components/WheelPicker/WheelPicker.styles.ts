@@ -16,7 +16,7 @@ export interface WheelPickerStyles {
 export type GetWheelPickerStyles = (
   props: WheelPickerProps,
   theme: Theme,
-) => WheelPickerStyles;
+) => Partial<WheelPickerStyles>;
 
 export const getWheelPickerStyles: GetWheelPickerStyles = (props, theme) => {
   return {

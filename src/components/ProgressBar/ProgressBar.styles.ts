@@ -7,7 +7,7 @@ import { ProgressBarProps } from './ProgressBar';
 export type GetProgressBarStyles = (
   props: ProgressBarProps,
   theme: Theme,
-) => ProgressBarStyles;
+) => Partial<ProgressBarStyles>;
 
 export interface ProgressBarStyles {
   progressStyle: ViewStyle;

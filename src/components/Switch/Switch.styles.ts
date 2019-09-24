@@ -1,6 +1,7 @@
 import { ViewStyle } from 'react-native';
 
-import { Theme } from '../../theme/Theme';
+import { ControlSize, Theme } from '../../theme/Theme';
+import { isControlSize } from '../../utils/isControlSize';
 import { SwitchProps } from './Switch';
 
 export interface SwitchStylesRequired {
@@ -21,10 +22,27 @@ export interface SwitchStyles {
 export type GetSwitchStyles = (
   props: SwitchProps,
   theme: Theme,
-) => SwitchStyles;
+) => Partial<SwitchStyles>;
+
+export const getCircleSize = (
+  size: ControlSize | number = 'medium',
+  theme: Theme,
+) => {
+  return isControlSize(size) ? theme.controlHeights[size] - 8 : size;
+};
+
+export const getContainerSize = (
+  size: ControlSize | number = 'medium',
+  theme: Theme,
+) => {
+  return getCircleSize(size, theme) * 2;
+};
 
 export const getSwitchStyles: GetSwitchStyles = (props, theme) => {
-  const { isDisabled = false } = props;
+  const { isDisabled = false, size = 'medium' } = props;
+
+  const circleSize = getCircleSize(size, theme);
+  const containerSize = getContainerSize(size, theme);
 
   return {
     backgroundColorOff: theme.colors.background.greyDefault,
@@ -39,19 +57,19 @@ export const getSwitchStyles: GetSwitchStyles = (props, theme) => {
       backgroundColor: theme.colors.background.content,
       borderRadius: 24,
       display: 'flex',
-      height: 38,
+      height: circleSize,
       justifyContent: 'center',
       padding: 0,
-      width: 38,
+      width: circleSize,
     },
     containerStyle: {
       alignItems: 'center',
       backgroundColor: theme.colors.background.greyLight,
       borderRadius: 24,
       flexDirection: 'row',
-      height: 44,
+      height: circleSize + 8,
       padding: 3,
-      width: 72,
+      width: containerSize,
     },
     touchableStyle: {
       alignSelf: 'flex-start',

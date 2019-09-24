@@ -54,7 +54,7 @@ const getAvatarProps = (
 export type GetAvatarStyles = (
   props: AvatarProps,
   theme: Theme,
-) => AvatarStyles;
+) => Partial<AvatarStyles>;
 
 const avatarScale: { [size in ControlSize]: number } = {
   large: 2,

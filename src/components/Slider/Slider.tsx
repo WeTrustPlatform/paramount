@@ -1,16 +1,11 @@
 import * as React from 'react';
 import { PanResponder, View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { usePrevious } from '../../hooks';
 import { ControlSize, useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { ViewMeasure } from '../Helpers';
-import {
-  GetSliderStyles,
-  getSliderStyles,
-  SliderStyles,
-} from './Slider.styles';
+import { GetSliderStyles, getSliderStyles } from './Slider.styles';
 
 type RangeValue = [number, number];
 type SliderValue = number | RangeValue;
@@ -87,7 +82,7 @@ export interface SliderProps<TIsRange extends boolean> {
   /**
    * Callback to get element styles.
    */
-  getStyles?: ReplaceReturnType<GetSliderStyles, DeepPartial<SliderStyles>>;
+  getStyles?: GetSliderStyles;
 
   /** Label for screen readers */
   leftThumbAccessibilityLabel?: string;

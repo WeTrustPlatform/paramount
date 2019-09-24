@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { View } from 'react-native';
 import { animated, useTransition } from 'react-spring/native.cjs';
-import { DeepPartial } from 'ts-essentials';
 
 import { springDefaultConfig } from '../../constants/Animation';
 import { useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { Toast, ToastId, ToastInstance, ToastSettings } from './Toast';
-import { GetToastStyles, getToastStyles, ToastStyles } from './Toast.styles';
+import { GetToastStyles, getToastStyles } from './Toast.styles';
 import { ToastContext } from './ToastContext';
 
 const AnimatedView = animated(View);
@@ -28,7 +27,7 @@ export interface ToastProviderProps {
   offset?: number;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<GetToastStyles, DeepPartial<ToastStyles>>;
+  getStyles?: GetToastStyles;
 }
 
 const hasCustomId = (toastSettings: ToastSettings) => !!toastSettings.id;

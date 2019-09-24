@@ -5,16 +5,11 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { ControlSize, useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { Icon } from '../Icon';
-import {
-  GetTextInputStyles,
-  getTextInputStyles,
-  TextInputStyles,
-} from './TextInput.styles';
+import { GetTextInputStyles, getTextInputStyles } from './TextInput.styles';
 
 export interface TextInputProps extends RNTextInputProps {
   /**
@@ -59,10 +54,7 @@ export interface TextInputProps extends RNTextInputProps {
   /**
    * Callback to get element styles.
    */
-  getStyles?: ReplaceReturnType<
-    GetTextInputStyles,
-    DeepPartial<TextInputStyles>
-  >;
+  getStyles?: GetTextInputStyles;
 }
 
 const TextInputBase = (props: TextInputProps) => {

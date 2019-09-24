@@ -1,14 +1,9 @@
 import * as React from 'react';
 import { TouchableOpacity, View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { ControlSize, TextColor, useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import {
-  GetRatingStyles,
-  getRatingStyles,
-  RatingStyles,
-} from './Rating.styles';
+import { mergeStyles } from '../../utils/mergeStyles';
+import { GetRatingStyles, getRatingStyles } from './Rating.styles';
 import { Star } from './Star';
 
 export interface RatingProps {
@@ -41,7 +36,7 @@ export interface RatingProps {
   color?: TextColor;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<GetRatingStyles, DeepPartial<RatingStyles>>;
+  getStyles?: GetRatingStyles;
 }
 
 export const Rating = (props: RatingProps) => {

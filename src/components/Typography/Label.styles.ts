@@ -8,7 +8,10 @@ export interface LabelStyles {
   labelStyle: TextStyle;
 }
 
-export type GetLabelStyles = (props: LabelProps, theme: Theme) => LabelStyles;
+export type GetLabelStyles = (
+  props: LabelProps,
+  theme: Theme,
+) => Partial<LabelStyles>;
 
 export const getLabelStyles: GetLabelStyles = (props, theme) => {
   const { getStyles, ...rest } = props;

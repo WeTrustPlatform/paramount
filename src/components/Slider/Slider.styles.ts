@@ -14,7 +14,7 @@ export interface SliderStyles {
 export type GetSliderStyles = (
   props: SliderProps<any>,
   theme: Theme,
-) => SliderStyles;
+) => Partial<SliderStyles>;
 
 export const getSliderStyles: GetSliderStyles = (props, theme) => {
   const { size = 'medium' } = props;

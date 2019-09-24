@@ -1,16 +1,11 @@
 import * as React from 'react';
 import { Image, ImageSourcePropType, View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
 import { ControlSize, FillColor } from '../../theme/Theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { Text } from '../Typography';
-import {
-  AvatarStyles,
-  GetAvatarStyles,
-  getAvatarStyles,
-} from './Avatar.styles';
+import { GetAvatarStyles, getAvatarStyles } from './Avatar.styles';
 
 // https://github.com/segmentio/evergreen/blob/master/source/avatar/README.md
 export type GetInitialsType = (name?: string, fallback?: string) => string;
@@ -60,7 +55,7 @@ export interface AvatarProps {
   accessibilityLabel?: string;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<GetAvatarStyles, DeepPartial<AvatarStyles>>;
+  getStyles?: GetAvatarStyles;
 
   /** Used to locate this view in end-to-end tests. */
   testID?: string;

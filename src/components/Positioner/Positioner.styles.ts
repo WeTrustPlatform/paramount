@@ -14,7 +14,7 @@ export interface PositionerStyleProps {
 export type GetPositionerStyles = (
   props: PositionerStyleProps,
   theme: Theme,
-) => PositionerStyles;
+) => Partial<PositionerStyles>;
 
 export const getPositionerStyles: GetPositionerStyles = (props, theme) => {
   const { isPositionerMeasurementsMeasured } = props;

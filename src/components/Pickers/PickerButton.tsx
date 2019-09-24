@@ -4,28 +4,21 @@ import {
   GestureResponderEvent,
   TouchableOpacity,
 } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { ControlSize, useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { Text } from '../Typography';
 import {
   GetPickerButtonStyles,
   getPickerButtonStyles,
-  PickerButtonStyles,
 } from './PickerButton.styles';
 import { PickerButtonWrapper } from './PickerButtonWrapper';
-
-export type PickerButtonGetStylesProp = ReplaceReturnType<
-  GetPickerButtonStyles,
-  DeepPartial<PickerButtonStyles>
->;
 
 export interface PickerButtonProps extends AccessibilityProps {
   title?: string | null;
   onPress?: (event: GestureResponderEvent) => void;
   size?: ControlSize | number;
-  getStyles?: PickerButtonGetStylesProp;
+  getStyles?: GetPickerButtonStyles;
 }
 
 export const PickerButton = (props: PickerButtonProps) => {

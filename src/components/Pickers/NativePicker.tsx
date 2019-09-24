@@ -3,8 +3,10 @@ import { Picker as RNPicker, PickerProps as RNPickerProps } from 'react-native';
 
 import { ControlSize, useTheme } from '../../theme';
 import { mergeStyles } from '../../utils/mergeStyles';
-import { PickerButtonGetStylesProp } from './PickerButton';
-import { getPickerButtonStyles } from './PickerButton.styles';
+import {
+  GetPickerButtonStyles,
+  getPickerButtonStyles,
+} from './PickerButton.styles';
 import { PickerButtonWrapper } from './PickerButtonWrapper';
 
 export interface NativePickerOption {
@@ -26,7 +28,7 @@ export interface NativePickerProps extends RNPickerProps {
   /**
    * Callback to get element styles.
    */
-  getStyles?: PickerButtonGetStylesProp;
+  getStyles?: GetPickerButtonStyles;
 
   innerRef?: React.Ref<RNPicker>;
 }

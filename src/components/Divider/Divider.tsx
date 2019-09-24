@@ -1,12 +1,10 @@
 import * as React from 'react';
 import { View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { BorderColor, ControlSize, useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import {
   DividerPosition,
-  DividerStyles,
   GetDividerStyles,
   getDividerStyles,
 } from './Divider.styles';
@@ -31,7 +29,7 @@ export interface DividerProps {
   position?: DividerPosition;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<GetDividerStyles, DeepPartial<DividerStyles>>;
+  getStyles?: GetDividerStyles;
 }
 
 export const Divider = (props: DividerProps) => {

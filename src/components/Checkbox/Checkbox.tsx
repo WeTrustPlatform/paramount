@@ -1,15 +1,10 @@
 import * as React from 'react';
 import { GestureResponderEvent, TouchableOpacity, View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { ContainerShape, ControlSize, useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { Icon } from '../Icon';
-import {
-  CheckboxStyles,
-  GetCheckboxStyles,
-  getCheckboxStyles,
-} from './Checkbox.styles';
+import { GetCheckboxStyles, getCheckboxStyles } from './Checkbox.styles';
 
 export interface CheckboxProps {
   /**
@@ -51,7 +46,7 @@ export interface CheckboxProps {
   onPress?: (e: GestureResponderEvent) => void;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<GetCheckboxStyles, DeepPartial<CheckboxStyles>>;
+  getStyles?: GetCheckboxStyles;
 
   /** Used to locate this view in end-to-end tests. */
   testID?: string;

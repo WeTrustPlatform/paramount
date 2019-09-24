@@ -5,15 +5,13 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { ButtonColor, ControlSize, useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { Dots } from '../LoadingIndicators';
 import { Text } from '../Typography';
 import {
   ButtonAppearance,
-  ButtonStyles,
   GetButtonStyles,
   getButtonStyles,
 } from './Button.styles';
@@ -86,7 +84,7 @@ export interface ButtonProps {
   accessible?: boolean;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<GetButtonStyles, DeepPartial<ButtonStyles>>;
+  getStyles?: GetButtonStyles;
 
   /** Used to locate this view in end-to-end tests. */
   testID?: string;
@@ -144,14 +142,21 @@ export const Button = (props: ButtonProps) => {
 };
 
 export interface ButtonContentProps extends ButtonProps {
-  textStyle: TextStyle;
+  textStyle?: TextStyle;
 }
 
 const ButtonContent = (props: ButtonContentProps) => {
   const { isLoading, iconLoading, icon, title, textStyle } = props;
+  const theme = useTheme();
 
   if (isLoading) {
-    return <>{iconLoading || <Dots color={textStyle.color} />}</>;
+    return (
+      <>
+        {iconLoading || (
+          <Dots color={textStyle ? textStyle.color : theme.colors.text.white} />
+        )}
+      </>
+    );
   }
   if (icon) return <>{icon}</>;
   if (title) {

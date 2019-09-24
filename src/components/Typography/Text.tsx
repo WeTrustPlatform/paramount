@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { Text as RNText, TextProps as RNTextProps } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
 import { FontWeight, TextColor, TextSize } from '../../theme/Theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
-import { GetTextStyles, getTextStyles, TextStyles } from './Text.styles';
+import { mergeStyles } from '../../utils/mergeStyles';
+import { GetTextStyles, getTextStyles } from './Text.styles';
 import { TextAlign, TextTransform } from './types';
 
 export interface TextProps extends RNTextProps {
@@ -48,7 +47,7 @@ export interface TextProps extends RNTextProps {
   children?: React.ReactNode;
 
   /** Callback to get element styles. */
-  getStyles?: ReplaceReturnType<GetTextStyles, DeepPartial<TextStyles>>;
+  getStyles?: GetTextStyles;
 }
 
 export const Text = (props: TextProps) => {

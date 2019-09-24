@@ -1,16 +1,14 @@
 import * as React from 'react';
 import { FlatList, TouchableOpacity, View } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
 import { useTheme } from '../../theme';
-import { mergeStyles, ReplaceReturnType } from '../../utils/mergeStyles';
+import { mergeStyles } from '../../utils/mergeStyles';
 import { Icon } from '../Icon';
 import { useWheelPicker } from './useWheelPicker';
 import { ITEM_HEIGHT } from './WheelPicker.constants';
 import {
   GetWheelPickerStyles,
   getWheelPickerStyles,
-  WheelPickerStyles,
 } from './WheelPicker.styles';
 import { WheelPickerItem, WheelPickerOption } from './WheelPickerItem';
 
@@ -40,10 +38,7 @@ export interface WheelPickerProps {
   /**
    * Callback to get element styles.
    */
-  getStyles?: ReplaceReturnType<
-    GetWheelPickerStyles,
-    DeepPartial<WheelPickerStyles>
-  >;
+  getStyles?: GetWheelPickerStyles;
 }
 
 const WheelPickerBase = (
