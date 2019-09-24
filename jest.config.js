@@ -19,6 +19,5 @@ module.exports = {
     'tsx',
     ...defaults.moduleFileExtensions,
   ],
-  testRegex: './tests/snapshots.js',
   setupFiles: ['jest-canvas-mock'],
 };

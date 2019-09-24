@@ -1,4 +1,3 @@
-import deepMerge from 'deepmerge';
 import React from 'react';
 import { TextStyle, ViewStyle } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
@@ -35,6 +34,7 @@ import { GetLabelStyles } from '../components/Typography/Label.styles';
 import { GetParagraphStyles } from '../components/Typography/Paragraph.styles';
 import { GetTextStyles } from '../components/Typography/Text.styles';
 import { GetWheelPickerStyles } from '../components/WheelPicker/WheelPicker.styles';
+import { deepMerge } from '../utils/deepMerge';
 import { defaultTheme } from './defaultTheme';
 
 export interface TextSizes {
@@ -305,9 +305,7 @@ export interface ThemeProviderProps {
 }
 
 export const createTheme = (theme?: DeepPartial<Theme>): Theme => {
-  return theme
-    ? deepMerge<Theme>(defaultTheme, theme as Partial<Theme>)
-    : defaultTheme;
+  return theme ? deepMerge(defaultTheme, theme) : defaultTheme;
 };
 
 export const ThemeProvider = (props: ThemeProviderProps) => {

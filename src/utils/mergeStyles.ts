@@ -1,7 +1,7 @@
-import merge from 'deepmerge';
 import { DeepPartial } from 'ts-essentials';
 
 import { Theme } from '../theme';
+import { deepMerge } from './deepMerge';
 
 export type GetStyles<TStyles = any, TStyleProps = any> = (
   props: TStyleProps,
@@ -22,7 +22,7 @@ export const mergeStyles = <TStyles = any, TStyleProps = any>(
 ) => (props: TStyleProps, theme: Theme): TStyles => {
   const defaultStyles = getDefaultStyles(props, theme);
 
-  const styles: Array<Partial<TStyles>> = [defaultStyles];
+  const styles: Array<Partial<TStyles>> = [];
 
   if (getThemeStyles) {
     styles.push(getThemeStyles(props, theme) as Partial<TStyles>);
@@ -32,5 +32,5 @@ export const mergeStyles = <TStyles = any, TStyleProps = any>(
     styles.push(getOverridingStyles(props, theme) as Partial<TStyles>);
   }
 
-  return merge.all<TStyles>(styles);
+  return deepMerge<TStyles>(defaultStyles, ...styles);
 };

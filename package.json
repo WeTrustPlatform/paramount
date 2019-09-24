@@ -27,8 +27,7 @@
     "lint": "tslint --project ./tsconfig.json \"./src/**/*.{ts,tsx}\"",
     "package": "node scripts/packageForPublish",
     "semantic-release": "semantic-release",
-    "test:snapshot": "jest -c jest.config.snapshot.js",
-    "test": "yarn test:snapshot",
+    "test": "jest",
     "travis-deploy-once": "travis-deploy-once"
   },
   "contributors": [
@@ -36,7 +35,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "deepmerge": "4.0.0",
     "exenv": "1.2.2",
     "focus-trap": "5.0.1",
     "react-icons": "3.7.0",
@@ -116,7 +114,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn generate:kitchen-sink && lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {

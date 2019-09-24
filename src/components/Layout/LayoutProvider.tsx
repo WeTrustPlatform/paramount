@@ -1,7 +1,7 @@
-import deepmerge from 'deepmerge';
 import * as React from 'react';
 import { Dimensions } from 'react-native';
 
+import { deepMerge } from '../../utils/deepMerge';
 import {
   defaultLayout,
   DESC_ORDER_SCREEN_SIZES,
@@ -54,7 +54,7 @@ const deriveResponsiveValue = (
 export const LayoutProvider = (props: LayoutProviderProps) => {
   const { children, value } = props;
 
-  const layout = value ? deepmerge(defaultLayout, value) : defaultLayout;
+  const layout = value ? deepMerge(defaultLayout, value) : defaultLayout;
 
   const [currentScreenSize, setCurrentScreenSize] = React.useState(
     getCurrentScreenSize(layout),
