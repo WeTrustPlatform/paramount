@@ -1,5 +1,6 @@
 import { Platform } from 'react-native';
 
+import { defaultLayout } from '../components';
 import palette from './palette';
 import {
   Colors,
@@ -378,6 +379,8 @@ export const defaultTheme: Theme = {
   colors,
   fills,
 
+  layout: defaultLayout,
+
   fontFamilies,
   fontWeights,
 
@@ -392,6 +395,5 @@ export const defaultTheme: Theme = {
   controlPaddings,
 
   containerShapes,
-
   components: {},
 };

@@ -262,7 +262,7 @@ export interface Theme {
   // Containers
   containerShapes: ContainerShapes;
 
-  components: {
+  components: Partial<{
     getAlertStyles: GetAlertStyles;
     getAvatarStyles: GetAvatarStyles;
     getBadgeStyles: GetBadgeStyles;
@@ -294,7 +294,7 @@ export interface Theme {
     getHeadingStyles: GetHeadingStyles;
     getTextStyles: GetTextStyles;
     getParagraphStyles: GetParagraphStyles;
-  };
+  }>;
 }
 
 export const ThemeContext = React.createContext(defaultTheme);
