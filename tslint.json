@@ -10,6 +10,7 @@
       "severity": "warning",
       "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
     },
+    "object-literal-sort-keys": false,
     "semicolon": {
       "options": ["always", "strict-bound-class-methods"]
     },
