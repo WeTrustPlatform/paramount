@@ -135,7 +135,7 @@ export const ListItem = (props: ListItemProps) => {
               typeof description === 'string' ? (
                 <Text
                   getStyles={() => ({ textStyle: descriptionStyle })}
-                  size="medium"
+                  size="small"
                   color="muted"
                 >
                   {description}

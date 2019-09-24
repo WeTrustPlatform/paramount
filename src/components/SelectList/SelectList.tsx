@@ -8,9 +8,10 @@ type Value<TIsMulti extends boolean> = TIsMulti extends true
   ? string[]
   : string;
 
-interface SelectListOption {
+export interface SelectListOption {
   value: string;
   label: string;
+  description?: string;
 }
 
 export interface SelectListProps<TIsMulti extends boolean> {
@@ -95,6 +96,7 @@ export const SelectList = <TIsMulti extends boolean>(
           <SelectListItem
             value={item.value}
             label={item.label}
+            description={item.description}
             index={index}
             isSelected={isSelected}
             onPress={handleOnPress}

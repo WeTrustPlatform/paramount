@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 import { Checkbox } from '../Checkbox';
-import { ListItem, ListItemProps } from '../ListItem';
+import { ListItem } from '../ListItem';
 
-export interface SelectListItemProps extends Omit<ListItemProps, 'onPress'> {
+export interface SelectListItemProps {
   /**
    * Injected by SelectList. Index of the item on the list.
    * @default 0
@@ -30,6 +30,11 @@ export interface SelectListItemProps extends Omit<ListItemProps, 'onPress'> {
    * Label of the select list item
    */
   label: string;
+
+  /**
+   * Description of the field
+   */
+  description?: string;
 }
 
 export const SelectListItem = (props: SelectListItemProps) => {
@@ -41,19 +46,17 @@ export const SelectListItem = (props: SelectListItemProps) => {
       return;
     },
     value,
-    ...listItemProps
+    description,
   } = props;
 
   return (
     <ListItem
-      onPress={() => {
-        onPress(value, index, isSelected);
-      }}
+      onPress={() => onPress(value, index, isSelected)}
       title={label}
+      description={isSelected && description}
       rightNode={
         <Checkbox isInteractive={false} shape="circle" value={isSelected} />
       }
-      {...listItemProps}
     />
   );
 };

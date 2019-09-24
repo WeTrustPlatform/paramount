@@ -28833,11 +28833,14 @@ exports[`KitchenSink_1 1`] = `
                 "WebkitBoxAlign": "center",
                 "WebkitBoxDirection": "normal",
                 "WebkitBoxOrient": "horizontal",
+                "WebkitFlexBasis": "85%",
                 "WebkitFlexDirection": "row",
                 "alignItems": "center",
+                "flexBasis": "85%",
                 "flexDirection": "row",
                 "msFlexAlign": "center",
                 "msFlexDirection": "row",
+                "msFlexPreferredSize": "85%",
               }
             }
           >
@@ -28923,10 +28926,20 @@ exports[`KitchenSink_1 1`] = `
               className="css-view-1dbjc4n"
               style={
                 Object {
+                  "WebkitBoxFlex": 1,
                   "WebkitBoxPack": "center",
+                  "WebkitFlexBasis": "0%",
+                  "WebkitFlexGrow": 1,
+                  "WebkitFlexShrink": 1,
                   "WebkitJustifyContent": "center",
+                  "flexBasis": "0%",
+                  "flexGrow": 1,
+                  "flexShrink": 1,
                   "justifyContent": "center",
+                  "msFlexNegative": 1,
                   "msFlexPack": "center",
+                  "msFlexPositive": 1,
+                  "msFlexPreferredSize": "0%",
                 }
               }
             >
@@ -28951,7 +28964,7 @@ exports[`KitchenSink_1 1`] = `
                   Object {
                     "color": "rgba(167,167,167,1.00)",
                     "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                    "fontSize": "16px",
+                    "fontSize": "14px",
                     "textAlign": "left",
                   }
                 }
@@ -30443,11 +30456,14 @@ exports[`KitchenSink_1 1`] = `
                         "WebkitBoxAlign": "center",
                         "WebkitBoxDirection": "normal",
                         "WebkitBoxOrient": "horizontal",
+                        "WebkitFlexBasis": "85%",
                         "WebkitFlexDirection": "row",
                         "alignItems": "center",
+                        "flexBasis": "85%",
                         "flexDirection": "row",
                         "msFlexAlign": "center",
                         "msFlexDirection": "row",
+                        "msFlexPreferredSize": "85%",
                       }
                     }
                   >
@@ -30455,10 +30471,20 @@ exports[`KitchenSink_1 1`] = `
                       className="css-view-1dbjc4n"
                       style={
                         Object {
+                          "WebkitBoxFlex": 1,
                           "WebkitBoxPack": "center",
+                          "WebkitFlexBasis": "0%",
+                          "WebkitFlexGrow": 1,
+                          "WebkitFlexShrink": 1,
                           "WebkitJustifyContent": "center",
+                          "flexBasis": "0%",
+                          "flexGrow": 1,
+                          "flexShrink": 1,
                           "justifyContent": "center",
+                          "msFlexNegative": 1,
                           "msFlexPack": "center",
+                          "msFlexPositive": 1,
+                          "msFlexPreferredSize": "0%",
                         }
                       }
                     >
@@ -30643,11 +30669,14 @@ exports[`KitchenSink_1 1`] = `
                         "WebkitBoxAlign": "center",
                         "WebkitBoxDirection": "normal",
                         "WebkitBoxOrient": "horizontal",
+                        "WebkitFlexBasis": "85%",
                         "WebkitFlexDirection": "row",
                         "alignItems": "center",
+                        "flexBasis": "85%",
                         "flexDirection": "row",
                         "msFlexAlign": "center",
                         "msFlexDirection": "row",
+                        "msFlexPreferredSize": "85%",
                       }
                     }
                   >
@@ -30655,10 +30684,20 @@ exports[`KitchenSink_1 1`] = `
                       className="css-view-1dbjc4n"
                       style={
                         Object {
+                          "WebkitBoxFlex": 1,
                           "WebkitBoxPack": "center",
+                          "WebkitFlexBasis": "0%",
+                          "WebkitFlexGrow": 1,
+                          "WebkitFlexShrink": 1,
                           "WebkitJustifyContent": "center",
+                          "flexBasis": "0%",
+                          "flexGrow": 1,
+                          "flexShrink": 1,
                           "justifyContent": "center",
+                          "msFlexNegative": 1,
                           "msFlexPack": "center",
+                          "msFlexPositive": 1,
+                          "msFlexPreferredSize": "0%",
                         }
                       }
                     >
@@ -30820,11 +30859,14 @@ exports[`KitchenSink_1 1`] = `
                         "WebkitBoxAlign": "center",
                         "WebkitBoxDirection": "normal",
                         "WebkitBoxOrient": "horizontal",
+                        "WebkitFlexBasis": "85%",
                         "WebkitFlexDirection": "row",
                         "alignItems": "center",
+                        "flexBasis": "85%",
                         "flexDirection": "row",
                         "msFlexAlign": "center",
                         "msFlexDirection": "row",
+                        "msFlexPreferredSize": "85%",
                       }
                     }
                   >
@@ -30832,10 +30874,20 @@ exports[`KitchenSink_1 1`] = `
                       className="css-view-1dbjc4n"
                       style={
                         Object {
+                          "WebkitBoxFlex": 1,
                           "WebkitBoxPack": "center",
+                          "WebkitFlexBasis": "0%",
+                          "WebkitFlexGrow": 1,
+                          "WebkitFlexShrink": 1,
                           "WebkitJustifyContent": "center",
+                          "flexBasis": "0%",
+                          "flexGrow": 1,
+                          "flexShrink": 1,
                           "justifyContent": "center",
+                          "msFlexNegative": 1,
                           "msFlexPack": "center",
+                          "msFlexPositive": 1,
+                          "msFlexPreferredSize": "0%",
                         }
                       }
                     >
@@ -30997,11 +31049,14 @@ exports[`KitchenSink_1 1`] = `
                         "WebkitBoxAlign": "center",
                         "WebkitBoxDirection": "normal",
                         "WebkitBoxOrient": "horizontal",
+                        "WebkitFlexBasis": "85%",
                         "WebkitFlexDirection": "row",
                         "alignItems": "center",
+                        "flexBasis": "85%",
                         "flexDirection": "row",
                         "msFlexAlign": "center",
                         "msFlexDirection": "row",
+                        "msFlexPreferredSize": "85%",
                       }
                     }
                   >
@@ -31009,10 +31064,20 @@ exports[`KitchenSink_1 1`] = `
                       className="css-view-1dbjc4n"
                       style={
                         Object {
+                          "WebkitBoxFlex": 1,
                           "WebkitBoxPack": "center",
+                          "WebkitFlexBasis": "0%",
+                          "WebkitFlexGrow": 1,
+                          "WebkitFlexShrink": 1,
                           "WebkitJustifyContent": "center",
+                          "flexBasis": "0%",
+                          "flexGrow": 1,
+                          "flexShrink": 1,
                           "justifyContent": "center",
+                          "msFlexNegative": 1,
                           "msFlexPack": "center",
+                          "msFlexPositive": 1,
+                          "msFlexPreferredSize": "0%",
                         }
                       }
                     >
@@ -31174,11 +31239,14 @@ exports[`KitchenSink_1 1`] = `
                         "WebkitBoxAlign": "center",
                         "WebkitBoxDirection": "normal",
                         "WebkitBoxOrient": "horizontal",
+                        "WebkitFlexBasis": "85%",
                         "WebkitFlexDirection": "row",
                         "alignItems": "center",
+                        "flexBasis": "85%",
                         "flexDirection": "row",
                         "msFlexAlign": "center",
                         "msFlexDirection": "row",
+                        "msFlexPreferredSize": "85%",
                       }
                     }
                   >
@@ -31186,10 +31254,20 @@ exports[`KitchenSink_1 1`] = `
                       className="css-view-1dbjc4n"
                       style={
                         Object {
+                          "WebkitBoxFlex": 1,
                           "WebkitBoxPack": "center",
+                          "WebkitFlexBasis": "0%",
+                          "WebkitFlexGrow": 1,
+                          "WebkitFlexShrink": 1,
                           "WebkitJustifyContent": "center",
+                          "flexBasis": "0%",
+                          "flexGrow": 1,
+                          "flexShrink": 1,
                           "justifyContent": "center",
+                          "msFlexNegative": 1,
                           "msFlexPack": "center",
+                          "msFlexPositive": 1,
+                          "msFlexPreferredSize": "0%",
                         }
                       }
                     >
@@ -31351,11 +31429,14 @@ exports[`KitchenSink_1 1`] = `
                         "WebkitBoxAlign": "center",
                         "WebkitBoxDirection": "normal",
                         "WebkitBoxOrient": "horizontal",
+                        "WebkitFlexBasis": "85%",
                         "WebkitFlexDirection": "row",
                         "alignItems": "center",
+                        "flexBasis": "85%",
                         "flexDirection": "row",
                         "msFlexAlign": "center",
                         "msFlexDirection": "row",
+                        "msFlexPreferredSize": "85%",
                       }
                     }
                   >
@@ -31363,10 +31444,20 @@ exports[`KitchenSink_1 1`] = `
                       className="css-view-1dbjc4n"
                       style={
                         Object {
+                          "WebkitBoxFlex": 1,
                           "WebkitBoxPack": "center",
+                          "WebkitFlexBasis": "0%",
+                          "WebkitFlexGrow": 1,
+                          "WebkitFlexShrink": 1,
                           "WebkitJustifyContent": "center",
+                          "flexBasis": "0%",
+                          "flexGrow": 1,
+                          "flexShrink": 1,
                           "justifyContent": "center",
+                          "msFlexNegative": 1,
                           "msFlexPack": "center",
+                          "msFlexPositive": 1,
+                          "msFlexPreferredSize": "0%",
                         }
                       }
                     >
@@ -31528,11 +31619,14 @@ exports[`KitchenSink_1 1`] = `
                         "WebkitBoxAlign": "center",
                         "WebkitBoxDirection": "normal",
                         "WebkitBoxOrient": "horizontal",
+                        "WebkitFlexBasis": "85%",
                         "WebkitFlexDirection": "row",
                         "alignItems": "center",
+                        "flexBasis": "85%",
                         "flexDirection": "row",
                         "msFlexAlign": "center",
                         "msFlexDirection": "row",
+                        "msFlexPreferredSize": "85%",
                       }
                     }
                   >
@@ -31540,10 +31634,20 @@ exports[`KitchenSink_1 1`] = `
                       className="css-view-1dbjc4n"
                       style={
                         Object {
+                          "WebkitBoxFlex": 1,
                           "WebkitBoxPack": "center",
+                          "WebkitFlexBasis": "0%",
+                          "WebkitFlexGrow": 1,
+                          "WebkitFlexShrink": 1,
                           "WebkitJustifyContent": "center",
+                          "flexBasis": "0%",
+                          "flexGrow": 1,
+                          "flexShrink": 1,
                           "justifyContent": "center",
+                          "msFlexNegative": 1,
                           "msFlexPack": "center",
+                          "msFlexPositive": 1,
+                          "msFlexPreferredSize": "0%",
                         }
                       }
                     >
@@ -31705,11 +31809,14 @@ exports[`KitchenSink_1 1`] = `
                         "WebkitBoxAlign": "center",
                         "WebkitBoxDirection": "normal",
                         "WebkitBoxOrient": "horizontal",
+                        "WebkitFlexBasis": "85%",
                         "WebkitFlexDirection": "row",
                         "alignItems": "center",
+                        "flexBasis": "85%",
                         "flexDirection": "row",
                         "msFlexAlign": "center",
                         "msFlexDirection": "row",
+                        "msFlexPreferredSize": "85%",
                       }
                     }
                   >
@@ -31717,10 +31824,20 @@ exports[`KitchenSink_1 1`] = `
                       className="css-view-1dbjc4n"
                       style={
                         Object {
+                          "WebkitBoxFlex": 1,
                           "WebkitBoxPack": "center",
+                          "WebkitFlexBasis": "0%",
+                          "WebkitFlexGrow": 1,
+                          "WebkitFlexShrink": 1,
                           "WebkitJustifyContent": "center",
+                          "flexBasis": "0%",
+                          "flexGrow": 1,
+                          "flexShrink": 1,
                           "justifyContent": "center",
+                          "msFlexNegative": 1,
                           "msFlexPack": "center",
+                          "msFlexPositive": 1,
+                          "msFlexPreferredSize": "0%",
                         }
                       }
                     >
@@ -31905,11 +32022,14 @@ exports[`KitchenSink_1 1`] = `
                         "WebkitBoxAlign": "center",
                         "WebkitBoxDirection": "normal",
                         "WebkitBoxOrient": "horizontal",
+                        "WebkitFlexBasis": "85%",
                         "WebkitFlexDirection": "row",
                         "alignItems": "center",
+                        "flexBasis": "85%",
                         "flexDirection": "row",
                         "msFlexAlign": "center",
                         "msFlexDirection": "row",
+                        "msFlexPreferredSize": "85%",
                       }
                     }
                   >
@@ -31917,10 +32037,20 @@ exports[`KitchenSink_1 1`] = `
                       className="css-view-1dbjc4n"
                       style={
                         Object {
+                          "WebkitBoxFlex": 1,
                           "WebkitBoxPack": "center",
+                          "WebkitFlexBasis": "0%",
+                          "WebkitFlexGrow": 1,
+                          "WebkitFlexShrink": 1,
                           "WebkitJustifyContent": "center",
+                          "flexBasis": "0%",
+                          "flexGrow": 1,
+                          "flexShrink": 1,
                           "justifyContent": "center",
+                          "msFlexNegative": 1,
                           "msFlexPack": "center",
+                          "msFlexPositive": 1,
+                          "msFlexPreferredSize": "0%",
                         }
                       }
                     >
@@ -32082,11 +32212,14 @@ exports[`KitchenSink_1 1`] = `
                         "WebkitBoxAlign": "center",
                         "WebkitBoxDirection": "normal",
                         "WebkitBoxOrient": "horizontal",
+                        "WebkitFlexBasis": "85%",
                         "WebkitFlexDirection": "row",
                         "alignItems": "center",
+                        "flexBasis": "85%",
                         "flexDirection": "row",
                         "msFlexAlign": "center",
                         "msFlexDirection": "row",
+                        "msFlexPreferredSize": "85%",
                       }
                     }
                   >
@@ -32094,10 +32227,20 @@ exports[`KitchenSink_1 1`] = `
                       className="css-view-1dbjc4n"
                       style={
                         Object {
+                          "WebkitBoxFlex": 1,
                           "WebkitBoxPack": "center",
+                          "WebkitFlexBasis": "0%",
+                          "WebkitFlexGrow": 1,
+                          "WebkitFlexShrink": 1,
                           "WebkitJustifyContent": "center",
+                          "flexBasis": "0%",
+                          "flexGrow": 1,
+                          "flexShrink": 1,
                           "justifyContent": "center",
+                          "msFlexNegative": 1,
                           "msFlexPack": "center",
+                          "msFlexPositive": 1,
+                          "msFlexPreferredSize": "0%",
                         }
                       }
                     >
@@ -38391,11 +38534,14 @@ exports[`ListItem_1 1`] = `
             "WebkitBoxAlign": "center",
             "WebkitBoxDirection": "normal",
             "WebkitBoxOrient": "horizontal",
+            "WebkitFlexBasis": "85%",
             "WebkitFlexDirection": "row",
             "alignItems": "center",
+            "flexBasis": "85%",
             "flexDirection": "row",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
+            "msFlexPreferredSize": "85%",
           }
         }
       >
@@ -38481,10 +38627,20 @@ exports[`ListItem_1 1`] = `
           className="css-view-1dbjc4n"
           style={
             Object {
+              "WebkitBoxFlex": 1,
               "WebkitBoxPack": "center",
+              "WebkitFlexBasis": "0%",
+              "WebkitFlexGrow": 1,
+              "WebkitFlexShrink": 1,
               "WebkitJustifyContent": "center",
+              "flexBasis": "0%",
+              "flexGrow": 1,
+              "flexShrink": 1,
               "justifyContent": "center",
+              "msFlexNegative": 1,
               "msFlexPack": "center",
+              "msFlexPositive": 1,
+              "msFlexPreferredSize": "0%",
             }
           }
         >
@@ -38509,7 +38665,7 @@ exports[`ListItem_1 1`] = `
               Object {
                 "color": "rgba(167,167,167,1.00)",
                 "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                "fontSize": "16px",
+                "fontSize": "14px",
                 "textAlign": "left",
               }
             }
@@ -41476,11 +41632,14 @@ exports[`SelectList_1 1`] = `
                     "WebkitBoxAlign": "center",
                     "WebkitBoxDirection": "normal",
                     "WebkitBoxOrient": "horizontal",
+                    "WebkitFlexBasis": "85%",
                     "WebkitFlexDirection": "row",
                     "alignItems": "center",
+                    "flexBasis": "85%",
                     "flexDirection": "row",
                     "msFlexAlign": "center",
                     "msFlexDirection": "row",
+                    "msFlexPreferredSize": "85%",
                   }
                 }
               >
@@ -41488,10 +41647,20 @@ exports[`SelectList_1 1`] = `
                   className="css-view-1dbjc4n"
                   style={
                     Object {
+                      "WebkitBoxFlex": 1,
                       "WebkitBoxPack": "center",
+                      "WebkitFlexBasis": "0%",
+                      "WebkitFlexGrow": 1,
+                      "WebkitFlexShrink": 1,
                       "WebkitJustifyContent": "center",
+                      "flexBasis": "0%",
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
+                      "msFlexNegative": 1,
                       "msFlexPack": "center",
+                      "msFlexPositive": 1,
+                      "msFlexPreferredSize": "0%",
                     }
                   }
                 >
@@ -41508,6 +41677,20 @@ exports[`SelectList_1 1`] = `
                     }
                   >
                     C
+                  </div>
+                  <div
+                    className="css-text-901oao"
+                    dir="auto"
+                    style={
+                      Object {
+                        "color": "rgba(167,167,167,1.00)",
+                        "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                        "fontSize": "14px",
+                        "textAlign": "left",
+                      }
+                    }
+                  >
+                    C is a general-purpose, procedural computer programming language.
                   </div>
                 </div>
               </div>
@@ -41676,11 +41859,14 @@ exports[`SelectList_1 1`] = `
                     "WebkitBoxAlign": "center",
                     "WebkitBoxDirection": "normal",
                     "WebkitBoxOrient": "horizontal",
+                    "WebkitFlexBasis": "85%",
                     "WebkitFlexDirection": "row",
                     "alignItems": "center",
+                    "flexBasis": "85%",
                     "flexDirection": "row",
                     "msFlexAlign": "center",
                     "msFlexDirection": "row",
+                    "msFlexPreferredSize": "85%",
                   }
                 }
               >
@@ -41688,10 +41874,20 @@ exports[`SelectList_1 1`] = `
                   className="css-view-1dbjc4n"
                   style={
                     Object {
+                      "WebkitBoxFlex": 1,
                       "WebkitBoxPack": "center",
+                      "WebkitFlexBasis": "0%",
+                      "WebkitFlexGrow": 1,
+                      "WebkitFlexShrink": 1,
                       "WebkitJustifyContent": "center",
+                      "flexBasis": "0%",
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
+                      "msFlexNegative": 1,
                       "msFlexPack": "center",
+                      "msFlexPositive": 1,
+                      "msFlexPreferredSize": "0%",
                     }
                   }
                 >
@@ -41853,11 +42049,14 @@ exports[`SelectList_1 1`] = `
                     "WebkitBoxAlign": "center",
                     "WebkitBoxDirection": "normal",
                     "WebkitBoxOrient": "horizontal",
+                    "WebkitFlexBasis": "85%",
                     "WebkitFlexDirection": "row",
                     "alignItems": "center",
+                    "flexBasis": "85%",
                     "flexDirection": "row",
                     "msFlexAlign": "center",
                     "msFlexDirection": "row",
+                    "msFlexPreferredSize": "85%",
                   }
                 }
               >
@@ -41865,10 +42064,20 @@ exports[`SelectList_1 1`] = `
                   className="css-view-1dbjc4n"
                   style={
                     Object {
+                      "WebkitBoxFlex": 1,
                       "WebkitBoxPack": "center",
+                      "WebkitFlexBasis": "0%",
+                      "WebkitFlexGrow": 1,
+                      "WebkitFlexShrink": 1,
                       "WebkitJustifyContent": "center",
+                      "flexBasis": "0%",
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
+                      "msFlexNegative": 1,
                       "msFlexPack": "center",
+                      "msFlexPositive": 1,
+                      "msFlexPreferredSize": "0%",
                     }
                   }
                 >
@@ -42030,11 +42239,14 @@ exports[`SelectList_1 1`] = `
                     "WebkitBoxAlign": "center",
                     "WebkitBoxDirection": "normal",
                     "WebkitBoxOrient": "horizontal",
+                    "WebkitFlexBasis": "85%",
                     "WebkitFlexDirection": "row",
                     "alignItems": "center",
+                    "flexBasis": "85%",
                     "flexDirection": "row",
                     "msFlexAlign": "center",
                     "msFlexDirection": "row",
+                    "msFlexPreferredSize": "85%",
                   }
                 }
               >
@@ -42042,10 +42254,20 @@ exports[`SelectList_1 1`] = `
                   className="css-view-1dbjc4n"
                   style={
                     Object {
+                      "WebkitBoxFlex": 1,
                       "WebkitBoxPack": "center",
+                      "WebkitFlexBasis": "0%",
+                      "WebkitFlexGrow": 1,
+                      "WebkitFlexShrink": 1,
                       "WebkitJustifyContent": "center",
+                      "flexBasis": "0%",
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
+                      "msFlexNegative": 1,
                       "msFlexPack": "center",
+                      "msFlexPositive": 1,
+                      "msFlexPreferredSize": "0%",
                     }
                   }
                 >
@@ -42207,11 +42429,14 @@ exports[`SelectList_1 1`] = `
                     "WebkitBoxAlign": "center",
                     "WebkitBoxDirection": "normal",
                     "WebkitBoxOrient": "horizontal",
+                    "WebkitFlexBasis": "85%",
                     "WebkitFlexDirection": "row",
                     "alignItems": "center",
+                    "flexBasis": "85%",
                     "flexDirection": "row",
                     "msFlexAlign": "center",
                     "msFlexDirection": "row",
+                    "msFlexPreferredSize": "85%",
                   }
                 }
               >
@@ -42219,10 +42444,20 @@ exports[`SelectList_1 1`] = `
                   className="css-view-1dbjc4n"
                   style={
                     Object {
+                      "WebkitBoxFlex": 1,
                       "WebkitBoxPack": "center",
+                      "WebkitFlexBasis": "0%",
+                      "WebkitFlexGrow": 1,
+                      "WebkitFlexShrink": 1,
                       "WebkitJustifyContent": "center",
+                      "flexBasis": "0%",
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
+                      "msFlexNegative": 1,
                       "msFlexPack": "center",
+                      "msFlexPositive": 1,
+                      "msFlexPreferredSize": "0%",
                     }
                   }
                 >
@@ -42384,11 +42619,14 @@ exports[`SelectList_1 1`] = `
                     "WebkitBoxAlign": "center",
                     "WebkitBoxDirection": "normal",
                     "WebkitBoxOrient": "horizontal",
+                    "WebkitFlexBasis": "85%",
                     "WebkitFlexDirection": "row",
                     "alignItems": "center",
+                    "flexBasis": "85%",
                     "flexDirection": "row",
                     "msFlexAlign": "center",
                     "msFlexDirection": "row",
+                    "msFlexPreferredSize": "85%",
                   }
                 }
               >
@@ -42396,10 +42634,20 @@ exports[`SelectList_1 1`] = `
                   className="css-view-1dbjc4n"
                   style={
                     Object {
+                      "WebkitBoxFlex": 1,
                       "WebkitBoxPack": "center",
+                      "WebkitFlexBasis": "0%",
+                      "WebkitFlexGrow": 1,
+                      "WebkitFlexShrink": 1,
                       "WebkitJustifyContent": "center",
+                      "flexBasis": "0%",
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
+                      "msFlexNegative": 1,
                       "msFlexPack": "center",
+                      "msFlexPositive": 1,
+                      "msFlexPreferredSize": "0%",
                     }
                   }
                 >
@@ -42561,11 +42809,14 @@ exports[`SelectList_1 1`] = `
                     "WebkitBoxAlign": "center",
                     "WebkitBoxDirection": "normal",
                     "WebkitBoxOrient": "horizontal",
+                    "WebkitFlexBasis": "85%",
                     "WebkitFlexDirection": "row",
                     "alignItems": "center",
+                    "flexBasis": "85%",
                     "flexDirection": "row",
                     "msFlexAlign": "center",
                     "msFlexDirection": "row",
+                    "msFlexPreferredSize": "85%",
                   }
                 }
               >
@@ -42573,10 +42824,20 @@ exports[`SelectList_1 1`] = `
                   className="css-view-1dbjc4n"
                   style={
                     Object {
+                      "WebkitBoxFlex": 1,
                       "WebkitBoxPack": "center",
+                      "WebkitFlexBasis": "0%",
+                      "WebkitFlexGrow": 1,
+                      "WebkitFlexShrink": 1,
                       "WebkitJustifyContent": "center",
+                      "flexBasis": "0%",
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
+                      "msFlexNegative": 1,
                       "msFlexPack": "center",
+                      "msFlexPositive": 1,
+                      "msFlexPreferredSize": "0%",
                     }
                   }
                 >
@@ -42738,11 +42999,14 @@ exports[`SelectList_1 1`] = `
                     "WebkitBoxAlign": "center",
                     "WebkitBoxDirection": "normal",
                     "WebkitBoxOrient": "horizontal",
+                    "WebkitFlexBasis": "85%",
                     "WebkitFlexDirection": "row",
                     "alignItems": "center",
+                    "flexBasis": "85%",
                     "flexDirection": "row",
                     "msFlexAlign": "center",
                     "msFlexDirection": "row",
+                    "msFlexPreferredSize": "85%",
                   }
                 }
               >
@@ -42750,10 +43014,20 @@ exports[`SelectList_1 1`] = `
                   className="css-view-1dbjc4n"
                   style={
                     Object {
+                      "WebkitBoxFlex": 1,
                       "WebkitBoxPack": "center",
+                      "WebkitFlexBasis": "0%",
+                      "WebkitFlexGrow": 1,
+                      "WebkitFlexShrink": 1,
                       "WebkitJustifyContent": "center",
+                      "flexBasis": "0%",
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
+                      "msFlexNegative": 1,
                       "msFlexPack": "center",
+                      "msFlexPositive": 1,
+                      "msFlexPreferredSize": "0%",
                     }
                   }
                 >
@@ -42938,11 +43212,14 @@ exports[`SelectList_1 1`] = `
                     "WebkitBoxAlign": "center",
                     "WebkitBoxDirection": "normal",
                     "WebkitBoxOrient": "horizontal",
+                    "WebkitFlexBasis": "85%",
                     "WebkitFlexDirection": "row",
                     "alignItems": "center",
+                    "flexBasis": "85%",
                     "flexDirection": "row",
                     "msFlexAlign": "center",
                     "msFlexDirection": "row",
+                    "msFlexPreferredSize": "85%",
                   }
                 }
               >
@@ -42950,10 +43227,20 @@ exports[`SelectList_1 1`] = `
                   className="css-view-1dbjc4n"
                   style={
                     Object {
+                      "WebkitBoxFlex": 1,
                       "WebkitBoxPack": "center",
+                      "WebkitFlexBasis": "0%",
+                      "WebkitFlexGrow": 1,
+                      "WebkitFlexShrink": 1,
                       "WebkitJustifyContent": "center",
+                      "flexBasis": "0%",
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
+                      "msFlexNegative": 1,
                       "msFlexPack": "center",
+                      "msFlexPositive": 1,
+                      "msFlexPreferredSize": "0%",
                     }
                   }
                 >
@@ -43115,11 +43402,14 @@ exports[`SelectList_1 1`] = `
                     "WebkitBoxAlign": "center",
                     "WebkitBoxDirection": "normal",
                     "WebkitBoxOrient": "horizontal",
+                    "WebkitFlexBasis": "85%",
                     "WebkitFlexDirection": "row",
                     "alignItems": "center",
+                    "flexBasis": "85%",
                     "flexDirection": "row",
                     "msFlexAlign": "center",
                     "msFlexDirection": "row",
+                    "msFlexPreferredSize": "85%",
                   }
                 }
               >
@@ -43127,10 +43417,20 @@ exports[`SelectList_1 1`] = `
                   className="css-view-1dbjc4n"
                   style={
                     Object {
+                      "WebkitBoxFlex": 1,
                       "WebkitBoxPack": "center",
+                      "WebkitFlexBasis": "0%",
+                      "WebkitFlexGrow": 1,
+                      "WebkitFlexShrink": 1,
                       "WebkitJustifyContent": "center",
+                      "flexBasis": "0%",
+                      "flexGrow": 1,
+                      "flexShrink": 1,
                       "justifyContent": "center",
+                      "msFlexNegative": 1,
                       "msFlexPack": "center",
+                      "msFlexPositive": 1,
+                      "msFlexPreferredSize": "0%",
                     }
                   }
                 >

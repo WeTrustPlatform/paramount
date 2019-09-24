@@ -21,13 +21,22 @@ To use `ref`, import `SelectListWithRef` instead
     {({ state, setState }) => (
       <Box height={300}>
         <SelectList
+          isMulti
           value={state.value}
-          onValueChange={(newValue, itemIndex) => {
-            setState({ value: newValue });
-          }}
+          onValueChange={(newValue, itemIndex) => setState({ value: newValue })}
           options={[
-            { label: 'C', value: 'c' },
-            { label: 'C#', value: 'c#' },
+            {
+              label: 'C',
+              value: 'c',
+              description:
+                'C is a general-purpose, procedural computer programming language.',
+            },
+            {
+              label: 'C#',
+              value: 'c#',
+              description:
+                'C# is a general-purpose, multi-paradigm programming language.',
+            },
             { label: 'C++', value: 'c++' },
             { label: 'CSS', value: 'css' },
             { label: 'Elixir', value: 'elixir' },

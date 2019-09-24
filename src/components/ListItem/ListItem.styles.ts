@@ -27,6 +27,7 @@ export const getListItemStyles: GetListItemStyles = ({ isDisabled }, theme) => {
     },
     leftWrapperStyle: {
       alignItems: 'center',
+      flexBasis: '85%',
       flexDirection: 'row',
     },
     rightWrapperStyle: {
@@ -35,16 +36,16 @@ export const getListItemStyles: GetListItemStyles = ({ isDisabled }, theme) => {
       zIndex: 2,
     },
     textWrapperStyle: {
+      flex: 1,
       justifyContent: 'center',
     },
     titleStyle: {},
     touchableStyle: {
-      backgroundColor: theme.colors.background.content,
+      backgroundColor: isDisabled
+        ? theme.colors.background.greyLight
+        : theme.colors.background.content,
       height: 72,
       justifyContent: 'center',
-      ...(isDisabled
-        ? { backgroundColor: theme.colors.background.greyDark }
-        : {}),
     },
     wrapperStyle: {
       alignItems: 'center',

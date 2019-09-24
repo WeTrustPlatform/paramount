@@ -7,7 +7,7 @@ import { PickerButtonGetStylesProp } from './PickerButton';
 import { getPickerButtonStyles } from './PickerButton.styles';
 import { PickerButtonWrapper } from './PickerButtonWrapper';
 
-interface NativePickerOption {
+export interface NativePickerOption {
   label: string;
   value: string;
 }
