@@ -4,12 +4,12 @@ import { Theme } from '../../theme/Theme';
 import { ColumnConfig, ColumnConfigBase, ColumnProps } from './Column';
 import {
   DESC_ORDER_SCREEN_SIZES,
-  LayoutInterface,
+  LayoutContext,
   ScreenSize,
 } from './LayoutContext';
 
 export type GetColumnStyles = (
-  props: ColumnProps & LayoutInterface,
+  props: ColumnProps & LayoutContext,
   theme: Theme,
 ) => Partial<ColumnStyles>;
 

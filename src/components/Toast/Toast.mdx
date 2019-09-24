@@ -11,10 +11,10 @@ import { Box, Button, ToastContext, ToastProvider, Toast } from '..';
 
 ## Setup
 
-Put `ToastProvider` at the top level component to wrap components that make use of `ToastContext`.
+Make sure to use `ThemeProvider` at the top-level component.
 
 ```tsx
-<ToastProvider>{children}</ToastProvider>
+<ThemeProvider>{children}</ThemeProvider>
 ```
 
 ## Usage
@@ -34,7 +34,7 @@ Paramount exposes a convenience hook `useToast` you can use to create toasts fro
             notify({
               title: 'Title',
               description: 'Description',
-              duration: 100000,
+              duration: 5000,
             })
           }
           title="Open toast"
@@ -44,38 +44,6 @@ Paramount exposes a convenience hook `useToast` you can use to create toasts fro
   </ToastProvider>
 </Playground>
 
-## ToastProvider Props
-
-_Note_: In order for the `position="bottom"` prop to match the `offset` exactly, try to keep the title and message short. This is due to derived height of the `Toast` being "hard-coded" when `position="bottom"`
-
-<Props of={ToastProvider} />
-
 ## Toast Options
 
 <Props of={Toast} />
-
-## Customization
-
-Use `getStyles` prop on **ToastProvider**
-
-```tsx
-ToastStyles {
-  containerStyle: ViewStyle;
-  wrapperStyle: ViewStyle;
-}
-
-getStyles={(ToastProviderProps, Theme) => ToastProviderStyles}
-```
-
-Markup
-
-```tsx
-<>
-  {children}
-  <View containerStyle>
-    <View wrapperStyle>
-      <Alert />
-    </View>
-  </View>
-</>
-```

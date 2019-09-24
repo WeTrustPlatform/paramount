@@ -5,12 +5,12 @@ import { ContainerProps } from './Container';
 import {
   ContainerSizes,
   DESC_ORDER_SCREEN_SIZES,
-  LayoutInterface,
+  LayoutContext,
   ScreenSize,
 } from './LayoutContext';
 
 export type GetContainerStyles = (
-  props: ContainerProps & LayoutInterface,
+  props: ContainerProps & LayoutContext,
   theme: Theme,
 ) => Partial<ContainerStyles>;
 

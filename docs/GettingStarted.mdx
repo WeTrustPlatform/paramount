@@ -33,15 +33,9 @@ On top of your application, include context providers
 
 ```tsx
 import React from 'react';
-import { ThemeProvider, ToastProvider, LayoutProvider } from 'paramount-ui';
+import { ThemeProvider } from 'paramount-ui';
 
-const App = () => (
-  <ThemeProvider>
-    <ToastProvider>
-      <LayoutProvider>{children}</LayoutProvider>
-    </ToastProvider>
-  </ThemeProvider>
-);
+const App = () => <ThemeProvider>{children}</ThemeProvider>;
 
 export default App;
 ```

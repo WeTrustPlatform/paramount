@@ -3,6 +3,7 @@ import React from 'react';
 import { TextStyle, ViewStyle } from 'react-native';
 import { DeepPartial } from 'ts-essentials';
 
+import { Layout, LayoutProvider, ToastProvider } from '../components';
 import { GetAlertStyles } from '../components/Alert/Alert.styles';
 import { GetAvatarStyles } from '../components/Avatar/Avatar.styles';
 import { GetBadgeStyles } from '../components/Badge/Badge.styles';
@@ -29,7 +30,6 @@ import { GetSliderStyles } from '../components/Slider/Slider.styles';
 import { GetSwitchStyles } from '../components/Switch/Switch.styles';
 import { GetTabStyles } from '../components/Tabs/Tab.styles';
 import { GetTabsStyles } from '../components/Tabs/Tabs.styles';
-import { GetToastStyles } from '../components/Toast/Toast.styles';
 import { GetHeadingStyles } from '../components/Typography/Heading.styles';
 import { GetLabelStyles } from '../components/Typography/Label.styles';
 import { GetParagraphStyles } from '../components/Typography/Paragraph.styles';
@@ -240,6 +240,9 @@ export interface Theme {
   colors: Colors;
   fills: Fills;
 
+  // Layout
+  layout: Layout;
+
   // Typography
   fontFamilies: FontFamilies;
   fontWeights: FontWeights;
@@ -288,7 +291,6 @@ export interface Theme {
     getSwitchStyles: GetSwitchStyles;
     getTabStyles: GetTabStyles;
     getTabsStyles: GetTabsStyles;
-    getToastStyles: GetToastStyles;
     getHeadingStyles: GetHeadingStyles;
     getTextStyles: GetTextStyles;
     getParagraphStyles: GetParagraphStyles;
@@ -314,7 +316,11 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
   const theme = createTheme(value);
 
   return (
-    <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={theme}>
+      <LayoutProvider value={theme.layout}>
+        <ToastProvider>{children}</ToastProvider>
+      </LayoutProvider>
+    </ThemeContext.Provider>
   );
 };
 

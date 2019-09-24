@@ -85,16 +85,19 @@ export type GetResponsiveValue = <
   | TXsmallValue
   | undefined;
 
-export interface LayoutInterface {
+export interface Layout {
   breakpoints: Breakpoints;
-  currentScreenSize: ScreenSize;
-  getResponsiveValue: GetResponsiveValue;
   gridColumnCount: ColumnCount;
   gutterWidth: number;
   containerSizes: ContainerSizes;
 }
 
-export const defaultLayout: LayoutInterface = {
+export interface LayoutContext extends Layout {
+  currentScreenSize: ScreenSize;
+  getResponsiveValue: GetResponsiveValue;
+}
+
+export const defaultLayout: LayoutContext = {
   breakpoints: {
     small: 480,
 

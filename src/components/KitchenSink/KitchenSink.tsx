@@ -1015,7 +1015,7 @@ export const KitchenSink = () => {
                   notify({
                     title: 'Title',
                     description: 'Description',
-                    duration: 100000,
+                    duration: 5000,
                   })
                 }
                 title="Open toast"

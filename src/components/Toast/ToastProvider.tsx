@@ -1,34 +1,14 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
 import { animated, useTransition } from 'react-spring/native.cjs';
 
 import { springDefaultConfig } from '../../constants/Animation';
-import { useTheme } from '../../theme';
-import { mergeStyles } from '../../utils/mergeStyles';
 import { Toast, ToastId, ToastInstance, ToastSettings } from './Toast';
-import { GetToastStyles, getToastStyles } from './Toast.styles';
 import { ToastContext } from './ToastContext';
 
 const AnimatedView = animated(View);
 
 export type ToastPosition = 'top' | 'bottom';
-
-export interface ToastProviderProps {
-  /**
-   * Position from which to display the toast from
-   * @default top
-   */
-  position?: ToastPosition;
-
-  /**
-   * Offset toast from the edge of the container (screen).
-   * @default 16
-   */
-  offset?: number;
-
-  /** Callback to get element styles. */
-  getStyles?: GetToastStyles;
-}
 
 const hasCustomId = (toastSettings: ToastSettings) => !!toastSettings.id;
 
@@ -82,21 +62,18 @@ const getTransitionConfig = (offset: number, position: ToastPosition) => {
   };
 };
 
-export const ToastProvider: React.FunctionComponent<
-  ToastProviderProps
-> = props => {
-  const { children, offset = 16, position = 'top', getStyles } = props;
+const OFFSET = 16;
+const POSITION = 'top';
+
+export interface ToastProviderProps {
+  children?: React.ReactNode;
+}
+
+export const ToastProvider = (props: ToastProviderProps) => {
+  const { children } = props;
   const idCounterRef = React.useRef(0);
   // Use reducer because we want access previous value of state
   const [state, dispatch] = React.useReducer(reducer, initialState);
-
-  const theme = useTheme();
-
-  const { containerStyle, wrapperStyle } = mergeStyles(
-    getToastStyles,
-    getStyles,
-    theme.components.getToastStyles,
-  )({ offset, position }, theme);
 
   const createToastInstance = (toastSettings: ToastSettings): ToastInstance => {
     const uniqueId = ++idCounterRef.current;
@@ -136,7 +113,7 @@ export const ToastProvider: React.FunctionComponent<
   const transitions = useTransition(
     state.toasts,
     toast => toast.id,
-    getTransitionConfig(offset, position),
+    getTransitionConfig(OFFSET, POSITION),
   );
 
   return (
@@ -155,13 +132,29 @@ export const ToastProvider: React.FunctionComponent<
       }}
     >
       {children}
-      <View style={containerStyle}>
+      <View
+        // @ts-ignore: Compat with web
+        style={{
+          left: 32,
+          marginBottom: 0,
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          marginTop: 0,
+          maxWidth: 560,
+          // @ts-ignore: Compat with web
+          position: Platform.OS === 'web' ? 'fixed' : 'absolute',
+          right: 32,
+          top: 0,
+          zIndex: 100,
+        }}
+      >
         {transitions.map(({ item, props: transitionStyle, key }) => (
           <AnimatedView
             key={key}
             // @ts-ignore
             style={{
-              ...wrapperStyle,
+              position: 'absolute',
+              width: '100%',
               transform: [{ translateY: transitionStyle.translateY }],
             }}
           >

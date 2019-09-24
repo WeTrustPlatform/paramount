@@ -1,10 +1,6 @@
 import * as React from 'react';
 
-import {
-  ASC_ORDER_SCREEN_SIZES,
-  LayoutContext,
-  ScreenSize,
-} from './LayoutContext';
+import { ASC_ORDER_SCREEN_SIZES, ScreenSize, useLayout } from './LayoutContext';
 
 export interface VisibleConfig {
   /**
@@ -56,7 +52,7 @@ const isVisible = (config: VisibleConfig, currentScreenSize: ScreenSize) => {
 
 export const Visible = (props: VisibleProps) => {
   const { children, ...config } = props;
-  const { currentScreenSize } = React.useContext(LayoutContext);
+  const { currentScreenSize } = useLayout();
 
   if (isVisible(config, currentScreenSize)) return <>{children}</>;
 

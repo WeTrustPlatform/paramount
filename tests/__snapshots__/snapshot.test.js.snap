@@ -30502,6 +30502,20 @@ exports[`KitchenSink_1 1`] = `
                       >
                         C
                       </div>
+                      <div
+                        className="css-text-901oao"
+                        dir="auto"
+                        style={
+                          Object {
+                            "color": "rgba(167,167,167,1.00)",
+                            "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                            "fontSize": "14px",
+                            "textAlign": "left",
+                          }
+                        }
+                      >
+                        C is a general-purpose, procedural computer programming language.
+                      </div>
                     </div>
                   </div>
                   <div
@@ -32690,14 +32704,14 @@ exports[`KitchenSink_1 1`] = `
                 "borderTopLeftRadius": "24px",
                 "borderTopRightRadius": "24px",
                 "flexDirection": "row",
-                "height": "44px",
+                "height": "48px",
                 "msFlexAlign": "center",
                 "msFlexDirection": "row",
                 "paddingBottom": "3px",
                 "paddingLeft": "3px",
                 "paddingRight": "3px",
                 "paddingTop": "3px",
-                "width": "72px",
+                "width": "80px",
               }
             }
           >
@@ -32709,7 +32723,7 @@ exports[`KitchenSink_1 1`] = `
                   "WebkitBoxAlign": "center",
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
-                  "WebkitTransform": "translateX(28px)",
+                  "WebkitTransform": "translateX(34px)",
                   "alignItems": "center",
                   "backgroundColor": "rgba(255,255,255,1.00)",
                   "borderBottomLeftRadius": "24px",
@@ -32717,7 +32731,7 @@ exports[`KitchenSink_1 1`] = `
                   "borderTopLeftRadius": "24px",
                   "borderTopRightRadius": "24px",
                   "display": "flex",
-                  "height": "38px",
+                  "height": "40px",
                   "justifyContent": "center",
                   "msFlexAlign": "center",
                   "msFlexPack": "center",
@@ -32725,8 +32739,8 @@ exports[`KitchenSink_1 1`] = `
                   "paddingLeft": "0px",
                   "paddingRight": "0px",
                   "paddingTop": "0px",
-                  "transform": "translateX(28px)",
-                  "width": "38px",
+                  "transform": "translateX(34px)",
+                  "width": "40px",
                 }
               }
             >
@@ -43861,14 +43875,14 @@ exports[`Switch_1 1`] = `
             "borderTopLeftRadius": "24px",
             "borderTopRightRadius": "24px",
             "flexDirection": "row",
-            "height": "44px",
+            "height": "48px",
             "msFlexAlign": "center",
             "msFlexDirection": "row",
             "paddingBottom": "3px",
             "paddingLeft": "3px",
             "paddingRight": "3px",
             "paddingTop": "3px",
-            "width": "72px",
+            "width": "80px",
           }
         }
       >
@@ -43880,7 +43894,7 @@ exports[`Switch_1 1`] = `
               "WebkitBoxAlign": "center",
               "WebkitBoxPack": "center",
               "WebkitJustifyContent": "center",
-              "WebkitTransform": "translateX(28px)",
+              "WebkitTransform": "translateX(34px)",
               "alignItems": "center",
               "backgroundColor": "rgba(255,255,255,1.00)",
               "borderBottomLeftRadius": "24px",
@@ -43888,7 +43902,7 @@ exports[`Switch_1 1`] = `
               "borderTopLeftRadius": "24px",
               "borderTopRightRadius": "24px",
               "display": "flex",
-              "height": "38px",
+              "height": "40px",
               "justifyContent": "center",
               "msFlexAlign": "center",
               "msFlexPack": "center",
@@ -43896,8 +43910,8 @@ exports[`Switch_1 1`] = `
               "paddingLeft": "0px",
               "paddingRight": "0px",
               "paddingTop": "0px",
-              "transform": "translateX(28px)",
-              "width": "38px",
+              "transform": "translateX(34px)",
+              "width": "40px",
             }
           }
         >
@@ -45258,7 +45272,7 @@ exports[`Toast_1 1`] = `
   <code
     className="language-tsx"
   >
-    &lt;ToastProvider&gt;{children}&lt;/ToastProvider&gt;
+    &lt;ThemeProvider&gt;{children}&lt;/ThemeProvider&gt;
 
   </code>
 </pre>
@@ -45384,42 +45398,6 @@ exports[`Toast_2 1`] = `
 `;
 
 exports[`Toast_3 1`] = `<div />`;
-
-exports[`Toast_4 1`] = `<div />`;
-
-exports[`Toast_5 1`] = `
-<pre>
-  <code
-    className="language-tsx"
-  >
-    ToastStyles {
-  containerStyle: ViewStyle;
-  wrapperStyle: ViewStyle;
-}
-
-getStyles={(ToastProviderProps, Theme) =&gt; ToastProviderStyles}
-
-  </code>
-</pre>
-`;
-
-exports[`Toast_6 1`] = `
-<pre>
-  <code
-    className="language-tsx"
-  >
-    &lt;&gt;
-  {children}
-  &lt;View containerStyle&gt;
-    &lt;View wrapperStyle&gt;
-      &lt;Alert /&gt;
-    &lt;/View&gt;
-  &lt;/View&gt;
-&lt;/&gt;
-
-  </code>
-</pre>
-`;
 
 exports[`Visible_0 1`] = `
 <h1>

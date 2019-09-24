@@ -6,17 +6,17 @@ import {
   defaultLayout,
   DESC_ORDER_SCREEN_SIZES,
   GetResponsiveValueParam,
+  Layout,
   LayoutContext,
-  LayoutInterface,
   ScreenSize,
 } from './LayoutContext';
 
 export interface LayoutProviderProps {
   children: React.ReactNode;
-  value?: Partial<LayoutInterface>;
+  value?: Partial<Layout>;
 }
 
-export const getCurrentScreenSize = (layout: LayoutInterface) => {
+export const getCurrentScreenSize = (layout: Layout) => {
   const { breakpoints } = layout;
   const windowScaledSize = Dimensions.get('window');
 

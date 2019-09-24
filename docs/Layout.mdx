@@ -1,12 +1,12 @@
 ---
 name: Layout
-menu: Components
+order: 85
 ---
 
 import { Playground, Props } from 'docz';
-import { LayoutProvider, useLayout, Text } from '..';
+import { ThemeProvider, useLayout, Text } from '../src';
 
-export default ({ children }) => <LayoutProvider>{children}</LayoutProvider>;
+export default ({ children }) => <ThemeProvider>{children}</ThemeProvider>;
 
 # Layout
 
@@ -14,10 +14,10 @@ Paramount provides building blocks to create responsive layout via components `V
 
 ## Setup
 
-Put `LayoutProvider` at the top level component to wrap components that make use of `LayoutContext`. For options, [see Configuration Options](#options)
+Make sure to use `ThemeProvider` at the top-level component. For options, [see Configuration Options](#options)
 
 ```tsx
-<LayoutProvider value={options}>{children}</LayoutProvider>
+<ThemeProvider value={{ layout: options }}>{children}</ThemeProvider>
 ```
 
 ## Usage
@@ -69,7 +69,7 @@ Retrieves the current screen size
 These are all the available configuration options, as well as the default layout configuration
 
 ```ts
-export const defaultLayout: LayoutInterface = {
+export const defaultLayout: Layout = {
   breakpoints: {
     small: 480,
 

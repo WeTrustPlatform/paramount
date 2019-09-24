@@ -17,6 +17,9 @@ import { ThemeProvider } from 'paramount-ui'
   colors: Colors;
   fills: Fills;
 
+  // Layout
+  layout: Layout;
+
   // Typography
   fontFamilies: FontFamilies;
   fontWeights: FontWeights;
@@ -495,9 +498,33 @@ const containerShapes: ContainerShapes = {
   },
 };
 
+export const defaultLayout: Layout = {
+  breakpoints: {
+    small: 480,
+
+    medium: 768,
+
+    large: 992,
+
+    xlarge: 1200,
+  },
+  containerSizes: {
+    small: 540,
+
+    medium: 720,
+
+    large: 960,
+
+    xlarge: 1140,
+  },
+  gridColumnCount: 12,
+  gutterWidth: 30,
+};
+
 export const defaultTheme: Theme = {
   colors,
   fills,
+  layout,
 
   fontFamilies,
   fontWeights,

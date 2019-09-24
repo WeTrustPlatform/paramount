@@ -1,11 +1,11 @@
 import { ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
-import { LayoutInterface } from './LayoutContext';
+import { LayoutContext } from './LayoutContext';
 import { RowProps } from './Row';
 
 export type GetRowStyles = (
-  props: RowProps & LayoutInterface,
+  props: RowProps & LayoutContext,
   theme: Theme,
 ) => Partial<RowStyles>;
 
