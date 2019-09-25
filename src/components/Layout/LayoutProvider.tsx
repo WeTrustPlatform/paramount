@@ -1,7 +1,7 @@
+import deepMerge from 'deepmerge';
 import * as React from 'react';
 import { Dimensions } from 'react-native';
 
-import { deepMerge } from '../../utils/deepMerge';
 import {
   defaultLayout,
   DESC_ORDER_SCREEN_SIZES,

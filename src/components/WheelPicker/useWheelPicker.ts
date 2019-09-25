@@ -1,8 +1,11 @@
 import * as React from 'react';
 
+import { useDebouncedCallback } from '../../hooks/useDebouncedCallback';
 import { WheelPicker } from './WheelPicker';
 import { ITEM_HEIGHT } from './WheelPicker.constants';
 import { WheelPickerOption } from './WheelPickerItem';
+
+const DEBOUNCE_TIME = 300;
 
 export const makePaddedOptions = (options: WheelPickerOption[]) => {
   return [
@@ -64,18 +67,15 @@ export const useWheelPicker = (props: UseWheelPickerProps) => {
     onValueChange = () => {
       return;
     },
-    value: initialValue,
+    value: initialValue = options[0].value,
     scrollContainer,
     ref,
   } = props;
   const optionsWithClones = makePaddedOptions(options);
-  const [currentValue, setCurrentValue] = React.useState(initialValue);
+  const [value, setValue] = React.useState<string>(initialValue);
   const getOption = React.useMemo(() => getOptionFromOptions(options), [
     options,
   ]);
-  const initialScrollIndex = options.findIndex(
-    o => o.value === (initialValue || options[0].value),
-  );
 
   const scrollToValue = React.useCallback(
     (toValue: string, animated = true) => {
@@ -87,30 +87,30 @@ export const useWheelPicker = (props: UseWheelPickerProps) => {
         animated,
         offset: index * ITEM_HEIGHT - ITEM_HEIGHT,
       });
-
-      setCurrentValue(toValue);
     },
     [scrollContainer, options],
   );
 
-  React.useLayoutEffect(() => {
-    if (initialValue) {
-      scrollToValue(initialValue, false);
-    } else {
-      scrollToValue(options[0].value, false);
-    }
-  }, [options]);
+  const handleChange = React.useCallback(
+    (newValue: string) => {
+      if (newValue !== value) {
+        onValueChange(newValue);
+        setValue(newValue);
+      }
+    },
+    [onValueChange, value],
+  );
 
-  const handleScroll = React.useCallback(
+  const handleScroll = useDebouncedCallback(
     (offset: number) => {
       if (!scrollContainer) return;
 
       const selectedOption = getOption(offset);
 
-      onValueChange(selectedOption.value);
-      setCurrentValue(selectedOption.value);
+      handleChange(selectedOption.value);
     },
-    [scrollContainer, options],
+    DEBOUNCE_TIME,
+    [scrollContainer, options, handleChange],
   );
 
   const handleEndDrag = React.useCallback(
@@ -125,43 +125,41 @@ export const useWheelPicker = (props: UseWheelPickerProps) => {
 
       const selectedOption = getOption(scrollPosition);
 
-      onValueChange(selectedOption.value);
-      setCurrentValue(selectedOption.value);
+      handleChange(selectedOption.value);
     },
-    [scrollContainer, options],
+    [scrollContainer, options, handleChange],
   );
 
   React.useImperativeHandle(
     ref,
     () => ({
-      selectValue: (value: string) => scrollToValue(value),
+      selectValue: (newValue: string) => scrollToValue(newValue),
     }),
     [scrollContainer, options],
   );
 
   const handlePressUp = React.useCallback(() => {
     if (!scrollContainer) return;
-    const currentIndex = options.findIndex(o => o.value === currentValue);
+    const currentIndex = options.findIndex(o => o.value === value);
 
     if (currentIndex <= 0) return;
     scrollToValue(options[currentIndex - 1].value);
-  }, [scrollContainer, currentValue]);
+  }, [scrollContainer, value]);
 
   const handlePressDown = React.useCallback(() => {
     if (!scrollContainer) return;
 
-    const currentIndex = options.findIndex(o => o.value === currentValue);
+    const currentIndex = options.findIndex(o => o.value === value);
 
     if (currentIndex >= options.length - 1) return;
     scrollToValue(options[currentIndex + 1].value);
-  }, [scrollContainer, currentValue]);
+  }, [scrollContainer, value]);
 
   return {
     handleEndDrag,
     handlePressDown,
     handlePressUp,
     handleScroll,
-    initialScrollIndex,
     optionsWithClones,
     scrollToValue,
   };

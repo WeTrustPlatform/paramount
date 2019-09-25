@@ -21,7 +21,6 @@ export const WheelPicker = React.forwardRef(
     } = props;
 
     const theme = useTheme();
-
     const listRef = React.useRef<HTMLDivElement>(null);
 
     const {
@@ -29,6 +28,7 @@ export const WheelPicker = React.forwardRef(
       handlePressDown,
       handlePressUp,
       handleScroll,
+      scrollToValue,
     } = useWheelPicker({
       onValueChange,
       options,
@@ -56,6 +56,12 @@ export const WheelPicker = React.forwardRef(
       getStyles,
       theme.components.getWheelPickerStyles,
     )(props, theme);
+
+    React.useLayoutEffect(() => {
+      setTimeout(() => {
+        if (listRef.current && value) scrollToValue(value, false);
+      }, 50);
+    }, [value]);
 
     return (
       <View style={containerStyle}>

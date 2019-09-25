@@ -1,7 +1,7 @@
+import deepMerge from 'deepmerge';
 import { DeepPartial } from 'ts-essentials';
 
 import { Theme } from '../theme';
-import { deepMerge } from './deepMerge';
 
 export type GetStyles<TStyles = any, TStyleProps = any> = (
   props: TStyleProps,
@@ -32,5 +32,6 @@ export const mergeStyles = <TStyles = any, TStyleProps = any>(
     styles.push(getOverridingStyles(props, theme) as Partial<TStyles>);
   }
 
-  return deepMerge<TStyles>(defaultStyles, ...styles);
+  // @ts-ignore
+  return deepMerge.all<TStyles>([defaultStyles, ...styles]);
 };

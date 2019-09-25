@@ -53,7 +53,6 @@ const WheelPickerBase = (
     handlePressDown,
     handlePressUp,
     handleEndDrag,
-    initialScrollIndex,
   } = useWheelPicker({
     onValueChange,
     options,
@@ -65,6 +64,7 @@ const WheelPickerBase = (
     value,
   });
 
+  const initialScrollIndex = options.findIndex(o => o.value === value);
   const theme = useTheme();
 
   const {
@@ -95,7 +95,7 @@ const WheelPickerBase = (
             length: ITEM_HEIGHT,
             offset: ITEM_HEIGHT * index,
           })}
-          initialScrollIndex={initialScrollIndex}
+          initialScrollIndex={initialScrollIndex < 0 ? 0 : initialScrollIndex}
           keyExtractor={item => item.value}
           renderItem={({ item }) => <WheelPickerItem option={item} />}
           showsHorizontalScrollIndicator={false}

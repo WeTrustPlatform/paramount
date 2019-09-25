@@ -13,7 +13,7 @@ import { Box, State, WheelPicker, Icon, TextInput } from '..';
     {({ state, setState }) => (
       <Box flexDirection="row">
         <WheelPicker
-          value="May"
+          value={state.month}
           options={[
             { label: 'January', value: 'January' },
             { label: 'February', value: 'February' },
@@ -28,19 +28,30 @@ import { Box, State, WheelPicker, Icon, TextInput } from '..';
             { label: 'November', value: 'November' },
             { label: 'December', value: 'December' },
           ]}
-          onValueChange={value => console.log(value)}
+          onValueChange={value => {
+            console.log(value);
+            setState({ month: value });
+          }}
         />
         <WheelPicker
+          value={state.day}
           options={new Array(31)
             .fill(0)
             .map((v, i) => ({ label: `${i + 1}`, value: `${i + 1}` }))}
-          onValueChange={value => console.log(value)}
+          onValueChange={value => {
+            console.log(value);
+            setState({ day: value });
+          }}
         />
         <WheelPicker
+          value={state.year}
           options={new Array(50)
             .fill(0)
             .map((v, i) => ({ label: `${2000 + i}`, value: `${2000 + i}` }))}
-          onValueChange={value => console.log(value)}
+          onValueChange={value => {
+            console.log(value);
+            setState({ year: value });
+          }}
         />
       </Box>
     )}
