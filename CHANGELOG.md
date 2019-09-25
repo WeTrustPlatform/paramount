@@ -1,3 +1,10 @@
+## [1.79.1](https://github.com/WeTrustPlatform/paramount/compare/v1.79.0...v1.79.1) (2019-09-25)
+
+
+### Bug Fixes
+
+* revert deepmerge and fix wheelpicker ([502a372](https://github.com/WeTrustPlatform/paramount/commit/502a372))
+
 # [1.79.0](https://github.com/WeTrustPlatform/paramount/compare/v1.78.0...v1.79.0) (2019-09-24)
 
 
