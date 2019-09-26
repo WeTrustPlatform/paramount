@@ -17,7 +17,7 @@ Composes React Native's `Picker`
   <State initial={{ value: 'js' }}>
     {({ state, setState }) => (
       <NativePicker
-        selectedValue={state.value}
+        value={state.value}
         onValueChange={(itemValue, itemIndex) => setState({ value: itemValue })}
         size="large"
         options={[

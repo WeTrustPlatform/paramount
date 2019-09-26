@@ -1,18 +1,17 @@
 ---
-name: SelectList
+name: ListPicker
 menu: Components
 ---
 
 import { Playground, Props } from 'docz';
 
-import { Box, SelectList, State } from '..';
+import { Box, ListPicker, State } from '..';
 
-# SelectList
+# ListPicker
 
-SelectList that supports single value or multiple values selected at the same item.
+ListPicker that supports single value or multiple values selected at the same item.
 
-`SelectListItem` composes `ListItem` and `SelectList` composes `FlatList`.
-To use `ref`, import `SelectListWithRef` instead
+`ListPicker` composes `FlatList`. To use `ref`, import `ListPickerWithRef` instead
 
 ## Usage
 
@@ -20,7 +19,7 @@ To use `ref`, import `SelectListWithRef` instead
   <State initial={{ value: ['c', 'js', 'go'] }}>
     {({ state, setState }) => (
       <Box height={300}>
-        <SelectList
+        <ListPicker
           isMulti
           value={state.value}
           onValueChange={(newValue, itemIndex) => setState({ value: newValue })}
@@ -61,6 +60,6 @@ To use `ref`, import `SelectListWithRef` instead
   </State>
 </Playground>
 
-## SelectList Props
+## ListPicker Props
 
-<Props of={SelectList} />
+<Props of={ListPicker} />

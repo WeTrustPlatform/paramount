@@ -10,10 +10,13 @@ import { getWheelPickerStyles } from './WheelPicker.styles';
 import { WheelPickerItem } from './WheelPickerItem';
 
 export const WheelPicker = React.forwardRef(
-  (props: WheelPickerProps, ref: React.Ref<WheelPickerRef>) => {
+  <TValue extends any>(
+    props: WheelPickerProps<TValue>,
+    ref: React.Ref<WheelPickerRef<TValue>>,
+  ) => {
     const {
       value,
-      options,
+      options = [],
       onValueChange = () => {
         return;
       },
@@ -75,7 +78,7 @@ export const WheelPicker = React.forwardRef(
             style={listContainerStyle}
           >
             {optionsWithClones.map(option => (
-              <WheelPickerItem key={option.value} option={option} />
+              <WheelPickerItem key={`${option.value}`} option={option} />
             ))}
           </div>
           <View pointerEvents="none" style={upperOverlayStyle} />

@@ -4,16 +4,18 @@ import { View } from 'react-native';
 import { Text } from '../Typography';
 import { ITEM_HEIGHT } from './WheelPicker.constants';
 
-export interface WheelPickerOption {
+export interface WheelPickerOption<TValue extends any> {
   label: string;
-  value: string;
+  value: TValue;
 }
 
-export interface WheelPickerItemProps {
-  option: WheelPickerOption;
+export interface WheelPickerItemProps<TValue extends any> {
+  option: WheelPickerOption<TValue>;
 }
 
-const WheelPickerItemBase = (props: WheelPickerItemProps) => {
+const WheelPickerItemBase = <TValue extends any>(
+  props: WheelPickerItemProps<TValue>,
+) => {
   const { option } = props;
   const { label } = option;
 

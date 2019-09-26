@@ -35,6 +35,12 @@
     ],
     "max-union-size": false,
     "no-big-function": 50,
-    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"]
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-pascal-case"
+    ],
+    "array-type": false
   }
 }

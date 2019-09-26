@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Picker as RNPicker, PickerProps as RNPickerProps } from 'react-native';
+import { Picker as RNPicker } from 'react-native';
 
 import { ControlSize, useTheme } from '../../theme';
 import { mergeStyles } from '../../utils/mergeStyles';
@@ -9,38 +9,48 @@ import {
 } from './PickerButton.styles';
 import { PickerButtonWrapper } from './PickerButtonWrapper';
 
-export interface NativePickerOption {
+export interface NativePickerOption<TValue extends any> {
   label: string;
-  value: string;
+  value: TValue;
 }
 
-export interface NativePickerProps extends RNPickerProps {
+export interface NativePickerProps<TValue extends any> {
   /**
    * The size of the picker.
    * @default "medium"
    */
   size?: ControlSize | number;
+
   /**
    * List of NativePickerItem items.
    */
-  options: NativePickerOption[];
+  options?: NativePickerOption<TValue>[];
 
   /**
    * Callback to get element styles.
    */
   getStyles?: GetPickerButtonStyles;
 
-  innerRef?: React.Ref<RNPicker>;
+  /**
+   * Callback invoked when a item is picked
+   */
+  onValueChange?: (itemValue: TValue, itemPosition: number) => void;
+
+  /**
+   * Value of the picker
+   */
+  value?: TValue;
+
+  /**
+   * Used to locate this view in end-to-end tests.
+   */
+  testID?: string;
 }
 
-const NativePickerBase = (props: NativePickerProps) => {
-  const {
-    size = 'medium',
-    getStyles,
-    innerRef,
-    options,
-    ...pickerProps
-  } = props;
+export const NativePicker = <TValue extends any>(
+  props: NativePickerProps<TValue>,
+) => {
+  const { getStyles, options = [], value, testID, onValueChange } = props;
   const theme = useTheme();
 
   const { pickerStyle, itemStyle } = mergeStyles(
@@ -51,14 +61,15 @@ const NativePickerBase = (props: NativePickerProps) => {
   return (
     <PickerButtonWrapper getStyles={getStyles}>
       <RNPicker
-        ref={innerRef}
         itemStyle={itemStyle}
         style={pickerStyle}
-        {...pickerProps}
+        selectedValue={value}
+        testID={testID}
+        onValueChange={onValueChange}
       >
         {options.map(option => (
           <RNPicker.Item
-            key={option.value}
+            key={`${option.value}`}
             value={option.value}
             label={option.label}
           />
@@ -67,9 +78,3 @@ const NativePickerBase = (props: NativePickerProps) => {
     </PickerButtonWrapper>
   );
 };
-
-export const NativePicker = React.forwardRef<RNPicker, NativePickerProps>(
-  (props, ref) => {
-    return <NativePickerBase {...props} innerRef={ref} />;
-  },
-);

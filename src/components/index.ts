@@ -25,7 +25,7 @@ export * from './Popover';
 export * from './Positioner';
 export * from './ProgressBar';
 export * from './Rating';
-export * from './SelectList';
+export * from './ListPicker';
 export * from './Slider';
 export * from './Switch';
 export * from './Tabs';

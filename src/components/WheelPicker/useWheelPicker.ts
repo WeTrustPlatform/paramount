@@ -7,7 +7,9 @@ import { WheelPickerOption } from './WheelPickerItem';
 
 const DEBOUNCE_TIME = 300;
 
-export const makePaddedOptions = (options: WheelPickerOption[]) => {
+export const makePaddedOptions = <TValue extends any>(
+  options: WheelPickerOption<TValue>[],
+) => {
   return [
     { value: 'emptyStart', label: '' },
     ...options,
@@ -15,9 +17,9 @@ export const makePaddedOptions = (options: WheelPickerOption[]) => {
   ];
 };
 
-export const getOptionFromOptions = (options: WheelPickerOption[]) => (
-  scrollPosition: number,
-) => {
+export const getOptionFromOptions = <TValue extends any>(
+  options: WheelPickerOption<TValue>[],
+) => (scrollPosition: number) => {
   const index = Math.round(scrollPosition / ITEM_HEIGHT);
 
   const finalIndex = Math.abs(
@@ -31,11 +33,11 @@ export interface ScrollContainer {
   scrollTo: (params: { animated?: boolean; offset: number }) => void;
 }
 
-export interface UseWheelPickerProps {
+export interface UseWheelPickerProps<TValue extends any> {
   /**
    * List of options to show.
    */
-  options: WheelPickerOption[];
+  options: WheelPickerOption<TValue>[];
 
   /**
    * Initial value of the picker.
@@ -43,12 +45,12 @@ export interface UseWheelPickerProps {
    * *This is not a controlled component*; you don't need to update the
    * value during dragging.
    */
-  value?: string;
+  value?: TValue;
 
   /**
    * Callback continuously called while the user is dragging the slider.
    */
-  onValueChange?: (value: string) => void;
+  onValueChange?: (value: TValue) => void;
 
   /**
    * Scroll container
@@ -58,10 +60,12 @@ export interface UseWheelPickerProps {
   /**
    * Methods of the WheelPicker
    */
-  ref: React.Ref<WheelPicker>;
+  ref: React.Ref<WheelPicker<TValue>>;
 }
 
-export const useWheelPicker = (props: UseWheelPickerProps) => {
+export const useWheelPicker = <TValue extends any>(
+  props: UseWheelPickerProps<TValue>,
+) => {
   const {
     options,
     onValueChange = () => {
@@ -72,13 +76,13 @@ export const useWheelPicker = (props: UseWheelPickerProps) => {
     ref,
   } = props;
   const optionsWithClones = makePaddedOptions(options);
-  const [value, setValue] = React.useState<string>(initialValue);
+  const [value, setValue] = React.useState<TValue>(initialValue);
   const getOption = React.useMemo(() => getOptionFromOptions(options), [
     options,
   ]);
 
   const scrollToValue = React.useCallback(
-    (toValue: string, animated = true) => {
+    (toValue: TValue, animated = true) => {
       if (!scrollContainer) return;
 
       const index = optionsWithClones.findIndex(o => o.value === toValue);
@@ -92,7 +96,7 @@ export const useWheelPicker = (props: UseWheelPickerProps) => {
   );
 
   const handleChange = React.useCallback(
-    (newValue: string) => {
+    (newValue: TValue) => {
       if (newValue !== value) {
         onValueChange(newValue);
         setValue(newValue);
@@ -133,7 +137,7 @@ export const useWheelPicker = (props: UseWheelPickerProps) => {
   React.useImperativeHandle(
     ref,
     () => ({
-      selectValue: (newValue: string) => scrollToValue(newValue),
+      selectValue: (newValue: TValue) => scrollToValue(newValue),
     }),
     [scrollContainer, options],
   );

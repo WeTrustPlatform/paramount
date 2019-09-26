@@ -13,8 +13,8 @@ export interface WheelPickerStyles {
   bottomOverlayStyle: ViewStyle;
 }
 
-export type GetWheelPickerStyles = (
-  props: WheelPickerProps,
+export type GetWheelPickerStyles = <TValues extends any>(
+  props: WheelPickerProps<TValues>,
   theme: Theme,
 ) => Partial<WheelPickerStyles>;
 
