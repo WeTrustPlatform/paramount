@@ -49,32 +49,3 @@ Button component to trigger an action
 ## Props
 
 <Props of={Button} />
-
-## Customization
-
-Using `getStyles` prop
-
-```
-ButtonStyles {
-  touchableStyle: ViewStyle;
-  textStyle: TextStyle;
-  innerButtonWrapperStyle: ViewStyle;
-  buttonContentWrapperStyle: ViewStyle;
-}
-
-getStyles={(ButtonProps, Theme) => ButtonStyles}
-```
-
-Markup
-
-```tsx
-<TouchableOpacity touchableStyle>
-  <View innerButtonWrapperStyle>
-    {iconBefore}
-    <View buttonContentWrapperStyle>
-      <Text textStyle />
-    </View>
-    {iconAfter}
-  </View>
-</TouchableOpacity>
-```

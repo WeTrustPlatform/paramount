@@ -21,24 +21,3 @@ Display to indicate status or feat of service
 ## Props
 
 <Props of={Badge} />
-
-## Customization
-
-Using `getStyles` prop
-
-```tsx
-BadgeStyles {
-  textStyle: TextStyle;
-  containerStyle: ViewStyle;
-}
-
-getStyles={(BadgeProps, Theme) => BadgeStyles}
-```
-
-Markup
-
-```tsx
-<View containerStyle>
-  <Text textStyle>{title}</Text>
-</View>
-```

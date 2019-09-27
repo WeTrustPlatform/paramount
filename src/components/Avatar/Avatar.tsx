@@ -52,7 +52,15 @@ export interface AvatarOverrides {
 type AvatarProps = WithOverrides<AvatarBaseProps, AvatarOverrides>;
 
 export const Avatar = (props: AvatarProps) => {
-  const { source, name, size, isSolid, color, testID, overrides = {} } = props;
+  const {
+    source,
+    name = '',
+    size = 'medium',
+    isSolid = false,
+    color,
+    testID,
+    overrides = {},
+  } = props;
 
   const [hasImageFailedLoading, setHasImageFailedLoading] = React.useState(
     false,
@@ -129,14 +137,14 @@ const avatarScale: { [size in ControlSize]: number } = {
 };
 
 interface RootProps extends ViewProps, PropsWithChildren {
-  size?: ControlSize | number;
-  name?: string;
-  isSolid?: boolean;
+  size: ControlSize | number;
+  name: string;
+  isSolid: boolean;
   color?: FillColor;
 }
 
 const StyledRoot = (props: RootProps) => {
-  const { size = 'medium', testID, children, isSolid, color, style } = props;
+  const { size, testID, children, isSolid, color, style } = props;
   const theme = useTheme();
   const appearances = theme.fills[isSolid ? 'solid' : 'subtle'];
   const keys = Object.keys(appearances);
@@ -183,14 +191,14 @@ const getInitials = (name?: string, fallback = '?') => {
 };
 
 interface InitialsProps extends ViewProps {
-  size?: ControlSize | number;
-  name?: string;
-  isSolid?: boolean;
+  size: ControlSize | number;
+  name: string;
+  isSolid: boolean;
   color?: FillColor;
 }
 
 const StyledInitials = (props: InitialsProps) => {
-  const { size = 'medium', isSolid, color, style, ...textProps } = props;
+  const { size, isSolid, color, style, ...textProps } = props;
   const theme = useTheme();
 
   const appearances = theme.fills[isSolid ? 'solid' : 'subtle'];

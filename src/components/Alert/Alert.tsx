@@ -87,13 +87,13 @@ interface PropsWithChildren {
 }
 
 interface PropsWithIntent {
-  intent?: Intent;
+  intent: Intent;
 }
 
 interface RootProps extends ViewProps, PropsWithChildren, PropsWithIntent {}
 
 const StyledRoot = (props: RootProps) => {
-  const { intent = 'info', testID, children, style } = props;
+  const { intent, testID, children, style } = props;
   const theme = useTheme();
 
   return (
@@ -159,7 +159,7 @@ const StyledAlertIcon = (props: AlertIconProps) => {
   }
 };
 
-interface BodyProps extends ViewProps, PropsWithChildren, PropsWithIntent {}
+interface BodyProps extends ViewProps, PropsWithChildren {}
 
 const StyledBody = (props: BodyProps) => {
   const { children, style } = props;
