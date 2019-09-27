@@ -171,18 +171,18 @@ describe('getOverrides', () => {
     });
   });
 
-  test('getOverrides return correct overrideProps given object then callback', () => {
-    const [, viewProps] = getOverrides(
-      View,
-      parentProps,
-      overrideObject,
-      overrideCallbacks,
-    );
+  test('getOverrides returns overriding component with override props', () => {
+    const OverrideView = (props: ViewProps) => <></>;
+    OverrideView.displayName = 'OverrideView';
 
-    expect(viewProps.testID).toBe(parentProps.zero);
-    expect(viewProps.style!).toMatchObject({
-      height: parentProps.zero,
-      width: overrideObject.style.width,
+    const [Component, viewProps] = getOverrides(View, parentProps, {
+      ...overrideObject,
+      component: OverrideView,
     });
+
+    expect(viewProps.testID).toBe(overrideObject.props.testID);
+    expect(viewProps.style!).toMatchObject(overrideObject.style);
+    expect(Component.displayName).toBe(OverrideView.displayName);
+    expect(Component.displayName).not.toBe(View.name);
   });
 });

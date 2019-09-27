@@ -74,7 +74,7 @@ const applyOverrides = <TProps = any, TChildProps = any>(
   if (!override) return {};
 
   let overrideProps: Partial<TChildProps> = {};
-  let style = {};
+  let style = null;
 
   if (override.props) {
     overrideProps = isGetPropsFn<TProps, TChildProps>(override.props)
@@ -94,7 +94,7 @@ const applyOverrides = <TProps = any, TChildProps = any>(
         override.style;
   }
 
-  return { ...overrideProps, style };
+  return { ...overrideProps, ...(style ? { style } : {}) };
 };
 
 export const getOverrides = <TProps = any, TChildProps = any>(
@@ -103,13 +103,18 @@ export const getOverrides = <TProps = any, TChildProps = any>(
   ...overrides: (Override<TProps, TChildProps> | undefined)[]
 ): [React.ComponentType<TChildProps>, Partial<TChildProps>] => {
   let overrideProps: Partial<TChildProps> = {};
+  let OverrideComponent: React.ComponentType<TChildProps> = Component;
 
   overrides.forEach(override => {
     overrideProps = deepMerge(
       overrideProps,
       applyOverrides(parentProps, override),
     );
+
+    if (override && override.component) {
+      OverrideComponent = override.component;
+    }
   });
 
-  return [Component, overrideProps];
+  return [OverrideComponent, overrideProps];
 };
