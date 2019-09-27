@@ -7,7 +7,7 @@ import { isControlSize } from '../../utils/isControlSize';
 import { getOverrides, WithOverrides } from '../../utils/overrides';
 import { Text, TextProps } from '../Typography';
 
-export interface BadgeBaseProps {
+interface BadgeBaseProps {
   /** Title of the badge */
   title?: string;
 
@@ -44,7 +44,8 @@ export interface BadgeOverrides {
   Title: TitleProps;
 }
 
-type BadgeProps = WithOverrides<BadgeBaseProps, BadgeOverrides>;
+export interface BadgeProps
+  extends WithOverrides<BadgeBaseProps, BadgeOverrides> {}
 
 export const Badge = (props: BadgeProps) => {
   const {

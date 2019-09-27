@@ -1,16 +1,17 @@
 import * as React from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import {
+  TouchableOpacity,
+  TouchableOpacityProps,
+  View,
+  ViewProps,
+} from 'react-native';
 
 import { useTheme } from '../../theme';
-import { mergeStyles } from '../../utils/mergeStyles';
+import { getOverrides, WithOverrides } from '../../utils/overrides';
 import { Icon } from '../Icon';
-import { Text } from '../Typography';
-import {
-  GetCollapsibleStyles,
-  getCollapsibleStyles,
-} from './Collapsible.styles';
+import { Text, TextProps } from '../Typography';
 
-export interface CollapsibleProps {
+interface CollapsibleBaseProps {
   /** Title of the collapsible */
   title?: string;
 
@@ -35,60 +36,41 @@ export interface CollapsibleProps {
   /** Called when header is pressed to close collapsible */
   onClose?: () => void;
 
-  /** Override the title with the component */
-  header?: React.ReactNode;
-
-  /** Label for screen readers */
-  accessibilityLabel?: string;
-
-  /** Hint for screen readers */
-  accessibilityHint?: string;
-
-  /**
-   * When true, indicates that the view is an accessibility element.
-   * @default true
-   */
-  accessible?: boolean;
-
-  /** Callback to get element styles. */
-  getStyles?: GetCollapsibleStyles;
-
   /** Used to locate this view in end-to-end tests. */
   testID?: string;
 }
+
+export interface CollapsibleOverrides {
+  Touchable: TouchableProps;
+  Title: TitleProps;
+  IconOpen: IconProps;
+  IconClose: IconProps;
+  Content: ContentProps;
+}
+
+export interface CollapsibleProps
+  extends WithOverrides<CollapsibleBaseProps, CollapsibleOverrides> {}
 
 export const Collapsible = (props: CollapsibleProps) => {
   const {
     title,
     children,
-    header,
     initialIsOpen = false,
     isOpen,
-    getStyles,
     testID,
-    onOpen = () => undefined,
-    onClose = () => undefined,
-    accessibilityHint,
-    accessibilityLabel,
-    accessible = true,
+    onOpen = () => {
+      return;
+    },
+    onClose = () => {
+      return;
+    },
+    overrides = {},
   } = props;
   const theme = useTheme();
   const [isOpened, setIsOpened] = React.useState(initialIsOpen);
 
   const isControlledUsage = typeof isOpen === 'boolean';
   const isFinalOpened = isControlledUsage ? isOpen : isOpened;
-
-  const {
-    touchableStyle,
-    outerWrapperStyle,
-    contentWrapperStyle,
-    textStyle,
-    iconWrapperStyle,
-  } = mergeStyles(
-    getCollapsibleStyles,
-    getStyles,
-    theme.components.getCollapsibleStyles,
-  )({ ...props, isOpen: isFinalOpened }, theme);
 
   const handlePress = React.useCallback(() => {
     if (isControlledUsage) {
@@ -108,34 +90,118 @@ export const Collapsible = (props: CollapsibleProps) => {
     }
   }, [isOpened, setIsOpened, isOpen, onClose, isControlledUsage]);
 
+  const [Touchable, touchableProps] = getOverrides(
+    StyledTouchable,
+    props,
+    overrides.Touchable,
+  );
+
+  const [Title, titleProps] = getOverrides(StyledTitle, props, overrides.Title);
+  const [Content, contentProps] = getOverrides(
+    StyledContent,
+    props,
+    overrides.Content,
+  );
+  const [IconOpen, iconOpenProps] = getOverrides(
+    StyledIconOpen,
+    props,
+    overrides.IconOpen,
+  );
+  const [IconClose, iconCloseProps] = getOverrides(
+    StyledIconClose,
+    props,
+    overrides.IconClose,
+  );
+
   return (
     <>
-      <TouchableOpacity
-        testID={testID}
-        onPress={handlePress}
-        style={touchableStyle}
-        accessibilityHint={accessibilityHint}
-        accessibilityLabel={accessibilityLabel}
-        accessible={accessible}
-      >
-        <View style={outerWrapperStyle}>
-          {header || (
-            <>
-              <Text size="large" getStyles={() => ({ textStyle })}>
-                {title}
-              </Text>
-              <View style={iconWrapperStyle}>
-                <Icon
-                  size="large"
-                  name={isFinalOpened ? 'chevron-up' : 'chevron-down'}
-                  color={theme.colors.text.default}
-                />
-              </View>
-            </>
-          )}
-        </View>
-      </TouchableOpacity>
-      <View style={contentWrapperStyle}>{isFinalOpened && children}</View>
+      <Touchable testID={testID} onPress={handlePress} {...touchableProps}>
+        <Title title={title} {...titleProps} />
+        {isFinalOpened ? (
+          <IconClose {...iconCloseProps} />
+        ) : (
+          <IconOpen {...iconOpenProps} />
+        )}
+      </Touchable>
+      <Content {...contentProps}>{isFinalOpened && children}</Content>
     </>
   );
 };
+
+interface TouchableProps extends TouchableOpacityProps {
+  children?: React.ReactNode;
+}
+
+const StyledTouchable = (props: TouchableProps) => {
+  const { style, children, ...touchableProps } = props;
+
+  return (
+    <TouchableOpacity
+      style={[
+        {
+          alignItems: 'center',
+          display: 'flex',
+          flexDirection: 'row',
+        },
+        style,
+      ]}
+      {...touchableProps}
+    >
+      {children}
+    </TouchableOpacity>
+  );
+};
+
+interface TitleProps extends TextProps {
+  title?: string;
+}
+
+const StyledTitle = (props: TitleProps) => {
+  const { title, style, ...textProps } = props;
+
+  return (
+    <Text size="large" style={[{}, style]} {...textProps}>
+      {title}
+    </Text>
+  );
+};
+
+interface ContentProps extends ViewProps {
+  children?: React.ReactNode;
+}
+
+const StyledContent = (props: ContentProps) => {
+  const { children, style, ...viewProps } = props;
+
+  return (
+    <View style={[{ paddingLeft: 4 }, style]} {...viewProps}>
+      {children}
+    </View>
+  );
+};
+
+interface StyledIconProps {
+  showOpen?: boolean;
+}
+
+const StyledIcon = (props: StyledIconProps) => {
+  const { showOpen } = props;
+  const theme = useTheme();
+
+  return (
+    <View style={{ paddingLeft: 4 }}>
+      <Icon
+        size="large"
+        name={showOpen ? 'chevron-up' : 'chevron-down'}
+        color={theme.colors.text.default}
+      />
+    </View>
+  );
+};
+
+// tslint:disable-next-line
+interface IconProps {}
+
+const StyledIconOpen = () => <StyledIcon showOpen={false} />;
+
+const StyledIconClose = () => <StyledIcon showOpen={true} />;

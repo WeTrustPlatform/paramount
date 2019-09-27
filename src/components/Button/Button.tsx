@@ -12,7 +12,7 @@ import { getOverrides, WithOverrides } from '../../utils/overrides';
 import { Dots } from '../LoadingIndicators';
 import { Text, TextProps } from '../Typography';
 
-export interface ButtonBaseProps {
+interface ButtonBaseProps {
   /** Title of the button */
   title?: string;
 
@@ -61,7 +61,8 @@ export interface ButtonOverrides {
   Loading: LoadingProps;
 }
 
-type ButtonProps = WithOverrides<ButtonBaseProps, ButtonOverrides>;
+export interface ButtonProps
+  extends WithOverrides<ButtonBaseProps, ButtonOverrides> {}
 
 export const Button = (props: ButtonProps) => {
   const {

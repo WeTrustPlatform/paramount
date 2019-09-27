@@ -11,7 +11,7 @@ import { isControlSize } from '../../utils/isControlSize';
 import { getOverrides, WithOverrides } from '../../utils/overrides';
 import { Icon } from '../Icon';
 
-export interface CheckboxBaseProps {
+interface CheckboxBaseProps {
   /**
    * The size of the checkbox.
    * @default "medium"
@@ -56,7 +56,8 @@ export interface CheckboxOverrides {
   Check: CheckProps;
 }
 
-type CheckboxProps = WithOverrides<CheckboxBaseProps, CheckboxOverrides>;
+export interface CheckboxProps
+  extends WithOverrides<CheckboxBaseProps, CheckboxOverrides> {}
 
 export const Checkbox = (props: CheckboxProps) => {
   const {

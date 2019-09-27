@@ -8,7 +8,7 @@ import { Text, TextProps } from '../Typography';
 
 export type Intent = 'danger' | 'info' | 'success' | 'warning';
 
-export interface AlertBaseProps {
+interface AlertBaseProps {
   /** Title of the alert. */
   title?: string;
 
@@ -35,7 +35,8 @@ export interface AlertOverrides {
   Action: ActionProps;
 }
 
-type AlertProps = WithOverrides<AlertBaseProps, AlertOverrides>;
+export interface AlertProps
+  extends WithOverrides<AlertBaseProps, AlertOverrides> {}
 
 export const Alert = (props: AlertProps) => {
   const { title, description, intent = 'info', overrides = {} } = props;

@@ -13,7 +13,7 @@ import { isControlSize } from '../../utils/isControlSize';
 import { getOverrides, WithOverrides } from '../../utils/overrides';
 import { Text } from '../Typography';
 
-export interface AvatarBaseProps {
+interface AvatarBaseProps {
   /** The source attribute of the image. When it's not available, render initials instead. */
   source?: ImageSourcePropType;
 
@@ -49,7 +49,8 @@ export interface AvatarOverrides {
   Image: ImageProps;
 }
 
-type AvatarProps = WithOverrides<AvatarBaseProps, AvatarOverrides>;
+export interface AvatarProps
+  extends WithOverrides<AvatarBaseProps, AvatarOverrides> {}
 
 export const Avatar = (props: AvatarProps) => {
   const {
