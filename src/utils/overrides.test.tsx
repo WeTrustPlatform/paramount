@@ -114,3 +114,75 @@ describe('Overrides', () => {
     );
   });
 });
+
+describe('getOverrides', () => {
+  interface ParentProps {
+    zero: string;
+  }
+
+  const parentProps: ParentProps = { zero: '1' };
+
+  const overrideCallbacks = {
+    props: (props: ParentProps) => ({
+      testID: props.zero,
+    }),
+    style: (props: ViewProps) => ({
+      height: props.testID,
+    }),
+  };
+
+  const overrideObject = {
+    props: {
+      testID: '2',
+    },
+    style: {
+      width: parentProps.zero,
+    },
+  };
+
+  test('getOverrides return correct overrideProps given callback', () => {
+    const [, viewProps] = getOverrides(View, parentProps, overrideCallbacks);
+
+    expect(viewProps.testID).toBe(parentProps.zero);
+    expect(viewProps.style!).toMatchObject({
+      height: parentProps.zero,
+    });
+  });
+
+  test('getOverrides return correct overrideProps given object', () => {
+    const [, viewProps] = getOverrides(View, parentProps, overrideObject);
+
+    expect(viewProps.testID).toBe(overrideObject.props.testID);
+    expect(viewProps.style!).toMatchObject(overrideObject.style);
+  });
+
+  test('getOverrides return correct overrideProps given callback then object', () => {
+    const [, viewProps] = getOverrides(
+      View,
+      parentProps,
+      overrideCallbacks,
+      overrideObject,
+    );
+
+    expect(viewProps.testID).toBe(overrideObject.props.testID);
+    expect(viewProps.style!).toMatchObject({
+      height: parentProps.zero,
+      width: overrideObject.style.width,
+    });
+  });
+
+  test('getOverrides return correct overrideProps given object then callback', () => {
+    const [, viewProps] = getOverrides(
+      View,
+      parentProps,
+      overrideObject,
+      overrideCallbacks,
+    );
+
+    expect(viewProps.testID).toBe(parentProps.zero);
+    expect(viewProps.style!).toMatchObject({
+      height: parentProps.zero,
+      width: overrideObject.style.width,
+    });
+  });
+});

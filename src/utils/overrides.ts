@@ -1,4 +1,4 @@
-import { StyleProp } from 'react-native';
+import deepMerge from 'deepmerge';
 
 import { Theme } from '../theme';
 
@@ -17,10 +17,10 @@ export type GetStyle<TProps = any, TStyle = any> = (
 
 export type OverrideStyle<TChildProps = any, TStyle = any> =
   | GetStyle<TChildProps, TStyle>
-  | StyleProp<TStyle>;
+  | TStyle;
 
 export interface PropsWithStyle<TStyle = any> {
-  style?: StyleProp<TStyle>;
+  style?: TStyle;
 }
 
 export interface OverrideBase<TProps = any, TChildProps = any> {
@@ -73,31 +73,43 @@ const applyOverrides = <TProps = any, TChildProps = any>(
 ): Partial<TChildProps> => {
   if (!override) return {};
 
-  let childProps: Partial<TChildProps> = {};
-  const style = {};
+  let overrideProps: Partial<TChildProps> = {};
+  let style = {};
 
   if (override.props) {
-    childProps = isGetPropsFn<TProps, TChildProps>(override.props)
+    overrideProps = isGetPropsFn<TProps, TChildProps>(override.props)
       ? override.props(parentProps)
       : override.props;
   }
 
-  return {
-    ...childProps,
-    style,
-  };
+  // @ts-ignore
+  if (override.style) {
+    // @ts-ignore
+    style = isGetStyleFn<TProps>(override.style)
+      ? //
+        // @ts-ignore
+        override.style(overrideProps)
+      : //
+        // @ts-ignore
+        override.style;
+  }
+
+  return { ...overrideProps, style };
 };
 
 export const getOverrides = <TProps = any, TChildProps = any>(
   Component: React.ComponentType<TChildProps>,
   parentProps: TProps,
-  themeOverride?: Override<TProps, TChildProps>,
-  propsOverride?: Override<TProps, TChildProps>,
+  ...overrides: (Override<TProps, TChildProps> | undefined)[]
 ): [React.ComponentType<TChildProps>, Partial<TChildProps>] => {
-  let childProps: Partial<TChildProps> = {};
+  let overrideProps: Partial<TChildProps> = {};
 
-  if (themeOverride) childProps = applyOverrides(parentProps, themeOverride);
-  if (propsOverride) childProps = applyOverrides(parentProps, propsOverride);
+  overrides.forEach(override => {
+    overrideProps = deepMerge(
+      overrideProps,
+      applyOverrides(parentProps, override),
+    );
+  });
 
-  return [Component, childProps];
+  return [Component, overrideProps];
 };
