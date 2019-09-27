@@ -1,13 +1,23 @@
 import * as React from 'react';
-import { Platform, Text, TextProps } from 'react-native';
+import {
+  Platform,
+  Text as RNText,
+  TextProps as RNTextProps,
+  TextStyle,
+} from 'react-native';
 
 import { useTheme } from '../../theme';
-import { FontWeight, HeadingSize, TextColor } from '../../theme/Theme';
-import { mergeStyles } from '../../utils/mergeStyles';
-import { GetHeadingStyles, getHeadingStyles } from './Heading.styles';
+import {
+  FontWeight,
+  HeadingSize,
+  HeadingSizes,
+  TextColor,
+} from '../../theme/Theme';
+import { getOverrides, Override } from '../../utils/overrides';
+import { getFontWeight, getTextColor } from './Text';
 import { TextAlign } from './types';
 
-export interface HeadingProps extends TextProps {
+export interface HeadingProps extends RNTextProps {
   /** Text content */
   children?: React.ReactNode;
 
@@ -36,39 +46,93 @@ export interface HeadingProps extends TextProps {
   weight?: FontWeight;
 
   /**
+   * Overrides
+   */
+  override?: Override<HeadingProps, StyledHeadingProps>;
+
+  /**
    * (Web only): Corresponding h1, h2, h3... levels
    */
   accessibilityLevel?: 1 | 2 | 3 | 4 | 5 | 6;
-
-  /** Callback to get element styles. */
-  getStyles?: GetHeadingStyles;
 }
 
 export const Heading = (props: HeadingProps) => {
   const {
     accessibilityLevel,
-    size = 'medium',
-    align = 'left',
-    color = 'default',
+    size,
+    align,
+    color,
     weight,
-    getStyles,
+    override,
     ...textProps
   } = props;
-  const theme = useTheme();
 
-  const { headingStyle } = mergeStyles(
-    getHeadingStyles,
-    getStyles,
-    theme.components.getHeadingStyles,
-  )(props, theme);
+  const [Text, textRProps] = getOverrides(StyledHeading, props, override);
 
   return (
     <Text
       // @ts-ignore
       accessibilityRole={Platform.OS === 'web' ? 'heading' : 'none'}
       aria-level={accessibilityLevel} // Web
-      style={headingStyle}
+      accessibilityLevel={accessibilityLevel}
+      size={size}
+      align={align}
+      color={color}
+      weight={weight}
       {...textProps}
+      {...textRProps}
     />
+  );
+};
+
+export const getHeadingSize = (headingSizes: HeadingSizes) => (
+  size: HeadingSize,
+): TextStyle => {
+  // @ts-ignore
+  const presetHeadingSize = headingSizes[size] as TextStyle;
+
+  return presetHeadingSize || { fontSize: size };
+};
+
+interface StyledHeadingProps extends RNTextProps {
+  children?: React.ReactNode;
+  size?: HeadingSize;
+  align?: TextAlign;
+  color?: TextColor;
+  weight?: FontWeight;
+  accessibilityLevel?: 1 | 2 | 3 | 4 | 5 | 6;
+}
+
+const StyledHeading = (props: StyledHeadingProps) => {
+  const {
+    children,
+    accessibilityLevel,
+    size = 'medium',
+    align = 'left',
+    color = 'default',
+    weight,
+    style,
+    ...textProps
+  } = props;
+  const theme = useTheme();
+  const sizeStyle = getHeadingSize(theme.headingSizes)(size);
+
+  return (
+    <RNText
+      style={[
+        {
+          ...sizeStyle,
+          color: getTextColor(theme.colors.text)(color),
+          fontFamily: theme.fontFamilies.heading,
+          fontWeight:
+            getFontWeight(theme.fontWeights)(weight) || sizeStyle.fontWeight,
+          textAlign: align,
+        },
+        style,
+      ]}
+      {...textProps}
+    >
+      {children}
+    </RNText>
   );
 };

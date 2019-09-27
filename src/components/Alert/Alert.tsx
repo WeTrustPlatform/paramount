@@ -93,23 +93,26 @@ interface PropsWithIntent {
 interface RootProps extends ViewProps, PropsWithChildren, PropsWithIntent {}
 
 const StyledRoot = (props: RootProps) => {
-  const { intent = 'info', testID, children } = props;
+  const { intent = 'info', testID, children, style } = props;
   const theme = useTheme();
 
   return (
     <View
-      style={{
-        alignItems: 'center',
-        backgroundColor: theme.colors.background.content,
-        borderLeftColor: theme.colors.border[intent],
-        borderLeftWidth: 5,
-        borderRadius: theme.controlBorderRadius.medium,
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        padding: 16,
-        ...theme.elevations[2],
-      }}
+      style={[
+        {
+          alignItems: 'center',
+          backgroundColor: theme.colors.background.content,
+          borderLeftColor: theme.colors.border[intent],
+          borderLeftWidth: 5,
+          borderRadius: theme.controlBorderRadius.medium,
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          padding: 16,
+          ...theme.elevations[2],
+        },
+        style,
+      ]}
       testID={testID}
     >
       {children}
@@ -120,16 +123,19 @@ const StyledRoot = (props: RootProps) => {
 interface LeftWrapperProps extends ViewProps, PropsWithChildren {}
 
 const StyledLeftWrapper = (props: LeftWrapperProps) => {
-  const { children } = props;
+  const { children, style } = props;
 
   return (
     <View
-      style={{
-        display: 'flex',
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-      }}
+      style={[
+        {
+          display: 'flex',
+          flex: 1,
+          flexDirection: 'row',
+          alignItems: 'center',
+        },
+        style,
+      ]}
     >
       {children}
     </View>
@@ -156,14 +162,17 @@ const StyledAlertIcon = (props: AlertIconProps) => {
 interface BodyProps extends ViewProps, PropsWithChildren, PropsWithIntent {}
 
 const StyledBody = (props: BodyProps) => {
-  const { children } = props;
+  const { children, style } = props;
 
   return (
     <View
-      style={{
-        paddingLeft: 16,
-        flex: 1,
-      }}
+      style={[
+        {
+          paddingLeft: 16,
+          flex: 1,
+        },
+        style,
+      ]}
     >
       {children}
     </View>

@@ -2,7 +2,7 @@ import { ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme/Theme';
 import { isControlSize } from '../../utils/isControlSize';
-import { getTextColor } from '../Typography/Text.styles';
+import { getTextColor } from '../Typography/Text';
 import { RatingProps } from './Rating';
 
 export type GetRatingStyles = (

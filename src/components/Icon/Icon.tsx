@@ -2,7 +2,7 @@ import * as React from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 
 import { TextColor, TextSize, useTheme } from '../../theme';
-import { getTextColor, getTextSize } from '../Typography/Text.styles';
+import { getTextColor, getTextSize } from '../Typography/Text';
 
 export interface IconProps {
   /**

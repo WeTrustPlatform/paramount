@@ -24,26 +24,3 @@ Display avatar image, with default for name initials
 ## Props
 
 <Props of={Avatar} />
-
-## Customization
-
-Using `getStyles` prop
-
-```tsx
-AvatarStyles {
-  containerStyle: ViewStyle; // set height and width for custom avatar size
-  textStyle: TextStyle; // set font size if you want it to match avatar size
-  imageStyle: ImageStyle;
-}
-
-getStyles={(AvatarProps, Theme) => AvatarStyles}
-```
-
-Markup
-
-```tsx
-<View containerStyle>
-  <Text textStyle>{initials}</Text>
-  <Image imageStyle />
-</View>
-```

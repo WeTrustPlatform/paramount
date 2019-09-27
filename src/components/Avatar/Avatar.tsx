@@ -1,27 +1,19 @@
 import * as React from 'react';
-import { Image, ImageSourcePropType, View } from 'react-native';
+import {
+  Image,
+  ImageProps,
+  ImageSourcePropType,
+  View,
+  ViewProps,
+} from 'react-native';
 
 import { useTheme } from '../../theme';
-import { ControlSize, FillColor } from '../../theme/Theme';
-import { mergeStyles } from '../../utils/mergeStyles';
+import { ControlSize, FillColor, FillColors } from '../../theme/Theme';
+import { isControlSize } from '../../utils/isControlSize';
+import { getOverrides, WithOverrides } from '../../utils/overrides';
 import { Text } from '../Typography';
-import { GetAvatarStyles, getAvatarStyles } from './Avatar.styles';
 
-// https://github.com/segmentio/evergreen/blob/master/source/avatar/README.md
-export type GetInitialsType = (name?: string, fallback?: string) => string;
-
-const getInitials: GetInitialsType = (name, fallback = '?') => {
-  if (!name) return fallback;
-
-  return name
-    .replace(/\s+/, ' ')
-    .split(' ') // Repeated spaces results in empty strings
-    .slice(0, 2)
-    .map(v => v && v[0].toUpperCase()) // Watch out for empty strings
-    .join('');
-};
-
-export interface AvatarProps {
+export interface AvatarBaseProps {
   /** The source attribute of the image. When it's not available, render initials instead. */
   source?: ImageSourcePropType;
 
@@ -44,65 +36,208 @@ export interface AvatarProps {
 
   /**
    * The color used for the avatar.
-   * @default "automatic"
    */
-  color?: 'automatic' | FillColor;
-
-  /** Image label for screen readers */
-  imageAccessibilityLabel?: string;
-
-  /** Label for screen readers */
-  accessibilityLabel?: string;
-
-  /** Callback to get element styles. */
-  getStyles?: GetAvatarStyles;
+  color?: FillColor;
 
   /** Used to locate this view in end-to-end tests. */
   testID?: string;
 }
 
-export const Avatar = (props: AvatarProps) => {
-  const {
-    source,
-    name,
-    getStyles,
-    testID,
-    imageAccessibilityLabel,
-    accessibilityLabel,
-  } = props;
+export interface AvatarOverrides {
+  Root: RootProps;
+  Initials: InitialsProps;
+  Image: ImageProps;
+}
 
-  const theme = useTheme();
+type AvatarProps = WithOverrides<AvatarBaseProps, AvatarOverrides>;
+
+export const Avatar = (props: AvatarProps) => {
+  const { source, name, size, isSolid, color, testID, overrides = {} } = props;
 
   const [hasImageFailedLoading, setHasImageFailedLoading] = React.useState(
     false,
   );
   const imageUnavailable = !source || hasImageFailedLoading;
 
-  const initials = getInitials(name);
+  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+  const [Initials, initialsProps] = getOverrides(
+    StyledInitials,
+    props,
+    overrides.Initials,
+  );
+  const [ImageR, imageProps] = getOverrides(
+    StyledImage,
+    props,
+    overrides.Image,
+  );
 
-  const { containerStyle, textStyle, imageStyle } = mergeStyles(
-    getAvatarStyles,
-    getStyles,
-    theme.components.getAvatarStyles,
-  )(props, theme);
+  return (
+    <Root
+      name={name}
+      size={size}
+      isSolid={isSolid}
+      color={color}
+      testID={testID}
+      {...rootProps}
+    >
+      {imageUnavailable && (
+        <Initials
+          name={name}
+          size={size}
+          isSolid={isSolid}
+          color={color}
+          {...initialsProps}
+        />
+      )}
+      {!imageUnavailable && !!source && (
+        <ImageR
+          onError={() => setHasImageFailedLoading(true)}
+          source={source}
+          {...imageProps}
+        />
+      )}
+    </Root>
+  );
+};
+
+interface PropsWithChildren {
+  children?: React.ReactNode;
+}
+
+export const hashCode = (s?: string) => {
+  const str = String(s);
+  let hash = 0;
+  let char;
+  if (str.trim().length === 0) return hash;
+  for (let i = 0; i < str.length; i++) {
+    char = str.charCodeAt(i);
+    // tslint:disable-next-line
+    hash = (hash << 5) - hash + char;
+    // Convert to 32bit integer
+    // tslint:disable-next-line
+    hash &= hash;
+  }
+  return Math.abs(hash);
+};
+
+export type AvatarColor = 'automatic' | keyof FillColors;
+
+const avatarScale: { [size in ControlSize]: number } = {
+  large: 2,
+  medium: 1.5,
+  small: 1,
+};
+
+interface RootProps extends ViewProps, PropsWithChildren {
+  size?: ControlSize | number;
+  name?: string;
+  isSolid?: boolean;
+  color?: FillColor;
+}
+
+const StyledRoot = (props: RootProps) => {
+  const { size = 'medium', testID, children, isSolid, color, style } = props;
+  const theme = useTheme();
+  const appearances = theme.fills[isSolid ? 'solid' : 'subtle'];
+  const keys = Object.keys(appearances);
+
+  const controlSize = isControlSize(size)
+    ? theme.controlHeights[size] * avatarScale[size]
+    : size;
 
   return (
     <View
-      accessibilityLabel={accessibilityLabel}
-      style={containerStyle}
+      style={[
+        {
+          alignItems: 'center',
+          backgroundColor:
+            appearances[
+              color || (keys[hashCode(name) % keys.length] as keyof FillColors)
+            ].backgroundColor,
+          borderRadius: 9999,
+          display: 'flex',
+          height: controlSize,
+          justifyContent: 'center',
+          overflow: 'hidden',
+          position: 'relative',
+          width: controlSize,
+        },
+        style,
+      ]}
       testID={testID}
     >
-      {imageUnavailable && (
-        <Text getStyles={() => ({ textStyle })}>{initials}</Text>
-      )}
-      {!imageUnavailable && !!source && (
-        <Image
-          accessibilityLabel={imageAccessibilityLabel}
-          onError={() => setHasImageFailedLoading(true)}
-          source={source}
-          style={imageStyle}
-        />
-      )}
+      {children}
     </View>
+  );
+};
+
+const getInitials = (name?: string, fallback = '?') => {
+  if (!name) return fallback;
+
+  return name
+    .replace(/\s+/, ' ')
+    .split(' ') // Repeated spaces results in empty strings
+    .slice(0, 2)
+    .map(v => v && v[0].toUpperCase()) // Watch out for empty strings
+    .join('');
+};
+
+interface InitialsProps extends ViewProps {
+  size?: ControlSize | number;
+  name?: string;
+  isSolid?: boolean;
+  color?: FillColor;
+}
+
+const StyledInitials = (props: InitialsProps) => {
+  const { size = 'medium', isSolid, color, style, ...textProps } = props;
+  const theme = useTheme();
+
+  const appearances = theme.fills[isSolid ? 'solid' : 'subtle'];
+  const keys = Object.keys(appearances);
+
+  const controlSize = isControlSize(size)
+    ? theme.controlHeights[size] * avatarScale[size]
+    : size;
+
+  const initials = getInitials(name);
+
+  return (
+    <Text
+      {...textProps}
+      override={{
+        style: [
+          {
+            color:
+              appearances[
+                color ||
+                  (keys[hashCode(name) % keys.length] as keyof FillColors)
+              ].color,
+            fontSize: controlSize / 2,
+            lineHeight: controlSize,
+          },
+          style,
+        ],
+      }}
+    >
+      {initials}
+    </Text>
+  );
+};
+
+const StyledImage = (props: ImageProps) => {
+  const { style, ...imageProps } = props;
+
+  return (
+    <Image
+      style={[
+        {
+          height: '100%',
+          width: '100%',
+        },
+        style,
+      ]}
+      {...imageProps}
+    />
   );
 };
