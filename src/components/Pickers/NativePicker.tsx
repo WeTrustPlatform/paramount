@@ -9,12 +9,12 @@ import {
 } from './PickerButton.styles';
 import { PickerButtonWrapper } from './PickerButtonWrapper';
 
-export interface NativePickerOption<TValue extends any> {
+export interface NativePickerOption<TValue extends string | number> {
   label: string;
   value: TValue;
 }
 
-export interface NativePickerProps<TValue extends any> {
+export interface NativePickerProps<TValue extends string | number> {
   /**
    * The size of the picker.
    * @default "medium"
@@ -47,7 +47,7 @@ export interface NativePickerProps<TValue extends any> {
   testID?: string;
 }
 
-export const NativePicker = <TValue extends any>(
+export const NativePicker = <TValue extends string | number>(
   props: NativePickerProps<TValue>,
 ) => {
   const { getStyles, options = [], value, testID, onValueChange } = props;

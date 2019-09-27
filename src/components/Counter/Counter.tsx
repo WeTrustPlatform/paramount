@@ -1,129 +1,212 @@
 import * as React from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import {
+  TouchableOpacity,
+  TouchableOpacityProps,
+  View,
+  ViewProps,
+} from 'react-native';
 
 import { useTheme } from '../../theme';
-import { mergeStyles } from '../../utils/mergeStyles';
-import { Icon } from '../Icon';
-import { Text } from '../Typography';
-import { GetCounterStyles, getCounterStyles } from './Counter.styles';
+import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { Icon, IconProps } from '../Icon';
+import { Text, TextProps } from '../Typography';
 
-export interface CounterProps {
+interface CounterBaseProps {
   /**
    * Count to be displayed.
    */
-  count?: number;
+  value?: number;
 
   /**
-   * Minimum count for the counter. Upon reaching the limit, it will disable decrement button.
+   * Minimum value for the counter. Upon reaching the limit, it will disable decrement button.
    */
   min?: number;
 
   /**
-   * Maximum count for the counter. Upon reaching the limit, it will disable increment button.
+   * Maximum value for the counter. Upon reaching the limit, it will disable increment button.
    */
   max?: number;
 
   /**
-   * Custom component in place of count.
+   * Called when either buttons are pressed.
    */
-  component?: React.ReactNode;
-
-  /**
-   * Called when increment button is pressed.
-   */
-  onIncrement?: () => void;
-
-  /**
-   * Called when decrement button is pressed.
-   */
-  onDecrement?: () => void;
-
-  /**
-   * Inline styles for components
-   */
-  getStyles?: GetCounterStyles;
+  onValueChange?: (value: number) => void;
 }
+
+export interface CounterOverrides {
+  Root: RootProps;
+  Touchable: TouchableProps;
+  Count: CountProps;
+  IconPlus: CounterIconProps;
+  IconMinus: CounterIconProps;
+}
+
+export interface CounterProps
+  extends WithOverrides<CounterBaseProps, CounterOverrides> {}
 
 export const Counter = (props: CounterProps) => {
   const {
-    count = 0,
-    component,
+    value = 0,
     max,
     min,
-    onIncrement,
-    onDecrement,
-    getStyles,
+    onValueChange = () => {
+      return;
+    },
+    overrides = {},
   } = props;
 
-  const theme = useTheme();
+  const isDecrementDisabled = min === value;
+  const isIncrementDisabled = max === value;
 
-  const {
-    containerStyle,
-    counterStyle,
-    countStyle,
-    decrementWrapperStyle,
-    disabledStyle,
-    incrementWrapperStyle,
-    textStyle,
-  } = mergeStyles(
-    getCounterStyles,
-    getStyles,
-    theme.components.getCounterStyles,
-  )(props, theme);
+  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+  const [Touchable, touchableProps] = getOverrides(
+    StyledTouchable,
+    props,
+    overrides.Touchable,
+  );
+  const [Count, countProps] = getOverrides(StyledCount, props, overrides.Count);
+  const [IconPlus, iconPlusProps] = getOverrides(
+    StyledIconPlus,
+    props,
+    overrides.IconPlus,
+  );
+  const [IconMinus, iconMinusProps] = getOverrides(
+    StyledIconMinus,
+    props,
+    overrides.IconMinus,
+  );
 
-  const isDecrementDisabled = min === count;
-  const isIncrementDisabled = max === count;
+  const handleIncrement = React.useCallback(() => {
+    onValueChange(value + 1);
+  }, [value]);
+
+  const handleDecrement = React.useCallback(() => {
+    onValueChange(value - 1);
+  }, [value]);
 
   return (
-    <View style={containerStyle}>
-      <View style={decrementWrapperStyle}>
-        <TouchableOpacity
-          style={{
-            ...counterStyle,
-            ...(isDecrementDisabled && disabledStyle),
-          }}
-          disabled={isDecrementDisabled}
-          onPress={!isDecrementDisabled ? onDecrement : undefined}
-        >
-          <Icon
-            name="minus"
-            size="xsmall"
-            color={
-              isDecrementDisabled
-                ? theme.colors.text.muted
-                : theme.colors.text.primary
-            }
-          />
-        </TouchableOpacity>
-      </View>
-      {component || (
-        <View style={countStyle}>
-          <Text
-            align="center"
-            getStyles={() => ({ textStyle })}
-          >{`${count}`}</Text>
-        </View>
-      )}
-      <View style={incrementWrapperStyle}>
-        <TouchableOpacity
-          style={{
-            ...counterStyle,
-            ...(isIncrementDisabled && disabledStyle),
-          }}
-          disabled={isIncrementDisabled}
-          onPress={!isIncrementDisabled ? onIncrement : undefined}
-        >
-          <Icon
-            name="plus"
-            size="xsmall"
-            color={
-              isIncrementDisabled
-                ? theme.colors.text.muted
-                : theme.colors.text.primary
-            }
-          />
-        </TouchableOpacity>
-      </View>
+    <Root {...rootProps}>
+      <Touchable
+        isDisabled={isDecrementDisabled}
+        onPress={handleDecrement}
+        {...touchableProps}
+      >
+        <IconMinus isDisabled={isDecrementDisabled} {...iconMinusProps} />
+      </Touchable>
+      <Count value={value} {...countProps} />
+      <Touchable
+        isDisabled={isIncrementDisabled}
+        onPress={handleIncrement}
+        {...touchableProps}
+      >
+        <IconPlus isDisabled={isIncrementDisabled} {...iconPlusProps} />
+      </Touchable>
+    </Root>
+  );
+};
+
+interface PropsWithChildren {
+  children?: React.ReactNode;
+}
+
+interface RootProps extends ViewProps, PropsWithChildren {}
+
+const StyledRoot = (props: RootProps) => {
+  const { children, style, ...viewProps } = props;
+
+  return (
+    <View
+      style={[
+        {
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+        },
+        style,
+      ]}
+      {...viewProps}
+    >
+      {children}
     </View>
   );
 };
+
+interface CountProps extends TextProps {
+  value: number;
+}
+
+const StyledCount = (props: CountProps) => {
+  const { value, style, ...textProps } = props;
+
+  return (
+    <Text
+      align="center"
+      style={[{ paddingHorizontal: 16, minWidth: 56 }, style]}
+      {...textProps}
+    >
+      {value}
+    </Text>
+  );
+};
+
+interface TouchableProps extends TouchableOpacityProps, PropsWithChildren {
+  isDisabled: boolean;
+}
+
+const StyledTouchable = (props: TouchableProps) => {
+  const { children, style, isDisabled, onPress, ...touchableProps } = props;
+  const theme = useTheme();
+
+  return (
+    <TouchableOpacity
+      style={[
+        {
+          alignItems: 'center',
+          borderColor: theme.colors.border.primary,
+          borderRadius: 999,
+          borderWidth: 1,
+          display: 'flex',
+          height: 40,
+          justifyContent: 'center',
+          width: 40,
+          ...(isDisabled && { borderColor: theme.colors.border.default }),
+        },
+        style,
+      ]}
+      disabled={isDisabled}
+      onPress={!isDisabled ? onPress : undefined}
+      {...touchableProps}
+    >
+      {children}
+    </TouchableOpacity>
+  );
+};
+
+interface StyledIconProps extends IconProps {
+  isDisabled?: boolean;
+}
+
+const StyledIcon = (props: StyledIconProps) => {
+  const { isDisabled, name, ...iconProps } = props;
+  const theme = useTheme();
+
+  return (
+    <Icon
+      name={name}
+      size="xsmall"
+      color={isDisabled ? theme.colors.text.muted : theme.colors.text.primary}
+      {...iconProps}
+    />
+  );
+};
+
+interface CounterIconProps {
+  isDisabled?: boolean;
+}
+
+const StyledIconPlus = (props: CounterIconProps) => (
+  <StyledIcon name="plus" {...props} />
+);
+const StyledIconMinus = (props: CounterIconProps) => (
+  <StyledIcon name="minus" {...props} />
+);
