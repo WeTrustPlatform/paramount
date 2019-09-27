@@ -18,10 +18,16 @@ Display centered window on the screen over a dark overlay
     {({ on, toggle }) => (
       <Box>
         <Dialog
-          header={<Heading>Header</Heading>}
-          footer={<Heading>Footer</Heading>}
           isVisible={on}
           onRequestClose={toggle}
+          overrides={{
+            Header: {
+              component: () => <Heading>Header</Heading>,
+            },
+            Footer: {
+              component: () => <Heading>Footer</Heading>,
+            },
+          }}
         >
           <Box height={1800}>
             <Text>Put any content in the dialog</Text>
@@ -36,34 +42,3 @@ Display centered window on the screen over a dark overlay
 ## Props
 
 <Props of={Dialog} />
-
-## Customization
-
-Using `getStyles` prop
-
-```
-DialogStyles {
-  bodyStyle: ViewStyle;
-  containerStyle: ViewStyle;
-  modalContainerStyle: ViewStyle;
-  contentContainerStyle: ViewStyle;
-  overlayStyle: ViewStyle;
-}
-
-getStyles={(DialogProps, Theme) => DialogStyles}
-```
-
-Markup
-
-```tsx
-<View modalContainerStyle>
-  <View containerStyle>
-    {header}
-    <ScrollView contentContainerStyle bodyStyle>
-      {children}
-    </ScrollView>
-    {footer}
-  </View>
-  <Overlay overlayStyle />
-</View>
-```

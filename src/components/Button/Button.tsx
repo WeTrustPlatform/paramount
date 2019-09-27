@@ -240,6 +240,7 @@ const StyledTouchable = (props: TouchableProps) => {
     isLoading,
     children,
     style,
+    ...touchableProps
   } = props;
   const theme = useTheme();
   const buttonAppearances = getButtonAppearances(theme, isLoading);
@@ -280,6 +281,7 @@ const StyledTouchable = (props: TouchableProps) => {
         },
         style,
       ]}
+      {...touchableProps}
     >
       {children}
     </TouchableOpacity>
