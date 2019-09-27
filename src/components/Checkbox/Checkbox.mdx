@@ -16,7 +16,12 @@ Checkbox for boolean values
   <Toggle initial={false}>
     {({ on, toggle }) => (
       <FormField label="Checkbox" labelPosition="right">
-        <Checkbox shape="circle" value={on} onPress={toggle} size="medium" />
+        <Checkbox
+          shape="circle"
+          value={on}
+          onValueChange={toggle}
+          size="medium"
+        />
       </FormField>
     )}
   </Toggle>
