@@ -18,12 +18,11 @@ Composes React Native's `TextInput`
     {({ state, setState }) => (
       <TextInput
         value={state.value}
-        placeholder="TextInput"
+        placeholder="Placeholder"
         size="large"
-        onChangeText={text => setState({ value: text })}
-        leftIcon={<Icon name="menu" />}
+        onValueChange={value => setState({ value })}
         isInvalid={false}
-        isClearable // Mutually exclusive with rightIcon
+        isClearable
         onClear={() => console.log('Cleared!')} // Only triggered with `isClearable`
       />
     )}
@@ -33,29 +32,3 @@ Composes React Native's `TextInput`
 ## Props
 
 <Props of={TextInput} />
-
-## Customization
-
-Using `getStyles` prop
-
-```tsx
-TextInputStyles {
-  inputStyle: TextStyle;
-  placeholderTextColor: string;
-  containerStyle: ViewStyle;
-  leftContainerStyle: ViewStyle;
-  rightContainerStyle: ViewStyle;
-}
-
-getStyles={(TextInputProps, Theme) => TextInputStyles}
-```
-
-Markup
-
-```tsx
-<View containerStyle>
-  <View leftContainerStyle>{leftIcon}</View>
-  <RNTextInput inputStyle placeholderTextColor />
-  <View rightContainerStyle>{rightIcon}</View>
-</View>
-```
