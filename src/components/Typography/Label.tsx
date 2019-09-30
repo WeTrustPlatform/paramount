@@ -10,7 +10,7 @@ interface LabelBaseProps {
   /**
    * Label of the field.
    */
-  label?: string;
+  label?: string | false;
 
   /**
    * Position of the field.
@@ -49,21 +49,15 @@ export const Label = (props: LabelProps) => {
   return (
     <Root {...rootProps}>
       {position === 'top' && (
-        <LabelText position={position} {...labelTextProps}>
-          {label}
-        </LabelText>
+        <LabelText position={position} label={label} {...labelTextProps} />
       )}
       <Wrapper position={position} {...wrapperProps}>
         {position === 'left' && (
-          <LabelText position={position} {...labelTextProps}>
-            {label}
-          </LabelText>
+          <LabelText position={position} label={label} {...labelTextProps} />
         )}
         {children}
         {position === 'right' && (
-          <LabelText position={position} {...labelTextProps}>
-            {label}
-          </LabelText>
+          <LabelText position={position} label={label} {...labelTextProps} />
         )}
       </Wrapper>
     </Root>
@@ -126,11 +120,14 @@ const StyledWrapper = (props: WrapperProps) => {
 };
 
 interface LabelTextProps extends TextProps, PropsWithChildren {
+  label?: string | false;
   position: LabelPosition;
 }
 
 const StyledLabelText = (props: LabelTextProps) => {
-  const { children, position, style, ...textProps } = props;
+  const { label, position, style, ...textProps } = props;
+
+  if (!label) return null;
 
   let textStyle: ViewStyle = {};
 
@@ -156,7 +153,7 @@ const StyledLabelText = (props: LabelTextProps) => {
       accessibilityRole={Platform.OS === 'web' ? 'label' : 'none'}
       {...textProps}
     >
-      {children}
+      {label}
     </Text>
   );
 };

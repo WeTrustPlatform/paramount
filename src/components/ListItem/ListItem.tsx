@@ -1,28 +1,33 @@
 import * as React from 'react';
-import { GestureResponderEvent, TouchableOpacity, View } from 'react-native';
+import {
+  GestureResponderEvent,
+  ImageSourcePropType,
+  TouchableOpacity,
+  TouchableOpacityProps,
+  View,
+  ViewProps,
+} from 'react-native';
 
 import { useTheme } from '../../theme';
-import { mergeStyles } from '../../utils/mergeStyles';
+import { getOverrides, WithOverrides } from '../../utils/overrides';
 import { Avatar, AvatarProps } from '../Avatar';
-import { Icon } from '../Icon';
-import { Text } from '../Typography';
-import { GetListItemStyles, getListItemStyles } from './ListItem.styles';
+import { Text, TextProps } from '../Typography';
 
-export interface ListItemProps {
+interface ListItemBaseProps {
   /**
    * Title of the list item
    */
-  title?: React.ReactNode;
+  title?: string | false;
 
   /**
    * Description of the list item
    */
-  description?: React.ReactNode;
+  description?: string | false;
 
   /**
-   * Props to be passed to `Avatar`
+   * Source of the avatar
    */
-  avatarProps?: AvatarProps;
+  source?: ImageSourcePropType;
 
   /**
    * When true, list item will not be able to be pressed.
@@ -31,122 +36,190 @@ export interface ListItemProps {
   isDisabled?: boolean;
 
   /**
-   * React node replacing `Avatar` on the left hand-side
-   */
-  leftNode?: React.ReactNode;
-
-  /**
-   * React node replacing right hand-side icon
-   */
-  rightNode?: React.ReactNode;
-
-  /**
    * Called when pressing list item
    */
   onPress?: (event: GestureResponderEvent) => void;
-
-  /** Label for screen readers */
-  accessibilityLabel?: string;
-
-  /** Hint for screen readers */
-  accessibilityHint?: string;
-
-  /**
-   * When true, indicates that the view is an accessibility element.
-   * @default true
-   */
-  accessible?: boolean;
-
-  /** Callback to get element styles. */
-  getStyles?: GetListItemStyles;
 
   /** Used to locate this view in end-to-end tests. */
   testID?: string;
 }
 
+export interface ListItemOverrides {
+  Root: RootProps;
+  Touchable: TouchableProps;
+  Title: TitleProps;
+  TextWrapper: TextWrapperProps;
+  Description: DescriptionProps;
+  Action: ActionProps;
+  Avatar: AvatarProps;
+}
+
+export interface ListItemProps
+  extends WithOverrides<ListItemBaseProps, ListItemOverrides> {}
+
 export const ListItem = (props: ListItemProps) => {
   const {
-    avatarProps,
-    getStyles,
     isDisabled = false,
     title,
     description,
     onPress,
-    rightNode,
-    leftNode,
     testID,
-    accessibilityHint,
-    accessibilityLabel,
-    accessible = true,
+    source,
+    overrides = {},
   } = props;
+  const [Touchable, touchableProps] = getOverrides(
+    StyledTouchable,
+    props,
+    overrides.Touchable,
+  );
+  const [TextWrapper, textProps] = getOverrides(
+    StyledTextWrapper,
+    props,
+    overrides.TextWrapper,
+  );
+  const [Title, titleProps] = getOverrides(StyledTitle, props, overrides.Title);
+  const [Description, descriptionProps] = getOverrides(
+    StyledDescription,
+    props,
+    overrides.Description,
+  );
+  const [Action, rightIconProps] = getOverrides(
+    StyledAction,
+    props,
+    overrides.Action,
+  );
+  const [AvatarR, avatarProps] = getOverrides(Avatar, props, overrides.Avatar);
+  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+
+  return (
+    <Root isDisabled={isDisabled} {...rootProps}>
+      <Touchable
+        onPress={onPress}
+        testID={testID}
+        isDisabled={isDisabled}
+        {...touchableProps}
+      >
+        {source && <AvatarR size="small" source={source} {...avatarProps} />}
+        <TextWrapper source={source} {...textProps}>
+          <Title title={title} {...titleProps} />
+          <Description description={description} {...descriptionProps} />
+        </TextWrapper>
+      </Touchable>
+      <Action isDisabled={isDisabled} {...rightIconProps} />
+    </Root>
+  );
+};
+
+interface RootProps extends ViewProps {
+  children?: React.ReactNode;
+  isDisabled: boolean;
+}
+
+const StyledRoot = (props: RootProps) => {
+  const { children, style, isDisabled, ...viewProps } = props;
   const theme = useTheme();
 
-  const {
-    imageWrapperStyle,
-    leftWrapperStyle,
-    textWrapperStyle,
-    touchableStyle,
-    titleStyle,
-    descriptionStyle,
-    rightWrapperStyle,
-    wrapperStyle,
-  } = mergeStyles(
-    getListItemStyles,
-    getStyles,
-    theme.components.getListItemStyles,
-  )(props, theme);
+  return (
+    <View
+      style={[
+        {
+          flexDirection: 'row',
+          height: 72,
+          backgroundColor: isDisabled
+            ? theme.colors.background.greyLight
+            : theme.colors.background.content,
+        },
+        style,
+      ]}
+      {...viewProps}
+    >
+      {children}
+    </View>
+  );
+};
+
+interface TouchableProps extends TouchableOpacityProps {
+  children?: React.ReactNode;
+  isDisabled: boolean;
+}
+
+const StyledTouchable = (props: TouchableProps) => {
+  const { style, children, isDisabled, ...touchableProps } = props;
 
   return (
     <TouchableOpacity
-      disabled={isDisabled}
-      style={touchableStyle}
-      testID={testID}
-      onPress={onPress}
-      accessibilityHint={accessibilityHint}
-      accessibilityLabel={accessibilityLabel}
-      accessible={accessible}
+      style={[
+        {
+          flex: 1,
+          flexDirection: 'row',
+          alignItems: 'center',
+        },
+        style,
+      ]}
+      {...touchableProps}
     >
-      <View style={wrapperStyle}>
-        <View style={leftWrapperStyle}>
-          {leftNode || avatarProps ? (
-            <View style={imageWrapperStyle}>
-              {leftNode || <Avatar size="small" {...avatarProps} />}
-            </View>
-          ) : null}
-          <View style={textWrapperStyle}>
-            {title ? (
-              typeof title === 'string' ? (
-                <Text
-                  getStyles={() => ({ textStyle: titleStyle })}
-                  size="large"
-                >
-                  {title}
-                </Text>
-              ) : (
-                title
-              )
-            ) : null}
-            {description ? (
-              typeof description === 'string' ? (
-                <Text
-                  getStyles={() => ({ textStyle: descriptionStyle })}
-                  size="small"
-                  color="muted"
-                >
-                  {description}
-                </Text>
-              ) : (
-                description
-              )
-            ) : null}
-          </View>
-        </View>
-        {rightNode === null ? null : (
-          <View style={rightWrapperStyle}>
-            {rightNode || <Icon name="chevron-right" />}
-          </View>
-        )}
-      </View>
+      {children}
     </TouchableOpacity>
   );
+};
+
+interface TitleProps extends TextProps {
+  title?: string | false;
+}
+
+const StyledTitle = (props: TitleProps) => {
+  const { title, style, ...textProps } = props;
+
+  if (!title) return null;
+
+  return (
+    <Text size="large" style={[{}, style]} {...textProps}>
+      {title}
+    </Text>
+  );
+};
+
+interface TextWrapperProps extends ViewProps {
+  children?: React.ReactNode;
+  source?: ImageSourcePropType | false;
+}
+
+const StyledTextWrapper = (props: TextWrapperProps) => {
+  const { children, style, source, ...viewProps } = props;
+
+  return (
+    <View
+      style={[
+        { flex: 1, justifyContent: 'center', paddingLeft: source ? 8 : 0 },
+        style,
+      ]}
+      {...viewProps}
+    >
+      {children}
+    </View>
+  );
+};
+
+interface DescriptionProps extends TextProps {
+  description?: string | false;
+}
+
+const StyledDescription = (props: DescriptionProps) => {
+  const { style, description, ...viewProps } = props;
+
+  if (!description) return null;
+
+  return (
+    <Text size="small" color="muted" style={[{}, style]} {...viewProps}>
+      {description}
+    </Text>
+  );
+};
+
+interface ActionProps {
+  isDisabled: boolean;
+}
+
+const StyledAction = (props: ActionProps) => {
+  return <></>;
 };

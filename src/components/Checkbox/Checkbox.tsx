@@ -31,12 +31,6 @@ interface CheckboxBaseProps {
   isDisabled?: boolean;
 
   /**
-   * When true, checkbox will be interactive.
-   * @default true
-   */
-  isInteractive?: boolean;
-
-  /**
    * Shape of the checkbox.
    * @default "rounded"
    */
@@ -65,7 +59,6 @@ export const Checkbox = (props: CheckboxProps) => {
     shape = 'rounded',
     value = false,
     isDisabled = false,
-    isInteractive = true,
     onValueChange = () => {
       return;
     },
@@ -84,9 +77,7 @@ export const Checkbox = (props: CheckboxProps) => {
     <Touchable
       size={size}
       shape={shape}
-      accessible={isInteractive}
       isDisabled={isDisabled}
-      isInteractive={isInteractive}
       testID={testID}
       onPress={() => onValueChange(!value)}
       {...touchableProps}
@@ -96,7 +87,6 @@ export const Checkbox = (props: CheckboxProps) => {
         size={size}
         shape={shape}
         isDisabled={isDisabled}
-        isInteractive={isInteractive}
         {...checkProps}
       />
     </Touchable>
@@ -107,27 +97,17 @@ interface TouchableProps extends TouchableOpacityProps {
   children?: React.ReactNode;
   size: ControlSize | number;
   isDisabled: boolean;
-  isInteractive: boolean;
   shape: ContainerShape;
 }
 
 const StyledTouchable = (props: TouchableProps) => {
-  const {
-    size,
-    isDisabled,
-    isInteractive,
-    shape,
-    children,
-    style,
-    ...touchableProps
-  } = props;
+  const { size, isDisabled, shape, children, style, ...touchableProps } = props;
   const theme = useTheme();
 
   return (
     <TouchableOpacity
-      accessible={isInteractive}
       style={[theme.containerShapes[shape], style]}
-      disabled={isDisabled || !isInteractive}
+      disabled={isDisabled}
       {...touchableProps}
     >
       {children}
@@ -139,7 +119,6 @@ interface CheckProps extends ViewProps {
   size: ControlSize | number;
   value: boolean;
   isDisabled: boolean;
-  isInteractive: boolean;
   shape: ContainerShape;
 }
 

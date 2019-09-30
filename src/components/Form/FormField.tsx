@@ -10,12 +10,12 @@ interface FormFieldBaseProps {
   /**
    * Error message of the field
    */
-  error?: string;
+  error?: string | false;
 
   /**
    * Label of the field.
    */
-  label?: string;
+  label?: string | false;
 
   /**
    * Position of the field.
@@ -93,7 +93,7 @@ const StyledRoot = (props: RootProps) => {
 };
 
 interface DescriptionProps extends TextProps, PropsWithChildren {
-  description?: string;
+  description?: string | false;
 }
 
 const StyledDescription = (props: DescriptionProps) => {
@@ -117,7 +117,7 @@ const StyledDescription = (props: DescriptionProps) => {
 };
 
 interface ErrorProps extends TextProps, PropsWithChildren {
-  error?: string;
+  error?: string | false;
 }
 
 const StyledError = (props: ErrorProps) => {

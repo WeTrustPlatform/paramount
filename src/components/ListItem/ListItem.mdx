@@ -16,9 +16,7 @@ For image, it composes `Avatar`, you can pass `avatarProps` provide more specifi
 <Playground>
   <ListItem
     onPress={() => console.log('Press')}
-    avatarProps={{
-      source: { uri: 'https://picsum.photos/200/200' },
-    }}
+    source={{ uri: 'https://picsum.photos/200/200' }}
     title="Some label"
     description="Some description"
   />
@@ -27,38 +25,3 @@ For image, it composes `Avatar`, you can pass `avatarProps` provide more specifi
 ## Props
 
 <Props of={ListItem} />
-
-## Customization
-
-Using `getStyles` prop
-
-```
-ListItemStyles {
-  imageWrapperStyle: ViewStyle;
-  wrapperStyle: ViewStyle;
-  touchableStyle: ViewStyle;
-  leftWrapperStyle: ViewStyle;
-  textWrapperStyle: ViewStyle;
-  titleStyle: TextStyle;
-  descriptionStyle: TextStyle;
-}
-
-getStyles={(ListItemProps, Theme) => ListItemStyles}
-```
-
-Markup
-
-```tsx
-<TouchableOpacity touchableStyle>
-  <View wrapperStyle>
-    <View leftWrapperStyle>
-      <View imageWrapperStyle>{leftNode || <Avatar />}</View>
-      <View textWrapperStyle>
-        {title}
-        {description}
-      </View>
-    </View>
-    {rightNode}
-  </View>
-</TouchableOpacity>
-```

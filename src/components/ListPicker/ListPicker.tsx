@@ -1,69 +1,11 @@
 import * as React from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, FlatListProps } from 'react-native';
 
 import { useTheme } from '../../theme';
+import { getOverrides, Override, WithOverrides } from '../../utils/overrides';
+import { Box } from '../Box';
 import { Checkbox } from '../Checkbox';
-import { ListItem } from '../ListItem';
-
-export interface ListPickerItemProps<TValue extends any> {
-  /**
-   * Injected by ListPicker. Index of the item on the list.
-   * @default 0
-   */
-  index?: number;
-
-  /**
-   * Injected by ListPicker. When true, it will be marked as checked
-   * @default false
-   */
-  isSelected?: boolean;
-
-  /**
-   * Injected by ListPicker. Called when pressed select list item
-   */
-  onPress?: (value: TValue, index: number, isSelected: boolean) => void;
-
-  /**
-   * Value of the select list item
-   */
-  value: TValue;
-
-  /**
-   * Label of the select list item
-   */
-  label: string;
-
-  /**
-   * Description of the field
-   */
-  description?: string;
-}
-
-export const ListPickerItem = <TValue extends any = any>(
-  props: ListPickerItemProps<TValue>,
-) => {
-  const {
-    index = 0,
-    isSelected = false,
-    label,
-    onPress = () => {
-      return;
-    },
-    value,
-    description,
-  } = props;
-
-  return (
-    <ListItem
-      onPress={() => onPress(value, index, isSelected)}
-      title={label}
-      description={isSelected && description}
-      rightNode={
-        <Checkbox isInteractive={false} shape="circle" value={isSelected} />
-      }
-    />
-  );
-};
+import { ListItem, ListItemProps } from '../ListItem';
 
 type Value<TIsMulti extends boolean, TValue extends any> = TIsMulti extends true
   ? TValue[]
@@ -75,7 +17,7 @@ export interface ListPickerOption<TValue extends any> {
   description?: string;
 }
 
-export interface ListPickerProps<TIsMulti extends boolean, TValue extends any> {
+interface ListPickerBaseProps<TIsMulti extends boolean, TValue extends any> {
   /**
    * Set whether it should allow multiple selections. You should specify the value to get proper type-checking.
    * @default false
@@ -99,22 +41,34 @@ export interface ListPickerProps<TIsMulti extends boolean, TValue extends any> {
    * `ListPickerItem` components
    */
   options?: Array<ListPickerOption<TValue>>;
-
-  /**
-   * Use `ref` prop instead for using `FlatList` methods
-   */
-  innerRef?: React.Ref<FlatList<ListPickerItemProps<TValue>>>;
 }
 
 const isMulti = <TValue extends any>(
   value: TValue | TValue[],
 ): value is TValue[] => Array.isArray(value);
 
+export interface ListPickerOverrides<TValue extends any> {
+  List: ListProps<TValue>;
+  ListPickerItem: ListPickerItemProps<TValue>;
+}
+
+export interface ListPickerProps<TIsMulti extends boolean, TValue extends any>
+  extends WithOverrides<
+    ListPickerBaseProps<TIsMulti, TValue>,
+    ListPickerOverrides<TValue>
+  > {}
+
 export const ListPicker = <TIsMulti extends boolean, TValue extends any>(
   props: ListPickerProps<TIsMulti, TValue>,
 ) => {
-  const { value, onValueChange, options = [], innerRef } = props;
+  const { value, onValueChange, options = [], overrides = {} } = props;
   const theme = useTheme();
+  const [ListPickerItem, listPickerItemProps] = getOverrides(
+    StyledListPickerItem,
+    props,
+    overrides.ListPickerItem,
+  );
+  const [List, listProps] = getOverrides(StyledList, props, overrides.List);
 
   const handleOnPress = React.useCallback(
     (itemValue: TValue, itemIndex: number, isSelected: boolean) => {
@@ -139,8 +93,7 @@ export const ListPicker = <TIsMulti extends boolean, TValue extends any>(
   );
 
   return (
-    <FlatList
-      ref={innerRef}
+    <List
       keyExtractor={item => `${item.value}`}
       getItemLayout={(_, index) => ({
         index,
@@ -163,18 +116,74 @@ export const ListPicker = <TIsMulti extends boolean, TValue extends any>(
             index={index}
             isSelected={isSelected}
             onPress={handleOnPress}
+            {...listPickerItemProps}
           />
         );
       }}
+      {...listProps}
     />
   );
 };
 
-export const ListPickerWithRef = React.forwardRef(
-  <TIsMulti extends boolean, TValue extends any>(
-    props: ListPickerProps<TIsMulti, TValue>,
-    ref: React.Ref<FlatList<ListPickerItemProps<TValue>>>,
-  ) => {
-    return <ListPicker<TIsMulti, TValue> {...props} innerRef={ref} />;
-  },
-);
+interface ListProps<TValue extends any>
+  extends FlatListProps<ListPickerOption<TValue>> {}
+
+const StyledList = <TValue extends any>(props: ListProps<TValue>) => {
+  return <FlatList {...props} />;
+};
+
+interface ListPickerItemProps<TValue extends any> {
+  index?: number;
+  isSelected?: boolean;
+  onPress?: (value: TValue, index: number, isSelected: boolean) => void;
+  value: TValue;
+  label: string;
+  description?: string;
+  override?: Override<ListPickerItemProps<TValue>, ListItemProps>;
+}
+
+const StyledListPickerItem = <TValue extends any = any>(
+  props: ListPickerItemProps<TValue>,
+) => {
+  const {
+    index = 0,
+    isSelected = false,
+    label,
+    onPress = () => {
+      return;
+    },
+    value,
+    description,
+    override,
+  } = props;
+
+  const [ListItemR, listItemRProps] = getOverrides(ListItem, props, override);
+
+  return (
+    <ListItemR
+      onPress={() => onPress(value, index, isSelected)}
+      title={label}
+      description={isSelected && description}
+      overrides={{
+        Action: {
+          component: () => (
+            <Box
+              justifyContent="center"
+              position="absolute"
+              right={0}
+              alignItems="center"
+              alignSelf="center"
+            >
+              <Checkbox
+                onValueChange={() => onPress(value, index, isSelected)}
+                shape="circle"
+                value={isSelected}
+              />
+            </Box>
+          ),
+        },
+      }}
+      {...listItemRProps}
+    />
+  );
+};
