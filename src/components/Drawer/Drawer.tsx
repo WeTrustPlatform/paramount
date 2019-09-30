@@ -1,19 +1,17 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { View, ViewProps } from 'react-native';
 import { animated, useSpring } from 'react-spring/native.cjs';
 
 import { springDefaultConfig } from '../../constants/Animation';
-import { useTheme } from '../../theme';
-import { mergeStyles } from '../../utils/mergeStyles';
+import { getOverrides, WithOverrides } from '../../utils/overrides';
 import { Modal } from '../Modal';
-import { Overlay } from '../Overlay';
-import { GetDrawerStyles, getDrawerStyles } from './Drawer.styles';
+import { Overlay, OverlayProps } from '../Overlay';
 
 type Position = 'bottom' | 'top' | 'right' | 'left';
 
 const AnimatedView = animated(View);
 
-export interface DrawerProps {
+interface DrawerBaseProps {
   /**
    * (Web only) When true, upon going back in history/navigation, it will call `onRequestClose`. On Native, it already does that
    * @default false
@@ -56,10 +54,16 @@ export interface DrawerProps {
 
   /** Content of the drawer body */
   children: React.ReactNode;
-
-  /** Callback to get element styles. */
-  getStyles?: GetDrawerStyles;
 }
+
+export interface DrawerOverrides {
+  Root: RootProps;
+  Content: ContentProps;
+  Overlay: OverlayProps;
+}
+
+export interface DrawerProps
+  extends WithOverrides<DrawerBaseProps, DrawerOverrides> {}
 
 export const Drawer = (props: DrawerProps) => {
   const {
@@ -71,23 +75,20 @@ export const Drawer = (props: DrawerProps) => {
     space,
     shouldLockBodyScroll = true,
     useHistory = false,
-    getStyles,
+    overrides = {},
   } = props;
 
-  const theme = useTheme();
-
-  const { modalContainerStyle, containerStyle, overlayStyle } = mergeStyles(
-    getDrawerStyles,
-    getStyles,
-    theme.components.getDrawerStyles,
-  )(props, theme);
-
-  const animation = useSpring({
-    [position]: offset,
-    config: springDefaultConfig,
-    from: { [position]: -600 },
-    reset: true,
-  });
+  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+  const [Content, contentProps] = getOverrides(
+    StyledContent,
+    props,
+    overrides.Content,
+  );
+  const [OverlayR, overlayProps] = getOverrides(
+    Overlay,
+    props,
+    overrides.Overlay,
+  );
 
   return (
     <Modal
@@ -97,32 +98,90 @@ export const Drawer = (props: DrawerProps) => {
       shouldLockBodyScroll={shouldLockBodyScroll}
       useHistory={useHistory}
     >
-      <View style={modalContainerStyle}>
-        {/*
-        // @ts-ignore */}
-        <AnimatedView
-          style={{
-            ...containerStyle,
-            [position]: animation[position],
-            ...((position === 'left' || position === 'right') &&
-              space && {
-                height: '100%',
-                width: space,
-              }),
-            ...((position === 'bottom' || position === 'top') &&
-              space && {
-                height: space,
-                width: '100%',
-              }),
-          }}
+      <Root {...rootProps}>
+        <Content
+          position={position}
+          offset={offset}
+          space={space}
+          {...contentProps}
         >
           {children}
-        </AnimatedView>
-        <Overlay
-          onPress={onRequestClose}
-          getStyles={() => ({ overlayStyle })}
-        />
-      </View>
+        </Content>
+        <OverlayR onPress={onRequestClose} {...overlayProps} />
+      </Root>
     </Modal>
+  );
+};
+
+interface PropsWithChildren {
+  children?: React.ReactNode;
+}
+
+interface RootProps extends ViewProps, PropsWithChildren {}
+
+const StyledRoot = (props: RootProps) => {
+  const { children, style, ...viewProps } = props;
+
+  return (
+    <View
+      style={[
+        {
+          alignItems: 'center',
+          display: 'flex',
+          height: '100%',
+          justifyContent: 'center',
+          width: '100%',
+        },
+        style,
+      ]}
+      {...viewProps}
+    >
+      {children}
+    </View>
+  );
+};
+
+interface ContentProps extends ViewProps, PropsWithChildren {
+  offset: number;
+  space?: number | string;
+  position: Position;
+}
+
+const StyledContent = (props: ContentProps) => {
+  const { children, offset, space, position, style, ...viewProps } = props;
+
+  const animation = useSpring({
+    [position]: offset,
+    config: springDefaultConfig,
+    from: { [position]: -600 },
+    reset: true,
+  });
+
+  return (
+    // @ts-ignore
+    <AnimatedView
+      style={[
+        {
+          position: 'absolute',
+          width: '100%',
+          zIndex: 1,
+          [position]: animation[position],
+          ...((position === 'left' || position === 'right') &&
+            space && {
+              height: '100%',
+              width: space,
+            }),
+          ...((position === 'bottom' || position === 'top') &&
+            space && {
+              height: space,
+              width: '100%',
+            }),
+        },
+        style,
+      ]}
+      {...viewProps}
+    >
+      {children}
+    </AnimatedView>
   );
 };

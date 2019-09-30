@@ -93,10 +93,7 @@ export interface ListPickerProps<TIsMulti extends boolean, TValue extends any> {
   /**
    * Called when a select list item is pressed
    */
-  onValueChange: (
-    itemValue: Value<TIsMulti, TValue>,
-    itemIndex: number,
-  ) => void | undefined;
+  onValueChange: (value: Value<TIsMulti, TValue>, index: number) => void;
 
   /**
    * `ListPickerItem` components

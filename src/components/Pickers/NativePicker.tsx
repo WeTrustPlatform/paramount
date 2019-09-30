@@ -39,7 +39,7 @@ export interface NativePickerProps<TValue extends string | number> {
   /**
    * Value of the picker
    */
-  value?: TValue;
+  value?: TValue | null;
 
   /**
    * Used to locate this view in end-to-end tests.
