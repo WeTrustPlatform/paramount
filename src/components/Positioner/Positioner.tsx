@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { ViewStyle } from 'react-native';
 
 import { Measurements } from '../../hooks';
 import { getOverrides, WithOverrides } from '../../utils/overrides';
@@ -170,7 +171,7 @@ export const Positioner = (props: PositionerProps) => {
     <>
       {isVisible && (
         <Root
-          style={positionStyle}
+          positionStyle={positionStyle}
           isPositionerMeasurementsMeasured={isPositionerMeasurementsMeasured}
           onMeasure={setPositionerMeasurements}
           {...rootProps}
@@ -187,11 +188,13 @@ export const Positioner = (props: PositionerProps) => {
 
 interface RootProps extends ViewMeasureProps {
   isPositionerMeasurementsMeasured: boolean;
+  positionStyle: ViewStyle;
 }
 
 const StyledRoot = (props: RootProps) => {
   const {
     style,
+    positionStyle,
     isPositionerMeasurementsMeasured,
     ...viewMeasureProps
   } = props;
@@ -204,6 +207,7 @@ const StyledRoot = (props: RootProps) => {
           position: 'absolute',
           zIndex: 1,
         },
+        positionStyle,
         style,
       ]}
       {...viewMeasureProps}

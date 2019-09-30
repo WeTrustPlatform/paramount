@@ -28,6 +28,11 @@ interface CounterBaseProps {
   max?: number;
 
   /**
+   * Interval between counts
+   */
+  step?: number;
+
+  /**
    * Called when either buttons are pressed.
    */
   onValueChange?: (value: number) => void;
@@ -49,6 +54,7 @@ export const Counter = (props: CounterProps) => {
     value = 0,
     max,
     min,
+    step = 1,
     onValueChange = () => {
       return;
     },
@@ -77,11 +83,11 @@ export const Counter = (props: CounterProps) => {
   );
 
   const handleIncrement = React.useCallback(() => {
-    onValueChange(value + 1);
+    onValueChange(value + step);
   }, [value]);
 
   const handleDecrement = React.useCallback(() => {
-    onValueChange(value - 1);
+    onValueChange(value - step);
   }, [value]);
 
   return (

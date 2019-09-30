@@ -5,50 +5,29 @@ menu: Components
 
 import { Playground, Props } from 'docz';
 
-import { Box, Counter, CounterState, ProgressBar } from '..';
+import { Box, Counter, State, ProgressBar } from '..';
 
 # ProgressBar
 
 ## Usage
 
 <Playground>
-  <CounterState initial={0}>
-    {({ count, incrementBy, decrementBy }) => (
+  <State initial={{ value: 0 }}>
+    {({ state, setState }) => (
       <Box>
-        <ProgressBar percent={count} size="large" />
+        <ProgressBar percent={state.value} size="large" />
         <Counter
-          count={count}
-          onDecrement={() => decrementBy(10)}
-          onIncrement={() => incrementBy(10)}
+          value={state.value}
+          onValueChange={value => setState({ value })}
           min={0}
           max={100}
+          step={10}
         />
       </Box>
     )}
-  </CounterState>
+  </State>
 </Playground>
 
 ## Props
 
 <Props of={ProgressBar} />
-
-## Customization
-
-Using `getStyles` prop
-
-```
-ProgressBarStyles {
-  progressStyle: ViewStyle;
-  containerStyle: ViewStyle;
-}
-
-getStyles={(ProgressBarProps, Theme) => ProgressBarStyles}
-```
-
-Markup
-
-```tsx
-<View containerStyle>
-  <View progressStyle />
-</View>
-```
