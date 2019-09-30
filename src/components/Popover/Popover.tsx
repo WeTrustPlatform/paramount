@@ -1,30 +1,54 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { View, ViewProps } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { mergeStyles } from '../../utils/mergeStyles';
-import { Positioner, PositionerProps } from '../Positioner';
-import { GetPopoverStyles, getPopoverStyles } from './Popover.styles';
+import { getOverrides, WithOverrides } from '../../utils/overrides';
+import {
+  Positioner,
+  PositionerBaseProps,
+  PositionerOverrides,
+} from '../Positioner';
 
-export interface PopoverProps extends PositionerProps {
-  /** Callback to get element styles. */
-  getStyles?: GetPopoverStyles;
+export interface PopoverOverrides extends PositionerOverrides {
+  Content: ViewProps;
 }
 
+export interface PopoverProps
+  extends WithOverrides<PositionerBaseProps, PopoverOverrides> {}
+
 export const Popover = (props: PopoverProps) => {
-  const { content, getStyles, ...restProps } = props;
-  const theme = useTheme();
-  const { popoverStyle } = mergeStyles(
-    getPopoverStyles,
-    getStyles,
-    theme.components.getPopoverStyles,
-  )({ isPositionerMeasurementsMeasured: false }, theme);
+  const { content, overrides = {}, ...restProps } = props;
+
+  const [Content, contentProps] = getOverrides(
+    StyledContent,
+    props,
+    overrides.Content,
+  );
 
   return (
     <Positioner
+      content={<Content {...contentProps}>{content}</Content>}
+      overrides={overrides}
       {...restProps}
-      getStyles={getStyles}
-      content={<View style={popoverStyle}>{content}</View>}
+    />
+  );
+};
+
+const StyledContent = (props: ViewProps) => {
+  const { style, ...viewProps } = props;
+  const theme = useTheme();
+
+  return (
+    <View
+      style={[
+        {
+          backgroundColor: theme.colors.background.content,
+          padding: 16,
+          ...theme.elevations[2],
+        },
+        style,
+      ]}
+      {...viewProps}
     />
   );
 };

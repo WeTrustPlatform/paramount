@@ -38,7 +38,7 @@ interface ListPickerBaseProps<TIsMulti extends boolean, TValue extends any> {
   onValueChange: (value: Value<TIsMulti, TValue>, index: number) => void;
 
   /**
-   * `ListPickerItem` components
+   * List of options
    */
   options?: Array<ListPickerOption<TValue>>;
 }
