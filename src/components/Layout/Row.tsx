@@ -1,11 +1,9 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { View, ViewProps } from 'react-native';
 
-import { useTheme } from '../../theme';
-import { mergeStyles } from '../../utils/mergeStyles';
+import { getOverrides, Override } from '../../utils/overrides';
 import { ColumnProps } from './Column';
 import { defaultLayout, useLayout } from './LayoutContext';
-import { GetRowStyles, getRowStyles } from './Row.styles';
 
 export interface RowProps {
   /**
@@ -21,8 +19,10 @@ export interface RowProps {
     | Array<React.ReactElement<ColumnProps>>
     | React.ReactElement<ColumnProps>;
 
-  /** Callback to get element styles. */
-  getStyles?: GetRowStyles;
+  /**
+   * Overrides
+   */
+  override?: Override<RowProps, RootProps>;
 }
 
 export const GutterWidthContext = React.createContext(
@@ -30,21 +30,43 @@ export const GutterWidthContext = React.createContext(
 );
 
 export const Row = (props: RowProps) => {
-  const { children, hasGutter = true, getStyles } = props;
-  const layout = useLayout();
-  const theme = useTheme();
+  const { children, hasGutter = true, override } = props;
+  const { gutterWidth } = useLayout();
 
-  const { rowStyle } = mergeStyles(
-    getRowStyles,
-    getStyles,
-    theme.components.getRowStyles,
-  )({ ...layout, ...props }, theme);
+  const [Root, rootProps] = getOverrides(StyledRoot, props, override);
 
   return (
-    <View style={rowStyle}>
-      <GutterWidthContext.Provider value={hasGutter ? layout.gutterWidth : 0}>
+    <Root hasGutter={hasGutter} {...rootProps}>
+      <GutterWidthContext.Provider value={hasGutter ? gutterWidth : 0}>
         {children}
       </GutterWidthContext.Provider>
+    </Root>
+  );
+};
+
+interface RootProps extends ViewProps {
+  children?: React.ReactNode;
+  hasGutter: boolean;
+}
+
+const StyledRoot = (props: RootProps) => {
+  const { children, style, hasGutter, ...viewProps } = props;
+  const { gutterWidth } = useLayout();
+
+  return (
+    <View
+      style={[
+        {
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          marginLeft: hasGutter ? -gutterWidth / 2 : 0,
+          marginRight: hasGutter ? -gutterWidth / 2 : 0,
+        },
+        style,
+      ]}
+      {...viewProps}
+    >
+      {children}
     </View>
   );
 };
