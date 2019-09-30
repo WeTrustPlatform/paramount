@@ -40,29 +40,3 @@ By using `value` as an array of `[number, number]`, it will automatically transf
 ## Props
 
 <Props of={Slider} />
-
-## Customization
-
-Using `getStyles` prop
-
-```tsx
-SliderStyles {
-  containerStyle: ViewStyle; // { height: thumbSize }
-  selectedTrackStyle: ViewStyle;
-  thumbStyle: ViewStyle; // { height: thumbSize, width: thumbSize }
-  unselectedTrackStyle: ViewStyle;
-}
-
-getStyles={(SliderProps, Theme) => SliderStyles}
-```
-
-Markup
-
-```tsx
-<View containerStyle>
-  <View unselectedTrackStyle />
-  <View selectedTrackStyle />
-  <View thumbStyle />
-  <View thumbStyle />
-</View>
-```

@@ -14,7 +14,7 @@ import { CounterState, Rating } from '..';
 <Playground>
   <CounterState initial={3}>
     {({ count: rating, set }) => (
-      <Rating value={rating} size="small" onChange={value => set(value)} />
+      <Rating value={rating} size="small" onValueChange={value => set(value)} />
     )}
   </CounterState>
 </Playground>

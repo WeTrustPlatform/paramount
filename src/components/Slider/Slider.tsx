@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { PanResponder, View } from 'react-native';
+import { PanResponder, View, ViewProps } from 'react-native';
 
 import { usePrevious } from '../../hooks';
 import { ControlSize, useTheme } from '../../theme';
-import { mergeStyles } from '../../utils/mergeStyles';
-import { ViewMeasure } from '../Helpers';
-import { GetSliderStyles, getSliderStyles } from './Slider.styles';
+import { isControlSize } from '../../utils/isControlSize';
+import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { ViewMeasure, ViewMeasureProps } from '../Helpers';
 
 type RangeValue = [number, number];
 type SliderValue = number | RangeValue;
@@ -13,7 +13,7 @@ type Value<TIsRange extends boolean> = TIsRange extends true
   ? [number, number]
   : number;
 
-export interface SliderProps<TIsRange extends boolean> {
+interface SliderBaseProps<TIsRange extends boolean> {
   /**
    * Set whether it should slide a range. You should specify the value to get proper type-checking.
    * However, if initialValue is set, it will take precedence over this prop
@@ -60,7 +60,7 @@ export interface SliderProps<TIsRange extends boolean> {
    * If true the user won't be able to move the slider.
    * @default false
    */
-  disabled?: boolean;
+  isDisabled?: boolean;
 
   /**
    * Callback continuously called while the user is dragging the slider.
@@ -79,28 +79,18 @@ export interface SliderProps<TIsRange extends boolean> {
    */
   onSlidingStart?: (value: Value<TIsRange>) => void;
 
-  /**
-   * Callback to get element styles.
-   */
-  getStyles?: GetSliderStyles;
-
-  /** Label for screen readers */
-  leftThumbAccessibilityLabel?: string;
-
-  /** Hint for screen readers */
-  leftThumbAccessibilityHint?: string;
-
-  /** Label for screen readers */
-  rightThumbAccessibilityLabel?: string;
-
-  /** Hint for screen readers */
-  rightThumbAccessibilityHint?: string;
-
-  /**
-   * Used to locate this view in UI automation tests.
-   */
   testID?: string;
 }
+
+export interface SliderOverrides {
+  Root: RootProps;
+  UnselectedTrack: UnselectedTrackProps;
+  SelectedTrack: SelectedTrackProps;
+  Thumb: ThumbProps;
+}
+
+export interface SliderProps<TIsRange extends boolean>
+  extends WithOverrides<SliderBaseProps<TIsRange>, SliderOverrides> {}
 
 const initialMeasurements = {
   height: 0,
@@ -166,12 +156,9 @@ export const Slider = <TIsRange extends boolean>(
     minimumValue = 0,
     maximumValue = 1,
     step = 0,
-    getStyles,
+    size = 'medium',
     isRange = false,
-    leftThumbAccessibilityLabel,
-    leftThumbAccessibilityHint,
-    rightThumbAccessibilityHint,
-    rightThumbAccessibilityLabel,
+    overrides = {},
   } = props;
 
   const finalInitialValue =
@@ -254,48 +241,167 @@ export const Slider = <TIsRange extends boolean>(
     // We diff valuePerPixel because on loading the component it may be NaN as it is calculating the measurements of the track
   }, [isSliding, valuePerPixel]);
 
-  const theme = useTheme();
-  const {
-    containerStyle,
-    selectedTrackStyle,
-    thumbStyle,
-    unselectedTrackStyle,
-  } = mergeStyles(getSliderStyles, getStyles, theme.components.getSliderStyles)(
-    props,
-    theme,
-  );
-
   const left = getLeftValue(value) * pixelPerValue;
   const right = getRightValue(value) * pixelPerValue;
+
+  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+  const [UnselectedTrack, unselectedTrackProps] = getOverrides(
+    StyledUnselectedTrack,
+    props,
+    overrides.UnselectedTrack,
+  );
+  const [SelectedTrack, selectedTrackProps] = getOverrides(
+    StyledSelectedTrack,
+    props,
+    overrides.SelectedTrack,
+  );
+  const [Thumb, thumbProps] = getOverrides(StyledThumb, props, overrides.Thumb);
+
+  return (
+    <Root size={size} onMeasure={setTrackMeasurements} {...rootProps}>
+      <UnselectedTrack size={size} {...unselectedTrackProps} />
+      <SelectedTrack
+        isRangeSlider={isRangeSlider}
+        left={left}
+        right={right}
+        size={size}
+        {...selectedTrackProps}
+      />
+      <Thumb
+        size={size}
+        position={left}
+        isSliding={isSliding}
+        value={getLeftValue(value)}
+        {...leftThumbRef.current.panHandlers}
+        {...thumbProps}
+      />
+      {isRangeSlider && (
+        <Thumb
+          size={size}
+          position={right}
+          isSliding={isSliding}
+          value={getRightValue(value)}
+          {...rightThumbRef.current.panHandlers}
+          {...thumbProps}
+        />
+      )}
+    </Root>
+  );
+};
+
+interface RootProps extends ViewMeasureProps {
+  size: ControlSize | number;
+}
+
+const StyledRoot = (props: RootProps) => {
+  const { style, size, ...viewMeasureProps } = props;
+  const theme = useTheme();
+
+  const controlSize = isControlSize(size) ? theme.controlHeights[size] : size;
+
+  return (
+    <ViewMeasure
+      style={[
+        {
+          height: controlSize,
+          justifyContent: 'center',
+        },
+        style,
+      ]}
+      {...viewMeasureProps}
+    />
+  );
+};
+
+interface UnselectedTrackProps extends ViewProps {
+  size: ControlSize | number;
+}
+
+const StyledUnselectedTrack = (props: UnselectedTrackProps) => {
+  const { style, size, ...viewProps } = props;
+  const theme = useTheme();
+
+  const controlSize = isControlSize(size) ? theme.controlHeights[size] : size;
+
+  return (
+    <View
+      style={[
+        {
+          backgroundColor: theme.colors.background.greyDark,
+          borderRadius: 8,
+          height: controlSize / 4,
+          position: 'absolute',
+          width: '100%',
+        },
+        style,
+      ]}
+      {...viewProps}
+    />
+  );
+};
+
+interface SelectedTrackProps extends ViewProps {
+  size: ControlSize | number;
+  left: number;
+  right: number;
+  isRangeSlider: boolean;
+}
+
+const StyledSelectedTrack = (props: SelectedTrackProps) => {
+  const { style, size, left, right, isRangeSlider, ...viewProps } = props;
+  const theme = useTheme();
+
+  const controlSize = isControlSize(size) ? theme.controlHeights[size] : size;
+
+  return (
+    <View
+      style={[
+        {
+          backgroundColor: theme.colors.background.primaryDefault,
+          borderRadius: 8,
+          height: controlSize / 4,
+          position: 'absolute',
+          width: '100%',
+          ...(isRangeSlider ? { left, width: right - left } : { width: left }),
+        },
+        style,
+      ]}
+      {...viewProps}
+    />
+  );
+};
+
+interface ThumbProps extends ViewProps {
+  size: ControlSize | number;
+  isSliding: boolean;
+  position: number;
+  value: number;
+}
+
+const StyledThumb = (props: ThumbProps) => {
+  const { style, size, isSliding, position, ...viewProps } = props;
+  const theme = useTheme();
+
+  const controlSize = isControlSize(size) ? theme.controlHeights[size] : size;
   const cursor = isSliding ? 'grabbing' : 'grab';
 
   return (
-    <ViewMeasure onMeasure={setTrackMeasurements} style={{ ...containerStyle }}>
-      <View style={unselectedTrackStyle} />
-      <View
-        style={{
-          ...selectedTrackStyle,
-          ...(isRangeSlider ? { left, width: right - left } : { width: left }),
-        }}
-      />
-      <View
-        accessible
+    <View
+      accessible
+      style={{
+        backgroundColor: theme.colors.background.content,
+        borderColor: theme.colors.border.primary,
+        borderRadius: 999,
+        borderWidth: 3,
+        height: controlSize,
+        position: 'absolute',
+        width: controlSize,
+        zIndex: 1,
+        left: position - controlSize / 2,
         // @ts-ignore
-        style={{ ...thumbStyle, left: left - thumbStyle.width / 2, cursor }}
-        accessibilityLabel={leftThumbAccessibilityLabel}
-        accessibilityHint={leftThumbAccessibilityHint}
-        {...leftThumbRef.current.panHandlers}
-      />
-      {isRangeSlider && (
-        <View
-          accessible
-          // @ts-ignore
-          style={{ ...thumbStyle, left: right - thumbStyle.width / 2, cursor }}
-          accessibilityLabel={rightThumbAccessibilityLabel}
-          accessibilityHint={rightThumbAccessibilityHint}
-          {...rightThumbRef.current.panHandlers}
-        />
-      )}
-    </ViewMeasure>
+        cursor,
+      }}
+      {...viewProps}
+    />
   );
 };
