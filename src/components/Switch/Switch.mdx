@@ -14,7 +14,7 @@ import { Box, Switch, Toggle } from '..';
 <Playground>
   <Box>
     <Toggle initial={true}>
-      {({ on, toggle }) => <Switch value={on} onPress={toggle} />}
+      {({ on, toggle, set }) => <Switch value={on} onValueChange={set} />}
     </Toggle>
   </Box>
 </Playground>
@@ -22,31 +22,3 @@ import { Box, Switch, Toggle } from '..';
 ## Props
 
 <Props of={Switch} />
-
-## Customization
-
-Using `getStyles` prop
-
-```
-SwitchStyles {
-  touchableStyle: ViewStyle;
-  containerStyle: ViewStyle & SwitchStylesRequired;
-  circleStyle: ViewStyle & SwitchStylesRequired;
-  backgroundColorOff: string;
-  backgroundColorOn: string;
-  circleColorOff: string;
-  circleColorOn: string;
-}
-
-getStyles={(SwitchProps, Theme) => SwitchStyles}
-```
-
-Markup
-
-```tsx
-<TouchableOpacity touchableStyle>
-  <View containerStyle>
-    <View circleStyle>{icon}</View>
-  </View>
-</TouchableOpacity>
-```

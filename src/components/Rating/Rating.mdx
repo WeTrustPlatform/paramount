@@ -22,29 +22,3 @@ import { CounterState, Rating } from '..';
 ## Props
 
 <Props of={Rating} />
-
-## Customization
-
-Using `getStyles` prop
-
-```
-RatingStyles {
-  touchableStyle: ViewStyle;
-  containerStyle: ViewStyle;
-  starColor: string;
-  starSize: number;
-}
-
-getStyles={(RatingProps, Theme) => RatingStyles}
-```
-
-Markup
-
-```tsx
-<View containerStyle>
-  <TouchableOpacity touchableStyle>
-    <Star color={starColor} size={starSize} />
-  </TouchableOpacity>
-  // ...repeat
-</View>
-```

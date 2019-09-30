@@ -1,21 +1,21 @@
 import * as React from 'react';
-import { GestureResponderEvent, TouchableOpacity, View } from 'react-native';
+import {
+  TouchableOpacity,
+  TouchableOpacityProps,
+  View,
+  ViewProps,
+} from 'react-native';
 import { animated, useSpring } from 'react-spring/native.cjs';
 
 import { springDefaultConfig } from '../../constants/Animation';
-import { ControlSize, useTheme } from '../../theme';
-import { mergeStyles } from '../../utils/mergeStyles';
+import { ControlSize, Theme, useTheme } from '../../theme';
+import { isControlSize } from '../../utils/isControlSize';
+import { getOverrides, WithOverrides } from '../../utils/overrides';
 import { Icon } from '../Icon';
-import {
-  getCircleSize,
-  getContainerSize,
-  GetSwitchStyles,
-  getSwitchStyles,
-} from './Switch.styles';
 
 const AnimatedView = animated(View);
 
-export interface SwitchProps {
+interface SwitchBaseProps {
   /**
    * The size of the switch.
    */
@@ -36,123 +36,214 @@ export interface SwitchProps {
   /**
    * Called when checkbox is pressed.
    */
-  onPress?: (event: GestureResponderEvent) => void;
-
-  /**
-   * Replace the icon when switch is on
-   */
-  onIcon?: React.ReactNode;
-
-  /**
-   * Replace the icon when switch is off
-   */
-  offIcon?: React.ReactNode;
-
-  /** Label for screen readers */
-  accessibilityLabel?: string;
-
-  /** Hint for screen readers */
-  accessibilityHint?: string;
-
-  /**
-   * When true, indicates that the view is an accessibility element.
-   * @default true
-   */
-  accessible?: boolean;
+  onValueChange?: (value: boolean) => void;
 
   /** Used to locate this view in end-to-end tests. */
   testID?: string;
-
-  /** Callback to get element styles. */
-  getStyles?: GetSwitchStyles;
 }
+
+export interface SwitchOverrides {
+  Touchable: TouchableProps;
+  Background: BackgroundProps;
+  Circle: CircleProps;
+}
+
+export interface SwitchProps
+  extends WithOverrides<SwitchBaseProps, SwitchOverrides> {}
 
 export const Switch = (props: SwitchProps) => {
   const {
     size = 'medium',
-    onIcon,
-    offIcon,
-    onPress,
     value = false,
     isDisabled = false,
-    getStyles,
-    testID,
-    accessibilityHint,
-    accessibilityLabel,
-    accessible = true,
+    onValueChange = () => {
+      return;
+    },
+    overrides = {},
   } = props;
-  const theme = useTheme();
-  const {
-    circleStyle,
-    containerStyle,
-    backgroundColorOff,
-    backgroundColorOn,
-    circleColorOff,
-    circleColorOn,
-    touchableStyle,
-  } = mergeStyles(getSwitchStyles, getStyles, theme.components.getSwitchStyles)(
+
+  const [Touchable, touchableProps] = getOverrides(
+    StyledTouchable,
     props,
-    theme,
+    overrides.Touchable,
   );
+  const [Background, backgroundProps] = getOverrides(
+    StyledBackground,
+    props,
+    overrides.Background,
+  );
+  const [Circle, circleProps] = getOverrides(
+    StyledCircle,
+    props,
+    overrides.Circle,
+  );
+
+  return (
+    <Touchable
+      isDisabled={isDisabled}
+      size={size}
+      onPress={() => onValueChange(!value)}
+      {...touchableProps}
+    >
+      <Background
+        isDisabled={isDisabled}
+        size={size}
+        value={value}
+        {...backgroundProps}
+      >
+        <Circle
+          isDisabled={isDisabled}
+          size={size}
+          value={value}
+          {...circleProps}
+        />
+      </Background>
+    </Touchable>
+  );
+};
+
+interface TouchableProps extends TouchableOpacityProps {
+  children?: React.ReactNode;
+  size: ControlSize | number;
+  isDisabled: boolean;
+}
+
+const StyledTouchable = (props: TouchableProps) => {
+  const { size, isDisabled, children, style, ...touchableProps } = props;
+
+  return (
+    <TouchableOpacity
+      activeOpacity={1}
+      disabled={isDisabled}
+      style={[
+        {
+          alignSelf: 'flex-start',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+        },
+        style,
+      ]}
+      {...touchableProps}
+    >
+      {children}
+    </TouchableOpacity>
+  );
+};
+
+interface BackgroundProps extends ViewProps {
+  children?: React.ReactNode;
+  size: ControlSize | number;
+  isDisabled: boolean;
+  value: boolean;
+}
+
+const getCircleSize = (size: ControlSize | number = 'medium', theme: Theme) => {
+  return isControlSize(size) ? theme.controlHeights[size] - 8 : size;
+};
+
+const getContainerSize = (
+  size: ControlSize | number = 'medium',
+  theme: Theme,
+) => {
+  return getCircleSize(size, theme) * 2;
+};
+
+const StyledBackground = (props: BackgroundProps) => {
+  const { size, isDisabled, children, value, style, ...viewProps } = props;
+  const theme = useTheme();
+  const { backgroundColor } = useSpring({
+    config: springDefaultConfig,
+
+    backgroundColor: value
+      ? isDisabled
+        ? theme.colors.background.greyDefault
+        : theme.colors.background.primaryDefault
+      : theme.colors.background.greyDefault,
+  });
 
   const circleSize = getCircleSize(size, theme);
   const containerSize = getContainerSize(size, theme);
 
-  const { backgroundColor, circleColor, circlePosition } = useSpring({
+  return (
+    <AnimatedView
+      // @ts-ignore
+      style={[
+        {
+          alignItems: 'center',
+          backgroundColor: theme.colors.background.greyLight,
+          borderRadius: 24,
+          flexDirection: 'row',
+          height: circleSize + 8,
+          padding: 3,
+          width: containerSize,
+        },
+        { backgroundColor },
+        style,
+      ]}
+      {...viewProps}
+    >
+      {children}
+    </AnimatedView>
+  );
+};
+
+interface CircleProps extends ViewProps {
+  size: ControlSize | number;
+  isDisabled: boolean;
+  value: boolean;
+}
+
+const StyledCircle = (props: CircleProps) => {
+  const { size, isDisabled, value, style, ...viewProps } = props;
+  const theme = useTheme();
+
+  const circleSize = getCircleSize(size, theme);
+  const containerSize = getContainerSize(size, theme);
+
+  const { circleColor, circlePosition } = useSpring({
     config: springDefaultConfig,
 
-    backgroundColor: value ? backgroundColorOn : backgroundColorOff,
-    circleColor: value ? circleColorOn : circleColorOff,
+    circleColor: theme.colors.background.content,
     circlePosition: value ? containerSize - (circleSize + 6) : 0,
   });
 
   return (
-    <TouchableOpacity
-      onPress={onPress}
-      activeOpacity={1}
-      style={touchableStyle}
-      disabled={isDisabled}
-      testID={testID}
-      accessibilityHint={accessibilityHint}
-      accessibilityLabel={accessibilityLabel}
-      accessible={accessible}
+    <AnimatedView
+      // @ts-ignore
+      style={[
+        {
+          alignItems: 'center',
+          backgroundColor: theme.colors.background.content,
+          borderRadius: 24,
+          display: 'flex',
+          height: circleSize,
+          justifyContent: 'center',
+          padding: 0,
+          width: circleSize,
+        },
+        { backgroundColor: circleColor },
+        { transform: [{ translateX: circlePosition }] },
+        style,
+      ]}
+      {...viewProps}
     >
-      {/*
-      // @ts-ignore */}
-      <AnimatedView style={[containerStyle, { backgroundColor }]}>
-        <AnimatedView
-          // @ts-ignore
-          style={[
-            circleStyle,
-            { backgroundColor: circleColor },
-            { transform: [{ translateX: circlePosition }] },
-          ]}
-        >
-          {value
-            ? onIcon || (
-                <Icon
-                  name="check"
-                  size="xsmall"
-                  color={
-                    isDisabled
-                      ? theme.colors.text.white
-                      : theme.colors.text.primary
-                  }
-                />
-              )
-            : offIcon || (
-                <Icon
-                  name="x"
-                  size="xsmall"
-                  color={
-                    isDisabled
-                      ? theme.colors.text.white
-                      : theme.colors.text.default
-                  }
-                />
-              )}
-        </AnimatedView>
-      </AnimatedView>
-    </TouchableOpacity>
+      {value ? (
+        <Icon
+          name="check"
+          size="xsmall"
+          color={
+            isDisabled ? theme.colors.text.white : theme.colors.text.primary
+          }
+        />
+      ) : (
+        <Icon
+          name="x"
+          size="xsmall"
+          color={
+            isDisabled ? theme.colors.text.white : theme.colors.text.default
+          }
+        />
+      )}
+    </AnimatedView>
   );
 };
