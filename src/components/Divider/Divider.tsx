@@ -29,8 +29,10 @@ export interface DividerProps {
   /**
    * Overrides
    */
-  override?: Override<DividerProps, StyledDividerProps>;
+  override?: DividerOverride;
 }
+
+export type DividerOverride = Override<DividerProps, StyledDividerProps>;
 
 export const Divider = (props: DividerProps) => {
   const {

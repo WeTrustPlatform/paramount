@@ -57,11 +57,13 @@ export interface TextProps extends RNTextProps {
   /**
    * Overrides
    */
-  override?: Override<TextProps, StyledTextProps>;
+  override?: TextOverride;
 
   /** Text content */
   children?: React.ReactNode;
 }
+
+export type TextOverride = Override<TextProps, StyledTextProps>;
 
 export const Text = (props: TextProps) => {
   const {

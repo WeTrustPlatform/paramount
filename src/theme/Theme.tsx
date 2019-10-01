@@ -1,9 +1,41 @@
 import deepMerge from 'deepmerge';
 import React from 'react';
 import { TextStyle, ViewStyle } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
-import { Layout, LayoutProvider, ToastProvider } from '../components';
+import {
+  AlertOverrides,
+  AvatarOverrides,
+  BadgeOverrides,
+  ButtonOverrides,
+  CheckboxOverrides,
+  CollapsibleOverrides,
+  ColumnOverride,
+  ContainerOverride,
+  CounterOverrides,
+  DialogOverrides,
+  DividerOverride,
+  DrawerOverrides,
+  FormFieldOverrides,
+  HeadingOverride,
+  LabelOverrides,
+  Layout,
+  LayoutProvider,
+  ListItemOverrides,
+  NativePickerOverrides,
+  OverlayOverride,
+  PopoverOverrides,
+  PositionerOverrides,
+  ProgressBarOverrides,
+  RatingOverrides,
+  RowOverride,
+  SliderOverrides,
+  SwitchOverrides,
+  TabsOverrides,
+  TextInputOverrides,
+  TextOverride,
+  ToastProvider,
+  WheelPickerOverrides,
+} from '../components';
 import { defaultTheme } from './defaultTheme';
 
 export interface TextSizes {
@@ -232,22 +264,67 @@ export interface Theme {
   containerShapes: ContainerShapes;
 }
 
+export interface Theme {
+  overrides?: Partial<{
+    Alert: Partial<AlertOverrides>;
+    Avatar: Partial<AvatarOverrides>;
+    Badge: Partial<BadgeOverrides>;
+    Button: Partial<ButtonOverrides>;
+    Checkbox: Partial<CheckboxOverrides>;
+    Collapsible: Partial<CollapsibleOverrides>;
+    Column: Partial<ColumnOverride>;
+    Container: Partial<ContainerOverride>;
+    Counter: Partial<CounterOverrides>;
+    Dialog: Partial<DialogOverrides>;
+    Divider: Partial<DividerOverride>;
+    Drawer: Partial<DrawerOverrides>;
+    FormField: Partial<FormFieldOverrides>;
+    Heading: Partial<HeadingOverride>;
+    Label: Partial<LabelOverrides>;
+    ListItem: Partial<ListItemOverrides>;
+    NativePicker: Partial<NativePickerOverrides>;
+    Overlay: Partial<OverlayOverride>;
+    Popover: Partial<PopoverOverrides>;
+    Positioner: Partial<PositionerOverrides>;
+    ProgressBar: Partial<ProgressBarOverrides>;
+    Rating: Partial<RatingOverrides>;
+    Row: Partial<RowOverride>;
+    Slider: Partial<SliderOverrides>;
+    Switch: Partial<SwitchOverrides>;
+    Tabs: Partial<TabsOverrides>;
+    Text: Partial<TextOverride>;
+    TextInput: Partial<TextInputOverrides>;
+    WheelPicker: Partial<WheelPickerOverrides<any>>;
+  }>;
+}
+
 export const ThemeContext = React.createContext(defaultTheme);
 
 export interface ThemeProviderProps {
   children?: React.ReactNode;
-  value?: DeepPartial<Theme>;
+  value?: Partial<{
+    colors: Partial<Colors>;
+    fills: Partial<Fills>;
+    layout: Partial<Layout>;
+    fontFamilies: Partial<FontFamilies>;
+    fontWeights: Partial<FontWeights>;
+    headingSizes: Partial<HeadingSizes>;
+    paragraphSizes: Partial<ParagraphSizes>;
+    textSizes: Partial<TextSizes>;
+    elevations: Partial<Elevations>;
+    controlPaddings: Partial<ControlSizes>;
+    controlHeights: Partial<ControlSizes>;
+    controlBorderRadius: Partial<ControlSizes>;
+    containerShapes: Partial<ContainerShapes>;
+  }>;
 }
 
-const createTheme = (theme?: DeepPartial<Theme>): Theme => {
-  // @ts-ignore
-  return theme ? deepMerge(defaultTheme, theme) : defaultTheme;
-};
-
 export const ThemeProvider = (props: ThemeProviderProps) => {
-  const { children, value = defaultTheme } = props;
+  const { children, value } = props;
 
-  const theme = createTheme(value);
+  const theme = value
+    ? (deepMerge(defaultTheme, value) as Theme)
+    : defaultTheme;
 
   return (
     <ThemeContext.Provider value={theme}>

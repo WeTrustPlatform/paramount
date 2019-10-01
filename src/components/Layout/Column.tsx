@@ -71,8 +71,10 @@ export interface ColumnProps extends ColumnConfig {
   /**
    * Overrides
    */
-  override?: Override<ColumnProps, RootProps>;
+  override?: ColumnOverride;
 }
+
+export type ColumnOverride = Override<ColumnProps, RootProps>;
 
 export const Column = (props: ColumnProps) => {
   const { children, override, ...config } = props;

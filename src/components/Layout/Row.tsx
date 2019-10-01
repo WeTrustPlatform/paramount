@@ -22,8 +22,10 @@ export interface RowProps {
   /**
    * Overrides
    */
-  override?: Override<RowProps, RootProps>;
+  override?: RowOverride;
 }
+
+export type RowOverride = Override<RowProps, RootProps>;
 
 export const GutterWidthContext = React.createContext(
   defaultLayout.gutterWidth,

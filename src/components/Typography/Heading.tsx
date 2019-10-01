@@ -48,13 +48,15 @@ export interface HeadingProps extends RNTextProps {
   /**
    * Overrides
    */
-  override?: Override<HeadingProps, StyledHeadingProps>;
+  override?: HeadingOverride;
 
   /**
    * (Web only): Corresponding h1, h2, h3... levels
    */
   accessibilityLevel?: 1 | 2 | 3 | 4 | 5 | 6;
 }
+
+export type HeadingOverride = Override<HeadingProps, StyledHeadingProps>;
 
 export const Heading = (props: HeadingProps) => {
   const {

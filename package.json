@@ -42,8 +42,7 @@
     "react-native-svg": "9.5.3",
     "react-native-vector-icons": "6.6.0",
     "react-native-web": "0.11.5",
-    "react-spring": "9.0.0-beta.1",
-    "ts-essentials": "2.0.12"
+    "react-spring": "9.0.0-beta.1"
   },
   "devDependencies": {
     "@babel/core": "7.4.5",

@@ -29,8 +29,10 @@ export interface ContainerProps {
   /**
    * Overrides
    */
-  override?: Override<ContainerProps, RootProps>;
+  override?: ContainerOverride;
 }
+
+export type ContainerOverride = Override<ContainerProps, RootProps>;
 
 /**
  * On screens with size lg and above, caps maximum width of the content

@@ -2,23 +2,19 @@ import * as React from 'react';
 import { TouchableWithoutFeedback, View, ViewProps } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { getOverrides, Override } from '../../utils/overrides';
 
-interface OverlayBaseProps {
+export interface OverlayProps {
   onPress: () => void;
+  override?: OverlayOverride;
 }
 
-export interface OverlayOverrides {
-  Root: RootProps;
-}
-
-export interface OverlayProps
-  extends WithOverrides<OverlayBaseProps, OverlayOverrides> {}
+export type OverlayOverride = Override<OverlayProps, RootProps>;
 
 export const Overlay = (props: OverlayProps) => {
-  const { onPress, overrides = {} } = props;
+  const { onPress, override } = props;
 
-  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+  const [Root, rootProps] = getOverrides(StyledRoot, props, override);
 
   return <Root onPress={onPress} {...rootProps} />;
 };
