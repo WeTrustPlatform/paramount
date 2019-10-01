@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import {
   TouchableOpacity,
@@ -53,25 +54,39 @@ export interface CheckboxOverrides {
 export interface CheckboxProps
   extends WithOverrides<CheckboxBaseProps, CheckboxOverrides> {}
 
+const defaultProps = {
+  size: 'medium' as const,
+  shape: 'rounded' as const,
+  value: false,
+  isDisabled: false,
+};
+
 export const Checkbox = (props: CheckboxProps) => {
   const {
-    size = 'medium',
-    shape = 'rounded',
-    value = false,
-    isDisabled = false,
+    size = defaultProps.size,
+    shape = defaultProps.shape,
+    value = defaultProps.value,
+    isDisabled = defaultProps.isDisabled,
     onValueChange = () => {
       return;
     },
     testID,
     overrides = {},
   } = props;
+  const theme = useTheme();
 
   const [Touchable, touchableProps] = getOverrides(
     StyledTouchable,
     props,
+    dlv(theme, 'overrides.Checkbox.Touchable'),
     overrides.Touchable,
   );
-  const [Check, checkProps] = getOverrides(StyledCheck, props, overrides.Check);
+  const [Check, checkProps] = getOverrides(
+    StyledCheck,
+    props,
+    dlv(theme, 'overrides.Checkbox.Check'),
+    overrides.Check,
+  );
 
   return (
     <Touchable
@@ -95,13 +110,20 @@ export const Checkbox = (props: CheckboxProps) => {
 
 interface TouchableProps extends TouchableOpacityProps {
   children?: React.ReactNode;
-  size: ControlSize | number;
-  isDisabled: boolean;
-  shape: ContainerShape;
+  size?: ControlSize | number;
+  isDisabled?: boolean;
+  shape?: ContainerShape;
 }
 
 const StyledTouchable = (props: TouchableProps) => {
-  const { size, isDisabled, shape, children, style, ...touchableProps } = props;
+  const {
+    size = defaultProps.size,
+    shape = defaultProps.shape,
+    isDisabled = defaultProps.isDisabled,
+    children,
+    style,
+    ...touchableProps
+  } = props;
   const theme = useTheme();
 
   return (
@@ -116,14 +138,21 @@ const StyledTouchable = (props: TouchableProps) => {
 };
 
 interface CheckProps extends ViewProps {
-  size: ControlSize | number;
-  value: boolean;
-  isDisabled: boolean;
-  shape: ContainerShape;
+  size?: ControlSize | number;
+  value?: boolean;
+  isDisabled?: boolean;
+  shape?: ContainerShape;
 }
 
 const StyledCheck = (props: CheckProps) => {
-  const { size, value, style, isDisabled, shape, ...viewProps } = props;
+  const {
+    size = defaultProps.size,
+    shape = defaultProps.shape,
+    value = defaultProps.value,
+    isDisabled = defaultProps.isDisabled,
+    style,
+    ...viewProps
+  } = props;
   const theme = useTheme();
 
   const sizeValue = isControlSize(size)

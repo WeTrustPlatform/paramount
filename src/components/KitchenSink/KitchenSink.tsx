@@ -5,46 +5,47 @@
 // ===================================================
 // tslint:disable
 import React from 'react';
-
 import {
+  Playground,
   Alert,
-  Avatar,
-  Badge,
   Box,
   Button,
+  Avatar,
+  Badge,
   Checkbox,
+  FormField,
+  Toggle,
   Collapsible,
-  Column,
-  Container,
   Counter,
-  CounterState,
+  State,
   Dialog,
+  Heading,
+  Icon,
+  Text,
   Divider,
   Drawer,
-  FormField,
-  Heading,
-  Label,
+  TextInput,
+  Container,
   LayoutProvider,
+  Column,
+  Row,
+  Visible,
   ListItem,
   ListPicker,
   Modal,
+  HistoryModal,
   NativePicker,
-  Paragraph,
-  Playground,
   Popover,
   ProgressBar,
+  CounterState,
   Rating,
-  Row,
   Slider,
-  State,
   Switch,
   Tabs,
-  Text,
-  TextInput,
   ToastContext,
   ToastProvider,
-  Toggle,
-  Visible,
+  Label,
+  Paragraph,
   WheelPicker,
 } from '..';
 
@@ -990,7 +991,7 @@ export const KitchenSink = () => {
           {({ state, setState }) => (
             <Tabs
               activeTab={state.activeTabIndex}
-              onTabChange={tab => setState({ activeTabIndex: tab })}
+              onChangeTab={tab => setState({ activeTabIndex: tab })}
               tabs={new Array(4).fill(0).map((v, i) => ({
                 title: `Tab ${i + 1}`,
               }))}

@@ -1,6 +1,8 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 
+import { useTheme } from '../../theme';
 import { getOverrides, Override } from '../../utils/overrides';
 import { ColumnProps } from './Column';
 import { defaultLayout, useLayout } from './LayoutContext';
@@ -34,8 +36,14 @@ export const GutterWidthContext = React.createContext(
 export const Row = (props: RowProps) => {
   const { children, hasGutter = true, override } = props;
   const { gutterWidth } = useLayout();
+  const theme = useTheme();
 
-  const [Root, rootProps] = getOverrides(StyledRoot, props, override);
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.Row'),
+    override,
+  );
 
   return (
     <Root hasGutter={hasGutter} {...rootProps}>

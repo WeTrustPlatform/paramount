@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import {
   TextInput as RNTextInput,
@@ -57,46 +58,71 @@ export interface TextInputOverrides {
 export interface TextInputProps
   extends WithOverrides<TextInputBaseProps, TextInputOverrides> {}
 
+const defaultProps = {
+  size: 'medium' as const,
+  isClearable: false,
+  isDisabled: false,
+  isInvalid: false,
+  onClear: () => {
+    return;
+  },
+  onValueChange: () => {
+    return;
+  },
+  onChangeText: () => {
+    return;
+  },
+};
+
 export const TextInput = (props: TextInputProps) => {
   const {
-    isClearable = false,
-    isDisabled = false,
-    isInvalid = false,
-    onClear = () => {
-      return;
-    },
-    size = 'medium',
+    isClearable = defaultProps.isClearable,
+    isDisabled = defaultProps.isDisabled,
+    isInvalid = defaultProps.isInvalid,
+    onClear = defaultProps.onClear,
+    onValueChange = defaultProps.onValueChange,
+    onChangeText = defaultProps.onChangeText,
+    size = defaultProps.size,
     value,
     overrides = {},
-    onValueChange = () => {
-      return;
-    },
-    onChangeText = () => {
-      return;
-    },
     ...textInputProps
   } = props;
+  const theme = useTheme();
 
-  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
-  const [Input, inputProps] = getOverrides(StyledInput, props, overrides.Input);
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.TextInput.Root'),
+    overrides.Root,
+  );
+  const [Input, inputProps] = getOverrides(
+    StyledInput,
+    props,
+    dlv(theme, 'overrides.TextInput.Input'),
+    overrides.Input,
+  );
   const [LeftIconWrapper, leftIconWrapperProps] = getOverrides(
     StyledLeftIconWrapper,
     props,
+    dlv(theme, 'overrides.TextInput.LeftIconWrapper'),
     overrides.LeftIconWrapper,
   );
   const [LeftIcon, leftIconProps] = getOverrides(
     StyledLeftIcon,
     props,
+    dlv(theme, 'overrides.TextInput.LeftIcon'),
     overrides.LeftIcon,
   );
   const [RightIconWrapper, rightIconWrapperProps] = getOverrides(
     StyledRightIconWrapper,
     props,
+    dlv(theme, 'overrides.TextInput.RightIconWrapper'),
     overrides.RightIconWrapper,
   );
   const [RightIcon, rightIconProps] = getOverrides(
     StyledRightIcon,
     props,
+    dlv(theme, 'overrides.TextInput.RightIcon'),
     overrides.RightIcon,
   );
 
@@ -155,31 +181,27 @@ const StyledRoot = (props: RootProps) => {
 };
 
 interface InputProps extends RNTextInputProps {
-  size: ControlSize | number;
-  isDisabled: boolean;
-  isInvalid: boolean;
-  hasLeftIcon: boolean;
-  hasRightIcon: boolean;
+  size?: ControlSize | number;
+  isDisabled?: boolean;
+  isInvalid?: boolean;
+  hasLeftIcon?: boolean;
+  hasRightIcon?: boolean;
   onValueChange?: (value: string) => void;
 }
 
 const StyledInput = (props: InputProps) => {
   const {
+    isDisabled = defaultProps.isDisabled,
+    isInvalid = defaultProps.isInvalid,
+    onValueChange = defaultProps.onValueChange,
+    onChangeText = defaultProps.onChangeText,
+    size = defaultProps.size,
     style,
-    size,
-    isDisabled,
-    isInvalid,
     numberOfLines,
     textContentType,
     hasLeftIcon,
     hasRightIcon,
     placeholderTextColor,
-    onValueChange = () => {
-      return;
-    },
-    onChangeText = () => {
-      return;
-    },
     ...textInputProps
   } = props;
   const theme = useTheme();
@@ -305,11 +327,11 @@ const StyledRightIconWrapper = (props: RightIconWrapperProps) => {
 };
 
 interface StyledIconProps {
-  onValueChange: (value: string) => void;
-  onChangeText: (text: string) => void;
+  onValueChange?: (value: string) => void;
+  onChangeText?: (text: string) => void;
   value?: string;
-  isClearable: boolean;
-  onClear: () => void;
+  isClearable?: boolean;
+  onClear?: () => void;
 }
 
 const StyledLeftIcon = (props: StyledIconProps) => {
@@ -317,7 +339,13 @@ const StyledLeftIcon = (props: StyledIconProps) => {
 };
 
 const StyledRightIcon = (props: StyledIconProps) => {
-  const { onValueChange, onChangeText, value, isClearable, onClear } = props;
+  const {
+    isClearable = defaultProps.isClearable,
+    onClear = defaultProps.onClear,
+    onValueChange = defaultProps.onValueChange,
+    onChangeText = defaultProps.onChangeText,
+    value,
+  } = props;
   const theme = useTheme();
 
   if (!value || !isClearable) return null;

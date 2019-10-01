@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 
@@ -38,30 +39,54 @@ export interface AlertOverrides {
 export interface AlertProps
   extends WithOverrides<AlertBaseProps, AlertOverrides> {}
 
-export const Alert = (props: AlertProps) => {
-  const { title, description, intent = 'info', overrides = {} } = props;
+const defaultProps = {
+  intent: 'info' as const,
+};
 
-  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+export const Alert = (props: AlertProps) => {
+  const {
+    title,
+    description,
+    intent = defaultProps.intent,
+    overrides = {},
+  } = props;
+  const theme = useTheme();
+
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.Alert.Root'),
+    overrides.Root,
+  );
   const [LeftWrapper, leftWrapperProps] = getOverrides(
     StyledLeftWrapper,
     props,
+    dlv(theme, 'overrides.Alert.LeftWrapper'),
     overrides.LeftWrapper,
   );
   const [Body, bodyProps] = getOverrides(StyledBody, props, overrides.Body);
   const [AlertIcon, alertIconProps] = getOverrides(
     StyledAlertIcon,
     props,
+    dlv(theme, 'overrides.Alert.AlertIcon'),
     overrides.AlertIcon,
   );
-  const [Title, titleProps] = getOverrides(StyledTitle, props, overrides.Title);
+  const [Title, titleProps] = getOverrides(
+    StyledTitle,
+    props,
+    dlv(theme, 'overrides.Alert.Title'),
+    overrides.Title,
+  );
   const [Description, descriptionProps] = getOverrides(
     StyledDescription,
     props,
+    dlv(theme, 'overrides.Alert.Description'),
     overrides.Description,
   );
   const [Action, actionProps] = getOverrides(
     StyledAction,
     props,
+    dlv(theme, 'overrides.Alert.Action'),
     overrides.Action,
   );
 
@@ -88,13 +113,13 @@ interface PropsWithChildren {
 }
 
 interface PropsWithIntent {
-  intent: Intent;
+  intent?: Intent;
 }
 
 interface RootProps extends ViewProps, PropsWithChildren, PropsWithIntent {}
 
 const StyledRoot = (props: RootProps) => {
-  const { intent, testID, children, style } = props;
+  const { intent = defaultProps.intent, testID, children, style } = props;
   const theme = useTheme();
 
   return (
@@ -146,7 +171,7 @@ const StyledLeftWrapper = (props: LeftWrapperProps) => {
 interface AlertIconProps extends Omit<IconProps, 'name'>, PropsWithIntent {}
 
 const StyledAlertIcon = (props: AlertIconProps) => {
-  const { intent } = props;
+  const { intent = defaultProps.intent } = props;
 
   switch (intent) {
     case 'success':
@@ -185,7 +210,7 @@ interface TitleProps extends TextProps, PropsWithIntent {
 }
 
 const StyledTitle = (props: TitleProps) => {
-  const { title, intent, ...textProps } = props;
+  const { title, intent = defaultProps.intent, ...textProps } = props;
 
   return (
     <Text weight="bold" {...textProps}>
@@ -199,7 +224,7 @@ interface DescriptionProps extends TextProps, PropsWithIntent {
 }
 
 const StyledDescription = (props: DescriptionProps) => {
-  const { description, intent, ...textProps } = props;
+  const { description, intent = defaultProps.intent, ...textProps } = props;
 
   return <Text {...textProps}>{description}</Text>;
 };

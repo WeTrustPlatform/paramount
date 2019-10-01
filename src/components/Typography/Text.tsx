@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import {
   Text as RNText,
@@ -77,8 +78,14 @@ export const Text = (props: TextProps) => {
     override,
     ...textProps
   } = props;
+  const theme = useTheme();
 
-  const [TextR, textRProps] = getOverrides(StyledText, props, override);
+  const [TextR, textRProps] = getOverrides(
+    StyledText,
+    props,
+    dlv(theme, 'overrides.Text'),
+    override,
+  );
 
   return (
     <TextR

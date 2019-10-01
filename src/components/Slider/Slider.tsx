@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { PanResponder, View, ViewProps } from 'react-native';
 
@@ -145,21 +146,34 @@ const setRightValue = (
     : rightValue;
 };
 
+const defaultProps = {
+  value: 0,
+  onSlidingStart: () => undefined,
+  onSlidingComplete: () => undefined,
+  onValueChange: () => undefined,
+  minimumValue: 0,
+  maximumValue: 1,
+  step: 0,
+  size: 'medium' as const,
+  isRange: false,
+};
+
 export const Slider = <TIsRange extends boolean>(
   props: SliderProps<TIsRange>,
 ) => {
   const {
-    value: initialValue = 0,
-    onSlidingStart = () => undefined,
-    onSlidingComplete = () => undefined,
-    onValueChange = () => undefined,
-    minimumValue = 0,
-    maximumValue = 1,
-    step = 0,
-    size = 'medium',
-    isRange = false,
+    value: initialValue = defaultProps.value,
+    onSlidingStart = defaultProps.onSlidingStart,
+    onSlidingComplete = defaultProps.onSlidingComplete,
+    onValueChange = defaultProps.onValueChange,
+    minimumValue = defaultProps.minimumValue,
+    maximumValue = defaultProps.maximumValue,
+    step = defaultProps.step,
+    size = defaultProps.size,
+    isRange = defaultProps.isRange,
     overrides = {},
   } = props;
+  const theme = useTheme();
 
   const finalInitialValue =
     initialValue || (isRange ? [minimumValue, maximumValue] : minimumValue);
@@ -244,18 +258,30 @@ export const Slider = <TIsRange extends boolean>(
   const left = getLeftValue(value) * pixelPerValue;
   const right = getRightValue(value) * pixelPerValue;
 
-  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.Slider.Root'),
+    overrides.Root,
+  );
   const [UnselectedTrack, unselectedTrackProps] = getOverrides(
     StyledUnselectedTrack,
     props,
+    dlv(theme, 'overrides.Slider.UnselectedTrack'),
     overrides.UnselectedTrack,
   );
   const [SelectedTrack, selectedTrackProps] = getOverrides(
     StyledSelectedTrack,
     props,
+    dlv(theme, 'overrides.Slider.SelectedTrack'),
     overrides.SelectedTrack,
   );
-  const [Thumb, thumbProps] = getOverrides(StyledThumb, props, overrides.Thumb);
+  const [Thumb, thumbProps] = getOverrides(
+    StyledThumb,
+    props,
+    dlv(theme, 'overrides.Slider.Thumb'),
+    overrides.Thumb,
+  );
 
   return (
     <Root size={size} onMeasure={setTrackMeasurements} {...rootProps}>
@@ -290,11 +316,11 @@ export const Slider = <TIsRange extends boolean>(
 };
 
 interface RootProps extends ViewMeasureProps {
-  size: ControlSize | number;
+  size?: ControlSize | number;
 }
 
 const StyledRoot = (props: RootProps) => {
-  const { style, size, ...viewMeasureProps } = props;
+  const { style, size = defaultProps.size, ...viewMeasureProps } = props;
   const theme = useTheme();
 
   const controlSize = isControlSize(size) ? theme.controlHeights[size] : size;
@@ -314,11 +340,11 @@ const StyledRoot = (props: RootProps) => {
 };
 
 interface UnselectedTrackProps extends ViewProps {
-  size: ControlSize | number;
+  size?: ControlSize | number;
 }
 
 const StyledUnselectedTrack = (props: UnselectedTrackProps) => {
-  const { style, size, ...viewProps } = props;
+  const { style, size = defaultProps.size, ...viewProps } = props;
   const theme = useTheme();
 
   const controlSize = isControlSize(size) ? theme.controlHeights[size] : size;
@@ -341,14 +367,21 @@ const StyledUnselectedTrack = (props: UnselectedTrackProps) => {
 };
 
 interface SelectedTrackProps extends ViewProps {
-  size: ControlSize | number;
-  left: number;
-  right: number;
-  isRangeSlider: boolean;
+  size?: ControlSize | number;
+  left?: number;
+  right?: number;
+  isRangeSlider?: boolean;
 }
 
 const StyledSelectedTrack = (props: SelectedTrackProps) => {
-  const { style, size, left, right, isRangeSlider, ...viewProps } = props;
+  const {
+    style,
+    size = defaultProps.size,
+    left = 0,
+    right = 0,
+    isRangeSlider,
+    ...viewProps
+  } = props;
   const theme = useTheme();
 
   const controlSize = isControlSize(size) ? theme.controlHeights[size] : size;
@@ -372,14 +405,20 @@ const StyledSelectedTrack = (props: SelectedTrackProps) => {
 };
 
 interface ThumbProps extends ViewProps {
-  size: ControlSize | number;
-  isSliding: boolean;
-  position: number;
-  value: number;
+  size?: ControlSize | number;
+  isSliding?: boolean;
+  position?: number;
+  value?: number;
 }
 
 const StyledThumb = (props: ThumbProps) => {
-  const { style, size, isSliding, position, ...viewProps } = props;
+  const {
+    style,
+    size = defaultProps.size,
+    isSliding = false,
+    position = 0,
+    ...viewProps
+  } = props;
   const theme = useTheme();
 
   const controlSize = isControlSize(size) ? theme.controlHeights[size] : size;

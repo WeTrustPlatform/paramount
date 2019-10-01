@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import {
   GestureResponderEvent,
@@ -57,9 +58,12 @@ export interface ListItemOverrides {
 export interface ListItemProps
   extends WithOverrides<ListItemBaseProps, ListItemOverrides> {}
 
+const defaultProps = {
+  isDisabled: false,
+};
 export const ListItem = (props: ListItemProps) => {
   const {
-    isDisabled = false,
+    isDisabled = defaultProps.isDisabled,
     title,
     description,
     onPress,
@@ -67,29 +71,50 @@ export const ListItem = (props: ListItemProps) => {
     source,
     overrides = {},
   } = props;
+  const theme = useTheme();
+
   const [Touchable, touchableProps] = getOverrides(
     StyledTouchable,
     props,
+    dlv(theme, 'overrides.ListItem.Touchable'),
     overrides.Touchable,
   );
   const [TextWrapper, textProps] = getOverrides(
     StyledTextWrapper,
     props,
+    dlv(theme, 'overrides.ListItem.TextWrapper'),
     overrides.TextWrapper,
   );
-  const [Title, titleProps] = getOverrides(StyledTitle, props, overrides.Title);
+  const [Title, titleProps] = getOverrides(
+    StyledTitle,
+    props,
+    dlv(theme, 'overrides.ListItem.Title'),
+    overrides.Title,
+  );
   const [Description, descriptionProps] = getOverrides(
     StyledDescription,
     props,
+    dlv(theme, 'overrides.ListItem.Description'),
     overrides.Description,
   );
   const [Action, rightIconProps] = getOverrides(
     StyledAction,
     props,
+    dlv(theme, 'overrides.ListItem.Action'),
     overrides.Action,
   );
-  const [AvatarR, avatarProps] = getOverrides(Avatar, props, overrides.Avatar);
-  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+  const [AvatarR, avatarProps] = getOverrides(
+    Avatar,
+    props,
+    dlv(theme, 'overrides.ListItem.Avatar'),
+    overrides.Avatar,
+  );
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.ListItem.Root'),
+    overrides.Root,
+  );
 
   return (
     <Root isDisabled={isDisabled} {...rootProps}>
@@ -112,7 +137,7 @@ export const ListItem = (props: ListItemProps) => {
 
 interface RootProps extends ViewProps {
   children?: React.ReactNode;
-  isDisabled: boolean;
+  isDisabled?: boolean;
 }
 
 const StyledRoot = (props: RootProps) => {
@@ -140,11 +165,16 @@ const StyledRoot = (props: RootProps) => {
 
 interface TouchableProps extends TouchableOpacityProps {
   children?: React.ReactNode;
-  isDisabled: boolean;
+  isDisabled?: boolean;
 }
 
 const StyledTouchable = (props: TouchableProps) => {
-  const { style, children, isDisabled, ...touchableProps } = props;
+  const {
+    style,
+    children,
+    isDisabled = defaultProps.isDisabled,
+    ...touchableProps
+  } = props;
 
   return (
     <TouchableOpacity

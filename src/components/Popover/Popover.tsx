@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 
@@ -18,16 +19,19 @@ export interface PopoverProps
 
 export const Popover = (props: PopoverProps) => {
   const { content, overrides = {}, ...restProps } = props;
+  const theme = useTheme();
 
   const [Content, contentProps] = getOverrides(
     StyledContent,
     props,
+    dlv(theme, 'overrides.Popover.Content'),
     overrides.Content,
   );
 
   return (
     <Positioner
       content={<Content {...contentProps}>{content}</Content>}
+      // TODO: pass overrides from theme
       overrides={overrides}
       {...restProps}
     />

@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 
@@ -18,7 +19,7 @@ interface TabsBaseProps {
   /**
    * Called when a Tab is pressed
    */
-  onTabChange: (tab: number) => void;
+  onChangeTab: (tab: number) => void;
 
   /**
    * `Tab` components
@@ -34,11 +35,32 @@ export interface TabsOverrides {
 export interface TabsProps
   extends WithOverrides<TabsBaseProps, TabsOverrides> {}
 
-export const Tabs = (props: TabsProps) => {
-  const { tabs = [], activeTab, onTabChange, overrides = {} } = props;
+const defaultProps = {
+  tabs: [],
+  activeTab: 0,
+};
 
-  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
-  const [Tab, tabProps] = getOverrides(StyledTab, props, overrides.Tab);
+export const Tabs = (props: TabsProps) => {
+  const {
+    tabs = defaultProps.tabs,
+    activeTab = defaultProps.activeTab,
+    onChangeTab,
+    overrides = {},
+  } = props;
+  const theme = useTheme();
+
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.Tabs.Root'),
+    overrides.Root,
+  );
+  const [Tab, tabProps] = getOverrides(
+    StyledTab,
+    props,
+    dlv(theme, 'overrides.Tabs.Tab'),
+    overrides.Tab,
+  );
 
   return (
     <Root {...rootProps}>
@@ -48,7 +70,7 @@ export const Tabs = (props: TabsProps) => {
           index={index}
           isActive={index === activeTab}
           title={tab.title}
-          onPress={() => onTabChange(index)}
+          onPress={() => onChangeTab(index)}
           {...tabProps}
         />
       ))}
@@ -83,9 +105,8 @@ const StyledRoot = (props: RootProps) => {
 };
 
 export interface TabProps extends ButtonProps {
-  index: number;
-  isActive: boolean;
-  title: string;
+  index?: number;
+  isActive?: boolean;
 }
 
 export const StyledTab = (props: TabProps) => {

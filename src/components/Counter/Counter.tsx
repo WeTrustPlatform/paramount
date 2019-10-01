@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import {
   TouchableOpacity,
@@ -49,36 +50,55 @@ export interface CounterOverrides {
 export interface CounterProps
   extends WithOverrides<CounterBaseProps, CounterOverrides> {}
 
+const defaultProps = {
+  value: 0,
+  step: 1,
+};
+
 export const Counter = (props: CounterProps) => {
   const {
-    value = 0,
+    value = defaultProps.value,
+    step = defaultProps.step,
     max,
     min,
-    step = 1,
     onValueChange = () => {
       return;
     },
     overrides = {},
   } = props;
+  const theme = useTheme();
 
   const isDecrementDisabled = min === value;
   const isIncrementDisabled = max === value;
 
-  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.Counter.Root'),
+    overrides.Root,
+  );
   const [Touchable, touchableProps] = getOverrides(
     StyledTouchable,
     props,
+    dlv(theme, 'overrides.Counter.Touchable'),
     overrides.Touchable,
   );
-  const [Count, countProps] = getOverrides(StyledCount, props, overrides.Count);
+  const [Count, countProps] = getOverrides(
+    StyledCount,
+    props,
+    dlv(theme, 'overrides.Counter.Count'),
+    overrides.Count,
+  );
   const [IconPlus, iconPlusProps] = getOverrides(
     StyledIconPlus,
     props,
+    dlv(theme, 'overrides.Counter.IconPlus'),
     overrides.IconPlus,
   );
   const [IconMinus, iconMinusProps] = getOverrides(
     StyledIconMinus,
     props,
+    dlv(theme, 'overrides.Counter.IconMinus'),
     overrides.IconMinus,
   );
 
@@ -138,11 +158,11 @@ const StyledRoot = (props: RootProps) => {
 };
 
 interface CountProps extends TextProps {
-  value: number;
+  value?: number;
 }
 
 const StyledCount = (props: CountProps) => {
-  const { value, style, ...textProps } = props;
+  const { value = defaultProps.value, style, ...textProps } = props;
 
   return (
     <Text
@@ -156,11 +176,17 @@ const StyledCount = (props: CountProps) => {
 };
 
 interface TouchableProps extends TouchableOpacityProps, PropsWithChildren {
-  isDisabled: boolean;
+  isDisabled?: boolean;
 }
 
 const StyledTouchable = (props: TouchableProps) => {
-  const { children, style, isDisabled, onPress, ...touchableProps } = props;
+  const {
+    children,
+    style,
+    isDisabled = false,
+    onPress,
+    ...touchableProps
+  } = props;
   const theme = useTheme();
 
   return (
@@ -193,7 +219,7 @@ interface StyledIconProps extends IconProps {
 }
 
 const StyledIcon = (props: StyledIconProps) => {
-  const { isDisabled, name, ...iconProps } = props;
+  const { isDisabled = false, name, ...iconProps } = props;
   const theme = useTheme();
 
   return (

@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { Platform, View, ViewProps } from 'react-native';
 import { animated, useSpring } from 'react-spring/native.cjs';
@@ -31,13 +32,29 @@ export interface ProgressBarOverrides {
 export interface ProgressBarProps
   extends WithOverrides<ProgressBarBaseProps, ProgressBarOverrides> {}
 
-export const ProgressBar = (props: ProgressBarProps) => {
-  const { percent = 0, size = 'medium', overrides = {} } = props;
+const defaultProps = {
+  percent: 0,
+  size: 'medium' as const,
+};
 
-  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+export const ProgressBar = (props: ProgressBarProps) => {
+  const {
+    percent = defaultProps.percent,
+    size = defaultProps.size,
+    overrides = {},
+  } = props;
+  const theme = useTheme();
+
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.ProgressBar.Root'),
+    overrides.Root,
+  );
   const [Progress, progressProps] = getOverrides(
     StyledProgress,
     props,
+    dlv(theme, 'overrides.ProgressBar.Progress'),
     overrides.Progress,
   );
 
@@ -50,11 +67,11 @@ export const ProgressBar = (props: ProgressBarProps) => {
 
 interface RootProps extends ViewProps {
   children?: React.ReactNode;
-  size: ControlSize | number;
+  size?: ControlSize | number;
 }
 
 const StyledRoot = (props: RootProps) => {
-  const { children, style, size, ...viewProps } = props;
+  const { children, style, size = defaultProps.size, ...viewProps } = props;
   const theme = useTheme();
 
   const height = isControlSize(size) ? theme.controlHeights[size] - 16 : size;
@@ -79,11 +96,16 @@ const StyledRoot = (props: RootProps) => {
 
 interface ProgressProps extends ViewProps {
   children?: React.ReactNode;
-  percent: number;
+  percent?: number;
 }
 
 const StyledProgress = (props: ProgressProps) => {
-  const { children, style, percent, ...viewProps } = props;
+  const {
+    percent = defaultProps.percent,
+    children,
+    style,
+    ...viewProps
+  } = props;
   const theme = useTheme();
 
   const boundPercent = Math.max(Math.min(percent, 100), 0);

@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import {
   GestureResponderEvent,
@@ -64,13 +65,21 @@ export interface ButtonOverrides {
 export interface ButtonProps
   extends WithOverrides<ButtonBaseProps, ButtonOverrides> {}
 
+const defaultProps = {
+  appearance: 'primary' as const,
+  color: 'default' as const,
+  isDisabled: false,
+  isLoading: false,
+  size: 'medium' as const,
+};
+
 export const Button = (props: ButtonProps) => {
   const {
-    appearance = 'primary',
-    color = 'default',
-    isDisabled = false,
-    isLoading = false,
-    size = 'medium',
+    appearance = defaultProps.appearance,
+    color = defaultProps.color,
+    isDisabled = defaultProps.isDisabled,
+    isLoading = defaultProps.isLoading,
+    size = defaultProps.size,
     onPress = () => {
       return;
     },
@@ -78,26 +87,36 @@ export const Button = (props: ButtonProps) => {
     testID,
     overrides = {},
   } = props;
+  const theme = useTheme();
 
   const [Touchable, touchableProps] = getOverrides(
     StyledTouchable,
     props,
+    dlv(theme, 'overrides.Button.Touchable'),
     overrides.Touchable,
   );
-  const [Title, titleProps] = getOverrides(StyledTitle, props, overrides.Title);
+  const [Title, titleProps] = getOverrides(
+    StyledTitle,
+    props,
+    dlv(theme, 'overrides.Button.Title'),
+    overrides.Title,
+  );
   const [Loading, loadingProps] = getOverrides(
     StyledLoading,
     props,
+    dlv(theme, 'overrides.Button.Loading'),
     overrides.Loading,
   );
   const [IconBefore, iconBeforeProps] = getOverrides(
     StyledIcon,
     props,
+    dlv(theme, 'overrides.Button.IconBefore'),
     overrides.IconBefore,
   );
   const [IconAfter, iconAfterProps] = getOverrides(
     StyledIcon,
     props,
+    dlv(theme, 'overrides.Button.IconAfter'),
     overrides.IconAfter,
   );
 
@@ -224,20 +243,20 @@ const getButtonAppearances = (
 };
 
 interface TouchableProps extends TouchableOpacityProps, PropsWithChildren {
-  color: ButtonColor;
-  appearance: ButtonAppearance;
-  size: ControlSize | number;
-  isDisabled: boolean;
-  isLoading: boolean;
+  color?: ButtonColor;
+  appearance?: ButtonAppearance;
+  size?: ControlSize | number;
+  isDisabled?: boolean;
+  isLoading?: boolean;
 }
 
 const StyledTouchable = (props: TouchableProps) => {
   const {
-    color,
-    appearance,
-    size,
-    isDisabled,
-    isLoading,
+    appearance = defaultProps.appearance,
+    color = defaultProps.color,
+    isDisabled = defaultProps.isDisabled,
+    isLoading = defaultProps.isLoading,
+    size = defaultProps.size,
     children,
     style,
     ...touchableProps
@@ -319,21 +338,21 @@ const getButtonTextColor = (theme: Theme): ButtonTextColors => {
 };
 
 interface TitleProps extends TextProps {
-  size: ControlSize | number;
-  color: ButtonColor;
+  size?: ControlSize | number;
+  color?: ButtonColor;
   title?: string;
-  appearance: ButtonAppearance;
-  isDisabled: boolean;
+  appearance?: ButtonAppearance;
+  isDisabled?: boolean;
 }
 
 const StyledTitle = (props: TitleProps) => {
   const {
-    size,
+    appearance = defaultProps.appearance,
+    color = defaultProps.color,
+    isDisabled = defaultProps.isDisabled,
+    size = defaultProps.size,
     title,
     style,
-    color,
-    isDisabled,
-    appearance,
     ...textProps
   } = props;
   const theme = useTheme();
@@ -368,24 +387,27 @@ const StyledTitle = (props: TitleProps) => {
 };
 
 interface LoadingProps {
-  color: ButtonColor;
-  appearance: ButtonAppearance;
+  color?: ButtonColor;
+  appearance?: ButtonAppearance;
 }
 
 const StyledLoading = (props: LoadingProps) => {
-  const { color, appearance } = props;
+  const {
+    appearance = defaultProps.appearance,
+    color = defaultProps.color,
+  } = props;
   const theme = useTheme();
 
   return <Dots color={getButtonTextColor(theme)[appearance][color]} />;
 };
 
 interface IconProps extends PropsWithChildren {
-  size: ControlSize | number;
-  color: ButtonColor;
+  size?: ControlSize | number;
+  color?: ButtonColor;
   title?: string;
-  appearance: ButtonAppearance;
-  isDisabled: boolean;
-  isLoading: boolean;
+  appearance?: ButtonAppearance;
+  isDisabled?: boolean;
+  isLoading?: boolean;
 }
 
 const StyledIcon = (props: IconProps) => {

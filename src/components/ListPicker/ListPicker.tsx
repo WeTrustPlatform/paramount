@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { FlatList, FlatListProps } from 'react-native';
 
@@ -22,7 +23,7 @@ interface ListPickerBaseProps<TIsMulti extends boolean, TValue extends any> {
    * Set whether it should allow multiple selections. You should specify the value to get proper type-checking.
    * @default false
    */
-  isMulti?: TIsMulti;
+  isMulti: TIsMulti;
   /**
    * Select item or items.
    * For single-select use single string.
@@ -58,17 +59,33 @@ export interface ListPickerProps<TIsMulti extends boolean, TValue extends any>
     ListPickerOverrides<TValue>
   > {}
 
+const defaultProps = {
+  options: [],
+};
+
 export const ListPicker = <TIsMulti extends boolean, TValue extends any>(
   props: ListPickerProps<TIsMulti, TValue>,
 ) => {
-  const { value, onValueChange, options = [], overrides = {} } = props;
+  const {
+    value,
+    onValueChange,
+    options = defaultProps.options,
+    overrides = {},
+  } = props;
   const theme = useTheme();
+
   const [ListPickerItem, listPickerItemProps] = getOverrides(
     StyledListPickerItem,
     props,
+    dlv(theme, 'overrides.ListPicker.ListPickerItem'),
     overrides.ListPickerItem,
   );
-  const [List, listProps] = getOverrides(StyledList, props, overrides.List);
+  const [List, listProps] = getOverrides(
+    StyledList,
+    props,
+    dlv(theme, 'overrides.ListPicker.List'),
+    overrides.List,
+  );
 
   const handleOnPress = React.useCallback(
     (itemValue: TValue, itemIndex: number, isSelected: boolean) => {

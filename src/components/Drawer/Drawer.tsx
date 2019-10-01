@@ -1,8 +1,10 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 import { animated, useSpring } from 'react-spring/native.cjs';
 
 import { springDefaultConfig } from '../../constants/Animation';
+import { useTheme } from '../../theme';
 import { getOverrides, WithOverrides } from '../../utils/overrides';
 import { Modal } from '../Modal';
 import { Overlay, OverlayProps } from '../Overlay';
@@ -65,28 +67,44 @@ export interface DrawerOverrides {
 export interface DrawerProps
   extends WithOverrides<DrawerBaseProps, DrawerOverrides> {}
 
+const defaultProps = {
+  shouldLockBodyScroll: true,
+  useHistory: false,
+  isVisible: false,
+  position: 'bottom' as const,
+  offset: 0,
+};
+
 export const Drawer = (props: DrawerProps) => {
   const {
+    isVisible = defaultProps.isVisible,
+    position = defaultProps.position,
+    offset = defaultProps.offset,
+    shouldLockBodyScroll = defaultProps.shouldLockBodyScroll,
+    useHistory = defaultProps.useHistory,
     children,
-    isVisible = false,
     onRequestClose = () => null,
-    position = 'bottom',
-    offset = 0,
     space,
-    shouldLockBodyScroll = true,
-    useHistory = false,
     overrides = {},
   } = props;
+  const theme = useTheme();
 
-  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.Drawer.Root'),
+    overrides.Root,
+  );
   const [Content, contentProps] = getOverrides(
     StyledContent,
     props,
+    dlv(theme, 'overrides.Drawer.Content'),
     overrides.Content,
   );
   const [OverlayR, overlayProps] = getOverrides(
     Overlay,
     props,
+    dlv(theme, 'overrides.Drawer.Overlay'),
     overrides.Overlay,
   );
 
@@ -142,13 +160,20 @@ const StyledRoot = (props: RootProps) => {
 };
 
 interface ContentProps extends ViewProps, PropsWithChildren {
-  offset: number;
+  offset?: number;
   space?: number | string;
-  position: Position;
+  position?: Position;
 }
 
 const StyledContent = (props: ContentProps) => {
-  const { children, offset, space, position, style, ...viewProps } = props;
+  const {
+    position = defaultProps.position,
+    offset = defaultProps.offset,
+    children,
+    space,
+    style,
+    ...viewProps
+  } = props;
 
   const animation = useSpring({
     [position]: offset,

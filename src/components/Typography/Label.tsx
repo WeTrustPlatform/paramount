@@ -1,6 +1,8 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { Platform, View, ViewProps, ViewStyle } from 'react-native';
 
+import { useTheme } from '../../theme';
 import { getOverrides, WithOverrides } from '../../utils/overrides';
 import { Text, TextProps } from './Text';
 
@@ -31,18 +33,35 @@ export interface LabelOverrides {
 export interface LabelProps
   extends WithOverrides<LabelBaseProps, LabelOverrides> {}
 
-export const Label = (props: LabelProps) => {
-  const { children, position = 'top', overrides = {}, label } = props;
+const defaultProps = {
+  position: 'top' as const,
+};
 
-  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+export const Label = (props: LabelProps) => {
+  const {
+    children,
+    position = defaultProps.position,
+    overrides = {},
+    label,
+  } = props;
+  const theme = useTheme();
+
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.Label.Root'),
+    overrides.Root,
+  );
   const [Wrapper, wrapperProps] = getOverrides(
     StyledWrapper,
     props,
+    dlv(theme, 'overrides.Label.Wrapper'),
     overrides.Wrapper,
   );
   const [LabelText, labelTextProps] = getOverrides(
     StyledLabelText,
     props,
+    dlv(theme, 'overrides.Label.LabelText'),
     overrides.LabelText,
   );
 
@@ -121,11 +140,16 @@ const StyledWrapper = (props: WrapperProps) => {
 
 interface LabelTextProps extends TextProps, PropsWithChildren {
   label?: string | false;
-  position: LabelPosition;
+  position?: LabelPosition;
 }
 
 const StyledLabelText = (props: LabelTextProps) => {
-  const { label, position, style, ...textProps } = props;
+  const {
+    label,
+    position = defaultProps.position,
+    style,
+    ...textProps
+  } = props;
 
   if (!label) return null;
 

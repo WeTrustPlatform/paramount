@@ -1,6 +1,8 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 
+import { useTheme } from '../../theme';
 import { getOverrides, Override } from '../../utils/overrides';
 import {
   ColumnCount,
@@ -78,7 +80,13 @@ export type ColumnOverride = Override<ColumnProps, RootProps>;
 
 export const Column = (props: ColumnProps) => {
   const { children, override, ...config } = props;
-  const [Root, rootProps] = getOverrides(StyledRoot, props, override);
+  const theme = useTheme();
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.Column'),
+    override,
+  );
 
   return (
     <Root {...config} {...rootProps}>

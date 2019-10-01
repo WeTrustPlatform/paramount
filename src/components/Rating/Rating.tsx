@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import {
   TouchableOpacity,
@@ -50,18 +51,37 @@ export interface RatingOverrides {
 export interface RatingProps
   extends WithOverrides<RatingBaseProps, RatingOverrides> {}
 
+const defaultProps = {
+  value: 0,
+  maxRating: 5,
+  onValueChange: () => undefined,
+  size: 'medium' as const,
+  color: 'primary' as const,
+};
+
 export const Rating = (props: RatingProps) => {
   const {
-    value = 0,
-    maxRating = 5,
-    onValueChange = () => undefined,
+    value = defaultProps.value,
+    maxRating = defaultProps.maxRating,
+    onValueChange = defaultProps.onValueChange,
+    size = defaultProps.size,
+    color = defaultProps.color,
     overrides = {},
-    size = 'medium',
-    color = 'primary',
   } = props;
+  const theme = useTheme();
 
-  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
-  const [StarR, starProps] = getOverrides(StyledStar, props, overrides.Star);
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.Rating.Root'),
+    overrides.Root,
+  );
+  const [StarR, starProps] = getOverrides(
+    StyledStar,
+    props,
+    dlv(theme, 'overrides.Rating.Star'),
+    overrides.Star,
+  );
 
   return (
     <Root {...rootProps}>
@@ -101,22 +121,22 @@ const StyledRoot = (props: RootProps) => {
 
 interface StarProps extends TouchableOpacityProps {
   children?: React.ReactNode;
-  size: ControlSize | number;
-  value: number;
-  rating: number;
-  color: TextColor;
-  maxRating: number;
+  size?: ControlSize | number;
+  value?: number;
+  rating?: number;
+  color?: TextColor;
+  maxRating?: number;
 }
 
 const StyledStar = (props: StarProps) => {
   const {
     children,
+    value = defaultProps.value,
+    maxRating = defaultProps.maxRating,
+    size = defaultProps.size,
+    color = defaultProps.color,
+    rating = defaultProps.maxRating,
     style,
-    size,
-    color,
-    value,
-    rating,
-    maxRating,
     ...touchableProps
   } = props;
   const theme = useTheme();

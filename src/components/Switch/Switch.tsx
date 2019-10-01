@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import {
   TouchableOpacity,
@@ -51,30 +52,41 @@ export interface SwitchOverrides {
 export interface SwitchProps
   extends WithOverrides<SwitchBaseProps, SwitchOverrides> {}
 
+const defaultProps = {
+  size: 'medium' as const,
+  value: false,
+  isDisabled: false,
+  onValueChange: () => {
+    return;
+  },
+};
+
 export const Switch = (props: SwitchProps) => {
   const {
-    size = 'medium',
-    value = false,
-    isDisabled = false,
-    onValueChange = () => {
-      return;
-    },
+    size = defaultProps.size,
+    value = defaultProps.value,
+    isDisabled = defaultProps.isDisabled,
+    onValueChange = defaultProps.onValueChange,
     overrides = {},
   } = props;
+  const theme = useTheme();
 
   const [Touchable, touchableProps] = getOverrides(
     StyledTouchable,
     props,
+    dlv(theme, 'overrides.Switch.Touchable'),
     overrides.Touchable,
   );
   const [Background, backgroundProps] = getOverrides(
     StyledBackground,
     props,
+    dlv(theme, 'overrides.Switch.Background'),
     overrides.Background,
   );
   const [Circle, circleProps] = getOverrides(
     StyledCircle,
     props,
+    dlv(theme, 'overrides.Switch.Circle'),
     overrides.Circle,
   );
 
@@ -104,8 +116,8 @@ export const Switch = (props: SwitchProps) => {
 
 interface TouchableProps extends TouchableOpacityProps {
   children?: React.ReactNode;
-  size: ControlSize | number;
-  isDisabled: boolean;
+  size?: ControlSize | number;
+  isDisabled?: boolean;
 }
 
 const StyledTouchable = (props: TouchableProps) => {
@@ -132,24 +144,28 @@ const StyledTouchable = (props: TouchableProps) => {
 
 interface BackgroundProps extends ViewProps {
   children?: React.ReactNode;
-  size: ControlSize | number;
-  isDisabled: boolean;
-  value: boolean;
+  size?: ControlSize | number;
+  isDisabled?: boolean;
+  value?: boolean;
 }
 
-const getCircleSize = (size: ControlSize | number = 'medium', theme: Theme) => {
+const getCircleSize = (size: ControlSize | number, theme: Theme) => {
   return isControlSize(size) ? theme.controlHeights[size] - 8 : size;
 };
 
-const getContainerSize = (
-  size: ControlSize | number = 'medium',
-  theme: Theme,
-) => {
+const getContainerSize = (size: ControlSize | number, theme: Theme) => {
   return getCircleSize(size, theme) * 2;
 };
 
 const StyledBackground = (props: BackgroundProps) => {
-  const { size, isDisabled, children, value, style, ...viewProps } = props;
+  const {
+    size = defaultProps.size,
+    isDisabled = defaultProps.isDisabled,
+    children,
+    value,
+    style,
+    ...viewProps
+  } = props;
   const theme = useTheme();
   const { backgroundColor } = useSpring({
     config: springDefaultConfig,
@@ -188,13 +204,19 @@ const StyledBackground = (props: BackgroundProps) => {
 };
 
 interface CircleProps extends ViewProps {
-  size: ControlSize | number;
-  isDisabled: boolean;
-  value: boolean;
+  size?: ControlSize | number;
+  isDisabled?: boolean;
+  value?: boolean;
 }
 
 const StyledCircle = (props: CircleProps) => {
-  const { size, isDisabled, value, style, ...viewProps } = props;
+  const {
+    size = defaultProps.size,
+    isDisabled,
+    value,
+    style,
+    ...viewProps
+  } = props;
   const theme = useTheme();
 
   const circleSize = getCircleSize(size, theme);

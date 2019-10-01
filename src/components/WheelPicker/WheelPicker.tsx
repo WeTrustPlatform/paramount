@@ -1,6 +1,8 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { FlatList } from 'react-native';
 
+import { useTheme } from '../../theme';
 import { getOverrides, WithOverrides } from '../../utils/overrides';
 import {
   ArrowProps,
@@ -66,6 +68,7 @@ export const WheelPicker = React.forwardRef(
     ref: React.Ref<WheelPicker<TValue>>,
   ) => {
     const { options = [], onValueChange, value, overrides = {} } = props;
+    const theme = useTheme();
     const listRef = React.useRef<FlatList<WheelPickerOption<TValue>>>(null);
 
     const {
@@ -86,35 +89,46 @@ export const WheelPicker = React.forwardRef(
 
     const initialScrollIndex = options.findIndex(o => o.value === value);
 
-    const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+    const [Root, rootProps] = getOverrides(
+      StyledRoot,
+      props,
+      dlv(theme, 'overrides.WheelPicker.Root'),
+      overrides.Root,
+    );
     const [ArrowUp, arrowUpProps] = getOverrides(
       StyledArrowUp,
       props,
+      dlv(theme, 'overrides.WheelPicker.ArrowUp'),
       overrides.ArrowUp,
     );
     const [ArrowDown, arrowDownProps] = getOverrides(
       StyledArrowDown,
       props,
+      dlv(theme, 'overrides.WheelPicker.ArrowDown'),
       overrides.ArrowDown,
     );
     const [UpperOverlay, upperOverlayProps] = getOverrides(
       StyledUpperOverlay,
       props,
+      dlv(theme, 'overrides.WheelPicker.UpperOverlay'),
       overrides.UpperOverlay,
     );
     const [BottomOverlay, bottomOverlayProps] = getOverrides(
       StyledBottomOverlay,
       props,
+      dlv(theme, 'overrides.WheelPicker.BottomOverlay'),
       overrides.BottomOverlay,
     );
     const [ListWrapper, listWrapperProps] = getOverrides(
       StyledListWrapper,
       props,
+      dlv(theme, 'overrides.WheelPicker.ListWrapper'),
       overrides.ListWrapper,
     );
     const [Item, itemProps] = getOverrides(
       StyledWheelPickerItem,
       props,
+      dlv(theme, 'overrides.WheelPicker.Item'),
       overrides.Item,
     );
 

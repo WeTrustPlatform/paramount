@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 
@@ -47,19 +48,37 @@ export interface BadgeOverrides {
 export interface BadgeProps
   extends WithOverrides<BadgeBaseProps, BadgeOverrides> {}
 
+const defaultProps = {
+  size: 'medium' as const,
+  color: 'neutral' as const,
+  isSolid: false,
+  shape: 'rounded' as const,
+};
+
 export const Badge = (props: BadgeProps) => {
   const {
-    size = 'medium',
-    color = 'neutral',
-    isSolid = false,
-    shape = 'rounded',
+    size = defaultProps.size,
+    color = defaultProps.color,
+    isSolid = defaultProps.isSolid,
+    shape = defaultProps.shape,
     title,
     testID,
     overrides = {},
   } = props;
+  const theme = useTheme();
 
-  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
-  const [Title, titleProps] = getOverrides(StyledTitle, props, overrides.Title);
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.Badge.Root'),
+    overrides.Root,
+  );
+  const [Title, titleProps] = getOverrides(
+    StyledTitle,
+    props,
+    dlv(theme, 'overrides.Badge.Title'),
+    overrides.Title,
+  );
 
   return (
     <Root
@@ -86,14 +105,22 @@ interface PropsWithChildren {
 }
 
 interface RootProps extends ViewProps, PropsWithChildren {
-  color: FillColor;
-  size: ControlSize | number;
-  shape: ContainerShape;
-  isSolid: boolean;
+  color?: FillColor;
+  size?: ControlSize | number;
+  shape?: ContainerShape;
+  isSolid?: boolean;
 }
 
 const StyledRoot = (props: RootProps) => {
-  const { size, color, isSolid, shape, children, style, ...viewProps } = props;
+  const {
+    size = defaultProps.size,
+    color = defaultProps.color,
+    isSolid = defaultProps.isSolid,
+    shape = defaultProps.shape,
+    children,
+    style,
+    ...viewProps
+  } = props;
   const theme = useTheme();
   const shapeStyles = theme.containerShapes[shape];
   const fills = isSolid ? theme.fills.solid : theme.fills.subtle;
@@ -150,13 +177,20 @@ const StyledRoot = (props: RootProps) => {
 };
 
 interface TitleProps extends TextProps {
-  color: FillColor;
+  color?: FillColor;
   title?: string;
-  isSolid: boolean;
+  isSolid?: boolean;
 }
 
 const StyledTitle = (props: TitleProps) => {
-  const { title, isSolid, style, color = 'neutral', ...textProps } = props;
+  const {
+    size = defaultProps.size,
+    color = defaultProps.color,
+    isSolid = defaultProps.isSolid,
+    title,
+    style,
+    ...textProps
+  } = props;
   const theme = useTheme();
   const fills = isSolid ? theme.fills.solid : theme.fills.subtle;
 

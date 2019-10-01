@@ -1,6 +1,8 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 
+import { useTheme } from '../../theme';
 import { getOverrides, Override } from '../../utils/overrides';
 import {
   ContainerSize,
@@ -39,7 +41,13 @@ export type ContainerOverride = Override<ContainerProps, RootProps>;
  */
 export const Container = (props: ContainerProps) => {
   const { children, size, fluid = false, override } = props;
-  const [Root, rootProps] = getOverrides(StyledRoot, props, override);
+  const theme = useTheme();
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.Container'),
+    override,
+  );
 
   return (
     <Root size={size} fluid={fluid} {...rootProps}>

@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { ScrollView, ScrollViewProps, View, ViewProps } from 'react-native';
 
@@ -44,36 +45,57 @@ export interface DialogOverrides {
 export interface DialogProps
   extends WithOverrides<DialogBaseProps, DialogOverrides> {}
 
+const defaultProps = {
+  shouldLockBodyScroll: true,
+  isVisible: false,
+  useHistory: false,
+};
+
 export const Dialog = (props: DialogProps) => {
   const {
     children,
-    shouldLockBodyScroll = true,
-    isVisible = false,
+    shouldLockBodyScroll = defaultProps.shouldLockBodyScroll,
+    isVisible = defaultProps.isVisible,
     onRequestClose = () => null,
-    useHistory = false,
+    useHistory = defaultProps.useHistory,
     overrides = {},
   } = props;
+  const theme = useTheme();
 
-  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.Dialog.Root'),
+    overrides.Root,
+  );
   const [Content, contentProps] = getOverrides(
     StyledContent,
     props,
+    dlv(theme, 'overrides.Dialog.Content'),
     overrides.Content,
   );
-  const [Body, bodyProps] = getOverrides(StyledBody, props, overrides.Body);
+  const [Body, bodyProps] = getOverrides(
+    StyledBody,
+    props,
+    dlv(theme, 'overrides.Dialog.Body'),
+    overrides.Body,
+  );
   const [OverlayR, overlayProps] = getOverrides(
     Overlay,
     props,
+    dlv(theme, 'overrides.Dialog.Overlay'),
     overrides.Overlay,
   );
   const [Header, headerProps] = getOverrides(
     StyledHeader,
     props,
+    dlv(theme, 'overrides.Dialog.Header'),
     overrides.Header,
   );
   const [Footer, footerProps] = getOverrides(
     StyledFooter,
     props,
+    dlv(theme, 'overrides.Dialog.Footer'),
     overrides.Footer,
   );
 

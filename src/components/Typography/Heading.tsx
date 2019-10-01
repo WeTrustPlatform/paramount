@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import {
   Platform,
@@ -68,8 +69,14 @@ export const Heading = (props: HeadingProps) => {
     override,
     ...textProps
   } = props;
+  const theme = useTheme();
 
-  const [Text, textRProps] = getOverrides(StyledHeading, props, override);
+  const [Text, textRProps] = getOverrides(
+    StyledHeading,
+    props,
+    dlv(theme, 'overrides.Heading'),
+    override,
+  );
 
   return (
     <Text

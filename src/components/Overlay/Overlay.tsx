@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { TouchableWithoutFeedback, View, ViewProps } from 'react-native';
 
@@ -5,16 +6,27 @@ import { useTheme } from '../../theme';
 import { getOverrides, Override } from '../../utils/overrides';
 
 export interface OverlayProps {
-  onPress: () => void;
+  onPress?: () => void;
   override?: OverlayOverride;
 }
 
 export type OverlayOverride = Override<OverlayProps, RootProps>;
 
 export const Overlay = (props: OverlayProps) => {
-  const { onPress, override } = props;
+  const {
+    onPress = () => {
+      return;
+    },
+    override,
+  } = props;
+  const theme = useTheme();
 
-  const [Root, rootProps] = getOverrides(StyledRoot, props, override);
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.Overlay'),
+    override,
+  );
 
   return <Root onPress={onPress} {...rootProps} />;
 };

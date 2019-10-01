@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { Picker as RNPicker, PickerProps as RNPickerProps } from 'react-native';
 
@@ -56,10 +57,12 @@ export const NativePicker = <TValue extends string | number>(
     onValueChange,
     overrides = {},
   } = props;
+  const theme = useTheme();
 
   const [Picker, pickerProps] = getOverrides(
     StyledPicker,
     props,
+    dlv(theme, 'overrides.NativePicker.Picker'),
     overrides.Picker,
   );
 

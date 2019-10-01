@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import {
   TouchableOpacity,
@@ -51,11 +52,15 @@ export interface CollapsibleOverrides {
 export interface CollapsibleProps
   extends WithOverrides<CollapsibleBaseProps, CollapsibleOverrides> {}
 
+const defaultProps = {
+  initialIsOpen: false,
+};
+
 export const Collapsible = (props: CollapsibleProps) => {
   const {
     title,
     children,
-    initialIsOpen = false,
+    initialIsOpen = defaultProps.initialIsOpen,
     isOpen,
     testID,
     onOpen = () => {
@@ -93,23 +98,32 @@ export const Collapsible = (props: CollapsibleProps) => {
   const [Touchable, touchableProps] = getOverrides(
     StyledTouchable,
     props,
+    dlv(theme, 'overrides.Collapsible.Touchable'),
     overrides.Touchable,
   );
 
-  const [Title, titleProps] = getOverrides(StyledTitle, props, overrides.Title);
+  const [Title, titleProps] = getOverrides(
+    StyledTitle,
+    props,
+    dlv(theme, 'overrides.Collapsible.Title'),
+    overrides.Title,
+  );
   const [Content, contentProps] = getOverrides(
     StyledContent,
     props,
+    dlv(theme, 'overrides.Collapsible.Content'),
     overrides.Content,
   );
   const [IconOpen, iconOpenProps] = getOverrides(
     StyledIconOpen,
     props,
+    dlv(theme, 'overrides.Collapsible.IconOpen'),
     overrides.IconOpen,
   );
   const [IconClose, iconCloseProps] = getOverrides(
     StyledIconClose,
     props,
+    dlv(theme, 'overrides.Collapsible.IconClose'),
     overrides.IconClose,
   );
 

@@ -1,6 +1,8 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 
+import { useTheme } from '../../theme';
 import { getOverrides, WithOverrides } from '../../utils/overrides';
 import { Label, LabelProps, Text, TextProps } from '../Typography';
 
@@ -42,26 +44,43 @@ export interface FormFieldOverrides {
 export interface FormFieldProps
   extends WithOverrides<FormFieldBaseProps, FormFieldOverrides> {}
 
+const defaultProps = {
+  labelPosition: 'top' as const,
+};
+
 export const FormField = (props: FormFieldProps) => {
   const {
     label,
     error,
     children,
     description,
-    labelPosition = 'top',
+    labelPosition = defaultProps.labelPosition,
     overrides = {},
   } = props;
+  const theme = useTheme();
 
-  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
-  const [LabelR, labelRProps] = getOverrides(Label, props, overrides.Label);
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.FormField.Root'),
+    overrides.Root,
+  );
+  const [LabelR, labelRProps] = getOverrides(
+    Label,
+    props,
+    dlv(theme, 'overrides.FormField.Label'),
+    overrides.Label,
+  );
   const [Description, descriptionProps] = getOverrides(
     StyledDescription,
     props,
+    dlv(theme, 'overrides.FormField.Description'),
     overrides.Description,
   );
   const [ErrorR, errorProps] = getOverrides(
     StyledError,
     props,
+    dlv(theme, 'overrides.FormField.Error'),
     overrides.Error,
   );
 

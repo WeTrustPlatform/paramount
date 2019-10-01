@@ -36,6 +36,7 @@ import {
   ToastProvider,
   WheelPickerOverrides,
 } from '../components';
+import { Overrides } from '../utils/overrides';
 import { defaultTheme } from './defaultTheme';
 
 export interface TextSizes {
@@ -262,40 +263,40 @@ export interface Theme {
 
   // Containers
   containerShapes: ContainerShapes;
+
+  overrides?: Partial<ThemeOverrides>;
 }
 
-export interface Theme {
-  overrides?: Partial<{
-    Alert: Partial<AlertOverrides>;
-    Avatar: Partial<AvatarOverrides>;
-    Badge: Partial<BadgeOverrides>;
-    Button: Partial<ButtonOverrides>;
-    Checkbox: Partial<CheckboxOverrides>;
-    Collapsible: Partial<CollapsibleOverrides>;
-    Column: Partial<ColumnOverride>;
-    Container: Partial<ContainerOverride>;
-    Counter: Partial<CounterOverrides>;
-    Dialog: Partial<DialogOverrides>;
-    Divider: Partial<DividerOverride>;
-    Drawer: Partial<DrawerOverrides>;
-    FormField: Partial<FormFieldOverrides>;
-    Heading: Partial<HeadingOverride>;
-    Label: Partial<LabelOverrides>;
-    ListItem: Partial<ListItemOverrides>;
-    NativePicker: Partial<NativePickerOverrides>;
-    Overlay: Partial<OverlayOverride>;
-    Popover: Partial<PopoverOverrides>;
-    Positioner: Partial<PositionerOverrides>;
-    ProgressBar: Partial<ProgressBarOverrides>;
-    Rating: Partial<RatingOverrides>;
-    Row: Partial<RowOverride>;
-    Slider: Partial<SliderOverrides>;
-    Switch: Partial<SwitchOverrides>;
-    Tabs: Partial<TabsOverrides>;
-    Text: Partial<TextOverride>;
-    TextInput: Partial<TextInputOverrides>;
-    WheelPicker: Partial<WheelPickerOverrides<any>>;
-  }>;
+export interface ThemeOverrides {
+  Alert: Partial<Overrides<any, AlertOverrides>>;
+  Avatar: Partial<Overrides<any, AvatarOverrides>>;
+  Badge: Partial<Overrides<any, BadgeOverrides>>;
+  Button: Partial<Overrides<any, ButtonOverrides>>;
+  Checkbox: Partial<Overrides<any, CheckboxOverrides>>;
+  Collapsible: Partial<Overrides<any, CollapsibleOverrides>>;
+  Column: Partial<Overrides<any, ColumnOverride>>;
+  Container: Partial<Overrides<any, ContainerOverride>>;
+  Counter: Partial<Overrides<any, CounterOverrides>>;
+  Dialog: Partial<Overrides<any, DialogOverrides>>;
+  Divider: Partial<Overrides<any, DividerOverride>>;
+  Drawer: Partial<Overrides<any, DrawerOverrides>>;
+  FormField: Partial<Overrides<any, FormFieldOverrides>>;
+  Heading: Partial<Overrides<any, HeadingOverride>>;
+  Label: Partial<Overrides<any, LabelOverrides>>;
+  ListItem: Partial<Overrides<any, ListItemOverrides>>;
+  NativePicker: Partial<Overrides<any, NativePickerOverrides>>;
+  Overlay: Partial<Overrides<any, OverlayOverride>>;
+  Popover: Partial<Overrides<any, PopoverOverrides>>;
+  Positioner: Partial<Overrides<any, PositionerOverrides>>;
+  ProgressBar: Partial<Overrides<any, ProgressBarOverrides>>;
+  Rating: Partial<Overrides<any, RatingOverrides>>;
+  Row: Partial<Overrides<any, RowOverride>>;
+  Slider: Partial<Overrides<any, SliderOverrides>>;
+  Switch: Partial<Overrides<any, SwitchOverrides>>;
+  Tabs: Partial<Overrides<any, TabsOverrides>>;
+  Text: Partial<Overrides<any, TextOverride>>;
+  TextInput: Partial<Overrides<any, TextInputOverrides>>;
+  WheelPicker: Partial<Overrides<any, WheelPickerOverrides<any>>>;
 }
 
 export const ThemeContext = React.createContext(defaultTheme);
@@ -316,6 +317,7 @@ export interface ThemeProviderProps {
     controlHeights: Partial<ControlSizes>;
     controlBorderRadius: Partial<ControlSizes>;
     containerShapes: Partial<ContainerShapes>;
+    overrides: Partial<ThemeOverrides>;
   }>;
 }
 

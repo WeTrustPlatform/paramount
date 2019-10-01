@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 
@@ -34,15 +35,27 @@ export interface DividerProps {
 
 export type DividerOverride = Override<DividerProps, StyledDividerProps>;
 
+const defaultProps = {
+  size: 'small' as const,
+  color: 'default' as const,
+  orientation: 'horizontal' as const,
+};
+
 export const Divider = (props: DividerProps) => {
   const {
-    size = 'small',
-    color = 'default',
-    orientation = 'horizontal',
+    size = defaultProps.size,
+    color = defaultProps.color,
+    orientation = defaultProps.orientation,
     override,
   } = props;
+  const theme = useTheme();
 
-  const [Root, rootProps] = getOverrides(StyledDivider, props, override);
+  const [Root, rootProps] = getOverrides(
+    StyledDivider,
+    props,
+    dlv(theme, 'overrides.Divider'),
+    override,
+  );
 
   return (
     <Root size={size} color={color} orientation={orientation} {...rootProps} />
@@ -65,14 +78,20 @@ const dividerScale: { [size in ControlSize]: number } = {
 };
 
 interface StyledDividerProps extends ViewProps {
-  size: ControlSize | number;
-  color: BorderColor | string;
-  orientation: DividerOrientation;
+  size?: ControlSize | number;
+  color?: BorderColor | string;
+  orientation?: DividerOrientation;
 }
 
 const StyledDivider = (props: StyledDividerProps) => {
   const theme = useTheme();
-  const { size, color, orientation, style, ...viewProps } = props;
+  const {
+    size = defaultProps.size,
+    color = defaultProps.color,
+    orientation = defaultProps.orientation,
+    style,
+    ...viewProps
+  } = props;
 
   const backgroundColor = getDividerColor(theme.colors.border)(
     color || theme.colors.border.default,

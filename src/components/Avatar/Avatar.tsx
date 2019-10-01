@@ -1,3 +1,4 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import {
   Image,
@@ -52,31 +53,45 @@ export interface AvatarOverrides {
 export interface AvatarProps
   extends WithOverrides<AvatarBaseProps, AvatarOverrides> {}
 
+const defaultProps = {
+  name: '',
+  size: 'medium' as const,
+  isSolid: false,
+};
+
 export const Avatar = (props: AvatarProps) => {
   const {
     source,
-    name = '',
-    size = 'medium',
-    isSolid = false,
+    name = defaultProps.name,
+    size = defaultProps.size,
+    isSolid = defaultProps.isSolid,
     color,
     testID,
     overrides = {},
   } = props;
 
+  const theme = useTheme();
   const [hasImageFailedLoading, setHasImageFailedLoading] = React.useState(
     false,
   );
   const imageUnavailable = !source || hasImageFailedLoading;
 
-  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.Avatar.Root'),
+    overrides.Root,
+  );
   const [Initials, initialsProps] = getOverrides(
     StyledInitials,
     props,
+    dlv(theme, 'overrides.Avatar.Initial'),
     overrides.Initials,
   );
   const [ImageR, imageProps] = getOverrides(
     StyledImage,
     props,
+    dlv(theme, 'overrides.Avatar.Image'),
     overrides.Image,
   );
 
@@ -138,14 +153,22 @@ const avatarScale: { [size in ControlSize]: number } = {
 };
 
 interface RootProps extends ViewProps, PropsWithChildren {
-  size: ControlSize | number;
-  name: string;
-  isSolid: boolean;
+  size?: ControlSize | number;
+  name?: string;
+  isSolid?: boolean;
   color?: FillColor;
 }
 
 const StyledRoot = (props: RootProps) => {
-  const { size, testID, children, isSolid, color, style } = props;
+  const {
+    testID,
+    children,
+    name = defaultProps.name,
+    size = defaultProps.size,
+    isSolid = defaultProps.isSolid,
+    color,
+    style,
+  } = props;
   const theme = useTheme();
   const appearances = theme.fills[isSolid ? 'solid' : 'subtle'];
   const keys = Object.keys(appearances);
@@ -192,14 +215,21 @@ const getInitials = (name?: string, fallback = '?') => {
 };
 
 interface InitialsProps extends ViewProps {
-  size: ControlSize | number;
-  name: string;
-  isSolid: boolean;
+  size?: ControlSize | number;
+  name?: string;
+  isSolid?: boolean;
   color?: FillColor;
 }
 
 const StyledInitials = (props: InitialsProps) => {
-  const { size, isSolid, color, style, ...textProps } = props;
+  const {
+    name = defaultProps.name,
+    size = defaultProps.size,
+    isSolid = defaultProps.isSolid,
+    color,
+    style,
+    ...textProps
+  } = props;
   const theme = useTheme();
 
   const appearances = theme.fills[isSolid ? 'solid' : 'subtle'];

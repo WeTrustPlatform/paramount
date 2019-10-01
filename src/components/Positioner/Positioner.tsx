@@ -1,7 +1,9 @@
+import dlv from 'dlv';
 import * as React from 'react';
 import { ViewStyle } from 'react-native';
 
 import { Measurements } from '../../hooks';
+import { useTheme } from '../../theme';
 import { getOverrides, WithOverrides } from '../../utils/overrides';
 import { ViewMeasure, ViewMeasureProps } from '../Helpers';
 
@@ -135,14 +137,21 @@ const initialMeasurements = {
   y: 0,
 };
 
+const defaultProps = {
+  isVisible: false,
+  position: POSITION.BOTTOM,
+};
+
 export const Positioner = (props: PositionerProps) => {
   const {
     children,
     content,
-    isVisible,
-    position = POSITION.BOTTOM,
+    isVisible = defaultProps.isVisible,
+    position = defaultProps.position,
     overrides = {},
   } = props;
+  const theme = useTheme();
+
   const [targetMeasurements, setTargetMeasurements] = React.useState(
     initialMeasurements,
   );
@@ -160,10 +169,16 @@ export const Positioner = (props: PositionerProps) => {
     targetMeasurements,
   });
 
-  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.Positioner.Root'),
+    overrides.Root,
+  );
   const [Target, targetProps] = getOverrides(
     ViewMeasure,
     props,
+    dlv(theme, 'overrides.Positioner.Target'),
     overrides.Target,
   );
 
@@ -187,15 +202,15 @@ export const Positioner = (props: PositionerProps) => {
 };
 
 interface RootProps extends ViewMeasureProps {
-  isPositionerMeasurementsMeasured: boolean;
-  positionStyle: ViewStyle;
+  isPositionerMeasurementsMeasured?: boolean;
+  positionStyle?: ViewStyle;
 }
 
 const StyledRoot = (props: RootProps) => {
   const {
     style,
     positionStyle,
-    isPositionerMeasurementsMeasured,
+    isPositionerMeasurementsMeasured = false,
     ...viewMeasureProps
   } = props;
 
