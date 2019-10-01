@@ -1,3 +1,10 @@
+# [1.81.0](https://github.com/WeTrustPlatform/paramount/compare/v1.80.0...v1.81.0) (2019-10-01)
+
+
+### Features
+
+* implement overrides pattern ([#296](https://github.com/WeTrustPlatform/paramount/issues/296)) ([a962a7e](https://github.com/WeTrustPlatform/paramount/commit/a962a7e))
+
 # [1.80.0](https://github.com/WeTrustPlatform/paramount/compare/v1.79.1...v1.80.0) (2019-09-26)
 
 
