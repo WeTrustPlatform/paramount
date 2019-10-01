@@ -66,7 +66,7 @@ export interface ColumnConfig extends ColumnConfigBase {
   offsetXlarge?: ColumnCount;
 }
 
-export interface ColumnProps extends ColumnConfig {
+export interface ColumnProps extends ColumnConfig, ViewProps {
   /** Content of the column. */
   children?: React.ReactNode;
 

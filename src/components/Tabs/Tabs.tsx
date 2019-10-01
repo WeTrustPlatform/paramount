@@ -19,7 +19,7 @@ interface TabsBaseProps {
   /**
    * Called when a Tab is pressed
    */
-  onChangeTab: (tab: number) => void;
+  onChangeTab?: (tab: number) => void;
 
   /**
    * `Tab` components
@@ -38,13 +38,16 @@ export interface TabsProps
 const defaultProps = {
   tabs: [],
   activeTab: 0,
+  onChangeTab: () => {
+    return;
+  },
 };
 
 export const Tabs = (props: TabsProps) => {
   const {
     tabs = defaultProps.tabs,
     activeTab = defaultProps.activeTab,
-    onChangeTab,
+    onChangeTab = defaultProps.onChangeTab,
     overrides = {},
   } = props;
   const theme = useTheme();

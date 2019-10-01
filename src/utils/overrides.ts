@@ -1,7 +1,5 @@
 import deepMerge from 'deepmerge';
 
-import { Theme } from '../theme';
-
 export type GetProps<TProps = any, TChildProps = any> = (
   props: TProps,
 ) => TChildProps;
@@ -10,10 +8,7 @@ export type OverrideProps<TProps = any, TChildProps = any> =
   | GetProps<TProps, TChildProps>
   | TChildProps;
 
-export type GetStyle<TProps = any, TStyle = any> = (
-  props: TProps,
-  theme: Theme,
-) => TStyle;
+export type GetStyle<TProps = any, TStyle = any> = (props: TProps) => TStyle;
 
 export type OverrideStyle<TChildProps = any, TStyle = any> =
   | GetStyle<TChildProps, TStyle>

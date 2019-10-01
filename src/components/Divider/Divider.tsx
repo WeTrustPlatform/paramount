@@ -8,7 +8,7 @@ import { getOverrides, Override } from '../../utils/overrides';
 
 type DividerOrientation = 'horizontal' | 'vertical';
 
-export interface DividerProps {
+export interface DividerProps extends ViewProps {
   /**
    * Size of the divider.
    * @default small

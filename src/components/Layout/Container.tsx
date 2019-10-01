@@ -12,7 +12,7 @@ import {
   useLayout,
 } from './LayoutContext';
 
-export interface ContainerProps {
+export interface ContainerProps extends ViewProps {
   /** Children node */
   children?: React.ReactNode;
 

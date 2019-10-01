@@ -7,7 +7,7 @@ import { getOverrides, Override } from '../../utils/overrides';
 import { ColumnProps } from './Column';
 import { defaultLayout, useLayout } from './LayoutContext';
 
-export interface RowProps {
+export interface RowProps extends ViewProps {
   /**
    * When true, there will be gutter between columns
    * @default true

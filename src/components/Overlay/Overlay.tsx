@@ -5,7 +5,7 @@ import { TouchableWithoutFeedback, View, ViewProps } from 'react-native';
 import { useTheme } from '../../theme';
 import { getOverrides, Override } from '../../utils/overrides';
 
-export interface OverlayProps {
+export interface OverlayProps extends ViewProps {
   onPress?: () => void;
   override?: OverlayOverride;
 }
