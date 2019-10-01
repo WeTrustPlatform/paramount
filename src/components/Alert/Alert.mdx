@@ -27,9 +27,13 @@ Give feedback to the user about an action or state
       intent="danger"
       title="Danger"
       description="Message"
-      actionNode={
-        <Button title="Action" appearance="minimal" color="primary" />
-      }
+      overrides={{
+        Action: {
+          component: () => (
+            <Button title="Action" appearance="minimal" color="primary" />
+          ),
+        },
+      }}
     />
   </Box>
 </Playground>
@@ -37,34 +41,3 @@ Give feedback to the user about an action or state
 ## Props
 
 <Props of={Alert} />
-
-## Customization
-
-Use `getStyles` prop
-
-```tsx
-AlertStyles {
-  containerStyle: ViewStyle;
-  bodyStyle: ViewStyle;
-  leftWrapperStyle: ViewStyle;
-  titleStyle: TextStyle;
-  descriptionStyle: TextStyle;
-}
-
-getStyles={(AlertProps, Theme) => AlertStyles}
-```
-
-Markup
-
-```tsx
-<View containerStyle>
-  <View leftWrapperStyle>
-    {icon}
-    <View bodyStyle>
-      <Text titleStyle>{title}</Text>
-      <Text descriptionStyle>{description}</Text>
-    </View>
-  </View>
-  {action}
-</View>
-```

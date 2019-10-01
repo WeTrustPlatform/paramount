@@ -1,40 +1,42 @@
 import deepMerge from 'deepmerge';
 import React from 'react';
 import { TextStyle, ViewStyle } from 'react-native';
-import { DeepPartial } from 'ts-essentials';
 
-import { Layout, LayoutProvider, ToastProvider } from '../components';
-import { GetAlertStyles } from '../components/Alert/Alert.styles';
-import { GetAvatarStyles } from '../components/Avatar/Avatar.styles';
-import { GetBadgeStyles } from '../components/Badge/Badge.styles';
-import { GetButtonStyles } from '../components/Button/Button.styles';
-import { GetCheckboxStyles } from '../components/Checkbox/Checkbox.styles';
-import { GetCollapsibleStyles } from '../components/Collapsible/Collapsible.styles';
-import { GetCounterStyles } from '../components/Counter/Counter.styles';
-import { GetDialogStyles } from '../components/Dialog/Dialog.styles';
-import { GetDividerStyles } from '../components/Divider/Divider.styles';
-import { GetDrawerStyles } from '../components/Drawer/Drawer.styles';
-import { GetFormFieldStyles } from '../components/Form/FormField.styles';
-import { GetTextInputStyles } from '../components/Inputs/TextInput.styles';
-import { GetColumnStyles } from '../components/Layout/Column.styles';
-import { GetContainerStyles } from '../components/Layout/Container.styles';
-import { GetRowStyles } from '../components/Layout/Row.styles';
-import { GetListItemStyles } from '../components/ListItem/ListItem.styles';
-import { GetOverlayStyles } from '../components/Overlay/Overlay.styles';
-import { GetPickerButtonStyles } from '../components/Pickers/PickerButton.styles';
-import { GetPopoverStyles } from '../components/Popover/Popover.styles';
-import { GetPositionerStyles } from '../components/Positioner/Positioner.styles';
-import { GetProgressBarStyles } from '../components/ProgressBar/ProgressBar.styles';
-import { GetRatingStyles } from '../components/Rating/Rating.styles';
-import { GetSliderStyles } from '../components/Slider/Slider.styles';
-import { GetSwitchStyles } from '../components/Switch/Switch.styles';
-import { GetTabStyles } from '../components/Tabs/Tab.styles';
-import { GetTabsStyles } from '../components/Tabs/Tabs.styles';
-import { GetHeadingStyles } from '../components/Typography/Heading.styles';
-import { GetLabelStyles } from '../components/Typography/Label.styles';
-import { GetParagraphStyles } from '../components/Typography/Paragraph.styles';
-import { GetTextStyles } from '../components/Typography/Text.styles';
-import { GetWheelPickerStyles } from '../components/WheelPicker/WheelPicker.styles';
+import {
+  AlertOverrides,
+  AvatarOverrides,
+  BadgeOverrides,
+  ButtonOverrides,
+  CheckboxOverrides,
+  CollapsibleOverrides,
+  ColumnOverride,
+  ContainerOverride,
+  CounterOverrides,
+  DialogOverrides,
+  DividerOverride,
+  DrawerOverrides,
+  FormFieldOverrides,
+  HeadingOverride,
+  LabelOverrides,
+  Layout,
+  LayoutProvider,
+  ListItemOverrides,
+  NativePickerOverrides,
+  OverlayOverride,
+  PopoverOverrides,
+  PositionerOverrides,
+  ProgressBarOverrides,
+  RatingOverrides,
+  RowOverride,
+  SliderOverrides,
+  SwitchOverrides,
+  TabsOverrides,
+  TextInputOverrides,
+  TextOverride,
+  ToastProvider,
+  WheelPickerOverrides,
+} from '../components';
+import { Overrides } from '../utils/overrides';
 import { defaultTheme } from './defaultTheme';
 
 export interface TextSizes {
@@ -262,57 +264,69 @@ export interface Theme {
   // Containers
   containerShapes: ContainerShapes;
 
-  components: Partial<{
-    getAlertStyles: GetAlertStyles;
-    getAvatarStyles: GetAvatarStyles;
-    getBadgeStyles: GetBadgeStyles;
-    getButtonStyles: GetButtonStyles;
-    getCheckboxStyles: GetCheckboxStyles;
-    getCollapsibleStyles: GetCollapsibleStyles;
-    getCounterStyles: GetCounterStyles;
-    getDialogStyles: GetDialogStyles;
-    getDividerStyles: GetDividerStyles;
-    getDrawerStyles: GetDrawerStyles;
-    getFormFieldStyles: GetFormFieldStyles;
-    getColumnStyles: GetColumnStyles;
-    getContainerStyles: GetContainerStyles;
-    getRowStyles: GetRowStyles;
-    getTextInputStyles: GetTextInputStyles;
-    getLabelStyles: GetLabelStyles;
-    getListItemStyles: GetListItemStyles;
-    getOverlayStyles: GetOverlayStyles;
-    getPickerButtonStyles: GetPickerButtonStyles;
-    getPopoverStyles: GetPopoverStyles;
-    getPositionerStyles: GetPositionerStyles;
-    getProgressBarStyles: GetProgressBarStyles;
-    getRatingStyles: GetRatingStyles;
-    getWheelPickerStyles: GetWheelPickerStyles;
-    getSliderStyles: GetSliderStyles;
-    getSwitchStyles: GetSwitchStyles;
-    getTabStyles: GetTabStyles;
-    getTabsStyles: GetTabsStyles;
-    getHeadingStyles: GetHeadingStyles;
-    getTextStyles: GetTextStyles;
-    getParagraphStyles: GetParagraphStyles;
-  }>;
+  overrides?: Partial<ThemeOverrides>;
+}
+
+export interface ThemeOverrides {
+  Alert: Partial<Overrides<any, AlertOverrides>>;
+  Avatar: Partial<Overrides<any, AvatarOverrides>>;
+  Badge: Partial<Overrides<any, BadgeOverrides>>;
+  Button: Partial<Overrides<any, ButtonOverrides>>;
+  Checkbox: Partial<Overrides<any, CheckboxOverrides>>;
+  Collapsible: Partial<Overrides<any, CollapsibleOverrides>>;
+  Column: Partial<Overrides<any, ColumnOverride>>;
+  Container: Partial<Overrides<any, ContainerOverride>>;
+  Counter: Partial<Overrides<any, CounterOverrides>>;
+  Dialog: Partial<Overrides<any, DialogOverrides>>;
+  Divider: Partial<Overrides<any, DividerOverride>>;
+  Drawer: Partial<Overrides<any, DrawerOverrides>>;
+  FormField: Partial<Overrides<any, FormFieldOverrides>>;
+  Heading: Partial<Overrides<any, HeadingOverride>>;
+  Label: Partial<Overrides<any, LabelOverrides>>;
+  ListItem: Partial<Overrides<any, ListItemOverrides>>;
+  NativePicker: Partial<Overrides<any, NativePickerOverrides>>;
+  Overlay: Partial<Overrides<any, OverlayOverride>>;
+  Popover: Partial<Overrides<any, PopoverOverrides>>;
+  Positioner: Partial<Overrides<any, PositionerOverrides>>;
+  ProgressBar: Partial<Overrides<any, ProgressBarOverrides>>;
+  Rating: Partial<Overrides<any, RatingOverrides>>;
+  Row: Partial<Overrides<any, RowOverride>>;
+  Slider: Partial<Overrides<any, SliderOverrides>>;
+  Switch: Partial<Overrides<any, SwitchOverrides>>;
+  Tabs: Partial<Overrides<any, TabsOverrides>>;
+  Text: Partial<Overrides<any, TextOverride>>;
+  TextInput: Partial<Overrides<any, TextInputOverrides>>;
+  WheelPicker: Partial<Overrides<any, WheelPickerOverrides<any>>>;
 }
 
 export const ThemeContext = React.createContext(defaultTheme);
 
 export interface ThemeProviderProps {
   children?: React.ReactNode;
-  value?: DeepPartial<Theme>;
+  value?: Partial<{
+    colors: Partial<Colors>;
+    fills: Partial<Fills>;
+    layout: Partial<Layout>;
+    fontFamilies: Partial<FontFamilies>;
+    fontWeights: Partial<FontWeights>;
+    headingSizes: Partial<HeadingSizes>;
+    paragraphSizes: Partial<ParagraphSizes>;
+    textSizes: Partial<TextSizes>;
+    elevations: Partial<Elevations>;
+    controlPaddings: Partial<ControlSizes>;
+    controlHeights: Partial<ControlSizes>;
+    controlBorderRadius: Partial<ControlSizes>;
+    containerShapes: Partial<ContainerShapes>;
+    overrides: Partial<ThemeOverrides>;
+  }>;
 }
 
-const createTheme = (theme?: DeepPartial<Theme>): Theme => {
-  // @ts-ignore
-  return theme ? deepMerge(defaultTheme, theme) : defaultTheme;
-};
-
 export const ThemeProvider = (props: ThemeProviderProps) => {
-  const { children, value = defaultTheme } = props;
+  const { children, value } = props;
 
-  const theme = createTheme(value);
+  const theme = value
+    ? (deepMerge(defaultTheme, value) as Theme)
+    : defaultTheme;
 
   return (
     <ThemeContext.Provider value={theme}>

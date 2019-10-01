@@ -5,7 +5,7 @@ menu: Components
 
 import { Playground, Props } from 'docz';
 
-import { Icon, State, Tabs, Tab } from '..';
+import { State, Tabs } from '..';
 
 # Tabs
 
@@ -17,13 +17,12 @@ You can use a custom component in place of `Tab` component, though keep in mind 
   <State initial={{ activeTabIndex: 0 }}>
     {({ state, setState }) => (
       <Tabs
-        activeTabIndex={state.activeTabIndex}
-        onTabPress={index => setState({ activeTabIndex: index })}
-      >
-        {new Array(4).fill(0).map((v, i) => (
-          <Tab key={i} title={`Tab ${i + 1}`} />
-        ))}
-      </Tabs>
+        activeTab={state.activeTabIndex}
+        onChangeTab={tab => setState({ activeTabIndex: tab })}
+        tabs={new Array(4).fill(0).map((v, i) => ({
+          title: `Tab ${i + 1}`,
+        }))}
+      />
     )}
   </State>
 </Playground>
@@ -31,49 +30,3 @@ You can use a custom component in place of `Tab` component, though keep in mind 
 ## Tabs Props
 
 <Props of={Tabs} />
-
-## Tabs Customization
-
-Using `getStyles` prop
-
-```tsx
-TabsStyles {
-  containerStyle: ViewStyle;
-}
-
-getStyles={(TabsProps, Theme) => TabsStyles}
-```
-
-Markup
-
-```tsx
-<View style={containerStyle}>{tabs}</View>
-```
-
-## Tab Props
-
-Extends `ButtonProps`
-
-<Props of={Tab} />
-
-## Tab Customization
-
-Using `getStyles` prop
-
-```tsx
-TabStyles {
-  containerStyle: ViewStyle;
-  touchableStyle: ViewStyle;
-  textStyle: TextStyle;
-}
-
-getStyles={(TabProps, Theme) => TabStyles}
-```
-
-Markup
-
-```tsx
-<View style={containerStyle}>
-  <Button touchableStyle textStyle>
-</View>
-```

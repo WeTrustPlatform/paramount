@@ -61,30 +61,3 @@ import { Box, State, WheelPicker, Icon, TextInput } from '..';
 ## Props
 
 <Props of={WheelPicker} />
-
-## Customization
-
-Using `getStyles` prop
-
-```tsx
-WheelPickerStyles {
-  containerStyle: ViewStyle;
-  listContainerStyle: ViewStyle;
-  upperOverlayStyle: ViewStyle;
-  bottomOverlayStyle: ViewStyle;
-}
-
-getStyles={(WheelPickerProps, Theme) => WheelPickerStyles}
-```
-
-Markup
-
-```tsx
-<View containerStyle>
-  <FlatList listContainerStyle>
-    <WheelPickerItem key={option.value} option={option} />
-  </FlatList>
-  <View upperOverlayStyle />
-  <View bottomOverlayStyle />
-</View>
-```

@@ -14,7 +14,7 @@ import { CounterState, Rating } from '..';
 <Playground>
   <CounterState initial={3}>
     {({ count: rating, set }) => (
-      <Rating value={rating} size="small" onChange={value => set(value)} />
+      <Rating value={rating} size="small" onValueChange={value => set(value)} />
     )}
   </CounterState>
 </Playground>
@@ -22,29 +22,3 @@ import { CounterState, Rating } from '..';
 ## Props
 
 <Props of={Rating} />
-
-## Customization
-
-Using `getStyles` prop
-
-```
-RatingStyles {
-  touchableStyle: ViewStyle;
-  containerStyle: ViewStyle;
-  starColor: string;
-  starSize: number;
-}
-
-getStyles={(RatingProps, Theme) => RatingStyles}
-```
-
-Markup
-
-```tsx
-<View containerStyle>
-  <TouchableOpacity touchableStyle>
-    <Star color={starColor} size={starSize} />
-  </TouchableOpacity>
-  // ...repeat
-</View>
-```

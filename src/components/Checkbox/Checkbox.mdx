@@ -16,7 +16,12 @@ Checkbox for boolean values
   <Toggle initial={false}>
     {({ on, toggle }) => (
       <FormField label="Checkbox" labelPosition="right">
-        <Checkbox shape="circle" value={on} onPress={toggle} size="medium" />
+        <Checkbox
+          shape="circle"
+          value={on}
+          onValueChange={toggle}
+          size="medium"
+        />
       </FormField>
     )}
   </Toggle>
@@ -25,25 +30,3 @@ Checkbox for boolean values
 ## Props
 
 <Props of={Checkbox} />
-
-## Customization
-
-Using `getStyles` prop
-
-```
-CheckboxStyles {
-  touchableStyle: ViewStyle;
-  checkboxStyle: ViewStyle;
-  checkColor: string;
-}
-
-getStyles={(CheckboxProps, Theme) => CheckboxStyles}
-```
-
-Markup
-
-```tsx
-<TouchableOpacity touchableStyle>
-  <View checkboxStyle>{icon}</View>
-</TouchableOpacity>
-```

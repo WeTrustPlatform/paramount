@@ -4,54 +4,23 @@ menu: Components
 ---
 
 import { Playground, Props } from 'docz';
-import { Counter, CounterState } from '..';
+import { Counter, State } from '..';
 
 # Counter
 
 ## Usage
 
 <Playground>
-  <CounterState initial={0}>
-    {({ count, increment, decrement }) => (
-      <Counter count={count} onDecrement={decrement} onIncrement={increment} />
+  <State initial={{ value: 0 }}>
+    {({ state, setState }) => (
+      <Counter
+        value={state.value}
+        onValueChange={value => setState({ value })}
+      />
     )}
-  </CounterState>
+  </State>
 </Playground>
 
 ## Props
 
 <Props of={Counter} />
-
-## Customization
-
-Using `getStyles` prop
-
-```
-CounterStyles {
-  containerStyle: ViewStyle;
-  counterStyle: ViewStyle;
-  countStyle: ViewStyle;
-  decrementWrapperStyle: ViewStyle;
-  disabledStyle: ViewStyle;
-  incrementWrapperStyle: ViewStyle;
-  textStyle: TextStyle;
-}
-
-getStyles={(CounterProps, Theme) => CounterStyles}
-```
-
-Markup
-
-```tsx
-<View containerStyle>
-  <View decrementWrapperStyle>
-    <TouchableOpacity counterStyle>{icon}</TouchableOpacity>
-  </View>
-  <View countStyle>
-    <Text textStyle>{count}</Text>
-  </View>
-  <View incrementWrapperStyle>
-    <TouchableOpacity counterStyle>{icon}</TouchableOpacity>
-  </View>
-</View>
-```

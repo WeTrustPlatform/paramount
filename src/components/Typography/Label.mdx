@@ -5,7 +5,7 @@ menu: Components
 
 import { Playground, Props } from 'docz';
 
-import { Box, Label } from '..';
+import { Box, TextInput, Label } from '..';
 
 # Label
 
@@ -15,28 +15,12 @@ Composes `Text`
 
 <Playground>
   <Box>
-    <Label>Lorem ipsum dolar set amet</Label>
+    <Label label="Lorem ipsum dolar set amet">
+      <TextInput />
+    </Label>
   </Box>
 </Playground>
 
 ## Props
 
 <Props of={Label} />
-
-## Customization
-
-Using `getStyles` prop
-
-```
-LabelStyles {
-  labelStyle: LabelStyle;
-}
-
-getStyles={(LabelProps, Theme) => LabelStyles}
-```
-
-Markup
-
-```tsx
-<Text labelStyle />
-```

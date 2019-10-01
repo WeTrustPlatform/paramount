@@ -1,13 +1,20 @@
+import dlv from 'dlv';
 import * as React from 'react';
-import { TouchableOpacity, View } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { mergeStyles } from '../../utils/mergeStyles';
-import { Icon } from '../Icon';
-import { useWheelPicker } from './useWheelPicker';
+import { getOverrides } from '../../utils/overrides';
 import { WheelPicker as WheelPickerRef, WheelPickerProps } from './WheelPicker';
-import { getWheelPickerStyles } from './WheelPicker.styles';
-import { WheelPickerItem } from './WheelPickerItem';
+import {
+  SCROLL_PICKER_HEIGHT,
+  StyledArrowDown,
+  StyledArrowUp,
+  StyledBottomOverlay,
+  StyledListWrapper,
+  StyledRoot,
+  StyledUpperOverlay,
+  StyledWheelPickerItem,
+  useWheelPicker,
+} from './WheelPickerCommon';
 
 export const WheelPicker = React.forwardRef(
   <TValue extends any>(
@@ -20,10 +27,10 @@ export const WheelPicker = React.forwardRef(
       onValueChange = () => {
         return;
       },
-      getStyles,
+      overrides = {},
     } = props;
-
     const theme = useTheme();
+
     const listRef = React.useRef<HTMLDivElement>(null);
 
     const {
@@ -47,47 +54,78 @@ export const WheelPicker = React.forwardRef(
       value,
     });
 
-    const {
-      arrowWrapperStyle,
-      bottomOverlayStyle,
-      containerStyle,
-      wheelContainerStyle,
-      listContainerStyle,
-      upperOverlayStyle,
-    } = mergeStyles(
-      getWheelPickerStyles,
-      getStyles,
-      theme.components.getWheelPickerStyles,
-    )(props, theme);
-
     React.useLayoutEffect(() => {
       setTimeout(() => {
         if (listRef.current && value) scrollToValue(value, false);
       }, 50);
     }, [value]);
 
+    const [Root, rootProps] = getOverrides(
+      StyledRoot,
+      props,
+      dlv(theme, 'overrides.WheelPicker.Root'),
+      overrides.Root,
+    );
+    const [ArrowUp, arrowUpProps] = getOverrides(
+      StyledArrowUp,
+      props,
+      dlv(theme, 'overrides.WheelPicker.ArrowUp'),
+      overrides.ArrowUp,
+    );
+    const [ArrowDown, arrowDownProps] = getOverrides(
+      StyledArrowDown,
+      props,
+      dlv(theme, 'overrides.WheelPicker.ArrowDown'),
+      overrides.ArrowDown,
+    );
+    const [UpperOverlay, upperOverlayProps] = getOverrides(
+      StyledUpperOverlay,
+      props,
+      dlv(theme, 'overrides.WheelPicker.UpperOverlay'),
+      overrides.UpperOverlay,
+    );
+    const [BottomOverlay, bottomOverlayProps] = getOverrides(
+      StyledBottomOverlay,
+      props,
+      dlv(theme, 'overrides.WheelPicker.BottomOverlay'),
+      overrides.BottomOverlay,
+    );
+    const [ListWrapper, listWrapperProps] = getOverrides(
+      StyledListWrapper,
+      props,
+      dlv(theme, 'overrides.WheelPicker.ListWrapper'),
+      overrides.ListWrapper,
+    );
+    const [Item, itemProps] = getOverrides(
+      StyledWheelPickerItem,
+      props,
+      dlv(theme, 'overrides.WheelPicker.Item'),
+      overrides.Item,
+    );
+
     return (
-      <View style={containerStyle}>
-        <TouchableOpacity style={arrowWrapperStyle} onPress={handlePressUp}>
-          <Icon color="link" size="large" name="chevron-up" />
-        </TouchableOpacity>
-        <View style={wheelContainerStyle}>
+      <Root {...rootProps}>
+        <ArrowUp onPress={handlePressUp} {...arrowUpProps} />
+        <ListWrapper {...listWrapperProps}>
           <div
             ref={listRef}
             onScroll={event => handleScroll(event.currentTarget.scrollTop)}
-            style={listContainerStyle}
+            style={{
+              height: SCROLL_PICKER_HEIGHT,
+              overflowY: 'scroll' as const,
+              scrollSnapType: 'y mandatory',
+              width: '100%',
+            }}
           >
             {optionsWithClones.map(option => (
-              <WheelPickerItem key={`${option.value}`} option={option} />
+              <Item key={`${option.value}`} option={option} {...itemProps} />
             ))}
           </div>
-          <View pointerEvents="none" style={upperOverlayStyle} />
-          <View pointerEvents="none" style={bottomOverlayStyle} />
-        </View>
-        <TouchableOpacity style={arrowWrapperStyle} onPress={handlePressDown}>
-          <Icon color="link" size="large" name="chevron-down" />
-        </TouchableOpacity>
-      </View>
+          <UpperOverlay pointerEvents="none" {...upperOverlayProps} />
+          <BottomOverlay pointerEvents="none" {...bottomOverlayProps} />
+        </ListWrapper>
+        <ArrowDown onPress={handlePressDown} {...arrowDownProps} />
+      </Root>
     );
   },
 );

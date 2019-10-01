@@ -1,18 +1,16 @@
+import dlv from 'dlv';
 import * as React from 'react';
-import { Platform, View } from 'react-native';
+import { Platform, View, ViewProps } from 'react-native';
 import { animated, useSpring } from 'react-spring/native.cjs';
 
 import { springDefaultConfig } from '../../constants/Animation';
 import { ControlSize, useTheme } from '../../theme';
-import { mergeStyles } from '../../utils/mergeStyles';
-import {
-  GetProgressBarStyles,
-  getProgressBarStyles,
-} from './ProgressBar.styles';
+import { isControlSize } from '../../utils/isControlSize';
+import { getOverrides, WithOverrides } from '../../utils/overrides';
 
 const AnimatedView = animated(View);
 
-export interface ProgressBarProps {
+interface ProgressBarBaseProps {
   /**
    * Percentage of the progress bar. From 0 to 1
    * @default 0
@@ -24,25 +22,94 @@ export interface ProgressBarProps {
    * @default "medium"
    */
   size?: ControlSize | number;
-
-  /** Callback to get element styles. */
-  getStyles?: GetProgressBarStyles;
-
-  /** Used to locate this view in end-to-end tests. */
-  testID?: string;
 }
 
+export interface ProgressBarOverrides {
+  Root: RootProps;
+  Progress: ProgressProps;
+}
+
+export interface ProgressBarProps
+  extends WithOverrides<ProgressBarBaseProps, ProgressBarOverrides> {}
+
+const defaultProps = {
+  percent: 0,
+  size: 'medium' as const,
+};
+
 export const ProgressBar = (props: ProgressBarProps) => {
-  const { percent = 0, getStyles, testID } = props;
+  const {
+    percent = defaultProps.percent,
+    size = defaultProps.size,
+    overrides = {},
+  } = props;
   const theme = useTheme();
 
-  const { containerStyle, progressStyle } = mergeStyles(
-    getProgressBarStyles,
-    getStyles,
-    theme.components.getProgressBarStyles,
-  )(props, theme);
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.ProgressBar.Root'),
+    overrides.Root,
+  );
+  const [Progress, progressProps] = getOverrides(
+    StyledProgress,
+    props,
+    dlv(theme, 'overrides.ProgressBar.Progress'),
+    overrides.Progress,
+  );
+
+  return (
+    <Root size={size} {...rootProps}>
+      <Progress percent={percent} {...progressProps} />
+    </Root>
+  );
+};
+
+interface RootProps extends ViewProps {
+  children?: React.ReactNode;
+  size?: ControlSize | number;
+}
+
+const StyledRoot = (props: RootProps) => {
+  const { children, style, size = defaultProps.size, ...viewProps } = props;
+  const theme = useTheme();
+
+  const height = isControlSize(size) ? theme.controlHeights[size] - 16 : size;
+
+  return (
+    <View
+      style={[
+        {
+          backgroundColor: theme.colors.background.greyDefault,
+          borderRadius: 999,
+          height,
+          overflow: 'hidden',
+        },
+        style,
+      ]}
+      {...viewProps}
+    >
+      {children}
+    </View>
+  );
+};
+
+interface ProgressProps extends ViewProps {
+  children?: React.ReactNode;
+  percent?: number;
+}
+
+const StyledProgress = (props: ProgressProps) => {
+  const {
+    percent = defaultProps.percent,
+    children,
+    style,
+    ...viewProps
+  } = props;
+  const theme = useTheme();
 
   const boundPercent = Math.max(Math.min(percent, 100), 0);
+
   const { width } = useSpring({
     config: springDefaultConfig,
     from: { width: boundPercent },
@@ -50,16 +117,20 @@ export const ProgressBar = (props: ProgressBarProps) => {
   });
 
   return (
-    <View style={containerStyle} testID={testID}>
-      <AnimatedView
-        // @ts-ignore
-        accessibilityRole={Platform.OS === 'web' ? 'progress' : 'none'}
-        // @ts-ignore
-        style={{
-          ...progressStyle,
+    <AnimatedView
+      // @ts-ignore
+      accessibilityRole={Platform.OS === 'web' ? 'progress' : 'none'}
+      // @ts-ignore
+      style={[
+        {
+          backgroundColor: theme.colors.background.primaryDefault,
+          borderRadius: 999,
+          height: '100%',
           width: width.interpolate(w => `${w}%`),
-        }}
-      />
-    </View>
+        },
+        style,
+      ]}
+      {...viewProps}
+    />
   );
 };

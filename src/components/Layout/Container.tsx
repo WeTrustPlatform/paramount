@@ -1,10 +1,16 @@
+import dlv from 'dlv';
 import * as React from 'react';
-import { View } from 'react-native';
+import { View, ViewProps } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { mergeStyles } from '../../utils/mergeStyles';
-import { GetContainerStyles, getContainerStyles } from './Container.styles';
-import { ContainerSize, useLayout } from './LayoutContext';
+import { getOverrides, Override } from '../../utils/overrides';
+import {
+  ContainerSize,
+  ContainerSizes,
+  DESC_ORDER_SCREEN_SIZES,
+  ScreenSize,
+  useLayout,
+} from './LayoutContext';
 
 export interface ContainerProps {
   /** Children node */
@@ -22,23 +28,84 @@ export interface ContainerProps {
    */
   size?: ContainerSize;
 
-  /** Callback to get element styles. */
-  getStyles?: GetContainerStyles;
+  /**
+   * Overrides
+   */
+  override?: ContainerOverride;
 }
+
+export type ContainerOverride = Override<ContainerProps, RootProps>;
 
 /**
  * On screens with size lg and above, caps maximum width of the content
  */
 export const Container = (props: ContainerProps) => {
-  const { children, getStyles, size, fluid = false } = props;
-  const layout = useLayout();
+  const { children, size, fluid = false, override } = props;
   const theme = useTheme();
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.Container'),
+    override,
+  );
 
-  const { containerStyle } = mergeStyles(
-    getContainerStyles,
-    getStyles,
-    theme.components.getContainerStyles,
-  )({ size, fluid, ...layout }, theme);
+  return (
+    <Root size={size} fluid={fluid} {...rootProps}>
+      {children}
+    </Root>
+  );
+};
 
-  return <View style={containerStyle}>{children}</View>;
+interface RootProps extends ViewProps {
+  children?: React.ReactNode;
+  fluid: boolean;
+  size?: ContainerSize;
+}
+
+const StyledRoot = (props: RootProps) => {
+  const { size, fluid, children, style, ...viewProps } = props;
+  const { gutterWidth, containerSizes, currentScreenSize } = useLayout();
+
+  return (
+    <View
+      style={[
+        {
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          maxWidth: fluid
+            ? '100%'
+            : size
+            ? containerSizes[size]
+            : getMaxWidth(containerSizes, currentScreenSize),
+          paddingLeft: gutterWidth / 2,
+          paddingRight: gutterWidth / 2,
+          width: '100%',
+        },
+        style,
+      ]}
+      {...viewProps}
+    >
+      {children}
+    </View>
+  );
+};
+
+const getMaxWidth = (
+  containerSizes: ContainerSizes,
+  currentScreenSize: ScreenSize,
+) => {
+  const currentScreenSizeIndex = DESC_ORDER_SCREEN_SIZES.indexOf(
+    currentScreenSize,
+  );
+
+  const nearestSize = DESC_ORDER_SCREEN_SIZES.find((screenSize, index) => {
+    if (screenSize === 'xsmall') return false;
+    if (currentScreenSizeIndex > index) return false;
+
+    return !!containerSizes[screenSize];
+  });
+
+  if (nearestSize === 'xsmall') return undefined;
+
+  return nearestSize ? containerSizes[nearestSize] : undefined;
 };

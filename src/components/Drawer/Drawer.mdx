@@ -60,26 +60,3 @@ Slides a panel from defined position
 ## Props
 
 <Props of={Drawer} />
-
-## Customization
-
-Using `getStyles` prop
-
-```tsx
-DrawerStyles {
-  overlayStyle: ViewStyle;
-  containerStyle: ViewStyle;
-  modalContainerStyle: ViewStyle;
-}
-
-getStyles={(DrawerProps, Theme) => DrawerStyles}
-```
-
-Markup
-
-```tsx
-<View modalContainerStyle>
-  <View containerStyle>{children}</View>
-  <Overlay overlayStyle />
-</View>
-```

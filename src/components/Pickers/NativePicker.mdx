@@ -51,27 +51,3 @@ Composes React Native's `Picker`
 Extends native `Picker`
 
 <Props of={NativePicker} />
-
-## Customization
-
-Using `getStyles` prop
-
-```
-NativePickerStyles {
-  containerStyle: ViewStyle;
-  rightContainerStyle: ViewStyle;
-  pickerStyle: ViewStyle;
-  itemStyle: ViewStyle;
-}
-
-getStyles={(NativePickerProps, Theme) => NativePickerStyles}
-```
-
-Markup
-
-```tsx
-<View style={containerStyle}>
-  <Picker itemStyle pickerStyle />
-  <View style={rightContainerStyle}>{icon}</View>
-</View>
-```

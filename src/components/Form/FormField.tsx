@@ -1,23 +1,23 @@
+import dlv from 'dlv';
 import * as React from 'react';
-import { View } from 'react-native';
+import { View, ViewProps } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { mergeStyles } from '../../utils/mergeStyles';
-import { Label, Text } from '../Typography';
-import { GetFormFieldStyles, getFormFieldStyles } from './FormField.styles';
+import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { Label, LabelProps, Text, TextProps } from '../Typography';
 
-export type FormFieldLabelPosition = 'top' | 'left' | 'right';
+type FormFieldLabelPosition = 'top' | 'left' | 'right';
 
-export interface FormFieldProps {
+interface FormFieldBaseProps {
   /**
    * Error message of the field
    */
-  error?: React.ReactNode;
+  error?: string | false;
 
   /**
    * Label of the field.
    */
-  label?: React.ReactNode;
+  label?: string | false;
 
   /**
    * Position of the field.
@@ -28,14 +28,25 @@ export interface FormFieldProps {
   /**
    * Description of the field.
    */
-  description?: React.ReactNode;
+  description?: string;
 
   /** Content to wrap FormField with. */
   children?: React.ReactNode;
-
-  /** Callback to get element styles. */
-  getStyles?: GetFormFieldStyles;
 }
+
+export interface FormFieldOverrides {
+  Root: RootProps;
+  Label: LabelProps;
+  Description: DescriptionProps;
+  Error: ErrorProps;
+}
+
+export interface FormFieldProps
+  extends WithOverrides<FormFieldBaseProps, FormFieldOverrides> {}
+
+const defaultProps = {
+  labelPosition: 'top' as const,
+};
 
 export const FormField = (props: FormFieldProps) => {
   const {
@@ -43,57 +54,100 @@ export const FormField = (props: FormFieldProps) => {
     error,
     children,
     description,
-    labelPosition = 'top',
-    getStyles,
+    labelPosition = defaultProps.labelPosition,
+    overrides = {},
   } = props;
   const theme = useTheme();
 
-  const {
-    containerStyles,
-    descriptionTextStyle,
-    errorTextStyle,
-    errorWrapperStyle,
-    labelTextStyle,
-    labelWrapperStyle,
-    wrapperStyle,
-  } = mergeStyles(
-    getFormFieldStyles,
-    getStyles,
-    theme.components.getFormFieldStyles,
-  )(props, theme);
-
-  const labelContent = (
-    <View style={labelWrapperStyle}>
-      <Label getStyles={() => ({ labelStyle: labelTextStyle })}>{label}</Label>
-    </View>
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.FormField.Root'),
+    overrides.Root,
+  );
+  const [LabelR, labelRProps] = getOverrides(
+    Label,
+    props,
+    dlv(theme, 'overrides.FormField.Label'),
+    overrides.Label,
+  );
+  const [Description, descriptionProps] = getOverrides(
+    StyledDescription,
+    props,
+    dlv(theme, 'overrides.FormField.Description'),
+    overrides.Description,
+  );
+  const [ErrorR, errorProps] = getOverrides(
+    StyledError,
+    props,
+    dlv(theme, 'overrides.FormField.Error'),
+    overrides.Error,
   );
 
   return (
-    <View style={containerStyles}>
-      {label && labelPosition === 'top' && labelContent}
-      <View style={wrapperStyle}>
-        {label && labelPosition === 'left' && labelContent}
+    <Root {...rootProps}>
+      <LabelR label={label} position={labelPosition} {...labelRProps}>
         {children}
-        {label && labelPosition === 'right' && labelContent}
-      </View>
-      {description && (
-        <Text
-          color="muted"
-          getStyles={() => ({ textStyle: descriptionTextStyle })}
-        >
-          {description}
-        </Text>
-      )}
-      {error && (
-        <View style={errorWrapperStyle}>
-          <Text
-            color="danger"
-            getStyles={() => ({ textStyle: errorTextStyle })}
-          >
-            {error}
-          </Text>
-        </View>
-      )}
+      </LabelR>
+      <Description description={description} {...descriptionProps} />
+      <ErrorR error={error} {...errorProps} />
+    </Root>
+  );
+};
+
+interface PropsWithChildren {
+  children?: React.ReactNode;
+}
+
+interface RootProps extends ViewProps, PropsWithChildren {}
+
+const StyledRoot = (props: RootProps) => {
+  const { children, style, ...viewProps } = props;
+
+  return (
+    <View style={[style]} {...viewProps}>
+      {children}
     </View>
+  );
+};
+
+interface DescriptionProps extends TextProps, PropsWithChildren {
+  description?: string | false;
+}
+
+const StyledDescription = (props: DescriptionProps) => {
+  const { children, style, description, ...viewProps } = props;
+
+  if (!description) return null;
+
+  return (
+    <Text
+      color="muted"
+      style={[
+        {
+          paddingBottom: 4,
+        },
+        style,
+      ]}
+      {...viewProps}
+    >
+      {description}
+    </Text>
+  );
+};
+
+interface ErrorProps extends TextProps, PropsWithChildren {
+  error?: string | false;
+}
+
+const StyledError = (props: ErrorProps) => {
+  const { children, style, error, ...viewProps } = props;
+
+  if (!error) return null;
+
+  return (
+    <Text style={[style]} color="danger" {...viewProps}>
+      {error}
+    </Text>
   );
 };

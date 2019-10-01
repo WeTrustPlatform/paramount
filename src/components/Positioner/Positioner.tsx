@@ -1,10 +1,11 @@
+import dlv from 'dlv';
 import * as React from 'react';
+import { ViewStyle } from 'react-native';
 
 import { Measurements } from '../../hooks';
 import { useTheme } from '../../theme';
-import { mergeStyles } from '../../utils/mergeStyles';
-import { ViewMeasure } from '../Helpers';
-import { GetPositionerStyles, getPositionerStyles } from './Positioner.styles';
+import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { ViewMeasure, ViewMeasureProps } from '../Helpers';
 
 export const POSITION = {
   TOP: 'top' as const,
@@ -19,7 +20,7 @@ export const POSITION = {
   RIGHT: 'right' as const,
 };
 
-export type Position =
+export type PositionerPosition =
   | 'top'
   | 'top-left'
   | 'top-right'
@@ -29,12 +30,12 @@ export type Position =
   | 'left'
   | 'right';
 
-export interface PositionerProps {
+export interface PositionerBaseProps {
   /**
    * Position of the content.
    * @default "bottom"
    */
-  position?: Position;
+  position?: PositionerPosition;
 
   /**
    * Wrapped component to open the positioner over.
@@ -50,13 +51,18 @@ export interface PositionerProps {
    * When true, displays positioner.
    */
   isVisible?: boolean;
-
-  /** Callback to get element styles. */
-  getStyles?: GetPositionerStyles;
 }
 
+export interface PositionerOverrides {
+  Root: RootProps;
+  Target: ViewMeasureProps;
+}
+
+export interface PositionerProps
+  extends WithOverrides<PositionerBaseProps, PositionerOverrides> {}
+
 interface GetPositionerPositionParams {
-  position: Position;
+  position: PositionerPosition;
   targetMeasurements: Measurements;
   positionerMeasurements: Measurements;
 }
@@ -131,14 +137,21 @@ const initialMeasurements = {
   y: 0,
 };
 
+const defaultProps = {
+  isVisible: false,
+  position: POSITION.BOTTOM,
+};
+
 export const Positioner = (props: PositionerProps) => {
   const {
-    getStyles,
     children,
     content,
-    isVisible,
-    position = POSITION.BOTTOM,
+    isVisible = defaultProps.isVisible,
+    position = defaultProps.position,
+    overrides = {},
   } = props;
+  const theme = useTheme();
+
   const [targetMeasurements, setTargetMeasurements] = React.useState(
     initialMeasurements,
   );
@@ -146,16 +159,9 @@ export const Positioner = (props: PositionerProps) => {
     initialMeasurements,
   );
 
-  const theme = useTheme();
   const isPositionerMeasurementsMeasured = !!(
     positionerMeasurements.width || positionerMeasurements.height
   );
-
-  const { positionerStyle, containerStyle } = mergeStyles(
-    getPositionerStyles,
-    getStyles,
-    theme.components.getPositionerStyles,
-  )({ isPositionerMeasurementsMeasured }, theme);
 
   const positionStyle = getPositionerPosition({
     position,
@@ -163,22 +169,63 @@ export const Positioner = (props: PositionerProps) => {
     targetMeasurements,
   });
 
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    dlv(theme, 'overrides.Positioner.Root'),
+    overrides.Root,
+  );
+  const [Target, targetProps] = getOverrides(
+    ViewMeasure,
+    props,
+    dlv(theme, 'overrides.Positioner.Target'),
+    overrides.Target,
+  );
+
   return (
     <>
       {isVisible && (
-        <ViewMeasure
-          style={{
-            ...positionStyle,
-            ...positionerStyle,
-          }}
+        <Root
+          positionStyle={positionStyle}
+          isPositionerMeasurementsMeasured={isPositionerMeasurementsMeasured}
           onMeasure={setPositionerMeasurements}
+          {...rootProps}
         >
           {content}
-        </ViewMeasure>
+        </Root>
       )}
-      <ViewMeasure style={containerStyle} onMeasure={setTargetMeasurements}>
+      <Target onMeasure={setTargetMeasurements} {...targetProps}>
         {children}
-      </ViewMeasure>
+      </Target>
     </>
+  );
+};
+
+interface RootProps extends ViewMeasureProps {
+  isPositionerMeasurementsMeasured?: boolean;
+  positionStyle?: ViewStyle;
+}
+
+const StyledRoot = (props: RootProps) => {
+  const {
+    style,
+    positionStyle,
+    isPositionerMeasurementsMeasured = false,
+    ...viewMeasureProps
+  } = props;
+
+  return (
+    <ViewMeasure
+      style={[
+        {
+          opacity: isPositionerMeasurementsMeasured ? 1 : 0,
+          position: 'absolute',
+          zIndex: 1,
+        },
+        positionStyle,
+        style,
+      ]}
+      {...viewMeasureProps}
+    />
   );
 };

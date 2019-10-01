@@ -12,11 +12,6 @@ export interface ToastSettings extends AlertProps {
   duration?: number;
 
   /**
-   * Custom component to override the entire toast.
-   */
-  component?: React.ReactNode;
-
-  /**
    * Assign an id to the toast so you can remove it later.
    */
   id?: ToastId;
@@ -38,12 +33,12 @@ export interface ToastInstance extends ToastSettings {
 export interface ToastProps extends ToastInstance {}
 
 export const Toast = (props: ToastProps) => {
-  const { component, id, onRemove, duration = 3000, ...toastSettings } = props;
+  const { id, onRemove, duration = 3000, ...toastSettings } = props;
 
   React.useEffect(() => {
     const timer = setTimeout(() => onRemove(), duration);
     return () => clearTimeout(timer);
   }, []);
 
-  return <>{component || <Alert {...toastSettings} />}</>;
+  return <Alert {...toastSettings} />;
 };

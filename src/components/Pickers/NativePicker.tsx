@@ -1,20 +1,17 @@
+import dlv from 'dlv';
 import * as React from 'react';
-import { Picker as RNPicker } from 'react-native';
+import { Picker as RNPicker, PickerProps as RNPickerProps } from 'react-native';
 
 import { ControlSize, useTheme } from '../../theme';
-import { mergeStyles } from '../../utils/mergeStyles';
-import {
-  GetPickerButtonStyles,
-  getPickerButtonStyles,
-} from './PickerButton.styles';
-import { PickerButtonWrapper } from './PickerButtonWrapper';
+import { isControlSize } from '../../utils/isControlSize';
+import { getOverrides, WithOverrides } from '../../utils/overrides';
 
-export interface NativePickerOption<TValue extends any> {
+export interface NativePickerOption<TValue extends string | number> {
   label: string;
   value: TValue;
 }
 
-export interface NativePickerProps<TValue extends any> {
+interface NativePickerBaseProps<TValue extends string | number> {
   /**
    * The size of the picker.
    * @default "medium"
@@ -27,11 +24,6 @@ export interface NativePickerProps<TValue extends any> {
   options?: NativePickerOption<TValue>[];
 
   /**
-   * Callback to get element styles.
-   */
-  getStyles?: GetPickerButtonStyles;
-
-  /**
    * Callback invoked when a item is picked
    */
   onValueChange?: (itemValue: TValue, itemPosition: number) => void;
@@ -39,7 +31,7 @@ export interface NativePickerProps<TValue extends any> {
   /**
    * Value of the picker
    */
-  value?: TValue;
+  value?: TValue | null;
 
   /**
    * Used to locate this view in end-to-end tests.
@@ -47,34 +39,111 @@ export interface NativePickerProps<TValue extends any> {
   testID?: string;
 }
 
-export const NativePicker = <TValue extends any>(
+export interface NativePickerOverrides {
+  Picker: PickerProps;
+}
+
+export interface NativePickerProps<TValue extends string | number>
+  extends WithOverrides<NativePickerBaseProps<TValue>, NativePickerOverrides> {}
+
+export const NativePicker = <TValue extends string | number>(
   props: NativePickerProps<TValue>,
 ) => {
-  const { getStyles, options = [], value, testID, onValueChange } = props;
+  const {
+    size = 'medium',
+    options = [],
+    value,
+    testID,
+    onValueChange,
+    overrides = {},
+  } = props;
   const theme = useTheme();
 
-  const { pickerStyle, itemStyle } = mergeStyles(
-    getPickerButtonStyles,
-    getStyles,
-  )(props, theme);
+  const [Picker, pickerProps] = getOverrides(
+    StyledPicker,
+    props,
+    dlv(theme, 'overrides.NativePicker.Picker'),
+    overrides.Picker,
+  );
 
   return (
-    <PickerButtonWrapper getStyles={getStyles}>
-      <RNPicker
-        itemStyle={itemStyle}
-        style={pickerStyle}
-        selectedValue={value}
-        testID={testID}
-        onValueChange={onValueChange}
-      >
-        {options.map(option => (
-          <RNPicker.Item
-            key={`${option.value}`}
-            value={option.value}
-            label={option.label}
-          />
-        ))}
-      </RNPicker>
-    </PickerButtonWrapper>
+    <Picker
+      selectedValue={value}
+      testID={testID}
+      size={size}
+      onValueChange={onValueChange}
+      {...pickerProps}
+    >
+      {options.map(option => (
+        <RNPicker.Item
+          key={`${option.value}`}
+          value={option.value}
+          label={option.label}
+        />
+      ))}
+    </Picker>
+  );
+};
+
+interface PickerProps extends RNPickerProps {
+  size: ControlSize | number;
+  children?: React.ReactNode;
+}
+
+const StyledPicker = (props: PickerProps) => {
+  const { size, children, itemStyle, style, ...pickerProps } = props;
+  const theme = useTheme();
+
+  const controlSizeStyles = isControlSize(size)
+    ? {
+        small: {
+          borderRadius: theme.controlBorderRadius.small,
+          height: theme.controlHeights.small,
+        },
+
+        medium: {
+          borderRadius: theme.controlBorderRadius.medium,
+          height: theme.controlHeights.medium,
+        },
+
+        large: {
+          borderRadius: theme.controlBorderRadius.large,
+          height: theme.controlHeights.large,
+        },
+      }[size]
+    : {
+        borderRadius: theme.controlBorderRadius.medium,
+        height: size,
+      };
+
+  const textSizeStyles = isControlSize(size)
+    ? theme.textSizes[size]
+    : theme.textSizes.medium;
+
+  return (
+    <RNPicker
+      itemStyle={[
+        {
+          ...textSizeStyles,
+          ...controlSizeStyles,
+        },
+        itemStyle,
+      ]}
+      style={[
+        {
+          backgroundColor: 'transparent',
+          borderColor: theme.colors.border.default,
+          borderWidth: 1,
+          width: '100%',
+          // @ts-ignore
+          color: theme.colors.text.default,
+          ...controlSizeStyles,
+        },
+        style,
+      ]}
+      {...pickerProps}
+    >
+      {children}
+    </RNPicker>
   );
 };

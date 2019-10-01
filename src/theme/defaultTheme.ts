@@ -395,5 +395,4 @@ export const defaultTheme: Theme = {
   controlPaddings,
 
   containerShapes,
-  components: {},
 };

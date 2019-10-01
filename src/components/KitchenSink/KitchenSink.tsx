@@ -17,7 +17,7 @@ import {
   Toggle,
   Collapsible,
   Counter,
-  CounterState,
+  State,
   Dialog,
   Heading,
   Icon,
@@ -25,7 +25,6 @@ import {
   Divider,
   Drawer,
   TextInput,
-  State,
   Container,
   LayoutProvider,
   Column,
@@ -38,11 +37,11 @@ import {
   NativePicker,
   Popover,
   ProgressBar,
+  CounterState,
   Rating,
   Slider,
   Switch,
   Tabs,
-  Tab,
   ToastContext,
   ToastProvider,
   Label,
@@ -74,9 +73,13 @@ export const KitchenSink = () => {
             intent="danger"
             title="Danger"
             description="Message"
-            actionNode={
-              <Button title="Action" appearance="minimal" color="primary" />
-            }
+            overrides={{
+              Action: {
+                component: () => (
+                  <Button title="Action" appearance="minimal" color="primary" />
+                ),
+              },
+            }}
           />
         </Box>
       </Playground>
@@ -197,7 +200,7 @@ export const KitchenSink = () => {
               <Checkbox
                 shape="circle"
                 value={on}
-                onPress={toggle}
+                onValueChange={toggle}
                 size="medium"
               />
             </FormField>
@@ -252,15 +255,14 @@ export const KitchenSink = () => {
       </Box>
 
       <Playground>
-        <CounterState initial={0}>
-          {({ count, increment, decrement }) => (
+        <State initial={{ value: 0 }}>
+          {({ state, setState }) => (
             <Counter
-              count={count}
-              onDecrement={decrement}
-              onIncrement={increment}
+              value={state.value}
+              onValueChange={value => setState({ value })}
             />
           )}
-        </CounterState>
+        </State>
       </Playground>
 
       <Box paddingTop={96}>
@@ -274,10 +276,16 @@ export const KitchenSink = () => {
           {({ on, toggle }) => (
             <Box>
               <Dialog
-                header={<Heading>Header</Heading>}
-                footer={<Heading>Footer</Heading>}
                 isVisible={on}
                 onRequestClose={toggle}
+                overrides={{
+                  Header: {
+                    component: () => <Heading>Header</Heading>,
+                  },
+                  Footer: {
+                    component: () => <Heading>Footer</Heading>,
+                  },
+                }}
               >
                 <Box height={1800}>
                   <Text>Put any content in the dialog</Text>
@@ -392,12 +400,11 @@ export const KitchenSink = () => {
           {({ state, setState }) => (
             <TextInput
               value={state.value}
-              placeholder="TextInput"
+              placeholder="Placeholder"
               size="large"
-              onChangeText={text => setState({ value: text })}
-              leftIcon={<Icon name="menu" />}
+              onValueChange={value => setState({ value })}
               isInvalid={false}
-              isClearable // Mutually exclusive with rightIcon
+              isClearable
               onClear={() => console.log('Cleared!')} // Only triggered with `isClearable`
             />
           )}
@@ -619,9 +626,7 @@ export const KitchenSink = () => {
       <Playground>
         <ListItem
           onPress={() => console.log('Press')}
-          avatarProps={{
-            source: { uri: 'https://picsum.photos/200/200' },
-          }}
+          source={{ uri: 'https://picsum.photos/200/200' }}
           title="Some label"
           description="Some description"
         />
@@ -899,20 +904,20 @@ export const KitchenSink = () => {
       </Box>
 
       <Playground>
-        <CounterState initial={0}>
-          {({ count, incrementBy, decrementBy }) => (
+        <State initial={{ value: 0 }}>
+          {({ state, setState }) => (
             <Box>
-              <ProgressBar percent={count} size="large" />
+              <ProgressBar percent={state.value} size="large" />
               <Counter
-                count={count}
-                onDecrement={() => decrementBy(10)}
-                onIncrement={() => incrementBy(10)}
+                value={state.value}
+                onValueChange={value => setState({ value })}
                 min={0}
                 max={100}
+                step={10}
               />
             </Box>
           )}
-        </CounterState>
+        </State>
       </Playground>
 
       <Box paddingTop={96}>
@@ -927,7 +932,7 @@ export const KitchenSink = () => {
             <Rating
               value={rating}
               size="small"
-              onChange={value => set(value)}
+              onValueChange={value => set(value)}
             />
           )}
         </CounterState>
@@ -970,7 +975,7 @@ export const KitchenSink = () => {
       <Playground>
         <Box>
           <Toggle initial={true}>
-            {({ on, toggle }) => <Switch value={on} onPress={toggle} />}
+            {({ on, toggle, set }) => <Switch value={on} onValueChange={set} />}
           </Toggle>
         </Box>
       </Playground>
@@ -985,13 +990,12 @@ export const KitchenSink = () => {
         <State initial={{ activeTabIndex: 0 }}>
           {({ state, setState }) => (
             <Tabs
-              activeTabIndex={state.activeTabIndex}
-              onTabPress={index => setState({ activeTabIndex: index })}
-            >
-              {new Array(4).fill(0).map((v, i) => (
-                <Tab key={i} title={`Tab ${i + 1}`} />
-              ))}
-            </Tabs>
+              activeTab={state.activeTabIndex}
+              onChangeTab={tab => setState({ activeTabIndex: tab })}
+              tabs={new Array(4).fill(0).map((v, i) => ({
+                title: `Tab ${i + 1}`,
+              }))}
+            />
           )}
         </State>
       </Playground>
@@ -1050,7 +1054,9 @@ export const KitchenSink = () => {
 
       <Playground>
         <Box>
-          <Label>Lorem ipsum dolar set amet</Label>
+          <Label label="Lorem ipsum dolar set amet">
+            <TextInput />
+          </Label>
         </Box>
       </Playground>
 
