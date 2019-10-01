@@ -87,7 +87,7 @@ describe('Overrides', () => {
             props: props => ({
               testID: props.zero,
             }),
-            style: (props, theme) => ({
+            style: props => ({
               height: 1,
             }),
           },
