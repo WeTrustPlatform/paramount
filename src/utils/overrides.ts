@@ -106,7 +106,7 @@ export const getOverrides = <TProps = any, TChildProps = any>(
       applyOverrides(parentProps, override),
     );
 
-    if (override && override.component) {
+    if (override && (override.component || override.component === null)) {
       OverrideComponent = override.component;
     }
   });
