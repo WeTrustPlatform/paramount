@@ -4,6 +4,7 @@ import { Platform, View, ViewProps, ViewStyle } from 'react-native';
 
 import { useTheme } from '../../theme';
 import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { OptionalString } from '../../utils/types';
 import { Text, TextProps } from './Text';
 
 type LabelPosition = 'top' | 'left' | 'right';
@@ -12,7 +13,7 @@ interface LabelBaseProps {
   /**
    * Label of the field.
    */
-  label?: string | false;
+  label?: OptionalString;
 
   /**
    * Position of the field.
@@ -139,7 +140,7 @@ const StyledWrapper = (props: WrapperProps) => {
 };
 
 interface LabelTextProps extends TextProps, PropsWithChildren {
-  label?: string | false;
+  label?: OptionalString;
   position?: LabelPosition;
 }
 

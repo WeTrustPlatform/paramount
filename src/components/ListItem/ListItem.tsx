@@ -11,6 +11,7 @@ import {
 
 import { useTheme } from '../../theme';
 import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { OptionalString } from '../../utils/types';
 import { Avatar, AvatarProps } from '../Avatar';
 import { Text, TextProps } from '../Typography';
 
@@ -18,12 +19,12 @@ interface ListItemBaseProps {
   /**
    * Title of the list item
    */
-  title?: string | false;
+  title?: OptionalString;
 
   /**
    * Description of the list item
    */
-  description?: string | false;
+  description?: OptionalString;
 
   /**
    * Source of the avatar
@@ -194,7 +195,7 @@ const StyledTouchable = (props: TouchableProps) => {
 };
 
 interface TitleProps extends TextProps {
-  title?: string | false;
+  title?: OptionalString;
 }
 
 const StyledTitle = (props: TitleProps) => {
@@ -231,7 +232,7 @@ const StyledTextWrapper = (props: TextWrapperProps) => {
 };
 
 interface DescriptionProps extends TextProps {
-  description?: string | false;
+  description?: OptionalString;
 }
 
 const StyledDescription = (props: DescriptionProps) => {

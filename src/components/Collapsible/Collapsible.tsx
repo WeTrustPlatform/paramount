@@ -9,12 +9,13 @@ import {
 
 import { useTheme } from '../../theme';
 import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { OptionalString } from '../../utils/types';
 import { Icon } from '../Icon';
 import { Text, TextProps } from '../Typography';
 
 interface CollapsibleBaseProps {
   /** Title of the collapsible */
-  title?: string;
+  title?: OptionalString;
 
   /** Content revealed when collapsible is opened */
   children?: React.ReactNode;
@@ -167,11 +168,13 @@ const StyledTouchable = (props: TouchableProps) => {
 };
 
 interface TitleProps extends TextProps {
-  title?: string;
+  title?: OptionalString;
 }
 
 const StyledTitle = (props: TitleProps) => {
   const { title, style, ...textProps } = props;
+
+  if (!title) return null;
 
   return (
     <Text size="large" style={[{}, style]} {...textProps}>

@@ -4,6 +4,7 @@ import { FlatList, FlatListProps } from 'react-native';
 
 import { useTheme } from '../../theme';
 import { getOverrides, Override, WithOverrides } from '../../utils/overrides';
+import { OptionalString } from '../../utils/types';
 import { Box } from '../Box';
 import { Checkbox } from '../Checkbox';
 import { ListItem, ListItemProps } from '../ListItem';
@@ -15,7 +16,7 @@ type Value<TIsMulti extends boolean, TValue extends any> = TIsMulti extends true
 export interface ListPickerOption<TValue extends any> {
   value: TValue;
   label: string;
-  description?: string;
+  description?: OptionalString;
 }
 
 interface ListPickerBaseProps<TIsMulti extends boolean, TValue extends any> {
@@ -155,7 +156,7 @@ interface ListPickerItemProps<TValue extends any> {
   onPress?: (value: TValue, index: number, isSelected: boolean) => void;
   value: TValue;
   label: string;
-  description?: string;
+  description?: OptionalString;
   override?: Override<ListPickerItemProps<TValue>, ListItemProps>;
 }
 

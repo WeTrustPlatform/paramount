@@ -4,6 +4,7 @@ import { View, ViewProps } from 'react-native';
 
 import { useTheme } from '../../theme';
 import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { OptionalString } from '../../utils/types';
 import { Label, LabelProps, Text, TextProps } from '../Typography';
 
 type FormFieldLabelPosition = 'top' | 'left' | 'right';
@@ -12,12 +13,12 @@ interface FormFieldBaseProps {
   /**
    * Error message of the field
    */
-  error?: string | false;
+  error?: OptionalString;
 
   /**
    * Label of the field.
    */
-  label?: string | false;
+  label?: OptionalString;
 
   /**
    * Position of the field.
@@ -28,7 +29,7 @@ interface FormFieldBaseProps {
   /**
    * Description of the field.
    */
-  description?: string;
+  description?: OptionalString;
 
   /** Content to wrap FormField with. */
   children?: React.ReactNode;
@@ -112,7 +113,7 @@ const StyledRoot = (props: RootProps) => {
 };
 
 interface DescriptionProps extends TextProps, PropsWithChildren {
-  description?: string | false;
+  description?: OptionalString;
 }
 
 const StyledDescription = (props: DescriptionProps) => {
@@ -137,7 +138,7 @@ const StyledDescription = (props: DescriptionProps) => {
 };
 
 interface ErrorProps extends TextProps, PropsWithChildren {
-  error?: string | false;
+  error?: OptionalString;
 }
 
 const StyledError = (props: ErrorProps) => {

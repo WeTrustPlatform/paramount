@@ -4,6 +4,7 @@ import { View, ViewProps } from 'react-native';
 
 import { useTheme } from '../../theme';
 import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { OptionalString } from '../../utils/types';
 import { Icon, IconProps } from '../Icon';
 import { Text, TextProps } from '../Typography';
 
@@ -11,10 +12,10 @@ export type Intent = 'danger' | 'info' | 'success' | 'warning';
 
 interface AlertBaseProps {
   /** Title of the alert. */
-  title?: string;
+  title?: OptionalString;
 
   /** Description of the alert. */
-  description?: string;
+  description?: OptionalString;
 
   /**
    * Intent of the alert.
@@ -206,11 +207,13 @@ const StyledBody = (props: BodyProps) => {
 };
 
 interface TitleProps extends TextProps, PropsWithIntent {
-  title?: string;
+  title?: OptionalString;
 }
 
 const StyledTitle = (props: TitleProps) => {
   const { title, intent = defaultProps.intent, ...textProps } = props;
+
+  if (!title) return null;
 
   return (
     <Text weight="bold" {...textProps}>
@@ -220,11 +223,13 @@ const StyledTitle = (props: TitleProps) => {
 };
 
 interface DescriptionProps extends TextProps, PropsWithIntent {
-  description?: string;
+  description?: OptionalString;
 }
 
 const StyledDescription = (props: DescriptionProps) => {
   const { description, intent = defaultProps.intent, ...textProps } = props;
+
+  if (!description) return null;
 
   return <Text {...textProps}>{description}</Text>;
 };

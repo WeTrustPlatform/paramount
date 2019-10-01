@@ -6,11 +6,12 @@ import { useTheme } from '../../theme';
 import { ContainerShape, ControlSize, FillColor } from '../../theme/Theme';
 import { isControlSize } from '../../utils/isControlSize';
 import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { OptionalString } from '../../utils/types';
 import { Text, TextProps } from '../Typography';
 
 interface BadgeBaseProps {
   /** Title of the badge */
-  title?: string;
+  title?: OptionalString;
 
   /**
    * Color of the badge
@@ -178,7 +179,7 @@ const StyledRoot = (props: RootProps) => {
 
 interface TitleProps extends TextProps {
   color?: FillColor;
-  title?: string;
+  title?: OptionalString;
   isSolid?: boolean;
 }
 
