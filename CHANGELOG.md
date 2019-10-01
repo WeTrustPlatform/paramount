@@ -1,3 +1,11 @@
+## [1.81.1](https://github.com/WeTrustPlatform/paramount/compare/v1.81.0...v1.81.1) (2019-10-01)
+
+
+### Bug Fixes
+
+* overrides test ([c7e57d9](https://github.com/WeTrustPlatform/paramount/commit/c7e57d9))
+* types ([00e8582](https://github.com/WeTrustPlatform/paramount/commit/00e8582))
+
 # [1.81.0](https://github.com/WeTrustPlatform/paramount/compare/v1.80.0...v1.81.0) (2019-10-01)
 
 
