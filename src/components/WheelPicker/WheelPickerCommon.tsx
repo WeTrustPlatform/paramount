@@ -1,9 +1,20 @@
 import * as React from 'react';
+import {
+  TouchableOpacity,
+  TouchableOpacityProps,
+  View,
+  ViewProps,
+} from 'react-native';
 
 import { useDebouncedCallback } from '../../hooks/useDebouncedCallback';
+import { useTheme } from '../../theme';
+import { Icon } from '../Icon';
+import { Text } from '../Typography';
 import { WheelPicker } from './WheelPicker';
-import { ITEM_HEIGHT } from './WheelPicker.constants';
-import { WheelPickerOption } from './WheelPickerItem';
+
+export const ITEM_HEIGHT = 40;
+export const ITEM_COUNT = 3;
+export const SCROLL_PICKER_HEIGHT = ITEM_HEIGHT * ITEM_COUNT;
 
 const DEBOUNCE_TIME = 300;
 
@@ -14,7 +25,7 @@ export const makePaddedOptions = <TValue extends any>(
     { value: 'emptyStart', label: '' },
     ...options,
     { value: 'emptyEnd', label: '' },
-  ];
+  ] as WheelPickerOption<TValue>[];
 };
 
 export const getOptionFromOptions = <TValue extends any>(
@@ -167,4 +178,159 @@ export const useWheelPicker = <TValue extends any>(
     optionsWithClones,
     scrollToValue,
   };
+};
+
+export interface RootProps extends ViewProps {
+  children?: React.ReactNode;
+}
+
+export const StyledRoot = (props: RootProps) => {
+  const { children, style, ...viewProps } = props;
+
+  return (
+    <View
+      style={[{ alignItems: 'center', flex: 1, width: '100%' }, style]}
+      {...viewProps}
+    >
+      {children}
+    </View>
+  );
+};
+
+export interface ListWrapperProps extends ViewProps {
+  children?: React.ReactNode;
+}
+
+export const StyledListWrapper = (props: ListWrapperProps) => {
+  const { children, style, ...viewProps } = props;
+
+  return (
+    <View
+      style={[{ flex: 1, height: SCROLL_PICKER_HEIGHT, width: '100%' }, style]}
+      {...viewProps}
+    >
+      {children}
+    </View>
+  );
+};
+
+export interface OverlayProps extends ViewProps {
+  children?: React.ReactNode;
+}
+
+export const StyledBottomOverlay = (props: OverlayProps) => {
+  const { children, style, ...viewProps } = props;
+  const theme = useTheme();
+
+  return (
+    <View
+      style={[
+        {
+          backgroundColor: 'rgba(255, 255, 255, 0.7)',
+          borderColor: theme.colors.border.default,
+          borderStyle: 'solid',
+          borderTopWidth: 1,
+          height: ITEM_HEIGHT,
+          position: 'absolute',
+          top: ITEM_HEIGHT * 2,
+          width: '100%',
+        },
+        style,
+      ]}
+      {...viewProps}
+    >
+      {children}
+    </View>
+  );
+};
+
+export const StyledUpperOverlay = (props: OverlayProps) => {
+  const { children, style, ...viewProps } = props;
+  const theme = useTheme();
+
+  return (
+    <View
+      style={[
+        {
+          backgroundColor: 'rgba(255, 255, 255, 0.7)',
+          borderBottomWidth: 1,
+          borderColor: theme.colors.border.default,
+          borderStyle: 'solid',
+          height: ITEM_HEIGHT,
+          position: 'absolute',
+          top: 0,
+          width: '100%',
+        },
+        style,
+      ]}
+      {...viewProps}
+    >
+      {children}
+    </View>
+  );
+};
+
+// tslint:disable-next-line
+export interface ArrowProps extends TouchableOpacityProps {}
+
+const Arrow = (props: ArrowProps & { direction: 'up' | 'down' }) => {
+  const { direction, ...touchableProps } = props;
+
+  return (
+    <TouchableOpacity
+      style={[
+        {
+          alignItems: 'center',
+          height: 48,
+          justifyContent: 'center',
+          width: 48,
+        },
+      ]}
+      {...touchableProps}
+    >
+      <Icon
+        color="link"
+        size="large"
+        name={direction === 'up' ? 'chevron-up' : 'chevron-down'}
+      />
+    </TouchableOpacity>
+  );
+};
+
+export const StyledArrowUp = (props: ArrowProps) => (
+  <Arrow {...props} direction="up" />
+);
+export const StyledArrowDown = (props: ArrowProps) => (
+  <Arrow {...props} direction="down" />
+);
+
+export interface WheelPickerOption<TValue extends any> {
+  label: string;
+  value: TValue;
+}
+
+export interface WheelPickerItemProps<TValue extends any> {
+  option: WheelPickerOption<TValue>;
+}
+
+export const StyledWheelPickerItem = <TValue extends any>(
+  props: WheelPickerItemProps<TValue>,
+) => {
+  const { option } = props;
+  const { label } = option;
+
+  return (
+    <View
+      style={{
+        alignItems: 'center',
+        height: ITEM_HEIGHT,
+        justifyContent: 'center',
+        paddingHorizontal: 4,
+        // @ts-ignore
+        scrollSnapAlign: 'start',
+      }}
+    >
+      <Text align="center">{label}</Text>
+    </View>
+  );
 };

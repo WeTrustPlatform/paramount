@@ -1,59 +1,117 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { View, ViewProps } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { mergeStyles } from '../../utils/mergeStyles';
-import { TabProps } from './Tab';
-import { GetTabsStyles, getTabsStyles } from './Tabs.styles';
+import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { Button, ButtonProps } from '../Button';
 
-export type TabsDistribution = 'scrollable' | 'fit';
+export interface TabOption {
+  title: string;
+}
 
-export interface TabsProps {
+interface TabsBaseProps {
   /**
    * Current active tab index.
    */
-  activeTabIndex?: number;
+  activeTab?: number;
 
   /**
    * Called when a Tab is pressed
    */
-  onTabPress: (index?: number) => void;
+  onTabChange: (tab: number) => void;
 
   /**
    * `Tab` components
    */
-  children: Array<React.ReactElement<TabProps>> | React.ReactElement<TabProps>;
-
-  /** Callback to get element styles. */
-  getStyles?: GetTabsStyles;
+  tabs?: TabOption[];
 }
 
+export interface TabsOverrides {
+  Root: RootProps;
+  Tab: TabProps;
+}
+
+export interface TabsProps
+  extends WithOverrides<TabsBaseProps, TabsOverrides> {}
+
 export const Tabs = (props: TabsProps) => {
-  const { children, activeTabIndex, onTabPress, getStyles } = props;
-  const theme = useTheme();
+  const { tabs = [], activeTab, onTabChange, overrides = {} } = props;
 
-  const { containerStyle } = mergeStyles(
-    getTabsStyles,
-    getStyles,
-    theme.components.getTabsStyles,
-  )(props, theme);
-
-  const data = React.Children.map(children, (child, index) => {
-    if (!child) return null;
-
-    return {
-      index,
-      isActive: index === activeTabIndex,
-      onPress: i => onTabPress(i),
-      ...child.props,
-    };
-  }) as TabProps[];
-
-  const tabs = React.Children.toArray(children);
+  const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+  const [Tab, tabProps] = getOverrides(StyledTab, props, overrides.Tab);
 
   return (
-    <View style={containerStyle}>
-      {data.map((tabProps, index) => React.cloneElement(tabs[index], tabProps))}
+    <Root {...rootProps}>
+      {tabs.map((tab, index) => (
+        <Tab
+          key={tab.title}
+          index={index}
+          isActive={index === activeTab}
+          title={tab.title}
+          onPress={() => onTabChange(index)}
+          {...tabProps}
+        />
+      ))}
+    </Root>
+  );
+};
+
+interface RootProps extends ViewProps {
+  children?: React.ReactNode;
+}
+
+const StyledRoot = (props: RootProps) => {
+  const { children, style, ...viewProps } = props;
+  const theme = useTheme();
+
+  return (
+    <View
+      style={[
+        {
+          borderRadius: theme.controlBorderRadius.medium,
+          flex: 1,
+          flexDirection: 'row',
+          justifyContent: 'flex-start',
+        },
+        style,
+      ]}
+      {...viewProps}
+    >
+      {children}
     </View>
+  );
+};
+
+export interface TabProps extends ButtonProps {
+  index: number;
+  isActive: boolean;
+  title: string;
+}
+
+export const StyledTab = (props: TabProps) => {
+  const { isActive = false, index, ...buttonProps } = props;
+  const theme = useTheme();
+
+  return (
+    <Button
+      color={isActive ? 'primary' : 'default'}
+      overrides={{
+        Touchable: {
+          style: {
+            backgroundColor: isActive ? 'white' : 'transparent',
+            paddingLeft: 0,
+            paddingRight: 0,
+          },
+        },
+        Title: {
+          style: {
+            color: isActive
+              ? theme.colors.text.primary
+              : theme.colors.text.muted,
+          },
+        },
+      }}
+      {...buttonProps}
+    />
   );
 };

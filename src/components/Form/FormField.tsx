@@ -103,6 +103,7 @@ const StyledDescription = (props: DescriptionProps) => {
 
   return (
     <Text
+      color="muted"
       style={[
         {
           paddingBottom: 4,

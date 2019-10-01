@@ -17,13 +17,12 @@ You can use a custom component in place of `Tab` component, though keep in mind 
   <State initial={{ activeTabIndex: 0 }}>
     {({ state, setState }) => (
       <Tabs
-        activeTabIndex={state.activeTabIndex}
-        onTabPress={index => setState({ activeTabIndex: index })}
-      >
-        {new Array(4).fill(0).map((v, i) => (
-          <Tab key={i} title={`Tab ${i + 1}`} />
-        ))}
-      </Tabs>
+        activeTab={state.activeTabIndex}
+        onTabChange={tab => setState({ activeTabIndex: tab })}
+        tabs={new Array(4).fill(0).map((v, i) => ({
+          title: `Tab ${i + 1}`,
+        }))}
+      />
     )}
   </State>
 </Playground>

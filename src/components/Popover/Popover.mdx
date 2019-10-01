@@ -46,28 +46,3 @@ Composes `Positioner`
 ## Props
 
 <Props of={Popover} />
-
-## Customization
-
-Using `getStyles` prop
-
-```tsx
-PopoverStyles {
-  popoverStyle: ViewStyle;
-  positionerStyle: ViewStyle;
-  containerStyle: ViewStyle;
-}
-
-getStyles={(PopoverProps, Theme) => PopoverStyles}
-```
-
-Markup
-
-```tsx
-<>
-  <View positionerStyle>
-    <View popoverStyle>{content}</View>
-  </View>
-  <View containerStyle>{children}</View>
-</>
-```

@@ -34,21 +34,3 @@ Refer to `Layout` docs for setup
 ## Props
 
 <Props of={Container} />
-
-## Customization
-
-Using `getStyles` prop
-
-```
-ContainerStyles {
-  containerStyle: ViewStyle;
-}
-
-getStyles={(ContainerProps && Layout, Theme) => ContainerStyles}
-```
-
-Markup
-
-```tsx
-<View containerStyle>{children}</View>
-```

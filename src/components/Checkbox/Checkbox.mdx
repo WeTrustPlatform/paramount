@@ -30,25 +30,3 @@ Checkbox for boolean values
 ## Props
 
 <Props of={Checkbox} />
-
-## Customization
-
-Using `getStyles` prop
-
-```
-CheckboxStyles {
-  touchableStyle: ViewStyle;
-  checkboxStyle: ViewStyle;
-  checkColor: string;
-}
-
-getStyles={(CheckboxProps, Theme) => CheckboxStyles}
-```
-
-Markup
-
-```tsx
-<TouchableOpacity touchableStyle>
-  <View checkboxStyle>{icon}</View>
-</TouchableOpacity>
-```

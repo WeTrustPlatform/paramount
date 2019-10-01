@@ -1,22 +1,30 @@
 import * as React from 'react';
-import { FlatList, TouchableOpacity, View } from 'react-native';
+import { FlatList } from 'react-native';
 
-import { useTheme } from '../../theme';
-import { mergeStyles } from '../../utils/mergeStyles';
-import { Icon } from '../Icon';
-import { useWheelPicker } from './useWheelPicker';
-import { ITEM_HEIGHT } from './WheelPicker.constants';
+import { getOverrides, WithOverrides } from '../../utils/overrides';
 import {
-  GetWheelPickerStyles,
-  getWheelPickerStyles,
-} from './WheelPicker.styles';
-import { WheelPickerItem, WheelPickerOption } from './WheelPickerItem';
+  ArrowProps,
+  ITEM_HEIGHT,
+  ListWrapperProps,
+  OverlayProps,
+  RootProps,
+  StyledArrowDown,
+  StyledArrowUp,
+  StyledBottomOverlay,
+  StyledListWrapper,
+  StyledRoot,
+  StyledUpperOverlay,
+  StyledWheelPickerItem,
+  useWheelPicker,
+  WheelPickerItemProps,
+  WheelPickerOption,
+} from './WheelPickerCommon';
 
 export interface WheelPicker<TValue extends any> {
   selectValue: (value: TValue) => void;
 }
 
-export interface WheelPickerProps<TValue extends any> {
+interface WheelPickerBaseProps<TValue extends any> {
   /**
    * List of options to show.
    */
@@ -34,19 +42,30 @@ export interface WheelPickerProps<TValue extends any> {
    * Callback continuously called while the user is dragging the slider.
    */
   onValueChange?: (value: TValue) => void;
-
-  /**
-   * Callback to get element styles.
-   */
-  getStyles?: GetWheelPickerStyles;
 }
+
+export interface WheelPickerOverrides<TValue extends any> {
+  Root: RootProps;
+  ArrowUp: ArrowProps;
+  ArrowDown: ArrowProps;
+  ListWrapper: ListWrapperProps;
+  UpperOverlay: OverlayProps;
+  BottomOverlay: OverlayProps;
+  Item: WheelPickerItemProps<TValue>;
+}
+
+export interface WheelPickerProps<TValue extends any>
+  extends WithOverrides<
+    WheelPickerBaseProps<TValue>,
+    WheelPickerOverrides<TValue>
+  > {}
 
 export const WheelPicker = React.forwardRef(
   <TValue extends any>(
     props: WheelPickerProps<TValue>,
     ref: React.Ref<WheelPicker<TValue>>,
   ) => {
-    const { options = [], onValueChange, value, getStyles } = props;
+    const { options = [], onValueChange, value, overrides = {} } = props;
     const listRef = React.useRef<FlatList<WheelPickerOption<TValue>>>(null);
 
     const {
@@ -66,32 +85,47 @@ export const WheelPicker = React.forwardRef(
     });
 
     const initialScrollIndex = options.findIndex(o => o.value === value);
-    const theme = useTheme();
 
-    const {
-      arrowWrapperStyle,
-      bottomOverlayStyle,
-      containerStyle,
-      wheelContainerStyle,
-      listContainerStyle,
-      upperOverlayStyle,
-    } = mergeStyles(
-      getWheelPickerStyles,
-      getStyles,
-      theme.components.getWheelPickerStyles,
-    )(props, theme);
+    const [Root, rootProps] = getOverrides(StyledRoot, props, overrides.Root);
+    const [ArrowUp, arrowUpProps] = getOverrides(
+      StyledArrowUp,
+      props,
+      overrides.ArrowUp,
+    );
+    const [ArrowDown, arrowDownProps] = getOverrides(
+      StyledArrowDown,
+      props,
+      overrides.ArrowDown,
+    );
+    const [UpperOverlay, upperOverlayProps] = getOverrides(
+      StyledUpperOverlay,
+      props,
+      overrides.UpperOverlay,
+    );
+    const [BottomOverlay, bottomOverlayProps] = getOverrides(
+      StyledBottomOverlay,
+      props,
+      overrides.BottomOverlay,
+    );
+    const [ListWrapper, listWrapperProps] = getOverrides(
+      StyledListWrapper,
+      props,
+      overrides.ListWrapper,
+    );
+    const [Item, itemProps] = getOverrides(
+      StyledWheelPickerItem,
+      props,
+      overrides.Item,
+    );
 
     return (
-      <View style={containerStyle}>
-        <TouchableOpacity style={arrowWrapperStyle} onPress={handlePressUp}>
-          <Icon color="link" size="large" name="chevron-up" />
-        </TouchableOpacity>
-        <View style={wheelContainerStyle}>
+      <Root {...rootProps}>
+        <ArrowUp onPress={handlePressUp} {...arrowUpProps} />
+        <ListWrapper {...listWrapperProps}>
           <FlatList
             // @ts-ignore FIX
             ref={listRef}
             data={optionsWithClones}
-            style={listContainerStyle}
             getItemLayout={(item, index) => ({
               index,
               length: ITEM_HEIGHT,
@@ -99,19 +133,17 @@ export const WheelPicker = React.forwardRef(
             })}
             initialScrollIndex={initialScrollIndex < 0 ? 0 : initialScrollIndex}
             keyExtractor={item => `${item.value}`}
-            renderItem={({ item }) => <WheelPickerItem option={item} />}
+            renderItem={({ item }) => <Item option={item} {...itemProps} />}
             showsHorizontalScrollIndicator={false}
             onScrollEndDrag={event =>
               handleEndDrag(event.nativeEvent.contentOffset.y)
             }
           />
-          <View pointerEvents="none" style={upperOverlayStyle} />
-          <View pointerEvents="none" style={bottomOverlayStyle} />
-        </View>
-        <TouchableOpacity style={arrowWrapperStyle} onPress={handlePressDown}>
-          <Icon color="link" size="large" name="chevron-down" />
-        </TouchableOpacity>
-      </View>
+          <UpperOverlay pointerEvents="none" {...upperOverlayProps} />
+          <BottomOverlay pointerEvents="none" {...bottomOverlayProps} />
+        </ListWrapper>
+        <ArrowDown onPress={handlePressDown} {...arrowDownProps} />
+      </Root>
     );
   },
 ) as <TValue extends any>(props: WheelPickerProps<TValue>) => JSX.Element;
