@@ -1,3 +1,10 @@
+# [1.80.0](https://github.com/WeTrustPlatform/paramount/compare/v1.79.1...v1.80.0) (2019-09-26)
+
+
+### Features
+
+* update pickers ([20486bc](https://github.com/WeTrustPlatform/paramount/commit/20486bc))
+
 ## [1.79.1](https://github.com/WeTrustPlatform/paramount/compare/v1.79.0...v1.79.1) (2019-09-25)
 
 
