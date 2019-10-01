@@ -1,3 +1,11 @@
+## [1.81.2](https://github.com/WeTrustPlatform/paramount/compare/v1.81.1...v1.81.2) (2019-10-01)
+
+
+### Bug Fixes
+
+* allow booleans in place of strings ([8245f07](https://github.com/WeTrustPlatform/paramount/commit/8245f07))
+* allow nullifying components ([4095c7f](https://github.com/WeTrustPlatform/paramount/commit/4095c7f))
+
 ## [1.81.1](https://github.com/WeTrustPlatform/paramount/compare/v1.81.0...v1.81.1) (2019-10-01)
 
 
