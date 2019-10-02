@@ -58,31 +58,21 @@ export interface TextInputOverrides {
 export interface TextInputProps
   extends WithOverrides<TextInputBaseProps, TextInputOverrides> {}
 
-const defaultProps = {
-  size: 'medium' as const,
-  isClearable: false,
-  isDisabled: false,
-  isInvalid: false,
-  onClear: () => {
-    return;
-  },
-  onValueChange: () => {
-    return;
-  },
-  onChangeText: () => {
-    return;
-  },
-};
-
 export const TextInput = (props: TextInputProps) => {
   const {
-    isClearable = defaultProps.isClearable,
-    isDisabled = defaultProps.isDisabled,
-    isInvalid = defaultProps.isInvalid,
-    onClear = defaultProps.onClear,
-    onValueChange = defaultProps.onValueChange,
-    onChangeText = defaultProps.onChangeText,
-    size = defaultProps.size,
+    size = 'medium',
+    isClearable = false,
+    isDisabled = false,
+    isInvalid = false,
+    onClear = () => {
+      return;
+    },
+    onValueChange = () => {
+      return;
+    },
+    onChangeText = () => {
+      return;
+    },
     value,
     overrides = {},
     ...textInputProps
@@ -181,21 +171,22 @@ const StyledRoot = (props: RootProps) => {
 };
 
 interface InputProps extends RNTextInputProps {
-  size?: ControlSize | number;
-  isDisabled?: boolean;
-  isInvalid?: boolean;
-  hasLeftIcon?: boolean;
-  hasRightIcon?: boolean;
-  onValueChange?: (value: string) => void;
+  size: ControlSize | number;
+  isDisabled: boolean;
+  isInvalid: boolean;
+  hasLeftIcon: boolean;
+  hasRightIcon: boolean;
+  onValueChange: (value: string) => void;
+  onChangeText: (value: string) => void;
 }
 
 const StyledInput = (props: InputProps) => {
   const {
-    isDisabled = defaultProps.isDisabled,
-    isInvalid = defaultProps.isInvalid,
-    onValueChange = defaultProps.onValueChange,
-    onChangeText = defaultProps.onChangeText,
-    size = defaultProps.size,
+    isDisabled,
+    isInvalid,
+    onValueChange,
+    onChangeText,
+    size,
     style,
     numberOfLines,
     textContentType,
@@ -327,11 +318,11 @@ const StyledRightIconWrapper = (props: RightIconWrapperProps) => {
 };
 
 interface StyledIconProps {
-  onValueChange?: (value: string) => void;
-  onChangeText?: (text: string) => void;
+  onValueChange: (value: string) => void;
+  onChangeText: (text: string) => void;
   value?: string;
-  isClearable?: boolean;
-  onClear?: () => void;
+  isClearable: boolean;
+  onClear: () => void;
 }
 
 const StyledLeftIcon = (props: StyledIconProps) => {
@@ -339,13 +330,7 @@ const StyledLeftIcon = (props: StyledIconProps) => {
 };
 
 const StyledRightIcon = (props: StyledIconProps) => {
-  const {
-    isClearable = defaultProps.isClearable,
-    onClear = defaultProps.onClear,
-    onValueChange = defaultProps.onValueChange,
-    onChangeText = defaultProps.onChangeText,
-    value,
-  } = props;
+  const { isClearable, onClear, onValueChange, onChangeText, value } = props;
   const theme = useTheme();
 
   if (!value || !isClearable) return null;

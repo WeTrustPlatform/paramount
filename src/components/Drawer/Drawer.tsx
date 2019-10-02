@@ -67,21 +67,13 @@ export interface DrawerOverrides {
 export interface DrawerProps
   extends WithOverrides<DrawerBaseProps, DrawerOverrides> {}
 
-const defaultProps = {
-  shouldLockBodyScroll: true,
-  useHistory: false,
-  isVisible: false,
-  position: 'bottom' as const,
-  offset: 0,
-};
-
 export const Drawer = (props: DrawerProps) => {
   const {
-    isVisible = defaultProps.isVisible,
-    position = defaultProps.position,
-    offset = defaultProps.offset,
-    shouldLockBodyScroll = defaultProps.shouldLockBodyScroll,
-    useHistory = defaultProps.useHistory,
+    isVisible = false,
+    position = 'bottom',
+    offset = 0,
+    shouldLockBodyScroll = true,
+    useHistory = false,
     children,
     onRequestClose = () => null,
     space,
@@ -160,20 +152,13 @@ const StyledRoot = (props: RootProps) => {
 };
 
 interface ContentProps extends ViewProps, PropsWithChildren {
-  offset?: number;
+  offset: number;
   space?: number | string;
-  position?: Position;
+  position: Position;
 }
 
 const StyledContent = (props: ContentProps) => {
-  const {
-    position = defaultProps.position,
-    offset = defaultProps.offset,
-    children,
-    space,
-    style,
-    ...viewProps
-  } = props;
+  const { position, offset, children, space, style, ...viewProps } = props;
 
   const animation = useSpring({
     [position]: offset,

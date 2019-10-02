@@ -35,19 +35,13 @@ export interface TabsOverrides {
 export interface TabsProps
   extends WithOverrides<TabsBaseProps, TabsOverrides> {}
 
-const defaultProps = {
-  tabs: [],
-  activeTab: 0,
-  onChangeTab: () => {
-    return;
-  },
-};
-
 export const Tabs = (props: TabsProps) => {
   const {
-    tabs = defaultProps.tabs,
-    activeTab = defaultProps.activeTab,
-    onChangeTab = defaultProps.onChangeTab,
+    tabs = [],
+    activeTab = 0,
+    onChangeTab = () => {
+      return;
+    },
     overrides = {},
   } = props;
   const theme = useTheme();

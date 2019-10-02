@@ -37,8 +37,9 @@ interface AvatarBaseProps {
 
   /**
    * The color used for the avatar.
+   * @default "auto"
    */
-  color?: FillColor;
+  color?: 'auto' | FillColor;
 
   /** Used to locate this view in end-to-end tests. */
   testID?: string;
@@ -53,19 +54,13 @@ export interface AvatarOverrides {
 export interface AvatarProps
   extends WithOverrides<AvatarBaseProps, AvatarOverrides> {}
 
-const defaultProps = {
-  name: '',
-  size: 'medium' as const,
-  isSolid: false,
-};
-
 export const Avatar = (props: AvatarProps) => {
   const {
     source,
-    name = defaultProps.name,
-    size = defaultProps.size,
-    isSolid = defaultProps.isSolid,
-    color,
+    name,
+    size = 'medium',
+    isSolid = false,
+    color = 'auto',
     testID,
     overrides = {},
   } = props;
@@ -153,22 +148,14 @@ const avatarScale: { [size in ControlSize]: number } = {
 };
 
 interface RootProps extends ViewProps, PropsWithChildren {
-  size?: ControlSize | number;
+  size: ControlSize | number;
   name?: string;
-  isSolid?: boolean;
-  color?: FillColor;
+  isSolid: boolean;
+  color: 'auto' | FillColor;
 }
 
 const StyledRoot = (props: RootProps) => {
-  const {
-    testID,
-    children,
-    name = defaultProps.name,
-    size = defaultProps.size,
-    isSolid = defaultProps.isSolid,
-    color,
-    style,
-  } = props;
+  const { testID, children, name, size, isSolid, color, style } = props;
   const theme = useTheme();
   const appearances = theme.fills[isSolid ? 'solid' : 'subtle'];
   const keys = Object.keys(appearances);
@@ -184,7 +171,9 @@ const StyledRoot = (props: RootProps) => {
           alignItems: 'center',
           backgroundColor:
             appearances[
-              color || (keys[hashCode(name) % keys.length] as keyof FillColors)
+              color === 'auto'
+                ? (keys[hashCode(name) % keys.length] as keyof FillColors)
+                : color
             ].backgroundColor,
           borderRadius: 9999,
           display: 'flex',
@@ -215,21 +204,14 @@ const getInitials = (name?: string, fallback = '?') => {
 };
 
 interface InitialsProps extends ViewProps {
-  size?: ControlSize | number;
+  size: ControlSize | number;
   name?: string;
-  isSolid?: boolean;
-  color?: FillColor;
+  isSolid: boolean;
+  color: 'auto' | FillColor;
 }
 
 const StyledInitials = (props: InitialsProps) => {
-  const {
-    name = defaultProps.name,
-    size = defaultProps.size,
-    isSolid = defaultProps.isSolid,
-    color,
-    style,
-    ...textProps
-  } = props;
+  const { name, size, isSolid, color, style, ...textProps } = props;
   const theme = useTheme();
 
   const appearances = theme.fills[isSolid ? 'solid' : 'subtle'];
@@ -249,8 +231,9 @@ const StyledInitials = (props: InitialsProps) => {
           {
             color:
               appearances[
-                color ||
-                  (keys[hashCode(name) % keys.length] as keyof FillColors)
+                color === 'auto'
+                  ? (keys[hashCode(name) % keys.length] as keyof FillColors)
+                  : color
               ].color,
             fontSize: controlSize / 2,
             lineHeight: controlSize,

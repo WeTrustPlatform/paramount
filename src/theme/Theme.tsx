@@ -37,6 +37,7 @@ import {
   WheelPickerOverrides,
 } from '../components';
 import { Overrides } from '../utils/overrides';
+import { DeepPartial } from '../utils/types';
 import { defaultTheme } from './defaultTheme';
 
 export interface TextSizes {
@@ -264,61 +265,46 @@ export interface Theme {
   // Containers
   containerShapes: ContainerShapes;
 
-  overrides?: Partial<ThemeOverrides>;
+  overrides?: DeepPartial<ThemeOverrides>;
 }
 
 export interface ThemeOverrides {
-  Alert: Partial<Overrides<any, AlertOverrides>>;
-  Avatar: Partial<Overrides<any, AvatarOverrides>>;
-  Badge: Partial<Overrides<any, BadgeOverrides>>;
-  Button: Partial<Overrides<any, ButtonOverrides>>;
-  Checkbox: Partial<Overrides<any, CheckboxOverrides>>;
-  Collapsible: Partial<Overrides<any, CollapsibleOverrides>>;
-  Column: Partial<Overrides<any, ColumnOverride>>;
-  Container: Partial<Overrides<any, ContainerOverride>>;
-  Counter: Partial<Overrides<any, CounterOverrides>>;
-  Dialog: Partial<Overrides<any, DialogOverrides>>;
-  Divider: Partial<Overrides<any, DividerOverride>>;
-  Drawer: Partial<Overrides<any, DrawerOverrides>>;
-  FormField: Partial<Overrides<any, FormFieldOverrides>>;
-  Heading: Partial<Overrides<any, HeadingOverride>>;
-  Label: Partial<Overrides<any, LabelOverrides>>;
-  ListItem: Partial<Overrides<any, ListItemOverrides>>;
-  NativePicker: Partial<Overrides<any, NativePickerOverrides>>;
-  Overlay: Partial<Overrides<any, OverlayOverride>>;
-  Popover: Partial<Overrides<any, PopoverOverrides>>;
-  Positioner: Partial<Overrides<any, PositionerOverrides>>;
-  ProgressBar: Partial<Overrides<any, ProgressBarOverrides>>;
-  Rating: Partial<Overrides<any, RatingOverrides>>;
-  Row: Partial<Overrides<any, RowOverride>>;
-  Slider: Partial<Overrides<any, SliderOverrides>>;
-  Switch: Partial<Overrides<any, SwitchOverrides>>;
-  Tabs: Partial<Overrides<any, TabsOverrides>>;
-  Text: Partial<Overrides<any, TextOverride>>;
-  TextInput: Partial<Overrides<any, TextInputOverrides>>;
-  WheelPicker: Partial<Overrides<any, WheelPickerOverrides<any>>>;
+  Alert: Overrides<any, AlertOverrides>;
+  Avatar: Overrides<any, AvatarOverrides>;
+  Badge: Overrides<any, BadgeOverrides>;
+  Button: Overrides<any, ButtonOverrides>;
+  Checkbox: Overrides<any, CheckboxOverrides>;
+  Collapsible: Overrides<any, CollapsibleOverrides>;
+  Column: Overrides<any, ColumnOverride>;
+  Container: Overrides<any, ContainerOverride>;
+  Counter: Overrides<any, CounterOverrides>;
+  Dialog: Overrides<any, DialogOverrides>;
+  Divider: Overrides<any, DividerOverride>;
+  Drawer: Overrides<any, DrawerOverrides>;
+  FormField: Overrides<any, FormFieldOverrides>;
+  Heading: Overrides<any, HeadingOverride>;
+  Label: Overrides<any, LabelOverrides>;
+  ListItem: Overrides<any, ListItemOverrides>;
+  NativePicker: Overrides<any, NativePickerOverrides>;
+  Overlay: Overrides<any, OverlayOverride>;
+  Popover: Overrides<any, PopoverOverrides>;
+  Positioner: Overrides<any, PositionerOverrides>;
+  ProgressBar: Overrides<any, ProgressBarOverrides>;
+  Rating: Overrides<any, RatingOverrides>;
+  Row: Overrides<any, RowOverride>;
+  Slider: Overrides<any, SliderOverrides>;
+  Switch: Overrides<any, SwitchOverrides>;
+  Tabs: Overrides<any, TabsOverrides>;
+  Text: Overrides<any, TextOverride>;
+  TextInput: Overrides<any, TextInputOverrides>;
+  WheelPicker: Overrides<any, WheelPickerOverrides<any>>;
 }
 
 export const ThemeContext = React.createContext(defaultTheme);
 
 export interface ThemeProviderProps {
   children?: React.ReactNode;
-  value?: Partial<{
-    colors: Partial<Colors>;
-    fills: Partial<Fills>;
-    layout: Partial<Layout>;
-    fontFamilies: Partial<FontFamilies>;
-    fontWeights: Partial<FontWeights>;
-    headingSizes: Partial<HeadingSizes>;
-    paragraphSizes: Partial<ParagraphSizes>;
-    textSizes: Partial<TextSizes>;
-    elevations: Partial<Elevations>;
-    controlPaddings: Partial<ControlSizes>;
-    controlHeights: Partial<ControlSizes>;
-    controlBorderRadius: Partial<ControlSizes>;
-    containerShapes: Partial<ContainerShapes>;
-    overrides: Partial<ThemeOverrides>;
-  }>;
+  value?: DeepPartial<Theme>;
 }
 
 export const ThemeProvider = (props: ThemeProviderProps) => {

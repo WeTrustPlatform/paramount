@@ -32,17 +32,8 @@ export interface ProgressBarOverrides {
 export interface ProgressBarProps
   extends WithOverrides<ProgressBarBaseProps, ProgressBarOverrides> {}
 
-const defaultProps = {
-  percent: 0,
-  size: 'medium' as const,
-};
-
 export const ProgressBar = (props: ProgressBarProps) => {
-  const {
-    percent = defaultProps.percent,
-    size = defaultProps.size,
-    overrides = {},
-  } = props;
+  const { percent = 0, size = 'medium', overrides = {} } = props;
   const theme = useTheme();
 
   const [Root, rootProps] = getOverrides(
@@ -67,11 +58,11 @@ export const ProgressBar = (props: ProgressBarProps) => {
 
 interface RootProps extends ViewProps {
   children?: React.ReactNode;
-  size?: ControlSize | number;
+  size: ControlSize | number;
 }
 
 const StyledRoot = (props: RootProps) => {
-  const { children, style, size = defaultProps.size, ...viewProps } = props;
+  const { children, style, size, ...viewProps } = props;
   const theme = useTheme();
 
   const height = isControlSize(size) ? theme.controlHeights[size] - 16 : size;
@@ -96,16 +87,11 @@ const StyledRoot = (props: RootProps) => {
 
 interface ProgressProps extends ViewProps {
   children?: React.ReactNode;
-  percent?: number;
+  percent: number;
 }
 
 const StyledProgress = (props: ProgressProps) => {
-  const {
-    percent = defaultProps.percent,
-    children,
-    style,
-    ...viewProps
-  } = props;
+  const { percent, children, style, ...viewProps } = props;
   const theme = useTheme();
 
   const boundPercent = Math.max(Math.min(percent, 100), 0);

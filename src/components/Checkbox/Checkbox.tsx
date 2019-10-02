@@ -54,19 +54,12 @@ export interface CheckboxOverrides {
 export interface CheckboxProps
   extends WithOverrides<CheckboxBaseProps, CheckboxOverrides> {}
 
-const defaultProps = {
-  size: 'medium' as const,
-  shape: 'rounded' as const,
-  value: false,
-  isDisabled: false,
-};
-
 export const Checkbox = (props: CheckboxProps) => {
   const {
-    size = defaultProps.size,
-    shape = defaultProps.shape,
-    value = defaultProps.value,
-    isDisabled = defaultProps.isDisabled,
+    size = 'medium',
+    shape = 'rounded',
+    value = false,
+    isDisabled = false,
     onValueChange = () => {
       return;
     },
@@ -110,20 +103,13 @@ export const Checkbox = (props: CheckboxProps) => {
 
 interface TouchableProps extends TouchableOpacityProps {
   children?: React.ReactNode;
-  size?: ControlSize | number;
-  isDisabled?: boolean;
-  shape?: ContainerShape;
+  size: ControlSize | number;
+  isDisabled: boolean;
+  shape: ContainerShape;
 }
 
 const StyledTouchable = (props: TouchableProps) => {
-  const {
-    size = defaultProps.size,
-    shape = defaultProps.shape,
-    isDisabled = defaultProps.isDisabled,
-    children,
-    style,
-    ...touchableProps
-  } = props;
+  const { size, shape, isDisabled, children, style, ...touchableProps } = props;
   const theme = useTheme();
 
   return (
@@ -138,21 +124,14 @@ const StyledTouchable = (props: TouchableProps) => {
 };
 
 interface CheckProps extends ViewProps {
-  size?: ControlSize | number;
-  value?: boolean;
-  isDisabled?: boolean;
-  shape?: ContainerShape;
+  size: ControlSize | number;
+  value: boolean;
+  isDisabled: boolean;
+  shape: ContainerShape;
 }
 
 const StyledCheck = (props: CheckProps) => {
-  const {
-    size = defaultProps.size,
-    shape = defaultProps.shape,
-    value = defaultProps.value,
-    isDisabled = defaultProps.isDisabled,
-    style,
-    ...viewProps
-  } = props;
+  const { size, shape, value, isDisabled, style, ...viewProps } = props;
   const theme = useTheme();
 
   const sizeValue = isControlSize(size)

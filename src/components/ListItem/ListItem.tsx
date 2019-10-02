@@ -59,12 +59,9 @@ export interface ListItemOverrides {
 export interface ListItemProps
   extends WithOverrides<ListItemBaseProps, ListItemOverrides> {}
 
-const defaultProps = {
-  isDisabled: false,
-};
 export const ListItem = (props: ListItemProps) => {
   const {
-    isDisabled = defaultProps.isDisabled,
+    isDisabled = false,
     title,
     description,
     onPress,
@@ -105,7 +102,7 @@ export const ListItem = (props: ListItemProps) => {
     overrides.Action,
   );
   const [AvatarR, avatarProps] = getOverrides(
-    Avatar,
+    StyledAvatar,
     props,
     dlv(theme, 'overrides.ListItem.Avatar'),
     overrides.Avatar,
@@ -125,8 +122,15 @@ export const ListItem = (props: ListItemProps) => {
         isDisabled={isDisabled}
         {...touchableProps}
       >
-        {source && <AvatarR size="small" source={source} {...avatarProps} />}
-        <TextWrapper source={source} {...textProps}>
+        <AvatarR size="small" source={source} {...avatarProps} />
+        <TextWrapper
+          hasAvatar={
+            !!source ||
+            !!overrides.Avatar ||
+            !!dlv(theme, 'overrides.ListItem.Avatar')
+          }
+          {...textProps}
+        >
           <Title title={title} {...titleProps} />
           <Description description={description} {...descriptionProps} />
         </TextWrapper>
@@ -166,16 +170,11 @@ const StyledRoot = (props: RootProps) => {
 
 interface TouchableProps extends TouchableOpacityProps {
   children?: React.ReactNode;
-  isDisabled?: boolean;
+  isDisabled: boolean;
 }
 
 const StyledTouchable = (props: TouchableProps) => {
-  const {
-    style,
-    children,
-    isDisabled = defaultProps.isDisabled,
-    ...touchableProps
-  } = props;
+  const { style, children, isDisabled, ...touchableProps } = props;
 
   return (
     <TouchableOpacity
@@ -212,16 +211,16 @@ const StyledTitle = (props: TitleProps) => {
 
 interface TextWrapperProps extends ViewProps {
   children?: React.ReactNode;
-  source?: ImageSourcePropType | false;
+  hasAvatar: boolean;
 }
 
 const StyledTextWrapper = (props: TextWrapperProps) => {
-  const { children, style, source, ...viewProps } = props;
+  const { children, style, hasAvatar = false, ...viewProps } = props;
 
   return (
     <View
       style={[
-        { flex: 1, justifyContent: 'center', paddingLeft: source ? 8 : 0 },
+        { flex: 1, justifyContent: 'center', paddingLeft: hasAvatar ? 8 : 0 },
         style,
       ]}
       {...viewProps}
@@ -253,4 +252,12 @@ interface ActionProps {
 
 const StyledAction = (props: ActionProps) => {
   return <></>;
+};
+
+const StyledAvatar = (props: AvatarProps) => {
+  const { source, name } = props;
+
+  if (!source && !name) return null;
+
+  return <Avatar {...props} />;
 };

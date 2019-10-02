@@ -40,17 +40,8 @@ export interface AlertOverrides {
 export interface AlertProps
   extends WithOverrides<AlertBaseProps, AlertOverrides> {}
 
-const defaultProps = {
-  intent: 'info' as const,
-};
-
 export const Alert = (props: AlertProps) => {
-  const {
-    title,
-    description,
-    intent = defaultProps.intent,
-    overrides = {},
-  } = props;
+  const { title, description, intent = 'info', overrides = {} } = props;
   const theme = useTheme();
 
   const [Root, rootProps] = getOverrides(
@@ -65,7 +56,12 @@ export const Alert = (props: AlertProps) => {
     dlv(theme, 'overrides.Alert.LeftWrapper'),
     overrides.LeftWrapper,
   );
-  const [Body, bodyProps] = getOverrides(StyledBody, props, overrides.Body);
+  const [Body, bodyProps] = getOverrides(
+    StyledBody,
+    props,
+    dlv(theme, 'overrides.Alert.Body'),
+    overrides.Body,
+  );
   const [AlertIcon, alertIconProps] = getOverrides(
     StyledAlertIcon,
     props,
@@ -114,13 +110,13 @@ interface PropsWithChildren {
 }
 
 interface PropsWithIntent {
-  intent?: Intent;
+  intent: Intent;
 }
 
 interface RootProps extends ViewProps, PropsWithChildren, PropsWithIntent {}
 
 const StyledRoot = (props: RootProps) => {
-  const { intent = defaultProps.intent, testID, children, style } = props;
+  const { intent, testID, children, style } = props;
   const theme = useTheme();
 
   return (
@@ -172,7 +168,7 @@ const StyledLeftWrapper = (props: LeftWrapperProps) => {
 interface AlertIconProps extends Omit<IconProps, 'name'>, PropsWithIntent {}
 
 const StyledAlertIcon = (props: AlertIconProps) => {
-  const { intent = defaultProps.intent } = props;
+  const { intent } = props;
 
   switch (intent) {
     case 'success':
@@ -211,7 +207,7 @@ interface TitleProps extends TextProps, PropsWithIntent {
 }
 
 const StyledTitle = (props: TitleProps) => {
-  const { title, intent = defaultProps.intent, ...textProps } = props;
+  const { title, intent, ...textProps } = props;
 
   if (!title) return null;
 
@@ -227,7 +223,7 @@ interface DescriptionProps extends TextProps, PropsWithIntent {
 }
 
 const StyledDescription = (props: DescriptionProps) => {
-  const { description, intent = defaultProps.intent, ...textProps } = props;
+  const { description, intent, ...textProps } = props;
 
   if (!description) return null;
 

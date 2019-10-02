@@ -45,19 +45,13 @@ export interface DialogOverrides {
 export interface DialogProps
   extends WithOverrides<DialogBaseProps, DialogOverrides> {}
 
-const defaultProps = {
-  shouldLockBodyScroll: true,
-  isVisible: false,
-  useHistory: false,
-};
-
 export const Dialog = (props: DialogProps) => {
   const {
     children,
-    shouldLockBodyScroll = defaultProps.shouldLockBodyScroll,
-    isVisible = defaultProps.isVisible,
+    shouldLockBodyScroll = true,
+    isVisible = false,
     onRequestClose = () => null,
-    useHistory = defaultProps.useHistory,
+    useHistory = false,
     overrides = {},
   } = props;
   const theme = useTheme();

@@ -52,21 +52,14 @@ export interface SwitchOverrides {
 export interface SwitchProps
   extends WithOverrides<SwitchBaseProps, SwitchOverrides> {}
 
-const defaultProps = {
-  size: 'medium' as const,
-  value: false,
-  isDisabled: false,
-  onValueChange: () => {
-    return;
-  },
-};
-
 export const Switch = (props: SwitchProps) => {
   const {
-    size = defaultProps.size,
-    value = defaultProps.value,
-    isDisabled = defaultProps.isDisabled,
-    onValueChange = defaultProps.onValueChange,
+    size = 'medium',
+    value = false,
+    isDisabled = false,
+    onValueChange = () => {
+      return;
+    },
     overrides = {},
   } = props;
   const theme = useTheme();
@@ -144,9 +137,9 @@ const StyledTouchable = (props: TouchableProps) => {
 
 interface BackgroundProps extends ViewProps {
   children?: React.ReactNode;
-  size?: ControlSize | number;
-  isDisabled?: boolean;
-  value?: boolean;
+  size: ControlSize | number;
+  isDisabled: boolean;
+  value: boolean;
 }
 
 const getCircleSize = (size: ControlSize | number, theme: Theme) => {
@@ -158,14 +151,7 @@ const getContainerSize = (size: ControlSize | number, theme: Theme) => {
 };
 
 const StyledBackground = (props: BackgroundProps) => {
-  const {
-    size = defaultProps.size,
-    isDisabled = defaultProps.isDisabled,
-    children,
-    value,
-    style,
-    ...viewProps
-  } = props;
+  const { size, isDisabled, children, value, style, ...viewProps } = props;
   const theme = useTheme();
   const { backgroundColor } = useSpring({
     config: springDefaultConfig,
@@ -204,19 +190,13 @@ const StyledBackground = (props: BackgroundProps) => {
 };
 
 interface CircleProps extends ViewProps {
-  size?: ControlSize | number;
-  isDisabled?: boolean;
-  value?: boolean;
+  size: ControlSize | number;
+  isDisabled: boolean;
+  value: boolean;
 }
 
 const StyledCircle = (props: CircleProps) => {
-  const {
-    size = defaultProps.size,
-    isDisabled,
-    value,
-    style,
-    ...viewProps
-  } = props;
+  const { size, isDisabled, value, style, ...viewProps } = props;
   const theme = useTheme();
 
   const circleSize = getCircleSize(size, theme);

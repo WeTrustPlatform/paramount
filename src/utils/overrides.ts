@@ -2,11 +2,11 @@ import deepMerge from 'deepmerge';
 
 export type GetProps<TProps = any, TChildProps = any> = (
   props: TProps,
-) => TChildProps;
+) => Partial<TChildProps>;
 
 export type OverrideProps<TProps = any, TChildProps = any> =
   | GetProps<TProps, TChildProps>
-  | TChildProps;
+  | Partial<TChildProps>;
 
 export type GetStyle<TProps = any, TStyle = any> = (props: TProps) => TStyle;
 

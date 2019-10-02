@@ -60,19 +60,10 @@ export interface ListPickerProps<TIsMulti extends boolean, TValue extends any>
     ListPickerOverrides<TValue>
   > {}
 
-const defaultProps = {
-  options: [],
-};
-
 export const ListPicker = <TIsMulti extends boolean, TValue extends any>(
   props: ListPickerProps<TIsMulti, TValue>,
 ) => {
-  const {
-    value,
-    onValueChange,
-    options = defaultProps.options,
-    overrides = {},
-  } = props;
+  const { value, onValueChange, options = [], overrides = {} } = props;
   const theme = useTheme();
 
   const [ListPickerItem, listPickerItemProps] = getOverrides(
@@ -151,9 +142,9 @@ const StyledList = <TValue extends any>(props: ListProps<TValue>) => {
 };
 
 interface ListPickerItemProps<TValue extends any> {
-  index?: number;
-  isSelected?: boolean;
-  onPress?: (value: TValue, index: number, isSelected: boolean) => void;
+  index: number;
+  isSelected: boolean;
+  onPress: (value: TValue, index: number, isSelected: boolean) => void;
   value: TValue;
   label: string;
   description?: OptionalString;

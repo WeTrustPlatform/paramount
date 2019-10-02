@@ -53,15 +53,11 @@ export interface CollapsibleOverrides {
 export interface CollapsibleProps
   extends WithOverrides<CollapsibleBaseProps, CollapsibleOverrides> {}
 
-const defaultProps = {
-  initialIsOpen: false,
-};
-
 export const Collapsible = (props: CollapsibleProps) => {
   const {
     title,
     children,
-    initialIsOpen = defaultProps.initialIsOpen,
+    initialIsOpen = false,
     isOpen,
     testID,
     onOpen = () => {

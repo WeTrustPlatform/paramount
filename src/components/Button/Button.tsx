@@ -66,21 +66,13 @@ export interface ButtonOverrides {
 export interface ButtonProps
   extends WithOverrides<ButtonBaseProps, ButtonOverrides> {}
 
-const defaultProps = {
-  appearance: 'primary' as const,
-  color: 'default' as const,
-  isDisabled: false,
-  isLoading: false,
-  size: 'medium' as const,
-};
-
 export const Button = (props: ButtonProps) => {
   const {
-    appearance = defaultProps.appearance,
-    color = defaultProps.color,
-    isDisabled = defaultProps.isDisabled,
-    isLoading = defaultProps.isLoading,
-    size = defaultProps.size,
+    appearance = 'primary',
+    color = 'default',
+    isDisabled = false,
+    isLoading = false,
+    size = 'medium',
     onPress = () => {
       return;
     },
@@ -244,20 +236,20 @@ const getButtonAppearances = (
 };
 
 interface TouchableProps extends TouchableOpacityProps, PropsWithChildren {
-  color?: ButtonColor;
-  appearance?: ButtonAppearance;
-  size?: ControlSize | number;
-  isDisabled?: boolean;
-  isLoading?: boolean;
+  color: ButtonColor;
+  appearance: ButtonAppearance;
+  size: ControlSize | number;
+  isDisabled: boolean;
+  isLoading: boolean;
 }
 
 const StyledTouchable = (props: TouchableProps) => {
   const {
-    appearance = defaultProps.appearance,
-    color = defaultProps.color,
-    isDisabled = defaultProps.isDisabled,
-    isLoading = defaultProps.isLoading,
-    size = defaultProps.size,
+    appearance,
+    color,
+    isDisabled,
+    isLoading,
+    size,
     children,
     style,
     ...touchableProps
@@ -339,19 +331,19 @@ const getButtonTextColor = (theme: Theme): ButtonTextColors => {
 };
 
 interface TitleProps extends TextProps {
-  size?: ControlSize | number;
-  color?: ButtonColor;
+  size: ControlSize | number;
+  color: ButtonColor;
   title?: OptionalString;
-  appearance?: ButtonAppearance;
-  isDisabled?: boolean;
+  appearance: ButtonAppearance;
+  isDisabled: boolean;
 }
 
 const StyledTitle = (props: TitleProps) => {
   const {
-    appearance = defaultProps.appearance,
-    color = defaultProps.color,
-    isDisabled = defaultProps.isDisabled,
-    size = defaultProps.size,
+    appearance,
+    color,
+    isDisabled,
+    size,
     title,
     style,
     ...textProps
@@ -390,27 +382,24 @@ const StyledTitle = (props: TitleProps) => {
 };
 
 interface LoadingProps {
-  color?: ButtonColor;
-  appearance?: ButtonAppearance;
+  color: ButtonColor;
+  appearance: ButtonAppearance;
 }
 
 const StyledLoading = (props: LoadingProps) => {
-  const {
-    appearance = defaultProps.appearance,
-    color = defaultProps.color,
-  } = props;
+  const { appearance, color } = props;
   const theme = useTheme();
 
   return <Dots color={getButtonTextColor(theme)[appearance][color]} />;
 };
 
 interface IconProps extends PropsWithChildren {
-  size?: ControlSize | number;
-  color?: ButtonColor;
+  size: ControlSize | number;
+  color: ButtonColor;
   title?: OptionalString;
-  appearance?: ButtonAppearance;
-  isDisabled?: boolean;
-  isLoading?: boolean;
+  appearance: ButtonAppearance;
+  isDisabled: boolean;
+  isLoading: boolean;
 }
 
 const StyledIcon = (props: IconProps) => {

@@ -34,17 +34,8 @@ export interface LabelOverrides {
 export interface LabelProps
   extends WithOverrides<LabelBaseProps, LabelOverrides> {}
 
-const defaultProps = {
-  position: 'top' as const,
-};
-
 export const Label = (props: LabelProps) => {
-  const {
-    children,
-    position = defaultProps.position,
-    overrides = {},
-    label,
-  } = props;
+  const { children, position = 'top', overrides = {}, label } = props;
   const theme = useTheme();
 
   const [Root, rootProps] = getOverrides(
@@ -141,16 +132,11 @@ const StyledWrapper = (props: WrapperProps) => {
 
 interface LabelTextProps extends TextProps, PropsWithChildren {
   label?: OptionalString;
-  position?: LabelPosition;
+  position: LabelPosition;
 }
 
 const StyledLabelText = (props: LabelTextProps) => {
-  const {
-    label,
-    position = defaultProps.position,
-    style,
-    ...textProps
-  } = props;
+  const { label, position, style, ...textProps } = props;
 
   if (!label) return null;
 

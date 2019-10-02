@@ -45,17 +45,13 @@ export interface FormFieldOverrides {
 export interface FormFieldProps
   extends WithOverrides<FormFieldBaseProps, FormFieldOverrides> {}
 
-const defaultProps = {
-  labelPosition: 'top' as const,
-};
-
 export const FormField = (props: FormFieldProps) => {
   const {
     label,
     error,
     children,
     description,
-    labelPosition = defaultProps.labelPosition,
+    labelPosition = 'top',
     overrides = {},
   } = props;
   const theme = useTheme();

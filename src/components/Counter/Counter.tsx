@@ -50,15 +50,10 @@ export interface CounterOverrides {
 export interface CounterProps
   extends WithOverrides<CounterBaseProps, CounterOverrides> {}
 
-const defaultProps = {
-  value: 0,
-  step: 1,
-};
-
 export const Counter = (props: CounterProps) => {
   const {
-    value = defaultProps.value,
-    step = defaultProps.step,
+    value = 0,
+    step = 1,
     max,
     min,
     onValueChange = () => {
@@ -158,11 +153,11 @@ const StyledRoot = (props: RootProps) => {
 };
 
 interface CountProps extends TextProps {
-  value?: number;
+  value: number;
 }
 
 const StyledCount = (props: CountProps) => {
-  const { value = defaultProps.value, style, ...textProps } = props;
+  const { value, style, ...textProps } = props;
 
   return (
     <Text
@@ -176,7 +171,7 @@ const StyledCount = (props: CountProps) => {
 };
 
 interface TouchableProps extends TouchableOpacityProps, PropsWithChildren {
-  isDisabled?: boolean;
+  isDisabled: boolean;
 }
 
 const StyledTouchable = (props: TouchableProps) => {
@@ -215,11 +210,11 @@ const StyledTouchable = (props: TouchableProps) => {
 };
 
 interface StyledIconProps extends IconProps {
-  isDisabled?: boolean;
+  isDisabled: boolean;
 }
 
 const StyledIcon = (props: StyledIconProps) => {
-  const { isDisabled = false, name, ...iconProps } = props;
+  const { isDisabled, name, ...iconProps } = props;
   const theme = useTheme();
 
   return (
@@ -233,7 +228,7 @@ const StyledIcon = (props: StyledIconProps) => {
 };
 
 interface CounterIconProps {
-  isDisabled?: boolean;
+  isDisabled: boolean;
 }
 
 const StyledIconPlus = (props: CounterIconProps) => (

@@ -137,17 +137,12 @@ const initialMeasurements = {
   y: 0,
 };
 
-const defaultProps = {
-  isVisible: false,
-  position: POSITION.BOTTOM,
-};
-
 export const Positioner = (props: PositionerProps) => {
   const {
     children,
     content,
-    isVisible = defaultProps.isVisible,
-    position = defaultProps.position,
+    isVisible = false,
+    position = POSITION.BOTTOM,
     overrides = {},
   } = props;
   const theme = useTheme();

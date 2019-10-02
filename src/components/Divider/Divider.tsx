@@ -35,17 +35,11 @@ export interface DividerProps extends ViewProps {
 
 export type DividerOverride = Override<DividerProps, StyledDividerProps>;
 
-const defaultProps = {
-  size: 'small' as const,
-  color: 'default' as const,
-  orientation: 'horizontal' as const,
-};
-
 export const Divider = (props: DividerProps) => {
   const {
-    size = defaultProps.size,
-    color = defaultProps.color,
-    orientation = defaultProps.orientation,
+    size = 'small',
+    color = 'default',
+    orientation = 'horizontal',
     override,
   } = props;
   const theme = useTheme();
@@ -78,20 +72,14 @@ const dividerScale: { [size in ControlSize]: number } = {
 };
 
 interface StyledDividerProps extends ViewProps {
-  size?: ControlSize | number;
-  color?: BorderColor | string;
-  orientation?: DividerOrientation;
+  size: ControlSize | number;
+  color: BorderColor | string;
+  orientation: DividerOrientation;
 }
 
 const StyledDivider = (props: StyledDividerProps) => {
   const theme = useTheme();
-  const {
-    size = defaultProps.size,
-    color = defaultProps.color,
-    orientation = defaultProps.orientation,
-    style,
-    ...viewProps
-  } = props;
+  const { size, color, orientation, style, ...viewProps } = props;
 
   const backgroundColor = getDividerColor(theme.colors.border)(
     color || theme.colors.border.default,

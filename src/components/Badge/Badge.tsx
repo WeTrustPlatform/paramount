@@ -49,19 +49,12 @@ export interface BadgeOverrides {
 export interface BadgeProps
   extends WithOverrides<BadgeBaseProps, BadgeOverrides> {}
 
-const defaultProps = {
-  size: 'medium' as const,
-  color: 'neutral' as const,
-  isSolid: false,
-  shape: 'rounded' as const,
-};
-
 export const Badge = (props: BadgeProps) => {
   const {
-    size = defaultProps.size,
-    color = defaultProps.color,
-    isSolid = defaultProps.isSolid,
-    shape = defaultProps.shape,
+    size = 'medium',
+    color = 'neutral',
+    isSolid = false,
+    shape = 'rounded',
     title,
     testID,
     overrides = {},
@@ -106,22 +99,14 @@ interface PropsWithChildren {
 }
 
 interface RootProps extends ViewProps, PropsWithChildren {
-  color?: FillColor;
-  size?: ControlSize | number;
-  shape?: ContainerShape;
-  isSolid?: boolean;
+  color: FillColor;
+  size: ControlSize | number;
+  shape: ContainerShape;
+  isSolid: boolean;
 }
 
 const StyledRoot = (props: RootProps) => {
-  const {
-    size = defaultProps.size,
-    color = defaultProps.color,
-    isSolid = defaultProps.isSolid,
-    shape = defaultProps.shape,
-    children,
-    style,
-    ...viewProps
-  } = props;
+  const { size, color, isSolid, shape, children, style, ...viewProps } = props;
   const theme = useTheme();
   const shapeStyles = theme.containerShapes[shape];
   const fills = isSolid ? theme.fills.solid : theme.fills.subtle;
@@ -178,20 +163,13 @@ const StyledRoot = (props: RootProps) => {
 };
 
 interface TitleProps extends TextProps {
-  color?: FillColor;
+  color: FillColor;
   title?: OptionalString;
-  isSolid?: boolean;
+  isSolid: boolean;
 }
 
 const StyledTitle = (props: TitleProps) => {
-  const {
-    size = defaultProps.size,
-    color = defaultProps.color,
-    isSolid = defaultProps.isSolid,
-    title,
-    style,
-    ...textProps
-  } = props;
+  const { size, color, isSolid, title, style, ...textProps } = props;
   const theme = useTheme();
   const fills = isSolid ? theme.fills.solid : theme.fills.subtle;
 

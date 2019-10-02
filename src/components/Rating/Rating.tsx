@@ -51,21 +51,13 @@ export interface RatingOverrides {
 export interface RatingProps
   extends WithOverrides<RatingBaseProps, RatingOverrides> {}
 
-const defaultProps = {
-  value: 0,
-  maxRating: 5,
-  onValueChange: () => undefined,
-  size: 'medium' as const,
-  color: 'primary' as const,
-};
-
 export const Rating = (props: RatingProps) => {
   const {
-    value = defaultProps.value,
-    maxRating = defaultProps.maxRating,
-    onValueChange = defaultProps.onValueChange,
-    size = defaultProps.size,
-    color = defaultProps.color,
+    value = 0,
+    maxRating = 5,
+    onValueChange = () => undefined,
+    size = 'medium',
+    color = 'primary',
     overrides = {},
   } = props;
   const theme = useTheme();
@@ -121,21 +113,21 @@ const StyledRoot = (props: RootProps) => {
 
 interface StarProps extends TouchableOpacityProps {
   children?: React.ReactNode;
-  size?: ControlSize | number;
-  value?: number;
-  rating?: number;
-  color?: TextColor;
-  maxRating?: number;
+  size: ControlSize | number;
+  value: number;
+  rating: number;
+  color: TextColor;
+  maxRating: number;
 }
 
 const StyledStar = (props: StarProps) => {
   const {
     children,
-    value = defaultProps.value,
-    maxRating = defaultProps.maxRating,
-    size = defaultProps.size,
-    color = defaultProps.color,
-    rating = defaultProps.maxRating,
+    value,
+    maxRating,
+    size,
+    color,
+    rating,
     style,
     ...touchableProps
   } = props;

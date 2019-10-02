@@ -146,31 +146,19 @@ const setRightValue = (
     : rightValue;
 };
 
-const defaultProps = {
-  value: 0,
-  onSlidingStart: () => undefined,
-  onSlidingComplete: () => undefined,
-  onValueChange: () => undefined,
-  minimumValue: 0,
-  maximumValue: 1,
-  step: 0,
-  size: 'medium' as const,
-  isRange: false,
-};
-
 export const Slider = <TIsRange extends boolean>(
   props: SliderProps<TIsRange>,
 ) => {
   const {
-    value: initialValue = defaultProps.value,
-    onSlidingStart = defaultProps.onSlidingStart,
-    onSlidingComplete = defaultProps.onSlidingComplete,
-    onValueChange = defaultProps.onValueChange,
-    minimumValue = defaultProps.minimumValue,
-    maximumValue = defaultProps.maximumValue,
-    step = defaultProps.step,
-    size = defaultProps.size,
-    isRange = defaultProps.isRange,
+    value: initialValue = 0,
+    onSlidingStart = () => undefined,
+    onSlidingComplete = () => undefined,
+    onValueChange = () => undefined,
+    minimumValue = 0,
+    maximumValue = 1,
+    step = 0,
+    size = 'medium' as const,
+    isRange = false,
     overrides = {},
   } = props;
   const theme = useTheme();
@@ -316,11 +304,11 @@ export const Slider = <TIsRange extends boolean>(
 };
 
 interface RootProps extends ViewMeasureProps {
-  size?: ControlSize | number;
+  size: ControlSize | number;
 }
 
 const StyledRoot = (props: RootProps) => {
-  const { style, size = defaultProps.size, ...viewMeasureProps } = props;
+  const { style, size, ...viewMeasureProps } = props;
   const theme = useTheme();
 
   const controlSize = isControlSize(size) ? theme.controlHeights[size] : size;
@@ -340,11 +328,11 @@ const StyledRoot = (props: RootProps) => {
 };
 
 interface UnselectedTrackProps extends ViewProps {
-  size?: ControlSize | number;
+  size: ControlSize | number;
 }
 
 const StyledUnselectedTrack = (props: UnselectedTrackProps) => {
-  const { style, size = defaultProps.size, ...viewProps } = props;
+  const { style, size, ...viewProps } = props;
   const theme = useTheme();
 
   const controlSize = isControlSize(size) ? theme.controlHeights[size] : size;
@@ -367,16 +355,16 @@ const StyledUnselectedTrack = (props: UnselectedTrackProps) => {
 };
 
 interface SelectedTrackProps extends ViewProps {
-  size?: ControlSize | number;
-  left?: number;
-  right?: number;
-  isRangeSlider?: boolean;
+  size: ControlSize | number;
+  left: number;
+  right: number;
+  isRangeSlider: boolean;
 }
 
 const StyledSelectedTrack = (props: SelectedTrackProps) => {
   const {
     style,
-    size = defaultProps.size,
+    size,
     left = 0,
     right = 0,
     isRangeSlider,
@@ -405,20 +393,14 @@ const StyledSelectedTrack = (props: SelectedTrackProps) => {
 };
 
 interface ThumbProps extends ViewProps {
-  size?: ControlSize | number;
-  isSliding?: boolean;
-  position?: number;
-  value?: number;
+  size: ControlSize | number;
+  isSliding: boolean;
+  position: number;
+  value: number;
 }
 
 const StyledThumb = (props: ThumbProps) => {
-  const {
-    style,
-    size = defaultProps.size,
-    isSliding = false,
-    position = 0,
-    ...viewProps
-  } = props;
+  const { style, size, isSliding = false, position = 0, ...viewProps } = props;
   const theme = useTheme();
 
   const controlSize = isControlSize(size) ? theme.controlHeights[size] : size;
