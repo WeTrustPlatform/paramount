@@ -16,8 +16,6 @@ import {
   Theme,
 } from './Theme';
 
-// tslint:disable object-literal-sort-keys
-
 const controlPaddings: ControlSizes = {
   small: 8,
 
@@ -46,7 +44,6 @@ const colors: Colors = {
   background: {
     base: 'white',
     content: 'white',
-    overlay: 'rgba(0,0,0,0.3)',
 
     greyLight: palette.neutral.lightest,
     greyDefault: '#F5F6F7',

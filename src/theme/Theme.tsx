@@ -153,7 +153,6 @@ export type BorderColor = keyof BorderColors | string;
 export interface BackgroundColors {
   content: string;
   base: string;
-  overlay: string;
 
   greyLight: string;
   greyDefault: string;
