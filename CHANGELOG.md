@@ -1,3 +1,16 @@
+# [1.82.0](https://github.com/WeTrustPlatform/paramount/compare/v1.81.3...v1.82.0) (2019-10-02)
+
+
+### Bug Fixes
+
+* button types ([6121f4c](https://github.com/WeTrustPlatform/paramount/commit/6121f4c))
+
+
+### Features
+
+* add overlay color ([b132d23](https://github.com/WeTrustPlatform/paramount/commit/b132d23))
+* simplify api ([a5c73f0](https://github.com/WeTrustPlatform/paramount/commit/a5c73f0))
+
 ## [1.81.3](https://github.com/WeTrustPlatform/paramount/compare/v1.81.2...v1.81.3) (2019-10-02)
 
 
