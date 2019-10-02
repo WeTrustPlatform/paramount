@@ -1,3 +1,11 @@
+## [1.81.3](https://github.com/WeTrustPlatform/paramount/compare/v1.81.2...v1.81.3) (2019-10-02)
+
+
+### Bug Fixes
+
+* overrides of props ([39372b6](https://github.com/WeTrustPlatform/paramount/commit/39372b6))
+* pickers refactor ([9c58e63](https://github.com/WeTrustPlatform/paramount/commit/9c58e63))
+
 ## [1.81.2](https://github.com/WeTrustPlatform/paramount/compare/v1.81.1...v1.81.2) (2019-10-01)
 
 
