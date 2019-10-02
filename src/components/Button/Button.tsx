@@ -190,7 +190,7 @@ const getButtonAppearances = (
     primary: {
       default: {
         backgroundColor: isLoading
-          ? theme.colors.background.overlay
+          ? theme.colors.background.greyLight
           : theme.colors.button.default,
       },
       danger: {
