@@ -10,10 +10,8 @@ export const Paragraph = (props: TextProps) => {
     <Text
       // @ts-ignore
       accessibilityLabel="p"
-      override={{
-        style: {
-          marginVertical: theme.textSizes.medium.fontSize,
-        },
+      style={{
+        marginVertical: theme.textSizes.medium.fontSize,
       }}
       {...props}
     />

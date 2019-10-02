@@ -11,8 +11,8 @@ import {
 import { useTheme } from '../../theme';
 import { ControlSize, FillColor, FillColors } from '../../theme/Theme';
 import { isControlSize } from '../../utils/isControlSize';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
-import { Text } from '../Typography';
+import { getOverrides, getStyle, WithOverrides } from '../../utils/overrides';
+import { Text, TextProps } from '../Typography';
 
 interface AvatarBaseProps {
   /** The source attribute of the image. When it's not available, render initials instead. */
@@ -203,7 +203,7 @@ const getInitials = (name?: string, fallback = '?') => {
     .join('');
 };
 
-interface InitialsProps extends ViewProps {
+interface InitialsProps extends TextProps {
   size: ControlSize | number;
   name?: string;
   isSolid: boolean;
@@ -226,21 +226,19 @@ const StyledInitials = (props: InitialsProps) => {
   return (
     <Text
       {...textProps}
-      override={{
-        style: [
-          {
-            color:
-              appearances[
-                color === 'auto'
-                  ? (keys[hashCode(name) % keys.length] as keyof FillColors)
-                  : color
-              ].color,
-            fontSize: controlSize / 2,
-            lineHeight: controlSize,
-          },
-          style,
-        ],
-      }}
+      style={[
+        {
+          color:
+            appearances[
+              color === 'auto'
+                ? (keys[hashCode(name) % keys.length] as keyof FillColors)
+                : color
+            ].color,
+          fontSize: controlSize / 2,
+          lineHeight: controlSize,
+        },
+        getStyle(props, style),
+      ]}
     >
       {initials}
     </Text>

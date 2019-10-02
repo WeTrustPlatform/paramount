@@ -1,9 +1,9 @@
 import dlv from 'dlv';
 import * as React from 'react';
-import { View, ViewProps } from 'react-native';
+import { View, ViewProps, ViewStyle } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, Override } from '../../utils/overrides';
+import { getStyle, OverrideStyle, Style } from '../../utils/overrides';
 import {
   ColumnCount,
   DESC_ORDER_SCREEN_SIZES,
@@ -66,40 +66,19 @@ export interface ColumnConfig extends ColumnConfigBase {
   offsetXlarge?: ColumnCount;
 }
 
-export interface ColumnProps extends ColumnConfig, ViewProps {
+export interface ColumnProps extends ColumnConfig, Omit<ViewProps, 'style'> {
   /** Content of the column. */
   children?: React.ReactNode;
 
   /**
-   * Overrides
+   * Style callback or ViewStyle object
    */
-  override?: ColumnOverride;
+  style?: Style<ColumnProps, ViewStyle>;
 }
 
-export type ColumnOverride = Override<ColumnProps, RootProps>;
+export type ColumnOverride = OverrideStyle<ColumnProps, ViewStyle>;
 
 export const Column = (props: ColumnProps) => {
-  const { children, override, ...config } = props;
-  const theme = useTheme();
-  const [Root, rootProps] = getOverrides(
-    StyledRoot,
-    props,
-    dlv(theme, 'overrides.Column'),
-    override,
-  );
-
-  return (
-    <Root {...config} {...rootProps}>
-      {children}
-    </Root>
-  );
-};
-
-interface RootProps extends ViewProps, ColumnConfig {
-  children?: React.ReactNode;
-}
-
-const StyledRoot = (props: RootProps) => {
   const {
     children,
     style,
@@ -115,6 +94,11 @@ const StyledRoot = (props: RootProps) => {
     offsetXlarge,
     ...viewProps
   } = props;
+
+  const theme = useTheme();
+  const { currentScreenSize, gridColumnCount } = useLayout();
+  const gutterWidth = React.useContext(GutterWidthContext);
+
   const config = {
     xsmall,
     small,
@@ -127,9 +111,6 @@ const StyledRoot = (props: RootProps) => {
     offsetLarge,
     offsetXlarge,
   };
-  const { currentScreenSize, gridColumnCount } = useLayout();
-  const gutterWidth = React.useContext(GutterWidthContext);
-
   const { columns, offsetColumns } = splitColumnConfig(config);
 
   const columnCount = getColumnCount(columns, currentScreenSize);
@@ -148,7 +129,8 @@ const StyledRoot = (props: RootProps) => {
           paddingLeft: gutterWidth / 2,
           paddingRight: gutterWidth / 2,
         },
-        style,
+        getStyle(props, style),
+        getStyle(props, dlv(theme, 'overrides.Column.style')),
       ]}
       {...viewProps}
     >

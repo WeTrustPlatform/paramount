@@ -9,7 +9,7 @@ import {
 
 import { ButtonColor, ControlSize, Theme, useTheme } from '../../theme';
 import { isControlSize } from '../../utils/isControlSize';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { getOverrides, getStyle, WithOverrides } from '../../utils/overrides';
 import { OptionalString } from '../../utils/types';
 import { Dots } from '../LoadingIndicators';
 import { Text, TextProps } from '../Typography';
@@ -372,7 +372,7 @@ const StyledTitle = (props: TitleProps) => {
           paddingHorizontal: 8,
           ...textSize,
         },
-        style,
+        getStyle(props, style),
       ]}
       {...textProps}
     >

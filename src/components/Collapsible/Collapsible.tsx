@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { getOverrides, getStyle, WithOverrides } from '../../utils/overrides';
 import { OptionalString } from '../../utils/types';
 import { Icon } from '../Icon';
 import { Text, TextProps } from '../Typography';
@@ -173,7 +173,7 @@ const StyledTitle = (props: TitleProps) => {
   if (!title) return null;
 
   return (
-    <Text size="large" style={[{}, style]} {...textProps}>
+    <Text size="large" style={[{}, getStyle(props, style)]} {...textProps}>
       {title}
     </Text>
   );

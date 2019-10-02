@@ -34,7 +34,7 @@ export interface UsePickerProps<
    *
    * *This is a controlled component*; Value will reflect selected items
    */
-  value: Value<TValue, TIsMulti>;
+  value?: Value<TValue, TIsMulti> | null;
 
   /**
    * Called when a select list item is pressed

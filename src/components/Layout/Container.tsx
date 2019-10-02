@@ -1,9 +1,9 @@
 import dlv from 'dlv';
 import * as React from 'react';
-import { View, ViewProps } from 'react-native';
+import { View, ViewProps, ViewStyle } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, Override } from '../../utils/overrides';
+import { getStyle, OverrideStyle, Style } from '../../utils/overrides';
 import {
   ContainerSize,
   ContainerSizes,
@@ -12,7 +12,7 @@ import {
   useLayout,
 } from './LayoutContext';
 
-export interface ContainerProps extends ViewProps {
+export interface ContainerProps extends Omit<ViewProps, 'style'> {
   /** Children node */
   children?: React.ReactNode;
 
@@ -29,41 +29,19 @@ export interface ContainerProps extends ViewProps {
   size?: ContainerSize;
 
   /**
-   * Overrides
+   * Style callback or ViewStyle object
    */
-  override?: ContainerOverride;
+  style?: Style<ContainerProps, ViewStyle>;
 }
 
-export type ContainerOverride = Override<ContainerProps, RootProps>;
+export type ContainerOverride = OverrideStyle<ContainerProps, ViewStyle>;
 
 /**
  * On screens with size lg and above, caps maximum width of the content
  */
 export const Container = (props: ContainerProps) => {
-  const { children, size, fluid = false, override } = props;
+  const { children, size, fluid = false, style, ...viewProps } = props;
   const theme = useTheme();
-  const [Root, rootProps] = getOverrides(
-    StyledRoot,
-    props,
-    dlv(theme, 'overrides.Container'),
-    override,
-  );
-
-  return (
-    <Root size={size} fluid={fluid} {...rootProps}>
-      {children}
-    </Root>
-  );
-};
-
-interface RootProps extends ViewProps {
-  children?: React.ReactNode;
-  fluid: boolean;
-  size?: ContainerSize;
-}
-
-const StyledRoot = (props: RootProps) => {
-  const { size, fluid, children, style, ...viewProps } = props;
   const { gutterWidth, containerSizes, currentScreenSize } = useLayout();
 
   return (
@@ -81,7 +59,8 @@ const StyledRoot = (props: RootProps) => {
           paddingRight: gutterWidth / 2,
           width: '100%',
         },
-        style,
+        getStyle(props, style),
+        getStyle(props, dlv(theme, 'overrides.Container.style')),
       ]}
       {...viewProps}
     >

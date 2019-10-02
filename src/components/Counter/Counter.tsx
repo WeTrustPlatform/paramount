@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { getOverrides, getStyle, WithOverrides } from '../../utils/overrides';
 import { Icon, IconProps } from '../Icon';
 import { Text, TextProps } from '../Typography';
 
@@ -162,7 +162,7 @@ const StyledCount = (props: CountProps) => {
   return (
     <Text
       align="center"
-      style={[{ paddingHorizontal: 16, minWidth: 56 }, style]}
+      style={[{ paddingHorizontal: 16, minWidth: 56 }, getStyle(props, style)]}
       {...textProps}
     >
       {value}

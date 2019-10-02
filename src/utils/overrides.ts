@@ -1,4 +1,5 @@
 import deepMerge from 'deepmerge';
+import { StyleProp } from 'react-native';
 
 export type GetProps<TProps = any, TChildProps = any> = (
   props: TProps,
@@ -8,11 +9,13 @@ export type OverrideProps<TProps = any, TChildProps = any> =
   | GetProps<TProps, TChildProps>
   | Partial<TChildProps>;
 
-export type GetStyle<TProps = any, TStyle = any> = (props: TProps) => TStyle;
+export type GetStyle<TProps = any, TStyle = any> = (
+  props: TProps,
+) => StyleProp<TStyle>;
 
-export type OverrideStyle<TChildProps = any, TStyle = any> =
+export type Style<TChildProps = any, TStyle = any> =
   | GetStyle<TChildProps, TStyle>
-  | TStyle;
+  | StyleProp<TStyle>;
 
 export interface PropsWithStyle<TStyle = any> {
   style?: TStyle;
@@ -23,13 +26,17 @@ export interface OverrideBase<TProps = any, TChildProps = any> {
   component?: React.ComponentType<TChildProps>;
 }
 
+export interface OverrideStyle<TChildProps = any, TStyle = any> {
+  style?: Style<TChildProps, TStyle>;
+}
+
 export interface OverrideWithStyle<
   TProps = any,
   TChildProps = any,
   TStyle = any
-> extends OverrideBase<TProps, TChildProps> {
-  style?: OverrideStyle<TChildProps, TStyle>;
-}
+>
+  extends OverrideBase<TProps, TChildProps>,
+    OverrideStyle<TChildProps, TStyle> {}
 
 export type Override<
   TProps = any,
@@ -47,7 +54,7 @@ export type WithOverrides<TProps = any, TOverrides = object> = {
 } & TProps;
 
 const isGetStyleFn = <TChildProps = any, TStyle = any>(
-  style: OverrideStyle<TChildProps, TStyle>,
+  style: Style<TChildProps, TStyle>,
 ): style is GetStyle<TChildProps, TStyle> => {
   if (typeof style === 'function') return true;
 
@@ -62,9 +69,18 @@ const isGetPropsFn = <TProps = any, TChildProps = any>(
   return false;
 };
 
+export const getStyle = <TChildProps = any, TStyle = any>(
+  props: TChildProps,
+  style?: Style<TChildProps, TStyle>,
+): StyleProp<TStyle> | undefined => {
+  if (!style) return undefined;
+
+  return isGetStyleFn(style) ? style(props) : style;
+};
+
 const applyOverrides = <TProps = any, TChildProps = any>(
   parentProps: TProps,
-  override?: Override<TProps, TChildProps>,
+  override?: OverrideWithStyle<TProps, TChildProps>,
 ): Partial<TChildProps> => {
   if (!override) return {};
 
@@ -77,16 +93,8 @@ const applyOverrides = <TProps = any, TChildProps = any>(
       : override.props;
   }
 
-  // @ts-ignore
   if (override.style) {
-    // @ts-ignore
-    style = isGetStyleFn<TProps>(override.style)
-      ? //
-        // @ts-ignore
-        override.style(overrideProps)
-      : //
-        // @ts-ignore
-        override.style;
+    style = getStyle<Partial<TChildProps>>(overrideProps, override.style);
   }
 
   return { ...overrideProps, ...(style ? { style } : {}) };
@@ -95,7 +103,7 @@ const applyOverrides = <TProps = any, TChildProps = any>(
 export const getOverrides = <TProps = any, TChildProps = any>(
   Component: React.ComponentType<TChildProps>,
   parentProps: TProps,
-  ...overrides: (Override<TProps, TChildProps> | undefined)[]
+  ...overrides: (OverrideWithStyle<TProps, TChildProps> | undefined)[]
 ): [React.ComponentType<TChildProps>, Partial<TChildProps>] => {
   let overrideProps: Partial<TChildProps> = {};
   let OverrideComponent: React.ComponentType<TChildProps> = Component;

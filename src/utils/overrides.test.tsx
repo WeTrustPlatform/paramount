@@ -139,6 +139,14 @@ describe('getOverrides', () => {
       width: parentProps.zero,
     },
   };
+  const overrideObjectTwo = {
+    props: {
+      pointerEvents: 'auto' as const,
+    },
+    style: {
+      width: parentProps.zero,
+    },
+  };
 
   test('getOverrides return correct overrideProps given callback', () => {
     const [, viewProps] = getOverrides(View, parentProps, overrideCallbacks);
@@ -150,9 +158,15 @@ describe('getOverrides', () => {
   });
 
   test('getOverrides return correct overrideProps given object', () => {
-    const [, viewProps] = getOverrides(View, parentProps, overrideObject);
+    const [, viewProps] = getOverrides(
+      View,
+      parentProps,
+      overrideObject,
+      overrideObjectTwo,
+    );
 
     expect(viewProps.testID).toBe(overrideObject.props.testID);
+    expect(viewProps.pointerEvents).toBe(overrideObjectTwo.props.pointerEvents);
     expect(viewProps.style!).toMatchObject(overrideObject.style);
   });
 

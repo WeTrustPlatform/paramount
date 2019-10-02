@@ -16,10 +16,10 @@ import {
   TextSize,
   TextSizes,
 } from '../../theme/Theme';
-import { getOverrides, Override } from '../../utils/overrides';
+import { getStyle, OverrideStyle, Style } from '../../utils/overrides';
 import { TextAlign, TextTransform } from './types';
 
-export interface TextProps extends RNTextProps {
+export interface TextProps extends Omit<RNTextProps, 'style'> {
   /**
    * Size of the text.
    * @default "medium"
@@ -56,50 +56,56 @@ export interface TextProps extends RNTextProps {
   isItalic?: boolean;
 
   /**
-   * Overrides
+   * Style callback or TextStyle object
    */
-  override?: TextOverride;
+  style?: Style<TextProps, TextStyle>;
 
   /** Text content */
   children?: React.ReactNode;
 }
 
-export type TextOverride = Override<TextProps, StyledTextProps>;
+export type TextOverride = OverrideStyle<TextProps, TextStyle>;
 
 export const Text = (props: TextProps) => {
   const {
     children,
-    color,
-    size,
-    align,
+    color = 'default',
+    size = 'medium',
+    align = 'left',
     weight,
-    isItalic,
+    isItalic = false,
     transform,
-    override,
+    style,
     ...textProps
   } = props;
   const theme = useTheme();
 
-  const [TextR, textRProps] = getOverrides(
-    StyledText,
-    props,
-    dlv(theme, 'overrides.Text'),
-    override,
-  );
+  const sizeStyle = getTextSize(theme.textSizes)(size);
 
   return (
-    <TextR
-      color={color}
-      size={size}
-      align={align}
-      weight={weight}
-      isItalic={isItalic}
-      transform={transform}
+    <RNText
+      style={[
+        {
+          ...sizeStyle,
+          color: getTextColor(theme.colors.text)(color),
+          fontFamily: theme.fontFamilies.text,
+          fontWeight:
+            getFontWeight(theme.fontWeights)(weight) || sizeStyle.fontWeight,
+          textAlign: align,
+          ...(isItalic && {
+            fontStyle: 'italic',
+          }),
+          ...(transform && {
+            textTransform: transform,
+          }),
+        },
+        getStyle(props, style),
+        getStyle(props, dlv(theme, 'overrides.Text.style')),
+      ]}
       {...textProps}
-      {...textRProps}
     >
       {children}
-    </TextR>
+    </RNText>
   );
 };
 
@@ -130,55 +136,4 @@ export const getTextSize = (textSizes: TextSizes) => (
   const presetTextSize = textSizes[size] as TextStyle;
 
   return presetTextSize || { fontSize: size };
-};
-
-interface StyledTextProps extends RNTextProps {
-  children?: React.ReactNode;
-  size?: TextSize;
-  color?: TextColor;
-  align?: TextAlign;
-  transform?: TextTransform;
-  weight?: FontWeight;
-  isItalic?: boolean;
-}
-
-const StyledText = (props: StyledTextProps) => {
-  const {
-    children,
-    color = 'default',
-    size = 'medium',
-    align = 'left',
-    weight,
-    isItalic = false,
-    transform,
-    style,
-    ...textProps
-  } = props;
-  const theme = useTheme();
-  const sizeStyle = getTextSize(theme.textSizes)(size);
-
-  return (
-    <RNText
-      style={[
-        {
-          ...sizeStyle,
-          color: getTextColor(theme.colors.text)(color),
-          fontFamily: theme.fontFamilies.text,
-          fontWeight:
-            getFontWeight(theme.fontWeights)(weight) || sizeStyle.fontWeight,
-          textAlign: align,
-          ...(isItalic && {
-            fontStyle: 'italic',
-          }),
-          ...(transform && {
-            textTransform: transform,
-          }),
-        },
-        style,
-      ]}
-      {...textProps}
-    >
-      {children}
-    </RNText>
-  );
 };

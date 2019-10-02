@@ -5,7 +5,7 @@ import { View, ViewProps } from 'react-native';
 import { useTheme } from '../../theme';
 import { ContainerShape, ControlSize, FillColor } from '../../theme/Theme';
 import { isControlSize } from '../../utils/isControlSize';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { getOverrides, getStyle, WithOverrides } from '../../utils/overrides';
 import { OptionalString } from '../../utils/types';
 import { Text, TextProps } from '../Typography';
 
@@ -178,7 +178,10 @@ const StyledTitle = (props: TitleProps) => {
   return (
     <Text
       weight="bold"
-      style={[{ color: colors.color, textTransform: 'uppercase' }, style]}
+      style={[
+        { color: colors.color, textTransform: 'uppercase' },
+        getStyle(props, style),
+      ]}
       {...textProps}
     >
       {title}

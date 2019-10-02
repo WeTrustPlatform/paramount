@@ -1,22 +1,32 @@
 import dlv from 'dlv';
 import * as React from 'react';
-import { TouchableWithoutFeedback, View, ViewProps } from 'react-native';
+import {
+  TouchableWithoutFeedback,
+  View,
+  ViewProps,
+  ViewStyle,
+} from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, Override } from '../../utils/overrides';
+import { getStyle, OverrideStyle, Style } from '../../utils/overrides';
 
 type OverlayColor = 'dark' | 'light';
 
-export interface OverlayProps extends ViewProps {
+export interface OverlayProps extends Omit<ViewProps, 'style'> {
   onPress?: () => void;
-  override?: OverlayOverride;
+
   /**
    * @default "dark"
    */
   color?: OverlayColor;
+
+  /**
+   * Style callback or ViewStyle object
+   */
+  style?: Style<OverlayProps, ViewStyle>;
 }
 
-export type OverlayOverride = Override<OverlayProps, RootProps>;
+export type OverlayOverride = OverrideStyle<OverlayProps, ViewStyle>;
 
 export const Overlay = (props: OverlayProps) => {
   const {
@@ -24,27 +34,10 @@ export const Overlay = (props: OverlayProps) => {
       return;
     },
     color = 'dark',
-    override,
+    style,
+    ...viewProps
   } = props;
   const theme = useTheme();
-
-  const [Root, rootProps] = getOverrides(
-    StyledRoot,
-    props,
-    dlv(theme, 'overrides.Overlay'),
-    override,
-  );
-
-  return <Root color={color} onPress={onPress} {...rootProps} />;
-};
-
-interface RootProps extends ViewProps {
-  onPress: () => void;
-  color: OverlayColor;
-}
-
-const StyledRoot = (props: RootProps) => {
-  const { style, onPress, color, ...viewProps } = props;
 
   return (
     <TouchableWithoutFeedback
@@ -66,7 +59,8 @@ const StyledRoot = (props: RootProps) => {
             top: 0,
             width: '100%',
           },
-          style,
+          getStyle(props, style),
+          getStyle(props, dlv(theme, 'overrides.Overlay.style')),
         ]}
         {...viewProps}
       />

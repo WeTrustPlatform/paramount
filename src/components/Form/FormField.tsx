@@ -3,7 +3,7 @@ import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { getOverrides, getStyle, WithOverrides } from '../../utils/overrides';
 import { OptionalString } from '../../utils/types';
 import { Label, LabelProps, Text, TextProps } from '../Typography';
 
@@ -124,7 +124,7 @@ const StyledDescription = (props: DescriptionProps) => {
         {
           paddingBottom: 4,
         },
-        style,
+        getStyle(props, style),
       ]}
       {...viewProps}
     >
@@ -143,7 +143,7 @@ const StyledError = (props: ErrorProps) => {
   if (!error) return null;
 
   return (
-    <Text style={[style]} color="danger" {...viewProps}>
+    <Text style={[getStyle(props, style)]} color="danger" {...viewProps}>
       {error}
     </Text>
   );

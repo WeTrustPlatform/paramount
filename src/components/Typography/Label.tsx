@@ -1,9 +1,9 @@
 import dlv from 'dlv';
 import * as React from 'react';
-import { Platform, View, ViewProps, ViewStyle } from 'react-native';
+import { Platform, TextStyle, View, ViewProps, ViewStyle } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { getOverrides, getStyle, WithOverrides } from '../../utils/overrides';
 import { OptionalString } from '../../utils/types';
 import { Text, TextProps } from './Text';
 
@@ -140,7 +140,7 @@ const StyledLabelText = (props: LabelTextProps) => {
 
   if (!label) return null;
 
-  let textStyle: ViewStyle = {};
+  let textStyle: TextStyle = {};
 
   switch (position) {
     case 'left':
@@ -159,7 +159,7 @@ const StyledLabelText = (props: LabelTextProps) => {
 
   return (
     <Text
-      style={[textStyle, style]}
+      style={[textStyle, getStyle(props, style)]}
       // @ts-ignore: Compat with web
       accessibilityRole={Platform.OS === 'web' ? 'label' : 'none'}
       {...textProps}

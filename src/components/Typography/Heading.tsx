@@ -14,11 +14,11 @@ import {
   HeadingSizes,
   TextColor,
 } from '../../theme/Theme';
-import { getOverrides, Override } from '../../utils/overrides';
+import { getStyle, OverrideStyle, Style } from '../../utils/overrides';
 import { getFontWeight, getTextColor } from './Text';
 import { TextAlign } from './types';
 
-export interface HeadingProps extends RNTextProps {
+export interface HeadingProps extends Omit<RNTextProps, 'style'> {
   /** Text content */
   children?: React.ReactNode;
 
@@ -47,9 +47,9 @@ export interface HeadingProps extends RNTextProps {
   weight?: FontWeight;
 
   /**
-   * Overrides
+   * Style callback or TextStyle object
    */
-  override?: HeadingOverride;
+  style?: Style<HeadingProps, TextStyle>;
 
   /**
    * (Web only): Corresponding h1, h2, h3... levels
@@ -57,62 +57,9 @@ export interface HeadingProps extends RNTextProps {
   accessibilityLevel?: 1 | 2 | 3 | 4 | 5 | 6;
 }
 
-export type HeadingOverride = Override<HeadingProps, StyledHeadingProps>;
+export type HeadingOverride = OverrideStyle<HeadingProps, TextStyle>;
 
 export const Heading = (props: HeadingProps) => {
-  const {
-    accessibilityLevel,
-    size,
-    align,
-    color,
-    weight,
-    override,
-    ...textProps
-  } = props;
-  const theme = useTheme();
-
-  const [Text, textRProps] = getOverrides(
-    StyledHeading,
-    props,
-    dlv(theme, 'overrides.Heading'),
-    override,
-  );
-
-  return (
-    <Text
-      // @ts-ignore
-      accessibilityRole={Platform.OS === 'web' ? 'heading' : 'none'}
-      aria-level={accessibilityLevel} // Web
-      accessibilityLevel={accessibilityLevel}
-      size={size}
-      align={align}
-      color={color}
-      weight={weight}
-      {...textProps}
-      {...textRProps}
-    />
-  );
-};
-
-export const getHeadingSize = (headingSizes: HeadingSizes) => (
-  size: HeadingSize,
-): TextStyle => {
-  // @ts-ignore
-  const presetHeadingSize = headingSizes[size] as TextStyle;
-
-  return presetHeadingSize || { fontSize: size };
-};
-
-interface StyledHeadingProps extends RNTextProps {
-  children?: React.ReactNode;
-  size?: HeadingSize;
-  align?: TextAlign;
-  color?: TextColor;
-  weight?: FontWeight;
-  accessibilityLevel?: 1 | 2 | 3 | 4 | 5 | 6;
-}
-
-const StyledHeading = (props: StyledHeadingProps) => {
   const {
     children,
     accessibilityLevel,
@@ -128,6 +75,10 @@ const StyledHeading = (props: StyledHeadingProps) => {
 
   return (
     <RNText
+      // @ts-ignore
+      accessibilityRole={Platform.OS === 'web' ? 'heading' : 'none'}
+      aria-level={accessibilityLevel} // Web
+      accessibilityLevel={accessibilityLevel}
       style={[
         {
           ...sizeStyle,
@@ -137,11 +88,21 @@ const StyledHeading = (props: StyledHeadingProps) => {
             getFontWeight(theme.fontWeights)(weight) || sizeStyle.fontWeight,
           textAlign: align,
         },
-        style,
+        getStyle(props, style),
+        getStyle(props, dlv(theme, 'overrides.Heading.style')),
       ]}
       {...textProps}
     >
       {children}
     </RNText>
   );
+};
+
+export const getHeadingSize = (headingSizes: HeadingSizes) => (
+  size: HeadingSize,
+): TextStyle => {
+  // @ts-ignore
+  const presetHeadingSize = headingSizes[size] as TextStyle;
+
+  return presetHeadingSize || { fontSize: size };
 };
