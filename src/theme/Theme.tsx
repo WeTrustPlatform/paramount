@@ -21,8 +21,11 @@ import {
   Layout,
   LayoutProvider,
   ListItemOverrides,
+  ListPicker,
+  ListPickerOverrides,
   NativePickerOverrides,
   OverlayOverride,
+  PickerOverrides,
   PopoverOverrides,
   PositionerOverrides,
   ProgressBarOverrides,
@@ -30,7 +33,6 @@ import {
   RowOverride,
   SliderOverrides,
   SwitchOverrides,
-  TabsOverrides,
   TextInputOverrides,
   TextOverride,
   ToastProvider,
@@ -285,6 +287,7 @@ export interface ThemeOverrides {
   Heading: Overrides<any, HeadingOverride>;
   Label: Overrides<any, LabelOverrides>;
   ListItem: Overrides<any, ListItemOverrides>;
+  ListPicker: Overrides<any, ListPickerOverrides<any>>;
   NativePicker: Overrides<any, NativePickerOverrides>;
   Overlay: Overrides<any, OverlayOverride>;
   Popover: Overrides<any, PopoverOverrides>;
@@ -294,7 +297,7 @@ export interface ThemeOverrides {
   Row: Overrides<any, RowOverride>;
   Slider: Overrides<any, SliderOverrides>;
   Switch: Overrides<any, SwitchOverrides>;
-  Tabs: Overrides<any, TabsOverrides>;
+  Picker: Overrides<any, PickerOverrides<any, any>>;
   Text: Overrides<any, TextOverride>;
   TextInput: Overrides<any, TextInputOverrides>;
   WheelPicker: Overrides<any, WheelPickerOverrides<any>>;

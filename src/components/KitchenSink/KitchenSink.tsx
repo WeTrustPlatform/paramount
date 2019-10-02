@@ -31,22 +31,22 @@ import {
   Row,
   Visible,
   ListItem,
-  ListPicker,
   Modal,
   HistoryModal,
+  ListPicker,
   NativePicker,
+  Picker,
+  WheelPicker,
   Popover,
   ProgressBar,
   CounterState,
   Rating,
   Slider,
   Switch,
-  Tabs,
   ToastContext,
   ToastProvider,
   Label,
   Paragraph,
-  WheelPicker,
 } from '..';
 
 export const KitchenSink = () => {
@@ -634,59 +634,6 @@ export const KitchenSink = () => {
 
       <Box paddingTop={96}>
         <Heading size="xxxlarge" weight="500">
-          ListPicker
-        </Heading>
-      </Box>
-
-      <Playground>
-        <State initial={{ value: ['c', 'js', 'go'] }}>
-          {({ state, setState }) => (
-            <Box height={300}>
-              <ListPicker
-                isMulti
-                value={state.value}
-                onValueChange={(newValue, itemIndex) =>
-                  setState({ value: newValue })
-                }
-                options={[
-                  {
-                    label: 'C',
-                    value: 'c',
-                    description:
-                      'C is a general-purpose, procedural computer programming language.',
-                  },
-                  {
-                    label: 'C#',
-                    value: 'c#',
-                    description:
-                      'C# is a general-purpose, multi-paradigm programming language.',
-                  },
-                  { label: 'C++', value: 'c++' },
-                  { label: 'CSS', value: 'css' },
-                  { label: 'Elixir', value: 'elixir' },
-                  { label: 'Elm', value: 'elm' },
-                  { label: 'Erlang', value: 'erlang' },
-                  { label: 'Go', value: 'go' },
-                  { label: 'Haskell', value: 'haskell' },
-                  { label: 'HTML', value: 'html' },
-                  { label: 'Java', value: 'java' },
-                  { label: 'JavaScript', value: 'js' },
-                  { label: 'Lua', value: 'lua' },
-                  { label: 'Python', value: 'python' },
-                  { label: 'R', value: 'r' },
-                  { label: 'Ruby', value: 'ruby' },
-                  { label: 'Rust', value: 'rust' },
-                  { label: 'Switft', value: 'swift' },
-                  { label: 'Typescript', value: 'typescript' },
-                ]}
-              />
-            </Box>
-          )}
-        </State>
-      </Playground>
-
-      <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="500">
           Modal
         </Heading>
       </Box>
@@ -822,6 +769,59 @@ export const KitchenSink = () => {
 
       <Box paddingTop={96}>
         <Heading size="xxxlarge" weight="500">
+          ListPicker
+        </Heading>
+      </Box>
+
+      <Playground>
+        <State initial={{ value: ['c', 'js', 'go'] }}>
+          {({ state, setState }) => (
+            <Box height={300}>
+              <ListPicker
+                isMulti
+                value={state.value}
+                onValueChange={(newValue, itemIndex) =>
+                  setState({ value: newValue })
+                }
+                data={[
+                  {
+                    label: 'C',
+                    value: 'c',
+                    description:
+                      'C is a general-purpose, procedural computer programming language.',
+                  },
+                  {
+                    label: 'C#',
+                    value: 'c#',
+                    description:
+                      'C# is a general-purpose, multi-paradigm programming language.',
+                  },
+                  { label: 'C++', value: 'c++' },
+                  { label: 'CSS', value: 'css' },
+                  { label: 'Elixir', value: 'elixir' },
+                  { label: 'Elm', value: 'elm' },
+                  { label: 'Erlang', value: 'erlang' },
+                  { label: 'Go', value: 'go' },
+                  { label: 'Haskell', value: 'haskell' },
+                  { label: 'HTML', value: 'html' },
+                  { label: 'Java', value: 'java' },
+                  { label: 'JavaScript', value: 'js' },
+                  { label: 'Lua', value: 'lua' },
+                  { label: 'Python', value: 'python' },
+                  { label: 'R', value: 'r' },
+                  { label: 'Ruby', value: 'ruby' },
+                  { label: 'Rust', value: 'rust' },
+                  { label: 'Switft', value: 'swift' },
+                  { label: 'Typescript', value: 'typescript' },
+                ]}
+              />
+            </Box>
+          )}
+        </State>
+      </Playground>
+
+      <Box paddingTop={96}>
+        <Heading size="xxxlarge" weight="500">
           NativePicker
         </Heading>
       </Box>
@@ -857,6 +857,83 @@ export const KitchenSink = () => {
                 { label: 'Typescript', value: 'typescript' },
               ]}
             />
+          )}
+        </State>
+      </Playground>
+
+      <Box paddingTop={96}>
+        <Heading size="xxxlarge" weight="500">
+          Picker
+        </Heading>
+      </Box>
+
+      <Playground>
+        <State initial={{ value: 'Tab 1' }}>
+          {({ state, setState }) => (
+            <Picker
+              value={state.value}
+              onValueChange={tab => setState({ value: tab })}
+              data={new Array(4).fill(0).map((v, i) => ({
+                value: `Tab ${i + 1}`,
+              }))}
+            />
+          )}
+        </State>
+      </Playground>
+
+      <Box paddingTop={96}>
+        <Heading size="xxxlarge" weight="500">
+          WheelPicker (Experimental)
+        </Heading>
+      </Box>
+
+      <Playground>
+        <State initial={{ month: 'March', day: '15', year: '2019' }}>
+          {({ state, setState }) => (
+            <Box flexDirection="row">
+              <WheelPicker
+                value={state.month}
+                data={[
+                  { label: 'January', value: 'January' },
+                  { label: 'February', value: 'February' },
+                  { label: 'March', value: 'March' },
+                  { label: 'April', value: 'April' },
+                  { label: 'May', value: 'May' },
+                  { label: 'June', value: 'June' },
+                  { label: 'July', value: 'July' },
+                  { label: 'August', value: 'August' },
+                  { label: 'September', value: 'September' },
+                  { label: 'October', value: 'October' },
+                  { label: 'November', value: 'November' },
+                  { label: 'December', value: 'December' },
+                ]}
+                onValueChange={value => {
+                  console.log(value);
+                  setState({ month: value });
+                }}
+              />
+              <WheelPicker
+                value={state.day}
+                data={new Array(31)
+                  .fill(0)
+                  .map((v, i) => ({ label: `${i + 1}`, value: `${i + 1}` }))}
+                onValueChange={value => {
+                  console.log(value);
+                  setState({ day: value });
+                }}
+              />
+              <WheelPicker
+                value={state.year}
+                data={new Array(50).fill(0).map((v, i) => ({
+                  label: `${2000 + i}`,
+                  value: `${2000 + i}`,
+                }))}
+                onValueChange={value => {
+                  console.log(value);
+                  setState({ year: value });
+                }}
+              />
+            </Box>
           )}
         </State>
       </Playground>
@@ -978,26 +1055,6 @@ export const KitchenSink = () => {
             {({ on, toggle, set }) => <Switch value={on} onValueChange={set} />}
           </Toggle>
         </Box>
-      </Playground>
-
-      <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="500">
-          Tabs
-        </Heading>
-      </Box>
-
-      <Playground>
-        <State initial={{ activeTabIndex: 0 }}>
-          {({ state, setState }) => (
-            <Tabs
-              activeTab={state.activeTabIndex}
-              onChangeTab={tab => setState({ activeTabIndex: tab })}
-              tabs={new Array(4).fill(0).map((v, i) => ({
-                title: `Tab ${i + 1}`,
-              }))}
-            />
-          )}
-        </State>
       </Playground>
 
       <Box paddingTop={96}>
@@ -1136,63 +1193,6 @@ export const KitchenSink = () => {
         <Box flexDirection="column">
           <Text isItalic>Lorem ipsum dolar set amet</Text>
         </Box>
-      </Playground>
-
-      <Box paddingTop={96}>
-        <Heading size="xxxlarge" weight="500">
-          WheelPicker (Experimental)
-        </Heading>
-      </Box>
-
-      <Playground>
-        <State initial={{ month: 'March', day: '15', year: '2019' }}>
-          {({ state, setState }) => (
-            <Box flexDirection="row">
-              <WheelPicker
-                value={state.month}
-                options={[
-                  { label: 'January', value: 'January' },
-                  { label: 'February', value: 'February' },
-                  { label: 'March', value: 'March' },
-                  { label: 'April', value: 'April' },
-                  { label: 'May', value: 'May' },
-                  { label: 'June', value: 'June' },
-                  { label: 'July', value: 'July' },
-                  { label: 'August', value: 'August' },
-                  { label: 'September', value: 'September' },
-                  { label: 'October', value: 'October' },
-                  { label: 'November', value: 'November' },
-                  { label: 'December', value: 'December' },
-                ]}
-                onValueChange={value => {
-                  console.log(value);
-                  setState({ month: value });
-                }}
-              />
-              <WheelPicker
-                value={state.day}
-                options={new Array(31)
-                  .fill(0)
-                  .map((v, i) => ({ label: `${i + 1}`, value: `${i + 1}` }))}
-                onValueChange={value => {
-                  console.log(value);
-                  setState({ day: value });
-                }}
-              />
-              <WheelPicker
-                value={state.year}
-                options={new Array(50).fill(0).map((v, i) => ({
-                  label: `${2000 + i}`,
-                  value: `${2000 + i}`,
-                }))}
-                onValueChange={value => {
-                  console.log(value);
-                  setState({ year: value });
-                }}
-              />
-            </Box>
-          )}
-        </State>
       </Playground>
     </Box>
   );

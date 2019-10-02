@@ -19,25 +19,25 @@ export const SCROLL_PICKER_HEIGHT = ITEM_HEIGHT * ITEM_COUNT;
 const DEBOUNCE_TIME = 300;
 
 export const makePaddedOptions = <TValue extends any>(
-  options: WheelPickerOption<TValue>[],
+  data: WheelPickerOption<TValue>[],
 ) => {
   return [
     { value: 'emptyStart', label: '' },
-    ...options,
+    ...data,
     { value: 'emptyEnd', label: '' },
   ] as WheelPickerOption<TValue>[];
 };
 
 export const getOptionFromOptions = <TValue extends any>(
-  options: WheelPickerOption<TValue>[],
+  data: WheelPickerOption<TValue>[],
 ) => (scrollPosition: number) => {
   const index = Math.round(scrollPosition / ITEM_HEIGHT);
 
   const finalIndex = Math.abs(
-    index >= options.length ? options.length - index : index,
+    index >= data.length ? data.length - index : index,
   );
 
-  return options[finalIndex];
+  return data[finalIndex];
 };
 
 export interface ScrollContainer {
@@ -46,9 +46,9 @@ export interface ScrollContainer {
 
 export interface UseWheelPickerProps<TValue extends any> {
   /**
-   * List of options to show.
+   * List of data to show.
    */
-  options: WheelPickerOption<TValue>[];
+  data: WheelPickerOption<TValue>[];
 
   /**
    * Initial value of the picker.
@@ -78,19 +78,17 @@ export const useWheelPicker = <TValue extends any>(
   props: UseWheelPickerProps<TValue>,
 ) => {
   const {
-    options,
+    data,
     onValueChange = () => {
       return;
     },
-    value: initialValue = options[0].value,
+    value: initialValue = data[0].value,
     scrollContainer,
     ref,
   } = props;
-  const optionsWithClones = makePaddedOptions(options);
+  const optionsWithClones = makePaddedOptions(data);
   const [value, setValue] = React.useState<TValue>(initialValue);
-  const getOption = React.useMemo(() => getOptionFromOptions(options), [
-    options,
-  ]);
+  const getOption = React.useMemo(() => getOptionFromOptions(data), [data]);
 
   const scrollToValue = React.useCallback(
     (toValue: TValue, animated = true) => {
@@ -103,7 +101,7 @@ export const useWheelPicker = <TValue extends any>(
         offset: index * ITEM_HEIGHT - ITEM_HEIGHT,
       });
     },
-    [scrollContainer, options],
+    [scrollContainer, data],
   );
 
   const handleChange = React.useCallback(
@@ -125,7 +123,7 @@ export const useWheelPicker = <TValue extends any>(
       handleChange(selectedOption.value);
     },
     DEBOUNCE_TIME,
-    [scrollContainer, options, handleChange],
+    [scrollContainer, data, handleChange],
   );
 
   const handleEndDrag = React.useCallback(
@@ -142,7 +140,7 @@ export const useWheelPicker = <TValue extends any>(
 
       handleChange(selectedOption.value);
     },
-    [scrollContainer, options, handleChange],
+    [scrollContainer, data, handleChange],
   );
 
   React.useImperativeHandle(
@@ -150,24 +148,24 @@ export const useWheelPicker = <TValue extends any>(
     () => ({
       selectValue: (newValue: TValue) => scrollToValue(newValue),
     }),
-    [scrollContainer, options],
+    [scrollContainer, data],
   );
 
   const handlePressUp = React.useCallback(() => {
     if (!scrollContainer) return;
-    const currentIndex = options.findIndex(o => o.value === value);
+    const currentIndex = data.findIndex(o => o.value === value);
 
     if (currentIndex <= 0) return;
-    scrollToValue(options[currentIndex - 1].value);
+    scrollToValue(data[currentIndex - 1].value);
   }, [scrollContainer, value]);
 
   const handlePressDown = React.useCallback(() => {
     if (!scrollContainer) return;
 
-    const currentIndex = options.findIndex(o => o.value === value);
+    const currentIndex = data.findIndex(o => o.value === value);
 
-    if (currentIndex >= options.length - 1) return;
-    scrollToValue(options[currentIndex + 1].value);
+    if (currentIndex >= data.length - 1) return;
+    scrollToValue(data[currentIndex + 1].value);
   }, [scrollContainer, value]);
 
   return {

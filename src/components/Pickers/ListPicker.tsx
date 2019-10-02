@@ -8,65 +8,53 @@ import { OptionalString } from '../../utils/types';
 import { Box } from '../Box';
 import { Checkbox } from '../Checkbox';
 import { ListItem, ListItemProps } from '../ListItem';
+import {
+  PickerItem,
+  PickerItemProps,
+  usePicker,
+  UsePickerProps,
+} from './usePicker';
 
-type Value<TIsMulti extends boolean, TValue extends any> = TIsMulti extends true
-  ? TValue[]
-  : TValue;
-
-export interface ListPickerOption<TValue extends any> {
-  value: TValue;
+export interface ListPickerItem<TValue extends any> extends PickerItem<TValue> {
   label: string;
   description?: OptionalString;
 }
-
-interface ListPickerBaseProps<TIsMulti extends boolean, TValue extends any> {
-  /**
-   * Set whether it should allow multiple selections. You should specify the value to get proper type-checking.
-   * @default false
-   */
-  isMulti: TIsMulti;
-  /**
-   * Select item or items.
-   * For single-select use single string.
-   * For multi-select use string array
-   *
-   * *This is a controlled component*; Value will reflect selected items
-   */
-  value: Value<TIsMulti, TValue>;
-
-  /**
-   * Called when a select list item is pressed
-   */
-  onValueChange: (value: Value<TIsMulti, TValue>, index: number) => void;
-
-  /**
-   * List of options
-   */
-  options?: Array<ListPickerOption<TValue>>;
-}
-
-const isMulti = <TValue extends any>(
-  value: TValue | TValue[],
-): value is TValue[] => Array.isArray(value);
 
 export interface ListPickerOverrides<TValue extends any> {
   List: ListProps<TValue>;
   ListPickerItem: ListPickerItemProps<TValue>;
 }
 
-export interface ListPickerProps<TIsMulti extends boolean, TValue extends any>
+export interface ListPickerProps<
+  TValue extends any,
+  TPickerItem extends PickerItem<TValue>,
+  TIsMulti extends boolean = false
+>
   extends WithOverrides<
-    ListPickerBaseProps<TIsMulti, TValue>,
+    UsePickerProps<TValue, TPickerItem & ListPickerItem<TValue>, TIsMulti>,
     ListPickerOverrides<TValue>
   > {}
 
-export const ListPicker = <TIsMulti extends boolean, TValue extends any>(
-  props: ListPickerProps<TIsMulti, TValue>,
+export const ListPicker = <
+  TValue extends any,
+  TPickerItem extends PickerItem<TValue>,
+  TIsMulti extends boolean = false
+>(
+  props: ListPickerProps<TValue, TPickerItem, TIsMulti>,
 ) => {
-  const { value, onValueChange, options = [], overrides = {} } = props;
+  const {
+    data = [],
+    value,
+    onValueChange = () => {
+      return;
+    },
+    keyExtractor,
+    isMulti,
+    overrides = {},
+  } = props;
   const theme = useTheme();
 
-  const [ListPickerItem, listPickerItemProps] = getOverrides(
+  const [ListPickerItemR, listPickerItemProps] = getOverrides(
     StyledListPickerItem,
     props,
     dlv(theme, 'overrides.ListPicker.ListPickerItem'),
@@ -79,52 +67,29 @@ export const ListPicker = <TIsMulti extends boolean, TValue extends any>(
     overrides.List,
   );
 
-  const handleOnPress = React.useCallback(
-    (itemValue: TValue, itemIndex: number, isSelected: boolean) => {
-      if (isMulti(value)) {
-        if (isSelected) {
-          onValueChange(
-            // @ts-ignore: TODO: make this work
-            value.filter(val => val !== itemValue) as Value<TIsMulti, TValue>,
-            itemIndex,
-          );
-        } else {
-          onValueChange(
-            value.concat(itemValue) as Value<TIsMulti, TValue>,
-            itemIndex,
-          );
-        }
-      } else {
-        onValueChange(itemValue as Value<TIsMulti, TValue>, itemIndex);
-      }
-    },
-    [value, onValueChange],
-  );
+  const { items, handleSelect } = usePicker({
+    value,
+    onValueChange,
+    data,
+    isMulti,
+    keyExtractor,
+  });
 
   return (
     <List
-      keyExtractor={item => `${item.value}`}
       getItemLayout={(_, index) => ({
         index,
         length: theme.controlHeights.medium,
         offset: theme.controlHeights.medium * index,
       })}
-      data={options}
-      renderItem={({ item, index }) => {
-        const isSelected = isMulti(value)
-          ? //
-            // @ts-ignore: TODO: make this work
-            value.some(selVal => selVal === item.value)
-          : value === item.value;
-
+      data={items}
+      renderItem={({ item }) => {
         return (
-          <ListPickerItem
-            value={item.value}
-            label={item.label}
-            description={item.description}
-            index={index}
-            isSelected={isSelected}
-            onPress={handleOnPress}
+          <ListPickerItemR
+            onPress={() =>
+              handleSelect(item.value, item.index, item.isSelected)
+            }
+            {...item}
             {...listPickerItemProps}
           />
         );
@@ -135,7 +100,7 @@ export const ListPicker = <TIsMulti extends boolean, TValue extends any>(
 };
 
 interface ListProps<TValue extends any>
-  extends FlatListProps<ListPickerOption<TValue>> {}
+  extends FlatListProps<ListPickerItem<TValue> & PickerItemProps> {}
 
 const StyledList = <TValue extends any>(props: ListProps<TValue>) => {
   return <FlatList {...props} />;

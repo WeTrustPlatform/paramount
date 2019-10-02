@@ -1,0 +1,32 @@
+---
+name: Picker
+menu: Components
+---
+
+import { Playground, Props } from 'docz';
+
+import { State, Picker } from '..';
+
+# Picker
+
+You can use a custom component in place of `Tab` component, though keep in mind you need to manage `isActive` and `onPress` by yourself
+
+## Usage
+
+<Playground>
+  <State initial={{ value: 'Tab 1' }}>
+    {({ state, setState }) => (
+      <Picker
+        value={state.value}
+        onValueChange={tab => setState({ value: tab })}
+        data={new Array(4).fill(0).map((v, i) => ({
+          value: `Tab ${i + 1}`,
+        }))}
+      />
+    )}
+  </State>
+</Playground>
+
+## Props
+
+<Props of={Picker} />

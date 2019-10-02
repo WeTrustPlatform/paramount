@@ -2,8 +2,6 @@ import * as React from 'react';
 import { TextStyle, View, ViewProps } from 'react-native';
 import { render } from 'react-native-testing-library';
 
-import { Alert } from '../components';
-import { ThemeProvider } from '../theme';
 import { getOverrides, WithOverrides } from './overrides';
 
 interface ComponentTwoProps {
@@ -113,25 +111,6 @@ describe('Overrides', () => {
           },
         }}
       />,
-    );
-  });
-
-  test('Theme and actual component overrides type-check correctly', () => {
-    render(
-      <ThemeProvider
-        value={{
-          overrides: { Alert: { Description: { props: {} } } },
-        }}
-      >
-        <Alert
-          overrides={{
-            Description: {
-              props: {},
-              component: ({ intent }) => null,
-            },
-          }}
-        />
-      </ThemeProvider>,
     );
   });
 });

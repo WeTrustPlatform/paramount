@@ -28,9 +28,9 @@ export interface WheelPicker<TValue extends any> {
 
 interface WheelPickerBaseProps<TValue extends any> {
   /**
-   * List of options to show.
+   * List of data to show.
    */
-  options?: Array<WheelPickerOption<TValue>>;
+  data?: Array<WheelPickerOption<TValue>>;
 
   /**
    * Initial value of the picker.
@@ -67,7 +67,7 @@ export const WheelPicker = React.forwardRef(
     props: WheelPickerProps<TValue>,
     ref: React.Ref<WheelPicker<TValue>>,
   ) => {
-    const { options = [], onValueChange, value, overrides = {} } = props;
+    const { data = [], onValueChange, value, overrides = {} } = props;
     const theme = useTheme();
     const listRef = React.useRef<FlatList<WheelPickerOption<TValue>>>(null);
 
@@ -78,7 +78,7 @@ export const WheelPicker = React.forwardRef(
       handleEndDrag,
     } = useWheelPicker({
       onValueChange,
-      options,
+      data,
       ref,
       scrollContainer: {
         scrollTo: params =>
@@ -87,7 +87,7 @@ export const WheelPicker = React.forwardRef(
       value,
     });
 
-    const initialScrollIndex = options.findIndex(o => o.value === value);
+    const initialScrollIndex = data.findIndex(o => o.value === value);
 
     const [Root, rootProps] = getOverrides(
       StyledRoot,

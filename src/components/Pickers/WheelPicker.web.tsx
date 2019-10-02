@@ -23,7 +23,7 @@ export const WheelPicker = React.forwardRef(
   ) => {
     const {
       value,
-      options = [],
+      data = [],
       onValueChange = () => {
         return;
       },
@@ -41,7 +41,7 @@ export const WheelPicker = React.forwardRef(
       scrollToValue,
     } = useWheelPicker({
       onValueChange,
-      options,
+      data,
       ref,
       scrollContainer: {
         scrollTo: ({ animated, offset }) =>
