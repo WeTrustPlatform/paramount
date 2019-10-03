@@ -1,3 +1,10 @@
+## [1.83.2](https://github.com/WeTrustPlatform/paramount/compare/v1.83.1...v1.83.2) (2019-10-03)
+
+
+### Bug Fixes
+
+* picker enhance generics ([aee196a](https://github.com/WeTrustPlatform/paramount/commit/aee196a))
+
 ## [1.83.1](https://github.com/WeTrustPlatform/paramount/compare/v1.83.0...v1.83.1) (2019-10-03)
 
 
