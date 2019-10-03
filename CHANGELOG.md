@@ -1,3 +1,15 @@
+# [1.83.0](https://github.com/WeTrustPlatform/paramount/compare/v1.82.0...v1.83.0) (2019-10-03)
+
+
+### Bug Fixes
+
+* list picker and heading style ([185236e](https://github.com/WeTrustPlatform/paramount/commit/185236e))
+
+
+### Features
+
+* add spacing component ([8a33e1b](https://github.com/WeTrustPlatform/paramount/commit/8a33e1b))
+
 # [1.82.0](https://github.com/WeTrustPlatform/paramount/compare/v1.81.3...v1.82.0) (2019-10-02)
 
 
