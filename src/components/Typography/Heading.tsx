@@ -78,7 +78,6 @@ export const Heading = (props: HeadingProps) => {
       // @ts-ignore
       accessibilityRole={Platform.OS === 'web' ? 'heading' : 'none'}
       aria-level={accessibilityLevel} // Web
-      accessibilityLevel={accessibilityLevel}
       style={[
         {
           ...sizeStyle,

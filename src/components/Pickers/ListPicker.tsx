@@ -141,13 +141,7 @@ const StyledListPickerItem = <TValue extends any = any>(
       overrides={{
         Action: {
           component: () => (
-            <Box
-              justifyContent="center"
-              position="absolute"
-              right={0}
-              alignItems="center"
-              alignSelf="center"
-            >
+            <Box justifyContent="center" alignItems="center">
               <Checkbox
                 onValueChange={() => onPress(value, index, isSelected)}
                 shape="circle"

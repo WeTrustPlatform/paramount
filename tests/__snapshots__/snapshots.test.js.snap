@@ -28160,18 +28160,13 @@ exports[`KitchenSink_1 1`] = `
                   style={
                     Object {
                       "WebkitAlignItems": "center",
-                      "WebkitAlignSelf": "center",
                       "WebkitBoxAlign": "center",
                       "WebkitBoxPack": "center",
                       "WebkitJustifyContent": "center",
                       "alignItems": "center",
-                      "alignSelf": "center",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
-                      "msFlexItemAlign": "center",
                       "msFlexPack": "center",
-                      "position": "absolute",
-                      "right": "0px",
                     }
                   }
                 >
@@ -28374,18 +28369,13 @@ exports[`KitchenSink_1 1`] = `
                   style={
                     Object {
                       "WebkitAlignItems": "center",
-                      "WebkitAlignSelf": "center",
                       "WebkitBoxAlign": "center",
                       "WebkitBoxPack": "center",
                       "WebkitJustifyContent": "center",
                       "alignItems": "center",
-                      "alignSelf": "center",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
-                      "msFlexItemAlign": "center",
                       "msFlexPack": "center",
-                      "position": "absolute",
-                      "right": "0px",
                     }
                   }
                 >
@@ -28565,18 +28555,13 @@ exports[`KitchenSink_1 1`] = `
                   style={
                     Object {
                       "WebkitAlignItems": "center",
-                      "WebkitAlignSelf": "center",
                       "WebkitBoxAlign": "center",
                       "WebkitBoxPack": "center",
                       "WebkitJustifyContent": "center",
                       "alignItems": "center",
-                      "alignSelf": "center",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
-                      "msFlexItemAlign": "center",
                       "msFlexPack": "center",
-                      "position": "absolute",
-                      "right": "0px",
                     }
                   }
                 >
@@ -28756,18 +28741,13 @@ exports[`KitchenSink_1 1`] = `
                   style={
                     Object {
                       "WebkitAlignItems": "center",
-                      "WebkitAlignSelf": "center",
                       "WebkitBoxAlign": "center",
                       "WebkitBoxPack": "center",
                       "WebkitJustifyContent": "center",
                       "alignItems": "center",
-                      "alignSelf": "center",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
-                      "msFlexItemAlign": "center",
                       "msFlexPack": "center",
-                      "position": "absolute",
-                      "right": "0px",
                     }
                   }
                 >
@@ -28947,18 +28927,13 @@ exports[`KitchenSink_1 1`] = `
                   style={
                     Object {
                       "WebkitAlignItems": "center",
-                      "WebkitAlignSelf": "center",
                       "WebkitBoxAlign": "center",
                       "WebkitBoxPack": "center",
                       "WebkitJustifyContent": "center",
                       "alignItems": "center",
-                      "alignSelf": "center",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
-                      "msFlexItemAlign": "center",
                       "msFlexPack": "center",
-                      "position": "absolute",
-                      "right": "0px",
                     }
                   }
                 >
@@ -29138,18 +29113,13 @@ exports[`KitchenSink_1 1`] = `
                   style={
                     Object {
                       "WebkitAlignItems": "center",
-                      "WebkitAlignSelf": "center",
                       "WebkitBoxAlign": "center",
                       "WebkitBoxPack": "center",
                       "WebkitJustifyContent": "center",
                       "alignItems": "center",
-                      "alignSelf": "center",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
-                      "msFlexItemAlign": "center",
                       "msFlexPack": "center",
-                      "position": "absolute",
-                      "right": "0px",
                     }
                   }
                 >
@@ -29329,18 +29299,13 @@ exports[`KitchenSink_1 1`] = `
                   style={
                     Object {
                       "WebkitAlignItems": "center",
-                      "WebkitAlignSelf": "center",
                       "WebkitBoxAlign": "center",
                       "WebkitBoxPack": "center",
                       "WebkitJustifyContent": "center",
                       "alignItems": "center",
-                      "alignSelf": "center",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
-                      "msFlexItemAlign": "center",
                       "msFlexPack": "center",
-                      "position": "absolute",
-                      "right": "0px",
                     }
                   }
                 >
@@ -29520,18 +29485,13 @@ exports[`KitchenSink_1 1`] = `
                   style={
                     Object {
                       "WebkitAlignItems": "center",
-                      "WebkitAlignSelf": "center",
                       "WebkitBoxAlign": "center",
                       "WebkitBoxPack": "center",
                       "WebkitJustifyContent": "center",
                       "alignItems": "center",
-                      "alignSelf": "center",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
-                      "msFlexItemAlign": "center",
                       "msFlexPack": "center",
-                      "position": "absolute",
-                      "right": "0px",
                     }
                   }
                 >
@@ -29734,18 +29694,13 @@ exports[`KitchenSink_1 1`] = `
                   style={
                     Object {
                       "WebkitAlignItems": "center",
-                      "WebkitAlignSelf": "center",
                       "WebkitBoxAlign": "center",
                       "WebkitBoxPack": "center",
                       "WebkitJustifyContent": "center",
                       "alignItems": "center",
-                      "alignSelf": "center",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
-                      "msFlexItemAlign": "center",
                       "msFlexPack": "center",
-                      "position": "absolute",
-                      "right": "0px",
                     }
                   }
                 >
@@ -29925,18 +29880,13 @@ exports[`KitchenSink_1 1`] = `
                   style={
                     Object {
                       "WebkitAlignItems": "center",
-                      "WebkitAlignSelf": "center",
                       "WebkitBoxAlign": "center",
                       "WebkitBoxPack": "center",
                       "WebkitJustifyContent": "center",
                       "alignItems": "center",
-                      "alignSelf": "center",
                       "justifyContent": "center",
                       "msFlexAlign": "center",
-                      "msFlexItemAlign": "center",
                       "msFlexPack": "center",
-                      "position": "absolute",
-                      "right": "0px",
                     }
                   }
                 >
@@ -37336,7 +37286,7 @@ exports[`ListPicker_1 1`] = `
                     }
                   }
                 >
-                  C is a general-purpose, procedural computer programming language.
+                  C is a general-purpose, procedural computer programming language. C is a general-purpose, procedural computer programming language.
                 </div>
               </div>
             </div>
@@ -37345,18 +37295,13 @@ exports[`ListPicker_1 1`] = `
               style={
                 Object {
                   "WebkitAlignItems": "center",
-                  "WebkitAlignSelf": "center",
                   "WebkitBoxAlign": "center",
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "alignSelf": "center",
                   "justifyContent": "center",
                   "msFlexAlign": "center",
-                  "msFlexItemAlign": "center",
                   "msFlexPack": "center",
-                  "position": "absolute",
-                  "right": "0px",
                 }
               }
             >
@@ -37559,18 +37504,13 @@ exports[`ListPicker_1 1`] = `
               style={
                 Object {
                   "WebkitAlignItems": "center",
-                  "WebkitAlignSelf": "center",
                   "WebkitBoxAlign": "center",
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "alignSelf": "center",
                   "justifyContent": "center",
                   "msFlexAlign": "center",
-                  "msFlexItemAlign": "center",
                   "msFlexPack": "center",
-                  "position": "absolute",
-                  "right": "0px",
                 }
               }
             >
@@ -37750,18 +37690,13 @@ exports[`ListPicker_1 1`] = `
               style={
                 Object {
                   "WebkitAlignItems": "center",
-                  "WebkitAlignSelf": "center",
                   "WebkitBoxAlign": "center",
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "alignSelf": "center",
                   "justifyContent": "center",
                   "msFlexAlign": "center",
-                  "msFlexItemAlign": "center",
                   "msFlexPack": "center",
-                  "position": "absolute",
-                  "right": "0px",
                 }
               }
             >
@@ -37941,18 +37876,13 @@ exports[`ListPicker_1 1`] = `
               style={
                 Object {
                   "WebkitAlignItems": "center",
-                  "WebkitAlignSelf": "center",
                   "WebkitBoxAlign": "center",
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "alignSelf": "center",
                   "justifyContent": "center",
                   "msFlexAlign": "center",
-                  "msFlexItemAlign": "center",
                   "msFlexPack": "center",
-                  "position": "absolute",
-                  "right": "0px",
                 }
               }
             >
@@ -38132,18 +38062,13 @@ exports[`ListPicker_1 1`] = `
               style={
                 Object {
                   "WebkitAlignItems": "center",
-                  "WebkitAlignSelf": "center",
                   "WebkitBoxAlign": "center",
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "alignSelf": "center",
                   "justifyContent": "center",
                   "msFlexAlign": "center",
-                  "msFlexItemAlign": "center",
                   "msFlexPack": "center",
-                  "position": "absolute",
-                  "right": "0px",
                 }
               }
             >
@@ -38323,18 +38248,13 @@ exports[`ListPicker_1 1`] = `
               style={
                 Object {
                   "WebkitAlignItems": "center",
-                  "WebkitAlignSelf": "center",
                   "WebkitBoxAlign": "center",
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "alignSelf": "center",
                   "justifyContent": "center",
                   "msFlexAlign": "center",
-                  "msFlexItemAlign": "center",
                   "msFlexPack": "center",
-                  "position": "absolute",
-                  "right": "0px",
                 }
               }
             >
@@ -38514,18 +38434,13 @@ exports[`ListPicker_1 1`] = `
               style={
                 Object {
                   "WebkitAlignItems": "center",
-                  "WebkitAlignSelf": "center",
                   "WebkitBoxAlign": "center",
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "alignSelf": "center",
                   "justifyContent": "center",
                   "msFlexAlign": "center",
-                  "msFlexItemAlign": "center",
                   "msFlexPack": "center",
-                  "position": "absolute",
-                  "right": "0px",
                 }
               }
             >
@@ -38705,18 +38620,13 @@ exports[`ListPicker_1 1`] = `
               style={
                 Object {
                   "WebkitAlignItems": "center",
-                  "WebkitAlignSelf": "center",
                   "WebkitBoxAlign": "center",
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "alignSelf": "center",
                   "justifyContent": "center",
                   "msFlexAlign": "center",
-                  "msFlexItemAlign": "center",
                   "msFlexPack": "center",
-                  "position": "absolute",
-                  "right": "0px",
                 }
               }
             >
@@ -38919,18 +38829,13 @@ exports[`ListPicker_1 1`] = `
               style={
                 Object {
                   "WebkitAlignItems": "center",
-                  "WebkitAlignSelf": "center",
                   "WebkitBoxAlign": "center",
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "alignSelf": "center",
                   "justifyContent": "center",
                   "msFlexAlign": "center",
-                  "msFlexItemAlign": "center",
                   "msFlexPack": "center",
-                  "position": "absolute",
-                  "right": "0px",
                 }
               }
             >
@@ -39110,18 +39015,13 @@ exports[`ListPicker_1 1`] = `
               style={
                 Object {
                   "WebkitAlignItems": "center",
-                  "WebkitAlignSelf": "center",
                   "WebkitBoxAlign": "center",
                   "WebkitBoxPack": "center",
                   "WebkitJustifyContent": "center",
                   "alignItems": "center",
-                  "alignSelf": "center",
                   "justifyContent": "center",
                   "msFlexAlign": "center",
-                  "msFlexItemAlign": "center",
                   "msFlexPack": "center",
-                  "position": "absolute",
-                  "right": "0px",
                 }
               }
             >
