@@ -73,11 +73,24 @@ export interface ParagraphSizes {
 
 export type ParagraphSize = keyof ParagraphSizes | number;
 
+export interface SpacingSizes {
+  xxxlarge: number;
+  xxlarge: number;
+  xlarge: number;
+  large: number;
+  medium: number;
+  small: number;
+  xsmall: number;
+}
+
+export type SpacingSize = keyof SpacingSizes;
+
 export interface FontFamilies {
   heading: string;
   mono: string;
   text: string;
 }
+
 export type FontFamily = keyof FontFamilies;
 
 export type RNFontWeight =
@@ -246,6 +259,7 @@ export interface Theme {
 
   // Layout
   layout: Layout;
+  spacing: SpacingSizes;
 
   // Typography
   fontFamilies: FontFamilies;

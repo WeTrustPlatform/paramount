@@ -25,6 +25,7 @@ export * from './Positioner';
 export * from './ProgressBar';
 export * from './Rating';
 export * from './Slider';
+export * from './Spacing';
 export * from './Switch';
 export * from './Toast';
 export * from './Typography';

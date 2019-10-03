@@ -1,13 +1,29 @@
 import * as React from 'react';
 import { View, ViewStyle } from 'react-native';
 
-import { BackgroundColor, ContainerShape, Theme, useTheme } from '../../theme';
+import {
+  BackgroundColor,
+  ContainerShape,
+  SpacingSize,
+  Theme,
+  useTheme,
+} from '../../theme';
+import { getSpacing } from '../Spacing';
 
 export interface BoxProps extends ViewStyle {
   children?: React.ReactNode;
 
   shape?: ContainerShape;
   backgroundColor?: BackgroundColor;
+  space?: SpacingSize | number;
+  spaceBottom?: SpacingSize | number;
+  spaceEnd?: SpacingSize | number;
+  spaceHorizontal?: SpacingSize | number;
+  spaceLeft?: SpacingSize | number;
+  spaceRight?: SpacingSize | number;
+  spaceStart?: SpacingSize | number;
+  spaceTop?: SpacingSize | number;
+  spaceVertical?: SpacingSize | number;
 }
 
 const propToFn = {
@@ -24,6 +40,15 @@ const propToFn = {
   elevation: (elevation: 0 | 1 | 2 | 3 | 4, theme: Theme) =>
     theme.elevations[elevation],
   shape: (shape: ContainerShape, theme: Theme) => theme.containerShapes[shape],
+  space: getSpacing,
+  spaceBottom: getSpacing,
+  spaceEnd: getSpacing,
+  spaceHorizontal: getSpacing,
+  spaceLeft: getSpacing,
+  spaceRight: getSpacing,
+  spaceStart: getSpacing,
+  spaceTop: getSpacing,
+  spaceVertical: getSpacing,
 };
 
 export const Box = (props: BoxProps) => {

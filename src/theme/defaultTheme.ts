@@ -12,6 +12,7 @@ import {
   FontWeights,
   HeadingSizes,
   ParagraphSizes,
+  SpacingSize,
   TextSizes,
   Theme,
 } from './Theme';
@@ -38,6 +39,16 @@ const controlBorderRadius: ControlSizes = {
   medium: 4,
 
   large: 4,
+};
+
+const spacing: { [size in SpacingSize]: number } = {
+  xsmall: 4,
+  small: 8,
+  medium: 16,
+  large: 24,
+  xlarge: 32,
+  xxlarge: 40,
+  xxxlarge: 48,
 };
 
 const colors: Colors = {
@@ -376,6 +387,7 @@ export const defaultTheme: Theme = {
   colors,
   fills,
 
+  spacing,
   layout: defaultLayout,
 
   fontFamilies,
