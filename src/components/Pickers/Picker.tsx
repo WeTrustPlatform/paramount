@@ -14,36 +14,39 @@ import {
 
 export interface PickerOverrides<
   TValue extends any,
-  TPickerItem extends PickerItem<TValue>
+  TItem extends PickerItem<TValue>,
+  TItemProps extends ItemProps<TValue, TItem & PickerItemProps>
 > {
   Root: RootProps;
-  Item: ItemProps<TValue, TPickerItem & PickerItemProps>;
+  Item: TItemProps;
 }
 
 export interface ItemProps<
   TValue extends any,
-  TPickerItem extends PickerItem<TValue> & PickerItemProps
+  TItem extends PickerItem<TValue> & PickerItemProps
 > {
-  item: TPickerItem;
+  item: TItem;
   onSelect: () => void;
 }
 
 export interface PickerProps<
   TValue extends any,
-  TPickerItem extends PickerItem<TValue>,
+  TItem extends PickerItem<TValue>,
+  TItemProps extends ItemProps<TValue, TItem & PickerItemProps>,
   TIsMulti extends boolean = false
 >
   extends WithOverrides<
-    UsePickerProps<TValue, TPickerItem, TIsMulti>,
-    PickerOverrides<TValue, TPickerItem>
+    UsePickerProps<TValue, TItem, TIsMulti>,
+    PickerOverrides<TValue, TItem, TItemProps>
   > {}
 
 export const Picker = <
   TValue extends any,
-  TPickerItem extends PickerItem<TValue>,
+  TItem extends PickerItem<TValue>,
+  TItemProps extends ItemProps<TValue, TItem & PickerItemProps>,
   TIsMulti extends boolean = false
 >(
-  props: PickerProps<TValue, TPickerItem, TIsMulti>,
+  props: PickerProps<TValue, TItem, TItemProps, TIsMulti>,
 ) => {
   const {
     data = [],
@@ -63,7 +66,7 @@ export const Picker = <
     dlv(theme, 'overrides.Picker.Root'),
     overrides.Root,
   );
-  const [Item, tabProps] = getOverrides(
+  const [Item, itemProps] = getOverrides(
     StyledItem,
     props,
     dlv(theme, 'overrides.Picker.Item'),
@@ -85,7 +88,7 @@ export const Picker = <
           key={item.key}
           onSelect={() => handleSelect(item.value, item.index, item.isSelected)}
           item={item}
-          {...tabProps}
+          {...itemProps}
         />
       ))}
     </Root>
@@ -118,8 +121,12 @@ const StyledRoot = (props: RootProps) => {
   );
 };
 
-export const StyledItem = <TValue extends any = string>(
-  props: ItemProps<TValue, PickerItem<TValue> & PickerItemProps>,
+export const StyledItem = <
+  TValue extends any,
+  TItem extends PickerItem<TValue>,
+  TItemProps extends ItemProps<TValue, TItem & PickerItemProps>
+>(
+  props: TItemProps,
 ) => {
   const { item, onSelect } = props;
   const { isSelected, value } = item;

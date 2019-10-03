@@ -310,7 +310,7 @@ export interface ThemeOverrides {
   Row: Overrides<any, RowOverride>;
   Slider: Overrides<any, SliderOverrides>;
   Switch: Overrides<any, SwitchOverrides>;
-  Picker: Overrides<any, PickerOverrides<any, any>>;
+  Picker: Overrides<any, PickerOverrides<any, any, any>>;
   Text: Overrides<any, TextOverride>;
   TextInput: Overrides<any, TextInputOverrides>;
   WheelPicker: Overrides<any, WheelPickerOverrides<any>>;
