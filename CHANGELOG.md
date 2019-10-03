@@ -1,3 +1,10 @@
+## [1.83.3](https://github.com/WeTrustPlatform/paramount/compare/v1.83.2...v1.83.3) (2019-10-03)
+
+
+### Bug Fixes
+
+* box space ([1721b91](https://github.com/WeTrustPlatform/paramount/commit/1721b91))
+
 ## [1.83.2](https://github.com/WeTrustPlatform/paramount/compare/v1.83.1...v1.83.2) (2019-10-03)
 
 
