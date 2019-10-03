@@ -1,3 +1,10 @@
+## [1.83.1](https://github.com/WeTrustPlatform/paramount/compare/v1.83.0...v1.83.1) (2019-10-03)
+
+
+### Bug Fixes
+
+* export usePicker ([4bde61f](https://github.com/WeTrustPlatform/paramount/commit/4bde61f))
+
 # [1.83.0](https://github.com/WeTrustPlatform/paramount/compare/v1.82.0...v1.83.0) (2019-10-03)
 
 
