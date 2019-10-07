@@ -1,3 +1,11 @@
+## [1.83.4](https://github.com/WeTrustPlatform/paramount/compare/v1.83.3...v1.83.4) (2019-10-07)
+
+
+### Bug Fixes
+
+* dialog and list picker style ([6682d2c](https://github.com/WeTrustPlatform/paramount/commit/6682d2c))
+* update snapshots ([4e399bb](https://github.com/WeTrustPlatform/paramount/commit/4e399bb))
+
 ## [1.83.3](https://github.com/WeTrustPlatform/paramount/compare/v1.83.2...v1.83.3) (2019-10-03)
 
 
