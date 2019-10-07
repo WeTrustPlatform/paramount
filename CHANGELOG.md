@@ -1,3 +1,10 @@
+## [1.83.5](https://github.com/WeTrustPlatform/paramount/compare/v1.83.4...v1.83.5) (2019-10-07)
+
+
+### Bug Fixes
+
+* style and overrides ([a99f5bd](https://github.com/WeTrustPlatform/paramount/commit/a99f5bd))
+
 ## [1.83.4](https://github.com/WeTrustPlatform/paramount/compare/v1.83.3...v1.83.4) (2019-10-07)
 
 
