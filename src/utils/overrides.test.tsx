@@ -1,44 +1,37 @@
 import * as React from 'react';
-import { TextStyle, View, ViewProps } from 'react-native';
+import { Text, TextProps, View, ViewProps } from 'react-native';
 import { render } from 'react-native-testing-library';
 
 import { getOverrides, WithOverrides } from './overrides';
 
-interface ComponentTwoProps {
-  two?: string;
-  style?: TextStyle;
+interface CommonComponentProps extends TextProps {
+  isDisabled: boolean;
 }
 
-const ComponentTwo = (props: ComponentTwoProps) => {
-  return <></>;
+const CommonComponent = (props: CommonComponentProps) => {
+  const { isDisabled, ...textProps } = props;
+
+  return <Text {...textProps} />;
 };
 
-interface ComponentOneBaseProps {
-  one?: string;
+interface RootProps extends ViewProps {
+  children?: React.ReactNode;
 }
 
-interface ComponentOneOverrides {
-  Root: ViewProps;
-  ComponentTwo: ComponentTwoProps;
-}
+const StyledRoot = (props: RootProps) => {
+  const { children, ...viewProps } = props;
 
-type ComponentOneProps = WithOverrides<
-  ComponentOneBaseProps,
-  ComponentOneOverrides
->;
-
-const ComponentOne = (props: ComponentOneProps) => {
-  return <></>;
+  return <View {...viewProps}>{children}</View>;
 };
 
 interface TestComponentBaseProps {
-  zero?: string;
+  isDisabled: boolean;
 }
 
 interface TestComponentOverrides {
-  Root: ViewProps;
-  ComponentOne: ComponentOneProps;
-  ComponentTwo: ComponentTwoProps;
+  Root: RootProps;
+  ComponentOne: CommonComponentProps;
+  ComponentTwo: CommonComponentProps;
 }
 
 type TestComponentProps = WithOverrides<
@@ -47,22 +40,22 @@ type TestComponentProps = WithOverrides<
 >;
 
 const TestComponent = (props: TestComponentProps) => {
-  const { overrides = {}, zero } = props;
+  const { overrides = {}, isDisabled } = props;
 
   const [RootR, rootProps] = getOverrides(
-    View,
+    StyledRoot,
     props,
     overrides.Root,
     overrides.Root,
   );
   const [ComponentOneR, componentOneProps] = getOverrides(
-    ComponentOne,
+    CommonComponent,
     props,
     overrides.ComponentOne,
     overrides.ComponentOne,
   );
   const [ComponentTwoR, componentTwoProps] = getOverrides(
-    ComponentTwo,
+    CommonComponent,
     props,
     overrides.ComponentTwo,
     overrides.ComponentTwo,
@@ -70,48 +63,45 @@ const TestComponent = (props: TestComponentProps) => {
 
   return (
     <RootR {...rootProps}>
-      <ComponentOneR one={zero} {...componentOneProps} />
-      <ComponentTwoR two={zero} {...componentTwoProps} />
+      <ComponentOneR isDisabled={isDisabled} {...componentOneProps} />
+      <ComponentTwoR isDisabled={isDisabled} {...componentTwoProps} />
     </RootR>
   );
 };
 
-const ReplaceComponentTwo = (props: ComponentTwoProps) => <></>;
+const ReplaceComponentTwo = (props: CommonComponentProps) => <></>;
 
 describe('Overrides', () => {
   test('Component is correctly type-checked and can render', () => {
-    render(
+    const { getByTestId } = render(
       <TestComponent
+        isDisabled={true}
         overrides={{
           Root: {
-            props: props => ({
-              testID: props.zero,
-            }),
-            style: props => ({
-              height: 1,
-            }),
+            props: {
+              testID: 'ROOT',
+            },
+            style: {
+              backgroundColor: 'blue',
+            },
           },
           ComponentOne: {
-            props: {
-              one: '1',
-              overrides: {
-                Root: {
-                  style: {
-                    height: 1,
-                  },
-                },
-              },
-            },
+            props: ({ isDisabled }) => ({
+              testID: isDisabled ? 'COMPONENT_ONE' : 'INVALID_COMPONENT',
+            }),
+            style: ({ isDisabled }) => ({
+              backgroundColor: isDisabled ? 'blue' : 'green',
+            }),
           },
           ComponentTwo: {
-            style: {
-              fontSize: 1,
-            },
             component: ReplaceComponentTwo,
           },
         }}
       />,
     );
+
+    const componentOne = getByTestId('COMPONENT_ONE');
+    expect(componentOne.props.style.backgroundColor).toBe('blue');
   });
 });
 

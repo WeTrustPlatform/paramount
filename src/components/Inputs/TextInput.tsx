@@ -235,7 +235,7 @@ const StyledInput = (props: InputProps) => {
           width: '100%',
           ...textSize,
           ...(isDisabled
-            ? { backgroundColor: theme.colors.background.greyDark }
+            ? { backgroundColor: theme.colors.background.greyLight }
             : {}),
           ...(isInvalid ? { borderColor: theme.colors.border.danger } : {}),
           ...(numberOfLines

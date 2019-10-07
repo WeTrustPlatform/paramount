@@ -94,7 +94,10 @@ const applyOverrides = <TProps = any, TChildProps = any>(
   }
 
   if (override.style) {
-    style = getStyle<Partial<TChildProps>>(overrideProps, override.style);
+    style = getStyle<Partial<TChildProps>>(
+      { ...parentProps, ...overrideProps },
+      override.style,
+    );
   }
 
   return { ...overrideProps, ...(style ? { style } : {}) };
