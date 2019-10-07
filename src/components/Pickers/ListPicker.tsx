@@ -139,6 +139,11 @@ const StyledListPickerItem = <TValue extends any = any>(
       title={label}
       description={isSelected && description}
       overrides={{
+        Touchable: {
+          style: {
+            paddingRight: 8,
+          },
+        },
         Action: {
           component: () => (
             <Box justifyContent="center" alignItems="center">

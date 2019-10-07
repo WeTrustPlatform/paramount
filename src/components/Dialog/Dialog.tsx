@@ -161,8 +161,8 @@ const StyledContent = (props: ContentProps) => {
            * that amount so that it does not overflow the window
            */
           maxHeight: '80%',
-          maxWidth: 600,
-          minWidth: 280,
+          maxWidth: '80%',
+          minWidth: 288,
           position: 'relative',
           zIndex: 1,
         },
