@@ -224,19 +224,20 @@ const StyledInput = (props: InputProps) => {
     <RNTextInput
       style={[
         {
-          backgroundColor: theme.colors.background.content,
+          backgroundColor: isDisabled
+            ? theme.colors.background.greyLight
+            : theme.colors.background.content,
           borderColor: theme.colors.border.default,
           borderRadius,
           borderWidth: 1,
-          color: theme.colors.text.default,
+          color: isDisabled
+            ? theme.colors.text.muted
+            : theme.colors.text.default,
           height,
           paddingLeft,
           paddingRight,
           width: '100%',
           ...textSize,
-          ...(isDisabled
-            ? { backgroundColor: theme.colors.background.greyLight }
-            : {}),
           ...(isInvalid ? { borderColor: theme.colors.border.danger } : {}),
           ...(numberOfLines
             ? {
