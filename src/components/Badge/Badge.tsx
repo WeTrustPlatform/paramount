@@ -4,8 +4,8 @@ import { View, ViewProps } from 'react-native';
 
 import { useTheme } from '../../theme';
 import { ContainerShape, ControlSize, FillColor } from '../../theme/Theme';
-import { isControlSize } from '../../utils/isControlSize';
-import { getOverrides, getStyle, WithOverrides } from '../../utils/overrides';
+import { isControlSize } from '../../utils/ControlSize';
+import { getOverrides, getStyle, WithOverrides } from '../../utils/Overrides';
 import { OptionalString } from '../../utils/types';
 import { Text, TextProps } from '../Typography';
 
@@ -64,32 +64,21 @@ export const Badge = (props: BadgeProps) => {
   const [Root, rootProps] = getOverrides(
     StyledRoot,
     props,
+    { size, isSolid, color, shape, testID },
     dlv(theme, 'overrides.Badge.Root'),
     overrides.Root,
   );
   const [Title, titleProps] = getOverrides(
     StyledTitle,
     props,
+    { size, isSolid, color, title },
     dlv(theme, 'overrides.Badge.Title'),
     overrides.Title,
   );
 
   return (
-    <Root
-      size={size}
-      color={color}
-      isSolid={isSolid}
-      shape={shape}
-      testID={testID}
-      {...rootProps}
-    >
-      <Title
-        size={size}
-        color={color}
-        isSolid={isSolid}
-        title={title}
-        {...titleProps}
-      />
+    <Root {...rootProps}>
+      <Title {...titleProps} />
     </Root>
   );
 };
@@ -112,28 +101,28 @@ const StyledRoot = (props: RootProps) => {
   const fills = isSolid ? theme.fills.solid : theme.fills.subtle;
 
   const colors = fills[color];
-  const { height, paddingLeft, paddingRight } = isControlSize(size)
+  const { minHeight, paddingLeft, paddingRight } = isControlSize(size)
     ? {
         small: {
-          height: theme.controlHeights.small,
+          minHeight: theme.controlHeights.small,
           paddingLeft: theme.controlPaddings.small,
           paddingRight: theme.controlPaddings.small,
         },
 
         medium: {
-          height: theme.controlHeights.medium,
+          minHeight: theme.controlHeights.medium,
           paddingLeft: theme.controlPaddings.medium,
           paddingRight: theme.controlPaddings.medium,
         },
 
         large: {
-          height: theme.controlHeights.large,
+          minHeight: theme.controlHeights.large,
           paddingLeft: theme.controlPaddings.large,
           paddingRight: theme.controlPaddings.large,
         },
       }[size]
     : {
-        height: size,
+        minHeight: size,
         paddingLeft: theme.controlPaddings.medium,
         paddingRight: theme.controlPaddings.medium,
       };
@@ -147,7 +136,7 @@ const StyledRoot = (props: RootProps) => {
           backgroundColor: colors.backgroundColor,
           display: 'flex',
           flexDirection: 'row',
-          height,
+          minHeight,
           justifyContent: 'center',
           paddingLeft,
           paddingRight,

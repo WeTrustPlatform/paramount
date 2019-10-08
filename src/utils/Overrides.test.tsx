@@ -2,10 +2,11 @@ import * as React from 'react';
 import { Text, TextProps, View, ViewProps } from 'react-native';
 import { render } from 'react-native-testing-library';
 
-import { getOverrides, WithOverrides } from './overrides';
+import { getOverrides, WithOverrides } from './Overrides';
 
 interface CommonComponentProps extends TextProps {
   isDisabled: boolean;
+  isActive: boolean;
 }
 
 const CommonComponent = (props: CommonComponentProps) => {
@@ -45,26 +46,29 @@ const TestComponent = (props: TestComponentProps) => {
   const [RootR, rootProps] = getOverrides(
     StyledRoot,
     props,
+    {},
     overrides.Root,
     overrides.Root,
   );
   const [ComponentOneR, componentOneProps] = getOverrides(
     CommonComponent,
     props,
+    { isDisabled, isActive: !isDisabled },
     overrides.ComponentOne,
     overrides.ComponentOne,
   );
   const [ComponentTwoR, componentTwoProps] = getOverrides(
     CommonComponent,
     props,
+    { isDisabled, isActive: !isDisabled },
     overrides.ComponentTwo,
     overrides.ComponentTwo,
   );
 
   return (
     <RootR {...rootProps}>
-      <ComponentOneR isDisabled={isDisabled} {...componentOneProps} />
-      <ComponentTwoR isDisabled={isDisabled} {...componentTwoProps} />
+      <ComponentOneR {...componentOneProps} />
+      <ComponentTwoR {...componentTwoProps} />
     </RootR>
   );
 };
@@ -88,9 +92,11 @@ describe('Overrides', () => {
           ComponentOne: {
             props: ({ isDisabled }) => ({
               testID: isDisabled ? 'COMPONENT_ONE' : 'INVALID_COMPONENT',
+              isActive: true,
             }),
-            style: ({ isDisabled }) => ({
+            style: ({ isActive, isDisabled }) => ({
               backgroundColor: isDisabled ? 'blue' : 'green',
+              color: isActive ? 'blue' : 'green',
             }),
           },
           ComponentTwo: {
@@ -102,6 +108,7 @@ describe('Overrides', () => {
 
     const componentOne = getByTestId('COMPONENT_ONE');
     expect(componentOne.props.style.backgroundColor).toBe('blue');
+    expect(componentOne.props.style.color).toBe('blue');
   });
 });
 
@@ -129,6 +136,7 @@ describe('getOverrides', () => {
       width: parentProps.zero,
     },
   };
+
   const overrideObjectTwo = {
     props: {
       pointerEvents: 'auto' as const,
@@ -139,7 +147,12 @@ describe('getOverrides', () => {
   };
 
   test('getOverrides return correct overrideProps given callback', () => {
-    const [, viewProps] = getOverrides(View, parentProps, overrideCallbacks);
+    const [, viewProps] = getOverrides(
+      View,
+      parentProps,
+      {},
+      overrideCallbacks,
+    );
 
     expect(viewProps.testID).toBe(parentProps.zero);
     expect(viewProps.style!).toMatchObject({
@@ -151,6 +164,7 @@ describe('getOverrides', () => {
     const [, viewProps] = getOverrides(
       View,
       parentProps,
+      {},
       overrideObject,
       overrideObjectTwo,
     );
@@ -164,6 +178,7 @@ describe('getOverrides', () => {
     const [, viewProps] = getOverrides(
       View,
       parentProps,
+      {},
       overrideCallbacks,
       overrideObject,
     );
@@ -179,10 +194,15 @@ describe('getOverrides', () => {
     const OverrideView = (props: ViewProps) => <></>;
     OverrideView.displayName = 'OverrideView';
 
-    const [Component, viewProps] = getOverrides(View, parentProps, {
-      ...overrideObject,
-      component: OverrideView,
-    });
+    const [Component, viewProps] = getOverrides(
+      View,
+      parentProps,
+      {},
+      {
+        ...overrideObject,
+        component: OverrideView,
+      },
+    );
 
     expect(viewProps.testID).toBe(overrideObject.props.testID);
     expect(viewProps.style!).toMatchObject(overrideObject.style);

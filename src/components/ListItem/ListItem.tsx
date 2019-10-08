@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, getStyle, WithOverrides } from '../../utils/overrides';
+import { getOverrides, getStyle, WithOverrides } from '../../utils/Overrides';
 import { OptionalString } from '../../utils/types';
 import { Avatar, AvatarProps } from '../Avatar';
 import { Text, TextProps } from '../Typography';
@@ -71,71 +71,71 @@ export const ListItem = (props: ListItemProps) => {
   } = props;
   const theme = useTheme();
 
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    { isDisabled },
+    dlv(theme, 'overrides.ListItem.Root'),
+    overrides.Root,
+  );
   const [Touchable, touchableProps] = getOverrides(
     StyledTouchable,
     props,
+    { onPress, testID, isDisabled },
     dlv(theme, 'overrides.ListItem.Touchable'),
     overrides.Touchable,
   );
-  const [TextWrapper, textProps] = getOverrides(
+  const [TextWrapper, textWrapperProps] = getOverrides(
     StyledTextWrapper,
     props,
+    {
+      hasAvatar:
+        !!source ||
+        !!overrides.Avatar ||
+        !!dlv(theme, 'overrides.ListItem.Avatar'),
+    },
     dlv(theme, 'overrides.ListItem.TextWrapper'),
     overrides.TextWrapper,
   );
   const [Title, titleProps] = getOverrides(
     StyledTitle,
     props,
+    { title },
     dlv(theme, 'overrides.ListItem.Title'),
     overrides.Title,
   );
   const [Description, descriptionProps] = getOverrides(
     StyledDescription,
     props,
+    { description },
     dlv(theme, 'overrides.ListItem.Description'),
     overrides.Description,
   );
   const [Action, rightIconProps] = getOverrides(
     StyledAction,
     props,
+    { isDisabled },
     dlv(theme, 'overrides.ListItem.Action'),
     overrides.Action,
   );
   const [AvatarR, avatarProps] = getOverrides(
     StyledAvatar,
     props,
+    { source, size: 'small' },
     dlv(theme, 'overrides.ListItem.Avatar'),
     overrides.Avatar,
   );
-  const [Root, rootProps] = getOverrides(
-    StyledRoot,
-    props,
-    dlv(theme, 'overrides.ListItem.Root'),
-    overrides.Root,
-  );
 
   return (
-    <Root isDisabled={isDisabled} {...rootProps}>
-      <Touchable
-        onPress={onPress}
-        testID={testID}
-        isDisabled={isDisabled}
-        {...touchableProps}
-      >
-        <AvatarR size="small" source={source} {...avatarProps} />
-        <TextWrapper
-          hasAvatar={
-            !!source ||
-            !!overrides.Avatar ||
-            !!dlv(theme, 'overrides.ListItem.Avatar')
-          }
-          {...textProps}
-        >
-          <Title title={title} {...titleProps} />
-          <Description description={description} {...descriptionProps} />
+    <Root {...rootProps}>
+      <Touchable {...touchableProps}>
+        <AvatarR {...avatarProps} />
+        <TextWrapper {...textWrapperProps}>
+          <Title {...titleProps} />
+          <Description {...descriptionProps} />
         </TextWrapper>
       </Touchable>
-      <Action isDisabled={isDisabled} {...rightIconProps} />
+      <Action {...rightIconProps} />
     </Root>
   );
 };
@@ -154,7 +154,7 @@ const StyledRoot = (props: RootProps) => {
       style={[
         {
           flexDirection: 'row',
-          height: 72,
+          minHeight: 72,
           backgroundColor: isDisabled
             ? theme.colors.background.greyLight
             : theme.colors.background.content,

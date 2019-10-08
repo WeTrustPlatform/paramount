@@ -3,7 +3,7 @@ import * as React from 'react';
 import { ScrollView, ScrollViewProps, View, ViewProps } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { getOverrides, WithOverrides } from '../../utils/Overrides';
 import { Modal } from '../Modal';
 import { Overlay, OverlayProps } from '../Overlay';
 
@@ -59,36 +59,42 @@ export const Dialog = (props: DialogProps) => {
   const [Root, rootProps] = getOverrides(
     StyledRoot,
     props,
+    {},
     dlv(theme, 'overrides.Dialog.Root'),
     overrides.Root,
   );
   const [Content, contentProps] = getOverrides(
     StyledContent,
     props,
+    {},
     dlv(theme, 'overrides.Dialog.Content'),
     overrides.Content,
   );
   const [Body, bodyProps] = getOverrides(
     StyledBody,
     props,
+    {},
     dlv(theme, 'overrides.Dialog.Body'),
     overrides.Body,
   );
   const [OverlayR, overlayProps] = getOverrides(
     Overlay,
     props,
+    { onPress: onRequestClose },
     dlv(theme, 'overrides.Dialog.Overlay'),
     overrides.Overlay,
   );
   const [Header, headerProps] = getOverrides(
     StyledHeader,
     props,
+    { onRequestClose },
     dlv(theme, 'overrides.Dialog.Header'),
     overrides.Header,
   );
   const [Footer, footerProps] = getOverrides(
     StyledFooter,
     props,
+    { onRequestClose },
     dlv(theme, 'overrides.Dialog.Footer'),
     overrides.Footer,
   );
@@ -104,11 +110,11 @@ export const Dialog = (props: DialogProps) => {
     >
       <Root {...rootProps}>
         <Content {...contentProps}>
-          <Header onRequestClose={onRequestClose} {...headerProps} />
+          <Header {...headerProps} />
           <Body {...bodyProps}>{children}</Body>
-          <Footer onRequestClose={onRequestClose} {...footerProps} />
+          <Footer {...footerProps} />
         </Content>
-        <OverlayR onPress={onRequestClose} {...overlayProps} />
+        <OverlayR {...overlayProps} />
       </Root>
     </Modal>
   );

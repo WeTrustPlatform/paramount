@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, getStyle, WithOverrides } from '../../utils/overrides';
+import { getOverrides, getStyle, WithOverrides } from '../../utils/Overrides';
 import { OptionalString } from '../../utils/types';
 import { Icon } from '../Icon';
 import { Text, TextProps } from '../Typography';
@@ -95,6 +95,7 @@ export const Collapsible = (props: CollapsibleProps) => {
   const [Touchable, touchableProps] = getOverrides(
     StyledTouchable,
     props,
+    { testID, onPress: handlePress },
     dlv(theme, 'overrides.Collapsible.Touchable'),
     overrides.Touchable,
   );
@@ -102,39 +103,43 @@ export const Collapsible = (props: CollapsibleProps) => {
   const [Title, titleProps] = getOverrides(
     StyledTitle,
     props,
+    { title },
     dlv(theme, 'overrides.Collapsible.Title'),
     overrides.Title,
   );
   const [Content, contentProps] = getOverrides(
     StyledContent,
     props,
+    { isOpened: !!isFinalOpened },
     dlv(theme, 'overrides.Collapsible.Content'),
     overrides.Content,
   );
   const [IconOpen, iconOpenProps] = getOverrides(
     StyledIconOpen,
     props,
+    {},
     dlv(theme, 'overrides.Collapsible.IconOpen'),
     overrides.IconOpen,
   );
   const [IconClose, iconCloseProps] = getOverrides(
     StyledIconClose,
     props,
+    {},
     dlv(theme, 'overrides.Collapsible.IconClose'),
     overrides.IconClose,
   );
 
   return (
     <>
-      <Touchable testID={testID} onPress={handlePress} {...touchableProps}>
-        <Title title={title} {...titleProps} />
+      <Touchable {...touchableProps}>
+        <Title {...titleProps} />
         {isFinalOpened ? (
           <IconClose {...iconCloseProps} />
         ) : (
           <IconOpen {...iconOpenProps} />
         )}
       </Touchable>
-      <Content {...contentProps}>{isFinalOpened && children}</Content>
+      <Content {...contentProps}>{children}</Content>
     </>
   );
 };
@@ -181,14 +186,15 @@ const StyledTitle = (props: TitleProps) => {
 
 interface ContentProps extends ViewProps {
   children?: React.ReactNode;
+  isOpened: boolean;
 }
 
 const StyledContent = (props: ContentProps) => {
-  const { children, style, ...viewProps } = props;
+  const { children, style, isOpened, ...viewProps } = props;
 
   return (
     <View style={[{ paddingLeft: 4 }, style]} {...viewProps}>
-      {children}
+      {isOpened && children}
     </View>
   );
 };

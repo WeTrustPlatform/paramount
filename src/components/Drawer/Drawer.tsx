@@ -5,7 +5,7 @@ import { animated, useSpring } from 'react-spring/native.cjs';
 
 import { springDefaultConfig } from '../../constants/Animation';
 import { useTheme } from '../../theme';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { getOverrides, WithOverrides } from '../../utils/Overrides';
 import { Modal } from '../Modal';
 import { Overlay, OverlayProps } from '../Overlay';
 
@@ -84,18 +84,21 @@ export const Drawer = (props: DrawerProps) => {
   const [Root, rootProps] = getOverrides(
     StyledRoot,
     props,
+    {},
     dlv(theme, 'overrides.Drawer.Root'),
     overrides.Root,
   );
   const [Content, contentProps] = getOverrides(
     StyledContent,
     props,
+    { position, offset, space },
     dlv(theme, 'overrides.Drawer.Content'),
     overrides.Content,
   );
   const [OverlayR, overlayProps] = getOverrides(
     Overlay,
     props,
+    { onPress: onRequestClose },
     dlv(theme, 'overrides.Drawer.Overlay'),
     overrides.Overlay,
   );
@@ -109,15 +112,8 @@ export const Drawer = (props: DrawerProps) => {
       useHistory={useHistory}
     >
       <Root {...rootProps}>
-        <Content
-          position={position}
-          offset={offset}
-          space={space}
-          {...contentProps}
-        >
-          {children}
-        </Content>
-        <OverlayR onPress={onRequestClose} {...overlayProps} />
+        <Content {...contentProps}>{children}</Content>
+        <OverlayR {...overlayProps} />
       </Root>
     </Modal>
   );

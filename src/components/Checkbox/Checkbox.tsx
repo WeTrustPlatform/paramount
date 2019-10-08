@@ -8,8 +8,8 @@ import {
 } from 'react-native';
 
 import { ContainerShape, ControlSize, useTheme } from '../../theme';
-import { isControlSize } from '../../utils/isControlSize';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { isControlSize } from '../../utils/ControlSize';
+import { getOverrides, WithOverrides } from '../../utils/Overrides';
 import { Icon } from '../Icon';
 
 interface CheckboxBaseProps {
@@ -71,25 +71,26 @@ export const Checkbox = (props: CheckboxProps) => {
   const [Touchable, touchableProps] = getOverrides(
     StyledTouchable,
     props,
+    {
+      size,
+      shape,
+      isDisabled,
+      testID,
+      onPress: () => onValueChange(!value),
+    },
     dlv(theme, 'overrides.Checkbox.Touchable'),
     overrides.Touchable,
   );
   const [Check, checkProps] = getOverrides(
     StyledCheck,
     props,
+    { value, size, shape, isDisabled },
     dlv(theme, 'overrides.Checkbox.Check'),
     overrides.Check,
   );
 
   return (
-    <Touchable
-      size={size}
-      shape={shape}
-      isDisabled={isDisabled}
-      testID={testID}
-      onPress={() => onValueChange(!value)}
-      {...touchableProps}
-    >
+    <Touchable {...touchableProps}>
       <Check
         value={value}
         size={size}

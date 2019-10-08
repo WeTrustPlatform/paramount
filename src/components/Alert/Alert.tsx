@@ -3,7 +3,7 @@ import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { getOverrides, WithOverrides } from '../../utils/Overrides';
 import { OptionalString } from '../../utils/types';
 import { Icon, IconProps } from '../Icon';
 import { Text, TextProps } from '../Typography';
@@ -47,60 +47,63 @@ export const Alert = (props: AlertProps) => {
   const [Root, rootProps] = getOverrides(
     StyledRoot,
     props,
+    { intent },
     dlv(theme, 'overrides.Alert.Root'),
     overrides.Root,
   );
   const [LeftWrapper, leftWrapperProps] = getOverrides(
     StyledLeftWrapper,
     props,
+    {},
     dlv(theme, 'overrides.Alert.LeftWrapper'),
     overrides.LeftWrapper,
   );
   const [Body, bodyProps] = getOverrides(
     StyledBody,
     props,
+    {},
     dlv(theme, 'overrides.Alert.Body'),
     overrides.Body,
   );
   const [AlertIcon, alertIconProps] = getOverrides(
     StyledAlertIcon,
     props,
+    { intent },
     dlv(theme, 'overrides.Alert.AlertIcon'),
     overrides.AlertIcon,
   );
   const [Title, titleProps] = getOverrides(
     StyledTitle,
     props,
+    { intent, title },
     dlv(theme, 'overrides.Alert.Title'),
     overrides.Title,
   );
   const [Description, descriptionProps] = getOverrides(
     StyledDescription,
     props,
+    { intent, description },
     dlv(theme, 'overrides.Alert.Description'),
     overrides.Description,
   );
   const [Action, actionProps] = getOverrides(
     StyledAction,
     props,
+    { intent },
     dlv(theme, 'overrides.Alert.Action'),
     overrides.Action,
   );
 
   return (
-    <Root intent={intent} {...rootProps}>
+    <Root {...rootProps}>
       <LeftWrapper {...leftWrapperProps}>
-        <AlertIcon intent={intent} {...alertIconProps} />
+        <AlertIcon {...alertIconProps} />
         <Body {...bodyProps}>
-          <Title intent={intent} title={title} {...titleProps} />
-          <Description
-            intent={intent}
-            description={description}
-            {...descriptionProps}
-          />
+          <Title {...titleProps} />
+          <Description {...descriptionProps} />
         </Body>
       </LeftWrapper>
-      <Action intent={intent} {...actionProps} />
+      <Action {...actionProps} />
     </Root>
   );
 };

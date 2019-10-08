@@ -7,7 +7,7 @@ export type ViewMeasureRenderProp = (props: Measurements) => JSX.Element;
 
 export interface ViewMeasureProps extends ViewProps {
   onMeasure?: (props: Measurements) => void;
-  children: React.ReactNode | ViewMeasureRenderProp;
+  children?: React.ReactNode | ViewMeasureRenderProp;
 }
 
 /**

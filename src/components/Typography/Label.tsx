@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Platform, TextStyle, View, ViewProps, ViewStyle } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, getStyle, WithOverrides } from '../../utils/overrides';
+import { getOverrides, getStyle, WithOverrides } from '../../utils/Overrides';
 import { OptionalString } from '../../utils/types';
 import { Text, TextProps } from './Text';
 
@@ -41,35 +41,32 @@ export const Label = (props: LabelProps) => {
   const [Root, rootProps] = getOverrides(
     StyledRoot,
     props,
+    {},
     dlv(theme, 'overrides.Label.Root'),
     overrides.Root,
   );
   const [Wrapper, wrapperProps] = getOverrides(
     StyledWrapper,
     props,
+    { position },
     dlv(theme, 'overrides.Label.Wrapper'),
     overrides.Wrapper,
   );
   const [LabelText, labelTextProps] = getOverrides(
     StyledLabelText,
     props,
+    { position, label },
     dlv(theme, 'overrides.Label.LabelText'),
     overrides.LabelText,
   );
 
   return (
     <Root {...rootProps}>
-      {position === 'top' && (
-        <LabelText position={position} label={label} {...labelTextProps} />
-      )}
-      <Wrapper position={position} {...wrapperProps}>
-        {position === 'left' && (
-          <LabelText position={position} label={label} {...labelTextProps} />
-        )}
+      {position === 'top' && <LabelText {...labelTextProps} />}
+      <Wrapper {...wrapperProps}>
+        {position === 'left' && <LabelText {...labelTextProps} />}
         {children}
-        {position === 'right' && (
-          <LabelText position={position} label={label} {...labelTextProps} />
-        )}
+        {position === 'right' && <LabelText {...labelTextProps} />}
       </Wrapper>
     </Root>
   );

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { FlatList, FlatListProps } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, Override, WithOverrides } from '../../utils/overrides';
+import { getOverrides, Override, WithOverrides } from '../../utils/Overrides';
 import { OptionalString } from '../../utils/types';
 import { Box } from '../Box';
 import { Checkbox } from '../Checkbox';
@@ -54,19 +54,6 @@ export const ListPicker = <
   } = props;
   const theme = useTheme();
 
-  const [ListPickerItemR, listPickerItemProps] = getOverrides(
-    StyledListPickerItem,
-    props,
-    dlv(theme, 'overrides.ListPicker.ListPickerItem'),
-    overrides.ListPickerItem,
-  );
-  const [List, listProps] = getOverrides(
-    StyledList,
-    props,
-    dlv(theme, 'overrides.ListPicker.List'),
-    overrides.List,
-  );
-
   const { items, handleSelect } = usePicker({
     value,
     onValueChange,
@@ -75,28 +62,37 @@ export const ListPicker = <
     keyExtractor,
   });
 
-  return (
-    <List
-      getItemLayout={(_, index) => ({
+  const [List, listProps] = getOverrides(
+    StyledList,
+    props,
+    {
+      getItemLayout: (_, index) => ({
         index,
         length: theme.controlHeights.medium,
         offset: theme.controlHeights.medium * index,
-      })}
-      data={items}
-      renderItem={({ item }) => {
-        return (
-          <ListPickerItemR
-            onPress={() =>
-              handleSelect(item.value, item.index, item.isSelected)
-            }
-            {...item}
-            {...listPickerItemProps}
-          />
+      }),
+      data: items,
+      renderItem: ({ item }) => {
+        const [ListPickerItemR, listPickerItemProps] = getOverrides(
+          StyledListPickerItem,
+          props,
+          {
+            ...item,
+            onPress: () =>
+              handleSelect(item.value, item.index, item.isSelected),
+          },
+          dlv(theme, 'overrides.ListPicker.ListPickerItem'),
+          overrides.ListPickerItem,
         );
-      }}
-      {...listProps}
-    />
+
+        return <ListPickerItemR {...listPickerItemProps} />;
+      },
+    },
+    dlv(theme, 'overrides.ListPicker.List'),
+    overrides.List,
   );
+
+  return <List {...listProps} />;
 };
 
 interface ListProps<TValue extends any>
@@ -131,14 +127,14 @@ const StyledListPickerItem = <TValue extends any = any>(
     override,
   } = props;
 
-  const [ListItemR, listItemRProps] = getOverrides(ListItem, props, override);
-
-  return (
-    <ListItemR
-      onPress={() => onPress(value, index, isSelected)}
-      title={label}
-      description={isSelected && description}
-      overrides={{
+  const [ListItemR, listItemRProps] = getOverrides(
+    ListItem,
+    props,
+    {
+      onPress: () => onPress(value, index, isSelected),
+      title: label,
+      description: isSelected && description,
+      overrides: {
         Touchable: {
           style: {
             paddingRight: 8,
@@ -155,8 +151,10 @@ const StyledListPickerItem = <TValue extends any = any>(
             </Box>
           ),
         },
-      }}
-      {...listItemRProps}
-    />
+      },
+    },
+    override,
   );
+
+  return <ListItemR {...listItemRProps} />;
 };

@@ -9,8 +9,8 @@ import {
 } from 'react-native';
 
 import { ControlSize, useTheme } from '../../theme';
-import { isControlSize } from '../../utils/isControlSize';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { isControlSize } from '../../utils/ControlSize';
+import { getOverrides, WithOverrides } from '../../utils/Overrides';
 import { Icon } from '../Icon';
 
 interface TextInputBaseProps extends RNTextInputProps {
@@ -82,36 +82,64 @@ export const TextInput = (props: TextInputProps) => {
   const [Root, rootProps] = getOverrides(
     StyledRoot,
     props,
+    {},
     dlv(theme, 'overrides.TextInput.Root'),
     overrides.Root,
   );
   const [Input, inputProps] = getOverrides(
     StyledInput,
     props,
+    {
+      hasLeftIcon: !!overrides.LeftIcon,
+      hasRightIcon: !!(isClearable || overrides.RightIcon),
+      size,
+      isDisabled,
+      isInvalid,
+      onValueChange,
+      value,
+      onChangeText,
+      ...textInputProps,
+    },
     dlv(theme, 'overrides.TextInput.Input'),
     overrides.Input,
   );
   const [LeftIconWrapper, leftIconWrapperProps] = getOverrides(
     StyledLeftIconWrapper,
     props,
+    {},
     dlv(theme, 'overrides.TextInput.LeftIconWrapper'),
     overrides.LeftIconWrapper,
   );
   const [LeftIcon, leftIconProps] = getOverrides(
     StyledLeftIcon,
     props,
+    {
+      isClearable,
+      onClear,
+      onValueChange,
+      value,
+      onChangeText,
+    },
     dlv(theme, 'overrides.TextInput.LeftIcon'),
     overrides.LeftIcon,
   );
   const [RightIconWrapper, rightIconWrapperProps] = getOverrides(
     StyledRightIconWrapper,
     props,
+    {},
     dlv(theme, 'overrides.TextInput.RightIconWrapper'),
     overrides.RightIconWrapper,
   );
   const [RightIcon, rightIconProps] = getOverrides(
     StyledRightIcon,
     props,
+    {
+      isClearable,
+      onClear,
+      onValueChange,
+      value,
+      onChangeText,
+    },
     dlv(theme, 'overrides.TextInput.RightIcon'),
     overrides.RightIcon,
   );
@@ -119,36 +147,11 @@ export const TextInput = (props: TextInputProps) => {
   return (
     <Root {...rootProps}>
       <LeftIconWrapper {...leftIconWrapperProps}>
-        <LeftIcon
-          isClearable={isClearable}
-          onClear={onClear}
-          onValueChange={onValueChange}
-          value={value}
-          onChangeText={onChangeText}
-          {...leftIconProps}
-        />
+        <LeftIcon {...leftIconProps} />
       </LeftIconWrapper>
-      <Input
-        hasLeftIcon={!!overrides.LeftIcon}
-        hasRightIcon={!!(isClearable || overrides.RightIcon)}
-        size={size}
-        isDisabled={isDisabled}
-        isInvalid={isInvalid}
-        onValueChange={onValueChange}
-        value={value}
-        onChangeText={onChangeText}
-        {...textInputProps}
-        {...inputProps}
-      />
+      <Input {...inputProps} />
       <RightIconWrapper {...rightIconWrapperProps}>
-        <RightIcon
-          isClearable={isClearable}
-          onClear={onClear}
-          onValueChange={onValueChange}
-          value={value}
-          onChangeText={onChangeText}
-          {...rightIconProps}
-        />
+        <RightIcon {...rightIconProps} />
       </RightIconWrapper>
     </Root>
   );
@@ -199,21 +202,21 @@ const StyledInput = (props: InputProps) => {
 
   const {
     borderRadius,
-    height,
+    minHeight,
     paddingLeft,
     paddingRight,
     textSize,
   } = isControlSize(size)
     ? {
         borderRadius: theme.controlBorderRadius[size],
-        height: theme.controlHeights[size],
+        minHeight: theme.controlHeights[size],
         paddingLeft: theme.controlPaddings[size],
         paddingRight: theme.controlPaddings[size],
         textSize: theme.textSizes[size],
       }
     : {
         borderRadius: theme.controlBorderRadius.medium,
-        height: size,
+        minHeight: size,
         paddingLeft: theme.controlPaddings.medium,
         paddingRight: theme.controlPaddings.medium,
         textSize: theme.textSizes.medium,
@@ -233,7 +236,7 @@ const StyledInput = (props: InputProps) => {
           color: isDisabled
             ? theme.colors.text.muted
             : theme.colors.text.default,
-          height,
+          minHeight,
           paddingLeft,
           paddingRight,
           width: '100%',
@@ -241,7 +244,7 @@ const StyledInput = (props: InputProps) => {
           ...(isInvalid ? { borderColor: theme.colors.border.danger } : {}),
           ...(numberOfLines
             ? {
-                height: numberOfLines * height,
+                minHeight: numberOfLines * minHeight,
                 paddingVertical: 16,
               }
             : {}),

@@ -8,8 +8,8 @@ import {
 } from 'react-native';
 
 import { ControlSize, TextColor, useTheme } from '../../theme';
-import { isControlSize } from '../../utils/isControlSize';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { isControlSize } from '../../utils/ControlSize';
+import { getOverrides, WithOverrides } from '../../utils/Overrides';
 import { getTextColor } from '../Typography';
 import { Star } from './Star';
 
@@ -65,33 +65,31 @@ export const Rating = (props: RatingProps) => {
   const [Root, rootProps] = getOverrides(
     StyledRoot,
     props,
+    {},
     dlv(theme, 'overrides.Rating.Root'),
     overrides.Root,
   );
-  const [StarR, starProps] = getOverrides(
-    StyledStar,
-    props,
-    dlv(theme, 'overrides.Rating.Star'),
-    overrides.Star,
-  );
-
   return (
     <Root {...rootProps}>
       {new Array(maxRating).fill(0).map((_, index) => {
         const currentValue = index + 1;
 
-        return (
-          <StarR
-            key={currentValue}
-            color={color}
-            maxRating={maxRating}
-            rating={value}
-            value={currentValue}
-            size={size}
-            onPress={() => onValueChange(currentValue)}
-            {...starProps}
-          />
+        const [StarR, starProps] = getOverrides(
+          StyledStar,
+          props,
+          {
+            color,
+            maxRating,
+            rating: value,
+            value: currentValue,
+            size,
+            onPress: () => onValueChange(currentValue),
+          },
+          dlv(theme, 'overrides.Rating.Star'),
+          overrides.Star,
         );
+
+        return <StarR key={currentValue} {...starProps} />;
       })}
     </Root>
   );

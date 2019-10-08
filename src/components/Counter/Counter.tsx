@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, getStyle, WithOverrides } from '../../utils/overrides';
+import { getOverrides, getStyle, WithOverrides } from '../../utils/Overrides';
 import { Icon, IconProps } from '../Icon';
 import { Text, TextProps } from '../Typography';
 
@@ -41,7 +41,8 @@ interface CounterBaseProps {
 
 export interface CounterOverrides {
   Root: RootProps;
-  Touchable: TouchableProps;
+  Increment: TouchableProps;
+  Decrement: TouchableProps;
   Count: CountProps;
   IconPlus: CounterIconProps;
   IconMinus: CounterIconProps;
@@ -66,37 +67,6 @@ export const Counter = (props: CounterProps) => {
   const isDecrementDisabled = min === value;
   const isIncrementDisabled = max === value;
 
-  const [Root, rootProps] = getOverrides(
-    StyledRoot,
-    props,
-    dlv(theme, 'overrides.Counter.Root'),
-    overrides.Root,
-  );
-  const [Touchable, touchableProps] = getOverrides(
-    StyledTouchable,
-    props,
-    dlv(theme, 'overrides.Counter.Touchable'),
-    overrides.Touchable,
-  );
-  const [Count, countProps] = getOverrides(
-    StyledCount,
-    props,
-    dlv(theme, 'overrides.Counter.Count'),
-    overrides.Count,
-  );
-  const [IconPlus, iconPlusProps] = getOverrides(
-    StyledIconPlus,
-    props,
-    dlv(theme, 'overrides.Counter.IconPlus'),
-    overrides.IconPlus,
-  );
-  const [IconMinus, iconMinusProps] = getOverrides(
-    StyledIconMinus,
-    props,
-    dlv(theme, 'overrides.Counter.IconMinus'),
-    overrides.IconMinus,
-  );
-
   const handleIncrement = React.useCallback(() => {
     onValueChange(value + step);
   }, [value]);
@@ -105,23 +75,64 @@ export const Counter = (props: CounterProps) => {
     onValueChange(value - step);
   }, [value]);
 
+  const [Root, rootProps] = getOverrides(
+    StyledRoot,
+    props,
+    {},
+    dlv(theme, 'overrides.Counter.Root'),
+    overrides.Root,
+  );
+  const [Decrement, decrementProps] = getOverrides(
+    StyledTouchable,
+    props,
+    {
+      isDisabled: isDecrementDisabled,
+      onPress: handleDecrement,
+    },
+    dlv(theme, 'overrides.Counter.Decrement'),
+    overrides.Decrement,
+  );
+  const [Increment, incrementProps] = getOverrides(
+    StyledTouchable,
+    props,
+    {
+      isDisabled: isIncrementDisabled,
+      onPress: handleIncrement,
+    },
+    dlv(theme, 'overrides.Counter.Increment'),
+    overrides.Increment,
+  );
+  const [Count, countProps] = getOverrides(
+    StyledCount,
+    props,
+    { value },
+    dlv(theme, 'overrides.Counter.Count'),
+    overrides.Count,
+  );
+  const [IconPlus, iconPlusProps] = getOverrides(
+    StyledIconPlus,
+    props,
+    { isDisabled: isIncrementDisabled },
+    dlv(theme, 'overrides.Counter.IconPlus'),
+    overrides.IconPlus,
+  );
+  const [IconMinus, iconMinusProps] = getOverrides(
+    StyledIconMinus,
+    props,
+    { isDisabled: isDecrementDisabled },
+    dlv(theme, 'overrides.Counter.IconMinus'),
+    overrides.IconMinus,
+  );
+
   return (
     <Root {...rootProps}>
-      <Touchable
-        isDisabled={isDecrementDisabled}
-        onPress={handleDecrement}
-        {...touchableProps}
-      >
-        <IconMinus isDisabled={isDecrementDisabled} {...iconMinusProps} />
-      </Touchable>
-      <Count value={value} {...countProps} />
-      <Touchable
-        isDisabled={isIncrementDisabled}
-        onPress={handleIncrement}
-        {...touchableProps}
-      >
-        <IconPlus isDisabled={isIncrementDisabled} {...iconPlusProps} />
-      </Touchable>
+      <Decrement {...decrementProps}>
+        <IconMinus {...iconMinusProps} />
+      </Decrement>
+      <Count {...countProps} />
+      <Increment {...incrementProps}>
+        <IconPlus {...iconPlusProps} />
+      </Increment>
     </Root>
   );
 };

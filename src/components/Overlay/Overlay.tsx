@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getStyle, OverrideStyle, Style } from '../../utils/overrides';
+import { getStyle, OverrideStyle, Style } from '../../utils/Overrides';
 
 type OverlayColor = 'dark' | 'light';
 

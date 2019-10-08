@@ -3,7 +3,7 @@ import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { getOverrides, WithOverrides } from '../../utils/Overrides';
 import { Button } from '../Button';
 import {
   PickerItem,
@@ -26,7 +26,7 @@ export interface ItemProps<
   TItem extends PickerItem<TValue> & PickerItemProps
 > {
   item: TItem;
-  onSelect: () => void;
+  onSelect?: () => void;
 }
 
 export interface PickerProps<

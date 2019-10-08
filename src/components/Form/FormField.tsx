@@ -3,7 +3,7 @@ import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, getStyle, WithOverrides } from '../../utils/overrides';
+import { getOverrides, getStyle, WithOverrides } from '../../utils/Overrides';
 import { OptionalString } from '../../utils/types';
 import { Label, LabelProps, Text, TextProps } from '../Typography';
 
@@ -59,35 +59,37 @@ export const FormField = (props: FormFieldProps) => {
   const [Root, rootProps] = getOverrides(
     StyledRoot,
     props,
+    {},
     dlv(theme, 'overrides.FormField.Root'),
     overrides.Root,
   );
   const [LabelR, labelRProps] = getOverrides(
     Label,
     props,
+    { label, position: labelPosition },
     dlv(theme, 'overrides.FormField.Label'),
     overrides.Label,
   );
   const [Description, descriptionProps] = getOverrides(
     StyledDescription,
     props,
+    { description },
     dlv(theme, 'overrides.FormField.Description'),
     overrides.Description,
   );
   const [ErrorR, errorProps] = getOverrides(
     StyledError,
     props,
+    { error },
     dlv(theme, 'overrides.FormField.Error'),
     overrides.Error,
   );
 
   return (
     <Root {...rootProps}>
-      <LabelR label={label} position={labelPosition} {...labelRProps}>
-        {children}
-      </LabelR>
-      <Description description={description} {...descriptionProps} />
-      <ErrorR error={error} {...errorProps} />
+      <LabelR {...labelRProps}>{children}</LabelR>
+      <Description {...descriptionProps} />
+      <ErrorR {...errorProps} />
     </Root>
   );
 };

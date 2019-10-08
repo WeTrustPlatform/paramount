@@ -3,7 +3,7 @@ import * as React from 'react';
 import { View, ViewProps, ViewStyle } from 'react-native';
 
 import { SpacingSize, Theme, useTheme } from '../../theme';
-import { getStyle, OverrideStyle, Style } from '../../utils/overrides';
+import { getStyle, OverrideStyle, Style } from '../../utils/Overrides';
 
 type SpacingOrientation = 'horizontal' | 'vertical';
 

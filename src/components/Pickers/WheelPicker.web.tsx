@@ -2,7 +2,7 @@ import dlv from 'dlv';
 import * as React from 'react';
 
 import { useTheme } from '../../theme';
-import { getOverrides } from '../../utils/overrides';
+import { getOverrides } from '../../utils/Overrides';
 import { WheelPicker as WheelPickerRef, WheelPickerProps } from './WheelPicker';
 import {
   SCROLL_PICKER_HEIGHT,
@@ -63,44 +63,44 @@ export const WheelPicker = React.forwardRef(
     const [Root, rootProps] = getOverrides(
       StyledRoot,
       props,
+      {},
       dlv(theme, 'overrides.WheelPicker.Root'),
       overrides.Root,
     );
     const [ArrowUp, arrowUpProps] = getOverrides(
       StyledArrowUp,
       props,
+      { onPress: handlePressUp },
       dlv(theme, 'overrides.WheelPicker.ArrowUp'),
       overrides.ArrowUp,
     );
     const [ArrowDown, arrowDownProps] = getOverrides(
       StyledArrowDown,
       props,
+      { onPress: handlePressDown },
       dlv(theme, 'overrides.WheelPicker.ArrowDown'),
       overrides.ArrowDown,
     );
     const [UpperOverlay, upperOverlayProps] = getOverrides(
       StyledUpperOverlay,
       props,
+      { pointerEvents: 'none' },
       dlv(theme, 'overrides.WheelPicker.UpperOverlay'),
       overrides.UpperOverlay,
     );
     const [BottomOverlay, bottomOverlayProps] = getOverrides(
       StyledBottomOverlay,
       props,
+      { pointerEvents: 'none' },
       dlv(theme, 'overrides.WheelPicker.BottomOverlay'),
       overrides.BottomOverlay,
     );
     const [ListWrapper, listWrapperProps] = getOverrides(
       StyledListWrapper,
       props,
+      {},
       dlv(theme, 'overrides.WheelPicker.ListWrapper'),
       overrides.ListWrapper,
-    );
-    const [Item, itemProps] = getOverrides(
-      StyledWheelPickerItem,
-      props,
-      dlv(theme, 'overrides.WheelPicker.Item'),
-      overrides.Item,
     );
 
     return (
@@ -117,9 +117,17 @@ export const WheelPicker = React.forwardRef(
               width: '100%',
             }}
           >
-            {optionsWithClones.map(option => (
-              <Item key={`${option.value}`} option={option} {...itemProps} />
-            ))}
+            {optionsWithClones.map(option => {
+              const [Item, itemProps] = getOverrides(
+                StyledWheelPickerItem,
+                props,
+                { option },
+                dlv(theme, 'overrides.WheelPicker.Item'),
+                overrides.Item,
+              );
+
+              return <Item key={`${option.value}`} {...itemProps} />;
+            })}
           </div>
           <UpperOverlay pointerEvents="none" {...upperOverlayProps} />
           <BottomOverlay pointerEvents="none" {...bottomOverlayProps} />

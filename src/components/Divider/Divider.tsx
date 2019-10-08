@@ -3,8 +3,8 @@ import * as React from 'react';
 import { View, ViewProps, ViewStyle } from 'react-native';
 
 import { BorderColor, BorderColors, ControlSize, useTheme } from '../../theme';
-import { isControlSize } from '../../utils/isControlSize';
-import { getStyle, OverrideStyle, Style } from '../../utils/overrides';
+import { isControlSize } from '../../utils/ControlSize';
+import { getStyle, OverrideStyle, Style } from '../../utils/Overrides';
 
 type DividerOrientation = 'horizontal' | 'vertical';
 

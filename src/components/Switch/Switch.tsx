@@ -10,8 +10,8 @@ import { animated, useSpring } from 'react-spring/native.cjs';
 
 import { springDefaultConfig } from '../../constants/Animation';
 import { ControlSize, Theme, useTheme } from '../../theme';
-import { isControlSize } from '../../utils/isControlSize';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { isControlSize } from '../../utils/ControlSize';
+import { getOverrides, WithOverrides } from '../../utils/Overrides';
 import { Icon } from '../Icon';
 
 const AnimatedView = animated(View);
@@ -67,41 +67,41 @@ export const Switch = (props: SwitchProps) => {
   const [Touchable, touchableProps] = getOverrides(
     StyledTouchable,
     props,
+    {
+      isDisabled,
+      size,
+      onPress: () => onValueChange(!value),
+    },
     dlv(theme, 'overrides.Switch.Touchable'),
     overrides.Touchable,
   );
   const [Background, backgroundProps] = getOverrides(
     StyledBackground,
     props,
+    {
+      isDisabled,
+      size,
+      value,
+    },
     dlv(theme, 'overrides.Switch.Background'),
     overrides.Background,
   );
   const [Circle, circleProps] = getOverrides(
     StyledCircle,
     props,
+    {
+      isDisabled,
+      size,
+      value,
+    },
     dlv(theme, 'overrides.Switch.Circle'),
     overrides.Circle,
   );
 
   return (
-    <Touchable
-      isDisabled={isDisabled}
-      size={size}
-      onPress={() => onValueChange(!value)}
-      {...touchableProps}
-    >
-      <Background
-        isDisabled={isDisabled}
-        size={size}
-        value={value}
-        {...backgroundProps}
-      >
-        <Circle
-          isDisabled={isDisabled}
-          size={size}
-          value={value}
-          {...circleProps}
-        />
+    <Touchable {...touchableProps}>
+      <Background {...backgroundProps}>
+        <Circle {...circleProps} />
       </Background>
     </Touchable>
   );

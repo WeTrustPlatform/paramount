@@ -8,8 +8,8 @@ import {
 } from 'react-native';
 
 import { ButtonColor, ControlSize, Theme, useTheme } from '../../theme';
-import { isControlSize } from '../../utils/isControlSize';
-import { getOverrides, getStyle, WithOverrides } from '../../utils/overrides';
+import { isControlSize } from '../../utils/ControlSize';
+import { getOverrides, getStyle, WithOverrides } from '../../utils/Overrides';
 import { OptionalString } from '../../utils/types';
 import { Dots } from '../LoadingIndicators';
 import { Text, TextProps } from '../Typography';
@@ -85,73 +85,73 @@ export const Button = (props: ButtonProps) => {
   const [Touchable, touchableProps] = getOverrides(
     StyledTouchable,
     props,
+    {
+      appearance,
+      color,
+      isDisabled,
+      isLoading,
+      size,
+      onPress,
+      testID,
+    },
     dlv(theme, 'overrides.Button.Touchable'),
     overrides.Touchable,
   );
   const [Title, titleProps] = getOverrides(
     StyledTitle,
     props,
+    {
+      appearance,
+      color,
+      isDisabled,
+      size,
+      title,
+    },
     dlv(theme, 'overrides.Button.Title'),
     overrides.Title,
   );
   const [Loading, loadingProps] = getOverrides(
     StyledLoading,
     props,
+    {
+      appearance,
+      color,
+    },
     dlv(theme, 'overrides.Button.Loading'),
     overrides.Loading,
   );
   const [IconBefore, iconBeforeProps] = getOverrides(
     StyledIcon,
     props,
+    {
+      appearance,
+      color,
+      isDisabled,
+      isLoading,
+      size,
+    },
     dlv(theme, 'overrides.Button.IconBefore'),
     overrides.IconBefore,
   );
   const [IconAfter, iconAfterProps] = getOverrides(
     StyledIcon,
     props,
+    {
+      appearance,
+      color,
+      isDisabled,
+      isLoading,
+      size,
+    },
     dlv(theme, 'overrides.Button.IconAfter'),
     overrides.IconAfter,
   );
 
   return (
-    <Touchable
-      appearance={appearance}
-      color={color}
-      isDisabled={isDisabled}
-      isLoading={isLoading}
-      size={size}
-      onPress={onPress}
-      testID={testID}
-      {...touchableProps}
-    >
-      <IconBefore
-        appearance={appearance}
-        color={color}
-        isDisabled={isDisabled}
-        isLoading={isLoading}
-        size={size}
-        {...iconBeforeProps}
-      />
-      {isLoading ? (
-        <Loading appearance={appearance} color={color} {...loadingProps} />
-      ) : (
-        <Title
-          appearance={appearance}
-          color={color}
-          isDisabled={isDisabled}
-          size={size}
-          title={title}
-          {...titleProps}
-        />
-      )}
-      <IconAfter
-        appearance={appearance}
-        color={color}
-        isDisabled={isDisabled}
-        isLoading={isLoading}
-        size={size}
-        {...iconAfterProps}
-      />
+    <Touchable {...touchableProps}>
+      <IconBefore {...iconBeforeProps} />
+      {isLoading ? <Loading {...loadingProps} /> : <Title {...titleProps} />}
+      <IconAfter {...iconAfterProps} />
     </Touchable>
   );
 };
@@ -257,18 +257,18 @@ const StyledTouchable = (props: TouchableProps) => {
   const theme = useTheme();
   const buttonAppearances = getButtonAppearances(theme, isLoading);
 
-  const { borderRadius, height, paddingLeft, paddingRight } = isControlSize(
+  const { borderRadius, minHeight, paddingLeft, paddingRight } = isControlSize(
     size,
   )
     ? {
         borderRadius: theme.controlBorderRadius[size],
-        height: theme.controlHeights[size],
+        minHeight: theme.controlHeights[size],
         paddingLeft: theme.controlPaddings[size] + 8,
         paddingRight: theme.controlPaddings[size] + 8,
       }
     : {
         borderRadius: theme.controlBorderRadius.medium,
-        height: size,
+        minHeight: size,
         paddingLeft: theme.controlPaddings.medium + 8,
         paddingRight: theme.controlPaddings.medium + 8,
       };
@@ -280,7 +280,7 @@ const StyledTouchable = (props: TouchableProps) => {
       style={[
         {
           borderRadius,
-          height,
+          minHeight,
           paddingLeft,
           paddingRight,
           flexDirection: 'row',

@@ -80,6 +80,7 @@ export const getStyle = <TChildProps = any, TStyle = any>(
 
 const applyOverrides = <TProps = any, TChildProps = any>(
   parentProps: TProps,
+  props: TChildProps,
   override?: OverrideWithStyle<TProps, TChildProps>,
 ): Partial<TChildProps> => {
   if (!override) return {};
@@ -95,7 +96,7 @@ const applyOverrides = <TProps = any, TChildProps = any>(
 
   if (override.style) {
     style = getStyle<Partial<TChildProps>>(
-      { ...parentProps, ...overrideProps },
+      { ...props, ...overrideProps },
       override.style,
     );
   }
@@ -106,15 +107,16 @@ const applyOverrides = <TProps = any, TChildProps = any>(
 export const getOverrides = <TProps = any, TChildProps = any>(
   Component: React.ComponentType<TChildProps>,
   parentProps: TProps,
+  props: TChildProps,
   ...overrides: (OverrideWithStyle<TProps, TChildProps> | undefined)[]
-): [React.ComponentType<TChildProps>, Partial<TChildProps>] => {
+): [React.ComponentType<TChildProps>, TChildProps] => {
   let overrideProps: Partial<TChildProps> = {};
   let OverrideComponent: React.ComponentType<TChildProps> = Component;
 
   overrides.forEach(override => {
     overrideProps = deepMerge(
       overrideProps,
-      applyOverrides(parentProps, override),
+      applyOverrides(parentProps, props, override),
     );
 
     if (override && (override.component || override.component === null)) {
@@ -122,5 +124,5 @@ export const getOverrides = <TProps = any, TChildProps = any>(
     }
   });
 
-  return [OverrideComponent, overrideProps];
+  return [OverrideComponent, { ...props, ...overrideProps }];
 };

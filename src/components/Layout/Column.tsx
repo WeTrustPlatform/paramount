@@ -3,7 +3,7 @@ import * as React from 'react';
 import { View, ViewProps, ViewStyle } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getStyle, OverrideStyle, Style } from '../../utils/overrides';
+import { getStyle, OverrideStyle, Style } from '../../utils/Overrides';
 import {
   ColumnCount,
   DESC_ORDER_SCREEN_SIZES,

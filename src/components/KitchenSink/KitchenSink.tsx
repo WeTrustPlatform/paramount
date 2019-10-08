@@ -788,7 +788,7 @@ export const KitchenSink = () => {
                     label: 'C',
                     value: 'c',
                     description:
-                      'C is a general-purpose, procedural computer programming language.',
+                      'C is a general-purpose, procedural computer programming language. C is a general-purpose, procedural computer programming language.',
                   },
                   {
                     label: 'C#',

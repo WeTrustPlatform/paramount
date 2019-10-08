@@ -5,8 +5,8 @@ import { animated, useSpring } from 'react-spring/native.cjs';
 
 import { springDefaultConfig } from '../../constants/Animation';
 import { ControlSize, useTheme } from '../../theme';
-import { isControlSize } from '../../utils/isControlSize';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { isControlSize } from '../../utils/ControlSize';
+import { getOverrides, WithOverrides } from '../../utils/Overrides';
 
 const AnimatedView = animated(View);
 
@@ -39,19 +39,21 @@ export const ProgressBar = (props: ProgressBarProps) => {
   const [Root, rootProps] = getOverrides(
     StyledRoot,
     props,
+    { size },
     dlv(theme, 'overrides.ProgressBar.Root'),
     overrides.Root,
   );
   const [Progress, progressProps] = getOverrides(
     StyledProgress,
     props,
+    { percent },
     dlv(theme, 'overrides.ProgressBar.Progress'),
     overrides.Progress,
   );
 
   return (
-    <Root size={size} {...rootProps}>
-      <Progress percent={percent} {...progressProps} />
+    <Root {...rootProps}>
+      <Progress {...progressProps} />
     </Root>
   );
 };
@@ -65,7 +67,9 @@ const StyledRoot = (props: RootProps) => {
   const { children, style, size, ...viewProps } = props;
   const theme = useTheme();
 
-  const height = isControlSize(size) ? theme.controlHeights[size] - 16 : size;
+  const minHeight = isControlSize(size)
+    ? theme.controlHeights[size] - 16
+    : size;
 
   return (
     <View
@@ -73,7 +77,7 @@ const StyledRoot = (props: RootProps) => {
         {
           backgroundColor: theme.colors.background.greyDefault,
           borderRadius: 999,
-          height,
+          minHeight,
           overflow: 'hidden',
         },
         style,

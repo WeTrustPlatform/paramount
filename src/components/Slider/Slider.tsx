@@ -4,8 +4,8 @@ import { PanResponder, View, ViewProps } from 'react-native';
 
 import { usePrevious } from '../../hooks';
 import { ControlSize, useTheme } from '../../theme';
-import { isControlSize } from '../../utils/isControlSize';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { isControlSize } from '../../utils/ControlSize';
+import { getOverrides, WithOverrides } from '../../utils/Overrides';
 import { ViewMeasure, ViewMeasureProps } from '../Helpers';
 
 type RangeValue = [number, number];
@@ -87,7 +87,8 @@ export interface SliderOverrides {
   Root: RootProps;
   UnselectedTrack: UnselectedTrackProps;
   SelectedTrack: SelectedTrackProps;
-  Thumb: ThumbProps;
+  LeftThumb: ThumbProps;
+  RightThumb: ThumbProps;
 }
 
 export interface SliderProps<TIsRange extends boolean>
@@ -249,56 +250,57 @@ export const Slider = <TIsRange extends boolean>(
   const [Root, rootProps] = getOverrides(
     StyledRoot,
     props,
+    { size, onMeasure: setTrackMeasurements },
     dlv(theme, 'overrides.Slider.Root'),
     overrides.Root,
   );
   const [UnselectedTrack, unselectedTrackProps] = getOverrides(
     StyledUnselectedTrack,
     props,
+    { size },
     dlv(theme, 'overrides.Slider.UnselectedTrack'),
     overrides.UnselectedTrack,
   );
   const [SelectedTrack, selectedTrackProps] = getOverrides(
     StyledSelectedTrack,
     props,
+    { isRangeSlider, left, right, size },
     dlv(theme, 'overrides.Slider.SelectedTrack'),
     overrides.SelectedTrack,
   );
-  const [Thumb, thumbProps] = getOverrides(
+  const [LeftThumb, leftThumbProps] = getOverrides(
     StyledThumb,
     props,
-    dlv(theme, 'overrides.Slider.Thumb'),
-    overrides.Thumb,
+    {
+      size,
+      position: left,
+      isSliding,
+      value: getLeftValue(value),
+      ...leftThumbRef.current.panHandlers,
+    },
+    dlv(theme, 'overrides.Slider.LeftThumb'),
+    overrides.LeftThumb,
+  );
+  const [RightThumb, rightThumbProps] = getOverrides(
+    StyledThumb,
+    props,
+    {
+      size,
+      position: right,
+      isSliding,
+      value: getRightValue(value),
+      ...rightThumbRef.current.panHandlers,
+    },
+    dlv(theme, 'overrides.Slider.RightThumb'),
+    overrides.RightThumb,
   );
 
   return (
-    <Root size={size} onMeasure={setTrackMeasurements} {...rootProps}>
-      <UnselectedTrack size={size} {...unselectedTrackProps} />
-      <SelectedTrack
-        isRangeSlider={isRangeSlider}
-        left={left}
-        right={right}
-        size={size}
-        {...selectedTrackProps}
-      />
-      <Thumb
-        size={size}
-        position={left}
-        isSliding={isSliding}
-        value={getLeftValue(value)}
-        {...leftThumbRef.current.panHandlers}
-        {...thumbProps}
-      />
-      {isRangeSlider && (
-        <Thumb
-          size={size}
-          position={right}
-          isSliding={isSliding}
-          value={getRightValue(value)}
-          {...rightThumbRef.current.panHandlers}
-          {...thumbProps}
-        />
-      )}
+    <Root {...rootProps}>
+      <UnselectedTrack {...unselectedTrackProps} />
+      <SelectedTrack {...selectedTrackProps} />
+      <LeftThumb {...leftThumbProps} />
+      {isRangeSlider && <RightThumb {...rightThumbProps} />}
     </Root>
   );
 };

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { View, ViewProps } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { getOverrides, WithOverrides } from '../../utils/Overrides';
 import {
   Positioner,
   PositionerBaseProps,
@@ -24,6 +24,7 @@ export const Popover = (props: PopoverProps) => {
   const [Content, contentProps] = getOverrides(
     StyledContent,
     props,
+    {},
     dlv(theme, 'overrides.Popover.Content'),
     overrides.Content,
   );

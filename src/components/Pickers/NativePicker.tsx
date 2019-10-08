@@ -3,8 +3,8 @@ import * as React from 'react';
 import { Picker as RNPicker, PickerProps as RNPickerProps } from 'react-native';
 
 import { ControlSize, useTheme } from '../../theme';
-import { isControlSize } from '../../utils/isControlSize';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { isControlSize } from '../../utils/ControlSize';
+import { getOverrides, WithOverrides } from '../../utils/Overrides';
 
 export interface NativePickerOption<TValue extends string | number> {
   label: string;
@@ -62,18 +62,18 @@ export const NativePicker = <TValue extends string | number>(
   const [Picker, pickerProps] = getOverrides(
     StyledPicker,
     props,
+    {
+      selectedValue: value,
+      testID,
+      size,
+      onValueChange,
+    },
     dlv(theme, 'overrides.NativePicker.Picker'),
     overrides.Picker,
   );
 
   return (
-    <Picker
-      selectedValue={value}
-      testID={testID}
-      size={size}
-      onValueChange={onValueChange}
-      {...pickerProps}
-    >
+    <Picker {...pickerProps}>
       {options.map(option => (
         <RNPicker.Item
           key={`${option.value}`}

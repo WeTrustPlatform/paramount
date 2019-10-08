@@ -38,7 +38,7 @@ import {
   ToastProvider,
   WheelPickerOverrides,
 } from '../components';
-import { Overrides } from '../utils/overrides';
+import { Overrides } from '../utils/Overrides';
 import { DeepPartial } from '../utils/types';
 import { defaultTheme } from './defaultTheme';
 

@@ -10,8 +10,8 @@ import {
 
 import { useTheme } from '../../theme';
 import { ControlSize, FillColor, FillColors } from '../../theme/Theme';
-import { isControlSize } from '../../utils/isControlSize';
-import { getOverrides, getStyle, WithOverrides } from '../../utils/overrides';
+import { isControlSize } from '../../utils/ControlSize';
+import { getOverrides, getStyle, WithOverrides } from '../../utils/Overrides';
 import { Text, TextProps } from '../Typography';
 
 interface AvatarBaseProps {
@@ -69,52 +69,45 @@ export const Avatar = (props: AvatarProps) => {
   const [hasImageFailedLoading, setHasImageFailedLoading] = React.useState(
     false,
   );
-  const imageUnavailable = !source || hasImageFailedLoading;
+  const isImageUnavailable = !source || hasImageFailedLoading;
 
   const [Root, rootProps] = getOverrides(
     StyledRoot,
     props,
+    { name, size, isSolid, color, testID },
     dlv(theme, 'overrides.Avatar.Root'),
     overrides.Root,
   );
   const [Initials, initialsProps] = getOverrides(
     StyledInitials,
     props,
+    { name, size, isSolid, color },
     dlv(theme, 'overrides.Avatar.Initial'),
     overrides.Initials,
   );
-  const [ImageR, imageProps] = getOverrides(
-    StyledImage,
-    props,
-    dlv(theme, 'overrides.Avatar.Image'),
-    overrides.Image,
-  );
+
+  if (!isImageUnavailable && !!source) {
+    const [ImageR, imageProps] = getOverrides(
+      StyledImage,
+      props,
+      {
+        onError: () => setHasImageFailedLoading(true),
+        source,
+      },
+      dlv(theme, 'overrides.Avatar.Image'),
+      overrides.Image,
+    );
+
+    return (
+      <Root {...rootProps}>
+        <ImageR {...imageProps} />
+      </Root>
+    );
+  }
 
   return (
-    <Root
-      name={name}
-      size={size}
-      isSolid={isSolid}
-      color={color}
-      testID={testID}
-      {...rootProps}
-    >
-      {imageUnavailable && (
-        <Initials
-          name={name}
-          size={size}
-          isSolid={isSolid}
-          color={color}
-          {...initialsProps}
-        />
-      )}
-      {!imageUnavailable && !!source && (
-        <ImageR
-          onError={() => setHasImageFailedLoading(true)}
-          source={source}
-          {...imageProps}
-        />
-      )}
+    <Root {...rootProps}>
+      <Initials {...initialsProps} />
     </Root>
   );
 };

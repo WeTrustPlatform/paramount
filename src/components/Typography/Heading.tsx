@@ -14,7 +14,7 @@ import {
   HeadingSizes,
   TextColor,
 } from '../../theme/Theme';
-import { getStyle, OverrideStyle, Style } from '../../utils/overrides';
+import { getStyle, OverrideStyle, Style } from '../../utils/Overrides';
 import { getFontWeight, getTextColor } from './Text';
 import { TextAlign } from './types';
 

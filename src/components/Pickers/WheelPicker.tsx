@@ -3,7 +3,7 @@ import * as React from 'react';
 import { FlatList } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, WithOverrides } from '../../utils/overrides';
+import { getOverrides, WithOverrides } from '../../utils/Overrides';
 import {
   ArrowProps,
   ITEM_HEIGHT,
@@ -92,49 +92,49 @@ export const WheelPicker = React.forwardRef(
     const [Root, rootProps] = getOverrides(
       StyledRoot,
       props,
+      {},
       dlv(theme, 'overrides.WheelPicker.Root'),
       overrides.Root,
     );
     const [ArrowUp, arrowUpProps] = getOverrides(
       StyledArrowUp,
       props,
+      { onPress: handlePressUp },
       dlv(theme, 'overrides.WheelPicker.ArrowUp'),
       overrides.ArrowUp,
     );
     const [ArrowDown, arrowDownProps] = getOverrides(
       StyledArrowDown,
       props,
+      { onPress: handlePressDown },
       dlv(theme, 'overrides.WheelPicker.ArrowDown'),
       overrides.ArrowDown,
     );
     const [UpperOverlay, upperOverlayProps] = getOverrides(
       StyledUpperOverlay,
       props,
+      { pointerEvents: 'none' },
       dlv(theme, 'overrides.WheelPicker.UpperOverlay'),
       overrides.UpperOverlay,
     );
     const [BottomOverlay, bottomOverlayProps] = getOverrides(
       StyledBottomOverlay,
       props,
+      { pointerEvents: 'none' },
       dlv(theme, 'overrides.WheelPicker.BottomOverlay'),
       overrides.BottomOverlay,
     );
     const [ListWrapper, listWrapperProps] = getOverrides(
       StyledListWrapper,
       props,
+      {},
       dlv(theme, 'overrides.WheelPicker.ListWrapper'),
       overrides.ListWrapper,
-    );
-    const [Item, itemProps] = getOverrides(
-      StyledWheelPickerItem,
-      props,
-      dlv(theme, 'overrides.WheelPicker.Item'),
-      overrides.Item,
     );
 
     return (
       <Root {...rootProps}>
-        <ArrowUp onPress={handlePressUp} {...arrowUpProps} />
+        <ArrowUp {...arrowUpProps} />
         <ListWrapper {...listWrapperProps}>
           <FlatList
             // @ts-ignore FIX
@@ -147,7 +147,17 @@ export const WheelPicker = React.forwardRef(
             })}
             initialScrollIndex={initialScrollIndex < 0 ? 0 : initialScrollIndex}
             keyExtractor={item => `${item.value}`}
-            renderItem={({ item }) => <Item option={item} {...itemProps} />}
+            renderItem={({ item }) => {
+              const [Item, itemProps] = getOverrides(
+                StyledWheelPickerItem,
+                props,
+                { option: item },
+                dlv(theme, 'overrides.WheelPicker.Item'),
+                overrides.Item,
+              );
+
+              return <Item {...itemProps} />;
+            }}
             showsHorizontalScrollIndicator={false}
             onScrollEndDrag={event =>
               handleEndDrag(event.nativeEvent.contentOffset.y)
@@ -156,7 +166,7 @@ export const WheelPicker = React.forwardRef(
           <UpperOverlay pointerEvents="none" {...upperOverlayProps} />
           <BottomOverlay pointerEvents="none" {...bottomOverlayProps} />
         </ListWrapper>
-        <ArrowDown onPress={handlePressDown} {...arrowDownProps} />
+        <ArrowDown {...arrowDownProps} />
       </Root>
     );
   },
