@@ -1,3 +1,10 @@
+## [1.83.6](https://github.com/WeTrustPlatform/paramount/compare/v1.83.5...v1.83.6) (2019-10-07)
+
+
+### Bug Fixes
+
+* textinput disabled ([06881c3](https://github.com/WeTrustPlatform/paramount/commit/06881c3))
+
 ## [1.83.5](https://github.com/WeTrustPlatform/paramount/compare/v1.83.4...v1.83.5) (2019-10-07)
 
 
