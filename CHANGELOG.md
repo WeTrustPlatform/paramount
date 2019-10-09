@@ -1,3 +1,11 @@
+# [1.85.0](https://github.com/WeTrustPlatform/paramount/compare/v1.84.0...v1.85.0) (2019-10-09)
+
+
+### Features
+
+* add layout debugger ([9770196](https://github.com/WeTrustPlatform/paramount/commit/9770196))
+* labeled checkbox ([30e476e](https://github.com/WeTrustPlatform/paramount/commit/30e476e))
+
 # [1.84.0](https://github.com/WeTrustPlatform/paramount/compare/v1.83.6...v1.84.0) (2019-10-08)
 
 
