@@ -196,14 +196,13 @@ export const KitchenSink = () => {
       <Playground>
         <Toggle initial={false}>
           {({ on, toggle }) => (
-            <FormField label="Checkbox" labelPosition="right">
-              <Checkbox
-                shape="circle"
-                value={on}
-                onValueChange={toggle}
-                size="medium"
-              />
-            </FormField>
+            <Checkbox
+              shape="circle"
+              value={on}
+              onValueChange={toggle}
+              label="Checkbox label"
+              size="medium"
+            />
           )}
         </Toggle>
       </Playground>
@@ -439,89 +438,167 @@ export const KitchenSink = () => {
       </Box>
 
       <Playground>
-        <LayoutProvider>
-          <Box paddingVertical={16}>
-            <Container>
-              <Row>
-                <Column medium={1}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-                <Column medium={1}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-                <Column medium={1}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-                <Column medium={1}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-                <Column medium={1}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-                <Column medium={1}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-                <Column medium={1}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-                <Column medium={1}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-                <Column medium={1}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-                <Column medium={1}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-                <Column medium={1}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-                <Column medium={1}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-              </Row>
-            </Container>
-          </Box>
-          <Box paddingVertical={16}>
-            <Container>
-              <Row>
-                <Column medium={8}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-                <Column medium={4}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-              </Row>
-            </Container>
-          </Box>
-          <Box paddingVertical={16}>
-            <Container>
-              <Row>
-                <Column medium={4}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-                <Column medium={4}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-                <Column medium={4}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-              </Row>
-            </Container>
-          </Box>
-          <Box paddingVertical={16}>
-            <Container>
-              <Row>
-                <Column medium={6}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-                <Column medium={6}>
-                  <Box backgroundColor="#67c6bb" height={48} borderWidth={1} />
-                </Column>
-              </Row>
-            </Container>
-          </Box>
-        </LayoutProvider>
+        <Box>
+          <LayoutProvider>
+            <Box paddingVertical={16}>
+              <Container>
+                <Row>
+                  <Column medium={1}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                  <Column medium={1}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                  <Column medium={1}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                  <Column medium={1}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                  <Column medium={1}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                  <Column medium={1}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                  <Column medium={1}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                  <Column medium={1}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                  <Column medium={1}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                  <Column medium={1}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                  <Column medium={1}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                  <Column medium={1}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                </Row>
+              </Container>
+            </Box>
+            <Box paddingVertical={16}>
+              <Container>
+                <Row>
+                  <Column medium={8}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                  <Column medium={4}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                </Row>
+              </Container>
+            </Box>
+            <Box paddingVertical={16}>
+              <Container>
+                <Row>
+                  <Column medium={4}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                  <Column medium={4}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                  <Column medium={4}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                </Row>
+              </Container>
+            </Box>
+            <Box paddingVertical={16}>
+              <Container>
+                <Row>
+                  <Column medium={6}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                  <Column medium={6}>
+                    <Box
+                      backgroundColor="#67c6bb"
+                      height={48}
+                      borderWidth={1}
+                    />
+                  </Column>
+                </Row>
+              </Container>
+            </Box>
+          </LayoutProvider>
+        </Box>
       </Playground>
 
       <Playground>

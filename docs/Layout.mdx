@@ -4,9 +4,9 @@ order: 85
 ---
 
 import { Playground, Props } from 'docz';
-import { ThemeProvider, useLayout, Text } from '../src';
+import { LayoutProvider, useLayout, Text } from '../src';
 
-export default ({ children }) => <ThemeProvider>{children}</ThemeProvider>;
+export default ({ children }) => <LayoutProvider>{children}</LayoutProvider>;
 
 # Layout
 
@@ -14,10 +14,12 @@ Paramount provides building blocks to create responsive layout via components `V
 
 ## Setup
 
-Make sure to use `ThemeProvider` at the top-level component. For options, [see Configuration Options](#options)
+Make sure to use `LayoutProvider` at the top-level component. For options, [see Configuration Options](#options)
+
+Use `debug` prop to see the layout
 
 ```tsx
-<ThemeProvider value={{ layout: options }}>{children}</ThemeProvider>
+<LayoutProvider value={{ layout: options }}>{children}</LayoutProvider>
 ```
 
 ## Usage
@@ -86,9 +88,9 @@ export const defaultLayout: Layout = {
 
     large: 960,
 
-    xlarge: 1140,
+    xlarge: 1200,
   },
   gridColumnCount: 12,
-  gutterWidth: 30,
+  gutterWidth: 32,
 };
 ```

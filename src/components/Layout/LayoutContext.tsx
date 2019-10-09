@@ -114,7 +114,7 @@ export const defaultLayout: LayoutContext = {
 
     large: 960,
 
-    xlarge: 1140,
+    xlarge: 1200,
   },
   currentScreenSize: 'small',
   getResponsiveValue: values =>
@@ -125,7 +125,7 @@ export const defaultLayout: LayoutContext = {
     values.xlarge ||
     undefined,
   gridColumnCount: 12,
-  gutterWidth: 30,
+  gutterWidth: 32,
 };
 
 export const ASC_ORDER_SCREEN_SIZES: Array<keyof ScreenSizes> = [

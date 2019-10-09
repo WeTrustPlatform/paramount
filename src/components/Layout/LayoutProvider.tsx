@@ -2,6 +2,7 @@ import deepMerge from 'deepmerge';
 import * as React from 'react';
 import { Dimensions } from 'react-native';
 
+import { LayoutDebugger } from './Debugger';
 import {
   defaultLayout,
   DESC_ORDER_SCREEN_SIZES,
@@ -12,9 +13,45 @@ import {
 } from './LayoutContext';
 
 export interface LayoutProviderProps {
+  debug?: boolean;
   children: React.ReactNode;
   value?: Partial<Layout>;
 }
+
+export const LayoutProvider = (props: LayoutProviderProps) => {
+  const { children, value, debug = false } = props;
+
+  const layout = value ? deepMerge(defaultLayout, value) : defaultLayout;
+
+  const [currentScreenSize, setCurrentScreenSize] = React.useState(
+    getCurrentScreenSize(layout),
+  );
+
+  const handleDimensionsChange = React.useCallback(() => {
+    setCurrentScreenSize(getCurrentScreenSize(layout));
+  }, []);
+
+  React.useLayoutEffect(() => {
+    Dimensions.addEventListener('change', handleDimensionsChange);
+
+    return () =>
+      Dimensions.removeEventListener('change', handleDimensionsChange);
+  }, []);
+
+  return (
+    <LayoutContext.Provider
+      value={{
+        ...layout,
+        currentScreenSize,
+        getResponsiveValue: values =>
+          deriveResponsiveValue(values, currentScreenSize),
+      }}
+    >
+      {children}
+      {debug && <LayoutDebugger />}
+    </LayoutContext.Provider>
+  );
+};
 
 export const getCurrentScreenSize = (layout: Layout) => {
   const { breakpoints } = layout;
@@ -49,38 +86,4 @@ const deriveResponsiveValue = (
   });
 
   return nearestSize ? values[nearestSize] : undefined;
-};
-
-export const LayoutProvider = (props: LayoutProviderProps) => {
-  const { children, value } = props;
-
-  const layout = value ? deepMerge(defaultLayout, value) : defaultLayout;
-
-  const [currentScreenSize, setCurrentScreenSize] = React.useState(
-    getCurrentScreenSize(layout),
-  );
-
-  const handleDimensionsChange = React.useCallback(() => {
-    setCurrentScreenSize(getCurrentScreenSize(layout));
-  }, []);
-
-  React.useLayoutEffect(() => {
-    Dimensions.addEventListener('change', handleDimensionsChange);
-
-    return () =>
-      Dimensions.removeEventListener('change', handleDimensionsChange);
-  }, []);
-
-  return (
-    <LayoutContext.Provider
-      value={{
-        ...layout,
-        currentScreenSize,
-        getResponsiveValue: values =>
-          deriveResponsiveValue(values, currentScreenSize),
-      }}
-    >
-      {children}
-    </LayoutContext.Provider>
-  );
 };
