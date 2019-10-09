@@ -1,3 +1,10 @@
+# [1.84.0](https://github.com/WeTrustPlatform/paramount/compare/v1.83.6...v1.84.0) (2019-10-08)
+
+
+### Features
+
+* override props and minheight ([19c4963](https://github.com/WeTrustPlatform/paramount/commit/19c4963))
+
 ## [1.83.6](https://github.com/WeTrustPlatform/paramount/compare/v1.83.5...v1.83.6) (2019-10-07)
 
 
