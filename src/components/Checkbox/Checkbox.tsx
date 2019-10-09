@@ -10,7 +10,9 @@ import {
 import { ContainerShape, ControlSize, useTheme } from '../../theme';
 import { isControlSize } from '../../utils/ControlSize';
 import { getOverrides, WithOverrides } from '../../utils/Overrides';
+import { OptionalString } from '../../utils/types';
 import { Icon } from '../Icon';
+import { Label, LabelPosition, LabelProps } from '../Typography';
 
 interface CheckboxBaseProps {
   /**
@@ -24,6 +26,17 @@ interface CheckboxBaseProps {
    * @default false
    */
   value: boolean;
+
+  /**
+   * Label of the field.
+   */
+  label?: OptionalString;
+
+  /**
+   * Position of the field.
+   * @default "right"
+   */
+  labelPosition?: LabelPosition;
 
   /**
    * When true, the checkbox is disabled.
@@ -48,6 +61,7 @@ interface CheckboxBaseProps {
 
 export interface CheckboxOverrides {
   Touchable: TouchableProps;
+  Label: LabelProps;
   Check: CheckProps;
 }
 
@@ -59,6 +73,8 @@ export const Checkbox = (props: CheckboxProps) => {
     size = 'medium',
     shape = 'rounded',
     value = false,
+    label,
+    labelPosition = 'right',
     isDisabled = false,
     onValueChange = () => {
       return;
@@ -91,13 +107,15 @@ export const Checkbox = (props: CheckboxProps) => {
 
   return (
     <Touchable {...touchableProps}>
-      <Check
-        value={value}
-        size={size}
-        shape={shape}
-        isDisabled={isDisabled}
-        {...checkProps}
-      />
+      <Label label={label} position={labelPosition}>
+        <Check
+          value={value}
+          size={size}
+          shape={shape}
+          isDisabled={isDisabled}
+          {...checkProps}
+        />
+      </Label>
     </Touchable>
   );
 };

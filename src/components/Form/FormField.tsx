@@ -5,9 +5,13 @@ import { View, ViewProps } from 'react-native';
 import { useTheme } from '../../theme';
 import { getOverrides, getStyle, WithOverrides } from '../../utils/Overrides';
 import { OptionalString } from '../../utils/types';
-import { Label, LabelProps, Text, TextProps } from '../Typography';
-
-type FormFieldLabelPosition = 'top' | 'left' | 'right';
+import {
+  Label,
+  LabelPosition,
+  LabelProps,
+  Text,
+  TextProps,
+} from '../Typography';
 
 interface FormFieldBaseProps {
   /**
@@ -24,7 +28,7 @@ interface FormFieldBaseProps {
    * Position of the field.
    * @default "top"
    */
-  labelPosition?: FormFieldLabelPosition;
+  labelPosition?: LabelPosition;
 
   /**
    * Description of the field.

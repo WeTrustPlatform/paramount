@@ -15,14 +15,13 @@ Checkbox for boolean values
 <Playground>
   <Toggle initial={false}>
     {({ on, toggle }) => (
-      <FormField label="Checkbox" labelPosition="right">
-        <Checkbox
-          shape="circle"
-          value={on}
-          onValueChange={toggle}
-          size="medium"
-        />
-      </FormField>
+      <Checkbox
+        shape="circle"
+        value={on}
+        onValueChange={toggle}
+        label="Checkbox label"
+        size="medium"
+      />
     )}
   </Toggle>
 </Playground>

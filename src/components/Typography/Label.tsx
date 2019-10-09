@@ -7,7 +7,7 @@ import { getOverrides, getStyle, WithOverrides } from '../../utils/Overrides';
 import { OptionalString } from '../../utils/types';
 import { Text, TextProps } from './Text';
 
-type LabelPosition = 'top' | 'left' | 'right';
+export type LabelPosition = 'top' | 'left' | 'right';
 
 interface LabelBaseProps {
   /**
@@ -109,7 +109,6 @@ const StyledWrapper = (props: WrapperProps) => {
       wrapperStyle = {
         flexDirection: 'row',
         alignItems: 'center',
-        paddingLeft: 8,
       };
       break;
     case 'top':
