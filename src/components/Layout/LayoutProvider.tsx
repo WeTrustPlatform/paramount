@@ -29,14 +29,14 @@ export const LayoutProvider = (props: LayoutProviderProps) => {
 
   const handleDimensionsChange = React.useCallback(() => {
     setCurrentScreenSize(getCurrentScreenSize(layout));
-  }, []);
+  }, [layout]);
 
   React.useLayoutEffect(() => {
     Dimensions.addEventListener('change', handleDimensionsChange);
 
     return () =>
       Dimensions.removeEventListener('change', handleDimensionsChange);
-  }, []);
+  }, [handleDimensionsChange]);
 
   return (
     <LayoutContext.Provider

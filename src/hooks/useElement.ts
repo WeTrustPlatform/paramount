@@ -33,7 +33,7 @@ export const useElement = (id?: string) => {
       if (element.current) element.current.remove();
       if (rootElement.childNodes.length === -1) rootElement.remove();
     };
-  }, []);
+  }, [id]);
 
   const getRootElem = () => {
     if (!element.current && canUseDOM) {

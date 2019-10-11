@@ -63,7 +63,7 @@ export const useMeasure = (props: UseMeasureProps) => {
         });
       }
     },
-    [measurements],
+    [measurements, onMeasure, ref],
   );
 
   const handleLayout = React.useCallback(
@@ -73,18 +73,18 @@ export const useMeasure = (props: UseMeasureProps) => {
       const layout = e.nativeEvent.layout;
       handleMeasure(layout);
     },
-    [handleMeasure, measurements],
+    [handleMeasure],
   );
 
   const handleResize = React.useCallback(() => {
     handleMeasure();
-  }, [handleMeasure, measurements]);
+  }, [handleMeasure]);
 
   React.useEffect(() => {
     Dimensions.addEventListener('change', handleResize);
 
     return () => Dimensions.removeEventListener('change', handleResize);
-  }, [measurements]);
+  }, [handleResize, measurements]);
 
   return {
     measurements,

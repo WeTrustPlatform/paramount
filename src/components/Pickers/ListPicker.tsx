@@ -127,6 +127,16 @@ const StyledListPickerItem = <TValue extends any = any>(
     override,
   } = props;
 
+  const Action = () => (
+    <Box justifyContent="center" alignItems="center">
+      <Checkbox
+        onValueChange={() => onPress(value, index, isSelected)}
+        shape="circle"
+        value={isSelected}
+      />
+    </Box>
+  );
+
   const [ListItemR, listItemRProps] = getOverrides(
     ListItem,
     props,
@@ -141,15 +151,7 @@ const StyledListPickerItem = <TValue extends any = any>(
           },
         },
         Action: {
-          component: () => (
-            <Box justifyContent="center" alignItems="center">
-              <Checkbox
-                onValueChange={() => onPress(value, index, isSelected)}
-                shape="circle"
-                value={isSelected}
-              />
-            </Box>
-          ),
+          component: Action,
         },
       },
     },

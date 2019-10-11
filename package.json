@@ -24,7 +24,7 @@
     "docs": "docz dev",
     "expo": "expo start",
     "generate:kitchen-sink": "node scripts/convertDoczToKitchenSink.js",
-    "lint": "tslint --project ./tsconfig.json \"./src/**/*.{ts,tsx}\"",
+    "lint": "eslint . --cache --ext js,jsx,ts,tsx",
     "package": "node scripts/packageForPublish",
     "semantic-release": "semantic-release",
     "test": "jest",
@@ -67,6 +67,8 @@
     "@types/react-native": "0.60.2",
     "@types/react-native-vector-icons": "6.4.1",
     "@types/react-test-renderer": "16.8.3",
+    "@typescript-eslint/eslint-plugin": "2.3.3",
+    "@typescript-eslint/parser": "2.3.3",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "24.8.0",
     "babel-preset-expo": "5.2.0",
@@ -74,6 +76,14 @@
     "docz-theme-default": "1.2.0",
     "emotion-theming": "10.0.14",
     "expo": "33.0.7",
+    "eslint": "6.5.1",
+    "eslint-config-prettier": "6.4.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-prettier": "3.1.1",
+    "eslint-plugin-react": "7.15.1",
+    "eslint-plugin-react-native": "3.7.0",
+    "eslint-plugin-react-hooks": "2.1.1",
+    "eslint-plugin-sonarjs": "0.4.0",
     "husky": "3.0.0",
     "jest": "24.8.0",
     "jest-canvas-mock": "2.1.0",
@@ -95,8 +105,6 @@
     "travis-deploy-once": "5.0.11",
     "ts-jest": "24.0.2",
     "ts-loader": "6.0.4",
-    "tslint": "5.18.0",
-    "tslint-sonarts": "1.9.0",
     "typescript": "3.6.3",
     "unist-util-is": "3.0.0",
     "unist-util-remove": "1.0.3",
@@ -126,8 +134,9 @@
       "git add"
     ],
     "*.{ts,tsx}": [
-      "tslint --project ./tsconfig.json",
-      "git add"
+      "eslint --fix",
+      "git add",
+      "jest --bail --findRelatedTests"
     ]
   },
   "repository": {

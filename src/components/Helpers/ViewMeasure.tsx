@@ -21,12 +21,11 @@ export const ViewMeasure = (props: ViewMeasureProps) => {
   const { measurements, onLayout } = useMeasure({ onMeasure, ref });
 
   return (
-    <View
-      ref={ref}
-      onLayout={onLayout}
-      // @ts-ignore
-      children={isRenderProp ? children(measurements) : children}
-      {...viewProps}
-    />
+    <View ref={ref} onLayout={onLayout} {...viewProps}>
+      {/*
+      //
+      // @ts-ignore */}
+      {isRenderProp ? children(measurements) : children}
+    </View>
   );
 };

@@ -6,7 +6,6 @@ import {
   ViewProps,
 } from 'react-native';
 
-import { useDebouncedCallback } from '../../hooks/useDebouncedCallback';
 import { useTheme } from '../../theme';
 import { Icon } from '../Icon';
 import { Text } from '../Typography';
@@ -89,6 +88,7 @@ export const useWheelPicker = <TValue extends any>(
   const optionsWithClones = makePaddedOptions(data);
   const [value, setValue] = React.useState<TValue>(initialValue);
   const getOption = React.useMemo(() => getOptionFromOptions(data), [data]);
+  const timeout = React.useRef<number | null>(null);
 
   const scrollToValue = React.useCallback(
     (toValue: TValue, animated = true) => {
@@ -101,7 +101,7 @@ export const useWheelPicker = <TValue extends any>(
         offset: index * ITEM_HEIGHT - ITEM_HEIGHT,
       });
     },
-    [scrollContainer, data],
+    [scrollContainer, optionsWithClones],
   );
 
   const handleChange = React.useCallback(
@@ -114,16 +114,19 @@ export const useWheelPicker = <TValue extends any>(
     [onValueChange, value],
   );
 
-  const handleScroll = useDebouncedCallback(
+  const handleScroll = React.useCallback(
     (offset: number) => {
       if (!scrollContainer) return;
 
-      const selectedOption = getOption(offset);
+      if (timeout.current) clearTimeout(timeout.current);
 
-      handleChange(selectedOption.value);
+      // @ts-ignore
+      timeout.current = setTimeout(() => {
+        const selectedOption = getOption(offset);
+        handleChange(selectedOption.value);
+      }, DEBOUNCE_TIME);
     },
-    DEBOUNCE_TIME,
-    [scrollContainer, data, handleChange],
+    [scrollContainer, getOption, handleChange],
   );
 
   const handleEndDrag = React.useCallback(
@@ -140,7 +143,7 @@ export const useWheelPicker = <TValue extends any>(
 
       handleChange(selectedOption.value);
     },
-    [scrollContainer, data, handleChange],
+    [scrollContainer, getOption, handleChange],
   );
 
   React.useImperativeHandle(
@@ -148,7 +151,7 @@ export const useWheelPicker = <TValue extends any>(
     () => ({
       selectValue: (newValue: TValue) => scrollToValue(newValue),
     }),
-    [scrollContainer, data],
+    [scrollToValue],
   );
 
   const handlePressUp = React.useCallback(() => {
@@ -157,7 +160,7 @@ export const useWheelPicker = <TValue extends any>(
 
     if (currentIndex <= 0) return;
     scrollToValue(data[currentIndex - 1].value);
-  }, [scrollContainer, value]);
+  }, [data, scrollContainer, scrollToValue, value]);
 
   const handlePressDown = React.useCallback(() => {
     if (!scrollContainer) return;
@@ -166,7 +169,7 @@ export const useWheelPicker = <TValue extends any>(
 
     if (currentIndex >= data.length - 1) return;
     scrollToValue(data[currentIndex + 1].value);
-  }, [scrollContainer, value]);
+  }, [data, scrollContainer, scrollToValue, value]);
 
   return {
     handleEndDrag,

@@ -58,7 +58,7 @@ export const WheelPicker = React.forwardRef(
       setTimeout(() => {
         if (listRef.current && value) scrollToValue(value, false);
       }, 50);
-    }, [value]);
+    }, [scrollToValue, value]);
 
     const [Root, rootProps] = getOverrides(
       StyledRoot,

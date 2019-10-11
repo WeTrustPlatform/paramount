@@ -39,7 +39,7 @@ const defineSnapshots = (component, name) => {
     null,
   );
 
-  let jsonDocument = create(element).toJSON();
+  const jsonDocument = create(element).toJSON();
 
   const children = removeMarkdownElements(jsonDocument);
 

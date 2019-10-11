@@ -69,11 +69,11 @@ export const Counter = (props: CounterProps) => {
 
   const handleIncrement = React.useCallback(() => {
     onValueChange(value + step);
-  }, [value]);
+  }, [onValueChange, step, value]);
 
   const handleDecrement = React.useCallback(() => {
     onValueChange(value - step);
-  }, [value]);
+  }, [onValueChange, step, value]);
 
   const [Root, rootProps] = getOverrides(
     StyledRoot,

@@ -19,15 +19,13 @@ export default {
   typescript: true,
   native: true,
   modifyBundlerConfig: defaultConfig => {
-    const modifiedConfig = {
+    return {
       ...defaultConfig,
       resolve: {
         ...defaultConfig.resolve,
         extensions: overridingExtensions,
       },
     };
-
-    return modifiedConfig;
   },
   themeConfig: {
     showPlaygroundEditor: true,

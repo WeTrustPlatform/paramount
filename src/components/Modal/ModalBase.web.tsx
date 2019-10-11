@@ -10,6 +10,7 @@ import { ModalBaseProps } from './ModalBase';
 // Temporary usage until it is integrated
 // https://github.com/necolas/react-native-web/issues/1020
 
+// eslint-disable-next-line
 export const ModalBase = (props: ModalBaseProps): React.ReactPortal | null => {
   const {
     children,
@@ -19,13 +20,8 @@ export const ModalBase = (props: ModalBaseProps): React.ReactPortal | null => {
     onRequestClose,
     animationType = 'none',
   } = props;
-  let isUnmounting = false;
+  const isUnmountingRef = React.useRef(false);
   const targetElement = useElement();
-
-  // It will not work if targetElement is falsy so we exit early
-  // This may happen e.g. during SSR
-  if (!targetElement) return null;
-
   const [isInView, setIsInView] = React.useState(visible);
   const elementRef = React.useRef<HTMLDivElement>(null);
   const focusTrapRef = React.useRef<FocusTrap>(null);
@@ -47,7 +43,7 @@ export const ModalBase = (props: ModalBaseProps): React.ReactPortal | null => {
         focusTrapRef.current = createFocusTrap(elementRef.current, {
           initialFocus: elementRef.current,
           onDeactivate: () => {
-            if (onRequestClose && visible && !isUnmounting) {
+            if (onRequestClose && visible && !isUnmountingRef.current) {
               onRequestClose();
             }
           },
@@ -65,10 +61,10 @@ export const ModalBase = (props: ModalBaseProps): React.ReactPortal | null => {
     }
 
     return () => {
-      isUnmounting = true;
+      isUnmountingRef.current = true;
       deactivateFocus();
     };
-  }, [visible]);
+  }, [onRequestClose, visible]);
 
   const { opacity, y } = useSpring({
     onRest: () => !visible && isInView && setIsInView(false),
@@ -78,6 +74,10 @@ export const ModalBase = (props: ModalBaseProps): React.ReactPortal | null => {
     opacity: animationType === 'fade' ? (visible ? 1 : 0) : 1,
     y: animationType === 'slide' ? (visible ? 0 : 100) : 0,
   });
+
+  // It will not work if targetElement is falsy so we exit early
+  // This may happen e.g. during SSR
+  if (!targetElement) return null;
 
   return ReactDOM.createPortal(
     <animated.div

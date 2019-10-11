@@ -1,4 +1,7 @@
 import React from 'react';
 
-module.exports.Playground = ({ children }) => <div>{children}</div>;
-module.exports.Props = ({ children }) => <div>{children}</div>;
+const Playground = ({ children }) => <div>{children}</div>;
+const Props = ({ children }) => <div>{children}</div>;
+
+module.exports.Playground = Playground;
+module.exports.Props = Props;

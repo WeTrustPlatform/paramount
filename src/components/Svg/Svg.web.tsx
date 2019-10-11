@@ -1,5 +1,4 @@
 // PORTED IMPLEMENTATION FROM https://github.com/react-native-community/react-native-svg/blob/master/index.web.js
-import React from 'react';
 import {
   CircleProps,
   ClipPathProps,
@@ -24,9 +23,10 @@ import {
   TSpanProps,
   UseProps,
 } from 'react-native-svg';
-// @ts-ignore
 import { createElement, StyleSheet } from 'react-native-web';
+import { TextStyle } from 'react-native';
 
+// @ts-ignore
 // Kept in separate file, to avoid name collision with Symbol element
 // @ts-ignore
 const resolve = (styleProp, cleanedProps) => {
@@ -43,6 +43,7 @@ const resolve = (styleProp, cleanedProps) => {
   }
 };
 
+// eslint-disable-next-line
 export const prepare = (props: any) => {
   const {
     translate,
@@ -89,7 +90,7 @@ export const prepare = (props: any) => {
     clean.transform = transform.join(' ');
   }
 
-  const styles: StyleSheet = {};
+  const styles: TextStyle = {};
 
   if (fontFamily != null) {
     styles.fontFamily = fontFamily;

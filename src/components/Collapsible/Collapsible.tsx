@@ -90,7 +90,7 @@ export const Collapsible = (props: CollapsibleProps) => {
         onOpen();
       }
     }
-  }, [isOpened, setIsOpened, isOpen, onClose, isControlledUsage]);
+  }, [isControlledUsage, isOpen, onClose, onOpen, isOpened]);
 
   const [Touchable, touchableProps] = getOverrides(
     StyledTouchable,

@@ -155,7 +155,7 @@ describe('getOverrides', () => {
     );
 
     expect(viewProps.testID).toBe(parentProps.zero);
-    expect(viewProps.style!).toMatchObject({
+    expect(viewProps.style).toMatchObject({
       height: parentProps.zero,
     });
   });
@@ -171,7 +171,7 @@ describe('getOverrides', () => {
 
     expect(viewProps.testID).toBe(overrideObject.props.testID);
     expect(viewProps.pointerEvents).toBe(overrideObjectTwo.props.pointerEvents);
-    expect(viewProps.style!).toMatchObject(overrideObject.style);
+    expect(viewProps.style).toMatchObject(overrideObject.style);
   });
 
   test('getOverrides return correct overrideProps given callback then object', () => {
@@ -184,7 +184,7 @@ describe('getOverrides', () => {
     );
 
     expect(viewProps.testID).toBe(overrideObject.props.testID);
-    expect(viewProps.style!).toMatchObject({
+    expect(viewProps.style).toMatchObject({
       height: parentProps.zero,
       width: overrideObject.style.width,
     });
@@ -205,7 +205,7 @@ describe('getOverrides', () => {
     );
 
     expect(viewProps.testID).toBe(overrideObject.props.testID);
-    expect(viewProps.style!).toMatchObject(overrideObject.style);
+    expect(viewProps.style).toMatchObject(overrideObject.style);
     expect(Component.displayName).toBe(OverrideView.displayName);
     expect(Component.displayName).not.toBe(View.name);
   });

@@ -3,7 +3,7 @@ const babel = require('babel-core');
 
 module.exports = {
   process: function(src, filename, config, options) {
-    let result = mdx.sync(src);
+    const result = mdx.sync(src);
 
     const code = `
     import React from 'react'
@@ -11,10 +11,8 @@ module.exports = {
     ${result}
     `;
 
-    const transformedCode = babel.transformSync(code, {
+    return babel.transformSync(code, {
       presets: ['@babel/preset-env', '@babel/preset-react'],
     }).code;
-
-    return transformedCode;
   },
 };

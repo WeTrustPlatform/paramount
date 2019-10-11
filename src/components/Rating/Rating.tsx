@@ -110,7 +110,6 @@ const StyledRoot = (props: RootProps) => {
 };
 
 interface StarProps extends TouchableOpacityProps {
-  children?: React.ReactNode;
   size: ControlSize | number;
   value: number;
   rating: number;
@@ -120,7 +119,6 @@ interface StarProps extends TouchableOpacityProps {
 
 const StyledStar = (props: StarProps) => {
   const {
-    children,
     value,
     maxRating,
     size,
@@ -141,10 +139,13 @@ const StyledStar = (props: StarProps) => {
 
   return (
     <TouchableOpacity
-      style={{
-        paddingRight: padding,
-        ...(isLast ? { paddingRight: 0 } : {}),
-      }}
+      style={[
+        {
+          paddingRight: padding,
+          ...(isLast ? { paddingRight: 0 } : {}),
+        },
+        style,
+      ]}
       {...touchableProps}
     >
       <Star

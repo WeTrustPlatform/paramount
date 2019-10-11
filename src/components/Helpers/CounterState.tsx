@@ -40,12 +40,9 @@ export const CounterState = (props: CounterStateProps) => {
     setCount(count - 1);
   }, [count]);
 
-  const handleSet = React.useCallback(
-    value => {
-      setCount(value);
-    },
-    [count],
-  );
+  const handleSet = React.useCallback(value => {
+    setCount(value);
+  }, []);
 
   return children({
     count,

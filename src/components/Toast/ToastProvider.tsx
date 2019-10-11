@@ -89,26 +89,32 @@ export const ToastProvider = (props: ToastProviderProps) => {
     };
   };
 
-  const notify = React.useCallback((toastSettings: ToastSettings) => {
-    const toastInstance = createToastInstance(toastSettings);
+  const notify = React.useCallback(
+    (toastSettings: ToastSettings) => {
+      const toastInstance = createToastInstance(toastSettings);
 
-    // If there's a custom toast ID passed, close existing toasts with the same custom ID
-    if (hasCustomId(toastSettings)) {
-      for (const toast of state.toasts) {
-        // Since unique ID is still appended to a custom ID, skip the unique ID and check only prefix
-        if (String(toast.id).startsWith(String(toastSettings.id))) {
-          dispatch({
-            payload: { id: toast.id },
-            type: ActionType.REMOVE_TOAST,
-          });
+      // If there's a custom toast ID passed, close existing toasts with the same custom ID
+      if (hasCustomId(toastSettings)) {
+        for (const toast of state.toasts) {
+          // Since unique ID is still appended to a custom ID, skip the unique ID and check only prefix
+          if (String(toast.id).startsWith(String(toastSettings.id))) {
+            dispatch({
+              payload: { id: toast.id },
+              type: ActionType.REMOVE_TOAST,
+            });
+          }
         }
       }
-    }
 
-    dispatch({ type: ActionType.ADD_TOAST, payload: { toast: toastInstance } });
+      dispatch({
+        type: ActionType.ADD_TOAST,
+        payload: { toast: toastInstance },
+      });
 
-    return toastInstance;
-  }, []);
+      return toastInstance;
+    },
+    [state.toasts],
+  );
 
   const transitions = useTransition(
     state.toasts,

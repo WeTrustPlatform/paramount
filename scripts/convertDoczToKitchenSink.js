@@ -24,7 +24,7 @@ const getMdxFiles = async () => {
 function transformHeadings() {
   function transformer(tree) {
     const toJsx = node => {
-      let text = toString(node);
+      const text = toString(node);
 
       const html = `<Box paddingTop={96}><Heading size="xxxlarge" weight="500">${text}</Heading></Box>`;
 
@@ -131,7 +131,7 @@ const convertDoczToKitchenSink = async () => {
   const mdxFilePaths = await getMdxFiles();
 
   let content = '';
-  let imports = [];
+  const imports = [];
 
   for (const mdxFilePath of mdxFilePaths) {
     const file = await read(mdxFilePath);

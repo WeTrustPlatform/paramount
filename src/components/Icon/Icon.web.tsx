@@ -20,7 +20,9 @@ export const Icon = ({
   size = 'medium',
 }: IconProps) => {
   const theme = useTheme();
+
   // @ts-ignore
+  // eslint-disable-next-line
   const IconTag = Feather[`Fi${convertToPascal(name)}`];
   const { fontSize = 16 } = getTextSize(theme.textSizes)(size);
   const iconSize = typeof size === 'string' ? fontSize + 8 : size;

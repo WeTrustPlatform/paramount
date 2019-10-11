@@ -38,7 +38,7 @@ export const Toast = (props: ToastProps) => {
   React.useEffect(() => {
     const timer = setTimeout(() => onRemove(), duration);
     return () => clearTimeout(timer);
-  }, []);
+  }, [duration, onRemove]);
 
   return <Alert {...toastSettings} />;
 };

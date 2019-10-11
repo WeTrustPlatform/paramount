@@ -177,56 +177,75 @@ export const Slider = <TIsRange extends boolean>(
   const pixelPerValue = trackMeasurements.width / (maximumValue - minimumValue);
   const isRangeSlider = isRangeValue(value);
 
-  const handleLeftSlide = (dx: number) => {
-    const leftValue = getLeftValue(value) + dx * valuePerPixel;
-    const roundedLeftValue = step
-      ? Math.round(leftValue / step) * step
-      : leftValue;
+  const handleLeftSlide = React.useCallback(
+    (dx: number) => {
+      const leftValue = getLeftValue(value) + dx * valuePerPixel;
+      const roundedLeftValue = step
+        ? Math.round(leftValue / step) * step
+        : leftValue;
 
-    const finalLeftValue = getBoundedValueBase({
-      maximumValue: isRangeSlider ? getRightValue(value) - step : maximumValue,
-      minimumValue,
-    })(getLeftValue(roundedLeftValue));
-    const updatedValue = setLeftValue(value, finalLeftValue);
+      const finalLeftValue = getBoundedValueBase({
+        maximumValue: isRangeSlider
+          ? getRightValue(value) - step
+          : maximumValue,
+        minimumValue,
+      })(getLeftValue(roundedLeftValue));
+      const updatedValue = setLeftValue(value, finalLeftValue);
 
-    setValue(updatedValue);
-    onValueChange(updatedValue as Value<TIsRange>);
-  };
-
-  const handleRightSlide = (dx: number) => {
-    const rightValue = getRightValue(value) + dx * valuePerPixel;
-    const roundedRightValue = step
-      ? Math.round(rightValue / step) * step
-      : rightValue;
-
-    const finalRightValue = getBoundedValueBase({
+      setValue(updatedValue);
+      onValueChange(updatedValue as Value<TIsRange>);
+    },
+    [
+      isRangeSlider,
       maximumValue,
-      minimumValue: getLeftValue(value) + step,
-    })(getRightValue(roundedRightValue));
+      minimumValue,
+      onValueChange,
+      step,
+      value,
+      valuePerPixel,
+    ],
+  );
 
-    const updatedValue = setRightValue(value, finalRightValue);
+  const handleRightSlide = React.useCallback(
+    (dx: number) => {
+      const rightValue = getRightValue(value) + dx * valuePerPixel;
+      const roundedRightValue = step
+        ? Math.round(rightValue / step) * step
+        : rightValue;
 
-    setValue(updatedValue);
-    onValueChange(updatedValue as Value<TIsRange>);
-  };
+      const finalRightValue = getBoundedValueBase({
+        maximumValue,
+        minimumValue: getLeftValue(value) + step,
+      })(getRightValue(roundedRightValue));
 
-  const makeThumbRef = (handler: (dx: number) => void) =>
-    PanResponder.create({
-      onStartShouldSetPanResponder: () => {
-        onSlidingStart(value as Value<TIsRange>);
-        return true;
-      },
+      const updatedValue = setRightValue(value, finalRightValue);
 
-      onPanResponderGrant: () => {
-        setIsSliding(true);
-      },
+      setValue(updatedValue);
+      onValueChange(updatedValue as Value<TIsRange>);
+    },
+    [maximumValue, onValueChange, step, value, valuePerPixel],
+  );
 
-      onPanResponderMove: (_, { dx }) => handler(dx),
+  const makeThumbRef = React.useCallback(
+    (handler: (dx: number) => void) =>
+      PanResponder.create({
+        onStartShouldSetPanResponder: () => {
+          onSlidingStart(value as Value<TIsRange>);
+          return true;
+        },
 
-      onPanResponderRelease: () => {
-        setIsSliding(false);
-      },
-    });
+        onPanResponderGrant: () => {
+          setIsSliding(true);
+        },
+
+        onPanResponderMove: (_, { dx }) => handler(dx),
+
+        onPanResponderRelease: () => {
+          setIsSliding(false);
+        },
+      }),
+    [onSlidingStart, value],
+  );
 
   const leftThumbRef = React.useRef(makeThumbRef(handleLeftSlide));
   const rightThumbRef = React.useRef(makeThumbRef(handleRightSlide));
@@ -242,7 +261,16 @@ export const Slider = <TIsRange extends boolean>(
     }
 
     // We diff valuePerPixel because on loading the component it may be NaN as it is calculating the measurements of the track
-  }, [isSliding, valuePerPixel]);
+  }, [
+    handleLeftSlide,
+    handleRightSlide,
+    isSliding,
+    makeThumbRef,
+    onSlidingComplete,
+    prevIsSliding,
+    value,
+    valuePerPixel,
+  ]);
 
   const left = getLeftValue(value) * pixelPerValue;
   const right = getRightValue(value) * pixelPerValue;
@@ -411,19 +439,22 @@ const StyledThumb = (props: ThumbProps) => {
   return (
     <View
       accessible
-      style={{
-        backgroundColor: theme.colors.background.content,
-        borderColor: theme.colors.border.primary,
-        borderRadius: 999,
-        borderWidth: 3,
-        height: controlSize,
-        position: 'absolute',
-        width: controlSize,
-        zIndex: 1,
-        left: position - controlSize / 2,
-        // @ts-ignore
-        cursor,
-      }}
+      style={[
+        {
+          backgroundColor: theme.colors.background.content,
+          borderColor: theme.colors.border.primary,
+          borderRadius: 999,
+          borderWidth: 3,
+          height: controlSize,
+          position: 'absolute',
+          width: controlSize,
+          zIndex: 1,
+          left: position - controlSize / 2,
+          // @ts-ignore
+          cursor,
+        },
+        style,
+      ]}
       {...viewProps}
     />
   );

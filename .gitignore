@@ -39,3 +39,4 @@ mydb.sql
 .expo/*
 web-build/
 web-report/
+.eslintcache
