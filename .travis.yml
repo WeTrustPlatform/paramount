@@ -8,7 +8,7 @@ script:
   - yarn build
 after_success:
   - yarn travis-deploy-once "npm run semantic-release"
-  - yarn docs
+  - yarn build:docs
 deploy:
   provider: pages
   skip_cleanup: true
