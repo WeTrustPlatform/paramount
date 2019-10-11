@@ -1,5 +1,5 @@
 import { canUseDOM } from 'exenv';
-import * as React from 'react';
+import React from 'react';
 
 const createElement = (id?: string) => {
   const rootContainer = document.createElement('div');

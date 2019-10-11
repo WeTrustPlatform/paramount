@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import { animated, useTrail } from 'react-spring/native.cjs';
 

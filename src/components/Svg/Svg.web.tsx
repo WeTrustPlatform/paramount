@@ -1,5 +1,5 @@
 // PORTED IMPLEMENTATION FROM https://github.com/react-native-community/react-native-svg/blob/master/index.web.js
-import * as React from 'react';
+import React from 'react';
 import {
   CircleProps,
   ClipPathProps,

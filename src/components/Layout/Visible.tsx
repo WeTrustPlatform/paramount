@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { ASC_ORDER_SCREEN_SIZES, ScreenSize, useLayout } from './LayoutContext';
 

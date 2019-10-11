@@ -1,5 +1,5 @@
 import dlv from 'dlv';
-import * as React from 'react';
+import React from 'react';
 import { Picker as RNPicker, PickerProps as RNPickerProps } from 'react-native';
 
 import { ControlSize, useTheme } from '../../theme';

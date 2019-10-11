@@ -1,5 +1,5 @@
 import dlv from 'dlv';
-import * as React from 'react';
+import React from 'react';
 import { View, ViewProps } from 'react-native';
 import { animated, useSpring } from 'react-spring/native.cjs';
 

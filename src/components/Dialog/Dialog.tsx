@@ -1,5 +1,5 @@
 import dlv from 'dlv';
-import * as React from 'react';
+import React from 'react';
 import { ScrollView, ScrollViewProps, View, ViewProps } from 'react-native';
 
 import { useTheme } from '../../theme';

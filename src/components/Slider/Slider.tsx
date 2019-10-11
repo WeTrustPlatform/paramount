@@ -1,5 +1,5 @@
 import dlv from 'dlv';
-import * as React from 'react';
+import React from 'react';
 import { PanResponder, View, ViewProps } from 'react-native';
 
 import { usePrevious } from '../../hooks';

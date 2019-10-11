@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import * as Feather from 'react-icons/fi';
 
 import { useTheme } from '../../theme';

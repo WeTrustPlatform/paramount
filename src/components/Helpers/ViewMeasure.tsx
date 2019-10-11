@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { View, ViewProps } from 'react-native';
 
 import { Measurements, useMeasure } from '../../hooks/useMeasure';

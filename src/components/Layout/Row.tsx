@@ -1,5 +1,5 @@
 import dlv from 'dlv';
-import * as React from 'react';
+import React from 'react';
 import { View, ViewProps, ViewStyle } from 'react-native';
 
 import { useTheme } from '../../theme';

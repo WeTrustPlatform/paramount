@@ -1,6 +1,6 @@
 import createFocusTrap, { FocusTrap } from 'focus-trap';
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import { animated, useSpring } from 'react-spring/web.cjs';
 
 import { springDefaultConfig } from '../../constants/Animation';

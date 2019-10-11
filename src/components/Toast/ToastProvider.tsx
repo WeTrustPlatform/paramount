@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Platform, View } from 'react-native';
 import { animated, useTransition } from 'react-spring/native.cjs';
 

@@ -1,5 +1,5 @@
 import deepMerge from 'deepmerge';
-import * as React from 'react';
+import React from 'react';
 import { Dimensions } from 'react-native';
 
 import { LayoutDebugger } from './Debugger';

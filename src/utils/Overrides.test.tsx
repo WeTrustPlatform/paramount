@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Text, TextProps, View, ViewProps } from 'react-native';
 import { render } from 'react-native-testing-library';
 
