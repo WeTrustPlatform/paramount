@@ -97,7 +97,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
     "react-native-testing-library": "1.11.1",
     "react-test-renderer": "16.8.6",
-    "remark": "10.0.1",
+    "remark": "11.0.1",
     "remark-mdx": "1.0.21",
     "rimraf": "2.6.3",
     "semantic-release": "15.13.18",
