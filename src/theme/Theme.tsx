@@ -1,5 +1,3 @@
-import deepMerge from 'deepmerge';
-import React from 'react';
 import { TextStyle, ViewStyle } from 'react-native';
 
 import {
@@ -19,9 +17,7 @@ import {
   HeadingOverride,
   LabelOverrides,
   Layout,
-  LayoutProvider,
   ListItemOverrides,
-  ListPicker,
   ListPickerOverrides,
   NativePickerOverrides,
   OverlayOverride,
@@ -35,13 +31,42 @@ import {
   SwitchOverrides,
   TextInputOverrides,
   TextOverride,
-  ToastProvider,
   WheelPickerOverrides,
   SpacingOverride,
 } from '../components';
 import { Overrides } from '../utils/Overrides';
 import { DeepPartial } from '../utils/types';
-import { defaultTheme } from './defaultTheme';
+
+export interface Theme {
+  // Colors
+  colors: Colors;
+  fills: Fills;
+
+  // Layout
+  layout: Layout;
+  spacing: SpacingSizes;
+
+  // Typography
+  fontFamilies: FontFamilies;
+  fontWeights: FontWeights;
+
+  headingSizes: HeadingSizes;
+  paragraphSizes: ParagraphSizes;
+  textSizes: TextSizes;
+
+  // Elevations
+  elevations: Elevations;
+
+  // Controls - Buttons, Controls etc.
+  controlPaddings: ControlSizes;
+  controlHeights: ControlSizes;
+  controlBorderRadius: ControlSizes;
+
+  // Containers
+  containerShapes: ContainerShapes;
+
+  overrides?: DeepPartial<ThemeOverrides>;
+}
 
 export interface TextSizes {
   xsmall: TextStyle;
@@ -253,37 +278,6 @@ export interface ContainerShapes {
 
 export type ContainerShape = keyof ContainerShapes;
 
-export interface Theme {
-  // Colors
-  colors: Colors;
-  fills: Fills;
-
-  // Layout
-  layout: Layout;
-  spacing: SpacingSizes;
-
-  // Typography
-  fontFamilies: FontFamilies;
-  fontWeights: FontWeights;
-
-  headingSizes: HeadingSizes;
-  paragraphSizes: ParagraphSizes;
-  textSizes: TextSizes;
-
-  // Elevations
-  elevations: Elevations;
-
-  // Controls - Buttons, Controls etc.
-  controlPaddings: ControlSizes;
-  controlHeights: ControlSizes;
-  controlBorderRadius: ControlSizes;
-
-  // Containers
-  containerShapes: ContainerShapes;
-
-  overrides?: DeepPartial<ThemeOverrides>;
-}
-
 export interface ThemeOverrides {
   Alert: Overrides<any, AlertOverrides>;
   Avatar: Overrides<any, AvatarOverrides>;
@@ -317,30 +311,3 @@ export interface ThemeOverrides {
   TextInput: Overrides<any, TextInputOverrides>;
   WheelPicker: Overrides<any, WheelPickerOverrides<any>>;
 }
-
-export const ThemeContext = React.createContext(defaultTheme);
-
-export interface ThemeProviderProps {
-  children?: React.ReactNode;
-  value?: DeepPartial<Theme>;
-}
-
-export const ThemeProvider = (props: ThemeProviderProps) => {
-  const { children, value } = props;
-
-  const theme = value
-    ? (deepMerge(defaultTheme, value) as Theme)
-    : defaultTheme;
-
-  return (
-    <ThemeContext.Provider value={theme}>
-      <LayoutProvider value={theme.layout}>
-        <ToastProvider>{children}</ToastProvider>
-      </LayoutProvider>
-    </ThemeContext.Provider>
-  );
-};
-
-export const useTheme = () => {
-  return React.useContext(ThemeContext);
-};

@@ -4,11 +4,6 @@ module.exports = {
   preset: 'react-native-web',
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
-    '^.+\\.jsx?$': 'babel-jest',
-    '^.+\\.mdx?$': '<rootDir>/tests/mdxTransformer.js',
-  },
-  moduleNameMapper: {
-    '^docz$': '<rootDir>/tests/doczMock.js',
   },
   moduleFileExtensions: [
     'web.js',

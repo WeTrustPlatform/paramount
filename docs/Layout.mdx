@@ -30,37 +30,23 @@ Paramount exposes a convenience hook `useLayout` that you can import to make use
 
 Retrieves the current screen size
 
-<Playground>
-  {() => {
-    const { currentScreenSize } = useLayout();
-
-    return (
-      <Text>{`currentScreenSize: ${currentScreenSize}`}</Text>
-    );
-
-}}
-
-</Playground>
+```tsx
+const { currentScreenSize } = useLayout();
+```
 
 ### getResponsiveValue
 
-<Playground>
-  {() => {
-    const { getResponsiveValue } = useLayout();
-    const color = getResponsiveValue({
-      xsmall: 'red',
-      large: 'blue',
-    });
-    const number = getResponsiveValue({
-      xsmall: 0,
-      large: 1,
-    });
-
-    return <Text>{`color: ${color}, number: ${number}`}</Text>;
-
-}}
-
-</Playground>
+```tsx
+const { getResponsiveValue } = useLayout();
+const color = getResponsiveValue({
+  xsmall: 'red',
+  large: 'blue',
+});
+const number = getResponsiveValue({
+  xsmall: 0,
+  large: 1,
+});
+```
 
 ### Responsive Components
 

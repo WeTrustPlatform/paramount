@@ -1,6 +1,6 @@
 import { Platform } from 'react-native';
 
-import { defaultLayout } from '../components';
+import { defaultLayout } from '../components/Layout/LayoutContext';
 import palette from './palette';
 import {
   Colors,
