@@ -108,7 +108,7 @@
     "typescript": "3.6.3",
     "unist-util-is": "3.0.0",
     "unist-util-remove": "1.0.3",
-    "unist-util-visit": "1.4.1"
+    "unist-util-visit": "2.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.0",
