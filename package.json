@@ -106,7 +106,7 @@
     "ts-jest": "24.0.2",
     "ts-loader": "6.0.4",
     "typescript": "3.6.3",
-    "unist-util-is": "3.0.0",
+    "unist-util-is": "4.0.0",
     "unist-util-remove": "1.0.3",
     "unist-util-visit": "1.4.1"
   },
