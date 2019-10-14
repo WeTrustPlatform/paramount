@@ -14,5 +14,6 @@ module.exports = {
     'tsx',
     ...defaults.moduleFileExtensions,
   ],
+  rootDir: 'src',
   setupFiles: ['jest-canvas-mock'],
 };
