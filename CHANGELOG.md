@@ -1,3 +1,13 @@
+## [1.85.1](https://github.com/WeTrustPlatform/paramount/compare/v1.85.0...v1.85.1) (2019-10-14)
+
+
+### Bug Fixes
+
+* conform esModuleInterop ([3fe7038](https://github.com/WeTrustPlatform/paramount/commit/3fe7038))
+* list item fixes ([2037172](https://github.com/WeTrustPlatform/paramount/commit/2037172))
+* migrate to eslint ([f425a99](https://github.com/WeTrustPlatform/paramount/commit/f425a99))
+* theme overrides for single root components ([bbb759b](https://github.com/WeTrustPlatform/paramount/commit/bbb759b))
+
 # [1.85.0](https://github.com/WeTrustPlatform/paramount/compare/v1.84.0...v1.85.0) (2019-10-09)
 
 
