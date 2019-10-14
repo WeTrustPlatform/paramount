@@ -64,12 +64,9 @@
     "@semantic-release/npm": "5.1.13",
     "@semantic-release/release-notes-generator": "7.2.1",
     "@storybook/addon-actions": "5.2.3",
-    "@storybook/addon-docs": "5.2.3",
     "@storybook/addon-links": "5.2.3",
     "@storybook/addon-storyshots": "5.2.3",
     "@storybook/addon-viewport": "5.2.3",
-    "@storybook/addons": "5.2.3",
-    "@storybook/preset-typescript": "^1.1.0",
     "@storybook/react": "5.2.3",
     "@types/dlv": "1.1.1",
     "@types/exenv": "1.2.0",
@@ -84,7 +81,6 @@
     "babel-jest": "24.8.0",
     "babel-loader": "8.0.6",
     "babel-preset-expo": "5.2.0",
-    "core-js": "^3.3.1",
     "docz": "2.0.0-rc.55",
     "eslint": "6.5.1",
     "eslint-config-prettier": "6.4.0",
@@ -95,7 +91,7 @@
     "eslint-plugin-react-native": "3.7.0",
     "eslint-plugin-sonarjs": "0.4.0",
     "expo": "33.0.7",
-    "gatsby-plugin-mdx": "^1.0.52",
+    "gatsby-plugin-mdx": "1.0.52",
     "gatsby-plugin-react-native-web": "2.0.0-beta.0",
     "husky": "3.0.0",
     "jest": "24.8.0",
@@ -104,7 +100,6 @@
     "prettier": "1.18.2",
     "react": "16.8.6",
     "react-art": "16.8.6",
-    "react-docgen-typescript-loader": "^3.3.0",
     "react-dom": "16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
     "react-native-testing-library": "1.11.1",
@@ -113,16 +108,12 @@
     "semantic-release": "15.13.18",
     "travis-deploy-once": "5.0.11",
     "ts-jest": "24.0.2",
-    "ts-loader": "^6.2.0",
     "typescript": "3.6.3"
   },
   "peerDependencies": {
     "react": "^16.8.0",
     "react-art": "^16.8.0",
     "react-dom": "^16.8.0"
-  },
-  "resolutions": {
-    "terser": "3.16"
   },
   "prettier": {
     "semi": true,

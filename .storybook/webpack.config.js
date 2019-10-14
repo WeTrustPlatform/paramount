@@ -11,7 +11,6 @@ module.exports = ({ config }) => {
             ['@babel/preset-typescript'],
             ['@babel/env'],
           ],
-          plugins: [['@babel/plugin-proposal-class-properties']],
         },
       },
     ],
