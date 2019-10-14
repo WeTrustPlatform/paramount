@@ -37,6 +37,7 @@ import {
   TextOverride,
   ToastProvider,
   WheelPickerOverrides,
+  SpacingOverride,
 } from '../components';
 import { Overrides } from '../utils/Overrides';
 import { DeepPartial } from '../utils/types';
@@ -290,28 +291,29 @@ export interface ThemeOverrides {
   Button: Overrides<any, ButtonOverrides>;
   Checkbox: Overrides<any, CheckboxOverrides>;
   Collapsible: Overrides<any, CollapsibleOverrides>;
-  Column: Overrides<any, ColumnOverride>;
-  Container: Overrides<any, ContainerOverride>;
+  Column: ColumnOverride;
+  Container: ContainerOverride;
   Counter: Overrides<any, CounterOverrides>;
   Dialog: Overrides<any, DialogOverrides>;
-  Divider: Overrides<any, DividerOverride>;
+  Divider: DividerOverride;
   Drawer: Overrides<any, DrawerOverrides>;
   FormField: Overrides<any, FormFieldOverrides>;
-  Heading: Overrides<any, HeadingOverride>;
+  Heading: HeadingOverride;
   Label: Overrides<any, LabelOverrides>;
   ListItem: Overrides<any, ListItemOverrides>;
   ListPicker: Overrides<any, ListPickerOverrides<any>>;
   NativePicker: Overrides<any, NativePickerOverrides>;
-  Overlay: Overrides<any, OverlayOverride>;
+  Overlay: OverlayOverride;
   Popover: Overrides<any, PopoverOverrides>;
   Positioner: Overrides<any, PositionerOverrides>;
   ProgressBar: Overrides<any, ProgressBarOverrides>;
   Rating: Overrides<any, RatingOverrides>;
-  Row: Overrides<any, RowOverride>;
+  Row: RowOverride;
   Slider: Overrides<any, SliderOverrides>;
+  Spacing: SpacingOverride;
   Switch: Overrides<any, SwitchOverrides>;
   Picker: Overrides<any, PickerOverrides<any, any, any>>;
-  Text: Overrides<any, TextOverride>;
+  Text: TextOverride;
   TextInput: Overrides<any, TextInputOverrides>;
   WheelPicker: Overrides<any, WheelPickerOverrides<any>>;
 }
