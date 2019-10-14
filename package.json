@@ -46,10 +46,10 @@
     "react-spring": "9.0.0-beta.1"
   },
   "devDependencies": {
-    "@babel/core": "7.4.5",
-    "@babel/preset-env": "7.4.5",
-    "@babel/preset-react": "7.0.0",
-    "@babel/preset-typescript": "7.3.3",
+    "@babel/core": "7.6.4",
+    "@babel/preset-env": "7.6.3",
+    "@babel/preset-react": "7.6.3",
+    "@babel/preset-typescript": "7.6.0",
     "@emotion/core": "10.0.14",
     "@mdx-js/mdx": "0.20.3",
     "@mdx-js/tag": "0.20.3",
