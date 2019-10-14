@@ -49,7 +49,7 @@ export interface TextSizes {
   medium: TextStyle;
   large: TextStyle;
 }
-export type TextSize = keyof TextSizes | number;
+export type TextSize = keyof TextSizes;
 
 export interface HeadingSizes {
   xxxlarge: TextStyle;
@@ -62,7 +62,7 @@ export interface HeadingSizes {
   [size: string]: TextStyle | undefined;
 }
 
-export type HeadingSize = keyof HeadingSizes | number;
+export type HeadingSize = keyof HeadingSizes;
 
 export interface ParagraphSizes {
   small: TextStyle;
@@ -72,7 +72,7 @@ export interface ParagraphSizes {
   [size: string]: TextStyle | undefined;
 }
 
-export type ParagraphSize = keyof ParagraphSizes | number;
+export type ParagraphSize = keyof ParagraphSizes;
 
 export interface SpacingSizes {
   xxxlarge: number;

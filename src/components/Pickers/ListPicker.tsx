@@ -18,6 +18,7 @@ import {
 export interface ListPickerItem<TValue extends any> extends PickerItem<TValue> {
   label: string;
   description?: OptionalString;
+  isDisabled?: boolean;
 }
 
 export interface ListPickerOverrides<TValue extends any> {
@@ -109,6 +110,7 @@ interface ListPickerItemProps<TValue extends any> {
   value: TValue;
   label: string;
   description?: OptionalString;
+  isDisabled?: boolean;
   override?: Override<ListPickerItemProps<TValue>, ListItemProps>;
 }
 
@@ -125,6 +127,7 @@ const StyledListPickerItem = <TValue extends any = any>(
     value,
     description,
     override,
+    isDisabled,
   } = props;
 
   const Action = () => (
@@ -133,6 +136,7 @@ const StyledListPickerItem = <TValue extends any = any>(
         onValueChange={() => onPress(value, index, isSelected)}
         shape="circle"
         value={isSelected}
+        isDisabled={isDisabled}
       />
     </Box>
   );
@@ -143,7 +147,8 @@ const StyledListPickerItem = <TValue extends any = any>(
     {
       onPress: () => onPress(value, index, isSelected),
       title: label,
-      description: isSelected && description,
+      description,
+      isDisabled,
       overrides: {
         Touchable: {
           style: {

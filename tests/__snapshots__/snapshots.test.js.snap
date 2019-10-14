@@ -27464,7 +27464,7 @@ exports[`KitchenSink_1 1`] = `
             "WebkitFlexDirection": "row",
             "backgroundColor": "rgba(255,255,255,1.00)",
             "flexDirection": "row",
-            "minHeight": "72px",
+            "minHeight": "64px",
             "msFlexDirection": "row",
           }
         }
@@ -27472,6 +27472,7 @@ exports[`KitchenSink_1 1`] = `
         <div
           className="css-view-1dbjc4n"
           data-focusable={true}
+          disabled={false}
           onKeyDown={[Function]}
           onKeyUp={[Function]}
           onResponderGrant={[Function]}
@@ -27615,7 +27616,7 @@ exports[`KitchenSink_1 1`] = `
                 Object {
                   "color": "rgba(126,126,126,1.00)",
                   "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                  "fontSize": "20px",
+                  "fontSize": "16px",
                   "textAlign": "left",
                 }
               }
@@ -28044,7 +28045,7 @@ exports[`KitchenSink_1 1`] = `
                     "WebkitFlexDirection": "row",
                     "backgroundColor": "rgba(255,255,255,1.00)",
                     "flexDirection": "row",
-                    "minHeight": "72px",
+                    "minHeight": "64px",
                     "msFlexDirection": "row",
                   }
                 }
@@ -28052,6 +28053,7 @@ exports[`KitchenSink_1 1`] = `
                 <div
                   className="css-view-1dbjc4n"
                   data-focusable={true}
+                  disabled={false}
                   onKeyDown={[Function]}
                   onKeyUp={[Function]}
                   onResponderGrant={[Function]}
@@ -28127,7 +28129,7 @@ exports[`KitchenSink_1 1`] = `
                         Object {
                           "color": "rgba(126,126,126,1.00)",
                           "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "20px",
+                          "fontSize": "16px",
                           "textAlign": "left",
                         }
                       }
@@ -28289,7 +28291,7 @@ exports[`KitchenSink_1 1`] = `
                     "WebkitFlexDirection": "row",
                     "backgroundColor": "rgba(255,255,255,1.00)",
                     "flexDirection": "row",
-                    "minHeight": "72px",
+                    "minHeight": "64px",
                     "msFlexDirection": "row",
                   }
                 }
@@ -28297,6 +28299,7 @@ exports[`KitchenSink_1 1`] = `
                 <div
                   className="css-view-1dbjc4n"
                   data-focusable={true}
+                  disabled={false}
                   onKeyDown={[Function]}
                   onKeyUp={[Function]}
                   onResponderGrant={[Function]}
@@ -28372,12 +28375,26 @@ exports[`KitchenSink_1 1`] = `
                         Object {
                           "color": "rgba(126,126,126,1.00)",
                           "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "20px",
+                          "fontSize": "16px",
                           "textAlign": "left",
                         }
                       }
                     >
                       C#
+                    </div>
+                    <div
+                      className="css-text-901oao"
+                      dir="auto"
+                      style={
+                        Object {
+                          "color": "rgba(167,167,167,1.00)",
+                          "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                          "fontSize": "14px",
+                          "textAlign": "left",
+                        }
+                      }
+                    >
+                      C# is a general-purpose, multi-paradigm programming language.
                     </div>
                   </div>
                 </div>
@@ -28497,7 +28514,7 @@ exports[`KitchenSink_1 1`] = `
                     "WebkitFlexDirection": "row",
                     "backgroundColor": "rgba(255,255,255,1.00)",
                     "flexDirection": "row",
-                    "minHeight": "72px",
+                    "minHeight": "64px",
                     "msFlexDirection": "row",
                   }
                 }
@@ -28505,6 +28522,7 @@ exports[`KitchenSink_1 1`] = `
                 <div
                   className="css-view-1dbjc4n"
                   data-focusable={true}
+                  disabled={false}
                   onKeyDown={[Function]}
                   onKeyUp={[Function]}
                   onResponderGrant={[Function]}
@@ -28580,7 +28598,7 @@ exports[`KitchenSink_1 1`] = `
                         Object {
                           "color": "rgba(126,126,126,1.00)",
                           "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "20px",
+                          "fontSize": "16px",
                           "textAlign": "left",
                         }
                       }
@@ -28705,7 +28723,7 @@ exports[`KitchenSink_1 1`] = `
                     "WebkitFlexDirection": "row",
                     "backgroundColor": "rgba(255,255,255,1.00)",
                     "flexDirection": "row",
-                    "minHeight": "72px",
+                    "minHeight": "64px",
                     "msFlexDirection": "row",
                   }
                 }
@@ -28713,6 +28731,7 @@ exports[`KitchenSink_1 1`] = `
                 <div
                   className="css-view-1dbjc4n"
                   data-focusable={true}
+                  disabled={false}
                   onKeyDown={[Function]}
                   onKeyUp={[Function]}
                   onResponderGrant={[Function]}
@@ -28788,7 +28807,7 @@ exports[`KitchenSink_1 1`] = `
                         Object {
                           "color": "rgba(126,126,126,1.00)",
                           "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "20px",
+                          "fontSize": "16px",
                           "textAlign": "left",
                         }
                       }
@@ -28913,7 +28932,7 @@ exports[`KitchenSink_1 1`] = `
                     "WebkitFlexDirection": "row",
                     "backgroundColor": "rgba(255,255,255,1.00)",
                     "flexDirection": "row",
-                    "minHeight": "72px",
+                    "minHeight": "64px",
                     "msFlexDirection": "row",
                   }
                 }
@@ -28921,6 +28940,7 @@ exports[`KitchenSink_1 1`] = `
                 <div
                   className="css-view-1dbjc4n"
                   data-focusable={true}
+                  disabled={false}
                   onKeyDown={[Function]}
                   onKeyUp={[Function]}
                   onResponderGrant={[Function]}
@@ -28996,7 +29016,7 @@ exports[`KitchenSink_1 1`] = `
                         Object {
                           "color": "rgba(126,126,126,1.00)",
                           "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "20px",
+                          "fontSize": "16px",
                           "textAlign": "left",
                         }
                       }
@@ -29121,7 +29141,7 @@ exports[`KitchenSink_1 1`] = `
                     "WebkitFlexDirection": "row",
                     "backgroundColor": "rgba(255,255,255,1.00)",
                     "flexDirection": "row",
-                    "minHeight": "72px",
+                    "minHeight": "64px",
                     "msFlexDirection": "row",
                   }
                 }
@@ -29129,6 +29149,7 @@ exports[`KitchenSink_1 1`] = `
                 <div
                   className="css-view-1dbjc4n"
                   data-focusable={true}
+                  disabled={false}
                   onKeyDown={[Function]}
                   onKeyUp={[Function]}
                   onResponderGrant={[Function]}
@@ -29204,7 +29225,7 @@ exports[`KitchenSink_1 1`] = `
                         Object {
                           "color": "rgba(126,126,126,1.00)",
                           "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "20px",
+                          "fontSize": "16px",
                           "textAlign": "left",
                         }
                       }
@@ -29329,7 +29350,7 @@ exports[`KitchenSink_1 1`] = `
                     "WebkitFlexDirection": "row",
                     "backgroundColor": "rgba(255,255,255,1.00)",
                     "flexDirection": "row",
-                    "minHeight": "72px",
+                    "minHeight": "64px",
                     "msFlexDirection": "row",
                   }
                 }
@@ -29337,6 +29358,7 @@ exports[`KitchenSink_1 1`] = `
                 <div
                   className="css-view-1dbjc4n"
                   data-focusable={true}
+                  disabled={false}
                   onKeyDown={[Function]}
                   onKeyUp={[Function]}
                   onResponderGrant={[Function]}
@@ -29412,7 +29434,7 @@ exports[`KitchenSink_1 1`] = `
                         Object {
                           "color": "rgba(126,126,126,1.00)",
                           "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "20px",
+                          "fontSize": "16px",
                           "textAlign": "left",
                         }
                       }
@@ -29537,7 +29559,7 @@ exports[`KitchenSink_1 1`] = `
                     "WebkitFlexDirection": "row",
                     "backgroundColor": "rgba(255,255,255,1.00)",
                     "flexDirection": "row",
-                    "minHeight": "72px",
+                    "minHeight": "64px",
                     "msFlexDirection": "row",
                   }
                 }
@@ -29545,6 +29567,7 @@ exports[`KitchenSink_1 1`] = `
                 <div
                   className="css-view-1dbjc4n"
                   data-focusable={true}
+                  disabled={false}
                   onKeyDown={[Function]}
                   onKeyUp={[Function]}
                   onResponderGrant={[Function]}
@@ -29620,7 +29643,7 @@ exports[`KitchenSink_1 1`] = `
                         Object {
                           "color": "rgba(126,126,126,1.00)",
                           "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "20px",
+                          "fontSize": "16px",
                           "textAlign": "left",
                         }
                       }
@@ -29768,7 +29791,7 @@ exports[`KitchenSink_1 1`] = `
                     "WebkitFlexDirection": "row",
                     "backgroundColor": "rgba(255,255,255,1.00)",
                     "flexDirection": "row",
-                    "minHeight": "72px",
+                    "minHeight": "64px",
                     "msFlexDirection": "row",
                   }
                 }
@@ -29776,6 +29799,7 @@ exports[`KitchenSink_1 1`] = `
                 <div
                   className="css-view-1dbjc4n"
                   data-focusable={true}
+                  disabled={false}
                   onKeyDown={[Function]}
                   onKeyUp={[Function]}
                   onResponderGrant={[Function]}
@@ -29851,7 +29875,7 @@ exports[`KitchenSink_1 1`] = `
                         Object {
                           "color": "rgba(126,126,126,1.00)",
                           "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "20px",
+                          "fontSize": "16px",
                           "textAlign": "left",
                         }
                       }
@@ -29976,7 +30000,7 @@ exports[`KitchenSink_1 1`] = `
                     "WebkitFlexDirection": "row",
                     "backgroundColor": "rgba(255,255,255,1.00)",
                     "flexDirection": "row",
-                    "minHeight": "72px",
+                    "minHeight": "64px",
                     "msFlexDirection": "row",
                   }
                 }
@@ -29984,6 +30008,7 @@ exports[`KitchenSink_1 1`] = `
                 <div
                   className="css-view-1dbjc4n"
                   data-focusable={true}
+                  disabled={false}
                   onKeyDown={[Function]}
                   onKeyUp={[Function]}
                   onResponderGrant={[Function]}
@@ -30059,7 +30084,7 @@ exports[`KitchenSink_1 1`] = `
                         Object {
                           "color": "rgba(126,126,126,1.00)",
                           "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                          "fontSize": "20px",
+                          "fontSize": "16px",
                           "textAlign": "left",
                         }
                       }
@@ -37152,7 +37177,7 @@ exports[`ListItem_1 1`] = `
         "WebkitFlexDirection": "row",
         "backgroundColor": "rgba(255,255,255,1.00)",
         "flexDirection": "row",
-        "minHeight": "72px",
+        "minHeight": "64px",
         "msFlexDirection": "row",
       }
     }
@@ -37160,6 +37185,7 @@ exports[`ListItem_1 1`] = `
     <div
       className="css-view-1dbjc4n"
       data-focusable={true}
+      disabled={false}
       onKeyDown={[Function]}
       onKeyUp={[Function]}
       onResponderGrant={[Function]}
@@ -37303,7 +37329,7 @@ exports[`ListItem_1 1`] = `
             Object {
               "color": "rgba(126,126,126,1.00)",
               "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-              "fontSize": "20px",
+              "fontSize": "16px",
               "textAlign": "left",
             }
           }
@@ -37399,7 +37425,7 @@ exports[`ListPicker_1 1`] = `
                 "WebkitFlexDirection": "row",
                 "backgroundColor": "rgba(255,255,255,1.00)",
                 "flexDirection": "row",
-                "minHeight": "72px",
+                "minHeight": "64px",
                 "msFlexDirection": "row",
               }
             }
@@ -37407,6 +37433,7 @@ exports[`ListPicker_1 1`] = `
             <div
               className="css-view-1dbjc4n"
               data-focusable={true}
+              disabled={false}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
               onResponderGrant={[Function]}
@@ -37482,7 +37509,7 @@ exports[`ListPicker_1 1`] = `
                     Object {
                       "color": "rgba(126,126,126,1.00)",
                       "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "20px",
+                      "fontSize": "16px",
                       "textAlign": "left",
                     }
                   }
@@ -37644,7 +37671,7 @@ exports[`ListPicker_1 1`] = `
                 "WebkitFlexDirection": "row",
                 "backgroundColor": "rgba(255,255,255,1.00)",
                 "flexDirection": "row",
-                "minHeight": "72px",
+                "minHeight": "64px",
                 "msFlexDirection": "row",
               }
             }
@@ -37652,6 +37679,7 @@ exports[`ListPicker_1 1`] = `
             <div
               className="css-view-1dbjc4n"
               data-focusable={true}
+              disabled={false}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
               onResponderGrant={[Function]}
@@ -37727,12 +37755,26 @@ exports[`ListPicker_1 1`] = `
                     Object {
                       "color": "rgba(126,126,126,1.00)",
                       "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "20px",
+                      "fontSize": "16px",
                       "textAlign": "left",
                     }
                   }
                 >
                   C#
+                </div>
+                <div
+                  className="css-text-901oao"
+                  dir="auto"
+                  style={
+                    Object {
+                      "color": "rgba(167,167,167,1.00)",
+                      "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
+                      "fontSize": "14px",
+                      "textAlign": "left",
+                    }
+                  }
+                >
+                  C# is a general-purpose, multi-paradigm programming language.
                 </div>
               </div>
             </div>
@@ -37850,16 +37892,17 @@ exports[`ListPicker_1 1`] = `
                 "WebkitBoxDirection": "normal",
                 "WebkitBoxOrient": "horizontal",
                 "WebkitFlexDirection": "row",
-                "backgroundColor": "rgba(255,255,255,1.00)",
+                "backgroundColor": "rgba(250,250,250,1.00)",
                 "flexDirection": "row",
-                "minHeight": "72px",
+                "minHeight": "64px",
                 "msFlexDirection": "row",
               }
             }
           >
             <div
+              aria-disabled={true}
               className="css-view-1dbjc4n"
-              data-focusable={true}
+              disabled={true}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
               onResponderGrant={[Function]}
@@ -37885,7 +37928,6 @@ exports[`ListPicker_1 1`] = `
                   "WebkitTransitionProperty": "opacity",
                   "WebkitUserSelect": "none",
                   "alignItems": "center",
-                  "cursor": "pointer",
                   "flexBasis": "0%",
                   "flexDirection": "row",
                   "flexGrow": 1,
@@ -37895,16 +37937,13 @@ exports[`ListPicker_1 1`] = `
                   "msFlexNegative": 1,
                   "msFlexPositive": 1,
                   "msFlexPreferredSize": "0%",
-                  "msTouchAction": "manipulation",
                   "msUserSelect": "none",
                   "paddingRight": "8px",
-                  "touchAction": "manipulation",
                   "transitionDuration": "0.15s",
                   "transitionProperty": "opacity",
                   "userSelect": "none",
                 }
               }
-              tabIndex="0"
             >
               <div
                 className="css-view-1dbjc4n"
@@ -37933,9 +37972,9 @@ exports[`ListPicker_1 1`] = `
                   dir="auto"
                   style={
                     Object {
-                      "color": "rgba(126,126,126,1.00)",
+                      "color": "rgba(167,167,167,1.00)",
                       "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "20px",
+                      "fontSize": "16px",
                       "textAlign": "left",
                     }
                   }
@@ -37960,9 +37999,9 @@ exports[`ListPicker_1 1`] = `
               }
             >
               <div
+                aria-disabled={true}
                 className="css-view-1dbjc4n"
-                data-focusable={true}
-                disabled={false}
+                disabled={true}
                 onKeyDown={[Function]}
                 onKeyUp={[Function]}
                 onResponderGrant={[Function]}
@@ -37982,16 +38021,12 @@ exports[`ListPicker_1 1`] = `
                     "borderBottomRightRadius": "999px",
                     "borderTopLeftRadius": "999px",
                     "borderTopRightRadius": "999px",
-                    "cursor": "pointer",
-                    "msTouchAction": "manipulation",
                     "msUserSelect": "none",
-                    "touchAction": "manipulation",
                     "transitionDuration": "0.15s",
                     "transitionProperty": "opacity",
                     "userSelect": "none",
                   }
                 }
-                tabIndex="0"
               >
                 <div
                   className="css-view-1dbjc4n"
@@ -38021,7 +38056,7 @@ exports[`ListPicker_1 1`] = `
                           "WebkitBoxPack": "center",
                           "WebkitJustifyContent": "center",
                           "alignItems": "center",
-                          "backgroundColor": "rgba(255,255,255,1.00)",
+                          "backgroundColor": "rgba(238,238,238,1.00)",
                           "borderBottomColor": "rgba(238,238,238,1.00)",
                           "borderBottomLeftRadius": "999px",
                           "borderBottomRightRadius": "999px",
@@ -38060,7 +38095,7 @@ exports[`ListPicker_1 1`] = `
                 "WebkitFlexDirection": "row",
                 "backgroundColor": "rgba(255,255,255,1.00)",
                 "flexDirection": "row",
-                "minHeight": "72px",
+                "minHeight": "64px",
                 "msFlexDirection": "row",
               }
             }
@@ -38068,6 +38103,7 @@ exports[`ListPicker_1 1`] = `
             <div
               className="css-view-1dbjc4n"
               data-focusable={true}
+              disabled={false}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
               onResponderGrant={[Function]}
@@ -38143,7 +38179,7 @@ exports[`ListPicker_1 1`] = `
                     Object {
                       "color": "rgba(126,126,126,1.00)",
                       "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "20px",
+                      "fontSize": "16px",
                       "textAlign": "left",
                     }
                   }
@@ -38268,7 +38304,7 @@ exports[`ListPicker_1 1`] = `
                 "WebkitFlexDirection": "row",
                 "backgroundColor": "rgba(255,255,255,1.00)",
                 "flexDirection": "row",
-                "minHeight": "72px",
+                "minHeight": "64px",
                 "msFlexDirection": "row",
               }
             }
@@ -38276,6 +38312,7 @@ exports[`ListPicker_1 1`] = `
             <div
               className="css-view-1dbjc4n"
               data-focusable={true}
+              disabled={false}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
               onResponderGrant={[Function]}
@@ -38351,7 +38388,7 @@ exports[`ListPicker_1 1`] = `
                     Object {
                       "color": "rgba(126,126,126,1.00)",
                       "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "20px",
+                      "fontSize": "16px",
                       "textAlign": "left",
                     }
                   }
@@ -38476,7 +38513,7 @@ exports[`ListPicker_1 1`] = `
                 "WebkitFlexDirection": "row",
                 "backgroundColor": "rgba(255,255,255,1.00)",
                 "flexDirection": "row",
-                "minHeight": "72px",
+                "minHeight": "64px",
                 "msFlexDirection": "row",
               }
             }
@@ -38484,6 +38521,7 @@ exports[`ListPicker_1 1`] = `
             <div
               className="css-view-1dbjc4n"
               data-focusable={true}
+              disabled={false}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
               onResponderGrant={[Function]}
@@ -38559,7 +38597,7 @@ exports[`ListPicker_1 1`] = `
                     Object {
                       "color": "rgba(126,126,126,1.00)",
                       "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "20px",
+                      "fontSize": "16px",
                       "textAlign": "left",
                     }
                   }
@@ -38684,7 +38722,7 @@ exports[`ListPicker_1 1`] = `
                 "WebkitFlexDirection": "row",
                 "backgroundColor": "rgba(255,255,255,1.00)",
                 "flexDirection": "row",
-                "minHeight": "72px",
+                "minHeight": "64px",
                 "msFlexDirection": "row",
               }
             }
@@ -38692,6 +38730,7 @@ exports[`ListPicker_1 1`] = `
             <div
               className="css-view-1dbjc4n"
               data-focusable={true}
+              disabled={false}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
               onResponderGrant={[Function]}
@@ -38767,7 +38806,7 @@ exports[`ListPicker_1 1`] = `
                     Object {
                       "color": "rgba(126,126,126,1.00)",
                       "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "20px",
+                      "fontSize": "16px",
                       "textAlign": "left",
                     }
                   }
@@ -38892,7 +38931,7 @@ exports[`ListPicker_1 1`] = `
                 "WebkitFlexDirection": "row",
                 "backgroundColor": "rgba(255,255,255,1.00)",
                 "flexDirection": "row",
-                "minHeight": "72px",
+                "minHeight": "64px",
                 "msFlexDirection": "row",
               }
             }
@@ -38900,6 +38939,7 @@ exports[`ListPicker_1 1`] = `
             <div
               className="css-view-1dbjc4n"
               data-focusable={true}
+              disabled={false}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
               onResponderGrant={[Function]}
@@ -38975,7 +39015,7 @@ exports[`ListPicker_1 1`] = `
                     Object {
                       "color": "rgba(126,126,126,1.00)",
                       "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "20px",
+                      "fontSize": "16px",
                       "textAlign": "left",
                     }
                   }
@@ -39123,7 +39163,7 @@ exports[`ListPicker_1 1`] = `
                 "WebkitFlexDirection": "row",
                 "backgroundColor": "rgba(255,255,255,1.00)",
                 "flexDirection": "row",
-                "minHeight": "72px",
+                "minHeight": "64px",
                 "msFlexDirection": "row",
               }
             }
@@ -39131,6 +39171,7 @@ exports[`ListPicker_1 1`] = `
             <div
               className="css-view-1dbjc4n"
               data-focusable={true}
+              disabled={false}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
               onResponderGrant={[Function]}
@@ -39206,7 +39247,7 @@ exports[`ListPicker_1 1`] = `
                     Object {
                       "color": "rgba(126,126,126,1.00)",
                       "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "20px",
+                      "fontSize": "16px",
                       "textAlign": "left",
                     }
                   }
@@ -39331,7 +39372,7 @@ exports[`ListPicker_1 1`] = `
                 "WebkitFlexDirection": "row",
                 "backgroundColor": "rgba(255,255,255,1.00)",
                 "flexDirection": "row",
-                "minHeight": "72px",
+                "minHeight": "64px",
                 "msFlexDirection": "row",
               }
             }
@@ -39339,6 +39380,7 @@ exports[`ListPicker_1 1`] = `
             <div
               className="css-view-1dbjc4n"
               data-focusable={true}
+              disabled={false}
               onKeyDown={[Function]}
               onKeyUp={[Function]}
               onResponderGrant={[Function]}
@@ -39414,7 +39456,7 @@ exports[`ListPicker_1 1`] = `
                     Object {
                       "color": "rgba(126,126,126,1.00)",
                       "fontFamily": "\\"SF UI Text\\",-apple-system,BlinkMacSystemFont,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\",\\"Segoe UI Symbol\\"",
-                      "fontSize": "20px",
+                      "fontSize": "16px",
                       "textAlign": "left",
                     }
                   }

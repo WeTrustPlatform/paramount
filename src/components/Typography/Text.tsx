@@ -24,7 +24,7 @@ export interface TextProps extends Omit<RNTextProps, 'style'> {
    * Size of the text.
    * @default "medium"
    */
-  size?: TextSize;
+  size?: TextSize | number;
 
   /**
    * Color of the text.
@@ -130,7 +130,7 @@ export const getTextColor = (textColors: TextColors) => (
 };
 
 export const getTextSize = (textSizes: TextSizes) => (
-  size: TextSize,
+  size: TextSize | number,
 ): TextStyle => {
   // @ts-ignore
   const presetTextSize = textSizes[size] as TextStyle;

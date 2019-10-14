@@ -26,7 +26,7 @@ export interface HeadingProps extends Omit<RNTextProps, 'style'> {
    * Size of the heading.
    * @default "medium"
    */
-  size?: HeadingSize;
+  size?: HeadingSize | number;
 
   /**
    * Alignment of the heading.
@@ -98,7 +98,7 @@ export const Heading = (props: HeadingProps) => {
 };
 
 export const getHeadingSize = (headingSizes: HeadingSizes) => (
-  size: HeadingSize,
+  size: HeadingSize | number,
 ): TextStyle => {
   // @ts-ignore
   const presetHeadingSize = headingSizes[size] as TextStyle;

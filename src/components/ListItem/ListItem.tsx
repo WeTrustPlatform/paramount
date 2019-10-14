@@ -9,11 +9,12 @@ import {
   ViewProps,
 } from 'react-native';
 
-import { useTheme } from '../../theme';
+import { useTheme, ControlSize } from '../../theme';
 import { getOverrides, getStyle, WithOverrides } from '../../utils/Overrides';
 import { OptionalString } from '../../utils/types';
 import { Avatar, AvatarProps } from '../Avatar';
 import { Text, TextProps } from '../Typography';
+import { useControlSizeUtils } from '../../utils/ControlSize';
 
 interface ListItemBaseProps {
   /**
@@ -36,6 +37,12 @@ interface ListItemBaseProps {
    * @default false
    */
   isDisabled?: boolean;
+
+  /**
+   * Size of the ListItem.
+   * @default "medium"
+   */
+  size?: ControlSize | number;
 
   /**
    * Called when pressing list item
@@ -64,17 +71,19 @@ export const ListItem = (props: ListItemProps) => {
     isDisabled = false,
     title,
     description,
+    size = 'medium',
     onPress,
     testID,
     source,
     overrides = {},
   } = props;
   const theme = useTheme();
+  const { getControlHeight } = useControlSizeUtils();
 
   const [Root, rootProps] = getOverrides(
     StyledRoot,
     props,
-    { isDisabled },
+    { isDisabled, size },
     dlv(theme, 'overrides.ListItem.Root'),
     overrides.Root,
   );
@@ -100,14 +109,14 @@ export const ListItem = (props: ListItemProps) => {
   const [Title, titleProps] = getOverrides(
     StyledTitle,
     props,
-    { title },
+    { title, size, isDisabled },
     dlv(theme, 'overrides.ListItem.Title'),
     overrides.Title,
   );
   const [Description, descriptionProps] = getOverrides(
     StyledDescription,
     props,
-    { description },
+    { description, size, isDisabled },
     dlv(theme, 'overrides.ListItem.Description'),
     overrides.Description,
   );
@@ -121,7 +130,7 @@ export const ListItem = (props: ListItemProps) => {
   const [AvatarR, avatarProps] = getOverrides(
     StyledAvatar,
     props,
-    { source, size: 'small' },
+    { source, size: getControlHeight(size) - 8 },
     dlv(theme, 'overrides.ListItem.Avatar'),
     overrides.Avatar,
   );
@@ -143,18 +152,20 @@ export const ListItem = (props: ListItemProps) => {
 interface RootProps extends ViewProps {
   children?: React.ReactNode;
   isDisabled?: boolean;
+  size: ControlSize | number;
 }
 
 const StyledRoot = (props: RootProps) => {
-  const { children, style, isDisabled, ...viewProps } = props;
+  const { children, style, isDisabled, size, ...viewProps } = props;
   const theme = useTheme();
+  const { getControlHeight } = useControlSizeUtils();
 
   return (
     <View
       style={[
         {
           flexDirection: 'row',
-          minHeight: 72,
+          minHeight: getControlHeight(size) + 16,
           backgroundColor: isDisabled
             ? theme.colors.background.greyLight
             : theme.colors.background.content,
@@ -186,6 +197,7 @@ const StyledTouchable = (props: TouchableProps) => {
         },
         style,
       ]}
+      disabled={isDisabled}
       {...touchableProps}
     >
       {children}
@@ -195,15 +207,22 @@ const StyledTouchable = (props: TouchableProps) => {
 
 interface TitleProps extends TextProps {
   title?: OptionalString;
+  size: ControlSize | number;
+  isDisabled: boolean;
 }
 
 const StyledTitle = (props: TitleProps) => {
-  const { title, style, ...textProps } = props;
+  const { title, style, size, isDisabled, ...textProps } = props;
 
   if (!title) return null;
 
   return (
-    <Text size="large" style={[{}, getStyle(props, style)]} {...textProps}>
+    <Text
+      size={size}
+      color={isDisabled ? 'muted' : 'default'}
+      style={[{}, getStyle(props, style)]}
+      {...textProps}
+    >
       {title}
     </Text>
   );
@@ -232,16 +251,19 @@ const StyledTextWrapper = (props: TextWrapperProps) => {
 
 interface DescriptionProps extends TextProps {
   description?: OptionalString;
+  size: ControlSize | number;
+  isDisabled: boolean;
 }
 
 const StyledDescription = (props: DescriptionProps) => {
-  const { style, description, ...viewProps } = props;
+  const { style, description, size, isDisabled, ...viewProps } = props;
+  const { getSmallerHeightControlSize } = useControlSizeUtils();
 
   if (!description) return null;
 
   return (
     <Text
-      size="small"
+      size={getSmallerHeightControlSize(size)}
       color="muted"
       style={[{}, getStyle(props, style)]}
       {...viewProps}
