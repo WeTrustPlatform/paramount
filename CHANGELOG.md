@@ -1,3 +1,10 @@
+## [1.86.2](https://github.com/WeTrustPlatform/paramount/compare/v1.86.1...v1.86.2) (2019-10-15)
+
+
+### Bug Fixes
+
+* upgrade lint-staged ([d844cd8](https://github.com/WeTrustPlatform/paramount/commit/d844cd8))
+
 ## [1.86.1](https://github.com/WeTrustPlatform/paramount/compare/v1.86.0...v1.86.1) (2019-10-15)
 
 
