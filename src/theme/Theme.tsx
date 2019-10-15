@@ -16,7 +16,6 @@ import {
   FormFieldOverrides,
   HeadingOverride,
   LabelOverrides,
-  Layout,
   ListItemOverrides,
   ListPickerOverrides,
   NativePickerOverrides,
@@ -66,6 +65,62 @@ export interface Theme {
   containerShapes: ContainerShapes;
 
   overrides?: DeepPartial<ThemeOverrides>;
+}
+
+export interface Breakpoints {
+  small: number;
+  medium: number;
+  large: number;
+  xlarge: number;
+}
+
+export interface ScreenSizes extends Breakpoints {
+  xsmall: number;
+}
+
+export type ColumnCount =
+  | 0
+  | 1
+  | 2
+  | 3
+  | 4
+  | 5
+  | 6
+  | 7
+  | 8
+  | 9
+  | 10
+  | 11
+  | 12
+  | 13
+  | 14
+  | 15
+  | 16
+  | 17
+  | 18
+  | 19
+  | 20
+  | 21
+  | 22
+  | 23
+  | 24;
+
+export interface ContainerSizes {
+  small: number;
+  medium: number;
+  large: number;
+  xlarge: number;
+}
+
+export type Breakpoint = keyof Breakpoints;
+export type ContainerSize = keyof ContainerSizes;
+export type ScreenSize = keyof ScreenSizes;
+
+export interface Layout {
+  breakpoints: Breakpoints;
+  gridColumnCount: ColumnCount;
+  gutterWidth: number;
+  containerSizes: ContainerSizes;
 }
 
 export interface TextSizes {

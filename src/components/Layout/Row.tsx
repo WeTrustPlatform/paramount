@@ -4,8 +4,6 @@ import { View, ViewProps, ViewStyle } from 'react-native';
 
 import { useTheme } from '../../theme';
 import { getStyle, OverrideStyle, Style } from '../../utils/Overrides';
-import { ColumnProps } from './Column';
-import { defaultLayout, useLayout } from './LayoutContext';
 
 export interface RowProps extends Omit<ViewProps, 'style'> {
   /**
@@ -17,9 +15,7 @@ export interface RowProps extends Omit<ViewProps, 'style'> {
   /**
    * `Column` components
    */
-  children:
-    | Array<React.ReactElement<ColumnProps>>
-    | React.ReactElement<ColumnProps>;
+  children?: React.ReactNode;
 
   /**
    * Style callback or ViewStyle object
@@ -29,13 +25,13 @@ export interface RowProps extends Omit<ViewProps, 'style'> {
 
 export type RowOverride = OverrideStyle<RowProps, ViewStyle>;
 
-export const GutterWidthContext = React.createContext(
-  defaultLayout.gutterWidth,
-);
+export const GutterWidthContext = React.createContext(0);
 
 export const Row = (props: RowProps) => {
   const { children, hasGutter = true, style, ...viewProps } = props;
-  const { gutterWidth } = useLayout();
+  const {
+    layout: { gutterWidth },
+  } = useTheme();
   const theme = useTheme();
 
   return (

@@ -3,8 +3,37 @@ import { Platform, View } from 'react-native';
 import { animated, useTransition } from 'react-spring/native.cjs';
 
 import { springDefaultConfig } from '../../constants/Animation';
+
 import { Toast, ToastId, ToastInstance, ToastSettings } from './Toast';
-import { ToastContext } from './ToastContext';
+
+export interface ToastContextValue {
+  danger: (toastSettings: ToastSettings) => ToastInstance;
+  notify: (toastSettings: ToastSettings) => ToastInstance;
+  success: (toastSettings: ToastSettings) => ToastInstance;
+  warning: (toastSettings: ToastSettings) => ToastInstance;
+  removeToast: (id: ToastId) => void;
+}
+
+const defaultToastInstance: ToastInstance = {
+  id: '1',
+  onRemove: () => null,
+};
+
+const defaultToastContext: ToastContextValue = {
+  danger: () => defaultToastInstance,
+  notify: () => defaultToastInstance,
+  removeToast: id => {
+    return;
+  },
+  success: () => defaultToastInstance,
+  warning: () => defaultToastInstance,
+};
+
+export const ToastContext = React.createContext(defaultToastContext);
+
+export const useToast = () => {
+  return React.useContext(ToastContext);
+};
 
 const AnimatedView = animated(View);
 

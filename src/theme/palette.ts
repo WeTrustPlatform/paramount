@@ -1,5 +1,3 @@
-// tslint:disable object-literal-sort-keys
-
 export interface ColorPalette {
   base: string;
   dark: string;

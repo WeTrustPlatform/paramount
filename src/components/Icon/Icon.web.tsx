@@ -3,6 +3,7 @@ import * as Feather from 'react-icons/fi';
 
 import { useTheme } from '../../theme';
 import { getTextColor, getTextSize } from '../Typography/Text';
+
 import { IconProps } from './Icon';
 
 function convertToPascal(name: string) {

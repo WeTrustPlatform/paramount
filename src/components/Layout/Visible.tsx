@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { ASC_ORDER_SCREEN_SIZES, ScreenSize, useLayout } from './LayoutContext';
+import { ScreenSize } from '../../theme';
+
+import { ASC_ORDER_SCREEN_SIZES, useLayout } from './LayoutProvider';
 
 export interface VisibleConfig {
   /**

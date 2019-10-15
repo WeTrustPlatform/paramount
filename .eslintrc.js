@@ -5,6 +5,7 @@ module.exports = {
     'react',
     'react-hooks',
     'react-native',
+    'unused-imports',
     'sonarjs',
   ],
   extends: [
@@ -18,12 +19,11 @@ module.exports = {
   ],
   rules: {
     // Custom rules
-    // 'object-shorthand': ['error', 'always'], // Keeps code more concise concise
+    'object-shorthand': ['error', 'always'], // Keeps code more concise concise
     // Imports,
-    // 'import/no-cycle': ['error', { maxDepth: 1 }],
-    // 'import/no-unresolved': 'off', // Fix for monorepo. Let Typescript handle this
-    // 'unused-imports/no-unused-imports-ts': ['warn'],
-    // 'import/order': ['warn', { 'newlines-between': 'always' }],
+    'import/no-cycle': ['error', { maxDepth: 1 }],
+    'unused-imports/no-unused-imports-ts': ['warn'],
+    'import/order': ['warn', { 'newlines-between': 'always' }],
 
     // React
     'react/prop-types': 'off',

@@ -5,18 +5,23 @@ menu: Components
 
 import { Playground, Props } from 'docz';
 
-import { CounterState, Rating } from '..';
+import { Rating } from './Rating';
+import { State } from '../Helpers';
 
 # Rating
 
 ## Usage
 
 <Playground>
-  <CounterState initial={3}>
-    {({ count: rating, set }) => (
-      <Rating value={rating} size="small" onValueChange={value => set(value)} />
+  <State initial={{ value: 3 }}>
+    {({ state, setState }) => (
+      <Rating
+        value={state.value}
+        size="small"
+        onValueChange={value => setState({ value })}
+      />
     )}
-  </CounterState>
+  </State>
 </Playground>
 
 ## Props

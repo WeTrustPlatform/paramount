@@ -4,6 +4,7 @@ import React from 'react';
 import { LayoutProvider } from '../components/Layout/LayoutProvider';
 import { ToastProvider } from '../components/Toast/ToastProvider';
 import { DeepPartial } from '../utils/types';
+
 import { defaultTheme } from './defaultTheme';
 import { Theme } from './Theme';
 
@@ -23,7 +24,7 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
 
   return (
     <ThemeContext.Provider value={theme}>
-      <LayoutProvider value={theme.layout}>
+      <LayoutProvider>
         <ToastProvider>{children}</ToastProvider>
       </LayoutProvider>
     </ThemeContext.Provider>

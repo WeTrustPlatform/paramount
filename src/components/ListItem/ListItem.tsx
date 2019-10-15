@@ -165,7 +165,7 @@ const StyledRoot = (props: RootProps) => {
       style={[
         {
           flexDirection: 'row',
-          minHeight: getControlHeight(size) + 16,
+          minHeight: getControlHeight(size) + 8,
           backgroundColor: isDisabled
             ? theme.colors.background.greyLight
             : theme.colors.background.content,

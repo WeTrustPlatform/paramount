@@ -123,10 +123,8 @@ export const hashCode = (s?: string) => {
   if (str.trim().length === 0) return hash;
   for (let i = 0; i < str.length; i++) {
     char = str.charCodeAt(i);
-    // tslint:disable-next-line
     hash = (hash << 5) - hash + char;
     // Convert to 32bit integer
-    // tslint:disable-next-line
     hash &= hash;
   }
   return Math.abs(hash);

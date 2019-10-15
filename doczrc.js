@@ -6,6 +6,12 @@ export default {
     showPlaygroundEditor: true,
   },
   codeSandbox: false,
-  menu: ['Introduction', 'Getting Started', 'Customization', 'Components'],
+  ignore: [
+    'README.md',
+    'CHANGELOG.md',
+    'CODE_OF_CONDUCT.md',
+    'CONTRIBUTING.md',
+    'LICENSE.md',
+  ],
   base: '/paramount/',
 };

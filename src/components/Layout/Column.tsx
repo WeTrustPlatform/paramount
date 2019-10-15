@@ -2,14 +2,10 @@ import dlv from 'dlv';
 import React from 'react';
 import { View, ViewProps, ViewStyle } from 'react-native';
 
-import { useTheme } from '../../theme';
+import { useTheme, ColumnCount, ScreenSize } from '../../theme';
 import { getStyle, OverrideStyle, Style } from '../../utils/Overrides';
-import {
-  ColumnCount,
-  DESC_ORDER_SCREEN_SIZES,
-  ScreenSize,
-  useLayout,
-} from './LayoutContext';
+
+import { DESC_ORDER_SCREEN_SIZES, useLayout } from './LayoutProvider';
 import { GutterWidthContext } from './Row';
 
 export interface ColumnConfigBase {
@@ -96,7 +92,10 @@ export const Column = (props: ColumnProps) => {
   } = props;
 
   const theme = useTheme();
-  const { currentScreenSize, gridColumnCount } = useLayout();
+  const { currentScreenSize } = useLayout();
+  const {
+    layout: { gridColumnCount },
+  } = theme;
   const gutterWidth = React.useContext(GutterWidthContext);
 
   const config = {

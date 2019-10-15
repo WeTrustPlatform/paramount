@@ -1,35 +1,94 @@
-import deepMerge from 'deepmerge';
 import React from 'react';
 import { Dimensions } from 'react-native';
 
+import { Layout, ScreenSize, useTheme } from '../../theme';
+
 import { LayoutDebugger } from './Debugger';
-import {
-  defaultLayout,
-  DESC_ORDER_SCREEN_SIZES,
-  GetResponsiveValueParam,
-  Layout,
-  LayoutContext,
-  ScreenSize,
-} from './LayoutContext';
+
+export interface GetResponsiveValueParam<
+  TXsmallValue = any,
+  TSmallValue = any,
+  TMediumValue = any,
+  TLargeValue = any,
+  TXlargeValue = any
+> {
+  xsmall?: TXlargeValue;
+  small?: TXsmallValue;
+  medium?: TSmallValue;
+  large?: TMediumValue;
+  xlarge?: TLargeValue;
+}
+
+export type GetResponsiveValue = <
+  TXsmallValue = any,
+  TSmallValue = any,
+  TMediumValue = any,
+  TLargeValue = any,
+  TXlargeValue = any
+>(
+  values: GetResponsiveValueParam<
+    TXsmallValue,
+    TSmallValue,
+    TMediumValue,
+    TLargeValue,
+    TXlargeValue
+  >,
+) =>
+  | TXlargeValue
+  | TLargeValue
+  | TMediumValue
+  | TSmallValue
+  | TXsmallValue
+  | undefined;
+
+export interface LayoutContextValue {
+  currentScreenSize: ScreenSize;
+  getResponsiveValue: GetResponsiveValue;
+}
+
+export const ASC_ORDER_SCREEN_SIZES: ScreenSize[] = [
+  'xsmall',
+  'small',
+  'medium',
+  'large',
+  'xlarge',
+];
+
+export const DESC_ORDER_SCREEN_SIZES: ScreenSize[] = ASC_ORDER_SCREEN_SIZES.slice(
+  0,
+).reverse();
+
+export const LayoutContext = React.createContext<LayoutContextValue>({
+  currentScreenSize: 'small',
+  getResponsiveValue: values =>
+    values.xsmall ||
+    values.small ||
+    values.medium ||
+    values.large ||
+    values.xlarge ||
+    undefined,
+});
+
+export const useLayout = () => {
+  return React.useContext(LayoutContext);
+};
 
 export interface LayoutProviderProps {
   debug?: boolean;
   children: React.ReactNode;
-  value?: Partial<Layout>;
 }
 
 export const LayoutProvider = (props: LayoutProviderProps) => {
-  const { children, value, debug = false } = props;
-
-  const layout = value ? deepMerge(defaultLayout, value) : defaultLayout;
+  const { children, debug = false } = props;
+  const theme = useTheme();
 
   const [currentScreenSize, setCurrentScreenSize] = React.useState(
-    getCurrentScreenSize(layout),
+    getCurrentScreenSize(theme.layout),
   );
 
   const handleDimensionsChange = React.useCallback(() => {
-    setCurrentScreenSize(getCurrentScreenSize(layout));
-  }, [layout]);
+    setCurrentScreenSize(getCurrentScreenSize(theme.layout));
+  }, [theme.layout]);
 
   React.useLayoutEffect(() => {
     Dimensions.addEventListener('change', handleDimensionsChange);
@@ -41,7 +100,6 @@ export const LayoutProvider = (props: LayoutProviderProps) => {
   return (
     <LayoutContext.Provider
       value={{
-        ...layout,
         currentScreenSize,
         getResponsiveValue: values =>
           deriveResponsiveValue(values, currentScreenSize),

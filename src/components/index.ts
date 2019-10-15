@@ -14,7 +14,6 @@ export * from './Layout';
 export * from './Helpers';
 export * from './Icon';
 export * from './Inputs';
-export * from './KitchenSink';
 export * from './ListItem';
 export * from './LoadingIndicators';
 export * from './Modal';

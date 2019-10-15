@@ -1,12 +1,14 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import { Alert } from './Alert';
+
 import { Box } from '../Box';
+
+import { Alert } from './Alert';
 
 export const AlertIntents = () => (
   <>
     <Box paddingVertical={8}>
-      <Alert title="Info" description="Message" />
+      <Alert intent="info" title="Info" description="Message" />
     </Box>
     <Box paddingVertical={8}>
       <Alert intent="success" title="Success" description="Message" />

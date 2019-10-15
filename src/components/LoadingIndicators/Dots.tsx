@@ -23,9 +23,7 @@ export const Dots = (props: DotsProps) => {
     onRest: forceUpdate,
     reset: true,
     to: async next => {
-      // tslint:disable-next-line
       await next({ opacity: 1 });
-      // tslint:disable-next-line
       await next({ opacity: 0 });
     },
   });
