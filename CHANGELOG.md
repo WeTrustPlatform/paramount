@@ -1,3 +1,10 @@
+## [1.86.3](https://github.com/WeTrustPlatform/paramount/compare/v1.86.2...v1.86.3) (2019-10-15)
+
+
+### Bug Fixes
+
+* icon props ([1131870](https://github.com/WeTrustPlatform/paramount/commit/1131870))
+
 ## [1.86.2](https://github.com/WeTrustPlatform/paramount/compare/v1.86.1...v1.86.2) (2019-10-15)
 
 
