@@ -5,18 +5,17 @@ node_js:
 
 jobs:
   include:
-    - stage: test
+    - stage: 'Run tests'
       script:
         - yarn test
         - yarn lint
-    - stage: build
+    - stage: 'Publish to NPM'
       script:
         - yarn build
-        - yarn build:docs
-    - stage: release
-      script:
         - yarn semantic-release
-    - stage: deploy
+    - stage: 'Deploy Documentation'
+      script:
+        - yarn build:docs
       deploy:
         provider: pages
         skip_cleanup: true
