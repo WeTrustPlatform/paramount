@@ -151,7 +151,7 @@ export const ListItem = (props: ListItemProps) => {
 
 interface RootProps extends ViewProps {
   children?: React.ReactNode;
-  isDisabled?: boolean;
+  isDisabled: boolean;
   size: ControlSize | number;
 }
 
@@ -164,6 +164,7 @@ const StyledRoot = (props: RootProps) => {
     <View
       style={[
         {
+          alignItems: 'center',
           flexDirection: 'row',
           minHeight: getControlHeight(size) + 8,
           backgroundColor: isDisabled
