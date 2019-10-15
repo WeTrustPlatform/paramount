@@ -20,7 +20,7 @@ export interface IconProps {
    * Size of the icon.
    * @default medium
    */
-  size?: TextSize;
+  size?: TextSize | number;
 }
 
 export type IconName =

@@ -46,15 +46,6 @@ module.exports = {
         '@typescript-eslint/no-var-requires': 'off',
       },
     },
-
-    // KitchenSink
-    {
-      files: ['KitchenSink.tsx'],
-      rules: {
-        '@typescript-eslint/no-var-requires': 'off',
-        'react/display-name': 'off',
-      },
-    },
   ],
   settings: {
     react: {
