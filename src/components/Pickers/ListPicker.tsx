@@ -3,11 +3,11 @@ import React from 'react';
 import { FlatList, FlatListProps } from 'react-native';
 
 import { useTheme } from '../../theme';
-import { getOverrides, Override, WithOverrides } from '../../utils/Overrides';
+import { getOverrides, WithOverrides } from '../../utils/Overrides';
 import { OptionalString } from '../../utils/types';
 import { Box } from '../Box';
 import { Checkbox } from '../Checkbox';
-import { ListItem, ListItemProps } from '../ListItem';
+import { ListItem, ListItemOverrides } from '../ListItem';
 
 import {
   PickerItem,
@@ -104,7 +104,7 @@ const StyledList = <TValue extends any>(props: ListProps<TValue>) => {
   return <FlatList {...props} />;
 };
 
-interface ListPickerItemProps<TValue extends any> {
+interface ListPickerItemBaseProps<TValue extends any> {
   index: number;
   isSelected: boolean;
   onPress: (value: TValue, index: number, isSelected: boolean) => void;
@@ -112,8 +112,10 @@ interface ListPickerItemProps<TValue extends any> {
   label: string;
   description?: OptionalString;
   isDisabled?: boolean;
-  override?: Override<ListPickerItemProps<TValue>, ListItemProps>;
 }
+
+export interface ListPickerItemProps<TValue extends any>
+  extends WithOverrides<ListPickerItemBaseProps<TValue>, ListItemOverrides> {}
 
 const StyledListPickerItem = <TValue extends any = any>(
   props: ListPickerItemProps<TValue>,
@@ -127,7 +129,7 @@ const StyledListPickerItem = <TValue extends any = any>(
     },
     value,
     description,
-    override,
+    overrides = {},
     isDisabled,
   } = props;
 
@@ -142,27 +144,25 @@ const StyledListPickerItem = <TValue extends any = any>(
     </Box>
   );
 
-  const [ListItemR, listItemRProps] = getOverrides(
-    ListItem,
-    props,
-    {
-      onPress: () => onPress(value, index, isSelected),
-      title: label,
-      description,
-      isDisabled,
-      overrides: {
-        Touchable: {
-          style: {
-            paddingRight: 8,
-          },
+  const [ListItemR, listItemRProps] = getOverrides(ListItem, props, {
+    onPress: () => onPress(value, index, isSelected),
+    title: label,
+    description,
+    isDisabled,
+    overrides: {
+      ...overrides,
+      Touchable: {
+        style: {
+          paddingRight: 8,
         },
-        Action: {
-          component: Action,
-        },
+        ...overrides.Touchable,
+      },
+      Action: {
+        component: Action,
+        ...overrides.Action,
       },
     },
-    override,
-  );
+  });
 
   return <ListItemR {...listItemRProps} />;
 };
