@@ -13,4 +13,8 @@ export interface ModalProps extends RNModalProps {
   children?: React.ReactNode;
 }
 
-export const Modal = (props: ModalProps) => <RNModal {...props} />;
+export const Modal = (props: ModalProps) => {
+  const { useHistory, shouldLockBodyScroll, ...modalProps } = props;
+
+  return <RNModal {...modalProps} />;
+};
