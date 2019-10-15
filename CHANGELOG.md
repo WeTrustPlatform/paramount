@@ -1,3 +1,11 @@
+## [1.86.1](https://github.com/WeTrustPlatform/paramount/compare/v1.86.0...v1.86.1) (2019-10-15)
+
+
+### Bug Fixes
+
+* remove expo dependency ([7cf8402](https://github.com/WeTrustPlatform/paramount/commit/7cf8402))
+* upgrade and add missing deps ([3d656e8](https://github.com/WeTrustPlatform/paramount/commit/3d656e8))
+
 # [1.86.0](https://github.com/WeTrustPlatform/paramount/compare/v1.85.1...v1.86.0) (2019-10-15)
 
 
