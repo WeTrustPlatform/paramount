@@ -2,15 +2,15 @@ import dlv from 'dlv';
 import React from 'react';
 import { View, ViewProps, ViewStyle } from 'react-native';
 
-import { useTheme } from '../../theme';
-import { getStyle, OverrideStyle, Style } from '../../utils/Overrides';
 import {
+  useTheme,
   ContainerSize,
   ContainerSizes,
-  DESC_ORDER_SCREEN_SIZES,
   ScreenSize,
-  useLayout,
-} from './LayoutContext';
+} from '../../theme';
+import { getStyle, OverrideStyle, Style } from '../../utils/Overrides';
+
+import { DESC_ORDER_SCREEN_SIZES, useLayout } from './LayoutProvider';
 
 export interface ContainerProps extends Omit<ViewProps, 'style'> {
   /** Children node */
@@ -42,7 +42,10 @@ export type ContainerOverride = OverrideStyle<ContainerProps, ViewStyle>;
 export const Container = (props: ContainerProps) => {
   const { children, size, fluid = false, style, ...viewProps } = props;
   const theme = useTheme();
-  const { gutterWidth, containerSizes, currentScreenSize } = useLayout();
+  const { currentScreenSize } = useLayout();
+  const {
+    layout: { gutterWidth, containerSizes },
+  } = theme;
 
   return (
     <View

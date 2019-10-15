@@ -4,6 +4,7 @@ import { FlatList } from 'react-native';
 
 import { useTheme } from '../../theme';
 import { getOverrides, WithOverrides } from '../../utils/Overrides';
+
 import {
   ArrowProps,
   ITEM_HEIGHT,
@@ -20,11 +21,8 @@ import {
   useWheelPicker,
   WheelPickerItemProps,
   WheelPickerOption,
+  WheelPickerRef,
 } from './WheelPickerCommon';
-
-export interface WheelPicker<TValue extends any> {
-  selectValue: (value: TValue) => void;
-}
 
 interface WheelPickerBaseProps<TValue extends any> {
   /**
@@ -65,7 +63,7 @@ export interface WheelPickerProps<TValue extends any>
 export const WheelPicker = React.forwardRef(
   <TValue extends any>(
     props: WheelPickerProps<TValue>,
-    ref: React.Ref<WheelPicker<TValue>>,
+    ref: React.Ref<WheelPickerRef<TValue>>,
   ) => {
     const { data = [], onValueChange, value, overrides = {} } = props;
     const theme = useTheme();

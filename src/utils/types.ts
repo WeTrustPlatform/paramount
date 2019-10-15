@@ -1,4 +1,3 @@
-// tslint:disable
 export type OptionalString = string | false | null | undefined;
 
 export type Primitive =

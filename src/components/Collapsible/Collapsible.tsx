@@ -218,7 +218,6 @@ const StyledIcon = (props: StyledIconProps) => {
   );
 };
 
-// tslint:disable-next-line
 interface IconProps {}
 
 const StyledIconOpen = () => <StyledIcon showOpen={false} />;

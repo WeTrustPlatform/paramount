@@ -5,6 +5,7 @@ import { Platform, TextStyle, View, ViewProps, ViewStyle } from 'react-native';
 import { useTheme } from '../../theme';
 import { getOverrides, getStyle, WithOverrides } from '../../utils/Overrides';
 import { OptionalString } from '../../utils/types';
+
 import { Text, TextProps } from './Text';
 
 export type LabelPosition = 'top' | 'left' | 'right';

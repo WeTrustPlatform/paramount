@@ -11,6 +11,7 @@ import { ControlSize, TextColor, useTheme } from '../../theme';
 import { isControlSize } from '../../utils/ControlSize';
 import { getOverrides, WithOverrides } from '../../utils/Overrides';
 import { getTextColor } from '../Typography';
+
 import { Star } from './Star';
 
 interface RatingBaseProps {

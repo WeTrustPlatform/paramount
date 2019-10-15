@@ -1,9 +1,10 @@
 import React from 'react';
 import { ImageBackground, View } from 'react-native';
 
+import { useTheme } from '../../theme';
+
 import { Column } from './Column';
 import { Container } from './Container';
-import { useLayout } from './LayoutContext';
 import { Row } from './Row';
 
 interface LayoutDebuggerProps {
@@ -37,7 +38,9 @@ export const LayoutDebugger = (props: LayoutDebuggerProps) => {
 };
 
 const ColumnGrid = () => {
-  const { gridColumnCount } = useLayout();
+  const {
+    layout: { gridColumnCount },
+  } = useTheme();
 
   return (
     <Container style={{ flex: 1 }}>

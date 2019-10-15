@@ -1,0 +1,19 @@
+{
+  // EDITOR
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  // TYPESCRIPT
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.reportStyleChecksAsWarnings": false,
+
+  // ESLINT & PRETTIER
+  "eslint.packageManager": "yarn",
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    { "language": "typescript", "autoFix": true },
+    { "language": "typescriptreact", "autoFix": true }
+  ]
+}

@@ -9,7 +9,10 @@ import {
 import { useTheme } from '../../theme';
 import { Icon } from '../Icon';
 import { Text } from '../Typography';
-import { WheelPicker } from './WheelPicker';
+
+export interface WheelPickerRef<TValue extends any> {
+  selectValue: (value: TValue) => void;
+}
 
 export const ITEM_HEIGHT = 40;
 export const ITEM_COUNT = 3;
@@ -70,7 +73,7 @@ export interface UseWheelPickerProps<TValue extends any> {
   /**
    * Methods of the WheelPicker
    */
-  ref: React.Ref<WheelPicker<TValue>>;
+  ref: React.Ref<WheelPickerRef<TValue>>;
 }
 
 export const useWheelPicker = <TValue extends any>(
@@ -271,7 +274,6 @@ export const StyledUpperOverlay = (props: OverlayProps) => {
   );
 };
 
-// tslint:disable-next-line
 export interface ArrowProps extends TouchableOpacityProps {}
 
 const Arrow = (props: ArrowProps & { direction: 'up' | 'down' }) => {

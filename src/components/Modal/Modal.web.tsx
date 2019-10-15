@@ -1,7 +1,18 @@
+import createFocusTrap, { FocusTrap } from 'focus-trap';
 import React from 'react';
+import ReactDOM from 'react-dom';
+import { animated, useSpring } from 'react-spring/web.cjs';
 
-import { HistoryModalProps } from './HistoryModal';
-import { ModalBase } from './ModalBase';
+import { springDefaultConfig } from '../../constants/Animation';
+import { useElement, useLockBodyScroll } from '../../hooks';
+
+import { ModalProps } from './Modal';
+
+export const Modal = ({ useHistory = false, ...props }: ModalProps) => {
+  if (useHistory) return <HistoryModal {...props} />;
+
+  return <ModalBase {...props} />;
+};
 
 let modalId = 0;
 
@@ -12,10 +23,10 @@ let modalId = 0;
  * 3. Manually closed from within the modal (e.g. Close button)
  * Each of them should properly restore the page user was at
  */
-class HistoryModalBase extends React.Component<HistoryModalProps> {
+class HistoryModal extends React.Component<ModalProps> {
   public modalId = ++modalId;
 
-  public componentDidUpdate = (previousProps: HistoryModalProps) => {
+  public componentDidUpdate = (previousProps: ModalProps) => {
     const { visible } = this.props;
 
     if (previousProps.visible !== visible) {
@@ -133,11 +144,99 @@ class HistoryModalBase extends React.Component<HistoryModalProps> {
   }
 }
 
-export const HistoryModal = ({
-  useHistory = false,
-  ...props
-}: HistoryModalProps) => {
-  if (useHistory) return <HistoryModalBase {...props} />;
+// Temporary usage until it is integrated
+// https://github.com/necolas/react-native-web/issues/1020
 
-  return <ModalBase {...props} />;
+// eslint-disable-next-line
+const ModalBase = (props: ModalProps): React.ReactPortal | null => {
+  const {
+    children,
+    transparent,
+    visible,
+    shouldLockBodyScroll = true,
+    onRequestClose,
+    animationType = 'none',
+  } = props;
+  const isUnmountingRef = React.useRef(false);
+  const targetElement = useElement();
+  const [isInView, setIsInView] = React.useState(visible);
+  const elementRef = React.useRef<HTMLDivElement>(null);
+  const focusTrapRef = React.useRef<FocusTrap>(null);
+
+  useLockBodyScroll({ isLocked: !!(shouldLockBodyScroll && visible) });
+
+  React.useEffect(() => {
+    const deactivateFocus = () => {
+      if (focusTrapRef.current) {
+        focusTrapRef.current.deactivate();
+        // @ts-ignore
+        focusTrapRef.current = null;
+      }
+    };
+
+    const activateFocus = () => {
+      if (elementRef.current && !focusTrapRef.current) {
+        // @ts-ignore
+        focusTrapRef.current = createFocusTrap(elementRef.current, {
+          initialFocus: elementRef.current,
+          onDeactivate: () => {
+            if (onRequestClose && visible && !isUnmountingRef.current) {
+              onRequestClose();
+            }
+          },
+        });
+
+        focusTrapRef.current.activate();
+      }
+    };
+
+    if (visible) {
+      activateFocus();
+      setIsInView(true);
+    } else {
+      deactivateFocus();
+    }
+
+    return () => {
+      isUnmountingRef.current = true;
+      deactivateFocus();
+    };
+  }, [onRequestClose, visible]);
+
+  const { opacity, y } = useSpring({
+    onRest: () => !visible && isInView && setIsInView(false),
+
+    config: springDefaultConfig,
+
+    opacity: animationType === 'fade' ? (visible ? 1 : 0) : 1,
+    y: animationType === 'slide' ? (visible ? 0 : 100) : 0,
+  });
+
+  // It will not work if targetElement is falsy so we exit early
+  // This may happen e.g. during SSR
+  if (!targetElement) return null;
+
+  return ReactDOM.createPortal(
+    <animated.div
+      tabIndex={-1}
+      ref={elementRef}
+      // @ts-ignore
+      style={{
+        backgroundColor: transparent ? 'transparent' : 'white',
+        bottom: 0,
+        display: isInView ? 'flex' : 'none',
+        flexDirection: 'column',
+        left: 0,
+        opacity,
+        position: shouldLockBodyScroll ? 'fixed' : 'absolute',
+        right: 0,
+        top: 0,
+        transform: y.interpolate(v => `translateY(${v}%)`),
+        zIndex: 1000,
+      }}
+    >
+      {visible ? children : null}
+    </animated.div>,
+    targetElement,
+  );
 };

@@ -17,6 +17,7 @@ import {
   TextSizes,
 } from '../../theme/Theme';
 import { getStyle, OverrideStyle, Style } from '../../utils/Overrides';
+
 import { TextAlign, TextTransform } from './types';
 
 export interface TextProps extends Omit<RNTextProps, 'style'> {

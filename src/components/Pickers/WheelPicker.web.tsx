@@ -3,8 +3,10 @@ import React from 'react';
 
 import { useTheme } from '../../theme';
 import { getOverrides } from '../../utils/Overrides';
-import { WheelPicker as WheelPickerRef, WheelPickerProps } from './WheelPicker';
+
+import { WheelPickerProps } from './WheelPicker';
 import {
+  WheelPickerRef,
   SCROLL_PICKER_HEIGHT,
   StyledArrowDown,
   StyledArrowUp,

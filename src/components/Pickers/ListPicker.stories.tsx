@@ -1,23 +1,12 @@
----
-name: ListPicker
-menu: Components
----
+import { storiesOf } from '@storybook/react';
+import React from 'react';
 
-import { Playground, Props } from 'docz';
-
-import { ListPicker } from './ListPicker';
 import { Box } from '../Box';
 import { State } from '../Helpers';
 
-# ListPicker
+import { ListPicker } from './ListPicker';
 
-ListPicker that supports single value or multiple values selected at the same item.
-
-`ListPicker` composes `FlatList`. To use `ref`, import `ListPickerWithRef` instead
-
-## Usage
-
-<Playground>
+storiesOf('ListPicker', module).add('Default', () => (
   <State initial={{ value: ['c', 'js', 'go'] }}>
     {({ state, setState }) => (
       <Box height={300}>
@@ -60,8 +49,4 @@ ListPicker that supports single value or multiple values selected at the same it
       </Box>
     )}
   </State>
-</Playground>
-
-## ListPicker Props
-
-<Props of={ListPicker} />
+));

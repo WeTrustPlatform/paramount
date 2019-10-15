@@ -29,7 +29,6 @@ export interface ToastInstance extends ToastSettings {
   onRemove: () => void;
 }
 
-// tslint:disable-next-line
 export interface ToastProps extends ToastInstance {}
 
 export const Toast = (props: ToastProps) => {
