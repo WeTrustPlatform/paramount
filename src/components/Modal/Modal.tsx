@@ -1,5 +1,5 @@
-export { Modal } from 'react-native';
-import { ModalProps as RNModalProps } from 'react-native';
+import React from 'react';
+import { Modal as RNModal, ModalProps as RNModalProps } from 'react-native';
 
 export interface ModalProps extends RNModalProps {
   /** (Web only) In order to mimic similar behavior to Android's back button to close the modal on mobile web, HistoryModal will use hash or query string to determine whether it is opened or not. @default false */
@@ -12,3 +12,5 @@ export interface ModalProps extends RNModalProps {
   shouldLockBodyScroll?: boolean;
   children?: React.ReactNode;
 }
+
+export const Modal = (props: ModalProps) => <RNModal {...props} />;
