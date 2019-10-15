@@ -1,3 +1,16 @@
+# [1.86.0](https://github.com/WeTrustPlatform/paramount/compare/v1.85.1...v1.86.0) (2019-10-15)
+
+
+### Bug Fixes
+
+* remove custom svg compatibility ([3627c2d](https://github.com/WeTrustPlatform/paramount/commit/3627c2d))
+* travis build stages ([30864b3](https://github.com/WeTrustPlatform/paramount/commit/30864b3))
+
+
+### Features
+
+* clean up and upgrade docs ([#298](https://github.com/WeTrustPlatform/paramount/issues/298)) ([8241cb5](https://github.com/WeTrustPlatform/paramount/commit/8241cb5))
+
 ## [1.85.1](https://github.com/WeTrustPlatform/paramount/compare/v1.85.0...v1.85.1) (2019-10-14)
 
 
