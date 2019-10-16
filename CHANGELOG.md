@@ -1,3 +1,11 @@
+## [1.86.4](https://github.com/WeTrustPlatform/paramount/compare/v1.86.3...v1.86.4) (2019-10-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency deepmerge to v4.1.1 ([#311](https://github.com/WeTrustPlatform/paramount/issues/311)) ([c6366b0](https://github.com/WeTrustPlatform/paramount/commit/c6366b0))
+* **deps:** update dependency react-native-web to v0.11.7 ([#312](https://github.com/WeTrustPlatform/paramount/issues/312)) ([cb6386e](https://github.com/WeTrustPlatform/paramount/commit/cb6386e))
+
 ## [1.86.3](https://github.com/WeTrustPlatform/paramount/compare/v1.86.2...v1.86.3) (2019-10-15)
 
 
