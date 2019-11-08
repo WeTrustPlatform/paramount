@@ -5,141 +5,151 @@ order: 90
 
 # Customization
 
+Paramount UI provides full customizability of components.
+
 ## Look and Feel
 
-Use `ThemeProvider` and pass a `Theme` object. For all available options, [refer to Options](#options)
+For general look and feel customization, you can tweak the tokens in the theme. Pass a `Theme` object to `ThemeProvider`.
+For all available options, [refer to Options](#options)
 
-```
+```ts
 import { ThemeProvider } from 'paramount-ui'
 
-<ThemeProvider value={{
-  // Colors
-  colors: Colors;
-  fills: Fills;
+<ThemeProvider
+  value={{
+    // Colors
+    colors: Colors;
+    fills: Fills;
 
-  // Layout
-  layout: Layout;
+    // Layout
+    layout: Layout;
+    spacing: SpacingSizes;
 
-  // Typography
-  fontFamilies: FontFamilies;
-  fontWeights: FontWeights;
+    // Typography
+    fontFamilies: FontFamilies;
+    fontWeights: FontWeights;
 
-  headingSizes: HeadingSizes;
-  paragraphSizes: ParagraphSizes;
-  textSizes: TextSizes;
+    headingSizes: HeadingSizes;
+    paragraphSizes: ParagraphSizes;
+    textSizes: TextSizes;
 
-  // Elevations
-  elevations: Elevations;
+    // Elevations
+    elevations: Elevations;
 
-  // Controls - Buttons, Controls etc.
-  controlPaddings: ControlSizes;
-  controlHeights: ControlSizes;
-  controlBorderRadius: ControlSizes;
+    // Controls - Buttons, Pickers, Inputs etc.
+    controlPaddings: ControlSizes;
+    controlHeights: ControlSizes;
+    controlBorderRadius: ControlSizes;
 
-  // Container shapes
-  containerShapes: ContainerShapes;
-}}>
+    // Containers
+    containerShapes: ContainerShapes;
+  }}
+>
   ...
 </ThemeProvider>
 
+```
+
+You can also import theme values from a convenience hook `useTheme`
+
+```ts
+const MyComponent = () => {
+  const { colors, fills, ...theme } = useTheme();
+
+  ...
+}
 ```
 
 ## Components
 
-Components can be customized at two levels, [From ThemeProvider](#from-themeprovider) and [Per instance](#per-instance)
+For more granular level of component customization, we use "Overrides" approach inspired by [Base UI by Uber](https://baseweb.design/)
+
+Overrides can be applied either [per component](#per-component) or from [ThemeProvider](#from-themeprovider)
+
+### Per component
+
+Components with more than one React Node, expose `overrides` prop, through which you can customize the style or even its children props. Each component has a corresponding `Overrides API` section, through which you can see available options.
+
+For example (taken from `Picker.tsx`):
+
+```ts
+import { Button } from 'paramount-ui';
+
+const CustomButton = () => {
+  const { isSelected, value, onSelect } = props;
+  const theme = useTheme();
+
+  return (
+    <Button
+      color={isSelected ? 'primary' : 'default'}
+      overrides={{
+        Touchable: {
+          style: {
+            backgroundColor: isSelected ? 'white' : 'transparent',
+            paddingLeft: 0,
+            paddingRight: 0,
+          },
+        },
+        Title: {
+          style: {
+            color: isSelected
+              ? theme.colors.text.primary
+              : theme.colors.text.muted,
+          },
+        },
+      }}
+      title={typeof value === 'string' ? value : 'Invalid value'}
+      onPress={onSelect}
+    />
+  );
+};
+```
 
 ### From ThemeProvider
 
-In the same `ThemeProvider` as above, use `components` option. See `Customization` section in corresponding component docs to understand the `get*Sstyles` callback values
+In the same `ThemeProvider` as above, use `components` option to apply the overrides
 
-```
-import { ThemeProvider } from 'paramount-ui'
-
-<ThemeProvider value={{
-  // ...Other options
-
-  components: {
-    getAlertStyles?: GetAlertStyles;
-    getAvatarStyles?: GetAvatarStyles;
-    getBadgeStyles?: GetBadgeStyles;
-    getButtonStyles?: GetButtonStyles;
-    getCheckboxStyles?: GetCheckboxStyles;
-    getCollapsibleStyles?: GetCollapsibleStyles;
-    getCounterStyles?: GetCounterStyles;
-    getDialogStyles?: GetDialogStyles;
-    getDividerStyles?: GetDividerStyles;
-    getDrawerStyles?: GetDrawerStyles;
-    getFormFieldStyles?: GetFormFieldStyles;
-    getColumnStyles?: GetColumnStyles;
-    getContainerStyles?: GetContainerStyles;
-    getRowStyles?: GetRowStyles;
-    getTextInputStyles?: GetIconTextInputStyles;
-    getLabelStyles?: GetLabelStyles;
-    getListItemStyles?: GetListItemStyles;
-    getOverlayStyles?: GetOverlayStyles;
-    getPickerButtonStyles?: GetPickerButtonStyles;
-    getPopoverStyles?: GetPopoverStyles;
-    getPositionerStyles?: GetPositionerStyles;
-    getProgressBarStyles?: GetProgressBarStyles;
-    getRatingStyles?: GetRatingStyles;
-    getSliderStyles?: GetSliderStyles;
-    getSwitchStyles?: GetSwitchStyles;
-    getTabStyles?: GetTabStyles;
-    getTabsStyles?: GetTabsStyles;
-    getToastStyles?: GetToastStyles;
-    getHeadingStyles?: GetHeadingStyles;
-    getTextStyles?: GetTextStyles;
-    getParagraphStyles?: GetParagraphStyles;
-  }
-}}>
-  ...
-</ThemeProvider>
-
-```
-
-### Per instance
-
-Each component exposes `getStyles` callback, which can be used to override component styles. See `Customization` section in corresponding component docs to understand the `get*Sstyles` callback values
-
-```
-import { Button } from 'paramount-ui'
-
-const CustomButton = () => {
-  return (
-    <Button
-      isDisabled
-      getStyles={(props, theme) => {
-        const { isDisabled } = props;
-
-        // Style of each React Element
-        return {
-          touchableStyle: { ... },
-          textStyle: { ... },
-        }
-      }}
-    >
-  )
-}
-
-```
-
-## Usage
-
-Paramount exposes a convenience hook `useTheme` to import values from the `Theme`
-
-```tsx
-const MyComponent = () => {
-  const { colors, fills, ...restTheme } = useTheme();
-
-  ...
+```ts
+export interface ThemeOverrides {
+  Alert: Overrides<any, AlertOverrides>;
+  Avatar: Overrides<any, AvatarOverrides>;
+  Badge: Overrides<any, BadgeOverrides>;
+  Button: Overrides<any, ButtonOverrides>;
+  Checkbox: Overrides<any, CheckboxOverrides>;
+  Collapsible: Overrides<any, CollapsibleOverrides>;
+  Column: ColumnOverride;
+  Container: ContainerOverride;
+  Counter: Overrides<any, CounterOverrides>;
+  Dialog: Overrides<any, DialogOverrides>;
+  Divider: DividerOverride;
+  Drawer: Overrides<any, DrawerOverrides>;
+  FormField: Overrides<any, FormFieldOverrides>;
+  Heading: HeadingOverride;
+  Label: Overrides<any, LabelOverrides>;
+  ListItem: Overrides<any, ListItemOverrides>;
+  ListPicker: Overrides<any, ListPickerOverrides<any>>;
+  NativePicker: Overrides<any, NativePickerOverrides>;
+  Overlay: OverlayOverride;
+  Popover: Overrides<any, PopoverOverrides>;
+  Positioner: Overrides<any, PositionerOverrides>;
+  ProgressBar: Overrides<any, ProgressBarOverrides>;
+  Rating: Overrides<any, RatingOverrides>;
+  Row: RowOverride;
+  Slider: Overrides<any, SliderOverrides>;
+  Spacing: SpacingOverride;
+  Switch: Overrides<any, SwitchOverrides>;
+  Picker: Overrides<any, PickerOverrides<any, any, any>>;
+  Text: TextOverride;
+  TextInput: Overrides<any, TextInputOverrides>;
+  WheelPicker: Overrides<any, WheelPickerOverrides<any>>;
 }
 ```
 
 ## Options
 
-These are all the available configuration options, as well as the default configuration
+These are all the available theme configuration options, as well as their default values
 
-```
+```ts
 const controlPaddings: ControlSizes = {
   small: 8,
 
@@ -164,11 +174,20 @@ const controlBorderRadius: ControlSizes = {
   large: 4,
 };
 
+const spacing: { [size in SpacingSize]: number } = {
+  xsmall: 4,
+  small: 8,
+  medium: 16,
+  large: 24,
+  xlarge: 32,
+  xxlarge: 40,
+  xxxlarge: 48,
+};
+
 const colors: Colors = {
   background: {
     base: 'white',
     content: 'white',
-    overlay: 'rgba(0,0,0,0.3)',
 
     greyLight: palette.neutral.lightest,
     greyDefault: '#F5F6F7',
@@ -229,7 +248,7 @@ const colors: Colors = {
   },
 
   text: {
-    link: palette.neutral.darkest,
+    link: palette.teal.darkest,
     default: palette.neutral.darkest,
     muted: palette.neutral.dark,
     white: 'white',
@@ -376,19 +395,18 @@ const fills: Fills = {
   },
 };
 
+// Use system font on the Web
 const fontFamilies: FontFamilies =
   Platform.OS === 'web'
-    ? // Use system font on the Web
-      {
+    ? {
         heading: `"SF UI Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
         mono: `"SF Mono", "Monaco", "Inconsolata", "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace`,
         text: `"SF UI Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
       }
-    : // Use default font families by React Native by default. Setting it to undefined will use the default font
-      {
-        heading: "System",
-        mono: "System",
-        text: "System",
+    : {
+        heading: 'System',
+        mono: 'System',
+        text: 'System',
       };
 
 const fontWeights: FontWeights = {
@@ -498,7 +516,7 @@ const containerShapes: ContainerShapes = {
   },
 };
 
-export const defaultLayout: Layout = {
+export const layout: Layout = {
   breakpoints: {
     small: 480,
 
@@ -515,15 +533,17 @@ export const defaultLayout: Layout = {
 
     large: 960,
 
-    xlarge: 1140,
+    xlarge: 1200,
   },
   gridColumnCount: 12,
-  gutterWidth: 30,
+  gutterWidth: 32,
 };
 
 export const defaultTheme: Theme = {
   colors,
   fills,
+
+  spacing,
   layout,
 
   fontFamilies,
@@ -540,7 +560,5 @@ export const defaultTheme: Theme = {
   controlPaddings,
 
   containerShapes,
-
-  components: {},
 };
 ```

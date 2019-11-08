@@ -13,5 +13,6 @@ export default {
     'CONTRIBUTING.md',
     'LICENSE.md',
   ],
+  menu: ['Introduction', 'Customization', 'Layout', 'Components'],
   base: '/paramount/',
 };

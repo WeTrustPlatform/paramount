@@ -55,55 +55,27 @@ Follow this process if you'd like your work considered for inclusion in the proj
 
 ## Development for React Native
 
-The development of components on native is done by levaraging [Expo](https://expo.io/)
-
-```bash
-cd <root>
-yarn develop:expo
-```
+N/A
 
 ## Development for React Web
+
+The development of components on web happen on Storybook
+
+```bash
+yarn dev
+```
+
+Storybook will then be available at http://localhost:6006.
+
+## Development for Docs
 
 The development of components on web happen on the documentation site
 
 ```bash
-cd <root>
-yarn develop:docs
+yarn docs
 ```
 
-The development/docs will then be available at http://localhost:3000.
-
-The site is created based on `*.mdx` files ([see MDX](https://github.com/mdx-js/mdx)) throughout the codebase which provides:
-
-**Component's playground**. Test out usage of the components and their features
-
-```
-<Playground>
-  <Button appearance="minimal" color="default" title="Default" />
-  <Button isDisabled color="primary" title="Disabled" />
-</Playground>
-```
-
-**Documentation**. Edit markdown for documentation of component features
-
-```
-## Section of component documentation
-
-You can just write documentation right next to the playground
-
-<Playground>
- ...
-</Playground>
-```
-
-**Tests**. Snapshots of components are taken directly from `<Playground />` for [snapshot testing](https://jestjs.io/docs/en/snapshot-testing) for UI tests
-
-## Making changes
-
-There are two files required to each component. Let's say for `TextInput`
-
-1. `TextInput.tsx` - The actual React Component
-2. `TextInput.styles.ts` - The React Component styling logic
+Docz will then be available at http://localhost:3000.
 
 ## Running Tests
 

@@ -4,25 +4,18 @@ order: 85
 ---
 
 import { Playground, Props } from 'docz';
-import { LayoutProvider, useLayout, Text } from '../src';
-
-export default ({ children }) => <LayoutProvider>{children}</LayoutProvider>;
 
 # Layout
 
-Paramount provides building blocks to create responsive layout via components `Visible`, `Row and Column`, `Container` and convenience functions ([see Usage](#usage))
+Paramount provides building blocks to create responsive layout via components `Visible`, `Row and Column`, `Container` and convenience functions.
 
-## Setup
+## Components
 
-Make sure to use `LayoutProvider` at the top-level component. For options, [see Configuration Options](#options)
+- [Visible](/paramount/src-components-visible) - Conditionally render children depending on screen size
+- [Row and Column (Grid)](/paramount/src-components-row-and-column) - For doing grid layouts
+- [Container](/paramount/src-components-container) - Keep children at contained width
 
-Use `debug` prop to see the layout
-
-```tsx
-<LayoutProvider value={{ layout: options }}>{children}</LayoutProvider>
-```
-
-## Usage
+## Hook
 
 Paramount exposes a convenience hook `useLayout` that you can import to make use of utility functions for layout
 
@@ -30,14 +23,15 @@ Paramount exposes a convenience hook `useLayout` that you can import to make use
 
 Retrieves the current screen size
 
-```tsx
+```ts
 const { currentScreenSize } = useLayout();
 ```
 
 ### getResponsiveValue
 
-```tsx
+```ts
 const { getResponsiveValue } = useLayout();
+
 const color = getResponsiveValue({
   xsmall: 'red',
   large: 'blue',
@@ -48,16 +42,12 @@ const number = getResponsiveValue({
 });
 ```
 
-### Responsive Components
-
-`Visible`, `Row and Column`, `Container`
-
 ## Options
 
-These are all the available configuration options, as well as the default layout configuration
+These are all the available theme configuration options, as well as their default values. Pass the config to `ThemeProvider`
 
 ```ts
-export const defaultLayout: Layout = {
+export const layout: Layout = {
   breakpoints: {
     small: 480,
 

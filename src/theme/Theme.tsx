@@ -56,7 +56,7 @@ export interface Theme {
   // Elevations
   elevations: Elevations;
 
-  // Controls - Buttons, Controls etc.
+  // Controls - Buttons, Pickers, Inputs etc.
   controlPaddings: ControlSizes;
   controlHeights: ControlSizes;
   controlBorderRadius: ControlSizes;
