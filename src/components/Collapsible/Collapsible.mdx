@@ -14,13 +14,27 @@ Component to reveal and hide content
 
 ## Usage
 
+### Uncontrolled
+
+<Playground>
+  <Collapsible title="Toggle" initialIsOpen={false}>
+    <Box
+      marginVertical={16}
+      justifyContent="center"
+      alignItems="center"
+      height={300}
+      backgroundColor="#67c6bb"
+    />
+  </Collapsible>
+</Playground>
+
+### Controlled
+
 <Playground>
   <Toggle initial={false}>
     {({ on, toggle }) => (
       <Collapsible
-        title={
-          on ? 'Close controlled collapsible' : 'Open controlled collapsible'
-        }
+        title={on ? 'Close collapsible' : 'Open collapsible'}
         isOpen={on}
         onOpen={toggle}
         onClose={toggle}
@@ -35,17 +49,20 @@ Component to reveal and hide content
       </Collapsible>
     )}
   </Toggle>
-  <Collapsible title="Uncontrolled collapsible">
-    <Box
-      marginVertical={16}
-      justifyContent="center"
-      alignItems="center"
-      height={300}
-      backgroundColor="#67c6bb"
-    />
-  </Collapsible>
 </Playground>
 
 ## Props
 
 <Props of={Collapsible} />
+
+## Overrides
+
+```ts
+export interface CollapsibleOverrides {
+  Touchable: TouchableProps;
+  Title: TitleProps;
+  IconOpen: IconProps;
+  IconClose: IconProps;
+  Content: ContentProps;
+}
+```

@@ -14,6 +14,8 @@ Checkbox for boolean values
 
 ## Usage
 
+### Toggle
+
 <Playground>
   <Toggle initial={false}>
     {({ on, toggle }) => (
@@ -21,13 +23,39 @@ Checkbox for boolean values
         shape="circle"
         value={on}
         onValueChange={toggle}
-        label="Checkbox label"
-        size="medium"
+        label="Label"
       />
     )}
   </Toggle>
 </Playground>
 
+### Sizes
+
+<Playground>
+  <Checkbox value={true} label="Small" size="small" />
+  <Checkbox value={true} label="Medium" size="medium" />
+  <Checkbox value={true} label="Large" size="large" />
+</Playground>
+
+### Shapes
+
+<Playground>
+  <Checkbox value={true} label="Square" shape="square" />
+  <Checkbox value={true} label="Rounded" shape="rounded" />
+  <Checkbox value={true} label="Pill" shape="pill" />
+  <Checkbox value={true} label="Circle" shape="circle" />
+</Playground>
+
 ## Props
 
 <Props of={Checkbox} />
+
+## Overrides
+
+```ts
+export interface CheckboxOverrides {
+  Touchable: TouchableProps;
+  Label: LabelProps;
+  Check: CheckProps;
+}
+```

@@ -9,18 +9,44 @@ import { Box } from '../Box';
 
 # Avatar
 
-Display avatar image, with default for name initials
+Display avatar image, with fallback to name initials
 
 ## Usage
+
+### With image
 
 <Playground>
   <Avatar
     source={{ uri: 'https://picsum.photos/200/200', width: 200, height: 200 }}
-    name="Bill Gates"
-    size="large"
   />
+</Playground>
+
+### Using initials
+
+<Playground>
+  <Avatar name="My Initial" />
+</Playground>
+
+### Varying sizes
+
+<Playground>
+  <Box flexDirection="row">
+    <Avatar name="Small" size="small" />
+    <Avatar name="Medium" size="medium" />
+    <Avatar name="Large" size="large" />
+  </Box>
 </Playground>
 
 ## Props
 
 <Props of={Avatar} />
+
+## Overrides
+
+```ts
+export interface AvatarOverrides {
+  Root: RootProps;
+  Initials: InitialsProps;
+  Image: ImageProps;
+}
+```

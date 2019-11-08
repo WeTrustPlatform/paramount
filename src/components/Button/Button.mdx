@@ -13,6 +13,8 @@ Button component to trigger an action
 
 ## Usage
 
+### Variations
+
 <Playground>
   <Box flexDirection="row">
     <Box paddingRight={16} height={240} justifyContent="space-between">
@@ -47,6 +49,32 @@ Button component to trigger an action
   </Box>
 </Playground>
 
+### Sizes
+
+<Playground>
+  <Box paddingBottom={16}>
+    <Button title="Small" size="small" />
+  </Box>
+  <Box paddingBottom={16}>
+    <Button title="Medium" size="medium" />
+  </Box>
+  <Box paddingBottom={16}>
+    <Button title="Large" size="large" />
+  </Box>
+</Playground>
+
 ## Props
 
 <Props of={Button} />
+
+## Overrides
+
+```ts
+export interface ButtonOverrides {
+  Touchable: TouchableProps;
+  Title: TitleProps;
+  IconBefore: IconProps;
+  IconAfter: IconProps;
+  Loading: LoadingProps;
+}
+```

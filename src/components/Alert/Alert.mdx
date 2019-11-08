@@ -14,9 +14,11 @@ Give feedback to the user about an action or state
 
 ## Usage
 
+### Intents
+
 <Playground>
   <Box paddingVertical={8}>
-    <Alert title="Info" description="Message" />
+    <Alert intent="info" title="Info" description="Message" />
   </Box>
   <Box paddingVertical={8}>
     <Alert intent="success" title="Success" description="Message" />
@@ -25,10 +27,17 @@ Give feedback to the user about an action or state
     <Alert intent="warning" title="Warning" description="Message" />
   </Box>
   <Box paddingVertical={8}>
+    <Alert intent="danger" title="Warning" description="Message" />
+  </Box>
+</Playground>
+
+### With action button
+
+<Playground>
+  <Box paddingVertical={8}>
     <Alert
-      intent="danger"
-      title="Danger"
-      description="Message"
+      title="With action"
+      description="Add any action to the right side of the alert"
       overrides={{
         Action: {
           component: () => (
@@ -43,3 +52,17 @@ Give feedback to the user about an action or state
 ## Props
 
 <Props of={Alert} />
+
+## Overrides
+
+```ts
+export interface AlertOverrides {
+  Root: RootProps;
+  LeftWrapper: LeftWrapperProps;
+  AlertIcon: AlertIconProps;
+  Body: BodyProps;
+  Title: TitleProps;
+  Description: DescriptionProps;
+  Action: ActionProps;
+}
+```

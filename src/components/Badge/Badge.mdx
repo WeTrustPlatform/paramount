@@ -13,12 +13,66 @@ Display to indicate status or feat of service
 
 ## Usage
 
+### Colors
+
 <Playground>
-  <Box>
-    <Badge title="Badge" color="teal" isSolid size="large" shape="pill" />
+  <Box flexDirection="row">
+    <Badge title="neutral" color="neutral" />
+    <Badge title="blue" color="blue" />
+    <Badge title="red" color="red" />
+    <Badge title="orange" color="orange" />
+    <Badge title="yellow" color="yellow" />
+    <Badge title="green" color="green" />
+    <Badge title="teal" color="teal" />
+    <Badge title="purple" color="purple" />
+  </Box>
+</Playground>
+
+### Solid colors
+
+<Playground>
+  <Box flexDirection="row">
+    <Badge title="neutral" color="neutral" isSolid />
+    <Badge title="blue" color="blue" isSolid />
+    <Badge title="red" color="red" isSolid />
+    <Badge title="orange" color="orange" isSolid />
+    <Badge title="yellow" color="yellow" isSolid />
+    <Badge title="green" color="green" isSolid />
+    <Badge title="teal" color="teal" isSolid />
+    <Badge title="purple" color="purple" isSolid />
+  </Box>
+</Playground>
+
+### Sizes
+
+<Playground>
+  <Box flexDirection="row">
+    <Badge title="small" size="small" />
+    <Badge title="medium" size="medium" />
+    <Badge title="large" size="large" />
+  </Box>
+</Playground>
+
+### Shapes
+
+<Playground>
+  <Box flexDirection="row">
+    <Badge title="square" shape="square" />
+    <Badge title="rounded" shape="rounded" />
+    <Badge title="pill" shape="pill" />
+    <Badge title="circle" shape="circle" />
   </Box>
 </Playground>
 
 ## Props
 
 <Props of={Badge} />
+
+## Overrides
+
+```ts
+export interface BadgeOverrides {
+  Root: RootProps;
+  Title: TitleProps;
+}
+```
