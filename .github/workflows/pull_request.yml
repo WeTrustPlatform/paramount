@@ -1,8 +1,8 @@
-name: Non-master Branch
+name: Pull Request
 
 on:
-  push:
-    branches-ignore: 
+  pull_request:
+    branches: 
     - master
 
 jobs:
