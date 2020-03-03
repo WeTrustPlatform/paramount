@@ -1,0 +1,38 @@
+name: Master Branch
+
+on:
+  push:
+    branches: 
+    - master
+
+jobs:
+  build-and-deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+        registry-url: 'https://registry.npmjs.org'
+    - run: yarn install
+    - name: Run tests
+      run: |
+        yarn test
+        yarn lint
+    - name: Publish to NPM
+      run: |
+        yarn build
+        yarn semantic-release
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Build documentations
+      run: yarn build:docs
+    - name: Deploy documentations
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: .docz/dist # The folder the action should deploy.

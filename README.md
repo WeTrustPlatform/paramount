@@ -1,6 +1,6 @@
 # Paramount
 
-[![Build Status](https://travis-ci.org/WeTrustPlatform/paramount.svg?branch=master)](https://travis-ci.org/WeTrustPlatform/paramount.svg?branch=master)
+![Master Branch](https://github.com/WeTrustPlatform/paramount/workflows/Master%20Branch/badge.svg)
 ![npm](https://img.shields.io/npm/v/paramount-ui.svg) ![GitHub](https://img.shields.io/github/license/wetrustplatform/paramount.svg)
 
 Paramount UI is a React components library. The core features of this library is
