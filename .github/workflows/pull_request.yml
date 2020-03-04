@@ -15,9 +15,10 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-        registry-url: 'https://registry.npmjs.org'
     - run: yarn install
     - name: Run tests
       run: |
         yarn test
         yarn lint
+        yarn build
+        yarn build:docs
