@@ -99,7 +99,7 @@
     "rimraf": "2.7.1",
     "semantic-release": "15.13.24",
     "ts-jest": "24.1.0",
-    "typescript": "3.6.3"
+    "typescript": "3.8.3"
   },
   "peerDependencies": {
     "react": "^16.8.0",
