@@ -1,360 +1,316 @@
-## [1.86.4](https://github.com/WeTrustPlatform/paramount/compare/v1.86.3...v1.86.4) (2019-10-16)
-
+## [1.86.5](https://github.com/WeTrustPlatform/paramount/compare/v1.86.4...v1.86.5) (2020-03-18)
 
 ### Bug Fixes
 
-* **deps:** update dependency deepmerge to v4.1.1 ([#311](https://github.com/WeTrustPlatform/paramount/issues/311)) ([c6366b0](https://github.com/WeTrustPlatform/paramount/commit/c6366b0))
-* **deps:** update dependency react-native-web to v0.11.7 ([#312](https://github.com/WeTrustPlatform/paramount/issues/312)) ([cb6386e](https://github.com/WeTrustPlatform/paramount/commit/cb6386e))
+- catch build errors earlier in PR ([088cdb0](https://github.com/WeTrustPlatform/paramount/commit/088cdb0))
+
+## [1.86.4](https://github.com/WeTrustPlatform/paramount/compare/v1.86.3...v1.86.4) (2019-10-16)
+
+### Bug Fixes
+
+- **deps:** update dependency deepmerge to v4.1.1 ([#311](https://github.com/WeTrustPlatform/paramount/issues/311)) ([c6366b0](https://github.com/WeTrustPlatform/paramount/commit/c6366b0))
+- **deps:** update dependency react-native-web to v0.11.7 ([#312](https://github.com/WeTrustPlatform/paramount/issues/312)) ([cb6386e](https://github.com/WeTrustPlatform/paramount/commit/cb6386e))
 
 ## [1.86.3](https://github.com/WeTrustPlatform/paramount/compare/v1.86.2...v1.86.3) (2019-10-15)
 
-
 ### Bug Fixes
 
-* icon props ([1131870](https://github.com/WeTrustPlatform/paramount/commit/1131870))
+- icon props ([1131870](https://github.com/WeTrustPlatform/paramount/commit/1131870))
 
 ## [1.86.2](https://github.com/WeTrustPlatform/paramount/compare/v1.86.1...v1.86.2) (2019-10-15)
 
-
 ### Bug Fixes
 
-* upgrade lint-staged ([d844cd8](https://github.com/WeTrustPlatform/paramount/commit/d844cd8))
+- upgrade lint-staged ([d844cd8](https://github.com/WeTrustPlatform/paramount/commit/d844cd8))
 
 ## [1.86.1](https://github.com/WeTrustPlatform/paramount/compare/v1.86.0...v1.86.1) (2019-10-15)
 
-
 ### Bug Fixes
 
-* remove expo dependency ([7cf8402](https://github.com/WeTrustPlatform/paramount/commit/7cf8402))
-* upgrade and add missing deps ([3d656e8](https://github.com/WeTrustPlatform/paramount/commit/3d656e8))
+- remove expo dependency ([7cf8402](https://github.com/WeTrustPlatform/paramount/commit/7cf8402))
+- upgrade and add missing deps ([3d656e8](https://github.com/WeTrustPlatform/paramount/commit/3d656e8))
 
 # [1.86.0](https://github.com/WeTrustPlatform/paramount/compare/v1.85.1...v1.86.0) (2019-10-15)
 
-
 ### Bug Fixes
 
-* remove custom svg compatibility ([3627c2d](https://github.com/WeTrustPlatform/paramount/commit/3627c2d))
-* travis build stages ([30864b3](https://github.com/WeTrustPlatform/paramount/commit/30864b3))
-
+- remove custom svg compatibility ([3627c2d](https://github.com/WeTrustPlatform/paramount/commit/3627c2d))
+- travis build stages ([30864b3](https://github.com/WeTrustPlatform/paramount/commit/30864b3))
 
 ### Features
 
-* clean up and upgrade docs ([#298](https://github.com/WeTrustPlatform/paramount/issues/298)) ([8241cb5](https://github.com/WeTrustPlatform/paramount/commit/8241cb5))
+- clean up and upgrade docs ([#298](https://github.com/WeTrustPlatform/paramount/issues/298)) ([8241cb5](https://github.com/WeTrustPlatform/paramount/commit/8241cb5))
 
 ## [1.85.1](https://github.com/WeTrustPlatform/paramount/compare/v1.85.0...v1.85.1) (2019-10-14)
 
-
 ### Bug Fixes
 
-* conform esModuleInterop ([3fe7038](https://github.com/WeTrustPlatform/paramount/commit/3fe7038))
-* list item fixes ([2037172](https://github.com/WeTrustPlatform/paramount/commit/2037172))
-* migrate to eslint ([f425a99](https://github.com/WeTrustPlatform/paramount/commit/f425a99))
-* theme overrides for single root components ([bbb759b](https://github.com/WeTrustPlatform/paramount/commit/bbb759b))
+- conform esModuleInterop ([3fe7038](https://github.com/WeTrustPlatform/paramount/commit/3fe7038))
+- list item fixes ([2037172](https://github.com/WeTrustPlatform/paramount/commit/2037172))
+- migrate to eslint ([f425a99](https://github.com/WeTrustPlatform/paramount/commit/f425a99))
+- theme overrides for single root components ([bbb759b](https://github.com/WeTrustPlatform/paramount/commit/bbb759b))
 
 # [1.85.0](https://github.com/WeTrustPlatform/paramount/compare/v1.84.0...v1.85.0) (2019-10-09)
 
-
 ### Features
 
-* add layout debugger ([9770196](https://github.com/WeTrustPlatform/paramount/commit/9770196))
-* labeled checkbox ([30e476e](https://github.com/WeTrustPlatform/paramount/commit/30e476e))
+- add layout debugger ([9770196](https://github.com/WeTrustPlatform/paramount/commit/9770196))
+- labeled checkbox ([30e476e](https://github.com/WeTrustPlatform/paramount/commit/30e476e))
 
 # [1.84.0](https://github.com/WeTrustPlatform/paramount/compare/v1.83.6...v1.84.0) (2019-10-08)
 
-
 ### Features
 
-* override props and minheight ([19c4963](https://github.com/WeTrustPlatform/paramount/commit/19c4963))
+- override props and minheight ([19c4963](https://github.com/WeTrustPlatform/paramount/commit/19c4963))
 
 ## [1.83.6](https://github.com/WeTrustPlatform/paramount/compare/v1.83.5...v1.83.6) (2019-10-07)
 
-
 ### Bug Fixes
 
-* textinput disabled ([06881c3](https://github.com/WeTrustPlatform/paramount/commit/06881c3))
+- textinput disabled ([06881c3](https://github.com/WeTrustPlatform/paramount/commit/06881c3))
 
 ## [1.83.5](https://github.com/WeTrustPlatform/paramount/compare/v1.83.4...v1.83.5) (2019-10-07)
 
-
 ### Bug Fixes
 
-* style and overrides ([a99f5bd](https://github.com/WeTrustPlatform/paramount/commit/a99f5bd))
+- style and overrides ([a99f5bd](https://github.com/WeTrustPlatform/paramount/commit/a99f5bd))
 
 ## [1.83.4](https://github.com/WeTrustPlatform/paramount/compare/v1.83.3...v1.83.4) (2019-10-07)
 
-
 ### Bug Fixes
 
-* dialog and list picker style ([6682d2c](https://github.com/WeTrustPlatform/paramount/commit/6682d2c))
-* update snapshots ([4e399bb](https://github.com/WeTrustPlatform/paramount/commit/4e399bb))
+- dialog and list picker style ([6682d2c](https://github.com/WeTrustPlatform/paramount/commit/6682d2c))
+- update snapshots ([4e399bb](https://github.com/WeTrustPlatform/paramount/commit/4e399bb))
 
 ## [1.83.3](https://github.com/WeTrustPlatform/paramount/compare/v1.83.2...v1.83.3) (2019-10-03)
 
-
 ### Bug Fixes
 
-* box space ([1721b91](https://github.com/WeTrustPlatform/paramount/commit/1721b91))
+- box space ([1721b91](https://github.com/WeTrustPlatform/paramount/commit/1721b91))
 
 ## [1.83.2](https://github.com/WeTrustPlatform/paramount/compare/v1.83.1...v1.83.2) (2019-10-03)
 
-
 ### Bug Fixes
 
-* picker enhance generics ([aee196a](https://github.com/WeTrustPlatform/paramount/commit/aee196a))
+- picker enhance generics ([aee196a](https://github.com/WeTrustPlatform/paramount/commit/aee196a))
 
 ## [1.83.1](https://github.com/WeTrustPlatform/paramount/compare/v1.83.0...v1.83.1) (2019-10-03)
 
-
 ### Bug Fixes
 
-* export usePicker ([4bde61f](https://github.com/WeTrustPlatform/paramount/commit/4bde61f))
+- export usePicker ([4bde61f](https://github.com/WeTrustPlatform/paramount/commit/4bde61f))
 
 # [1.83.0](https://github.com/WeTrustPlatform/paramount/compare/v1.82.0...v1.83.0) (2019-10-03)
 
-
 ### Bug Fixes
 
-* list picker and heading style ([185236e](https://github.com/WeTrustPlatform/paramount/commit/185236e))
-
+- list picker and heading style ([185236e](https://github.com/WeTrustPlatform/paramount/commit/185236e))
 
 ### Features
 
-* add spacing component ([8a33e1b](https://github.com/WeTrustPlatform/paramount/commit/8a33e1b))
+- add spacing component ([8a33e1b](https://github.com/WeTrustPlatform/paramount/commit/8a33e1b))
 
 # [1.82.0](https://github.com/WeTrustPlatform/paramount/compare/v1.81.3...v1.82.0) (2019-10-02)
 
-
 ### Bug Fixes
 
-* button types ([6121f4c](https://github.com/WeTrustPlatform/paramount/commit/6121f4c))
-
+- button types ([6121f4c](https://github.com/WeTrustPlatform/paramount/commit/6121f4c))
 
 ### Features
 
-* add overlay color ([b132d23](https://github.com/WeTrustPlatform/paramount/commit/b132d23))
-* simplify api ([a5c73f0](https://github.com/WeTrustPlatform/paramount/commit/a5c73f0))
+- add overlay color ([b132d23](https://github.com/WeTrustPlatform/paramount/commit/b132d23))
+- simplify api ([a5c73f0](https://github.com/WeTrustPlatform/paramount/commit/a5c73f0))
 
 ## [1.81.3](https://github.com/WeTrustPlatform/paramount/compare/v1.81.2...v1.81.3) (2019-10-02)
 
-
 ### Bug Fixes
 
-* overrides of props ([39372b6](https://github.com/WeTrustPlatform/paramount/commit/39372b6))
-* pickers refactor ([9c58e63](https://github.com/WeTrustPlatform/paramount/commit/9c58e63))
+- overrides of props ([39372b6](https://github.com/WeTrustPlatform/paramount/commit/39372b6))
+- pickers refactor ([9c58e63](https://github.com/WeTrustPlatform/paramount/commit/9c58e63))
 
 ## [1.81.2](https://github.com/WeTrustPlatform/paramount/compare/v1.81.1...v1.81.2) (2019-10-01)
 
-
 ### Bug Fixes
 
-* allow booleans in place of strings ([8245f07](https://github.com/WeTrustPlatform/paramount/commit/8245f07))
-* allow nullifying components ([4095c7f](https://github.com/WeTrustPlatform/paramount/commit/4095c7f))
+- allow booleans in place of strings ([8245f07](https://github.com/WeTrustPlatform/paramount/commit/8245f07))
+- allow nullifying components ([4095c7f](https://github.com/WeTrustPlatform/paramount/commit/4095c7f))
 
 ## [1.81.1](https://github.com/WeTrustPlatform/paramount/compare/v1.81.0...v1.81.1) (2019-10-01)
 
-
 ### Bug Fixes
 
-* overrides test ([c7e57d9](https://github.com/WeTrustPlatform/paramount/commit/c7e57d9))
-* types ([00e8582](https://github.com/WeTrustPlatform/paramount/commit/00e8582))
+- overrides test ([c7e57d9](https://github.com/WeTrustPlatform/paramount/commit/c7e57d9))
+- types ([00e8582](https://github.com/WeTrustPlatform/paramount/commit/00e8582))
 
 # [1.81.0](https://github.com/WeTrustPlatform/paramount/compare/v1.80.0...v1.81.0) (2019-10-01)
 
-
 ### Features
 
-* implement overrides pattern ([#296](https://github.com/WeTrustPlatform/paramount/issues/296)) ([a962a7e](https://github.com/WeTrustPlatform/paramount/commit/a962a7e))
+- implement overrides pattern ([#296](https://github.com/WeTrustPlatform/paramount/issues/296)) ([a962a7e](https://github.com/WeTrustPlatform/paramount/commit/a962a7e))
 
 # [1.80.0](https://github.com/WeTrustPlatform/paramount/compare/v1.79.1...v1.80.0) (2019-09-26)
 
-
 ### Features
 
-* update pickers ([20486bc](https://github.com/WeTrustPlatform/paramount/commit/20486bc))
+- update pickers ([20486bc](https://github.com/WeTrustPlatform/paramount/commit/20486bc))
 
 ## [1.79.1](https://github.com/WeTrustPlatform/paramount/compare/v1.79.0...v1.79.1) (2019-09-25)
 
-
 ### Bug Fixes
 
-* revert deepmerge and fix wheelpicker ([502a372](https://github.com/WeTrustPlatform/paramount/commit/502a372))
+- revert deepmerge and fix wheelpicker ([502a372](https://github.com/WeTrustPlatform/paramount/commit/502a372))
 
 # [1.79.0](https://github.com/WeTrustPlatform/paramount/compare/v1.78.0...v1.79.0) (2019-09-24)
 
-
 ### Bug Fixes
 
-* refactor getStyles callbacks ([8074814](https://github.com/WeTrustPlatform/paramount/commit/8074814))
-* theme types build ([f237dbc](https://github.com/WeTrustPlatform/paramount/commit/f237dbc))
-
+- refactor getStyles callbacks ([8074814](https://github.com/WeTrustPlatform/paramount/commit/8074814))
+- theme types build ([f237dbc](https://github.com/WeTrustPlatform/paramount/commit/f237dbc))
 
 ### Features
 
-* add description to selectlist and expose types ([358c081](https://github.com/WeTrustPlatform/paramount/commit/358c081))
-* merge providers ([0d894cb](https://github.com/WeTrustPlatform/paramount/commit/0d894cb))
+- add description to selectlist and expose types ([358c081](https://github.com/WeTrustPlatform/paramount/commit/358c081))
+- merge providers ([0d894cb](https://github.com/WeTrustPlatform/paramount/commit/0d894cb))
 
 # [1.78.0](https://github.com/WeTrustPlatform/paramount/compare/v1.77.0...v1.78.0) (2019-09-23)
 
-
 ### Features
 
-* wheelpicker with arrows ([5f29d8f](https://github.com/WeTrustPlatform/paramount/commit/5f29d8f))
+- wheelpicker with arrows ([5f29d8f](https://github.com/WeTrustPlatform/paramount/commit/5f29d8f))
 
 # [1.77.0](https://github.com/WeTrustPlatform/paramount/compare/v1.76.2...v1.77.0) (2019-09-20)
 
-
 ### Bug Fixes
 
-* collapsible uncontrolled usage ([08bdebf](https://github.com/WeTrustPlatform/paramount/commit/08bdebf))
-* dont export value ([18689d4](https://github.com/WeTrustPlatform/paramount/commit/18689d4))
-* native picker children types ([df33868](https://github.com/WeTrustPlatform/paramount/commit/df33868))
-* text style type ([65da675](https://github.com/WeTrustPlatform/paramount/commit/65da675))
-
+- collapsible uncontrolled usage ([08bdebf](https://github.com/WeTrustPlatform/paramount/commit/08bdebf))
+- dont export value ([18689d4](https://github.com/WeTrustPlatform/paramount/commit/18689d4))
+- native picker children types ([df33868](https://github.com/WeTrustPlatform/paramount/commit/df33868))
+- text style type ([65da675](https://github.com/WeTrustPlatform/paramount/commit/65da675))
 
 ### Features
 
-* add conditional types to selectlist and slider ([e12a572](https://github.com/WeTrustPlatform/paramount/commit/e12a572))
-* enable flexible size ([67b1a81](https://github.com/WeTrustPlatform/paramount/commit/67b1a81))
+- add conditional types to selectlist and slider ([e12a572](https://github.com/WeTrustPlatform/paramount/commit/e12a572))
+- enable flexible size ([67b1a81](https://github.com/WeTrustPlatform/paramount/commit/67b1a81))
 
 ## [1.76.2](https://github.com/WeTrustPlatform/paramount/compare/v1.76.1...v1.76.2) (2019-09-03)
 
-
 ### Bug Fixes
 
-* docs and alert styles ([604bff5](https://github.com/WeTrustPlatform/paramount/commit/604bff5))
-* tests and layout ([03cf56f](https://github.com/WeTrustPlatform/paramount/commit/03cf56f))
+- docs and alert styles ([604bff5](https://github.com/WeTrustPlatform/paramount/commit/604bff5))
+- tests and layout ([03cf56f](https://github.com/WeTrustPlatform/paramount/commit/03cf56f))
 
 ## [1.76.1](https://github.com/WeTrustPlatform/paramount/compare/v1.76.0...v1.76.1) (2019-08-14)
 
-
 ### Bug Fixes
 
-* allow react nodes in form field ([862e7f4](https://github.com/WeTrustPlatform/paramount/commit/862e7f4))
+- allow react nodes in form field ([862e7f4](https://github.com/WeTrustPlatform/paramount/commit/862e7f4))
 
 # [1.76.0](https://github.com/WeTrustPlatform/paramount/compare/v1.75.2...v1.76.0) (2019-08-13)
 
-
 ### Features
 
-* export picker button ([e3cf736](https://github.com/WeTrustPlatform/paramount/commit/e3cf736))
+- export picker button ([e3cf736](https://github.com/WeTrustPlatform/paramount/commit/e3cf736))
 
 ## [1.75.2](https://github.com/WeTrustPlatform/paramount/compare/v1.75.1...v1.75.2) (2019-07-25)
 
-
 ### Bug Fixes
 
-* **deps:** update dependency react-native-svg to v9.5.3 ([#278](https://github.com/WeTrustPlatform/paramount/issues/278)) ([20367cb](https://github.com/WeTrustPlatform/paramount/commit/20367cb))
+- **deps:** update dependency react-native-svg to v9.5.3 ([#278](https://github.com/WeTrustPlatform/paramount/issues/278)) ([20367cb](https://github.com/WeTrustPlatform/paramount/commit/20367cb))
 
 ## [1.75.1](https://github.com/WeTrustPlatform/paramount/compare/v1.75.0...v1.75.1) (2019-07-25)
 
-
 ### Bug Fixes
 
-* **deps:** update dependency deepmerge to v4 ([#274](https://github.com/WeTrustPlatform/paramount/issues/274)) ([54b78d0](https://github.com/WeTrustPlatform/paramount/commit/54b78d0))
-* **deps:** update dependency ts-essentials to v2.0.12 ([#270](https://github.com/WeTrustPlatform/paramount/issues/270)) ([019458b](https://github.com/WeTrustPlatform/paramount/commit/019458b))
+- **deps:** update dependency deepmerge to v4 ([#274](https://github.com/WeTrustPlatform/paramount/issues/274)) ([54b78d0](https://github.com/WeTrustPlatform/paramount/commit/54b78d0))
+- **deps:** update dependency ts-essentials to v2.0.12 ([#270](https://github.com/WeTrustPlatform/paramount/issues/270)) ([019458b](https://github.com/WeTrustPlatform/paramount/commit/019458b))
 
 # [1.75.0](https://github.com/WeTrustPlatform/paramount/compare/v1.74.4...v1.75.0) (2019-07-03)
 
-
 ### Features
 
-* add new component WheelPicker ([#230](https://github.com/WeTrustPlatform/paramount/issues/230)) ([0529f80](https://github.com/WeTrustPlatform/paramount/commit/0529f80))
+- add new component WheelPicker ([#230](https://github.com/WeTrustPlatform/paramount/issues/230)) ([0529f80](https://github.com/WeTrustPlatform/paramount/commit/0529f80))
 
 ## [1.74.4](https://github.com/WeTrustPlatform/paramount/compare/v1.74.3...v1.74.4) (2019-07-03)
 
-
 ### Bug Fixes
 
-* **deps:** update dependency react-native-web to v0.11.5 ([#267](https://github.com/WeTrustPlatform/paramount/issues/267)) ([f7c41d9](https://github.com/WeTrustPlatform/paramount/commit/f7c41d9))
+- **deps:** update dependency react-native-web to v0.11.5 ([#267](https://github.com/WeTrustPlatform/paramount/issues/267)) ([f7c41d9](https://github.com/WeTrustPlatform/paramount/commit/f7c41d9))
 
 ## [1.74.3](https://github.com/WeTrustPlatform/paramount/compare/v1.74.2...v1.74.3) (2019-07-03)
 
-
 ### Bug Fixes
 
-* **deps:** update dependency react-native-vector-icons to v6.6.0 ([#262](https://github.com/WeTrustPlatform/paramount/issues/262)) ([b270ed2](https://github.com/WeTrustPlatform/paramount/commit/b270ed2))
+- **deps:** update dependency react-native-vector-icons to v6.6.0 ([#262](https://github.com/WeTrustPlatform/paramount/issues/262)) ([b270ed2](https://github.com/WeTrustPlatform/paramount/commit/b270ed2))
 
 ## [1.74.2](https://github.com/WeTrustPlatform/paramount/compare/v1.74.1...v1.74.2) (2019-07-01)
 
-
 ### Bug Fixes
 
-* update lock ([00c5f8d](https://github.com/WeTrustPlatform/paramount/commit/00c5f8d))
+- update lock ([00c5f8d](https://github.com/WeTrustPlatform/paramount/commit/00c5f8d))
 
 ## [1.74.1](https://github.com/WeTrustPlatform/paramount/compare/v1.74.0...v1.74.1) (2019-07-01)
 
-
 ### Bug Fixes
 
-* list item style spacing ([3a2109d](https://github.com/WeTrustPlatform/paramount/commit/3a2109d))
+- list item style spacing ([3a2109d](https://github.com/WeTrustPlatform/paramount/commit/3a2109d))
 
 # [1.74.0](https://github.com/WeTrustPlatform/paramount/compare/v1.73.0...v1.74.0) (2019-06-28)
 
-
 ### Bug Fixes
 
-* list item ([3190e05](https://github.com/WeTrustPlatform/paramount/commit/3190e05))
-
+- list item ([3190e05](https://github.com/WeTrustPlatform/paramount/commit/3190e05))
 
 ### Features
 
-* rename node props and fix tests ([fa37b8c](https://github.com/WeTrustPlatform/paramount/commit/fa37b8c))
+- rename node props and fix tests ([fa37b8c](https://github.com/WeTrustPlatform/paramount/commit/fa37b8c))
 
 # [1.73.0](https://github.com/WeTrustPlatform/paramount/compare/v1.72.0...v1.73.0) (2019-06-28)
 
-
 ### Features
 
-* toast position and docs ([b644c3d](https://github.com/WeTrustPlatform/paramount/commit/b644c3d))
+- toast position and docs ([b644c3d](https://github.com/WeTrustPlatform/paramount/commit/b644c3d))
 
 # [1.72.0](https://github.com/WeTrustPlatform/paramount/compare/v1.71.2...v1.72.0) (2019-06-28)
 
-
 ### Features
 
-* add action component in alert ([03cff3b](https://github.com/WeTrustPlatform/paramount/commit/03cff3b))
+- add action component in alert ([03cff3b](https://github.com/WeTrustPlatform/paramount/commit/03cff3b))
 
 ## [1.71.2](https://github.com/WeTrustPlatform/paramount/compare/v1.71.1...v1.71.2) (2019-06-28)
 
-
 ### Bug Fixes
 
-* **deps:** update dependency deepmerge to v3.3.0 ([#254](https://github.com/WeTrustPlatform/paramount/issues/254)) ([b04ef2d](https://github.com/WeTrustPlatform/paramount/commit/b04ef2d))
+- **deps:** update dependency deepmerge to v3.3.0 ([#254](https://github.com/WeTrustPlatform/paramount/issues/254)) ([b04ef2d](https://github.com/WeTrustPlatform/paramount/commit/b04ef2d))
 
 ## [1.71.1](https://github.com/WeTrustPlatform/paramount/compare/v1.71.0...v1.71.1) (2019-06-28)
 
-
 ### Bug Fixes
 
-* **deps:** update dependency ts-essentials to v2.0.11 ([#255](https://github.com/WeTrustPlatform/paramount/issues/255)) ([91b0af3](https://github.com/WeTrustPlatform/paramount/commit/91b0af3))
+- **deps:** update dependency ts-essentials to v2.0.11 ([#255](https://github.com/WeTrustPlatform/paramount/issues/255)) ([91b0af3](https://github.com/WeTrustPlatform/paramount/commit/91b0af3))
 
 # [1.71.0](https://github.com/WeTrustPlatform/paramount/compare/v1.70.0...v1.71.0) (2019-06-24)
 
-
 ### Features
 
-* cleanup constants and code ([e878454](https://github.com/WeTrustPlatform/paramount/commit/e878454))
+- cleanup constants and code ([e878454](https://github.com/WeTrustPlatform/paramount/commit/e878454))
 
 # [1.70.0](https://github.com/WeTrustPlatform/paramount/compare/v1.69.0...v1.70.0) (2019-06-21)
 
-
 ### Features
 
-* **icon:** change default size ([ba9085d](https://github.com/WeTrustPlatform/paramount/commit/ba9085d))
+- **icon:** change default size ([ba9085d](https://github.com/WeTrustPlatform/paramount/commit/ba9085d))
 
 # [1.69.0](https://github.com/WeTrustPlatform/paramount/compare/v1.68.1...v1.69.0) (2019-06-20)
 
-
 ### Bug Fixes
 
-* **listitem:** remove size prop ([22d3455](https://github.com/WeTrustPlatform/paramount/commit/22d3455))
-* **selectlistitem:** fix size prop ([4b7fa55](https://github.com/WeTrustPlatform/paramount/commit/4b7fa55))
-
+- **listitem:** remove size prop ([22d3455](https://github.com/WeTrustPlatform/paramount/commit/22d3455))
+- **selectlistitem:** fix size prop ([4b7fa55](https://github.com/WeTrustPlatform/paramount/commit/4b7fa55))
 
 ### Features
 
-* docs and cleanup ([5ff2ac0](https://github.com/WeTrustPlatform/paramount/commit/5ff2ac0))
-* further refactor and docs ([0b30b48](https://github.com/WeTrustPlatform/paramount/commit/0b30b48))
+- docs and cleanup ([5ff2ac0](https://github.com/WeTrustPlatform/paramount/commit/5ff2ac0))
+- further refactor and docs ([0b30b48](https://github.com/WeTrustPlatform/paramount/commit/0b30b48))
 
 ## [1.68.1](https://github.com/WeTrustPlatform/paramount/compare/v1.68.0...v1.68.1) (2019-06-19)
 
