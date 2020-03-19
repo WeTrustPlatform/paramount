@@ -1,3 +1,10 @@
+## [1.86.6](https://github.com/WeTrustPlatform/paramount/compare/v1.86.5...v1.86.6) (2020-03-19)
+
+### Bug Fixes
+
+- **deps:** update dependency deepmerge to v4.2.2 ([0ed3a8a](https://github.com/WeTrustPlatform/paramount/commit/0ed3a8a))
+- **deps:** update dependency react-icons to v3.9.0 ([6dd3f74](https://github.com/WeTrustPlatform/paramount/commit/6dd3f74))
+
 ## [1.86.5](https://github.com/WeTrustPlatform/paramount/compare/v1.86.4...v1.86.5) (2020-03-18)
 
 ### Bug Fixes
