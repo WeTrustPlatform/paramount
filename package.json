@@ -60,7 +60,7 @@
     "@semantic-release/github": "5.5.3",
     "@semantic-release/npm": "5.2.0",
     "@semantic-release/release-notes-generator": "7.3.0",
-    "@storybook/react": "5.2.4",
+    "@storybook/react": "5.3.17",
     "@types/dlv": "1.1.2",
     "@types/exenv": "1.2.0",
     "@types/jest": "24.9.1",
