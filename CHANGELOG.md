@@ -1,3 +1,10 @@
+## [1.86.7](https://github.com/WeTrustPlatform/paramount/compare/v1.86.6...v1.86.7) (2020-03-19)
+
+### Bug Fixes
+
+- **deps:** update dependency focus-trap to v5.1.0 ([707530d](https://github.com/WeTrustPlatform/paramount/commit/707530d))
+- **deps:** update dependency react-native-svg to v9.13.6 ([bf6ae5c](https://github.com/WeTrustPlatform/paramount/commit/bf6ae5c))
+
 ## [1.86.6](https://github.com/WeTrustPlatform/paramount/compare/v1.86.5...v1.86.6) (2020-03-19)
 
 ### Bug Fixes
