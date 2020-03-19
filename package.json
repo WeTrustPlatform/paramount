@@ -94,7 +94,7 @@
     "react-native": "0.61.5",
     "react-art": "16.13.0",
     "react-dom": "16.13.0",
-    "react-native-testing-library": "1.11.1",
+    "react-native-testing-library": "1.13.0",
     "react-test-renderer": "16.13.0",
     "rimraf": "3.0.2",
     "semantic-release": "15.14.0",
