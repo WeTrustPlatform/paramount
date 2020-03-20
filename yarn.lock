@@ -8952,10 +8952,10 @@ eslint-plugin-sonarjs@0.5.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-sonarjs/-/eslint-plugin-sonarjs-0.5.0.tgz#ce17b2daba65a874c2862213a9e38e8986ad7d7d"
   integrity sha512-XW5MnzlRjhXpIdbULC/qAdJYHWw3rRLws/DyawdlPU/IdVr9AmRK1r2LaCvabwKOAW2XYYSo3kDX58E4MrB7PQ==
 
-eslint-plugin-unused-imports@0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-unused-imports/-/eslint-plugin-unused-imports-0.1.0.tgz#886a0a9fddd24c8b4bf6628a69792b30d5de9d1e"
-  integrity sha512-QfBL5K9pucTGBeK/P+b5YFP0bxPOgQxJoanXdDolEdSg9LRmoFZG8Ql2tf2gAQXk39K+a3V7XeChkfnEJK1CJg==
+eslint-plugin-unused-imports@0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-unused-imports/-/eslint-plugin-unused-imports-0.1.2.tgz#478a1a298f91152102f05acc0857804a949c0498"
+  integrity sha512-uribBu/L3/+XFGY3ticZTcWxkcrhISphjrfiKkZ/gxFa3u0EIPfc4MNtwrk6gcg7Mhs+InDxXoUxd5HEZtaw3w==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^2.3.0"
     eslint "^6.3.0"
