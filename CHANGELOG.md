@@ -1,3 +1,10 @@
+## [1.86.8](https://github.com/WeTrustPlatform/paramount/compare/v1.86.7...v1.86.8) (2020-03-20)
+
+### Bug Fixes
+
+- **deps:** update dependency react-native-svg to v12 ([73bf537](https://github.com/WeTrustPlatform/paramount/commit/73bf537))
+- **deps:** update dependency react-native-web to v0.12.2 ([4f327c0](https://github.com/WeTrustPlatform/paramount/commit/4f327c0))
+
 ## [1.86.7](https://github.com/WeTrustPlatform/paramount/compare/v1.86.6...v1.86.7) (2020-03-19)
 
 ### Bug Fixes
